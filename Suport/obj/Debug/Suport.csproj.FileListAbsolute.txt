@@ -1,0 +1,11 @@
+D:\Privat\Programacio\Git\Examen\Suport\bin\Debug\Suport.dll.config
+D:\Privat\Programacio\Git\Examen\Suport\bin\Debug\Suport.dll
+D:\Privat\Programacio\Git\Examen\Suport\bin\Debug\Suport.pdb
+D:\Privat\Programacio\Git\Examen\Suport\bin\Debug\Newtonsoft.Json.dll
+D:\Privat\Programacio\Git\Examen\Suport\bin\Debug\TcpSharp.dll
+D:\Privat\Programacio\Git\Examen\Suport\bin\Debug\Newtonsoft.Json.xml
+D:\Privat\Programacio\Git\Examen\Suport\obj\Debug\Suport.csproj.AssemblyReference.cache
+D:\Privat\Programacio\Git\Examen\Suport\obj\Debug\Suport.csproj.CoreCompileInputs.cache
+D:\Privat\Programacio\Git\Examen\Suport\obj\Debug\Suport.csproj.Up2Date
+D:\Privat\Programacio\Git\Examen\Suport\obj\Debug\Suport.dll
+D:\Privat\Programacio\Git\Examen\Suport\obj\Debug\Suport.pdb

@@ -1,0 +1,17 @@
+D:\Privat\Programacio\Git\Examen\Professor\bin\Debug\Professor.exe.config
+D:\Privat\Programacio\Git\Examen\Professor\bin\Debug\Professor.exe
+D:\Privat\Programacio\Git\Examen\Professor\bin\Debug\Professor.pdb
+D:\Privat\Programacio\Git\Examen\Professor\bin\Debug\Suport.dll
+D:\Privat\Programacio\Git\Examen\Professor\bin\Debug\TcpSharp.dll
+D:\Privat\Programacio\Git\Examen\Professor\bin\Debug\Newtonsoft.Json.dll
+D:\Privat\Programacio\Git\Examen\Professor\bin\Debug\Suport.pdb
+D:\Privat\Programacio\Git\Examen\Professor\bin\Debug\Suport.dll.config
+D:\Privat\Programacio\Git\Examen\Professor\bin\Debug\Newtonsoft.Json.xml
+D:\Privat\Programacio\Git\Examen\Professor\obj\Debug\Professor.csproj.AssemblyReference.cache
+D:\Privat\Programacio\Git\Examen\Professor\obj\Debug\Examen.Professor.Properties.Resources.resources
+D:\Privat\Programacio\Git\Examen\Professor\obj\Debug\Professor.csproj.GenerateResource.cache
+D:\Privat\Programacio\Git\Examen\Professor\obj\Debug\Professor.csproj.CoreCompileInputs.cache
+D:\Privat\Programacio\Git\Examen\Professor\obj\Debug\Professor.csproj.Up2Date
+D:\Privat\Programacio\Git\Examen\Professor\obj\Debug\Professor.exe
+D:\Privat\Programacio\Git\Examen\Professor\obj\Debug\Professor.pdb
+D:\Privat\Programacio\Git\Examen\Professor\obj\Debug\Professor.exe.config

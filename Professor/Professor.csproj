@@ -90,5 +90,11 @@
     <Folder Include="Controls\" />
     <Folder Include="Formularis\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Suport\Suport.csproj">
+      <Project>{ca301166-142c-4d77-ba7b-50e07672ff82}</Project>
+      <Name>Suport</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
