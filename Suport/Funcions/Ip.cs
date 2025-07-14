@@ -9,9 +9,9 @@ namespace Examen.Suport.Funcions
 {
     public static class Ip
     {
-        public static int Port => Properties.Settings.Default.PortTcp;
-
-        public static IPAddress ObtenirIp(out IPAddress mascara)
+        public static int Port { get; set; }
+        
+        private static IPAddress ObtenirIp(out IPAddress mascara)
         {
             foreach (var ni in NetworkInterface.GetAllNetworkInterfaces())
             {
@@ -39,7 +39,7 @@ namespace Examen.Suport.Funcions
             return IPAddress.None;
         }
 
-        public static IPAddress ObtenirAdreçaDeXarxa(IPAddress ip, IPAddress mascara)
+        private static IPAddress ObtenirAdreçaDeXarxa(IPAddress ip, IPAddress mascara)
         {
             var bytesIp = ip.GetAddressBytes();
             var bytesMascara = mascara.GetAddressBytes();
@@ -56,7 +56,7 @@ namespace Examen.Suport.Funcions
             return new IPAddress(bytesXarxa);
         }
 
-        public static int ProvarPort(IPAddress adreça, int port)
+        private static int ProvarPort(IPAddress adreça, int port)
         {
             var portMaxim = port + 100;
 
@@ -78,7 +78,7 @@ namespace Examen.Suport.Funcions
             throw new Exception("No s'ha trobat cap port lliure.");
         }
 
-        public static string GenerarCodiDesdeAdreça(IPAddress adreça, IPAddress mascara, int port)
+        private static string GenerarCodiDesdeAdreça(IPAddress adreça, IPAddress mascara, int port)
         {
             var bytesAdreça = adreça.GetAddressBytes();
             var bytesMascara = mascara.InvertirMascara().GetAddressBytes();
@@ -100,7 +100,7 @@ namespace Examen.Suport.Funcions
             return codi;
         }
 
-        public static IPAddress ObtenirAdreçaDesdeCodi(this string codi, IPAddress xarxa, out int port)
+        private static IPAddress ObtenirAdreçaDesdeCodi(this string codi, IPAddress xarxa, out int port)
         {
             port = 0;
 
@@ -176,6 +176,46 @@ namespace Examen.Suport.Funcions
             }
 
             return new IPAddress(bytesInvertits);
+        }
+
+        public static bool ObtenirCodi(out string codi, out IPAddress adreça, out int port)
+        {
+            codi = "";
+            adreça = IPAddress.None;
+            port = 0;
+
+            try
+            {
+                adreça = ObtenirIp(out var mascara);
+                var xarxa = ObtenirAdreçaDeXarxa(adreça, mascara);
+                port = ProvarPort(adreça, Port);
+                codi = GenerarCodiDesdeAdreça(adreça, mascara, port);
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public static bool ObtenirAdreça(this string codi, out IPAddress adreça, out int port)
+        {
+            adreça = IPAddress.None;
+            port = 0;
+
+            try
+            {
+                var ip = ObtenirIp(out var mascara);
+                var xarxa = ObtenirAdreçaDeXarxa(ip, mascara);
+                adreça = codi.ObtenirAdreçaDesdeCodi(xarxa, out port);
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

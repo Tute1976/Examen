@@ -53,6 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\EstacioAlumne.cs" />
     <Compile Include="Funcions\Ip.cs" />
     <Compile Include="Funcions\Error.cs" />
     <Compile Include="Funcions\Text.cs" />
@@ -76,5 +77,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

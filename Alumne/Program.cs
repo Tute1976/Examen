@@ -11,9 +11,18 @@ namespace Examen.Alumne
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            try
+            {
+                Suport.Funcions.Ip.Port = Properties.Settings.Default.PortTcp;
+
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new Principal());
+            }
+            catch (Exception ex)
+            {
+                Suport.Funcions.Error.Mostrar(ex);
+            }
         }
     }
 }

@@ -22,14 +22,5 @@ namespace Examen.Suport.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("8883")]
-        public int PortTcp {
-            get {
-                return ((int)(this["PortTcp"]));
-            }
-        }
     }
 }
