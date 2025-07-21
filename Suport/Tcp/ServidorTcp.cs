@@ -69,9 +69,13 @@ namespace Examen.Suport.Tcp
 
                 _listener.BeginAcceptTcpClient(AcceptCallback, null);
             }
+            catch (ObjectDisposedException exObjectDisposed)
+            {
+                // ignore
+            }
             catch (Exception ex)
             {
-                ex.Mostrar();
+                ex.Mostrar(false);
             }
         }
 

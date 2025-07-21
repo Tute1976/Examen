@@ -1,10 +1,11 @@
 using System;
 using System.Diagnostics;
-using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Windows.Forms;
 using Examen.Suport.Classes;
 using Examen.Suport.Funcions;
+using Syncfusion.Windows.Forms;
 
 namespace Examen.Suport.Tcp
 {
@@ -19,7 +20,7 @@ namespace Examen.Suport.Tcp
 
                 var stream = client.GetStream();
 
-                estacioAlumne ??= new EstacioAlumne("");
+                estacioAlumne ??= new EstacioAlumne("", Guid.Empty);
 
                 var estatText = $"{estat}:{estacioAlumne.Serialitzar().ToBase64()}:{text}";
                 var missatge = Encoding.UTF8.GetBytes(estatText.ToBase64());
@@ -33,6 +34,12 @@ namespace Examen.Suport.Tcp
                 Trace.WriteLine($"Resposta del servidor: {respostaText}");
 
                 return respostaText;
+            }
+            catch (SocketException exSocket)
+            {
+                MessageBoxAdv.Show(exSocket.Message, Application.ProductName, MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                Application.Exit();
             }
             catch (Exception ex)
             {

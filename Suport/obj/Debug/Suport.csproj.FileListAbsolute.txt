@@ -11,3 +11,8 @@ D:\Privat\Programacio\Git\Examen\Suport\obj\Debug\Suport.dll
 D:\Privat\Programacio\Git\Examen\Suport\obj\Debug\Suport.pdb
 D:\Privat\Programacio\Git\Examen\Suport\bin\Debug\System.CodeDom.dll
 D:\Privat\Programacio\Git\Examen\Suport\bin\Debug\System.CodeDom.xml
+D:\Privat\Programacio\Git\Examen\Suport\obj\Debug\Examen.Suport.Controls.InfoEstacio.resources
+D:\Privat\Programacio\Git\Examen\Suport\obj\Debug\Suport.csproj.GenerateResource.cache
+D:\Privat\Programacio\Git\Examen\Suport\bin\Debug\Syncfusion.Licensing.dll
+D:\Privat\Programacio\Git\Examen\Suport\bin\Debug\Syncfusion.Shared.Base.dll
+D:\Privat\Programacio\Git\Examen\Suport\bin\Debug\Syncfusion.Shared.Base.xml

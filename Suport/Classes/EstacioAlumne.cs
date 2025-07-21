@@ -17,12 +17,14 @@ namespace Examen.Suport.Classes
         public string Fabricant{ get; set; }
         public string Model { get; set; }
 
-        public string Id => $"{AdreçaPort.Adreça}:{Usuari}";
+        public Guid Id { get; }
 
-        public EstacioAlumne(string nom)
+        public EstacioAlumne(string nom, Guid id)
         {
             try
             {
+                Id = id;
+     
                 Nom = nom;
 
                 AdreçaPort = new AdreçaPort();

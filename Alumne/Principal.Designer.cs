@@ -38,11 +38,12 @@
             this.bIniciar = new System.Windows.Forms.Button();
             this.bTancar = new System.Windows.Forms.Button();
             this.panelFons = new System.Windows.Forms.Panel();
-            this.imatge = new System.Windows.Forms.PictureBox();
             this.bInfo = new System.Windows.Forms.Button();
+            this.imatge = new System.Windows.Forms.PictureBox();
             this.timerTemps = new System.Windows.Forms.Timer(this.components);
             this.timerImatge = new System.Windows.Forms.Timer(this.components);
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.txtId = new System.Windows.Forms.Label();
             this.panelFons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imatge)).BeginInit();
             this.SuspendLayout();
@@ -153,19 +154,6 @@
             this.panelFons.Size = new System.Drawing.Size(500, 450);
             this.panelFons.TabIndex = 7;
             // 
-            // imatge
-            // 
-            this.imatge.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.imatge.Image = global::Examen.Alumne.Properties.Resources.Connectant;
-            this.imatge.Location = new System.Drawing.Point(100, 25);
-            this.imatge.Margin = new System.Windows.Forms.Padding(0);
-            this.imatge.Name = "imatge";
-            this.imatge.Size = new System.Drawing.Size(300, 150);
-            this.imatge.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imatge.TabIndex = 0;
-            this.imatge.TabStop = false;
-            this.imatge.Tag = "0";
-            // 
             // bInfo
             // 
             this.bInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -179,6 +167,19 @@
             this.bInfo.UseVisualStyleBackColor = false;
             this.bInfo.Visible = false;
             this.bInfo.Click += new System.EventHandler(this.BInfo_Click);
+            // 
+            // imatge
+            // 
+            this.imatge.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.imatge.Image = global::Examen.Alumne.Properties.Resources.Connectant;
+            this.imatge.Location = new System.Drawing.Point(100, 25);
+            this.imatge.Margin = new System.Windows.Forms.Padding(0);
+            this.imatge.Name = "imatge";
+            this.imatge.Size = new System.Drawing.Size(300, 150);
+            this.imatge.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imatge.TabIndex = 0;
+            this.imatge.TabStop = false;
+            this.imatge.Tag = "0";
             // 
             // timerTemps
             // 
@@ -197,6 +198,16 @@
             this.notifyIcon.Visible = true;
             this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.NotifyIcon_MouseDoubleClick);
             // 
+            // txtId
+            // 
+            this.txtId.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txtId.Location = new System.Drawing.Point(5, 439);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(500, 16);
+            this.txtId.TabIndex = 8;
+            this.txtId.Text = "id";
+            this.txtId.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -205,6 +216,7 @@
             this.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(180)))), ((int)(((byte)(237)))));
             this.BorderThickness = 2;
             this.ClientSize = new System.Drawing.Size(510, 460);
+            this.Controls.Add(this.txtId);
             this.Controls.Add(this.panelFons);
             this.DropShadow = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -237,6 +249,7 @@
         private System.Windows.Forms.Timer timerImatge;
         private System.Windows.Forms.NotifyIcon notifyIcon;
         private System.Windows.Forms.Button bInfo;
+        private System.Windows.Forms.Label txtId;
     }
 }
 

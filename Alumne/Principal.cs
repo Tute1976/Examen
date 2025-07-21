@@ -6,7 +6,6 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Examen.Alumne
@@ -16,10 +15,12 @@ namespace Examen.Alumne
         private static EstacioAlumne EstacioAlumne { get; set; }
         private AdreçaPort AdreçaPortProfessor { get; set; } = new AdreçaPort();
         private List<Aplicacio> Aplicacions { get; set; } = new List<Aplicacio>();
-        
+
         public Principal()
         {
             InitializeComponent();
+
+            txtId.Text = $@"Id: {Program.Id}";
         }
 
         private void Principal_Load(object sender, EventArgs e)
@@ -100,7 +101,7 @@ namespace Examen.Alumne
                 }
                 else
                 {
-                    EstacioAlumne = new EstacioAlumne(txtNom.Text);
+                    EstacioAlumne = new EstacioAlumne(txtNom.Text, Program.Id);
 
                     bIniciar.Text = @"Amagar";
                     bIniciar.BackColor = Color.FromArgb(255, 255, 224);
