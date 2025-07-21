@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "Tot",
+    "Projects": [
+      {
+        "Path": "Professor\\Professor.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Alumne\\Alumne.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

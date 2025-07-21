@@ -5,15 +5,16 @@ namespace Examen.Alumne
 {
     internal static class Program
     {
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main()
         {
             try
             {
-                Suport.Funcions.Ip.Port = Properties.Settings.Default.PortTcp;
+                Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(Properties.Settings.Default.SyncfusionLicense);
 
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);

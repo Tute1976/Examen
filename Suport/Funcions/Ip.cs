@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
+using Examen.Suport.Classes;
 
 namespace Examen.Suport.Funcions
 {
@@ -11,8 +12,10 @@ namespace Examen.Suport.Funcions
     {
         public static int Port { get; set; }
         
-        private static IPAddress ObtenirIp(out IPAddress mascara)
+        public static bool ObtenirIp(out AdreçaPort adreçaPortMascara)
         {
+            adreçaPortMascara = new AdreçaPort();
+
             foreach (var ni in NetworkInterface.GetAllNetworkInterfaces())
             {
                 if (ni.OperationalStatus != OperationalStatus.Up ||
@@ -29,20 +32,20 @@ namespace Examen.Suport.Funcions
                     if (ip.Address.AddressFamily != AddressFamily.InterNetwork ||
                         IPAddress.IsLoopback(ip.Address)) 
                         continue;
-                    
-                    mascara = ip.IPv4Mask;
-                    return ip.Address;
+
+                    adreçaPortMascara.Adreça = ip.Address;
+                    adreçaPortMascara.Mascara = ip.IPv4Mask;
+                    return true;
                 }
             }
 
-            mascara = IPAddress.None;
-            return IPAddress.None;
+            return false;
         }
 
-        private static IPAddress ObtenirAdreçaDeXarxa(IPAddress ip, IPAddress mascara)
+        private static IPAddress ObtenirAdreçaDeXarxa(this AdreçaPort adreçaPortMascara)
         {
-            var bytesIp = ip.GetAddressBytes();
-            var bytesMascara = mascara.GetAddressBytes();
+            var bytesIp = adreçaPortMascara.Adreça.GetAddressBytes();
+            var bytesMascara = adreçaPortMascara.Mascara.GetAddressBytes();
 
             if (bytesIp.Length != 4 || bytesMascara.Length != 4)
                 throw new ArgumentException("Només es permeten adreces IPv4");
@@ -56,7 +59,29 @@ namespace Examen.Suport.Funcions
             return new IPAddress(bytesXarxa);
         }
 
-        private static int ProvarPort(IPAddress adreça, int port)
+        public static int ObtenirPort(AdreçaPort adreçaPort)
+        {
+            var portMaxim = adreçaPort.Port + 100;
+
+            while (adreçaPort.Port <= portMaxim)
+            {
+                try
+                {
+                    var listener = new TcpListener(adreçaPort.Adreça, adreçaPort.Port);
+                    listener.Start();
+                    listener.Stop();
+                    return adreçaPort.Port;
+                }
+                catch (SocketException)
+                {
+                    adreçaPort.Port++;
+                }
+            }
+
+            throw new Exception("No s'ha trobat cap port lliure.");
+        }
+
+        public static int ObtenirPort(int port)
         {
             var portMaxim = port + 100;
 
@@ -64,7 +89,7 @@ namespace Examen.Suport.Funcions
             {
                 try
                 {
-                    var listener = new TcpListener(adreça, port);
+                    var listener = new TcpListener(IPAddress.Any, port);
                     listener.Start();
                     listener.Stop();
                     return port;
@@ -78,10 +103,10 @@ namespace Examen.Suport.Funcions
             throw new Exception("No s'ha trobat cap port lliure.");
         }
 
-        private static string GenerarCodiDesdeAdreça(IPAddress adreça, IPAddress mascara, int port)
+        private static string GenerarCodiDesdeAdreça(AdreçaPort adreçaPortMascara)
         {
-            var bytesAdreça = adreça.GetAddressBytes();
-            var bytesMascara = mascara.InvertirMascara().GetAddressBytes();
+            var bytesAdreça = adreçaPortMascara.Adreça.GetAddressBytes();
+            var bytesMascara = adreçaPortMascara.Mascara.InvertirMascara().GetAddressBytes();
 
             if (bytesAdreça.Length != 4 || bytesMascara.Length != 4)
                 throw new ArgumentException("Només es permeten adreces IPv4");
@@ -96,7 +121,7 @@ namespace Examen.Suport.Funcions
             }
 
             var numero = Convert.ToInt64(resultat);
-            var codi = $"{numero:X}:{port:X}";
+            var codi = $"{numero:X}:{adreçaPortMascara.Port:X}";
             return codi;
         }
 
@@ -178,18 +203,19 @@ namespace Examen.Suport.Funcions
             return new IPAddress(bytesInvertits);
         }
 
-        public static bool ObtenirCodi(out string codi, out IPAddress adreça, out int port)
+        public static bool ObtenirCodi(out string codi, out AdreçaPort adreçaPort)
         {
             codi = "";
-            adreça = IPAddress.None;
-            port = 0;
+            adreçaPort = new AdreçaPort();
 
             try
             {
-                adreça = ObtenirIp(out var mascara);
-                var xarxa = ObtenirAdreçaDeXarxa(adreça, mascara);
-                port = ProvarPort(adreça, Port);
-                codi = GenerarCodiDesdeAdreça(adreça, mascara, port);
+                if (!ObtenirIp(out var adreçaPortMascara))
+                    throw new Exception("No s'ha pogut obtenir la IP de l'estació.");
+                adreçaPort = adreçaPortMascara;
+                adreçaPort.Port = Port;
+                adreçaPort.Port = ObtenirPort(adreçaPort);
+                codi = GenerarCodiDesdeAdreça(adreçaPort);
 
                 return true;
             }
@@ -199,16 +225,17 @@ namespace Examen.Suport.Funcions
             }
         }
 
-        public static bool ObtenirAdreça(this string codi, out IPAddress adreça, out int port)
+        public static bool ObtenirAdreça(this string codi, out AdreçaPort adreçaPort)
         {
-            adreça = IPAddress.None;
-            port = 0;
+            adreçaPort = new AdreçaPort();
 
             try
             {
-                var ip = ObtenirIp(out var mascara);
-                var xarxa = ObtenirAdreçaDeXarxa(ip, mascara);
-                adreça = codi.ObtenirAdreçaDesdeCodi(xarxa, out port);
+                if (!ObtenirIp(out var adreçaPortMascara))
+                    throw new Exception("No s'ha pogut obtenir la IP de l'estació.");
+                var xarxa = adreçaPortMascara.ObtenirAdreçaDeXarxa();
+                adreçaPort.Adreça = codi.ObtenirAdreçaDesdeCodi(xarxa, out var port);
+                adreçaPort.Port = port;
 
                 return true;
             }
@@ -216,6 +243,24 @@ namespace Examen.Suport.Funcions
             {
                 return false;
             }
+        }
+
+        public static int ComptarBitsDeXarxa(this IPAddress mascara)
+        {
+            var bytes = mascara.GetAddressBytes();
+
+            return bytes.Sum(ComptarBits);
+        }
+
+        private static int ComptarBits(byte b)
+        {
+            var count = 0;
+            while (b != 0)
+            {
+                count += b & 1;
+                b >>= 1;
+            }
+            return count;
         }
     }
 }

@@ -2,7 +2,6 @@ D:\Privat\Programacio\Git\Examen\Professor\bin\Debug\Professor.exe.config
 D:\Privat\Programacio\Git\Examen\Professor\bin\Debug\Professor.exe
 D:\Privat\Programacio\Git\Examen\Professor\bin\Debug\Professor.pdb
 D:\Privat\Programacio\Git\Examen\Professor\bin\Debug\Suport.dll
-D:\Privat\Programacio\Git\Examen\Professor\bin\Debug\TcpSharp.dll
 D:\Privat\Programacio\Git\Examen\Professor\bin\Debug\Newtonsoft.Json.dll
 D:\Privat\Programacio\Git\Examen\Professor\bin\Debug\Suport.pdb
 D:\Privat\Programacio\Git\Examen\Professor\bin\Debug\Suport.dll.config

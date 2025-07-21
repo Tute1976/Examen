@@ -9,12 +9,11 @@ namespace Examen.Professor
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main()
         {
             try
             {
                 Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(Properties.Settings.Default.SyncfusionLicense);
-
                 Suport.Funcions.Ip.Port = Properties.Settings.Default.PortTcp;
 
                 Application.EnableVisualStyles();

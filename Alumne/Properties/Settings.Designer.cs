@@ -25,10 +25,20 @@ namespace Examen.Alumne.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("8883")]
-        public int PortTcp {
+        [global::System.Configuration.DefaultSettingValueAttribute("Mzk1MDI1OUAzMzMwMmUzMDJlMzAzYjMzMzAzYkVNYWtlczNVcmdUWjZvaElTNzVDSHN2MTJyMTZHV2ZIb" +
+            "mJJc3p2ZzUvcE09")]
+        public string SyncfusionLicense {
             get {
-                return ((int)(this["PortTcp"]));
+                return ((string)(this["SyncfusionLicense"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("30")]
+        public int IntevarvalTemps {
+            get {
+                return ((int)(this["IntevarvalTemps"]));
             }
         }
     }
