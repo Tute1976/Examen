@@ -34,26 +34,27 @@
             Syncfusion.Windows.Forms.CaptionLabel captionLabel1 = new Syncfusion.Windows.Forms.CaptionLabel();
             Syncfusion.Windows.Forms.CaptionLabel captionLabel2 = new Syncfusion.Windows.Forms.CaptionLabel();
             this.split = new System.Windows.Forms.SplitContainer();
+            this.panelTaula = new System.Windows.Forms.Panel();
+            this.taula = new System.Windows.Forms.TableLayoutPanel();
             this.llistaHistoric = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.imatgesLlista = new System.Windows.Forms.ImageList(this.components);
             this.timerInici = new System.Windows.Forms.Timer(this.components);
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.menu = new System.Windows.Forms.ToolStrip();
             this.cbColumnes = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.taula = new System.Windows.Forms.TableLayoutPanel();
-            this.panelTaula = new System.Windows.Forms.Panel();
             this.bMostrarLlista = new System.Windows.Forms.ToolStripButton();
             this.bNetejarLlista = new System.Windows.Forms.ToolStripButton();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bCopiarCodi = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.split)).BeginInit();
             this.split.Panel1.SuspendLayout();
             this.split.Panel2.SuspendLayout();
             this.split.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             this.panelTaula.SuspendLayout();
+            this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // split
@@ -75,6 +76,33 @@
             this.split.Size = new System.Drawing.Size(903, 492);
             this.split.SplitterDistance = 288;
             this.split.TabIndex = 0;
+            // 
+            // panelTaula
+            // 
+            this.panelTaula.AutoScroll = true;
+            this.panelTaula.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelTaula.Controls.Add(this.taula);
+            this.panelTaula.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelTaula.Location = new System.Drawing.Point(0, 0);
+            this.panelTaula.Name = "panelTaula";
+            this.panelTaula.Size = new System.Drawing.Size(903, 288);
+            this.panelTaula.TabIndex = 1;
+            // 
+            // taula
+            // 
+            this.taula.AutoSize = true;
+            this.taula.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.taula.ColumnCount = 2;
+            this.taula.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.taula.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.taula.Dock = System.Windows.Forms.DockStyle.Top;
+            this.taula.Location = new System.Drawing.Point(0, 0);
+            this.taula.Name = "taula";
+            this.taula.RowCount = 2;
+            this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.taula.Size = new System.Drawing.Size(901, 0);
+            this.taula.TabIndex = 0;
             // 
             // llistaHistoric
             // 
@@ -124,27 +152,29 @@
             this.timerInici.Enabled = true;
             this.timerInici.Tick += new System.EventHandler(this.TimerInici_Tick);
             // 
-            // toolStrip1
+            // menu
             // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.toolStrip1.GripMargin = new System.Windows.Forms.Padding(0);
-            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menu.Dock = System.Windows.Forms.DockStyle.Right;
+            this.menu.GripMargin = new System.Windows.Forms.Padding(0);
+            this.menu.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cbColumnes,
             this.toolStripSeparator1,
             this.bMostrarLlista,
-            this.bNetejarLlista});
-            this.toolStrip1.Location = new System.Drawing.Point(903, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Padding = new System.Windows.Forms.Padding(5, 0, 1, 0);
-            this.toolStrip1.Size = new System.Drawing.Size(83, 492);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
+            this.bNetejarLlista,
+            this.toolStripSeparator2,
+            this.bCopiarCodi});
+            this.menu.Location = new System.Drawing.Point(903, 0);
+            this.menu.Name = "menu";
+            this.menu.Padding = new System.Windows.Forms.Padding(5, 0, 1, 0);
+            this.menu.Size = new System.Drawing.Size(83, 492);
+            this.menu.TabIndex = 0;
             // 
             // cbColumnes
             // 
             this.cbColumnes.DropDownWidth = 24;
             this.cbColumnes.Items.AddRange(new object[] {
+            "2",
             "3",
             "4",
             "5"});
@@ -160,31 +190,6 @@
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(70, 6);
-            // 
-            // taula
-            // 
-            this.taula.ColumnCount = 2;
-            this.taula.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.taula.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.taula.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.taula.Location = new System.Drawing.Point(0, 0);
-            this.taula.Name = "taula";
-            this.taula.RowCount = 2;
-            this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.taula.Size = new System.Drawing.Size(884, 286);
-            this.taula.TabIndex = 0;
-            // 
-            // panelTaula
-            // 
-            this.panelTaula.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelTaula.Controls.Add(this.taula);
-            this.panelTaula.Controls.Add(this.vScrollBar1);
-            this.panelTaula.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelTaula.Location = new System.Drawing.Point(0, 0);
-            this.panelTaula.Name = "panelTaula";
-            this.panelTaula.Size = new System.Drawing.Size(903, 288);
-            this.panelTaula.TabIndex = 1;
             // 
             // bMostrarLlista
             // 
@@ -206,16 +211,26 @@
             this.bNetejarLlista.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bNetejarLlista.Name = "bNetejarLlista";
             this.bNetejarLlista.Size = new System.Drawing.Size(70, 20);
+            this.bNetejarLlista.Text = "Netejar llista";
             this.bNetejarLlista.ToolTipText = "Netejar llista";
             this.bNetejarLlista.Click += new System.EventHandler(this.bNetejarLlista_Click);
             // 
-            // vScrollBar1
+            // toolStripSeparator2
             // 
-            this.vScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.vScrollBar1.Location = new System.Drawing.Point(884, 0);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(17, 286);
-            this.vScrollBar1.TabIndex = 0;
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(70, 6);
+            // 
+            // bCopiarCodi
+            // 
+            this.bCopiarCodi.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.bCopiarCodi.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bCopiarCodi.Image = global::Examen.Professor.Properties.Resources.Copiar;
+            this.bCopiarCodi.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bCopiarCodi.Name = "bCopiarCodi";
+            this.bCopiarCodi.Size = new System.Drawing.Size(70, 20);
+            this.bCopiarCodi.Text = "Copiar codi";
+            this.bCopiarCodi.ToolTipText = "Copiar codi";
+            this.bCopiarCodi.Click += new System.EventHandler(this.bCopiarCodi_Click);
             // 
             // Principal
             // 
@@ -232,11 +247,11 @@
             captionImage1.Size = new System.Drawing.Size(64, 64);
             this.CaptionImages.Add(captionImage1);
             captionLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            captionLabel1.Location = new System.Drawing.Point(700, 64);
+            captionLabel1.Location = new System.Drawing.Point(650, 64);
             captionLabel1.Name = "TxtCodi";
             captionLabel1.Text = "Codi";
             captionLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            captionLabel2.Location = new System.Drawing.Point(700, 8);
+            captionLabel2.Location = new System.Drawing.Point(650, 8);
             captionLabel2.Name = "Codi";
             captionLabel2.Size = new System.Drawing.Size(500, 64);
             captionLabel2.Text = "XXXXX";
@@ -244,8 +259,9 @@
             this.CaptionLabels.Add(captionLabel2);
             this.ClientSize = new System.Drawing.Size(986, 492);
             this.Controls.Add(this.split);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.menu);
             this.DropShadow = true;
+            this.EnableTouchMode = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(180)))), ((int)(((byte)(237)))));
             this.Name = "Principal";
@@ -257,9 +273,10 @@
             this.split.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.split)).EndInit();
             this.split.ResumeLayout(false);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.panelTaula.ResumeLayout(false);
+            this.panelTaula.PerformLayout();
+            this.menu.ResumeLayout(false);
+            this.menu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,14 +291,15 @@
         private System.Windows.Forms.Timer timerInici;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ImageList imatgesLlista;
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStrip menu;
         private System.Windows.Forms.ToolStripComboBox cbColumnes;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.TableLayoutPanel taula;
         private System.Windows.Forms.Panel panelTaula;
         private System.Windows.Forms.ToolStripButton bMostrarLlista;
         private System.Windows.Forms.ToolStripButton bNetejarLlista;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton bCopiarCodi;
     }
 }
 

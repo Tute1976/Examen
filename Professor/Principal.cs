@@ -28,9 +28,8 @@ namespace Examen.Professor
 
         private void Principal_Resize(object sender, EventArgs e)
         {
-            CaptionLabels[0].Location = new Point(Width - 330, 64);
-            CaptionLabels[1].Location = new Point(Width - 330, 8);
-            CaptionLabels[1].Text = "";
+            CaptionLabels[0].Location = new Point(Width - 430, 64);
+            CaptionLabels[1].Location = new Point(Width - 430, 8);
         }
 
         private void Principal_Load(object sender, EventArgs e)
@@ -328,6 +327,11 @@ namespace Examen.Professor
         private void bNetejarLlista_Click(object sender, EventArgs e)
         {
             llistaHistoric.Items.Clear();
+        }
+
+        private void bCopiarCodi_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(CaptionLabels[1].Text);
         }
     }
 }

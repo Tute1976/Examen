@@ -100,6 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Examen.ico" />
+    <None Include="Resources\Copiar.png" />
     <None Include="Resources\Netejar.png" />
     <None Include="Resources\view-full-list-icone-6722-48.png" />
     <None Include="Resources\Examen2.png" />

@@ -63,6 +63,16 @@ namespace Examen.Professor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Copiar {
+            get {
+                object obj = ResourceManager.GetObject("Copiar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Examen2 {
             get {
                 object obj = ResourceManager.GetObject("Examen2", resourceCulture);

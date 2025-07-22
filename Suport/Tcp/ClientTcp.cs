@@ -43,7 +43,7 @@ namespace Examen.Suport.Tcp
             }
             catch (Exception ex)
             {
-                ex.Mostrar();
+                ex.Mostrar(false);
             }
 
             return null;
