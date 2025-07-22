@@ -1,4 +1,5 @@
-﻿using Examen.Suport.Funcions;
+﻿using System.Linq;
+using Examen.Suport.Funcions;
 using Examen.Suport.Tcp;
 using System.Net;
 
@@ -45,9 +46,7 @@ namespace Examen.Suport.Classes
         {
             try
             {
-                ClientTcp.EnviarEstat(this, estacioAlumne, TipusMissatge.Prova);
-
-                return true;
+                return !string.IsNullOrEmpty(ClientTcp.EnviarEstat(this, estacioAlumne, TipusMissatge.Prova, out _, out _, out _));
             }
             catch
             {

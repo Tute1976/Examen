@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Examen.Professor.Formularis;
+using Examen.Suport.Funcions;
+using System;
 using System.Windows.Forms;
 
 namespace Examen.Professor
@@ -13,8 +15,8 @@ namespace Examen.Professor
         {
             try
             {
-                Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(Properties.Settings.Default.SyncfusionLicense);
-                Suport.Funcions.Ip.Port = Properties.Settings.Default.PortTcp;
+                Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(Helper.SyncfusionLicense);
+                Ip.Port = Properties.Settings.Default.PortTcp;
 
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
@@ -22,7 +24,7 @@ namespace Examen.Professor
             }
             catch (Exception ex)
             {
-                Suport.Funcions.Error.Mostrar(ex);
+                ex.Mostrar();
             }
         }
     }

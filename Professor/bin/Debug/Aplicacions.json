@@ -1,0 +1,12 @@
+﻿[
+  {
+    "Nom": "Firefox",
+    "Executable": "firefox.exe",
+    "CalAturar": false
+  },
+  {
+    "Nom": "Microsoft Edge",
+    "Executable": "edge.exe",
+    "CalAturar": false
+  }
+]

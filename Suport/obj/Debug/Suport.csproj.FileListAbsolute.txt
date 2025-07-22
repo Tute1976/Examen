@@ -16,3 +16,4 @@ D:\Privat\Programacio\Git\Examen\Suport\obj\Debug\Suport.csproj.GenerateResource
 D:\Privat\Programacio\Git\Examen\Suport\bin\Debug\Syncfusion.Licensing.dll
 D:\Privat\Programacio\Git\Examen\Suport\bin\Debug\Syncfusion.Shared.Base.dll
 D:\Privat\Programacio\Git\Examen\Suport\bin\Debug\Syncfusion.Shared.Base.xml
+D:\Privat\Programacio\Git\Examen\Suport\obj\Debug\Examen.Suport.Properties.Resources.resources

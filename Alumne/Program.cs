@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
+using Examen.Alumne.Formularis;
+using Examen.Suport.Funcions;
 
 namespace Examen.Alumne
 {
@@ -15,7 +17,7 @@ namespace Examen.Alumne
         {
             try
             {
-                Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(Properties.Settings.Default.SyncfusionLicense);
+                Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(Helper.SyncfusionLicense);
 
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
@@ -23,7 +25,7 @@ namespace Examen.Alumne
             }
             catch (Exception ex)
             {
-                Suport.Funcions.Error.Mostrar(ex);
+                ex.Mostrar();
             }
         }
     }

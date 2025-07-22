@@ -22,5 +22,15 @@ namespace Examen.Suport.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Mzk1MDI1OUAzMzMwMmUzMDJlMzAzYjMzMzAzYkVNYWtlczNVcmdUWjZvaElTNzVDSHN2MTJyMTZHV2ZIb" +
+            "mJJc3p2ZzUvcE09")]
+        public string SyncfusionLicense {
+            get {
+                return ((string)(this["SyncfusionLicense"]));
+            }
+        }
     }
 }

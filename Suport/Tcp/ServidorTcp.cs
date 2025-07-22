@@ -19,7 +19,14 @@ namespace Examen.Suport.Tcp
         {
             _gestorEstat = gestorEstat;
             _callbackFinalitzacio = callback;
-            _listener = new TcpListener(adreçaPort.ToIpEndPoint());
+            _listener = new TcpListener(adreçaPort.ToIpEndPoint())
+            {
+                Server =
+                {
+                    NoDelay = true // Disable Nagle's algorithm for low latency
+                }
+            };
+            _listener.Server.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
             _listener.Start();
             _listener.BeginAcceptTcpClient(AcceptCallback, null);
 

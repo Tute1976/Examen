@@ -63,15 +63,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Principal.cs">
+    <Compile Include="Formularis\Aplicacions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Principal.Designer.cs">
+    <Compile Include="Formularis\Aplicacions.Designer.cs">
+      <DependentUpon>Aplicacions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularis\Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularis\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Principal.resx">
+    <EmbeddedResource Include="Formularis\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -107,7 +113,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controls\" />
-    <Folder Include="Formularis\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Suport\Suport.csproj">

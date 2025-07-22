@@ -2,11 +2,8 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Examen.Alumne.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="SyncfusionLicense" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">Mzk1MDI1OUAzMzMwMmUzMDJlMzAzYjMzMzAzYkVNYWtlczNVcmdUWjZvaElTNzVDSHN2MTJyMTZHV2ZIbmJJc3p2ZzUvcE09</Value>
-    </Setting>
     <Setting Name="IntevarvalTemps" Type="System.Int32" Scope="Application">
-      <Value Profile="(Default)">30</Value>
+      <Value Profile="(Default)">15</Value>
     </Setting>
   </Settings>
 </SettingsFile>

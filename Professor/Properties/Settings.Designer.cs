@@ -34,17 +34,7 @@ namespace Examen.Professor.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Mzk1MDI1OUAzMzMwMmUzMDJlMzAzYjMzMzAzYkVNYWtlczNVcmdUWjZvaElTNzVDSHN2MTJyMTZHV2ZIb" +
-            "mJJc3p2ZzUvcE09")]
-        public string SyncfusionLicense {
-            get {
-                return ((string)(this["SyncfusionLicense"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("30")]
+        [global::System.Configuration.DefaultSettingValueAttribute("15")]
         public int IntevarvalTemps {
             get {
                 return ((int)(this["IntevarvalTemps"]));
@@ -53,7 +43,7 @@ namespace Examen.Professor.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("d:\\Temp\\Aplicacions.json")]
+        [global::System.Configuration.DefaultSettingValueAttribute(".\\Aplicacions.json")]
         public string Aplicacions {
             get {
                 return ((string)(this["Aplicacions"]));
