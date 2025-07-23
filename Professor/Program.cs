@@ -20,11 +20,11 @@ namespace Examen.Professor
 
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new Principal());
+                Application.Run(new FrmPrincipal());
             }
             catch (Exception ex)
             {
-                ex.Mostrar();
+                ex.Mostrar(false);
             }
         }
     }

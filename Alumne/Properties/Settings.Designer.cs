@@ -25,7 +25,7 @@ namespace Examen.Alumne.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("15")]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
         public int IntevarvalTemps {
             get {
                 return ((int)(this["IntevarvalTemps"]));

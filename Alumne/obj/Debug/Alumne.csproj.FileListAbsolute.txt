@@ -13,8 +13,7 @@ D:\Privat\Programacio\Git\Examen\Alumne\obj\Debug\Alumne.csproj.CoreCompileInput
 D:\Privat\Programacio\Git\Examen\Alumne\obj\Debug\Alumne.csproj.Up2Date
 D:\Privat\Programacio\Git\Examen\Alumne\obj\Debug\Alumne.exe
 D:\Privat\Programacio\Git\Examen\Alumne\obj\Debug\Alumne.pdb
-D:\Privat\Programacio\Git\Examen\Alumne\obj\Debug\Alumne.exe.config
 D:\Privat\Programacio\Git\Examen\Alumne\bin\Debug\Syncfusion.Licensing.dll
 D:\Privat\Programacio\Git\Examen\Alumne\bin\Debug\Syncfusion.Shared.Base.dll
 D:\Privat\Programacio\Git\Examen\Alumne\bin\Debug\Syncfusion.Shared.Base.xml
-D:\Privat\Programacio\Git\Examen\Alumne\obj\Debug\Examen.Alumne.Formularis.Principal.resources
+D:\Privat\Programacio\Git\Examen\Alumne\obj\Debug\Examen.Alumne.Formularis.FrmPrincipal.resources

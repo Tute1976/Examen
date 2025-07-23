@@ -13,8 +13,9 @@ D:\Privat\Programacio\Git\Examen\Professor\obj\Debug\Professor.csproj.CoreCompil
 D:\Privat\Programacio\Git\Examen\Professor\obj\Debug\Professor.csproj.Up2Date
 D:\Privat\Programacio\Git\Examen\Professor\obj\Debug\Professor.exe
 D:\Privat\Programacio\Git\Examen\Professor\obj\Debug\Professor.pdb
-D:\Privat\Programacio\Git\Examen\Professor\obj\Debug\Professor.exe.config
 D:\Privat\Programacio\Git\Examen\Professor\bin\Debug\Syncfusion.Licensing.dll
 D:\Privat\Programacio\Git\Examen\Professor\bin\Debug\Syncfusion.Shared.Base.dll
 D:\Privat\Programacio\Git\Examen\Professor\bin\Debug\Syncfusion.Shared.Base.xml
-D:\Privat\Programacio\Git\Examen\Professor\obj\Debug\Examen.Professor.Formularis.Principal.resources
+D:\Privat\Programacio\Git\Examen\Professor\obj\Debug\Examen.Professor.Formularis.FrmAplicacions.resources
+D:\Privat\Programacio\Git\Examen\Professor\obj\Debug\Examen.Professor.Formularis.FrmPrincipal.resources
+D:\Privat\Programacio\Git\Examen\Professor\bin\Debug\Dades\Aplicacions.json

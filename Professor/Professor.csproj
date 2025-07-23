@@ -44,11 +44,11 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Licensing, Version=30.1462.40.0, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Licensing.30.1.40\lib\net462\Syncfusion.Licensing.dll</HintPath>
+    <Reference Include="Syncfusion.Licensing, Version=30.1462.41.0, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.30.1.41\lib\net462\Syncfusion.Licensing.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Shared.Base, Version=30.1462.40.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Shared.Base.30.1.40\lib\net462\Syncfusion.Shared.Base.dll</HintPath>
+    <Reference Include="Syncfusion.Shared.Base, Version=30.1462.41.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Shared.Base.30.1.41\lib\net462\Syncfusion.Shared.Base.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -63,22 +63,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Formularis\Aplicacions.cs">
+    <Compile Include="Formularis\FrmAplicacions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularis\Aplicacions.Designer.cs">
-      <DependentUpon>Aplicacions.cs</DependentUpon>
+    <Compile Include="Formularis\FrmAplicacions.Designer.cs">
+      <DependentUpon>FrmAplicacions.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularis\Principal.cs">
+    <Compile Include="Formularis\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularis\Principal.Designer.cs">
-      <DependentUpon>Principal.cs</DependentUpon>
+    <Compile Include="Formularis\FrmPrincipal.Designer.cs">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Formularis\Principal.resx">
-      <DependentUpon>Principal.cs</DependentUpon>
+    <EmbeddedResource Include="Formularis\FrmAplicacions.resx">
+      <DependentUpon>FrmAplicacions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularis\FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -90,6 +93,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Dades\Aplicacions.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -106,6 +112,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Examen.ico" />
+    <None Include="Resources\Sortir_32x32.png" />
+    <None Include="Resources\Copiar_32x32.png" />
+    <None Include="Resources\Neteja_32x32.png" />
+    <None Include="Resources\Llista_32x32.png" />
+    <None Include="Resources\Aplicacions_32x32.png" />
+    <None Include="Resources\PropertyGrid.png" />
+    <None Include="Resources\Examen21.png" />
+    <None Include="Resources\Cancel_32x32.png" />
+    <None Include="Resources\Validation_32x32.png" />
+    <None Include="Resources\Cancel_16x16.png" />
+    <None Include="Resources\Desar.png" />
     <None Include="Resources\Copiar.png" />
     <None Include="Resources\Netejar.png" />
     <None Include="Resources\view-full-list-icone-6722-48.png" />

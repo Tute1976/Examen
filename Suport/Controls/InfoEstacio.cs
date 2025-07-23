@@ -8,6 +8,8 @@ namespace Examen.Suport.Controls
 {
     public partial class InfoEstacio : UserControl
     {
+        public EstacioAlumne EstacioAlumne { get; set; }
+
         private readonly Guid _id;
         private readonly int _interval;
 
@@ -46,13 +48,19 @@ namespace Examen.Suport.Controls
             set => txtEstat.Text = value;
         }
 
-        public DateTime DataConnexio
+        public DateTime Data
         {
-            get => DateTime.Parse(txtDataConnexio.Text);
-            set => txtDataConnexio.Text = $@"{value:G}";
+            get => EstacioAlumne.DataDarreraConnexio ?? DateTime.Now;
+            set
+            {
+                EstacioAlumne.DataDarreraConnexio = value;
+                txtDataInci.Text = Temps.ToNaturalString();
+            }
         }
 
-        public bool Caducada => DateTime.Now - DataConnexio > TimeSpan.FromSeconds(_interval);
+        private TimeSpan TempsCaducada => DateTime.Now - (EstacioAlumne.DataDarreraConnexio ?? DateTime.Now);
+        public bool Caducada => TempsCaducada.TotalSeconds > _interval;
+        private TimeSpan Temps => DateTime.Now - (EstacioAlumne.DataInici ?? DateTime.Now);
 
         public int Imatge
         {
@@ -69,6 +77,8 @@ namespace Examen.Suport.Controls
         {
             InitializeComponent();
 
+            EstacioAlumne = estacioAlumne;
+
             _id = estacioAlumne.Id;
             _interval = interval;
 
@@ -76,20 +86,20 @@ namespace Examen.Suport.Controls
 
             gb.Text = estacioAlumne.Nom;
             txtEstacio.Text = estacioAlumne.Estacio;
-            txtInformacio.Text = $@"{estacioAlumne.Fabricant} / {estacioAlumne.Model}";
-            txtDataInci.Text = $@"{estacioAlumne.DataInici:G}";
-            txtDataConnexio.Text = $@"{estacioAlumne.DataDarreraConnexio:G}";
+            txtUsuari.Text = estacioAlumne.Usuari;
+            txtInformacio.Text = estacioAlumne.Fabricant;
+            Data = DateTime.Now;
             txtEstat.Text = "";
         }
 
         private void bInfo_Click(object sender, EventArgs e)
         {
-            _id.ToString().Mostrar();
+            $"Identificador de la sessió:\n\n    {_id}    ".Mostrar();
         }
 
         private void bTancar_Click(object sender, EventArgs e)
         {
-            this.Parent.Controls.Remove(this);
+            Parent.Controls.Remove(this);
         }
 
         private void bPitar_Click(object sender, EventArgs e)

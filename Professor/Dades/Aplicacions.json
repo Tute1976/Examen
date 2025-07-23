@@ -1,0 +1,127 @@
+﻿[
+  {
+    "Nom": "Visual Studio Code",
+    "Executable": "code.exe",
+    "CalAturar": true
+  },
+  {
+    "Nom": "Adobe Acrobat",
+    "Executable": "acrobat.exe",
+    "CalAturar": true
+  },
+  {
+    "Nom": "Adobe Acrobat Reader",
+    "Executable": "acrord32.exe",
+    "CalAturar": true
+  },
+  {
+    "Nom": "WhatsApp",
+    "Executable": "WhatsApp.exe",
+    "CalAturar": true
+  },
+  {
+    "Nom": "Google Chrome",
+    "Executable": "chrome.exe",
+    "CalAturar": true
+  },
+  {
+    "Nom": "Mozilla Firefox",
+    "Executable": "firefox.exe",
+    "CalAturar": true
+  },
+  {
+    "Nom": "Microsoft Edge",
+    "Executable": "msedge.exe",
+    "CalAturar": true
+  },
+  {
+    "Nom": "Opera",
+    "Executable": "opera.exe",
+    "CalAturar": true
+  },
+  {
+    "Nom": "Brave",
+    "Executable": "brave.exe",
+    "CalAturar": true
+  },
+  {
+    "Nom": "Vivaldi",
+    "Executable": "vivaldi.exe",
+    "CalAturar": true
+  },
+  {
+    "Nom": "Chromium",
+    "Executable": "chromium.exe",
+    "CalAturar": true
+  },
+  {
+    "Nom": "Waterfox",
+    "Executable": "waterfox.exe",
+    "CalAturar": true
+  },
+  {
+    "Nom": "Pale Moon",
+    "Executable": "palemoon.exe",
+    "CalAturar": true
+  },
+  {
+    "Nom": "Maxthon",
+    "Executable": "maxthon.exe",
+    "CalAturar": true
+  },
+  {
+    "Nom": "Avant Browser",
+    "Executable": "avant.exe",
+    "CalAturar": true
+  },
+  {
+    "Nom": "Slimjet",
+    "Executable": "slimjet.exe",
+    "CalAturar": true
+  },
+  {
+    "Nom": "Yandex Browser",
+    "Executable": "browser.exe",
+    "CalAturar": true
+  },
+  {
+    "Nom": "Epic Privacy Browser",
+    "Executable": "epic.exe",
+    "CalAturar": true
+  },
+  {
+    "Nom": "Comodo Dragon",
+    "Executable": "dragon.exe",
+    "CalAturar": true
+  },
+  {
+    "Nom": "SRWare Iron",
+    "Executable": "iron.exe",
+    "CalAturar": true
+  },
+  {
+    "Nom": "UC Browser",
+    "Executable": "browser.exe",
+    "CalAturar": true
+  },
+  {
+    "Nom": "Lunascape",
+    "Executable": "lunascape6.exe",
+    "CalAturar": true
+  },
+  {
+    "Nom": "Midori",
+    "Executable": "midori.exe",
+    "CalAturar": true
+  },
+  {
+    "Nom": "K-Meleon",
+    "Executable": "k-meleon.exe",
+    "CalAturar": true
+  },
+  {
+    "Nom": "QuteBrowser",
+    "Executable": "qutebrowser.exe",
+    "CalAturar": true
+  }
+]

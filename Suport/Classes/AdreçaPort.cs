@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using Examen.Suport.Funcions;
+﻿using Examen.Suport.Funcions;
 using Examen.Suport.Tcp;
 using System.Net;
 

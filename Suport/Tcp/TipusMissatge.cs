@@ -5,6 +5,7 @@ namespace Examen.Suport.Tcp
         Prova,
         Inici,
         Temps,
+        TempsAmbDeteccio,
         Deteccio,
         Fi
     }

@@ -6,7 +6,7 @@
       <Value Profile="(Default)">8883</Value>
     </Setting>
     <Setting Name="IntevarvalTemps" Type="System.Int32" Scope="Application">
-      <Value Profile="(Default)">15</Value>
+      <Value Profile="(Default)">5</Value>
     </Setting>
     <Setting Name="Aplicacions" Type="System.String" Scope="Application">
       <Value Profile="(Default)">.\Aplicacions.json</Value>

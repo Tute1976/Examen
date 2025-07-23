@@ -40,10 +40,10 @@ namespace Examen.Suport.Tcp
                 var client = _listener.EndAcceptTcpClient(ar);
                 var stream = client.GetStream();
 
-                var buffer = new byte[1024];
+                var buffer = new byte[8192];
                 var bytesLlegits = stream.Read(buffer, 0, buffer.Length);
                 var textRebut = Encoding.UTF8.GetString(buffer, 0, bytesLlegits);
-                textRebut = textRebut.FromBase64();
+                textRebut = textRebut.DecompressFromBase64();
                 var tt = textRebut.Split(':');
                 var estatRebutText = tt.First();
                 var estacioAlumne = tt[1].FromBase64().Deserialitzar<EstacioAlumne>();
@@ -57,8 +57,7 @@ namespace Examen.Suport.Tcp
                 if (Enum.TryParse(estatRebutText, out TipusMissatge tipus))
                 {
                     var resposta = _gestorEstat?.Invoke(tipus, estacioAlumne) ?? "Resposta per defecte";
-                    resposta = resposta.ToBase64();
-                    var respostaBytes = Encoding.UTF8.GetBytes(resposta);
+                    var respostaBytes = Encoding.UTF8.GetBytes(resposta.CompressToBase64());
                     stream.Write(respostaBytes, 0, respostaBytes.Length);
 
                     _callbackFinalitzacio?.Invoke(tipus, estacioAlumne, textRebut);
@@ -66,8 +65,7 @@ namespace Examen.Suport.Tcp
                 else
                 {
                     var resposta = "Missatge no vàlid, s'esperava un tipus de missatge.";
-                    resposta = resposta.ToBase64().CompressToBase64();
-                    var respostaBytes = Encoding.UTF8.GetBytes(resposta);
+                    var respostaBytes = Encoding.UTF8.GetBytes(resposta.CompressToBase64());
                     stream.Write(respostaBytes, 0, respostaBytes.Length);
                 }
 
@@ -77,6 +75,10 @@ namespace Examen.Suport.Tcp
                 _listener.BeginAcceptTcpClient(AcceptCallback, null);
             }
             catch (ObjectDisposedException)
+            {
+                // ignore
+            }
+            catch (SocketException)
             {
                 // ignore
             }

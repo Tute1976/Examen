@@ -147,5 +147,20 @@ namespace Examen.Suport.Funcions
             using var gZipStream = new GZipStream(stream, CompressionMode.Decompress);
             gZipStream.CopyTo(outputStream);
         }
+
+        public static string ToNaturalString(this TimeSpan temps)
+        {
+            var naturalString = $" {temps.Days}d {temps.Hours}h {temps.Minutes}m {temps.Seconds}s";
+            naturalString = naturalString.Replace(" 0d", "");
+            naturalString = naturalString.Replace(" 0h", "");
+            naturalString = naturalString.Replace(" 0m", "");
+            naturalString = naturalString.Replace(" 0s", "");
+            naturalString = naturalString.Trim();
+
+            if (string.IsNullOrEmpty(naturalString))
+                naturalString = "0s";
+
+            return naturalString;
+        }
     }
 }
