@@ -112,6 +112,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Examen.ico" />
+    <None Include="Resources\Stop_32x32.png" />
+    <None Include="Resources\Start_32x32.png" />
     <None Include="Resources\Importar_32x32.png" />
     <None Include="Resources\Exportar_32x32.png" />
     <None Include="Resources\Sortir_32x32.png" />

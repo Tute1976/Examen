@@ -2,6 +2,8 @@
 using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
+using System.Text;
 using System.Windows.Forms;
 
 namespace Examen.Suport.Funcions
@@ -24,10 +26,17 @@ namespace Examen.Suport.Funcions
         {
             try
             {
+                var fitxer = Path.GetFullPath(Environment.ExpandEnvironmentVariables(@".\error.log"));
+
                 Trace.AutoFlush = true;
                 var mm = missatge.Replace(Environment.NewLine, "^").Split('^');
                 foreach (var m in mm)
+                {
                     Trace.WriteLine($@"Examen {DateTime.Now:G} [{icona}]: {m}");
+
+                    var nl = Environment.NewLine;
+                    File.AppendAllText(fitxer, $@"{DateTime.Now:G} [{icona}]: {m}{nl}", Encoding.UTF8);
+                }
 
                 return !mostrarMissatge ? 
                     DialogResult.None : 
@@ -41,7 +50,7 @@ namespace Examen.Suport.Funcions
             return DialogResult.None;
         }
 
-        public static void Mostrar(this Exception ex, bool mostrarMissatge = true)
+        public static void Mostrar(this Exception ex, bool mostrarMissatge = false)
         {
             try
             {

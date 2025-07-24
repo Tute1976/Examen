@@ -50,15 +50,16 @@
             this.menu = new System.Windows.Forms.ToolStrip();
             this.cbColumnes = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bMostrarLlista = new System.Windows.Forms.ToolStripButton();
-            this.bNetejarLlista = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bAplicacions = new System.Windows.Forms.ToolStripButton();
-            this.bSortir = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.bCopiarCodi = new System.Windows.Forms.ToolStripButton();
             this.timerCaducades = new System.Windows.Forms.Timer(this.components);
             this.timerTancar = new System.Windows.Forms.Timer(this.components);
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.bStartStop = new System.Windows.Forms.ToolStripButton();
+            this.bMostrarLlista = new System.Windows.Forms.ToolStripButton();
+            this.bNetejarLlista = new System.Windows.Forms.ToolStripButton();
+            this.bAplicacions = new System.Windows.Forms.ToolStripButton();
+            this.bSortir = new System.Windows.Forms.ToolStripButton();
+            this.bCopiarCodi = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.split)).BeginInit();
             this.split.Panel1.SuspendLayout();
             this.split.Panel2.SuspendLayout();
@@ -230,10 +231,11 @@
             this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cbColumnes,
             this.toolStripSeparator1,
+            this.bStartStop,
+            this.bAplicacions,
+            this.toolStripSeparator4,
             this.bMostrarLlista,
             this.bNetejarLlista,
-            this.toolStripSeparator2,
-            this.bAplicacions,
             this.bSortir,
             this.toolStripSeparator3,
             this.bCopiarCodi});
@@ -264,6 +266,37 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(71, 6);
             // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(71, 6);
+            // 
+            // timerCaducades
+            // 
+            this.timerCaducades.Tick += new System.EventHandler(this.timerCaducades_Tick);
+            // 
+            // timerTancar
+            // 
+            this.timerTancar.Interval = 1000;
+            this.timerTancar.Tick += new System.EventHandler(this.timerTancar_Tick);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(71, 6);
+            // 
+            // bStartStop
+            // 
+            this.bStartStop.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bStartStop.Image = global::Examen.Professor.Properties.Resources.Start_32x32;
+            this.bStartStop.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bStartStop.Name = "bStartStop";
+            this.bStartStop.Size = new System.Drawing.Size(71, 36);
+            this.bStartStop.Tag = "False";
+            this.bStartStop.Text = "Iniciar sessió";
+            this.bStartStop.Click += new System.EventHandler(this.bStartStop_Click);
+            // 
             // bMostrarLlista
             // 
             this.bMostrarLlista.Checked = true;
@@ -288,11 +321,6 @@
             this.bNetejarLlista.ToolTipText = "Netejar llista";
             this.bNetejarLlista.Click += new System.EventHandler(this.bNetejarLlista_Click);
             // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(71, 6);
-            // 
             // bAplicacions
             // 
             this.bAplicacions.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -314,12 +342,6 @@
             this.bSortir.Text = "Tancar l\'aplicació";
             this.bSortir.Click += new System.EventHandler(this.bSortir_Click);
             // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(71, 6);
-            // 
             // bCopiarCodi
             // 
             this.bCopiarCodi.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -331,15 +353,6 @@
             this.bCopiarCodi.Text = "Copiar codi";
             this.bCopiarCodi.ToolTipText = "Copiar codi";
             this.bCopiarCodi.Click += new System.EventHandler(this.bCopiarCodi_Click);
-            // 
-            // timerCaducades
-            // 
-            this.timerCaducades.Tick += new System.EventHandler(this.timerCaducades_Tick);
-            // 
-            // timerTancar
-            // 
-            this.timerTancar.Interval = 1000;
-            this.timerTancar.Tick += new System.EventHandler(this.timerTancar_Tick);
             // 
             // FrmPrincipal
             // 
@@ -375,7 +388,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(180)))), ((int)(((byte)(237)))));
             this.Name = "FrmPrincipal";
-            this.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Padding = new System.Windows.Forms.Padding(5);
             this.ShowIcon = false;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Principal_FormClosing);
             this.Load += new System.EventHandler(this.Principal_Load);
@@ -411,7 +424,6 @@
         private System.Windows.Forms.Panel panelTaula;
         private System.Windows.Forms.ToolStripButton bMostrarLlista;
         private System.Windows.Forms.ToolStripButton bNetejarLlista;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton bCopiarCodi;
         private System.Windows.Forms.Timer timerCaducades;
         private System.Windows.Forms.ToolStripButton bAplicacions;
@@ -423,6 +435,8 @@
         private System.Windows.Forms.ToolStripButton bSortir;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.Timer timerTancar;
+        private System.Windows.Forms.ToolStripButton bStartStop;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
     }
 }
 

@@ -17,8 +17,6 @@ namespace Examen.Suport.Tcp
             try
             {
                 using var client = new TcpClient();
-                client.ReceiveTimeout = 5 * 1000;
-                client.SendTimeout = 5 * 1000;
                 client.NoDelay = true; // Disable Nagle's algorithm for low latency
                 client.Client.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
                 client.Connect(adreçaPort.Adreça, adreçaPort.Port);

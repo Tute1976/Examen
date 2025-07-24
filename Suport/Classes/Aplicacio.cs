@@ -44,11 +44,12 @@ namespace Examen.Suport.Classes
         {
         }
 
-        public Aplicacio(string nom, string executable, bool calAturar)
+        public Aplicacio(string nom, string executable, bool calAturar, bool ignorar)
         {
             Nom = nom;
             Executable = executable;
             CalAturar = calAturar;
+            Ignorar = ignorar;
         }
 
         public override string ToString()

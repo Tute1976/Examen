@@ -166,6 +166,9 @@ namespace Examen.Alumne.Formularis
         private void BInfo_Click(object sender, EventArgs e)
         {
             var aplicacions = Aplicacions.Where(a => !a.Ignorar).Select(a => a.ToString()).ToList();
+            if (aplicacions.Count == 0)
+                aplicacions.Add(@"No hi ha aplicacions bloquejades");
+
             var nl = Environment.NewLine;
             var txt = $"Aplicacions bloquedades:{nl}{nl}{string.Join($"{nl}", aplicacions.Select(a => $"    {a}    "))}";
 

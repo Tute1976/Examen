@@ -15,6 +15,7 @@ namespace Examen.Professor.Formularis
     public partial class FrmPrincipal : MetroForm
     {
         private ContenidorAplicacions ContenidorAplicacions { get; set; } = new ();
+
         private bool _fi;
 
         private List<ListViewItem> Items { get; set; } = [];
@@ -221,12 +222,18 @@ namespace Examen.Professor.Formularis
             {
                 CercaAccions(estacioAlumne, out var pitar, out var bloquejar, out var aturar);
 
+                var aplicacions = ContenidorAplicacions.Aplicacions;
+                if (bStartStop.Tag is string s &&
+                    bool.TryParse(s, out var start) &&
+                    !start)
+                    aplicacions = [new Aplicacio("Cap", "", false, true)];
+
                 var ret = tipusMissatge switch
                 {
                     TipusMissatge.Inici or
                         TipusMissatge.Temps or
                         TipusMissatge.TempsAmbDeteccio =>
-                        $@"{ContenidorAplicacions.Aplicacions.Serialitzar()}^{pitar}^{bloquejar}^{aturar}^{_fi}",
+                        $@"{aplicacions.Serialitzar()}^{pitar}^{bloquejar}^{aturar}^{_fi}",
                     TipusMissatge.Prova or
                         TipusMissatge.Deteccio or
                         TipusMissatge.Fi or
@@ -487,12 +494,6 @@ namespace Examen.Professor.Formularis
                 Enabled = false;
                 timerTancar.Start();
 
-                var infoEstacions = taula.Controls
-                    .OfType<InfoEstacio>()
-                    .Where(x => x.Tancar).ToArray();
-                foreach (var infoEstacio in infoEstacions)
-                    taula.Controls.Remove(infoEstacio);
-
                 Helper.ShowToast("Desconnectant alumnes i tancant ...", 15);
             }
         }
@@ -501,12 +502,38 @@ namespace Examen.Professor.Formularis
         {
             try
             {
+                var infoEstacions = taula.Controls
+                    .OfType<InfoEstacio>()
+                    .Where(x => x.Tancar).ToArray();
+                foreach (var infoEstacio in infoEstacions)
+                    taula.Controls.Remove(infoEstacio);
+
                 if (taula.Controls.Count == 0)
                     Application.Exit();
             }
             catch
             {
                 // ignore
+            }
+        }
+
+        private void bStartStop_Click(object sender, EventArgs e)
+        {
+            if (bStartStop.Tag is string s &&
+                bool.TryParse(s, out var start) &&
+                start)
+            {
+                bStartStop.Image = Properties.Resources.Start_32x32;
+                bStartStop.Text = @"Iniciar sessió";
+                bStartStop.ToolTipText = bStartStop.Text;
+                bStartStop.Tag = false.ToString();
+            }
+            else
+            {
+                bStartStop.Image = Properties.Resources.Stop_32x32;
+                bStartStop.Text = @"Finalitzar sessió";
+                bStartStop.ToolTipText = bStartStop.Text;
+                bStartStop.Tag = true.ToString();
             }
         }
     }
