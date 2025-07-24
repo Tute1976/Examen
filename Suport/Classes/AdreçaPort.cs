@@ -1,4 +1,5 @@
-﻿using Examen.Suport.Funcions;
+﻿using System;
+using Examen.Suport.Funcions;
 using Examen.Suport.Tcp;
 using System.Net;
 
@@ -41,11 +42,11 @@ namespace Examen.Suport.Classes
             return new IPEndPoint(Adreça, Port);
         }
 
-        public bool Provar(EstacioAlumne estacioAlumne)
+        public bool Provar(EstacioAlumne estacioAlumne, Action fi)
         {
             try
             {
-                return !string.IsNullOrEmpty(ClientTcp.EnviarEstat(this, estacioAlumne, TipusMissatge.Prova, out _, out _, out _));
+                return !string.IsNullOrEmpty(ClientTcp.EnviarEstat(this, estacioAlumne, TipusMissatge.Prova, Helper.Pitar, Helper.Bloquejar, Helper.Aturar, fi));
             }
             catch
             {

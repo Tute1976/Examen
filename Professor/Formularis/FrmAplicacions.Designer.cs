@@ -33,8 +33,13 @@
             this.propietats = new System.Windows.Forms.PropertyGrid();
             this.menu = new System.Windows.Forms.ToolStrip();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bDesar = new System.Windows.Forms.ToolStripButton();
             this.bCancelar = new System.Windows.Forms.ToolStripButton();
+            this.bImportar = new System.Windows.Forms.ToolStripButton();
+            this.bExportar = new System.Windows.Forms.ToolStripButton();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,7 +49,7 @@
             this.propietats.Location = new System.Drawing.Point(5, 5);
             this.propietats.Margin = new System.Windows.Forms.Padding(0);
             this.propietats.Name = "propietats";
-            this.propietats.Size = new System.Drawing.Size(340, 320);
+            this.propietats.Size = new System.Drawing.Size(337, 320);
             this.propietats.TabIndex = 0;
             // 
             // menu
@@ -56,11 +61,14 @@
             this.menu.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bDesar,
-            this.bCancelar});
-            this.menu.Location = new System.Drawing.Point(355, 5);
+            this.bCancelar,
+            this.toolStripSeparator1,
+            this.bImportar,
+            this.bExportar});
+            this.menu.Location = new System.Drawing.Point(352, 5);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(0);
-            this.menu.Size = new System.Drawing.Size(28, 320);
+            this.menu.Size = new System.Drawing.Size(31, 320);
             this.menu.TabIndex = 1;
             this.menu.Text = "toolStrip1";
             // 
@@ -68,11 +76,16 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(345, 5);
+            this.panel1.Location = new System.Drawing.Point(342, 5);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(10, 320);
             this.panel1.TabIndex = 2;
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(30, 6);
             // 
             // bDesar
             // 
@@ -80,7 +93,7 @@
             this.bDesar.Image = global::Examen.Professor.Properties.Resources.Validation_32x32;
             this.bDesar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bDesar.Name = "bDesar";
-            this.bDesar.Size = new System.Drawing.Size(27, 28);
+            this.bDesar.Size = new System.Drawing.Size(30, 28);
             this.bDesar.Text = "Desar";
             this.bDesar.Click += new System.EventHandler(this.bDesar_Click);
             // 
@@ -90,9 +103,43 @@
             this.bCancelar.Image = global::Examen.Professor.Properties.Resources.Cancel_32x32;
             this.bCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bCancelar.Name = "bCancelar";
-            this.bCancelar.Size = new System.Drawing.Size(27, 28);
+            this.bCancelar.Size = new System.Drawing.Size(30, 28);
             this.bCancelar.Text = "Cancelar";
             this.bCancelar.Click += new System.EventHandler(this.bCancelar_Click);
+            // 
+            // bImportar
+            // 
+            this.bImportar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bImportar.Image = global::Examen.Professor.Properties.Resources.Importar_32x32;
+            this.bImportar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bImportar.Name = "bImportar";
+            this.bImportar.Size = new System.Drawing.Size(30, 28);
+            this.bImportar.Text = "Importar";
+            this.bImportar.Click += new System.EventHandler(this.bImportar_Click);
+            // 
+            // bExportar
+            // 
+            this.bExportar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bExportar.Image = global::Examen.Professor.Properties.Resources.Exportar_32x32;
+            this.bExportar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bExportar.Name = "bExportar";
+            this.bExportar.Size = new System.Drawing.Size(30, 28);
+            this.bExportar.Text = "Exportar";
+            this.bExportar.Click += new System.EventHandler(this.bExportar_Click);
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.DefaultExt = "*.json";
+            this.openFileDialog.FileName = "Aplicacions.json";
+            this.openFileDialog.Filter = "jSon|*.json|Tots els fitxers|*.*";
+            this.openFileDialog.Title = "Importació";
+            // 
+            // saveFileDialog
+            // 
+            this.saveFileDialog.DefaultExt = "*.json";
+            this.saveFileDialog.FileName = "Aplicacions.json";
+            this.saveFileDialog.Filter = "jSon|*.json|Tots els fitxers|*.*";
+            this.saveFileDialog.Title = "Exportació";
             // 
             // FrmAplicacions
             // 
@@ -136,5 +183,10 @@
         private System.Windows.Forms.ToolStripButton bCancelar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PropertyGrid propietats;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton bImportar;
+        private System.Windows.Forms.ToolStripButton bExportar;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }

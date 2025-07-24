@@ -17,3 +17,4 @@ D:\Privat\Programacio\Git\Examen\Alumne\bin\Debug\Syncfusion.Licensing.dll
 D:\Privat\Programacio\Git\Examen\Alumne\bin\Debug\Syncfusion.Shared.Base.dll
 D:\Privat\Programacio\Git\Examen\Alumne\bin\Debug\Syncfusion.Shared.Base.xml
 D:\Privat\Programacio\Git\Examen\Alumne\obj\Debug\Examen.Alumne.Formularis.FrmPrincipal.resources
+D:\Privat\Programacio\Git\Examen\Alumne\obj\Debug\Alumne.exe.config

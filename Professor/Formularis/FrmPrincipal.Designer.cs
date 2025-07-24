@@ -50,14 +50,15 @@
             this.menu = new System.Windows.Forms.ToolStrip();
             this.cbColumnes = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.timerCaducades = new System.Windows.Forms.Timer(this.components);
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.bMostrarLlista = new System.Windows.Forms.ToolStripButton();
             this.bNetejarLlista = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bAplicacions = new System.Windows.Forms.ToolStripButton();
             this.bSortir = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.bCopiarCodi = new System.Windows.Forms.ToolStripButton();
+            this.timerCaducades = new System.Windows.Forms.Timer(this.components);
+            this.timerTancar = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.split)).BeginInit();
             this.split.Panel1.SuspendLayout();
             this.split.Panel2.SuspendLayout();
@@ -84,8 +85,8 @@
             // 
             this.split.Panel2.Controls.Add(this.panelHistoric);
             this.split.Panel2MinSize = 200;
-            this.split.Size = new System.Drawing.Size(894, 482);
-            this.split.SplitterDistance = 272;
+            this.split.Size = new System.Drawing.Size(892, 476);
+            this.split.SplitterDistance = 266;
             this.split.SplitterWidth = 10;
             this.split.TabIndex = 0;
             // 
@@ -97,7 +98,7 @@
             this.panelTaula.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelTaula.Location = new System.Drawing.Point(0, 0);
             this.panelTaula.Name = "panelTaula";
-            this.panelTaula.Size = new System.Drawing.Size(894, 272);
+            this.panelTaula.Size = new System.Drawing.Size(892, 266);
             this.panelTaula.TabIndex = 1;
             // 
             // taula
@@ -113,7 +114,7 @@
             this.taula.RowCount = 2;
             this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.taula.Size = new System.Drawing.Size(892, 0);
+            this.taula.Size = new System.Drawing.Size(890, 0);
             this.taula.TabIndex = 0;
             // 
             // panelHistoric
@@ -124,7 +125,7 @@
             this.panelHistoric.Location = new System.Drawing.Point(0, 0);
             this.panelHistoric.Margin = new System.Windows.Forms.Padding(0);
             this.panelHistoric.Name = "panelHistoric";
-            this.panelHistoric.Size = new System.Drawing.Size(894, 200);
+            this.panelHistoric.Size = new System.Drawing.Size(892, 200);
             this.panelHistoric.TabIndex = 1;
             // 
             // llistaHistoric
@@ -140,7 +141,7 @@
             this.llistaHistoric.Location = new System.Drawing.Point(0, 31);
             this.llistaHistoric.Margin = new System.Windows.Forms.Padding(0);
             this.llistaHistoric.Name = "llistaHistoric";
-            this.llistaHistoric.Size = new System.Drawing.Size(894, 169);
+            this.llistaHistoric.Size = new System.Drawing.Size(892, 169);
             this.llistaHistoric.SmallImageList = this.imatgesLlista;
             this.llistaHistoric.TabIndex = 0;
             this.llistaHistoric.UseCompatibleStateImageBehavior = false;
@@ -183,13 +184,13 @@
             this.panelComboBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelComboBox.Location = new System.Drawing.Point(0, 0);
             this.panelComboBox.Name = "panelComboBox";
-            this.panelComboBox.Size = new System.Drawing.Size(894, 31);
+            this.panelComboBox.Size = new System.Drawing.Size(892, 31);
             this.panelComboBox.TabIndex = 2;
             // 
             // lFiltreHistoric
             // 
             this.lFiltreHistoric.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lFiltreHistoric.Location = new System.Drawing.Point(571, 0);
+            this.lFiltreHistoric.Location = new System.Drawing.Point(569, 0);
             this.lFiltreHistoric.Name = "lFiltreHistoric";
             this.lFiltreHistoric.Padding = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.lFiltreHistoric.Size = new System.Drawing.Size(123, 31);
@@ -204,7 +205,7 @@
             this.cbHistoric.FormattingEnabled = true;
             this.cbHistoric.Items.AddRange(new object[] {
             "Totes les estacions"});
-            this.cbHistoric.Location = new System.Drawing.Point(694, 0);
+            this.cbHistoric.Location = new System.Drawing.Point(692, 0);
             this.cbHistoric.Margin = new System.Windows.Forms.Padding(0);
             this.cbHistoric.Name = "cbHistoric";
             this.cbHistoric.Size = new System.Drawing.Size(200, 21);
@@ -236,10 +237,10 @@
             this.bSortir,
             this.toolStripSeparator3,
             this.bCopiarCodi});
-            this.menu.Location = new System.Drawing.Point(899, 5);
+            this.menu.Location = new System.Drawing.Point(897, 5);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(5, 5, 0, 5);
-            this.menu.Size = new System.Drawing.Size(82, 482);
+            this.menu.Size = new System.Drawing.Size(82, 476);
             this.menu.TabIndex = 0;
             // 
             // cbColumnes
@@ -262,21 +263,6 @@
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(71, 6);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(71, 6);
-            // 
-            // timerCaducades
-            // 
-            this.timerCaducades.Tick += new System.EventHandler(this.timerCaducades_Tick);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(71, 6);
             // 
             // bMostrarLlista
             // 
@@ -302,6 +288,11 @@
             this.bNetejarLlista.ToolTipText = "Netejar llista";
             this.bNetejarLlista.Click += new System.EventHandler(this.bNetejarLlista_Click);
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(71, 6);
+            // 
             // bAplicacions
             // 
             this.bAplicacions.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -323,6 +314,12 @@
             this.bSortir.Text = "Tancar l\'aplicació";
             this.bSortir.Click += new System.EventHandler(this.bSortir_Click);
             // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(71, 6);
+            // 
             // bCopiarCodi
             // 
             this.bCopiarCodi.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -335,6 +332,15 @@
             this.bCopiarCodi.ToolTipText = "Copiar codi";
             this.bCopiarCodi.Click += new System.EventHandler(this.bCopiarCodi_Click);
             // 
+            // timerCaducades
+            // 
+            this.timerCaducades.Tick += new System.EventHandler(this.timerCaducades_Tick);
+            // 
+            // timerTancar
+            // 
+            this.timerTancar.Interval = 1000;
+            this.timerTancar.Tick += new System.EventHandler(this.timerTancar_Tick);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,8 +348,8 @@
             this.BorderColor = System.Drawing.Color.Gray;
             this.CaptionBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(180)))), ((int)(((byte)(237)))));
             this.CaptionBarHeight = 96;
-            this.CaptionButtonColor = System.Drawing.Color.Gray;
-            this.CaptionButtonHoverColor = System.Drawing.Color.Gray;
+            this.CaptionButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            this.CaptionButtonHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             captionImage1.BackColor = System.Drawing.Color.Transparent;
             captionImage1.Image = global::Examen.Professor.Properties.Resources.Examen2;
             captionImage1.Location = new System.Drawing.Point(18, 12);
@@ -361,7 +367,7 @@
             captionLabel2.Text = "XXXXX";
             this.CaptionLabels.Add(captionLabel1);
             this.CaptionLabels.Add(captionLabel2);
-            this.ClientSize = new System.Drawing.Size(986, 492);
+            this.ClientSize = new System.Drawing.Size(984, 486);
             this.Controls.Add(this.split);
             this.Controls.Add(this.menu);
             this.DropShadow = true;
@@ -369,7 +375,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(180)))), ((int)(((byte)(237)))));
             this.Name = "FrmPrincipal";
-            this.Padding = new System.Windows.Forms.Padding(5);
+            this.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.ShowIcon = false;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Principal_FormClosing);
             this.Load += new System.EventHandler(this.Principal_Load);
@@ -416,6 +422,7 @@
         private System.Windows.Forms.Label lFiltreHistoric;
         private System.Windows.Forms.ToolStripButton bSortir;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.Timer timerTancar;
     }
 }
 

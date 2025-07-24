@@ -15,6 +15,7 @@ namespace Examen.Professor.Formularis
     public partial class FrmPrincipal : MetroForm
     {
         private ContenidorAplicacions ContenidorAplicacions { get; set; } = new ();
+        private bool _fi;
 
         private List<ListViewItem> Items { get; set; } = [];
 
@@ -58,9 +59,6 @@ namespace Examen.Professor.Formularis
 
         private void Principal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if ("Vols finalitzar el programa?".Mostrar(MessageBoxIcon.Question, MessageBoxButtons.YesNo) == DialogResult.No)
-                e.Cancel = true;
-
             ServidorTcp.Aturar();
         }
 
@@ -180,6 +178,21 @@ namespace Examen.Professor.Formularis
                             }
                             break;
 
+                        case TipusMissatge.FiServidor:
+                            estat = @"Desconnexió servidor";
+
+                            AfegirItem(estacioAlumne, 2, Color.Blue, estat);
+
+                            infoEstacio = taula.Controls
+                                .OfType<InfoEstacio>()
+                                .FirstOrDefault(x => x.Tag.Equals(estacioAlumne.Id));
+                            if (infoEstacio != null)
+                            {
+                                taula.Controls.Remove(infoEstacio);
+                                DefineixColumnes(int.Parse(cbColumnes.Text));
+                            }
+                            break;
+
                         case TipusMissatge.TempsAmbDeteccio:
                         case TipusMissatge.Prova:
                             infoEstacio = taula.Controls
@@ -213,11 +226,12 @@ namespace Examen.Professor.Formularis
                     TipusMissatge.Inici or
                         TipusMissatge.Temps or
                         TipusMissatge.TempsAmbDeteccio =>
-                        $@"{ContenidorAplicacions.Aplicacions.Serialitzar()}^{pitar}^{bloquejar}^{aturar}",
+                        $@"{ContenidorAplicacions.Aplicacions.Serialitzar()}^{pitar}^{bloquejar}^{aturar}^{_fi}",
                     TipusMissatge.Prova or
                         TipusMissatge.Deteccio or
-                        TipusMissatge.Fi =>
-                        $@"Ok^{pitar}^{bloquejar}^{aturar}",
+                        TipusMissatge.Fi or
+                        TipusMissatge.FiServidor =>
+                        $@"Ok^{pitar}^{bloquejar}^{aturar}^{_fi}",
                     _ => throw new ArgumentOutOfRangeException(nameof(tipusMissatge), tipusMissatge, null)
                 };
 
@@ -294,8 +308,9 @@ namespace Examen.Professor.Formularis
                 linies.Add(txt);
             }
 
-            var txts = string.Join("\n", linies);
-            txt = $"{txts}\n\n\nVols copiar el text al portapapers?";
+            var nl = Environment.NewLine;
+            var txts = string.Join($"{nl}", linies);
+            txt = $"{txts}{nl}{nl}{nl}Vols copiar el text al portapapers?";
             if (txt.Mostrar(MessageBoxIcon.Question, MessageBoxButtons.YesNo) != DialogResult.Yes)
                 return;
 
@@ -383,10 +398,10 @@ namespace Examen.Professor.Formularis
                     .OfType<InfoEstacio>()
                     .Where(x => x.Caducada);
 
-                var estat = @"Estació desconectada";
-
                 foreach (var infoEstacio in infoEstacions)
                 {
+                    const string estat = @"Estació desconectada";
+
                     AfegirItem(infoEstacio.EstacioAlumne, 3, Color.Coral, estat);
 
                     infoEstacio.Imatge = 2;
@@ -466,7 +481,33 @@ namespace Examen.Professor.Formularis
 
         private void bSortir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if ("Vols finalitzar el programa?".Mostrar(MessageBoxIcon.Question, MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                _fi = true;
+                Enabled = false;
+                timerTancar.Start();
+
+                var infoEstacions = taula.Controls
+                    .OfType<InfoEstacio>()
+                    .Where(x => x.Tancar).ToArray();
+                foreach (var infoEstacio in infoEstacions)
+                    taula.Controls.Remove(infoEstacio);
+
+                Helper.ShowToast("Desconnectant alumnes i tancant ...", 15);
+            }
+        }
+
+        private void timerTancar_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                if (taula.Controls.Count == 0)
+                    Application.Exit();
+            }
+            catch
+            {
+                // ignore
+            }
         }
     }
 }

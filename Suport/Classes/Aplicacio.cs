@@ -3,7 +3,6 @@ using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
-using Examen.Suport.Formularis;
 
 namespace Examen.Suport.Classes
 {
@@ -31,6 +30,13 @@ namespace Examen.Suport.Classes
          Description("Indica si cal aturar l'aplicació en detectar-la")]
         public bool CalAturar { get; set; }
 
+        [Category("Acció"),
+         Browsable(true),
+         ReadOnly(false),
+         DisplayName("Ignorar"),
+         Description("Ignorar l'aplicació en detectar-la")]
+        public bool Ignorar { get; set; }
+
         [Browsable(false)]
         private string ExecutableCurt => string.Join(".", Executable.Split('.').Reverse().Skip(1).Reverse());
 
@@ -54,6 +60,9 @@ namespace Examen.Suport.Classes
         {
             try
             {
+                if (Ignorar)
+                    return false;
+
                 var processos = Process.GetProcessesByName(ExecutableCurt);
                 return processos.Length > 0;
             }
@@ -65,7 +74,7 @@ namespace Examen.Suport.Classes
             return false;
         }
 
-        public bool Aturar()
+        public bool Aturar(BackgroundWorker backgroundWorker)
         {
             try
             {
@@ -102,14 +111,15 @@ namespace Examen.Suport.Classes
                         n = processos.Length;
                     }
 
-                    new ToastForm(n > 0
+                    var msg = n > 0
                         ? $"L'aplicació '{Nom}', no s'ha pogut aturar correctament."
-                        : $"L'aplicación '{Nom}', ha estat aturada correctament.").Show();
+                        : $"L'aplicación '{Nom}', ha estat aturada correctament.";
+                    backgroundWorker.ReportProgress(15, msg);
 
                     return n == 0;
                 }
 
-                new ToastForm($@"L'aplicació '{Nom}', no s'ha d'aturar segons directrius.").Show();
+                backgroundWorker.ReportProgress(15, $@"L'aplicació '{Nom}', no s'ha d'aturar segons directrius.");
 
                 return false;
             }

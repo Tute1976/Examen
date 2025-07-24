@@ -35,6 +35,9 @@
   <PropertyGroup>
     <ApplicationIcon>Examen.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -102,6 +105,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Examen.ico" />
+    <None Include="app.manifest" />
+    <None Include="Resources\Informacio_32x32.png" />
+    <None Include="Resources\Cancel_32x32.png" />
+    <None Include="Resources\Bloquejar_32x32.png" />
+    <None Include="Resources\Aturar_32x32.png" />
+    <None Include="Resources\Altaveu_32x32.png" />
     <None Include="Resources\Close.png" />
     <None Include="Resources\Message-Information.png" />
     <None Include="Resources\Shut down .png" />
@@ -120,9 +129,13 @@
     <EmbeddedResource Include="Controls\InfoEstacio.resx">
       <DependentUpon>InfoEstacio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularis\ToastForm.resx">
+      <DependentUpon>ToastForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

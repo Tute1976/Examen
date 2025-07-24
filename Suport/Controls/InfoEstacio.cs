@@ -42,6 +42,8 @@ namespace Examen.Suport.Controls
             }
         }
 
+        public bool Tancar => bTancar.Visible;
+
         public string Estat
         {
             get => txtEstat.Text;
@@ -94,7 +96,8 @@ namespace Examen.Suport.Controls
 
         private void bInfo_Click(object sender, EventArgs e)
         {
-            $"Identificador de la sessió:\n\n    {_id}    ".Mostrar();
+            var nl = Environment.NewLine;
+            $"Identificador de la sessió:{nl}{nl}    {_id}    ".Mostrar();
         }
 
         private void bTancar_Click(object sender, EventArgs e)
@@ -104,14 +107,7 @@ namespace Examen.Suport.Controls
 
         private void bPitar_Click(object sender, EventArgs e)
         {
-            if (bPitar.Checked)
-                bPitar.Checked = false;
-            else
-            {
-                bPitar.Checked =
-                    $"Vols fer sonar un xiulet en l'estació {txtEstacio.Text} ?".Mostrar(MessageBoxIcon.Question,
-                        MessageBoxButtons.YesNo) == DialogResult.Yes;
-            }
+            bPitar.Checked = !bPitar.Checked;
         }
 
         private void bBloquejar_Click(object sender, EventArgs e)

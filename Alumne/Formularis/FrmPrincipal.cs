@@ -4,19 +4,18 @@ using Examen.Suport.Tcp;
 using Syncfusion.Windows.Forms;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
-using System.Threading;
 using System.Windows.Forms;
+using Examen.Alumne.Funcions;
 
 namespace Examen.Alumne.Formularis
 {
     public partial class FrmPrincipal : MetroForm
     {
-        private static EstacioAlumne EstacioAlumne { get; set; }
-        private AdreçaPort AdreçaPortProfessor { get; set; } = new AdreçaPort();
-        private List<Aplicacio> Aplicacions { get; set; } = new List<Aplicacio>();
+        public EstacioAlumne EstacioAlumne { get; set; }
+        public AdreçaPort AdreçaPortProfessor { get; set; } = new AdreçaPort();
+        public List<Aplicacio> Aplicacions { get; set; } = new List<Aplicacio>();
 
         public FrmPrincipal()
         {
@@ -33,7 +32,7 @@ namespace Examen.Alumne.Formularis
 
 #if DEBUG
             txtNom.Text = @"Tuté";
-            txtCodi.Text = @"32:22B3";
+            txtCodi.Text = @"A:22B3";
 #endif
         }
 
@@ -54,7 +53,7 @@ namespace Examen.Alumne.Formularis
 
                 Hide();
 
-                ClientTcp.EnviarEstat(AdreçaPortProfessor, EstacioAlumne, TipusMissatge.Fi, out _, out _, out _);
+                ClientTcp.EnviarEstat(AdreçaPortProfessor, EstacioAlumne, TipusMissatge.Fi, Helper.Pitar, Helper.Bloquejar, Helper.Aturar, FiServidor);
             }
             catch (Exception ex)
             {
@@ -73,7 +72,7 @@ namespace Examen.Alumne.Formularis
                 if (bIniciar.Text == @"Connectar")
                 {
                     if (txtCodi.Text.ObtenirAdreça(out var adreçaPort) &&
-                        adreçaPort.Provar(EstacioAlumne))
+                        adreçaPort.Provar(EstacioAlumne, FiServidor))
                     {
                         AdreçaPortProfessor = adreçaPort;
 
@@ -111,7 +110,7 @@ namespace Examen.Alumne.Formularis
                     bTancar.Left -= 75;
                     bInfo.Show();
 
-                    var json = ClientTcp.EnviarEstat(AdreçaPortProfessor, EstacioAlumne, TipusMissatge.Inici, out _, out _, out _);
+                    var json = ClientTcp.EnviarEstat(AdreçaPortProfessor, EstacioAlumne, TipusMissatge.Inici, Helper.Pitar, Helper.Bloquejar, Helper.Aturar, FiServidor);
                     Aplicacions = json.Deserialitzar<List<Aplicacio>>();
 
                     timerTemps.Interval = Properties.Settings.Default.IntevarvalTemps * 1000;
@@ -135,59 +134,12 @@ namespace Examen.Alumne.Formularis
 
         private void TimerTemps_Tick(object sender, EventArgs e)
         {
-            try
-            {
-                var deteccio = false;
-                foreach (var aplicacio in Aplicacions.Where(aplicacio => aplicacio.EnExecucio()))
-                {
-                    var aturada = aplicacio.Aturar();
-                    ClientTcp.EnviarEstat(AdreçaPortProfessor, EstacioAlumne, TipusMissatge.Deteccio, out _, out _,
-                        out _, $"{aplicacio.Nom}:{aturada.SiNo()}");
+            _ = new Worker(this, Completat);
+        }
 
-                    deteccio = true;
-                }
-
-                var json = ClientTcp.EnviarEstat(AdreçaPortProfessor, EstacioAlumne,
-                    deteccio ? TipusMissatge.TempsAmbDeteccio : TipusMissatge.Temps, out var pitar,
-                    out var bloquejar, out var aturar);
-                Aplicacions = json.Deserialitzar<List<Aplicacio>>();
-
-                if (pitar)
-                {
-                    for (var i = 0; i < 5; i++)
-                    {
-                        Console.Beep(1000, 500);
-                        Thread.Sleep(50);
-                    }
-                }
-
-                if (bloquejar)
-                {
-                    Helper.LockWorkStation();
-                }
-
-                if (aturar)
-                {
-                    Console.Beep(1000, 1500);
-
-                    var shutdown = Environment.ExpandEnvironmentVariables(@"%WINDIR%\system32\shutdown.exe");
-                    const string arguments = "/s /t 30 /c \"Aturant estació per petició del professor\"";
-
-                    var psi = new ProcessStartInfo(shutdown)
-                    {
-                        UseShellExecute = false,
-                        Arguments = arguments,
-                        CreateNoWindow = true
-                    };
-                    var process = new Process();
-                    process.StartInfo = psi;
-                    process.Start();
-                }
-            }
-            catch
-            {
-                // ignore
-            }
+        private void Completat(List<Aplicacio> aplicacions)
+        {
+            Aplicacions = aplicacions;
         }
 
         private void TimerImatge_Tick(object sender, EventArgs e)
@@ -213,10 +165,29 @@ namespace Examen.Alumne.Formularis
 
         private void BInfo_Click(object sender, EventArgs e)
         {
-            var aplicacions = Aplicacions.Select(aplicacio => aplicacio.ToString()).ToList();
-            var txt = $"Aplicacions bloquedades:\n\n{string.Join("\n", aplicacions.Select(a => $"    {a}    "))}";
+            var aplicacions = Aplicacions.Where(a => !a.Ignorar).Select(a => a.ToString()).ToList();
+            var nl = Environment.NewLine;
+            var txt = $"Aplicacions bloquedades:{nl}{nl}{string.Join($"{nl}", aplicacions.Select(a => $"    {a}    "))}";
 
             txt.Mostrar();
+        }
+
+        public void FiServidor()
+        {
+            try
+            {
+                Hide();
+
+                ClientTcp.EnviarEstat(AdreçaPortProfessor, EstacioAlumne, TipusMissatge.FiServidor, Helper.Pitar, Helper.Bloquejar, Helper.Aturar, FiServidor);
+            }
+            catch (Exception ex)
+            {
+                ex.Mostrar(false);
+            }
+            finally
+            {
+                Application.Exit();
+            }
         }
     }
 }

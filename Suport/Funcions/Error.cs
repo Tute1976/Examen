@@ -27,7 +27,7 @@ namespace Examen.Suport.Funcions
                 Trace.AutoFlush = true;
                 var mm = missatge.Replace(Environment.NewLine, "^").Split('^');
                 foreach (var m in mm)
-                    Trace.WriteLine($@"{DateTime.Now:G} [{icona}]: {m}");
+                    Trace.WriteLine($@"Examen {DateTime.Now:G} [{icona}]: {m}");
 
                 return !mostrarMissatge ? 
                     DialogResult.None : 

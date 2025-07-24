@@ -143,6 +143,26 @@ namespace Examen.Professor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Exportar_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Exportar_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Importar_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Importar_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Llista_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Llista_32x32", resourceCulture);

@@ -151,15 +151,15 @@
             this.panelFons.Location = new System.Drawing.Point(5, 5);
             this.panelFons.Margin = new System.Windows.Forms.Padding(0);
             this.panelFons.Name = "panelFons";
-            this.panelFons.Size = new System.Drawing.Size(500, 450);
+            this.panelFons.Size = new System.Drawing.Size(500, 455);
             this.panelFons.TabIndex = 7;
             // 
             // bInfo
             // 
-            this.bInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.bInfo.BackColor = System.Drawing.Color.White;
             this.bInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bInfo.Image = ((System.Drawing.Image)(resources.GetObject("bInfo.Image")));
+            this.bInfo.Image = global::Examen.Alumne.Properties.Resources.Informacio_32x32;
             this.bInfo.Location = new System.Drawing.Point(425, 375);
             this.bInfo.Name = "bInfo";
             this.bInfo.Size = new System.Drawing.Size(50, 50);
@@ -188,7 +188,7 @@
             // 
             // timerImatge
             // 
-            this.timerImatge.Interval = 250;
+            this.timerImatge.Interval = 200;
             this.timerImatge.Tick += new System.EventHandler(this.TimerImatge_Tick);
             // 
             // notifyIcon
@@ -201,29 +201,33 @@
             // txtId
             // 
             this.txtId.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtId.Location = new System.Drawing.Point(5, 439);
+            this.txtId.Location = new System.Drawing.Point(5, 444);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(500, 16);
             this.txtId.TabIndex = 8;
             this.txtId.Text = "id";
             this.txtId.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // Principal
+            // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(180)))), ((int)(((byte)(237)))));
             this.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(180)))), ((int)(((byte)(237)))));
             this.BorderThickness = 2;
+            this.CaptionBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(180)))), ((int)(((byte)(237)))));
+            this.CaptionButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            this.CaptionButtonHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.ClientSize = new System.Drawing.Size(510, 460);
+            this.ControlBox = false;
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.panelFons);
             this.DropShadow = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(180)))), ((int)(((byte)(237)))));
             this.Name = "FrmPrincipal";
-            this.Padding = new System.Windows.Forms.Padding(5);
+            this.Padding = new System.Windows.Forms.Padding(5, 5, 5, 0);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alumne";
             this.Load += new System.EventHandler(this.Principal_Load);

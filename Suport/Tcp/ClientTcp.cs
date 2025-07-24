@@ -2,6 +2,7 @@ using Examen.Suport.Classes;
 using Examen.Suport.Funcions;
 using System;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Net.Sockets;
 using System.Text;
@@ -11,14 +12,8 @@ namespace Examen.Suport.Tcp
 {
     public static class ClientTcp
     {
-        public static string EnviarEstat(AdreçaPort adreçaPort, EstacioAlumne estacioAlumne, TipusMissatge estat, out bool pitar, out bool bloquejar, out bool aturar, string text = null)
+        public static string EnviarEstat(AdreçaPort adreçaPort, EstacioAlumne estacioAlumne, TipusMissatge estat, Action pitar, Action bloquejar, Action aturar, Action fiServidor, string text = null)
         {
-            pitar = false;
-            bloquejar = false;
-            aturar = false;
-
-            string[] rt;
-
             try
             {
                 using var client = new TcpClient();
@@ -43,31 +38,35 @@ namespace Examen.Suport.Tcp
 
                 Trace.WriteLine($"Resposta del servidor: {respostaText}");
 
-                rt = respostaText.Split('^');
+                var rt = respostaText.Split('^');
                 if (rt.Length > 1)
                 {
-                    pitar = bool.Parse(rt[1]);
-                    bloquejar = bool.Parse(rt[2]);
-                    aturar = bool.Parse(rt[3]);
+                    if (bool.Parse(rt[1]))
+                        pitar.Invoke();
+                    if (bool.Parse(rt[2]))
+                        bloquejar.Invoke();
+                    if (bool.Parse(rt[3]))
+                        aturar.Invoke();
+                    if (bool.Parse(rt[4]))
+                        fiServidor.Invoke();
                 }
 
                 return rt.First();
             }
             catch (SocketException exSocket)
             {
-                var msg = $@"No es pot establir connexió amb el servidor\n\nError:\n{exSocket.Message}";
-                msg.Mostrar(MessageBoxIcon.Exclamation);
-
-                if (estat != TipusMissatge.Prova)
-                    Application.Exit();
+                if (estat != TipusMissatge.FiServidor)
+                    MostraError(exSocket, estat);
             }
             catch (InvalidOperationException exInvalidOperation)
             {
-                var msg = $@"No es pot establir connexió amb el servidor\n\nError:\n{exInvalidOperation.Message}";
-                msg.Mostrar(MessageBoxIcon.Exclamation);
-
-                if (estat != TipusMissatge.Prova)
-                    Application.Exit();
+                if (estat != TipusMissatge.FiServidor)
+                    MostraError(exInvalidOperation, estat);
+            }
+            catch (IOException exIo)
+            {
+                if (estat != TipusMissatge.FiServidor)
+                    MostraError(exIo, estat);
             }
             catch (Exception ex)
             {
@@ -75,6 +74,18 @@ namespace Examen.Suport.Tcp
             }
 
             return null;
+        }
+
+        private static void MostraError(Exception ex, TipusMissatge estat)
+        {
+            var nl = Environment.NewLine;
+            var msg = $@"No es pot establir connexió amb el servidor{nl}{nl}Error:{nl}{ex.Message}";
+
+            Helper.ShowToast(msg, 5);
+            msg.Mostrar(MessageBoxIcon.Exclamation);
+
+            if (estat != TipusMissatge.Prova)
+                Application.Exit();
         }
     }
 }

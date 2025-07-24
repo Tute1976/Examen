@@ -7,6 +7,7 @@ namespace Examen.Suport.Tcp
         Temps,
         TempsAmbDeteccio,
         Deteccio,
-        Fi
+        Fi,
+        FiServidor
     }
 }
