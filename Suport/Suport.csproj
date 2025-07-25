@@ -69,6 +69,8 @@
   <ItemGroup>
     <Compile Include="Classes\AdreçaPort.cs" />
     <Compile Include="Classes\Aplicacio.cs" />
+    <Compile Include="Classes\AplicacioEnUs.cs" />
+    <Compile Include="Classes\ContenidorAplicacionsEnUs.cs" />
     <Compile Include="Classes\ContenidorAplicacions.cs" />
     <Compile Include="Classes\EstacioAlumne.cs" />
     <Compile Include="Controls\InfoEstacio.cs">
@@ -76,6 +78,12 @@
     </Compile>
     <Compile Include="Controls\InfoEstacio.Designer.cs">
       <DependentUpon>InfoEstacio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularis\FrmAplicacionsEnUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularis\FrmAplicacionsEnUs.Designer.cs">
+      <DependentUpon>FrmAplicacionsEnUs.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularis\ToastForm.cs">
       <SubType>Form</SubType>
@@ -105,6 +113,25 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Examen.ico" />
+    <None Include="Resources\view-full-list-icone-6722-48.png" />
+    <None Include="Resources\Validation_32x32.png" />
+    <None Include="Resources\Stop_32x32.png" />
+    <None Include="Resources\Start_32x32.png" />
+    <None Include="Resources\Sortir_32x32.png" />
+    <None Include="Resources\PropertyGrid.png" />
+    <None Include="Resources\Netejar.png" />
+    <None Include="Resources\Neteja_32x32.png" />
+    <None Include="Resources\Llista_32x32.png" />
+    <None Include="Resources\Importar_32x32.png" />
+    <None Include="Resources\Exportar_32x32.png" />
+    <None Include="Resources\Examen21.png" />
+    <None Include="Resources\Examen2.png" />
+    <None Include="Resources\Desar.png" />
+    <None Include="Resources\Copiar_32x32.png" />
+    <None Include="Resources\Copiar.png" />
+    <None Include="Resources\Cancel_32x321.png" />
+    <None Include="Resources\Cancel_16x16.png" />
+    <None Include="Resources\Aplicacions_32x32.png" />
     <None Include="app.manifest" />
     <None Include="Resources\Informacio_32x32.png" />
     <None Include="Resources\Cancel_32x32.png" />
@@ -128,6 +155,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Controls\InfoEstacio.resx">
       <DependentUpon>InfoEstacio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularis\FrmAplicacionsEnUs.resx">
+      <DependentUpon>FrmAplicacionsEnUs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularis\ToastForm.resx">
       <DependentUpon>ToastForm.cs</DependentUpon>

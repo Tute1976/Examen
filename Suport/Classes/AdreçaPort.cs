@@ -46,7 +46,7 @@ namespace Examen.Suport.Classes
         {
             try
             {
-                return !string.IsNullOrEmpty(ClientTcp.EnviarEstat(this, estacioAlumne, TipusMissatge.Prova, Helper.Pitar, Helper.Bloquejar, Helper.Aturar, fi));
+                return !string.IsNullOrEmpty(ClientTcp.EnviarEstat(this, estacioAlumne, [], TipusMissatge.Prova, Helper.Pitar, Helper.Bloquejar, Helper.Aturar, fi));
             }
             catch
             {

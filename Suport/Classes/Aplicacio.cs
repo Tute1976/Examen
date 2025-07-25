@@ -52,6 +52,14 @@ namespace Examen.Suport.Classes
             Ignorar = ignorar;
         }
 
+        public Aplicacio(AplicacioEnUs aplicacioEnUs)
+        {
+            Nom = string.IsNullOrEmpty(aplicacioEnUs.Descripcio) ? aplicacioEnUs.Nom : aplicacioEnUs.Descripcio;
+            Executable = aplicacioEnUs.Nom;
+            CalAturar = true; // Per defecte cal aturar
+            Ignorar = false; // Per defecte no s'ignora
+        }
+
         public override string ToString()
         {
             return $"{Nom} ({Executable})";
@@ -85,28 +93,10 @@ namespace Examen.Suport.Classes
                     var n = processos.Length;
                     while (n > 0)
                     {
-                        try
-                        {
-                            var taskKill = Environment.ExpandEnvironmentVariables(@"%WINDIR%\system32\taskkill.exe");
-                            var arguments = $"/F /IM \"{Executable}\" /T";
-
-                            var psi = new ProcessStartInfo(taskKill)
-                            {
-                                UseShellExecute = false,
-                                Arguments = arguments,
-                                CreateNoWindow = true
-                            };
-                            var process = new Process();
-                            process.StartInfo = psi;
-                            process.Start();
-
-                            //                            processos.Last().Kill();
-                        }
-                        catch (Exception ex)
-                        {
-                            ex.Mostrar(false);
+                        var taskKill = Environment.ExpandEnvironmentVariables(@"%WINDIR%\system32\taskkill.exe");
+                        var arguments = $"/F /IM \"{Executable}\" /T";
+                        if (!Helper.Executar(taskKill, arguments))
                             break;
-                        }
 
                         processos = Process.GetProcessesByName(ExecutableCurt);
                         n = processos.Length;
@@ -126,7 +116,7 @@ namespace Examen.Suport.Classes
             }
             catch (Exception ex)
             {
-                ex.Mostrar(false);
+                ex.Mostrar();
             }
 
             return false;

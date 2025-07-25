@@ -50,16 +50,16 @@
             this.menu = new System.Windows.Forms.ToolStrip();
             this.cbColumnes = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.timerCaducades = new System.Windows.Forms.Timer(this.components);
-            this.timerTancar = new System.Windows.Forms.Timer(this.components);
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.bStartStop = new System.Windows.Forms.ToolStripButton();
+            this.bAplicacions = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.bMostrarLlista = new System.Windows.Forms.ToolStripButton();
             this.bNetejarLlista = new System.Windows.Forms.ToolStripButton();
-            this.bAplicacions = new System.Windows.Forms.ToolStripButton();
             this.bSortir = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.bCopiarCodi = new System.Windows.Forms.ToolStripButton();
+            this.timerCaducades = new System.Windows.Forms.Timer(this.components);
+            this.timerTancar = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.split)).BeginInit();
             this.split.Panel1.SuspendLayout();
             this.split.Panel2.SuspendLayout();
@@ -117,6 +117,8 @@
             this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.taula.Size = new System.Drawing.Size(890, 0);
             this.taula.TabIndex = 0;
+            this.taula.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.taula_Controls);
+            this.taula.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.taula_Controls);
             // 
             // panelHistoric
             // 
@@ -266,26 +268,6 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(71, 6);
             // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(71, 6);
-            // 
-            // timerCaducades
-            // 
-            this.timerCaducades.Tick += new System.EventHandler(this.timerCaducades_Tick);
-            // 
-            // timerTancar
-            // 
-            this.timerTancar.Interval = 1000;
-            this.timerTancar.Tick += new System.EventHandler(this.timerTancar_Tick);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(71, 6);
-            // 
             // bStartStop
             // 
             this.bStartStop.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -296,6 +278,21 @@
             this.bStartStop.Tag = "False";
             this.bStartStop.Text = "Iniciar sessió";
             this.bStartStop.Click += new System.EventHandler(this.bStartStop_Click);
+            // 
+            // bAplicacions
+            // 
+            this.bAplicacions.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bAplicacions.Image = global::Examen.Professor.Properties.Resources.Aplicacions_32x32;
+            this.bAplicacions.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bAplicacions.Name = "bAplicacions";
+            this.bAplicacions.Size = new System.Drawing.Size(71, 36);
+            this.bAplicacions.Text = "Aplicacions";
+            this.bAplicacions.Click += new System.EventHandler(this.bAplicacions_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(71, 6);
             // 
             // bMostrarLlista
             // 
@@ -321,16 +318,6 @@
             this.bNetejarLlista.ToolTipText = "Netejar llista";
             this.bNetejarLlista.Click += new System.EventHandler(this.bNetejarLlista_Click);
             // 
-            // bAplicacions
-            // 
-            this.bAplicacions.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bAplicacions.Image = global::Examen.Professor.Properties.Resources.Aplicacions_32x32;
-            this.bAplicacions.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bAplicacions.Name = "bAplicacions";
-            this.bAplicacions.Size = new System.Drawing.Size(71, 36);
-            this.bAplicacions.Text = "Aplicacions";
-            this.bAplicacions.Click += new System.EventHandler(this.bAplicacions_Click);
-            // 
             // bSortir
             // 
             this.bSortir.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -341,6 +328,12 @@
             this.bSortir.Size = new System.Drawing.Size(71, 36);
             this.bSortir.Text = "Tancar l\'aplicació";
             this.bSortir.Click += new System.EventHandler(this.bSortir_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(71, 6);
             // 
             // bCopiarCodi
             // 
@@ -353,6 +346,15 @@
             this.bCopiarCodi.Text = "Copiar codi";
             this.bCopiarCodi.ToolTipText = "Copiar codi";
             this.bCopiarCodi.Click += new System.EventHandler(this.bCopiarCodi_Click);
+            // 
+            // timerCaducades
+            // 
+            this.timerCaducades.Tick += new System.EventHandler(this.timerCaducades_Tick);
+            // 
+            // timerTancar
+            // 
+            this.timerTancar.Interval = 1000;
+            this.timerTancar.Tick += new System.EventHandler(this.timerTancar_Tick);
             // 
             // FrmPrincipal
             // 
@@ -371,7 +373,8 @@
             this.CaptionImages.Add(captionImage1);
             captionLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             captionLabel1.Location = new System.Drawing.Point(650, 64);
-            captionLabel1.Name = "TxtCodi";
+            captionLabel1.Name = "txtCodi";
+            captionLabel1.Size = new System.Drawing.Size(500, 24);
             captionLabel1.Text = "Codi";
             captionLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             captionLabel2.Location = new System.Drawing.Point(650, 8);

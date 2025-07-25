@@ -24,7 +24,7 @@ namespace Examen.Professor
             }
             catch (Exception ex)
             {
-                ex.Mostrar(false);
+                ex.Mostrar();
             }
         }
     }

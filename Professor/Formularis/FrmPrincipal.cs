@@ -45,7 +45,7 @@ namespace Examen.Professor.Formularis
                     File.Copy(origen, Fitxer, true);
                 }
 
-                ContenidorAplicacions.Aplicacions = ContenidorAplicacions.Aplicacions.Llegir(Fitxer);
+                ContenidorAplicacions.Aplicacions = Suport.Funcions.Text.Llegir(Fitxer);
 
                 DefineixColumnes(int.Parse(cbColumnes.Text));
 
@@ -78,7 +78,7 @@ namespace Examen.Professor.Formularis
                     ServidorTcp.Iniciar(adreçaPort, GestorEstat, Callback);
                 }
                 else
-                    @"No s'ha pogut generar el Codi".Mostrar(MessageBoxIcon.Error);
+                    @"No s'ha pogut generar el Codi".Mostrar(MessageBoxIcon.Error, MessageBoxButtons.OK, true);
             }
             catch (Exception ex)
             {
@@ -86,14 +86,19 @@ namespace Examen.Professor.Formularis
             }
         }
 
-        private void Callback(TipusMissatge tipusMissatge, EstacioAlumne estacioAlumne, string text)
+        private void Callback(TipusMissatge tipusMissatge, EstacioAlumne estacioAlumne, string text, List<AplicacioEnUs> aplicacionsEnUs)
         {
             try
             {
+                if (llistaHistoric ==  null ||
+                    llistaHistoric.IsDisposed)
+                    return;
+
                 Invocar(llistaHistoric, () =>
                 {
                     string estat;
                     InfoEstacio infoEstacio;
+
                     switch (tipusMissatge)
                     {
                         case TipusMissatge.Inici:
@@ -111,7 +116,8 @@ namespace Examen.Professor.Formularis
                                 Imatge = 1,
                                 Tag = estacioAlumne.Id,
                                 BackgroundColor = Color.PaleGreen,
-                                Dock = DockStyle.Fill
+                                Dock = DockStyle.Fill,
+                                AplicacionsEnUs = aplicacionsEnUs
                             };
                             taula.Controls.Add(infoEstacio);
 
@@ -152,7 +158,10 @@ namespace Examen.Professor.Formularis
                                 infoEstacio.Bloquejar = false;
                                 infoEstacio.Aturar = false;
                                 infoEstacio.MostrarBotons = true;
+                                if (aplicacionsEnUs.Count > 0) 
+                                    infoEstacio.AplicacionsEnUs = aplicacionsEnUs;
                             }
+
                             break;
 
                         case TipusMissatge.Temps:
@@ -176,6 +185,8 @@ namespace Examen.Professor.Formularis
                                 infoEstacio.Bloquejar = false;
                                 infoEstacio.Aturar = false;
                                 infoEstacio.MostrarBotons = true;
+                                if (aplicacionsEnUs.Count > 0)
+                                    infoEstacio.AplicacionsEnUs = aplicacionsEnUs;
                             }
                             break;
 
@@ -202,6 +213,8 @@ namespace Examen.Professor.Formularis
                             if (infoEstacio != null)
                             {
                                 infoEstacio.Data = DateTime.Now;
+                                if (aplicacionsEnUs.Count > 0)
+                                    infoEstacio.AplicacionsEnUs = aplicacionsEnUs;
                             }
                             break;
 
@@ -535,6 +548,13 @@ namespace Examen.Professor.Formularis
                 bStartStop.ToolTipText = bStartStop.Text;
                 bStartStop.Tag = true.ToString();
             }
+        }
+
+        private void taula_Controls(object sender, ControlEventArgs e)
+        {
+            CaptionLabels[0].Text = taula.Controls.Count == 0 ? 
+                "Codi" : 
+                $"Codi | {taula.Controls.Count} alumne{(taula.Controls.Count == 1 ? "" : "s")}";
         }
     }
 }

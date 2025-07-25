@@ -1,1 +1,18 @@
-﻿24/7/2025 16:34:54 [Question]: Vols finalitzar el programa?
+﻿24/7/2025 16:34:54 [Question]: Vols finalitzar el programa?25/7/2025 9:37:32 [Question]: Vols finalitzar el programa?
+25/7/2025 9:54:27 [Question]: Vols finalitzar el programa?
+25/7/2025 11:36:28 [Question]: Vols finalitzar el programa?
+25/7/2025 11:37:36 [Question]: Vols finalitzar el programa?
+25/7/2025 11:45:01 [Question]: Vols finalitzar el programa?
+25/7/2025 11:45:10 [Hand]: S'ha produït un error: Not listening. You must call the Start() method before calling this method.
+25/7/2025 11:47:59 [Question]: Vols finalitzar el programa?
+25/7/2025 11:52:10 [Question]: Vols importar la llista d'aplicacions (Sí) o subtituïr-la (No)?
+25/7/2025 11:53:51 [Question]: Vols finalitzar el programa?
+25/7/2025 11:54:35 [Question]: Vols importar la llista d'aplicacions (Sí) o subtituïr-la (No)?
+25/7/2025 11:55:14 [Question]: Vols importar la llista d'aplicacions (Sí) o subtituïr-la (No)?
+25/7/2025 11:55:25 [Question]: Vols finalitzar el programa?
+25/7/2025 11:55:54 [Question]: Vols importar la llista d'aplicacions (Sí) o subtituïr-la (No)?
+25/7/2025 11:56:08 [Question]: Vols finalitzar el programa?
+25/7/2025 11:59:48 [Question]: Vols finalitzar el programa?
+25/7/2025 11:59:55 [Hand]: S'ha produït un error: Not listening. You must call the Start() method before calling this method.
+25/7/2025 11:59:55 [Hand]: Detalls:    at System.Net.Sockets.TcpListener.BeginAcceptTcpClient(AsyncCallback callback, Object state)
+25/7/2025 11:59:55 [Hand]:    at Examen.Suport.Tcp.ServidorTcp.AcceptCallback(IAsyncResult ar) in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ServidorTcp.cs:line 81

@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using Examen.Suport.Classes;
+using Examen.Suport.Formularis;
 using Examen.Suport.Funcions;
 
 namespace Examen.Suport.Controls
@@ -38,6 +40,7 @@ namespace Examen.Suport.Controls
                 bPitar.Visible = value;
                 bBloquejar.Visible = value;
                 bAturar.Visible = value;
+                bAplicacionsEnUs.Visible = value;
                 bTancar.Visible = !value;
             }
         }
@@ -75,6 +78,8 @@ namespace Examen.Suport.Controls
             set => taula.BackColor = value;
         }
 
+        public List<AplicacioEnUs> AplicacionsEnUs { get; set; }
+
         public InfoEstacio(EstacioAlumne estacioAlumne, int interval)
         {
             InitializeComponent();
@@ -97,7 +102,7 @@ namespace Examen.Suport.Controls
         private void bInfo_Click(object sender, EventArgs e)
         {
             var nl = Environment.NewLine;
-            $"Identificador de la sessió:{nl}{nl}    {_id}    ".Mostrar();
+            $"Identificador de la sessió:{nl}{nl}    {_id}    ".Mostrar(MessageBoxIcon.Information);
         }
 
         private void bTancar_Click(object sender, EventArgs e)
@@ -132,6 +137,16 @@ namespace Examen.Suport.Controls
                     $"Vols aturar l'estació {txtEstacio.Text} ?".Mostrar(MessageBoxIcon.Question,
                         MessageBoxButtons.YesNo) == DialogResult.Yes;
             }
+        }
+
+        private void bAplicacionsEnUs_Click(object sender, EventArgs e)
+        {
+            var contenidorAplicacionsEnUs = new ContenidorAplicacionsEnUs
+            {
+                AplicacionsEnUs = AplicacionsEnUs.ToArray()
+            };
+            var frmAplicacionsEnUs = new FrmAplicacionsEnUs(txtEstacio.Text, contenidorAplicacionsEnUs);
+            frmAplicacionsEnUs.Show();
         }
     }
 }

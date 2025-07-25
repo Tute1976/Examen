@@ -1,6 +1,7 @@
 ﻿using Examen.Suport.Classes;
 using Syncfusion.Windows.Forms;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using Examen.Suport.Funcions;
 
@@ -41,13 +42,24 @@ namespace Examen.Professor.Formularis
         {
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                if (!File.Exists(openFileDialog.FileName))
+                if (File.Exists(openFileDialog.FileName))
                 {
-                    var desti = $@"{Path.GetDirectoryName(Application.ExecutablePath)}\Dades\Aplicacions.json";
-                    File.Copy(openFileDialog.FileName, desti, true);
-                }
+                    var aplicacions = Examen.Suport.Funcions.Text.Llegir(openFileDialog.FileName);
 
-                ContenidorAplicacions.Aplicacions = ContenidorAplicacions.Aplicacions.Llegir(openFileDialog.FileName);
+                    var ret = @"Vols importar la llista d'aplicacions (Sí) o subtituïr-la (No)?".Mostrar(MessageBoxIcon.Question,
+                        MessageBoxButtons.YesNoCancel);
+                    switch (ret)
+                    {
+                        case DialogResult.Yes:
+                            ContenidorAplicacions.Aplicacions.AddRange(aplicacions);
+                            ContenidorAplicacions.Aplicacions = ContenidorAplicacions.Aplicacions.GroupBy(a => a.Nom).Select(g => g.First()).ToList();
+                            break;
+
+                        case DialogResult.No:
+                            ContenidorAplicacions.Aplicacions = aplicacions;
+                            break;
+                    }
+                }
             }
         }
 

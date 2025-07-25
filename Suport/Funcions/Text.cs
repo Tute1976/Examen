@@ -66,10 +66,16 @@ namespace Examen.Suport.Funcions
             File.WriteAllText(fitxer, json, Encoding.UTF8);
         }
 
-        public static List<Aplicacio> Llegir(this List<Aplicacio> aplicacions, string fitxer)
+        public static List<Aplicacio> Llegir(string fitxer)
         {
             var json = File.ReadAllText(fitxer, Encoding.UTF8);
             return json.Deserialitzar<List<Aplicacio>>();
+        }
+
+        public static void Desar(this List<AplicacioEnUs> aplicacionsEnUs, string fitxer)
+        {
+            var json = aplicacionsEnUs.Serialitzar(Formatting.Indented, true);
+            File.WriteAllText(fitxer, json, Encoding.UTF8);
         }
 
         public static string SiNo(this bool b)

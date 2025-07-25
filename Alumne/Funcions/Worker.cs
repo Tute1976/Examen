@@ -36,7 +36,7 @@ namespace Examen.Alumne.Funcions
             }
             catch (Exception ex)
             {
-                ex.Mostrar(false);
+                ex.Mostrar();
             }
         }
 
@@ -55,7 +55,7 @@ namespace Examen.Alumne.Funcions
             }
             catch (Exception ex)
             {
-                ex.Mostrar(false);
+                ex.Mostrar();
             }
         }
 
@@ -69,14 +69,15 @@ namespace Examen.Alumne.Funcions
                     foreach (var aplicacio in _aplicacions.Where(aplicacio => aplicacio.EnExecucio()))
                     {
                         var aturada = aplicacio.Aturar(_backgroundWorker);
-                        ClientTcp.EnviarEstat(_adreçaPortProfessor, _estacioAlumne, 
+                        ClientTcp.EnviarEstat(_adreçaPortProfessor, _estacioAlumne, [],
                             TipusMissatge.Deteccio,
                             Pitar, Bloquejar, Aturar, FiServidor, $"{aplicacio.Nom}:{aturada.SiNo()}");
 
                         deteccio = true;
                     }
 
-                    var json = ClientTcp.EnviarEstat(_adreçaPortProfessor, _estacioAlumne,
+                    var aplicacionsEnUs = Helper.LlistarAplicacionsEnUs();
+                    var json = ClientTcp.EnviarEstat(_adreçaPortProfessor, _estacioAlumne, aplicacionsEnUs,
                         deteccio ? 
                             TipusMissatge.TempsAmbDeteccio : 
                             TipusMissatge.Temps,
@@ -92,7 +93,7 @@ namespace Examen.Alumne.Funcions
             }
             catch (Exception ex)
             {
-                ex.Mostrar(false);
+                ex.Mostrar();
             }
         }
 
@@ -154,7 +155,7 @@ namespace Examen.Alumne.Funcions
             }
             catch (Exception ex)
             {
-                ex.Mostrar(false);
+                ex.Mostrar();
             }
         }
 
@@ -166,7 +167,7 @@ namespace Examen.Alumne.Funcions
             }
             catch (Exception ex)
             {
-                ex.Mostrar(false);
+                ex.Mostrar();
             }
         }
     }

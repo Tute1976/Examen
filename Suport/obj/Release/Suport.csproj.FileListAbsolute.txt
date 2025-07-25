@@ -18,3 +18,4 @@ D:\Privat\Programacio\Git\Examen\Suport\obj\Release\Suport.csproj.Up2Date
 D:\Privat\Programacio\Git\Examen\Suport\obj\Release\Suport.dll
 D:\Privat\Programacio\Git\Examen\Suport\obj\Release\Suport.pdb
 D:\Privat\Programacio\Git\Examen\Suport\obj\Release\Examen.Suport.Formularis.ToastForm.resources
+D:\Privat\Programacio\Git\Examen\Suport\obj\Release\Examen.Suport.Formularis.FrmAplicacionsEnUs.resources

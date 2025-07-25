@@ -1,11 +1,5 @@
 ﻿[
   {
-    "Nom": "Visual Studio Code",
-    "Executable": "code.exe",
-    "CalAturar": true,
-    "Ignorar": true
-  },
-  {
     "Nom": "Adobe Acrobat",
     "Executable": "acrobat.exe",
     "CalAturar": true,
@@ -148,5 +142,35 @@
     "Executable": "qutebrowser.exe",
     "CalAturar": true,
     "Ignorar": false
+  },
+  {
+    "Nom": "Microsoft Outlook",
+    "Executable": "OUTLOOK.EXE",
+    "CalAturar": true,
+    "Ignorar": true
+  },
+  {
+    "Nom": "TextPad",
+    "Executable": "TextPad.exe",
+    "CalAturar": true,
+    "Ignorar": true
+  },
+  {
+    "Nom": "Professor",
+    "Executable": "Professor.exe",
+    "CalAturar": true,
+    "Ignorar": true
+  },
+  {
+    "Nom": "Alumne",
+    "Executable": "Alumne.exe",
+    "CalAturar": true,
+    "Ignorar": true
+  },
+  {
+    "Nom": "Visual Studio Code",
+    "Executable": "code.exe",
+    "CalAturar": true,
+    "Ignorar": true
   }
 ]

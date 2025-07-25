@@ -48,11 +48,11 @@ namespace Examen.Suport.Controls
             this.label1 = new System.Windows.Forms.Label();
             this.menu = new System.Windows.Forms.ToolStrip();
             this.bPitar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bBloquejar = new System.Windows.Forms.ToolStripButton();
             this.bAturar = new System.Windows.Forms.ToolStripButton();
             this.bInfo = new System.Windows.Forms.ToolStripButton();
             this.bTancar = new System.Windows.Forms.ToolStripButton();
+            this.bAplicacionsEnUs = new System.Windows.Forms.ToolStripButton();
             this.imatges = new System.Windows.Forms.ImageList(this.components);
             this.gb.SuspendLayout();
             this.taula.SuspendLayout();
@@ -70,7 +70,7 @@ namespace Examen.Suport.Controls
             this.gb.Margin = new System.Windows.Forms.Padding(5);
             this.gb.Name = "gb";
             this.gb.Padding = new System.Windows.Forms.Padding(10, 0, 10, 10);
-            this.gb.Size = new System.Drawing.Size(340, 175);
+            this.gb.Size = new System.Drawing.Size(240, 155);
             this.gb.TabIndex = 0;
             this.gb.TabStop = false;
             this.gb.Text = "nom";
@@ -79,7 +79,7 @@ namespace Examen.Suport.Controls
             // 
             this.taula.BackColor = System.Drawing.Color.White;
             this.taula.ColumnCount = 4;
-            this.taula.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.taula.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.taula.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.taula.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.taula.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
@@ -102,21 +102,21 @@ namespace Examen.Suport.Controls
             this.taula.Name = "taula";
             this.taula.Padding = new System.Windows.Forms.Padding(5);
             this.taula.RowCount = 5;
-            this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.taula.Size = new System.Drawing.Size(320, 150);
+            this.taula.Size = new System.Drawing.Size(220, 130);
             this.taula.TabIndex = 2;
             // 
             // txtDataInci
             // 
             this.txtDataInci.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDataInci.Location = new System.Drawing.Point(144, 69);
+            this.txtDataInci.Location = new System.Drawing.Point(99, 65);
             this.txtDataInci.Name = "txtDataInci";
-            this.txtDataInci.Size = new System.Drawing.Size(135, 20);
+            this.txtDataInci.Size = new System.Drawing.Size(80, 20);
             this.txtDataInci.TabIndex = 17;
             this.txtDataInci.Text = "dInici";
             this.txtDataInci.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -125,9 +125,9 @@ namespace Examen.Suport.Controls
             // 
             this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(50, 69);
+            this.label11.Location = new System.Drawing.Point(42, 65);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(88, 20);
+            this.label11.Size = new System.Drawing.Size(51, 20);
             this.label11.TabIndex = 13;
             this.label11.Text = "Temps";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -136,9 +136,9 @@ namespace Examen.Suport.Controls
             // 
             this.taula.SetColumnSpan(this.txtEstat, 2);
             this.txtEstat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtEstat.Location = new System.Drawing.Point(50, 113);
+            this.txtEstat.Location = new System.Drawing.Point(42, 105);
             this.txtEstat.Name = "txtEstat";
-            this.txtEstat.Size = new System.Drawing.Size(229, 32);
+            this.txtEstat.Size = new System.Drawing.Size(137, 20);
             this.txtEstat.TabIndex = 12;
             this.txtEstat.Text = "estat";
             // 
@@ -146,9 +146,9 @@ namespace Examen.Suport.Controls
             // 
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(50, 89);
+            this.label7.Location = new System.Drawing.Point(42, 85);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(88, 24);
+            this.label7.Size = new System.Drawing.Size(51, 20);
             this.label7.TabIndex = 11;
             this.label7.Text = "Estat";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -156,9 +156,9 @@ namespace Examen.Suport.Controls
             // txtInformacio
             // 
             this.txtInformacio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtInformacio.Location = new System.Drawing.Point(144, 49);
+            this.txtInformacio.Location = new System.Drawing.Point(99, 45);
             this.txtInformacio.Name = "txtInformacio";
-            this.txtInformacio.Size = new System.Drawing.Size(135, 20);
+            this.txtInformacio.Size = new System.Drawing.Size(80, 20);
             this.txtInformacio.TabIndex = 10;
             this.txtInformacio.Text = "informacio";
             this.txtInformacio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -167,9 +167,9 @@ namespace Examen.Suport.Controls
             // 
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(50, 49);
+            this.label8.Location = new System.Drawing.Point(42, 45);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(88, 20);
+            this.label8.Size = new System.Drawing.Size(51, 20);
             this.label8.TabIndex = 9;
             this.label8.Text = "Informació";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -177,9 +177,9 @@ namespace Examen.Suport.Controls
             // txtUsuari
             // 
             this.txtUsuari.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtUsuari.Location = new System.Drawing.Point(144, 29);
+            this.txtUsuari.Location = new System.Drawing.Point(99, 25);
             this.txtUsuari.Name = "txtUsuari";
-            this.txtUsuari.Size = new System.Drawing.Size(135, 20);
+            this.txtUsuari.Size = new System.Drawing.Size(80, 20);
             this.txtUsuari.TabIndex = 7;
             this.txtUsuari.Text = "usuari";
             this.txtUsuari.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -188,9 +188,9 @@ namespace Examen.Suport.Controls
             // 
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(50, 29);
+            this.label5.Location = new System.Drawing.Point(42, 25);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 20);
+            this.label5.Size = new System.Drawing.Size(51, 20);
             this.label5.TabIndex = 6;
             this.label5.Text = "Usuari";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -198,9 +198,9 @@ namespace Examen.Suport.Controls
             // txtEstacio
             // 
             this.txtEstacio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtEstacio.Location = new System.Drawing.Point(144, 5);
+            this.txtEstacio.Location = new System.Drawing.Point(99, 5);
             this.txtEstacio.Name = "txtEstacio";
-            this.txtEstacio.Size = new System.Drawing.Size(135, 24);
+            this.txtEstacio.Size = new System.Drawing.Size(80, 20);
             this.txtEstacio.TabIndex = 3;
             this.txtEstacio.Text = "estacio";
             this.txtEstacio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -215,7 +215,7 @@ namespace Examen.Suport.Controls
             this.panelImatge.Name = "panelImatge";
             this.panelImatge.Padding = new System.Windows.Forms.Padding(5);
             this.taula.SetRowSpan(this.panelImatge, 6);
-            this.panelImatge.Size = new System.Drawing.Size(42, 140);
+            this.panelImatge.Size = new System.Drawing.Size(34, 120);
             this.panelImatge.TabIndex = 1;
             // 
             // imatge
@@ -223,10 +223,11 @@ namespace Examen.Suport.Controls
             this.imatge.Dock = System.Windows.Forms.DockStyle.Top;
             this.imatge.Location = new System.Drawing.Point(5, 5);
             this.imatge.Margin = new System.Windows.Forms.Padding(0);
-            this.imatge.MaximumSize = new System.Drawing.Size(32, 32);
-            this.imatge.MinimumSize = new System.Drawing.Size(32, 32);
+            this.imatge.MaximumSize = new System.Drawing.Size(24, 24);
+            this.imatge.MinimumSize = new System.Drawing.Size(24, 24);
             this.imatge.Name = "imatge";
-            this.imatge.Size = new System.Drawing.Size(32, 32);
+            this.imatge.Size = new System.Drawing.Size(24, 24);
+            this.imatge.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imatge.TabIndex = 0;
             this.imatge.TabStop = false;
             // 
@@ -234,9 +235,9 @@ namespace Examen.Suport.Controls
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(50, 5);
+            this.label1.Location = new System.Drawing.Point(42, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 24);
+            this.label1.Size = new System.Drawing.Size(51, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Estació";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -247,19 +248,18 @@ namespace Examen.Suport.Controls
             this.menu.Dock = System.Windows.Forms.DockStyle.Right;
             this.menu.GripMargin = new System.Windows.Forms.Padding(0);
             this.menu.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.menu.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bPitar,
-            this.toolStripSeparator1,
             this.bBloquejar,
             this.bAturar,
             this.bInfo,
-            this.bTancar});
-            this.menu.Location = new System.Drawing.Point(283, 5);
+            this.bTancar,
+            this.bAplicacionsEnUs});
+            this.menu.Location = new System.Drawing.Point(191, 5);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
             this.taula.SetRowSpan(this.menu, 6);
-            this.menu.Size = new System.Drawing.Size(32, 140);
+            this.menu.Size = new System.Drawing.Size(24, 120);
             this.menu.TabIndex = 18;
             // 
             // bPitar
@@ -268,15 +268,10 @@ namespace Examen.Suport.Controls
             this.bPitar.Image = global::Examen.Suport.Properties.Resources.Altaveu_32x32;
             this.bPitar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bPitar.Name = "bPitar";
-            this.bPitar.Size = new System.Drawing.Size(26, 28);
+            this.bPitar.Size = new System.Drawing.Size(21, 20);
             this.bPitar.Text = "Reproduïr un xiulet";
             this.bPitar.ToolTipText = "Reproduïr un xiulet";
             this.bPitar.Click += new System.EventHandler(this.bPitar_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(26, 6);
             // 
             // bBloquejar
             // 
@@ -284,7 +279,7 @@ namespace Examen.Suport.Controls
             this.bBloquejar.Image = global::Examen.Suport.Properties.Resources.Bloquejar_32x32;
             this.bBloquejar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bBloquejar.Name = "bBloquejar";
-            this.bBloquejar.Size = new System.Drawing.Size(26, 28);
+            this.bBloquejar.Size = new System.Drawing.Size(21, 20);
             this.bBloquejar.Text = "Bloquejar estació";
             this.bBloquejar.Click += new System.EventHandler(this.bBloquejar_Click);
             // 
@@ -294,7 +289,7 @@ namespace Examen.Suport.Controls
             this.bAturar.Image = global::Examen.Suport.Properties.Resources.Aturar_32x32;
             this.bAturar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bAturar.Name = "bAturar";
-            this.bAturar.Size = new System.Drawing.Size(26, 28);
+            this.bAturar.Size = new System.Drawing.Size(21, 20);
             this.bAturar.Text = "Aturar estació";
             this.bAturar.Click += new System.EventHandler(this.bAturar_Click);
             // 
@@ -305,7 +300,7 @@ namespace Examen.Suport.Controls
             this.bInfo.Image = global::Examen.Suport.Properties.Resources.Informacio_32x32;
             this.bInfo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bInfo.Name = "bInfo";
-            this.bInfo.Size = new System.Drawing.Size(26, 28);
+            this.bInfo.Size = new System.Drawing.Size(21, 20);
             this.bInfo.Text = "Mostrar identificador";
             this.bInfo.ToolTipText = "Mostrar identificador";
             this.bInfo.Click += new System.EventHandler(this.bInfo_Click);
@@ -316,10 +311,20 @@ namespace Examen.Suport.Controls
             this.bTancar.Image = global::Examen.Suport.Properties.Resources.Cancel_32x32;
             this.bTancar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bTancar.Name = "bTancar";
-            this.bTancar.Size = new System.Drawing.Size(28, 28);
+            this.bTancar.Size = new System.Drawing.Size(21, 20);
             this.bTancar.Text = "Tancar";
             this.bTancar.Visible = false;
             this.bTancar.Click += new System.EventHandler(this.bTancar_Click);
+            // 
+            // bAplicacionsEnUs
+            // 
+            this.bAplicacionsEnUs.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bAplicacionsEnUs.Image = global::Examen.Suport.Properties.Resources.Aplicacions_32x32;
+            this.bAplicacionsEnUs.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bAplicacionsEnUs.Name = "bAplicacionsEnUs";
+            this.bAplicacionsEnUs.Size = new System.Drawing.Size(21, 20);
+            this.bAplicacionsEnUs.Text = "Aplicacions en ús";
+            this.bAplicacionsEnUs.Click += new System.EventHandler(this.bAplicacionsEnUs_Click);
             // 
             // imatges
             // 
@@ -337,11 +342,11 @@ namespace Examen.Suport.Controls
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.gb);
             this.Margin = new System.Windows.Forms.Padding(0);
-            this.MaximumSize = new System.Drawing.Size(0, 180);
-            this.MinimumSize = new System.Drawing.Size(350, 180);
+            this.MaximumSize = new System.Drawing.Size(0, 160);
+            this.MinimumSize = new System.Drawing.Size(250, 160);
             this.Name = "InfoEstacio";
             this.Padding = new System.Windows.Forms.Padding(5, 0, 5, 5);
-            this.Size = new System.Drawing.Size(350, 180);
+            this.Size = new System.Drawing.Size(250, 160);
             this.gb.ResumeLayout(false);
             this.taula.ResumeLayout(false);
             this.taula.PerformLayout();
@@ -373,9 +378,9 @@ namespace Examen.Suport.Controls
         private ToolStrip menu;
         private ToolStripButton bPitar;
         private ToolStripButton bBloquejar;
-        private ToolStripSeparator toolStripSeparator1;
         private ToolStripButton bAturar;
         private ToolStripButton bInfo;
         private ToolStripButton bTancar;
+        private ToolStripButton bAplicacionsEnUs;
     }
 }

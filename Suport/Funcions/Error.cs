@@ -1,5 +1,6 @@
 ﻿using Syncfusion.Windows.Forms;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -22,21 +23,22 @@ namespace Examen.Suport.Funcions
             MessageBoxAdv.MessageBoxStyle = MessageBoxAdv.Style.Metro;
         }
 
-        public static DialogResult Mostrar(this string missatge, MessageBoxIcon icona = MessageBoxIcon.Information, MessageBoxButtons botons = MessageBoxButtons.OK, bool mostrarMissatge = true)
+        public static DialogResult Mostrar(this string missatge, MessageBoxIcon icona, MessageBoxButtons botons = MessageBoxButtons.OK, bool mostrarMissatge = false)
         {
             try
             {
-                var fitxer = Path.GetFullPath(Environment.ExpandEnvironmentVariables(@".\error.log"));
+                mostrarMissatge = mostrarMissatge | icona != MessageBoxIcon.Error;
+                var nl = Environment.NewLine;
 
                 Trace.AutoFlush = true;
-                var mm = missatge.Replace(Environment.NewLine, "^").Split('^');
+                var mm = missatge.Replace(nl, "^").Replace("^^", "^").Split('^');
+                var tt = new List<string>();
                 foreach (var m in mm)
                 {
                     Trace.WriteLine($@"Examen {DateTime.Now:G} [{icona}]: {m}");
-
-                    var nl = Environment.NewLine;
-                    File.AppendAllText(fitxer, $@"{DateTime.Now:G} [{icona}]: {m}{nl}", Encoding.UTF8);
+                    tt.Add($@"{DateTime.Now:G} [{icona}]: {m}{nl}");
                 }
+                EscriuFitxer(tt.ToArray());
 
                 return !mostrarMissatge ? 
                     DialogResult.None : 
@@ -50,11 +52,25 @@ namespace Examen.Suport.Funcions
             return DialogResult.None;
         }
 
+        private static void EscriuFitxer(string[] missatge)
+        {
+            try
+            {
+                var fitxer = Path.GetFullPath(Environment.ExpandEnvironmentVariables(@".\error.log"));
+                File.AppendAllLines(fitxer, missatge, Encoding.UTF8);
+            }
+            catch
+            {
+                // ignore any error in the logging process
+            }
+        }
+
         public static void Mostrar(this Exception ex, bool mostrarMissatge = false)
         {
             try
             {
-                var missatge = $"S'ha produït un error: {ex.Message}{Environment.NewLine}Detalls: {ex.StackTrace}";
+                var nl = Environment.NewLine;
+                var missatge = $"S'ha produït un error: {ex.Message}{nl}{nl}Detalls: {ex.StackTrace}";
                 missatge.Mostrar(MessageBoxIcon.Error, MessageBoxButtons.OK, mostrarMissatge);
             }
             catch

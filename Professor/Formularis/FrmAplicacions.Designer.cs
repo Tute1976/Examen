@@ -32,12 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAplicacions));
             this.propietats = new System.Windows.Forms.PropertyGrid();
             this.menu = new System.Windows.Forms.ToolStrip();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bDesar = new System.Windows.Forms.ToolStripButton();
             this.bCancelar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bImportar = new System.Windows.Forms.ToolStripButton();
             this.bExportar = new System.Windows.Forms.ToolStripButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.menu.SuspendLayout();
@@ -72,21 +72,6 @@
             this.menu.TabIndex = 1;
             this.menu.Text = "toolStrip1";
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(342, 5);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 320);
-            this.panel1.TabIndex = 2;
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(30, 6);
-            // 
             // bDesar
             // 
             this.bDesar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -107,6 +92,11 @@
             this.bCancelar.Text = "Cancelar";
             this.bCancelar.Click += new System.EventHandler(this.bCancelar_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(30, 6);
+            // 
             // bImportar
             // 
             this.bImportar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -126,6 +116,16 @@
             this.bExportar.Size = new System.Drawing.Size(30, 28);
             this.bExportar.Text = "Exportar";
             this.bExportar.Click += new System.EventHandler(this.bExportar_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(342, 5);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(10, 320);
+            this.panel1.TabIndex = 2;
             // 
             // openFileDialog
             // 

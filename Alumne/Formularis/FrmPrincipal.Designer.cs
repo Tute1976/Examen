@@ -87,7 +87,7 @@
             this.txtCodi.Location = new System.Drawing.Point(100, 300);
             this.txtCodi.Name = "txtCodi";
             this.txtCodi.Size = new System.Drawing.Size(300, 31);
-            this.txtCodi.TabIndex = 2;
+            this.txtCodi.TabIndex = 1;
             this.txtCodi.TextChanged += new System.EventHandler(this.Text_TextChanged);
             // 
             // txtNom
@@ -96,7 +96,7 @@
             this.txtNom.Location = new System.Drawing.Point(25, 225);
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(450, 31);
-            this.txtNom.TabIndex = 4;
+            this.txtNom.TabIndex = 0;
             this.txtNom.TextChanged += new System.EventHandler(this.Text_TextChanged);
             // 
             // lNom
@@ -118,7 +118,7 @@
             this.bIniciar.Location = new System.Drawing.Point(25, 375);
             this.bIniciar.Name = "bIniciar";
             this.bIniciar.Size = new System.Drawing.Size(275, 50);
-            this.bIniciar.TabIndex = 5;
+            this.bIniciar.TabIndex = 2;
             this.bIniciar.Text = "Connectar";
             this.bIniciar.UseVisualStyleBackColor = false;
             this.bIniciar.Click += new System.EventHandler(this.BIniciar_Click);
@@ -131,7 +131,7 @@
             this.bTancar.Location = new System.Drawing.Point(325, 375);
             this.bTancar.Name = "bTancar";
             this.bTancar.Size = new System.Drawing.Size(150, 50);
-            this.bTancar.TabIndex = 6;
+            this.bTancar.TabIndex = 3;
             this.bTancar.Text = "Tancar";
             this.bTancar.UseVisualStyleBackColor = false;
             this.bTancar.Click += new System.EventHandler(this.BTancar_Click);
@@ -163,7 +163,7 @@
             this.bInfo.Location = new System.Drawing.Point(425, 375);
             this.bInfo.Name = "bInfo";
             this.bInfo.Size = new System.Drawing.Size(50, 50);
-            this.bInfo.TabIndex = 7;
+            this.bInfo.TabIndex = 4;
             this.bInfo.UseVisualStyleBackColor = false;
             this.bInfo.Visible = false;
             this.bInfo.Click += new System.EventHandler(this.BInfo_Click);
@@ -231,6 +231,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alumne";
             this.Load += new System.EventHandler(this.Principal_Load);
+            this.Shown += new System.EventHandler(this.FrmPrincipal_Shown);
             this.panelFons.ResumeLayout(false);
             this.panelFons.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imatge)).EndInit();

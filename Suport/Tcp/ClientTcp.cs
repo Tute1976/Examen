@@ -1,6 +1,7 @@
 using Examen.Suport.Classes;
 using Examen.Suport.Funcions;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace Examen.Suport.Tcp
 {
     public static class ClientTcp
     {
-        public static string EnviarEstat(AdreçaPort adreçaPort, EstacioAlumne estacioAlumne, TipusMissatge estat, Action pitar, Action bloquejar, Action aturar, Action fiServidor, string text = null)
+        public static string EnviarEstat(AdreçaPort adreçaPort, EstacioAlumne estacioAlumne, List<AplicacioEnUs> aplicacionsEnUs, TipusMissatge estat, Action pitar, Action bloquejar, Action aturar, Action fiServidor, string text = null)
         {
             try
             {
@@ -25,7 +26,7 @@ namespace Examen.Suport.Tcp
 
                 estacioAlumne ??= new EstacioAlumne("", Guid.Empty);
 
-                var estatText = $"{estat}:{estacioAlumne.Serialitzar().ToBase64()}:{text}".CompressToBase64();
+                var estatText = $"{estat}:{estacioAlumne.Serialitzar().ToBase64()}:{text}:{aplicacionsEnUs.Serialitzar().ToBase64()}".CompressToBase64();
                 var missatge = Encoding.UTF8.GetBytes(estatText);
                 stream.Write(missatge, 0, missatge.Length);
 
@@ -68,7 +69,7 @@ namespace Examen.Suport.Tcp
             }
             catch (Exception ex)
             {
-                ex.Mostrar(false);
+                ex.Mostrar();
             }
 
             return null;
@@ -77,7 +78,7 @@ namespace Examen.Suport.Tcp
         private static void MostraError(Exception ex, TipusMissatge estat)
         {
             var nl = Environment.NewLine;
-            var msg = $@"No es pot establir connexió amb el servidor{nl}{nl}Error:{nl}{ex.Message}";
+            var msg = $@"No es pot establir connexió amb el servidor{nl}{nl}Error:{ex.Message}{nl}{nl}Detalls: {ex.StackTrace}";
 
             Helper.ShowToast(msg, 5);
             msg.Mostrar(MessageBoxIcon.Exclamation);
