@@ -16,3 +16,11 @@
 25/7/2025 11:59:55 [Hand]: S'ha produït un error: Not listening. You must call the Start() method before calling this method.
 25/7/2025 11:59:55 [Hand]: Detalls:    at System.Net.Sockets.TcpListener.BeginAcceptTcpClient(AsyncCallback callback, Object state)
 25/7/2025 11:59:55 [Hand]:    at Examen.Suport.Tcp.ServidorTcp.AcceptCallback(IAsyncResult ar) in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ServidorTcp.cs:line 81
+28/7/2025 10:15:27 [Question]: Vols finalitzar el programa?
+
+28/7/2025 10:32:16 [Asterisk]: Identificador de la sessió:
+
+28/7/2025 10:32:16 [Asterisk]:     80296fb6-a046-480d-96e5-96d25d6508cb    
+
+28/7/2025 10:32:31 [Question]: Vols finalitzar el programa?
+

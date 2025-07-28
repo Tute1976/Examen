@@ -81,7 +81,7 @@ namespace Examen.Suport.Tcp
             var msg = $@"No es pot establir connexió amb el servidor{nl}{nl}Error:{ex.Message}{nl}{nl}Detalls: {ex.StackTrace}";
 
             Helper.ShowToast(msg, 5);
-            msg.Mostrar(MessageBoxIcon.Exclamation);
+            msg.Mostrar(MessageBoxIcon.Error);
 
             if (estat != TipusMissatge.Prova)
                 Application.Exit();

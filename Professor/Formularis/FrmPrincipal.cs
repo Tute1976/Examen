@@ -51,6 +51,8 @@ namespace Examen.Professor.Formularis
 
                 timerCaducades.Interval = Properties.Settings.Default.IntevarvalTemps * 1000;
                 timerCaducades.Start();
+
+                txtVersio.Text = $@"Examen.Professor v.{Application.ProductVersion}";
             }
             catch (Exception ex)
             {
@@ -124,7 +126,7 @@ namespace Examen.Professor.Formularis
                             break;
 
                         case TipusMissatge.Fi:
-                            estat = @"Desconnexió";
+                            estat = @"Estació desconectada manualment";
 
                             AfegirItem(estacioAlumne, 2, Color.Blue, estat);
 
@@ -133,8 +135,21 @@ namespace Examen.Professor.Formularis
                                 .FirstOrDefault(x => x.Tag.Equals(estacioAlumne.Id));
                             if (infoEstacio != null)
                             {
-                                taula.Controls.Remove(infoEstacio);
-                                DefineixColumnes(int.Parse(cbColumnes.Text));
+                                infoEstacio.Imatge = 2;
+                                infoEstacio.Estat = estat;
+                                infoEstacio.BackgroundColor = Color.Coral;
+                                infoEstacio.ForeColor = Color.White;
+                                infoEstacio.Pitar = false;
+                                infoEstacio.Bloquejar = false;
+                                infoEstacio.Aturar = false;
+                                infoEstacio.MostrarBotons = false;
+                                if (aplicacionsEnUs.Count > 0)
+                                    infoEstacio.AplicacionsEnUs = aplicacionsEnUs;
+
+                                taula.Controls.SetChildIndex(infoEstacio, 0);
+
+                                //taula.Controls.Remove(infoEstacio);
+                                //DefineixColumnes(int.Parse(cbColumnes.Text));
                             }
                             break;
 
@@ -160,6 +175,8 @@ namespace Examen.Professor.Formularis
                                 infoEstacio.MostrarBotons = true;
                                 if (aplicacionsEnUs.Count > 0) 
                                     infoEstacio.AplicacionsEnUs = aplicacionsEnUs;
+
+                                taula.Controls.SetChildIndex(infoEstacio, 0);
                             }
 
                             break;

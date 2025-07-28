@@ -38,6 +38,8 @@ namespace Examen.Alumne.Formularis
 
             txtNom.Text = _nom;
             txtCodi.Text = _codi;
+
+            txtVersio.Text = $@"Examen.Alumne v.{Application.ProductVersion}";
         }
 
         private void Text_TextChanged(object sender, EventArgs e)

@@ -44,8 +44,11 @@
             this.timerImatge = new System.Windows.Forms.Timer(this.components);
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.txtId = new System.Windows.Forms.Label();
+            this.panelInfo = new System.Windows.Forms.Panel();
+            this.txtVersio = new System.Windows.Forms.Label();
             this.panelFons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imatge)).BeginInit();
+            this.panelInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // imatgesConnecta
@@ -151,7 +154,7 @@
             this.panelFons.Location = new System.Drawing.Point(5, 5);
             this.panelFons.Margin = new System.Windows.Forms.Padding(0);
             this.panelFons.Name = "panelFons";
-            this.panelFons.Size = new System.Drawing.Size(500, 455);
+            this.panelFons.Size = new System.Drawing.Size(500, 439);
             this.panelFons.TabIndex = 7;
             // 
             // bInfo
@@ -200,13 +203,35 @@
             // 
             // txtId
             // 
-            this.txtId.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtId.Location = new System.Drawing.Point(5, 444);
+            this.txtId.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txtId.Location = new System.Drawing.Point(0, 0);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(500, 16);
+            this.txtId.Size = new System.Drawing.Size(250, 16);
             this.txtId.TabIndex = 8;
             this.txtId.Text = "id";
             this.txtId.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // panelInfo
+            // 
+            this.panelInfo.BackColor = System.Drawing.Color.Transparent;
+            this.panelInfo.Controls.Add(this.txtVersio);
+            this.panelInfo.Controls.Add(this.txtId);
+            this.panelInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelInfo.Location = new System.Drawing.Point(5, 444);
+            this.panelInfo.Margin = new System.Windows.Forms.Padding(0);
+            this.panelInfo.Name = "panelInfo";
+            this.panelInfo.Size = new System.Drawing.Size(500, 16);
+            this.panelInfo.TabIndex = 9;
+            // 
+            // txtVersio
+            // 
+            this.txtVersio.Dock = System.Windows.Forms.DockStyle.Right;
+            this.txtVersio.Location = new System.Drawing.Point(250, 0);
+            this.txtVersio.Name = "txtVersio";
+            this.txtVersio.Size = new System.Drawing.Size(250, 16);
+            this.txtVersio.TabIndex = 9;
+            this.txtVersio.Text = "versio";
+            this.txtVersio.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // FrmPrincipal
             // 
@@ -220,8 +245,8 @@
             this.CaptionButtonHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.ClientSize = new System.Drawing.Size(510, 460);
             this.ControlBox = false;
-            this.Controls.Add(this.txtId);
             this.Controls.Add(this.panelFons);
+            this.Controls.Add(this.panelInfo);
             this.DropShadow = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -235,6 +260,7 @@
             this.panelFons.ResumeLayout(false);
             this.panelFons.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imatge)).EndInit();
+            this.panelInfo.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -255,6 +281,8 @@
         private System.Windows.Forms.NotifyIcon notifyIcon;
         private System.Windows.Forms.Button bInfo;
         private System.Windows.Forms.Label txtId;
+        private System.Windows.Forms.Panel panelInfo;
+        private System.Windows.Forms.Label txtVersio;
     }
 }
 

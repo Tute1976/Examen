@@ -60,6 +60,9 @@
             this.bCopiarCodi = new System.Windows.Forms.ToolStripButton();
             this.timerCaducades = new System.Windows.Forms.Timer(this.components);
             this.timerTancar = new System.Windows.Forms.Timer(this.components);
+            this.panelFons = new System.Windows.Forms.Panel();
+            this.panelInfo = new System.Windows.Forms.Panel();
+            this.txtVersio = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.split)).BeginInit();
             this.split.Panel1.SuspendLayout();
             this.split.Panel2.SuspendLayout();
@@ -68,6 +71,8 @@
             this.panelHistoric.SuspendLayout();
             this.panelComboBox.SuspendLayout();
             this.menu.SuspendLayout();
+            this.panelFons.SuspendLayout();
+            this.panelInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // split
@@ -86,8 +91,8 @@
             // 
             this.split.Panel2.Controls.Add(this.panelHistoric);
             this.split.Panel2MinSize = 200;
-            this.split.Size = new System.Drawing.Size(892, 476);
-            this.split.SplitterDistance = 266;
+            this.split.Size = new System.Drawing.Size(882, 450);
+            this.split.SplitterDistance = 240;
             this.split.SplitterWidth = 10;
             this.split.TabIndex = 0;
             // 
@@ -99,7 +104,7 @@
             this.panelTaula.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelTaula.Location = new System.Drawing.Point(0, 0);
             this.panelTaula.Name = "panelTaula";
-            this.panelTaula.Size = new System.Drawing.Size(892, 266);
+            this.panelTaula.Size = new System.Drawing.Size(882, 240);
             this.panelTaula.TabIndex = 1;
             // 
             // taula
@@ -115,7 +120,7 @@
             this.taula.RowCount = 2;
             this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.taula.Size = new System.Drawing.Size(890, 0);
+            this.taula.Size = new System.Drawing.Size(880, 0);
             this.taula.TabIndex = 0;
             this.taula.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.taula_Controls);
             this.taula.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.taula_Controls);
@@ -128,7 +133,7 @@
             this.panelHistoric.Location = new System.Drawing.Point(0, 0);
             this.panelHistoric.Margin = new System.Windows.Forms.Padding(0);
             this.panelHistoric.Name = "panelHistoric";
-            this.panelHistoric.Size = new System.Drawing.Size(892, 200);
+            this.panelHistoric.Size = new System.Drawing.Size(882, 200);
             this.panelHistoric.TabIndex = 1;
             // 
             // llistaHistoric
@@ -144,7 +149,7 @@
             this.llistaHistoric.Location = new System.Drawing.Point(0, 31);
             this.llistaHistoric.Margin = new System.Windows.Forms.Padding(0);
             this.llistaHistoric.Name = "llistaHistoric";
-            this.llistaHistoric.Size = new System.Drawing.Size(892, 169);
+            this.llistaHistoric.Size = new System.Drawing.Size(882, 169);
             this.llistaHistoric.SmallImageList = this.imatgesLlista;
             this.llistaHistoric.TabIndex = 0;
             this.llistaHistoric.UseCompatibleStateImageBehavior = false;
@@ -187,13 +192,13 @@
             this.panelComboBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelComboBox.Location = new System.Drawing.Point(0, 0);
             this.panelComboBox.Name = "panelComboBox";
-            this.panelComboBox.Size = new System.Drawing.Size(892, 31);
+            this.panelComboBox.Size = new System.Drawing.Size(882, 31);
             this.panelComboBox.TabIndex = 2;
             // 
             // lFiltreHistoric
             // 
             this.lFiltreHistoric.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lFiltreHistoric.Location = new System.Drawing.Point(569, 0);
+            this.lFiltreHistoric.Location = new System.Drawing.Point(559, 0);
             this.lFiltreHistoric.Name = "lFiltreHistoric";
             this.lFiltreHistoric.Padding = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.lFiltreHistoric.Size = new System.Drawing.Size(123, 31);
@@ -208,7 +213,7 @@
             this.cbHistoric.FormattingEnabled = true;
             this.cbHistoric.Items.AddRange(new object[] {
             "Totes les estacions"});
-            this.cbHistoric.Location = new System.Drawing.Point(692, 0);
+            this.cbHistoric.Location = new System.Drawing.Point(682, 0);
             this.cbHistoric.Margin = new System.Windows.Forms.Padding(0);
             this.cbHistoric.Name = "cbHistoric";
             this.cbHistoric.Size = new System.Drawing.Size(200, 21);
@@ -241,10 +246,10 @@
             this.bSortir,
             this.toolStripSeparator3,
             this.bCopiarCodi});
-            this.menu.Location = new System.Drawing.Point(897, 5);
+            this.menu.Location = new System.Drawing.Point(887, 5);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(5, 5, 0, 5);
-            this.menu.Size = new System.Drawing.Size(82, 476);
+            this.menu.Size = new System.Drawing.Size(82, 450);
             this.menu.TabIndex = 0;
             // 
             // cbColumnes
@@ -356,6 +361,39 @@
             this.timerTancar.Interval = 1000;
             this.timerTancar.Tick += new System.EventHandler(this.timerTancar_Tick);
             // 
+            // panelFons
+            // 
+            this.panelFons.Controls.Add(this.split);
+            this.panelFons.Controls.Add(this.menu);
+            this.panelFons.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelFons.Location = new System.Drawing.Point(5, 5);
+            this.panelFons.Margin = new System.Windows.Forms.Padding(0);
+            this.panelFons.Name = "panelFons";
+            this.panelFons.Padding = new System.Windows.Forms.Padding(5);
+            this.panelFons.Size = new System.Drawing.Size(974, 460);
+            this.panelFons.TabIndex = 1;
+            // 
+            // panelInfo
+            // 
+            this.panelInfo.BackColor = System.Drawing.Color.Transparent;
+            this.panelInfo.Controls.Add(this.txtVersio);
+            this.panelInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelInfo.Location = new System.Drawing.Point(5, 465);
+            this.panelInfo.Margin = new System.Windows.Forms.Padding(0);
+            this.panelInfo.Name = "panelInfo";
+            this.panelInfo.Size = new System.Drawing.Size(974, 16);
+            this.panelInfo.TabIndex = 10;
+            // 
+            // txtVersio
+            // 
+            this.txtVersio.Dock = System.Windows.Forms.DockStyle.Right;
+            this.txtVersio.Location = new System.Drawing.Point(724, 0);
+            this.txtVersio.Name = "txtVersio";
+            this.txtVersio.Size = new System.Drawing.Size(250, 16);
+            this.txtVersio.TabIndex = 9;
+            this.txtVersio.Text = "versio";
+            this.txtVersio.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -384,8 +422,8 @@
             this.CaptionLabels.Add(captionLabel1);
             this.CaptionLabels.Add(captionLabel2);
             this.ClientSize = new System.Drawing.Size(984, 486);
-            this.Controls.Add(this.split);
-            this.Controls.Add(this.menu);
+            this.Controls.Add(this.panelFons);
+            this.Controls.Add(this.panelInfo);
             this.DropShadow = true;
             this.EnableTouchMode = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -406,8 +444,10 @@
             this.panelComboBox.ResumeLayout(false);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
+            this.panelFons.ResumeLayout(false);
+            this.panelFons.PerformLayout();
+            this.panelInfo.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -440,6 +480,9 @@
         private System.Windows.Forms.Timer timerTancar;
         private System.Windows.Forms.ToolStripButton bStartStop;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.Panel panelFons;
+        private System.Windows.Forms.Panel panelInfo;
+        private System.Windows.Forms.Label txtVersio;
     }
 }
 

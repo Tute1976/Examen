@@ -105,12 +105,12 @@ namespace Examen.Suport.Classes
                     var msg = n > 0
                         ? $"L'aplicació '{Nom}', no s'ha pogut aturar correctament."
                         : $"L'aplicación '{Nom}', ha estat aturada correctament.";
-                    backgroundWorker.ReportProgress(15, msg);
+                    backgroundWorker.ReportProgress(10, msg);
 
                     return n == 0;
                 }
 
-                backgroundWorker.ReportProgress(15, $@"L'aplicació '{Nom}', no s'ha d'aturar segons directrius.");
+                backgroundWorker.ReportProgress(10, $@"L'aplicació '{Nom}', no s'ha d'aturar segons directrius.");
 
                 return false;
             }
