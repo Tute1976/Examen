@@ -1,0 +1,176 @@
+﻿[
+  {
+    "Nom": "Adobe Acrobat",
+    "Executable": "acrobat.exe",
+    "CalAturar": true,
+    "Ignorar": false
+  },
+  {
+    "Nom": "Adobe Acrobat Reader",
+    "Executable": "acrord32.exe",
+    "CalAturar": true,
+    "Ignorar": false
+  },
+  {
+    "Nom": "WhatsApp",
+    "Executable": "WhatsApp.exe",
+    "CalAturar": true,
+    "Ignorar": true
+  },
+  {
+    "Nom": "Google Chrome",
+    "Executable": "chrome.exe",
+    "CalAturar": false,
+    "Ignorar": true
+  },
+  {
+    "Nom": "Mozilla Firefox",
+    "Executable": "firefox.exe",
+    "CalAturar": true,
+    "Ignorar": false
+  },
+  {
+    "Nom": "Microsoft Edge",
+    "Executable": "msedge.exe",
+    "CalAturar": true,
+    "Ignorar": false
+  },
+  {
+    "Nom": "Opera",
+    "Executable": "opera.exe",
+    "CalAturar": true,
+    "Ignorar": false
+  },
+  {
+    "Nom": "Brave",
+    "Executable": "brave.exe",
+    "CalAturar": true,
+    "Ignorar": false
+  },
+  {
+    "Nom": "Vivaldi",
+    "Executable": "vivaldi.exe",
+    "CalAturar": true,
+    "Ignorar": false
+  },
+  {
+    "Nom": "Chromium",
+    "Executable": "chromium.exe",
+    "CalAturar": true,
+    "Ignorar": false
+  },
+  {
+    "Nom": "Waterfox",
+    "Executable": "waterfox.exe",
+    "CalAturar": true,
+    "Ignorar": false
+  },
+  {
+    "Nom": "Pale Moon",
+    "Executable": "palemoon.exe",
+    "CalAturar": true,
+    "Ignorar": false
+  },
+  {
+    "Nom": "Maxthon",
+    "Executable": "maxthon.exe",
+    "CalAturar": true,
+    "Ignorar": false
+  },
+  {
+    "Nom": "Avant Browser",
+    "Executable": "avant.exe",
+    "CalAturar": true,
+    "Ignorar": false
+  },
+  {
+    "Nom": "Slimjet",
+    "Executable": "slimjet.exe",
+    "CalAturar": true,
+    "Ignorar": false
+  },
+  {
+    "Nom": "Yandex Browser",
+    "Executable": "browser.exe",
+    "CalAturar": true,
+    "Ignorar": false
+  },
+  {
+    "Nom": "Epic Privacy Browser",
+    "Executable": "epic.exe",
+    "CalAturar": true,
+    "Ignorar": false
+  },
+  {
+    "Nom": "Comodo Dragon",
+    "Executable": "dragon.exe",
+    "CalAturar": true,
+    "Ignorar": false
+  },
+  {
+    "Nom": "SRWare Iron",
+    "Executable": "iron.exe",
+    "CalAturar": true,
+    "Ignorar": false
+  },
+  {
+    "Nom": "UC Browser",
+    "Executable": "browser.exe",
+    "CalAturar": true,
+    "Ignorar": false
+  },
+  {
+    "Nom": "Lunascape",
+    "Executable": "lunascape6.exe",
+    "CalAturar": true,
+    "Ignorar": false
+  },
+  {
+    "Nom": "Midori",
+    "Executable": "midori.exe",
+    "CalAturar": true,
+    "Ignorar": false
+  },
+  {
+    "Nom": "K-Meleon",
+    "Executable": "k-meleon.exe",
+    "CalAturar": true,
+    "Ignorar": false
+  },
+  {
+    "Nom": "QuteBrowser",
+    "Executable": "qutebrowser.exe",
+    "CalAturar": true,
+    "Ignorar": false
+  },
+  {
+    "Nom": "Microsoft Outlook",
+    "Executable": "OUTLOOK.EXE",
+    "CalAturar": true,
+    "Ignorar": true
+  },
+  {
+    "Nom": "TextPad",
+    "Executable": "TextPad.exe",
+    "CalAturar": true,
+    "Ignorar": true
+  },
+  {
+    "Nom": "Professor",
+    "Executable": "Professor.exe",
+    "CalAturar": true,
+    "Ignorar": true
+  },
+  {
+    "Nom": "Alumne",
+    "Executable": "Alumne.exe",
+    "CalAturar": true,
+    "Ignorar": true
+  },
+  {
+    "Nom": "Visual Studio Code",
+    "Executable": "code.exe",
+    "CalAturar": true,
+    "Ignorar": true
+  }
+]

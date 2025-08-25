@@ -45,7 +45,7 @@ namespace Examen.Professor.Formularis
                     File.Copy(origen, Fitxer, true);
                 }
 
-                ContenidorAplicacions.Aplicacions = Suport.Funcions.Text.Llegir(Fitxer);
+                ContenidorAplicacions.CategoriaAplicacions = Suport.Funcions.Text.Llegir(Fitxer);
 
                 DefineixColumnes(int.Parse(cbColumnes.Text));
 
@@ -252,11 +252,11 @@ namespace Examen.Professor.Formularis
             {
                 CercaAccions(estacioAlumne, out var pitar, out var bloquejar, out var aturar);
 
-                var aplicacions = ContenidorAplicacions.Aplicacions;
+                var aplicacions = ContenidorAplicacions.Totes;
                 if (bStartStop.Tag is string s &&
                     bool.TryParse(s, out var start) &&
                     !start)
-                    aplicacions = [new Aplicacio("Cap", "", false, true)];
+                    aplicacions = [new Aplicacio()];
 
                 var ret = tipusMissatge switch
                 {
@@ -324,7 +324,7 @@ namespace Examen.Professor.Formularis
         {
             try
             {
-                ContenidorAplicacions.Aplicacions.Desar(Fitxer);
+                ContenidorAplicacions.CategoriaAplicacions.Desar(Fitxer);
             }
             catch (Exception ex)
             {

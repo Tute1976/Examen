@@ -19,6 +19,13 @@ namespace Examen.Suport.Classes
         [Category("Aplicació"),
          Browsable(true),
          ReadOnly(false),
+         DisplayName("Descripció"),
+         Description("Descripció de l'aplicació")]
+        public string Descripcio { get; set; } = "";
+
+        [Category("Aplicació"),
+         Browsable(true),
+         ReadOnly(false),
          DisplayName("Executable"),
          Description("Nom del fitxer executable (*.exe)")]
         public string Executable { get; set; } = "";

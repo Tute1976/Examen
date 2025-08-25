@@ -51,12 +51,12 @@ namespace Examen.Professor.Formularis
                     switch (ret)
                     {
                         case DialogResult.Yes:
-                            ContenidorAplicacions.Aplicacions.AddRange(aplicacions);
-                            ContenidorAplicacions.Aplicacions = ContenidorAplicacions.Aplicacions.GroupBy(a => a.Nom).Select(g => g.First()).ToList();
+                            ContenidorAplicacions.CategoriaAplicacions.AddRange(aplicacions);
+                            ContenidorAplicacions.CategoriaAplicacions = ContenidorAplicacions.CategoriaAplicacions.GroupBy(a => a.Nom).Select(g => g.First()).ToList();
                             break;
 
                         case DialogResult.No:
-                            ContenidorAplicacions.Aplicacions = aplicacions;
+                            ContenidorAplicacions.CategoriaAplicacions = aplicacions;
                             break;
                     }
                 }
@@ -69,7 +69,7 @@ namespace Examen.Professor.Formularis
             {
                 if (!File.Exists(saveFileDialog.FileName))
                     File.Delete(saveFileDialog.FileName);
-                ContenidorAplicacions.Aplicacions.Desar(saveFileDialog.FileName);
+                ContenidorAplicacions.CategoriaAplicacions.Desar(saveFileDialog.FileName);
             }
         }
     }

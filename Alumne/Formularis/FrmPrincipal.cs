@@ -14,8 +14,8 @@ namespace Examen.Alumne.Formularis
     public partial class FrmPrincipal : MetroForm
     {
         public EstacioAlumne EstacioAlumne { get; private set; }
-        public AdreçaPort AdreçaPortProfessor { get; private set; } = new AdreçaPort();
-        public List<Aplicacio> Aplicacions { get; private set; } = new List<Aplicacio>();
+        public AdreçaPort AdreçaPortProfessor { get; private set; } = new();
+        public List<Aplicacio> Aplicacions { get; private set; } = [];
 
         private readonly string _nom;
         private readonly string _codi;

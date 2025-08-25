@@ -70,6 +70,7 @@
     <Compile Include="Classes\AdreçaPort.cs" />
     <Compile Include="Classes\Aplicacio.cs" />
     <Compile Include="Classes\AplicacioEnUs.cs" />
+    <Compile Include="Classes\CategoriaAplicacions.cs" />
     <Compile Include="Classes\ContenidorAplicacionsEnUs.cs" />
     <Compile Include="Classes\ContenidorAplicacions.cs" />
     <Compile Include="Classes\EstacioAlumne.cs" />

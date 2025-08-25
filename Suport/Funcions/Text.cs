@@ -60,16 +60,22 @@ namespace Examen.Suport.Funcions
             return ret;
         }
 
+        public static void Desar(this List<CategoriaAplicacions> aplicacions, string fitxer)
+        {
+            var json = aplicacions.Serialitzar(Formatting.Indented, true);
+            File.WriteAllText(fitxer, json, Encoding.UTF8);
+        }
+
         public static void Desar(this List<Aplicacio> aplicacions, string fitxer)
         {
             var json = aplicacions.Serialitzar(Formatting.Indented, true);
             File.WriteAllText(fitxer, json, Encoding.UTF8);
         }
 
-        public static List<Aplicacio> Llegir(string fitxer)
+        public static List<CategoriaAplicacions> Llegir(string fitxer)
         {
             var json = File.ReadAllText(fitxer, Encoding.UTF8);
-            return json.Deserialitzar<List<Aplicacio>>();
+            return json.Deserialitzar<List<CategoriaAplicacions>>();
         }
 
         public static void Desar(this List<AplicacioEnUs> aplicacionsEnUs, string fitxer)

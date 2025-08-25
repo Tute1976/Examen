@@ -1,5 +1,15 @@
 ﻿[
   {
+    "Nom": "Visual Studio Code",
+    "Descripcio": "",
+    "Aplicacions": [
+  {
+    "Nom": "Visual Studio Code",
+    "Executable": "code.exe",
+    "CalAturar": true,
+    "Ignorar": false
+  },
+  {
     "Nom": "Adobe Acrobat",
     "Executable": "acrobat.exe",
     "CalAturar": true,
@@ -20,7 +30,7 @@
   {
     "Nom": "Google Chrome",
     "Executable": "chrome.exe",
-    "CalAturar": false,
+    "CalAturar": true,
     "Ignorar": true
   },
   {
@@ -142,35 +152,16 @@
     "Executable": "qutebrowser.exe",
     "CalAturar": true,
     "Ignorar": false
+  }
+]  },
+  {
+    "Nom": "Adobe Acrobat",
+    "Descripcio": "",
+    "Aplicacions": []
   },
   {
-    "Nom": "Microsoft Outlook",
-    "Executable": "OUTLOOK.EXE",
-    "CalAturar": true,
-    "Ignorar": true
-  },
-  {
-    "Nom": "TextPad",
-    "Executable": "TextPad.exe",
-    "CalAturar": true,
-    "Ignorar": true
-  },
-  {
-    "Nom": "Professor",
-    "Executable": "Professor.exe",
-    "CalAturar": true,
-    "Ignorar": true
-  },
-  {
-    "Nom": "Alumne",
-    "Executable": "Alumne.exe",
-    "CalAturar": true,
-    "Ignorar": true
-  },
-  {
-    "Nom": "Visual Studio Code",
-    "Executable": "code.exe",
-    "CalAturar": true,
-    "Ignorar": true
+    "Nom": "Adobe Acrobat Reader",
+    "Descripcio": "",
+    "Aplicacions": []
   }
 ]
