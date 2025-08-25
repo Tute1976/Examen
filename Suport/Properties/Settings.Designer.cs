@@ -25,8 +25,8 @@ namespace Examen.Suport.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Mzk1MDI1OUAzMzMwMmUzMDJlMzAzYjMzMzAzYkVNYWtlczNVcmdUWjZvaElTNzVDSHN2MTJyMTZHV2ZIb" +
-            "mJJc3p2ZzUvcE09")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Ngo9BigBOggjHTQxAR8/V1JEaF5cXmRCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdmWXdcdXRXQmZfU" +
+            "kx3WkZWYEk=")]
         public string SyncfusionLicense {
             get {
                 return ((string)(this["SyncfusionLicense"]));

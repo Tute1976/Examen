@@ -17,4 +17,3 @@ D:\Privat\Programacio\Git\Examen\Alumne\obj\Release\Alumne.csproj.CoreCompileInp
 D:\Privat\Programacio\Git\Examen\Alumne\obj\Release\Alumne.csproj.Up2Date
 D:\Privat\Programacio\Git\Examen\Alumne\obj\Release\Alumne.exe
 D:\Privat\Programacio\Git\Examen\Alumne\obj\Release\Alumne.pdb
-D:\Privat\Programacio\Git\Examen\Alumne\obj\Release\Alumne.exe.config

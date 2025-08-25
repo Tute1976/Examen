@@ -19,4 +19,3 @@ D:\Privat\Programacio\Git\Examen\Professor\obj\Release\Professor.csproj.CoreComp
 D:\Privat\Programacio\Git\Examen\Professor\obj\Release\Professor.csproj.Up2Date
 D:\Privat\Programacio\Git\Examen\Professor\obj\Release\Professor.exe
 D:\Privat\Programacio\Git\Examen\Professor\obj\Release\Professor.pdb
-D:\Privat\Programacio\Git\Examen\Professor\obj\Release\Professor.exe.config

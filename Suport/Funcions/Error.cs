@@ -15,9 +15,12 @@ namespace Examen.Suport.Funcions
         {
             var metroColorTable = new MetroStyleColorTable
             {
-                NoButtonBackColor = Color.Red,
+                NoButtonBackColor = Color.LightSalmon,
                 YesButtonBackColor = Color.SkyBlue,
-                OKButtonBackColor = Color.Green
+                OKButtonBackColor = Color.Green,
+                CaptionBarColor = Color.FromArgb(83, 180, 237),
+                CaptionForeColor = Color.White,
+                BorderColor = Color.FromArgb(83, 180, 237)
             };
             MessageBoxAdv.MetroColorTable = metroColorTable;
             MessageBoxAdv.MessageBoxStyle = MessageBoxAdv.Style.Metro;
@@ -27,7 +30,7 @@ namespace Examen.Suport.Funcions
         {
             try
             {
-                mostrarMissatge = mostrarMissatge | icona != MessageBoxIcon.Error;
+                mostrarMissatge = mostrarMissatge | (icona != MessageBoxIcon.Error);
                 var nl = Environment.NewLine;
 
                 Trace.AutoFlush = true;

@@ -23,7 +23,11 @@ namespace Examen.Alumne
                 if (ParseArguments(out var nom, out var codi))
                 {
                     var nl = Environment.NewLine;
-                    var missatge = $@"Examen Alumne {nl}{nl}Arguments: {nl}  -n, -nom: Nom de l'alumne    {nl}  -c, -codi: Codi de l'examen    {nl}  -?: Mostra aquesta ajuda    ";
+                    var missatge = $@"Examen Alumne {nl}{nl}" +
+                                         $@"Arguments: {nl}" +
+                                         $@"  -n, -nom: Nom de l'alumne    {nl}" +
+                                         $@"  -c, -codi: Codi de l'examen    {nl}" +
+                                         $@"  -?: Mostra aquesta ajuda    ";
                     missatge.Mostrar(MessageBoxIcon.Information);
                 }
                 else
