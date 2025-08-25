@@ -60,6 +60,11 @@ namespace Examen.Suport.Funcions
             return ret;
         }
 
+        public static T Clonar<T>(this T obj)
+        {
+            return obj.Serialitzar().Deserialitzar<T>();
+        }
+
         public static void Desar(this List<CategoriaAplicacions> aplicacions, string fitxer)
         {
             var json = aplicacions.Serialitzar(Formatting.Indented, true);

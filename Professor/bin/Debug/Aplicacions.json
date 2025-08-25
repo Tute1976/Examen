@@ -1,167 +1,244 @@
 ﻿[
   {
-    "Nom": "Visual Studio Code",
-    "Descripcio": "",
+    "Nom": "Navegadors",
+    "Descripcio": "Navegadors d'Internet",
+    "CalAturar": false,
+    "Ignorar": false,
     "Aplicacions": [
-  {
-    "Nom": "Visual Studio Code",
-    "Executable": "code.exe",
-    "CalAturar": true,
-    "Ignorar": false
+      {
+        "Nom": "Google Chrome",
+        "Descripcio": "Navegador web de Google",
+        "Executable": "chrome.exe",
+        "CalAturar": true,
+        "Ignorar": true
+      },
+      {
+        "Nom": "Mozilla Firefox",
+        "Descripcio": "Navegador web de Mozilla",
+        "Executable": "firefox.exe",
+        "CalAturar": true,
+        "Ignorar": false
+      },
+      {
+        "Nom": "Microsoft Edge",
+        "Descripcio": "Navegador web de Microsoft",
+        "Executable": "msedge.exe",
+        "CalAturar": true,
+        "Ignorar": false
+      },
+      {
+        "Nom": "Opera",
+        "Descripcio": "Navegador web d'Opera",
+        "Executable": "opera.exe",
+        "CalAturar": true,
+        "Ignorar": false
+      },
+      {
+        "Nom": "Brave",
+        "Descripcio": "Navegador web de Brave",
+        "Executable": "brave.exe",
+        "CalAturar": true,
+        "Ignorar": false
+      },
+      {
+        "Nom": "Vivaldi",
+        "Descripcio": "Navegador web de Vivaldi",
+        "Executable": "vivaldi.exe",
+        "CalAturar": true,
+        "Ignorar": false
+      },
+      {
+        "Nom": "Chromium",
+        "Descripcio": "Navegador web de codi obert",
+        "Executable": "chromium.exe",
+        "CalAturar": true,
+        "Ignorar": false
+      },
+      {
+        "Nom": "Waterfox",
+        "Descripcio": "Navegador web de Waterfox",
+        "Executable": "waterfox.exe",
+        "CalAturar": true,
+        "Ignorar": false
+      },
+      {
+        "Nom": "Pale Moon",
+        "Descripcio": "Navegador web de Pale Moon",
+        "Executable": "palemoon.exe",
+        "CalAturar": true,
+        "Ignorar": false
+      },
+      {
+        "Nom": "Maxthon",
+        "Descripcio": "Navegador web de Maxthon",
+        "Executable": "maxthon.exe",
+        "CalAturar": true,
+        "Ignorar": false
+      },
+      {
+        "Nom": "Avant Browser",
+        "Descripcio": "Navegador web d'Avant",
+        "Executable": "avant.exe",
+        "CalAturar": true,
+        "Ignorar": false
+      },
+      {
+        "Nom": "Slimjet",
+        "Descripcio": "Navegador web de Slimjet",
+        "Executable": "slimjet.exe",
+        "CalAturar": true,
+        "Ignorar": false
+      },
+      {
+        "Nom": "Yandex Browser",
+        "Descripcio": "Navegador web de Yandex",
+        "Executable": "browser.exe",
+        "CalAturar": true,
+        "Ignorar": false
+      },
+      {
+        "Nom": "Epic Privacy Browser",
+        "Descripcio": "Navegador web d'Epic",
+        "Executable": "epic.exe",
+        "CalAturar": true,
+        "Ignorar": false
+      },
+      {
+        "Nom": "Comodo Dragon",
+        "Descripcio": "Navegador web de Comodo",
+        "Executable": "dragon.exe",
+        "CalAturar": true,
+        "Ignorar": false
+      },
+      {
+        "Nom": "SRWare Iron",
+        "Descripcio": "Navegador web de SRWare",
+        "Executable": "iron.exe",
+        "CalAturar": true,
+        "Ignorar": false
+      },
+      {
+        "Nom": "UC Browser",
+        "Descripcio": "Navegador web de UC",
+        "Executable": "browser.exe",
+        "CalAturar": true,
+        "Ignorar": false
+      },
+      {
+        "Nom": "Lunascape",
+        "Descripcio": "Navegador web de Lunascape",
+        "Executable": "lunascape6.exe",
+        "CalAturar": true,
+        "Ignorar": false
+      },
+      {
+        "Nom": "Midori",
+        "Descripcio": "Navegador web de Midori",
+        "Executable": "midori.exe",
+        "CalAturar": true,
+        "Ignorar": false
+      },
+      {
+        "Nom": "K-Meleon",
+        "Descripcio": "Navegador web de K-Meleon",
+        "Executable": "k-meleon.exe",
+        "CalAturar": true,
+        "Ignorar": false
+      },
+      {
+        "Nom": "QuteBrowser",
+        "Descripcio": "Navegador web de QuteBrowser",
+        "Executable": "qutebrowser.exe",
+        "CalAturar": true,
+        "Ignorar": false
+      }
+    ]
   },
   {
     "Nom": "Adobe Acrobat",
-    "Executable": "acrobat.exe",
-    "CalAturar": true,
-    "Ignorar": false
+    "Descripcio": "Aplicació per a la visualització i edició de PDFs",
+    "CalAturar": false,
+    "Ignorar": false,
+    "Aplicacions": [
+      {
+        "Nom": "Adobe Acrobat",
+        "Descripcio": "Aplicació per a la visualització i edició de PDFs",
+        "Executable": "acrobat.exe",
+        "CalAturar": true,
+        "Ignorar": false
+      },
+      {
+        "Nom": "Adobe Acrobat Reader",
+        "Descripcio": "Aplicació per a la visualització de PDFs",
+        "Executable": "acrord32.exe",
+        "CalAturar": true,
+        "Ignorar": false
+      }
+    ]
   },
   {
-    "Nom": "Adobe Acrobat Reader",
-    "Executable": "acrord32.exe",
-    "CalAturar": true,
-    "Ignorar": false
+    "Nom": "Microsoft Office",
+    "Descripcio": "Aplicacions d'ofimàtica",
+    "CalAturar": false,
+    "Ignorar": true,
+    "Aplicacions": [
+      {
+        "Nom": "Microsoft Word",
+        "Descripcio": "Processador de textos de Microsoft",
+        "Executable": "winword.exe",
+        "CalAturar": false,
+        "Ignorar": false
+      },
+      {
+        "Nom": "Microsoft Excel",
+        "Descripcio": "Full de càlcul de Microsoft",
+        "Executable": "excel.exe",
+        "CalAturar": false,
+        "Ignorar": false
+      },
+      {
+        "Nom": "Microsoft PowerPoint",
+        "Descripcio": "Presentacions de Microsoft",
+        "Executable": "powerpoint.exe",
+        "CalAturar": false,
+        "Ignorar": false
+      },
+      {
+        "Nom": "Microsoft Access",
+        "Descripcio": "Base de dades de Microsoft",
+        "Executable": "msaccess.exe",
+        "CalAturar": false,
+        "Ignorar": false
+      },
+      {
+        "Nom": "Microsoft OutLook",
+        "Descripcio": "Client de correu electrònic de Microsoft",
+        "Executable": "outlook.exe",
+        "CalAturar": false,
+        "Ignorar": false
+      }
+    ]
   },
   {
-    "Nom": "WhatsApp",
-    "Executable": "WhatsApp.exe",
-    "CalAturar": true,
-    "Ignorar": true
-  },
-  {
-    "Nom": "Google Chrome",
-    "Executable": "chrome.exe",
-    "CalAturar": true,
-    "Ignorar": true
-  },
-  {
-    "Nom": "Mozilla Firefox",
-    "Executable": "firefox.exe",
-    "CalAturar": true,
-    "Ignorar": false
-  },
-  {
-    "Nom": "Microsoft Edge",
-    "Executable": "msedge.exe",
-    "CalAturar": true,
-    "Ignorar": false
-  },
-  {
-    "Nom": "Opera",
-    "Executable": "opera.exe",
-    "CalAturar": true,
-    "Ignorar": false
-  },
-  {
-    "Nom": "Brave",
-    "Executable": "brave.exe",
-    "CalAturar": true,
-    "Ignorar": false
-  },
-  {
-    "Nom": "Vivaldi",
-    "Executable": "vivaldi.exe",
-    "CalAturar": true,
-    "Ignorar": false
-  },
-  {
-    "Nom": "Chromium",
-    "Executable": "chromium.exe",
-    "CalAturar": true,
-    "Ignorar": false
-  },
-  {
-    "Nom": "Waterfox",
-    "Executable": "waterfox.exe",
-    "CalAturar": true,
-    "Ignorar": false
-  },
-  {
-    "Nom": "Pale Moon",
-    "Executable": "palemoon.exe",
-    "CalAturar": true,
-    "Ignorar": false
-  },
-  {
-    "Nom": "Maxthon",
-    "Executable": "maxthon.exe",
-    "CalAturar": true,
-    "Ignorar": false
-  },
-  {
-    "Nom": "Avant Browser",
-    "Executable": "avant.exe",
-    "CalAturar": true,
-    "Ignorar": false
-  },
-  {
-    "Nom": "Slimjet",
-    "Executable": "slimjet.exe",
-    "CalAturar": true,
-    "Ignorar": false
-  },
-  {
-    "Nom": "Yandex Browser",
-    "Executable": "browser.exe",
-    "CalAturar": true,
-    "Ignorar": false
-  },
-  {
-    "Nom": "Epic Privacy Browser",
-    "Executable": "epic.exe",
-    "CalAturar": true,
-    "Ignorar": false
-  },
-  {
-    "Nom": "Comodo Dragon",
-    "Executable": "dragon.exe",
-    "CalAturar": true,
-    "Ignorar": false
-  },
-  {
-    "Nom": "SRWare Iron",
-    "Executable": "iron.exe",
-    "CalAturar": true,
-    "Ignorar": false
-  },
-  {
-    "Nom": "UC Browser",
-    "Executable": "browser.exe",
-    "CalAturar": true,
-    "Ignorar": false
-  },
-  {
-    "Nom": "Lunascape",
-    "Executable": "lunascape6.exe",
-    "CalAturar": true,
-    "Ignorar": false
-  },
-  {
-    "Nom": "Midori",
-    "Executable": "midori.exe",
-    "CalAturar": true,
-    "Ignorar": false
-  },
-  {
-    "Nom": "K-Meleon",
-    "Executable": "k-meleon.exe",
-    "CalAturar": true,
-    "Ignorar": false
-  },
-  {
-    "Nom": "QuteBrowser",
-    "Executable": "qutebrowser.exe",
-    "CalAturar": true,
-    "Ignorar": false
-  }
-]  },
-  {
-    "Nom": "Adobe Acrobat",
-    "Descripcio": "",
-    "Aplicacions": []
-  },
-  {
-    "Nom": "Adobe Acrobat Reader",
-    "Descripcio": "",
-    "Aplicacions": []
+    "Nom": "Altres",
+    "Descripcio": "Altres aplicacions a considerar",
+    "CalAturar": false,
+    "Ignorar": false,
+    "Aplicacions": [
+      {
+        "Nom": "Visual Studio Code",
+        "Descripcio": "Editor de codi font",
+        "Executable": "code.exe",
+        "CalAturar": true,
+        "Ignorar": false
+      },
+      {
+        "Nom": "WhatsApp",
+        "Descripcio": "Aplicació de missatgeria instantània",
+        "Executable": "WhatsApp.exe",
+        "CalAturar": true,
+        "Ignorar": false
+      }
+    ]
   }
 ]

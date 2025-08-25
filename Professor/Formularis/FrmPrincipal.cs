@@ -320,18 +320,6 @@ namespace Examen.Professor.Formularis
                 accio();
         }
 
-        private void DesarAplicacions()
-        {
-            try
-            {
-                ContenidorAplicacions.CategoriaAplicacions.Desar(Fitxer);
-            }
-            catch (Exception ex)
-            {
-                ex.Mostrar();
-            }
-        }
-
         private void LlistaHistoric_DoubleClick(object sender, EventArgs e)
         {
             if (llistaHistoric.SelectedItems is not { Count: > 0 }) 
@@ -465,7 +453,7 @@ namespace Examen.Professor.Formularis
                 if (frmAplicacions.ShowDialog() != DialogResult.OK) 
                     return;
                 ContenidorAplicacions = frmAplicacions.ContenidorAplicacions;
-                DesarAplicacions();
+                ContenidorAplicacions.CategoriaAplicacions.Desar(Fitxer);
             }
             catch (Exception ex)
             {

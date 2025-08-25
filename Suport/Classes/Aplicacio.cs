@@ -47,6 +47,10 @@ namespace Examen.Suport.Classes
         [Browsable(false)]
         private string ExecutableCurt => string.Join(".", Executable.Split('.').Reverse().Skip(1).Reverse());
 
+        //[Browsable(false)]
+        //[JsonIgnore]
+        //public bool Notificada { get; set; }
+
         public Aplicacio()
         {
         }
@@ -117,7 +121,11 @@ namespace Examen.Suport.Classes
                     return n == 0;
                 }
 
-                backgroundWorker.ReportProgress(10, $@"L'aplicació '{Nom}', no s'ha d'aturar segons directrius.");
+                //if (!Notificada)
+                //{
+                //    backgroundWorker.ReportProgress(10, $@"L'aplicació '{Nom}', no s'ha d'aturar segons directrius.");
+                //    Notificada = true;
+                //}
 
                 return false;
             }

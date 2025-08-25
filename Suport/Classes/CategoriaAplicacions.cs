@@ -21,7 +21,21 @@ namespace Examen.Suport.Classes
          Description("Descripció de la categoria")]
         public string Descripcio { get; set; } = "";
 
-        [Category("Categoria"),
+        [Category("Acció"),
+         Browsable(true),
+         ReadOnly(false),
+         DisplayName("Cal aturar?"),
+         Description("Indica si cal aturar l'aplicació en detectar-la")]
+        public bool CalAturar { get; set; }
+
+        [Category("Acció"),
+         Browsable(true),
+         ReadOnly(false),
+         DisplayName("Ignorar"),
+         Description("Ignorar l'aplicació en detectar-la")]
+        public bool Ignorar { get; set; }
+
+        [Category("Membres"),
          Browsable(true),
          ReadOnly(false),
          DisplayName("Aplicacions"),

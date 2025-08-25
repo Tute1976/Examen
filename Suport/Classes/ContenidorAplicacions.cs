@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using Examen.Suport.Funcions;
 
 namespace Examen.Suport.Classes
 {
@@ -23,7 +24,14 @@ namespace Examen.Suport.Classes
                 var ret = new List<Aplicacio>();
                 foreach (var categoria in CategoriaAplicacions.Where(categoria => categoria?.Aplicacions != null))
                 {
-                    ret.AddRange(categoria.Aplicacions);
+                    foreach (var aplicacioClonada in categoria.Aplicacions.Select(aplicacio => aplicacio.Clonar()))
+                    {
+                        aplicacioClonada.CalAturar |= categoria.CalAturar;
+                        aplicacioClonada.Ignorar |= categoria.Ignorar;
+
+                        if (!aplicacioClonada.Ignorar)
+                            ret.Add(aplicacioClonada);
+                    }
                 }
 
                 return ret;
