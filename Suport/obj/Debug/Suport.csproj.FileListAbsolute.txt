@@ -19,3 +19,4 @@ D:\Privat\Programacio\Git\Examen\Suport\bin\Debug\Syncfusion.Shared.Base.xml
 D:\Privat\Programacio\Git\Examen\Suport\obj\Debug\Examen.Suport.Properties.Resources.resources
 D:\Privat\Programacio\Git\Examen\Suport\obj\Debug\Examen.Suport.Formularis.ToastForm.resources
 D:\Privat\Programacio\Git\Examen\Suport\obj\Debug\Examen.Suport.Formularis.FrmAplicacionsEnUs.resources
+D:\Privat\Programacio\Git\Examen\Suport\obj\Debug\Examen.Suport.Controls.InfoEstacioAdv.resources

@@ -74,11 +74,21 @@
     <Compile Include="Classes\ContenidorAplicacionsEnUs.cs" />
     <Compile Include="Classes\ContenidorAplicacions.cs" />
     <Compile Include="Classes\EstacioAlumne.cs" />
+    <Compile Include="Controls\GroupBoxAdv.cs" />
+    <Compile Include="Controls\InfoEstacioAdv.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\InfoEstacioAdv.Designer.cs">
+      <DependentUpon>InfoEstacioAdv.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\InfoEstacio.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\InfoEstacio.Designer.cs">
       <DependentUpon>InfoEstacio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PanelAdv.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Formularis\FrmAplicacionsEnUs.cs">
       <SubType>Form</SubType>
@@ -154,6 +164,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controls\InfoEstacioAdv.resx">
+      <DependentUpon>InfoEstacioAdv.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\InfoEstacio.resx">
       <DependentUpon>InfoEstacio.cs</DependentUpon>
     </EmbeddedResource>

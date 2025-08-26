@@ -99,7 +99,7 @@ namespace Examen.Professor.Formularis
                 Invocar(llistaHistoric, () =>
                 {
                     string estat;
-                    InfoEstacio infoEstacio;
+                    InfoEstacioAdv infoEstacio;
 
                     switch (tipusMissatge)
                     {
@@ -111,13 +111,13 @@ namespace Examen.Professor.Formularis
 
                             AfegirItem(estacioAlumne, 1, Color.Green, estat);
 
-                            infoEstacio = new InfoEstacio(estacioAlumne, Properties.Settings.Default.IntevarvalTemps * 3)
+                            infoEstacio = new InfoEstacioAdv(estacioAlumne, Properties.Settings.Default.IntevarvalTemps * 3)
                             {
                                 Estat = estat,
                                 Data = DateTime.Now,
-                                Imatge = 1,
+                                Imatge = Imatge.Nou,
                                 Tag = estacioAlumne.Id,
-                                BackgroundColor = Color.PaleGreen,
+                                ColorFranja = ColorsFranja.Verd,
                                 Dock = DockStyle.Fill,
                                 AplicacionsEnUs = aplicacionsEnUs
                             };
@@ -131,14 +131,13 @@ namespace Examen.Professor.Formularis
                             AfegirItem(estacioAlumne, 2, Color.Blue, estat);
 
                             infoEstacio = taula.Controls
-                                .OfType<InfoEstacio>()
+                                .OfType<InfoEstacioAdv>()
                                 .FirstOrDefault(x => x.Tag.Equals(estacioAlumne.Id));
                             if (infoEstacio != null)
                             {
-                                infoEstacio.Imatge = 2;
+                                infoEstacio.Imatge = Imatge.Vell;
                                 infoEstacio.Estat = estat;
-                                infoEstacio.BackgroundColor = Color.Coral;
-                                infoEstacio.ForeColor = Color.White;
+                                infoEstacio.ColorFranja = ColorsFranja.VermellFosc;
                                 infoEstacio.Pitar = false;
                                 infoEstacio.Bloquejar = false;
                                 infoEstacio.Aturar = false;
@@ -160,15 +159,14 @@ namespace Examen.Professor.Formularis
                             AfegirItem(estacioAlumne, 3, Color.Red, estat);
 
                             infoEstacio = taula.Controls
-                                .OfType<InfoEstacio>()
+                                .OfType<InfoEstacioAdv>()
                                 .FirstOrDefault(x => x.Tag.Equals(estacioAlumne.Id));
                             if (infoEstacio != null)
                             {
-                                infoEstacio.Imatge = 2;
+                                infoEstacio.Imatge = Imatge.Atencio;
                                 infoEstacio.Data = DateTime.Now;
                                 infoEstacio.Estat = estat;
-                                infoEstacio.BackgroundColor = Color.LightCoral;
-                                infoEstacio.ForeColor = Color.White;
+                                infoEstacio.ColorFranja = ColorsFranja.Vermell;
                                 infoEstacio.Pitar = false;
                                 infoEstacio.Bloquejar = false;
                                 infoEstacio.Aturar = false;
@@ -187,17 +185,16 @@ namespace Examen.Professor.Formularis
                             AfegirItem(estacioAlumne, 0, Color.Green, estat);
 
                             infoEstacio = taula.Controls
-                                .OfType<InfoEstacio>()
+                                .OfType<InfoEstacioAdv>()
                                 .FirstOrDefault(x => x.Tag.Equals(estacioAlumne.Id));
                             if (infoEstacio != null)
                             {
                                 infoEstacio.Imatge = 0;
                                 infoEstacio.Data = DateTime.Now;
                                 infoEstacio.Estat = estat;
-                                infoEstacio.BackgroundColor = infoEstacio.BackgroundColor == Color.Transparent ? 
-                                    Color.LightSkyBlue : 
-                                    Color.WhiteSmoke;
-                                infoEstacio.ForeColor = Color.Black;
+                                infoEstacio.ColorFranja = infoEstacio.ColorFranja == ColorsFranja.Defecte ?
+                                    ColorsFranja.Blau : 
+                                    ColorsFranja.Blanc;
                                 infoEstacio.Pitar = false;
                                 infoEstacio.Bloquejar = false;
                                 infoEstacio.Aturar = false;
@@ -213,7 +210,7 @@ namespace Examen.Professor.Formularis
                             AfegirItem(estacioAlumne, 2, Color.Blue, estat);
 
                             infoEstacio = taula.Controls
-                                .OfType<InfoEstacio>()
+                                .OfType<InfoEstacioAdv>()
                                 .FirstOrDefault(x => x.Tag.Equals(estacioAlumne.Id));
                             if (infoEstacio != null)
                             {
@@ -225,7 +222,7 @@ namespace Examen.Professor.Formularis
                         case TipusMissatge.TempsAmbDeteccio:
                         case TipusMissatge.Prova:
                             infoEstacio = taula.Controls
-                                .OfType<InfoEstacio>()
+                                .OfType<InfoEstacioAdv>()
                                 .FirstOrDefault(x => x.Tag.Equals(estacioAlumne.Id));
                             if (infoEstacio != null)
                             {
