@@ -10,7 +10,6 @@ D:\Privat\Programacio\Git\Examen\Suport\bin\Release\Newtonsoft.Json.xml
 D:\Privat\Programacio\Git\Examen\Suport\bin\Release\Syncfusion.Shared.Base.xml
 D:\Privat\Programacio\Git\Examen\Suport\bin\Release\System.CodeDom.xml
 D:\Privat\Programacio\Git\Examen\Suport\obj\Release\Suport.csproj.AssemblyReference.cache
-D:\Privat\Programacio\Git\Examen\Suport\obj\Release\Examen.Suport.Controls.InfoEstacio.resources
 D:\Privat\Programacio\Git\Examen\Suport\obj\Release\Examen.Suport.Properties.Resources.resources
 D:\Privat\Programacio\Git\Examen\Suport\obj\Release\Suport.csproj.GenerateResource.cache
 D:\Privat\Programacio\Git\Examen\Suport\obj\Release\Suport.csproj.CoreCompileInputs.cache
@@ -19,3 +18,5 @@ D:\Privat\Programacio\Git\Examen\Suport\obj\Release\Suport.dll
 D:\Privat\Programacio\Git\Examen\Suport\obj\Release\Suport.pdb
 D:\Privat\Programacio\Git\Examen\Suport\obj\Release\Examen.Suport.Formularis.ToastForm.resources
 D:\Privat\Programacio\Git\Examen\Suport\obj\Release\Examen.Suport.Formularis.FrmAplicacionsEnUs.resources
+D:\Privat\Programacio\Git\Examen\Suport\obj\Release\Examen.Suport.Controls.InfoEstacioV2.resources
+D:\Privat\Programacio\Git\Examen\Suport\obj\Release\Examen.Suport.Controls.InfoEstacioV1.resources

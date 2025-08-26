@@ -19,4 +19,3 @@ D:\Privat\Programacio\Git\Examen\Professor\bin\Debug\Syncfusion.Shared.Base.xml
 D:\Privat\Programacio\Git\Examen\Professor\obj\Debug\Examen.Professor.Formularis.FrmAplicacions.resources
 D:\Privat\Programacio\Git\Examen\Professor\obj\Debug\Examen.Professor.Formularis.FrmPrincipal.resources
 D:\Privat\Programacio\Git\Examen\Professor\bin\Debug\Dades\Aplicacions.json
-D:\Privat\Programacio\Git\Examen\Professor\obj\Debug\Professor.exe.config

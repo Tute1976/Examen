@@ -99,7 +99,7 @@ namespace Examen.Professor.Formularis
                 Invocar(llistaHistoric, () =>
                 {
                     string estat;
-                    InfoEstacioAdv infoEstacio;
+                    InfoEstacio infoEstacio;
 
                     switch (tipusMissatge)
                     {
@@ -111,16 +111,16 @@ namespace Examen.Professor.Formularis
 
                             AfegirItem(estacioAlumne, 1, Color.Green, estat);
 
-                            infoEstacio = new InfoEstacioAdv(estacioAlumne, Properties.Settings.Default.IntevarvalTemps * 3)
-                            {
-                                Estat = estat,
-                                Data = DateTime.Now,
-                                Imatge = Imatge.Nou,
-                                Tag = estacioAlumne.Id,
-                                ColorFranja = ColorsFranja.Verd,
-                                Dock = DockStyle.Fill,
-                                AplicacionsEnUs = aplicacionsEnUs
-                            };
+                            infoEstacio = Properties.Settings.Default.VersioInfo == 1
+                                ? new InfoEstacioV1(estacioAlumne, Properties.Settings.Default.IntevarvalTemps * 3)
+                                : new InfoEstacioV2(estacioAlumne, Properties.Settings.Default.IntevarvalTemps * 3);
+                            infoEstacio.Estat = estat;
+                            infoEstacio.Data = DateTime.Now;
+                            infoEstacio.Imatge = Imatge.Nou;
+                            infoEstacio.Tag = estacioAlumne.Id;
+                            infoEstacio.Color = Colors.Correcte;
+                            infoEstacio.Dock = DockStyle.Fill;
+                            infoEstacio.AplicacionsEnUs = aplicacionsEnUs;
                             taula.Controls.Add(infoEstacio);
 
                             break;
@@ -131,13 +131,13 @@ namespace Examen.Professor.Formularis
                             AfegirItem(estacioAlumne, 2, Color.Blue, estat);
 
                             infoEstacio = taula.Controls
-                                .OfType<InfoEstacioAdv>()
+                                .OfType<InfoEstacio>()
                                 .FirstOrDefault(x => x.Tag.Equals(estacioAlumne.Id));
                             if (infoEstacio != null)
                             {
                                 infoEstacio.Imatge = Imatge.Vell;
                                 infoEstacio.Estat = estat;
-                                infoEstacio.ColorFranja = ColorsFranja.VermellFosc;
+                                infoEstacio.Color = Colors.VermellFosc;
                                 infoEstacio.Pitar = false;
                                 infoEstacio.Bloquejar = false;
                                 infoEstacio.Aturar = false;
@@ -159,14 +159,14 @@ namespace Examen.Professor.Formularis
                             AfegirItem(estacioAlumne, 3, Color.Red, estat);
 
                             infoEstacio = taula.Controls
-                                .OfType<InfoEstacioAdv>()
+                                .OfType<InfoEstacio>()
                                 .FirstOrDefault(x => x.Tag.Equals(estacioAlumne.Id));
                             if (infoEstacio != null)
                             {
                                 infoEstacio.Imatge = Imatge.Atencio;
                                 infoEstacio.Data = DateTime.Now;
                                 infoEstacio.Estat = estat;
-                                infoEstacio.ColorFranja = ColorsFranja.Vermell;
+                                infoEstacio.Color = Colors.Vermell;
                                 infoEstacio.Pitar = false;
                                 infoEstacio.Bloquejar = false;
                                 infoEstacio.Aturar = false;
@@ -185,16 +185,16 @@ namespace Examen.Professor.Formularis
                             AfegirItem(estacioAlumne, 0, Color.Green, estat);
 
                             infoEstacio = taula.Controls
-                                .OfType<InfoEstacioAdv>()
+                                .OfType<InfoEstacio>()
                                 .FirstOrDefault(x => x.Tag.Equals(estacioAlumne.Id));
                             if (infoEstacio != null)
                             {
                                 infoEstacio.Imatge = 0;
                                 infoEstacio.Data = DateTime.Now;
                                 infoEstacio.Estat = estat;
-                                infoEstacio.ColorFranja = infoEstacio.ColorFranja == ColorsFranja.Defecte ?
-                                    ColorsFranja.Blau : 
-                                    ColorsFranja.Blanc;
+                                infoEstacio.Color = infoEstacio.Color == Colors.Defecte ?
+                                    Colors.Blau : 
+                                    Colors.Blanc;
                                 infoEstacio.Pitar = false;
                                 infoEstacio.Bloquejar = false;
                                 infoEstacio.Aturar = false;
@@ -210,7 +210,7 @@ namespace Examen.Professor.Formularis
                             AfegirItem(estacioAlumne, 2, Color.Blue, estat);
 
                             infoEstacio = taula.Controls
-                                .OfType<InfoEstacioAdv>()
+                                .OfType<InfoEstacio>()
                                 .FirstOrDefault(x => x.Tag.Equals(estacioAlumne.Id));
                             if (infoEstacio != null)
                             {
@@ -222,7 +222,7 @@ namespace Examen.Professor.Formularis
                         case TipusMissatge.TempsAmbDeteccio:
                         case TipusMissatge.Prova:
                             infoEstacio = taula.Controls
-                                .OfType<InfoEstacioAdv>()
+                                .OfType<InfoEstacio>()
                                 .FirstOrDefault(x => x.Tag.Equals(estacioAlumne.Id));
                             if (infoEstacio != null)
                             {
@@ -387,12 +387,12 @@ namespace Examen.Professor.Formularis
             }
         }
 
-        private void bMostrarLlista_CheckedChanged(object sender, EventArgs e)
+        private void BMostrarLlista_CheckedChanged(object sender, EventArgs e)
         {
             split.Panel2Collapsed = !bMostrarLlista.Checked;
         }
 
-        private void bNetejarLlista_Click(object sender, EventArgs e)
+        private void BNetejarLlista_Click(object sender, EventArgs e)
         {
             Items.Clear();
             llistaHistoric.Items.Clear();
@@ -402,12 +402,12 @@ namespace Examen.Professor.Formularis
             lFiltreHistoric.Hide();
         }
 
-        private void bCopiarCodi_Click(object sender, EventArgs e)
+        private void BCopiarCodi_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(CaptionLabels[1].Text);
         }
 
-        private void timerCaducades_Tick(object sender, EventArgs e)
+        private void TimerCaducades_Tick(object sender, EventArgs e)
         {
             try
             {
@@ -426,9 +426,9 @@ namespace Examen.Professor.Formularis
 
                     AfegirItem(infoEstacio.EstacioAlumne, 3, Color.Coral, estat);
 
-                    infoEstacio.Imatge = 2;
+                    infoEstacio.Imatge = Imatge.Atencio;
                     infoEstacio.Estat = estat;
-                    infoEstacio.BackgroundColor = Color.Coral;
+                    infoEstacio.Color = Colors.Vermell;
                     infoEstacio.ForeColor = Color.White;
                     infoEstacio.Pitar = false;
                     infoEstacio.Bloquejar = false;
@@ -442,7 +442,7 @@ namespace Examen.Professor.Formularis
             }
         }
 
-        private void bAplicacions_Click(object sender, EventArgs e)
+        private void BAplicacions_Click(object sender, EventArgs e)
         {
             try
             {
@@ -458,14 +458,14 @@ namespace Examen.Professor.Formularis
             }
         }
 
-        private void cbHistoric_SelectedIndexChanged(object sender, EventArgs e)
+        private void CbHistoric_SelectedIndexChanged(object sender, EventArgs e)
         {
             llistaHistoric.Items.Clear();
 
             var items = cbHistoric.Text.Contains("Totes")
                 ? Items
                 : Items.Where(i => ((EstacioAlumne)i.Tag).Estacio.Equals(cbHistoric.Text));
-            llistaHistoric.Items.AddRange(items.ToArray());
+            llistaHistoric.Items.AddRange([.. items]);
         }
 
         private void AfegirItem(EstacioAlumne estacioAlumne, int imageIndex, Color foreColor, string estat)
@@ -501,7 +501,7 @@ namespace Examen.Professor.Formularis
             }
         }
 
-        private void bSortir_Click(object sender, EventArgs e)
+        private void BSortir_Click(object sender, EventArgs e)
         {
             if ("Vols finalitzar el programa?".Mostrar(MessageBoxIcon.Question, MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
@@ -513,7 +513,7 @@ namespace Examen.Professor.Formularis
             }
         }
 
-        private void timerTancar_Tick(object sender, EventArgs e)
+        private void TimerTancar_Tick(object sender, EventArgs e)
         {
             try
             {
@@ -532,7 +532,7 @@ namespace Examen.Professor.Formularis
             }
         }
 
-        private void bStartStop_Click(object sender, EventArgs e)
+        private void BStartStop_Click(object sender, EventArgs e)
         {
             if (bStartStop.Tag is string s &&
                 bool.TryParse(s, out var start) &&
@@ -552,7 +552,7 @@ namespace Examen.Professor.Formularis
             }
         }
 
-        private void taula_Controls(object sender, ControlEventArgs e)
+        private void Taula_Controls(object sender, ControlEventArgs e)
         {
             CaptionLabels[0].Text = taula.Controls.Count == 0 ? 
                 "Codi" : 

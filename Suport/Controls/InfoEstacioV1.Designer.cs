@@ -2,7 +2,7 @@
 
 namespace Examen.Suport.Controls
 {
-    partial class InfoEstacio
+    partial class InfoEstacioV1
     {
         /// <summary> 
         /// Required designer variable.
@@ -31,7 +31,7 @@ namespace Examen.Suport.Controls
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InfoEstacio));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InfoEstacioV1));
             this.gb = new System.Windows.Forms.GroupBox();
             this.taula = new System.Windows.Forms.TableLayoutPanel();
             this.txtDataInci = new System.Windows.Forms.Label();
@@ -271,7 +271,7 @@ namespace Examen.Suport.Controls
             this.bPitar.Size = new System.Drawing.Size(21, 20);
             this.bPitar.Text = "Reproduïr un xiulet";
             this.bPitar.ToolTipText = "Reproduïr un xiulet";
-            this.bPitar.Click += new System.EventHandler(this.bPitar_Click);
+            this.bPitar.Click += new System.EventHandler(this.BPitar_Click);
             // 
             // bBloquejar
             // 
@@ -281,7 +281,7 @@ namespace Examen.Suport.Controls
             this.bBloquejar.Name = "bBloquejar";
             this.bBloquejar.Size = new System.Drawing.Size(21, 20);
             this.bBloquejar.Text = "Bloquejar estació";
-            this.bBloquejar.Click += new System.EventHandler(this.bBloquejar_Click);
+            this.bBloquejar.Click += new System.EventHandler(this.BBloquejar_Click);
             // 
             // bAturar
             // 
@@ -291,7 +291,7 @@ namespace Examen.Suport.Controls
             this.bAturar.Name = "bAturar";
             this.bAturar.Size = new System.Drawing.Size(21, 20);
             this.bAturar.Text = "Aturar estació";
-            this.bAturar.Click += new System.EventHandler(this.bAturar_Click);
+            this.bAturar.Click += new System.EventHandler(this.BAturar_Click);
             // 
             // bInfo
             // 
@@ -303,7 +303,7 @@ namespace Examen.Suport.Controls
             this.bInfo.Size = new System.Drawing.Size(21, 20);
             this.bInfo.Text = "Mostrar identificador";
             this.bInfo.ToolTipText = "Mostrar identificador";
-            this.bInfo.Click += new System.EventHandler(this.bInfo_Click);
+            this.bInfo.Click += new System.EventHandler(this.BInfo_Click);
             // 
             // bTancar
             // 
@@ -314,7 +314,7 @@ namespace Examen.Suport.Controls
             this.bTancar.Size = new System.Drawing.Size(21, 20);
             this.bTancar.Text = "Tancar";
             this.bTancar.Visible = false;
-            this.bTancar.Click += new System.EventHandler(this.bTancar_Click);
+            this.bTancar.Click += new System.EventHandler(this.BTancar_Click);
             // 
             // bAplicacionsEnUs
             // 
@@ -324,7 +324,7 @@ namespace Examen.Suport.Controls
             this.bAplicacionsEnUs.Name = "bAplicacionsEnUs";
             this.bAplicacionsEnUs.Size = new System.Drawing.Size(21, 20);
             this.bAplicacionsEnUs.Text = "Aplicacions en ús";
-            this.bAplicacionsEnUs.Click += new System.EventHandler(this.bAplicacionsEnUs_Click);
+            this.bAplicacionsEnUs.Click += new System.EventHandler(this.BAplicacionsEnUs_Click);
             // 
             // imatges
             // 

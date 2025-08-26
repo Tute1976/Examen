@@ -5,6 +5,7 @@ using System.Windows.Forms;
 
 namespace Examen.Suport.Controls
 {
+    [DesignerCategory("Code")]
     public sealed class PanelAdv : Panel
     {
         private int _shadowSize = 5;

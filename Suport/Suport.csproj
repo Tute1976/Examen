@@ -75,21 +75,22 @@
     <Compile Include="Classes\ContenidorAplicacions.cs" />
     <Compile Include="Classes\EstacioAlumne.cs" />
     <Compile Include="Controls\GroupBoxAdv.cs" />
-    <Compile Include="Controls\InfoEstacioAdv.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\InfoEstacioAdv.Designer.cs">
-      <DependentUpon>InfoEstacioAdv.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controls\InfoEstacio.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\InfoEstacio.Designer.cs">
-      <DependentUpon>InfoEstacio.cs</DependentUpon>
+    <Compile Include="Controls\InfoEstacioV2.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\PanelAdv.cs">
-      <SubType>Component</SubType>
+    <Compile Include="Controls\InfoEstacioV2.Designer.cs">
+      <DependentUpon>InfoEstacioV2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\InfoEstacioV1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\InfoEstacioV1.Designer.cs">
+      <DependentUpon>InfoEstacioV1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PanelAdv.cs" />
     <Compile Include="Formularis\FrmAplicacionsEnUs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,11 +165,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Controls\InfoEstacioAdv.resx">
-      <DependentUpon>InfoEstacioAdv.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\InfoEstacioV2.resx">
+      <DependentUpon>InfoEstacioV2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\InfoEstacio.resx">
-      <DependentUpon>InfoEstacio.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\InfoEstacioV1.resx">
+      <DependentUpon>InfoEstacioV1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularis\FrmAplicacionsEnUs.resx">
       <DependentUpon>FrmAplicacionsEnUs.cs</DependentUpon>

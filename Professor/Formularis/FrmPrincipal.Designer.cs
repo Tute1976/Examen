@@ -122,8 +122,8 @@
             this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.taula.Size = new System.Drawing.Size(880, 0);
             this.taula.TabIndex = 0;
-            this.taula.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.taula_Controls);
-            this.taula.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.taula_Controls);
+            this.taula.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.Taula_Controls);
+            this.taula.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.Taula_Controls);
             // 
             // panelHistoric
             // 
@@ -221,7 +221,7 @@
             this.cbHistoric.TabIndex = 0;
             this.cbHistoric.Text = "Totes les estacions";
             this.cbHistoric.Visible = false;
-            this.cbHistoric.SelectedIndexChanged += new System.EventHandler(this.cbHistoric_SelectedIndexChanged);
+            this.cbHistoric.SelectedIndexChanged += new System.EventHandler(this.CbHistoric_SelectedIndexChanged);
             // 
             // timerInici
             // 
@@ -282,7 +282,7 @@
             this.bStartStop.Size = new System.Drawing.Size(71, 36);
             this.bStartStop.Tag = "False";
             this.bStartStop.Text = "Iniciar sessió";
-            this.bStartStop.Click += new System.EventHandler(this.bStartStop_Click);
+            this.bStartStop.Click += new System.EventHandler(this.BStartStop_Click);
             // 
             // bAplicacions
             // 
@@ -292,7 +292,7 @@
             this.bAplicacions.Name = "bAplicacions";
             this.bAplicacions.Size = new System.Drawing.Size(71, 36);
             this.bAplicacions.Text = "Aplicacions";
-            this.bAplicacions.Click += new System.EventHandler(this.bAplicacions_Click);
+            this.bAplicacions.Click += new System.EventHandler(this.BAplicacions_Click);
             // 
             // toolStripSeparator4
             // 
@@ -310,7 +310,7 @@
             this.bMostrarLlista.Name = "bMostrarLlista";
             this.bMostrarLlista.Size = new System.Drawing.Size(71, 36);
             this.bMostrarLlista.ToolTipText = "Mostrar llista";
-            this.bMostrarLlista.CheckedChanged += new System.EventHandler(this.bMostrarLlista_CheckedChanged);
+            this.bMostrarLlista.CheckedChanged += new System.EventHandler(this.BMostrarLlista_CheckedChanged);
             // 
             // bNetejarLlista
             // 
@@ -321,7 +321,7 @@
             this.bNetejarLlista.Size = new System.Drawing.Size(71, 36);
             this.bNetejarLlista.Text = "Netejar llista";
             this.bNetejarLlista.ToolTipText = "Netejar llista";
-            this.bNetejarLlista.Click += new System.EventHandler(this.bNetejarLlista_Click);
+            this.bNetejarLlista.Click += new System.EventHandler(this.BNetejarLlista_Click);
             // 
             // bSortir
             // 
@@ -332,7 +332,7 @@
             this.bSortir.Name = "bSortir";
             this.bSortir.Size = new System.Drawing.Size(71, 36);
             this.bSortir.Text = "Tancar l\'aplicació";
-            this.bSortir.Click += new System.EventHandler(this.bSortir_Click);
+            this.bSortir.Click += new System.EventHandler(this.BSortir_Click);
             // 
             // toolStripSeparator3
             // 
@@ -350,16 +350,16 @@
             this.bCopiarCodi.Size = new System.Drawing.Size(71, 36);
             this.bCopiarCodi.Text = "Copiar codi";
             this.bCopiarCodi.ToolTipText = "Copiar codi";
-            this.bCopiarCodi.Click += new System.EventHandler(this.bCopiarCodi_Click);
+            this.bCopiarCodi.Click += new System.EventHandler(this.BCopiarCodi_Click);
             // 
             // timerCaducades
             // 
-            this.timerCaducades.Tick += new System.EventHandler(this.timerCaducades_Tick);
+            this.timerCaducades.Tick += new System.EventHandler(this.TimerCaducades_Tick);
             // 
             // timerTancar
             // 
             this.timerTancar.Interval = 1000;
-            this.timerTancar.Tick += new System.EventHandler(this.timerTancar_Tick);
+            this.timerTancar.Tick += new System.EventHandler(this.TimerTancar_Tick);
             // 
             // panelFons
             // 
