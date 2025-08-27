@@ -15,3 +15,25 @@
 
 28/7/2025 10:06:34 [Warning]:    at Examen.Suport.Tcp.ClientTcp.EnviarEstat(AdreçaPort adreçaPort, EstacioAlumne estacioAlumne, List`1 aplicacionsEnUs, TipusMissatge estat, Action pitar, Action bloquejar, Action aturar, Action fiServidor, String text) in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ClientTcp.cs:line 23
 
+27/8/2025 12:52:31 [Asterisk]: Examen Alumne 
+
+27/8/2025 12:52:31 [Asterisk]: Arguments: 
+
+27/8/2025 12:52:31 [Asterisk]:   -n, -nom: Nom de l'alumne    
+
+27/8/2025 12:52:31 [Asterisk]:   -c, -codi: Codi de l'examen    
+
+27/8/2025 12:52:31 [Asterisk]:   -?: Mostra aquesta ajuda    
+
+27/8/2025 12:56:19 [Asterisk]: Aplicacions bloquedades:
+
+27/8/2025 12:56:19 [Asterisk]:      ()    
+
+27/8/2025 13:01:18 [Asterisk]: Aplicacions bloquedades:
+
+27/8/2025 13:01:18 [Asterisk]:      ()    
+
+27/8/2025 13:11:36 [Asterisk]: Aplicacions bloquedades:
+
+27/8/2025 13:11:36 [Asterisk]:      ()    
+

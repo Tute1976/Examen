@@ -116,6 +116,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Examen.ico" />
+    <None Include="Resources\Base_32x32.png" />
+    <None Include="Resources\Start_32x32.png" />
+    <None Include="Resources\Validation_32x32.png" />
+    <None Include="Resources\Cancel_32x32.png" />
     <None Include="Resources\Informacio_32x32.png" />
     <None Include="Resources\Info.png" />
     <None Include="Resources\Connectant.png" />

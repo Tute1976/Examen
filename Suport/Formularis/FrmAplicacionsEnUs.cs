@@ -2,12 +2,12 @@
 using System.Linq;
 using System.Windows.Forms;
 using Examen.Suport.Classes;
+using Examen.Suport.Controls;
 using Examen.Suport.Funcions;
-using Syncfusion.Windows.Forms;
 
 namespace Examen.Suport.Formularis
 {
-    public partial class FrmAplicacionsEnUs : MetroForm
+    public partial class FrmAplicacionsEnUs : FormAdv
     {
         private ContenidorAplicacionsEnUs ContenidorAplicacionsEnUs
         {

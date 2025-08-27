@@ -35,20 +35,20 @@
             this.txtCodi = new System.Windows.Forms.TextBox();
             this.txtNom = new System.Windows.Forms.TextBox();
             this.lNom = new System.Windows.Forms.Label();
-            this.bIniciar = new System.Windows.Forms.Button();
-            this.bTancar = new System.Windows.Forms.Button();
             this.panelFons = new System.Windows.Forms.Panel();
-            this.bInfo = new System.Windows.Forms.Button();
-            this.imatge = new System.Windows.Forms.PictureBox();
             this.timerTemps = new System.Windows.Forms.Timer(this.components);
             this.timerImatge = new System.Windows.Forms.Timer(this.components);
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.txtId = new System.Windows.Forms.Label();
             this.panelInfo = new System.Windows.Forms.Panel();
             this.txtVersio = new System.Windows.Forms.Label();
+            this.bInfo = new System.Windows.Forms.Button();
+            this.bTancar = new System.Windows.Forms.Button();
+            this.bIniciar = new System.Windows.Forms.Button();
+            this.imatge = new System.Windows.Forms.PictureBox();
             this.panelFons.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imatge)).BeginInit();
             this.panelInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imatge)).BeginInit();
             this.SuspendLayout();
             // 
             // imatgesConnecta
@@ -96,9 +96,10 @@
             // txtNom
             // 
             this.txtNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNom.Location = new System.Drawing.Point(25, 225);
+            this.txtNom.Location = new System.Drawing.Point(20, 225);
+            this.txtNom.Margin = new System.Windows.Forms.Padding(0);
             this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(450, 31);
+            this.txtNom.Size = new System.Drawing.Size(455, 31);
             this.txtNom.TabIndex = 0;
             this.txtNom.TextChanged += new System.EventHandler(this.Text_TextChanged);
             // 
@@ -112,33 +113,6 @@
             this.lNom.TabIndex = 3;
             this.lNom.Text = "Nom";
             // 
-            // bIniciar
-            // 
-            this.bIniciar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.bIniciar.Enabled = false;
-            this.bIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bIniciar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bIniciar.Location = new System.Drawing.Point(25, 375);
-            this.bIniciar.Name = "bIniciar";
-            this.bIniciar.Size = new System.Drawing.Size(275, 50);
-            this.bIniciar.TabIndex = 2;
-            this.bIniciar.Text = "Connectar";
-            this.bIniciar.UseVisualStyleBackColor = false;
-            this.bIniciar.Click += new System.EventHandler(this.BIniciar_Click);
-            // 
-            // bTancar
-            // 
-            this.bTancar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.bTancar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bTancar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bTancar.Location = new System.Drawing.Point(325, 375);
-            this.bTancar.Name = "bTancar";
-            this.bTancar.Size = new System.Drawing.Size(150, 50);
-            this.bTancar.TabIndex = 3;
-            this.bTancar.Text = "Tancar";
-            this.bTancar.UseVisualStyleBackColor = false;
-            this.bTancar.Click += new System.EventHandler(this.BTancar_Click);
-            // 
             // panelFons
             // 
             this.panelFons.BackColor = System.Drawing.Color.White;
@@ -151,38 +125,11 @@
             this.panelFons.Controls.Add(this.lCodi);
             this.panelFons.Controls.Add(this.imatge);
             this.panelFons.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFons.Location = new System.Drawing.Point(5, 5);
+            this.panelFons.Location = new System.Drawing.Point(10, 15);
             this.panelFons.Margin = new System.Windows.Forms.Padding(0);
             this.panelFons.Name = "panelFons";
-            this.panelFons.Size = new System.Drawing.Size(500, 439);
+            this.panelFons.Size = new System.Drawing.Size(490, 437);
             this.panelFons.TabIndex = 7;
-            // 
-            // bInfo
-            // 
-            this.bInfo.BackColor = System.Drawing.Color.White;
-            this.bInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bInfo.Image = global::Examen.Alumne.Properties.Resources.Informacio_32x32;
-            this.bInfo.Location = new System.Drawing.Point(425, 375);
-            this.bInfo.Name = "bInfo";
-            this.bInfo.Size = new System.Drawing.Size(50, 50);
-            this.bInfo.TabIndex = 4;
-            this.bInfo.UseVisualStyleBackColor = false;
-            this.bInfo.Visible = false;
-            this.bInfo.Click += new System.EventHandler(this.BInfo_Click);
-            // 
-            // imatge
-            // 
-            this.imatge.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.imatge.Image = global::Examen.Alumne.Properties.Resources.Connectant;
-            this.imatge.Location = new System.Drawing.Point(100, 25);
-            this.imatge.Margin = new System.Windows.Forms.Padding(0);
-            this.imatge.Name = "imatge";
-            this.imatge.Size = new System.Drawing.Size(300, 150);
-            this.imatge.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imatge.TabIndex = 0;
-            this.imatge.TabStop = false;
-            this.imatge.Tag = "0";
             // 
             // timerTemps
             // 
@@ -204,7 +151,7 @@
             // txtId
             // 
             this.txtId.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txtId.Location = new System.Drawing.Point(0, 0);
+            this.txtId.Location = new System.Drawing.Point(20, 0);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(250, 16);
             this.txtId.TabIndex = 8;
@@ -217,50 +164,106 @@
             this.panelInfo.Controls.Add(this.txtVersio);
             this.panelInfo.Controls.Add(this.txtId);
             this.panelInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelInfo.Location = new System.Drawing.Point(5, 444);
+            this.panelInfo.Location = new System.Drawing.Point(10, 452);
             this.panelInfo.Margin = new System.Windows.Forms.Padding(0);
             this.panelInfo.Name = "panelInfo";
-            this.panelInfo.Size = new System.Drawing.Size(500, 16);
+            this.panelInfo.Padding = new System.Windows.Forms.Padding(20, 0, 10, 0);
+            this.panelInfo.Size = new System.Drawing.Size(490, 16);
             this.panelInfo.TabIndex = 9;
             // 
             // txtVersio
             // 
             this.txtVersio.Dock = System.Windows.Forms.DockStyle.Right;
-            this.txtVersio.Location = new System.Drawing.Point(250, 0);
+            this.txtVersio.Location = new System.Drawing.Point(230, 0);
+            this.txtVersio.Margin = new System.Windows.Forms.Padding(0);
             this.txtVersio.Name = "txtVersio";
             this.txtVersio.Size = new System.Drawing.Size(250, 16);
             this.txtVersio.TabIndex = 9;
             this.txtVersio.Text = "versio";
             this.txtVersio.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
+            // bInfo
+            // 
+            this.bInfo.BackColor = System.Drawing.Color.LightCyan;
+            this.bInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bInfo.Image = global::Examen.Alumne.Properties.Resources.Informacio_32x32;
+            this.bInfo.Location = new System.Drawing.Point(425, 375);
+            this.bInfo.Name = "bInfo";
+            this.bInfo.Size = new System.Drawing.Size(50, 50);
+            this.bInfo.TabIndex = 4;
+            this.bInfo.UseVisualStyleBackColor = false;
+            this.bInfo.Visible = false;
+            this.bInfo.Click += new System.EventHandler(this.BInfo_Click);
+            // 
+            // bTancar
+            // 
+            this.bTancar.BackColor = System.Drawing.Color.MistyRose;
+            this.bTancar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bTancar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bTancar.Image = global::Examen.Alumne.Properties.Resources.Cancel_32x32;
+            this.bTancar.Location = new System.Drawing.Point(325, 375);
+            this.bTancar.Name = "bTancar";
+            this.bTancar.Size = new System.Drawing.Size(150, 50);
+            this.bTancar.TabIndex = 3;
+            this.bTancar.Text = "Tancar";
+            this.bTancar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bTancar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bTancar.UseVisualStyleBackColor = false;
+            this.bTancar.Click += new System.EventHandler(this.BTancar_Click);
+            // 
+            // bIniciar
+            // 
+            this.bIniciar.BackColor = System.Drawing.Color.LightYellow;
+            this.bIniciar.Enabled = false;
+            this.bIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bIniciar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bIniciar.Image = global::Examen.Alumne.Properties.Resources.Validation_32x32;
+            this.bIniciar.Location = new System.Drawing.Point(20, 375);
+            this.bIniciar.Margin = new System.Windows.Forms.Padding(0);
+            this.bIniciar.Name = "bIniciar";
+            this.bIniciar.Size = new System.Drawing.Size(250, 50);
+            this.bIniciar.TabIndex = 2;
+            this.bIniciar.Text = "Connectar";
+            this.bIniciar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bIniciar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bIniciar.UseVisualStyleBackColor = false;
+            this.bIniciar.Click += new System.EventHandler(this.BIniciar_Click);
+            // 
+            // imatge
+            // 
+            this.imatge.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.imatge.Image = global::Examen.Alumne.Properties.Resources.Connectant;
+            this.imatge.Location = new System.Drawing.Point(100, 25);
+            this.imatge.Margin = new System.Windows.Forms.Padding(0);
+            this.imatge.Name = "imatge";
+            this.imatge.Size = new System.Drawing.Size(300, 150);
+            this.imatge.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imatge.TabIndex = 0;
+            this.imatge.TabStop = false;
+            this.imatge.Tag = "0";
+            // 
             // FrmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(180)))), ((int)(((byte)(237)))));
-            this.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(180)))), ((int)(((byte)(237)))));
             this.BorderThickness = 2;
-            this.CaptionBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(180)))), ((int)(((byte)(237)))));
-            this.CaptionButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
-            this.CaptionButtonHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
-            this.ClientSize = new System.Drawing.Size(510, 460);
+            this.ClientSize = new System.Drawing.Size(510, 483);
             this.ControlBox = false;
             this.Controls.Add(this.panelFons);
             this.Controls.Add(this.panelInfo);
-            this.DropShadow = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.CornerRadius = 10;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(180)))), ((int)(((byte)(237)))));
             this.Name = "FrmPrincipal";
-            this.Padding = new System.Windows.Forms.Padding(5, 5, 5, 0);
+            this.Padding = new System.Windows.Forms.Padding(10, 15, 10, 15);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StripeWidth = 10;
             this.Text = "Alumne";
             this.Load += new System.EventHandler(this.Principal_Load);
             this.Shown += new System.EventHandler(this.FrmPrincipal_Shown);
             this.panelFons.ResumeLayout(false);
             this.panelFons.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imatge)).EndInit();
             this.panelInfo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imatge)).EndInit();
             this.ResumeLayout(false);
 
         }

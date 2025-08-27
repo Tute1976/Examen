@@ -8,6 +8,8 @@ namespace Examen.Suport.Controls
 {
     public partial class InfoEstacioV2 : InfoEstacio
     {
+        private readonly Action<string> _onHistoric;
+
         private string _estat;
         private readonly string _informacio;
         private Colors _color;
@@ -24,8 +26,11 @@ namespace Examen.Suport.Controls
                 bPitar.Visible = value; 
                 bBloquejar.Visible = value; 
                 bAturar.Visible = value; 
-                bAplicacionsEnUs.Visible = value; 
+                bAplicacionsEnUs.Visible = value;
+                toolStripSeparator1.Visible = value;
+
                 bTancar.Visible = !value;
+                toolStripSeparator2.Visible = !value;
             }
         }
         public override bool Tancar => bTancar.Visible;
@@ -40,7 +45,6 @@ namespace Examen.Suport.Controls
             }
         }
 
-        // Pots mantenir el teu enum 'Imatge' i el setter específic:
         public override Imatge Imatge { set => imatge.Image = imatges.Images[(int)value]; }
 
         public override Colors Color
@@ -61,8 +65,9 @@ namespace Examen.Suport.Controls
             }
         }
 
-        public InfoEstacioV2() : this(new EstacioAlumne("", Guid.Empty), 30) { }
-        public InfoEstacioV2(EstacioAlumne estacioAlumne, int interval) : base(estacioAlumne, interval)
+        public InfoEstacioV2() : this(new EstacioAlumne("", Guid.Empty), 30, null) { }
+
+        public InfoEstacioV2(EstacioAlumne estacioAlumne, int interval, Action<string> onHistoric) : base(estacioAlumne, interval)
         {
             InitializeComponent();
 
@@ -74,6 +79,8 @@ namespace Examen.Suport.Controls
             _informacio = estacioAlumne.Fabricant;
             Data = DateTime.Now;
             _estat = "";
+
+            _onHistoric = onHistoric;
         }
 
         private void BInfo_Click(object sender, EventArgs e)
@@ -127,6 +134,11 @@ namespace Examen.Suport.Controls
             };
             var frmAplicacionsEnUs = new FrmAplicacionsEnUs(txtEstacio.Text, contenidorAplicacionsEnUs);
             frmAplicacionsEnUs.Show();
+        }
+
+        private void BHistoric_Click(object sender, EventArgs e)
+        {
+            _onHistoric.Invoke(EstacioAlumne.Estacio);
         }
     }
 }

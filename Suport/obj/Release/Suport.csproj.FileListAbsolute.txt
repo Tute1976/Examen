@@ -20,3 +20,4 @@ D:\Privat\Programacio\Git\Examen\Suport\obj\Release\Examen.Suport.Formularis.Toa
 D:\Privat\Programacio\Git\Examen\Suport\obj\Release\Examen.Suport.Formularis.FrmAplicacionsEnUs.resources
 D:\Privat\Programacio\Git\Examen\Suport\obj\Release\Examen.Suport.Controls.InfoEstacioV2.resources
 D:\Privat\Programacio\Git\Examen\Suport\obj\Release\Examen.Suport.Controls.InfoEstacioV1.resources
+D:\Privat\Programacio\Git\Examen\Suport\obj\Release\Examen.Suport.Formularis.FrmHistoric.resources

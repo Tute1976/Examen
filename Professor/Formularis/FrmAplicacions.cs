@@ -1,13 +1,13 @@
 ﻿using Examen.Suport.Classes;
-using Syncfusion.Windows.Forms;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using Examen.Suport.Controls;
 using Examen.Suport.Funcions;
 
 namespace Examen.Professor.Formularis
 {
-    public partial class FrmAplicacions : MetroForm
+    public partial class FrmAplicacions : FormAdv
     {
         public ContenidorAplicacions ContenidorAplicacions
         {
@@ -24,6 +24,10 @@ namespace Examen.Professor.Formularis
             InitializeComponent();
 
             ContenidorAplicacions = contenidorAplicacions;
+
+            SetStyle(ControlStyles.AllPaintingInWmPaint |
+                          ControlStyles.OptimizedDoubleBuffer |
+                          ControlStyles.UserPaint, true);
         }
 
         private void bDesar_Click(object sender, System.EventArgs e)

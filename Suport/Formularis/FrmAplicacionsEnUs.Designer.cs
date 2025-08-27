@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Syncfusion.Windows.Forms.CaptionImage captionImage1 = new Syncfusion.Windows.Forms.CaptionImage();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAplicacionsEnUs));
             this.propietats = new System.Windows.Forms.PropertyGrid();
             this.menu = new System.Windows.Forms.ToolStrip();
             this.bCancelar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bExportar = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
@@ -43,10 +41,10 @@
             // propietats
             // 
             this.propietats.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.propietats.Location = new System.Drawing.Point(5, 5);
+            this.propietats.Location = new System.Drawing.Point(15, 10);
             this.propietats.Margin = new System.Windows.Forms.Padding(0);
             this.propietats.Name = "propietats";
-            this.propietats.Size = new System.Drawing.Size(340, 320);
+            this.propietats.Size = new System.Drawing.Size(317, 305);
             this.propietats.TabIndex = 0;
             // 
             // menu
@@ -55,31 +53,26 @@
             this.menu.Dock = System.Windows.Forms.DockStyle.Right;
             this.menu.GripMargin = new System.Windows.Forms.Padding(0);
             this.menu.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.menu.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menu.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bCancelar,
-            this.toolStripSeparator1,
             this.bExportar});
-            this.menu.Location = new System.Drawing.Point(355, 5);
+            this.menu.Location = new System.Drawing.Point(342, 10);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(0);
-            this.menu.Size = new System.Drawing.Size(28, 320);
+            this.menu.Size = new System.Drawing.Size(36, 305);
             this.menu.TabIndex = 1;
             // 
             // bCancelar
             // 
+            this.bCancelar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.bCancelar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bCancelar.Image = global::Examen.Suport.Properties.Resources.Cancel_32x32;
             this.bCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bCancelar.Name = "bCancelar";
-            this.bCancelar.Size = new System.Drawing.Size(27, 28);
+            this.bCancelar.Size = new System.Drawing.Size(35, 36);
             this.bCancelar.Text = "Cancelar";
             this.bCancelar.Click += new System.EventHandler(this.bCancelar_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(27, 6);
             // 
             // bExportar
             // 
@@ -87,7 +80,7 @@
             this.bExportar.Image = global::Examen.Suport.Properties.Resources.Exportar_32x32;
             this.bExportar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bExportar.Name = "bExportar";
-            this.bExportar.Size = new System.Drawing.Size(27, 28);
+            this.bExportar.Size = new System.Drawing.Size(35, 36);
             this.bExportar.Text = "Exportar";
             this.bExportar.Click += new System.EventHandler(this.bExportar_Click);
             // 
@@ -95,10 +88,10 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(345, 5);
+            this.panel1.Location = new System.Drawing.Point(332, 10);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 320);
+            this.panel1.Size = new System.Drawing.Size(10, 305);
             this.panel1.TabIndex = 2;
             // 
             // saveFileDialog
@@ -110,31 +103,17 @@
             // 
             // FrmAplicacionsEnUs
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BorderColor = System.Drawing.Color.Gray;
-            this.CaptionBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(180)))), ((int)(((byte)(237)))));
-            this.CaptionBarHeight = 64;
-            this.CaptionButtonColor = System.Drawing.Color.Gray;
-            this.CaptionButtonHoverColor = System.Drawing.Color.Gray;
-            captionImage1.BackColor = System.Drawing.Color.Transparent;
-            captionImage1.Image = global::Examen.Suport.Properties.Resources.Examen21;
-            captionImage1.Location = new System.Drawing.Point(16, 16);
-            captionImage1.Name = "CaptionImage1";
-            captionImage1.Size = new System.Drawing.Size(32, 32);
-            this.CaptionImages.Add(captionImage1);
             this.ClientSize = new System.Drawing.Size(388, 330);
             this.ControlBox = false;
             this.Controls.Add(this.propietats);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menu);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(180)))), ((int)(((byte)(237)))));
             this.MinimizeBox = false;
             this.Name = "FrmAplicacionsEnUs";
-            this.Padding = new System.Windows.Forms.Padding(5);
+            this.Padding = new System.Windows.Forms.Padding(15, 10, 10, 15);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Aplicacions en ús";
             this.menu.ResumeLayout(false);
@@ -149,7 +128,6 @@
         private System.Windows.Forms.ToolStripButton bCancelar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PropertyGrid propietats;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton bExportar;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }

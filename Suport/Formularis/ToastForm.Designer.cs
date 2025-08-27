@@ -43,16 +43,20 @@ namespace Examen.Suport.Formularis
             this.timerInici = new System.Windows.Forms.Timer(this.components);
             this.timerBarra = new System.Windows.Forms.Timer(this.components);
             this.progressBar = new Syncfusion.Windows.Forms.Tools.ProgressBarAdv();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.menu = new System.Windows.Forms.ToolStrip();
+            this.bCancelar = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.progressBar)).BeginInit();
+            this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // lMissatge
             // 
             this.lMissatge.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lMissatge.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lMissatge.Location = new System.Drawing.Point(0, 0);
+            this.lMissatge.Location = new System.Drawing.Point(15, 10);
             this.lMissatge.Name = "lMissatge";
-            this.lMissatge.Size = new System.Drawing.Size(488, 141);
+            this.lMissatge.Size = new System.Drawing.Size(429, 152);
             this.lMissatge.TabIndex = 0;
             this.lMissatge.Text = ".";
             this.lMissatge.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -77,12 +81,12 @@ namespace Examen.Suport.Formularis
             this.progressBar.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.progressBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(180)))), ((int)(((byte)(237)))));
             this.progressBar.ForegroundImage = null;
-            this.progressBar.Location = new System.Drawing.Point(0, 141);
+            this.progressBar.Location = new System.Drawing.Point(15, 162);
             this.progressBar.MultipleColors = new System.Drawing.Color[] {
         System.Drawing.Color.Empty};
             this.progressBar.Name = "progressBar";
             this.progressBar.SegmentWidth = 10;
-            this.progressBar.Size = new System.Drawing.Size(488, 23);
+            this.progressBar.Size = new System.Drawing.Size(429, 23);
             this.progressBar.Step = 1;
             this.progressBar.TabIndex = 2;
             this.progressBar.TextStyle = Syncfusion.Windows.Forms.Tools.ProgressBarTextStyles.Custom;
@@ -90,35 +94,69 @@ namespace Examen.Suport.Formularis
             this.progressBar.Visible = false;
             this.progressBar.WaitingGradientWidth = 400;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(444, 10);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(10, 175);
+            this.panel1.TabIndex = 4;
+            // 
+            // menu
+            // 
+            this.menu.BackColor = System.Drawing.Color.Transparent;
+            this.menu.Dock = System.Windows.Forms.DockStyle.Right;
+            this.menu.GripMargin = new System.Windows.Forms.Padding(0);
+            this.menu.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.menu.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bCancelar});
+            this.menu.Location = new System.Drawing.Point(454, 10);
+            this.menu.Name = "menu";
+            this.menu.Padding = new System.Windows.Forms.Padding(0);
+            this.menu.Size = new System.Drawing.Size(31, 175);
+            this.menu.TabIndex = 3;
+            // 
+            // bCancelar
+            // 
+            this.bCancelar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.bCancelar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bCancelar.Image = global::Examen.Suport.Properties.Resources.Cancel_32x32;
+            this.bCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bCancelar.Name = "bCancelar";
+            this.bCancelar.Size = new System.Drawing.Size(30, 28);
+            this.bCancelar.Text = "Cancelar";
+            this.bCancelar.Click += new System.EventHandler(this.BCancelar_Click);
+            // 
             // ToastForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightYellow;
-            this.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(180)))), ((int)(((byte)(237)))));
-            this.CaptionBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(180)))), ((int)(((byte)(237)))));
-            this.CaptionButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
-            this.CaptionButtonHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
-            this.ClientSize = new System.Drawing.Size(488, 164);
+            this.ClientSize = new System.Drawing.Size(500, 200);
             this.Controls.Add(this.lMissatge);
             this.Controls.Add(this.progressBar);
-            this.DropShadow = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.menu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(500, 200);
-            this.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(180)))), ((int)(((byte)(237)))));
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(500, 200);
             this.Name = "ToastForm";
+            this.Padding = new System.Windows.Forms.Padding(15, 10, 15, 15);
             this.ShowInTaskbar = false;
-            this.ShowMaximizeBox = false;
-            this.ShowMinimizeBox = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Missatge";
             this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.progressBar)).EndInit();
+            this.menu.ResumeLayout(false);
+            this.menu.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -128,5 +166,8 @@ namespace Examen.Suport.Formularis
         private System.Windows.Forms.Timer timerInici;
         private System.Windows.Forms.Timer timerBarra;
         private Syncfusion.Windows.Forms.Tools.ProgressBarAdv progressBar;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolStrip menu;
+        private System.Windows.Forms.ToolStripButton bCancelar;
     }
 }

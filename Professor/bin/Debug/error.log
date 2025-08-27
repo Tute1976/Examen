@@ -106,3 +106,89 @@
 
 26/8/2025 12:06:08 [Question]: Vols finalitzar el programa?
 
+27/8/2025 11:24:09 [Question]: Vols finalitzar el programa?
+
+27/8/2025 11:27:29 [Question]: Vols finalitzar el programa?
+
+27/8/2025 11:34:02 [Question]: Vols finalitzar el programa?
+
+27/8/2025 11:34:42 [Question]: Vols finalitzar el programa?
+
+27/8/2025 11:35:54 [Question]: Vols finalitzar el programa?
+
+27/8/2025 12:39:32 [Question]: Vols finalitzar el programa?
+
+27/8/2025 12:43:39 [Question]: Vols finalitzar el programa?
+
+27/8/2025 12:56:40 [Asterisk]: Estat:
+
+27/8/2025 12:56:40 [Asterisk]:     Estació desconectada   
+
+27/8/2025 12:56:40 [Asterisk]: Informació: LG Electronics   
+
+27/8/2025 12:56:40 [Asterisk]: Identificador de la sessió: c85e93f4-af1b-4227-ad5a-4f13db5b8191   
+
+27/8/2025 13:01:32 [Asterisk]: Estat:
+
+27/8/2025 13:01:32 [Asterisk]:     Estació desconectada manualment   
+
+27/8/2025 13:01:32 [Asterisk]: Informació: LG Electronics   
+
+27/8/2025 13:01:32 [Asterisk]: Identificador de la sessió: d819c674-1728-4df9-91e9-1d40d6e65077   
+
+27/8/2025 13:01:50 [Question]: Vols finalitzar el programa?
+
+27/8/2025 13:04:43 [Question]: Vols finalitzar el programa?
+
+27/8/2025 13:08:05 [Question]: Vols finalitzar el programa?
+
+27/8/2025 13:11:41 [Question]: Vols finalitzar el programa?
+
+27/8/2025 13:30:26 [Hand]: S'ha produït un error: Cannot add or insert the item '' in more than one place. You must first remove it from its current location or clone it.
+
+27/8/2025 13:30:26 [Hand]: Parameter name: item
+
+27/8/2025 13:30:26 [Hand]: Detalls:    at System.Windows.Forms.ListView.InsertItems(Int32 displayIndex, ListViewItem[] items, Boolean checkHosting)
+
+27/8/2025 13:30:26 [Hand]:    at System.Windows.Forms.ListView.ListViewNativeItemCollection.AddRange(ListViewItem[] values)
+
+27/8/2025 13:30:26 [Hand]:    at System.Windows.Forms.ListView.ListViewItemCollection.AddRange(ListViewItem[] items)
+
+27/8/2025 13:30:26 [Hand]:    at Examen.Professor.Formularis.FrmHistoric..ctor(IEnumerable`1 items) in D:\Privat\Programacio\Git\Examen\Professor\Formularis\FrmHistoric.cs:line 15
+
+27/8/2025 13:30:26 [Hand]:    at Examen.Professor.Formularis.FrmPrincipal.OnHistoric(String estacio) in D:\Privat\Programacio\Git\Examen\Professor\Formularis\FrmPrincipal.cs:line 254
+
+27/8/2025 13:38:35 [Hand]: S'ha produït un error: Cannot add or insert the item '' in more than one place. You must first remove it from its current location or clone it.
+
+27/8/2025 13:38:35 [Hand]: Parameter name: item
+
+27/8/2025 13:38:35 [Hand]: Detalls:    at System.Windows.Forms.ListView.InsertItems(Int32 displayIndex, ListViewItem[] items, Boolean checkHosting)
+
+27/8/2025 13:38:35 [Hand]:    at System.Windows.Forms.ListView.ListViewNativeItemCollection.AddRange(ListViewItem[] values)
+
+27/8/2025 13:38:35 [Hand]:    at System.Windows.Forms.ListView.ListViewItemCollection.AddRange(ListViewItem[] items)
+
+27/8/2025 13:38:35 [Hand]:    at Examen.Suport.Formularis.FrmHistoric..ctor(IEnumerable`1 items) in D:\Privat\Programacio\Git\Examen\Suport\Formularis\FrmHistoric.cs:line 15
+
+27/8/2025 13:38:35 [Hand]:    at Examen.Professor.Formularis.FrmPrincipal.OnHistoric(String estacio) in D:\Privat\Programacio\Git\Examen\Professor\Formularis\FrmPrincipal.cs:line 255
+
+27/8/2025 13:52:07 [Question]: Vols finalitzar el programa?
+
+27/8/2025 13:56:32 [Asterisk]: Estat:
+
+27/8/2025 13:56:32 [Asterisk]:     Actualització periódica, tot bé   
+
+27/8/2025 13:56:32 [Asterisk]: Informació: LG Electronics   
+
+27/8/2025 13:56:32 [Asterisk]: Identificador de la sessió: 9125f9a9-338e-4a01-8d43-fb839923e836   
+
+27/8/2025 13:56:41 [Asterisk]: Estat:
+
+27/8/2025 13:56:41 [Asterisk]:     Actualització periódica, tot bé   
+
+27/8/2025 13:56:41 [Asterisk]: Informació: LG Electronics   
+
+27/8/2025 13:56:41 [Asterisk]: Identificador de la sessió: 9125f9a9-338e-4a01-8d43-fb839923e836   
+
+27/8/2025 13:57:19 [Question]: Vols finalitzar el programa?
+

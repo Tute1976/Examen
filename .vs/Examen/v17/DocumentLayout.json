@@ -1,120 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Privat\\Programacio\\Git\\Examen\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{CA301166-142C-4D77-BA7B-50E07672FF82}|Suport\\Suport.csproj|d:\\privat\\programacio\\git\\examen\\suport\\controls\\infoestaciov2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CA301166-142C-4D77-BA7B-50E07672FF82}|Suport\\Suport.csproj|solutionrelative:suport\\controls\\infoestaciov2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CA301166-142C-4D77-BA7B-50E07672FF82}|Suport\\Suport.csproj|d:\\privat\\programacio\\git\\examen\\suport\\controls\\infoestaciov1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CA301166-142C-4D77-BA7B-50E07672FF82}|Suport\\Suport.csproj|solutionrelative:suport\\controls\\infoestaciov1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CA301166-142C-4D77-BA7B-50E07672FF82}|Suport\\Suport.csproj|d:\\privat\\programacio\\git\\examen\\suport\\controls\\infoestaciov1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CA301166-142C-4D77-BA7B-50E07672FF82}|Suport\\Suport.csproj|solutionrelative:suport\\controls\\infoestaciov1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CA301166-142C-4D77-BA7B-50E07672FF82}|Suport\\Suport.csproj|d:\\privat\\programacio\\git\\examen\\suport\\controls\\infoestacio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CA301166-142C-4D77-BA7B-50E07672FF82}|Suport\\Suport.csproj|solutionrelative:suport\\controls\\infoestacio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CA301166-142C-4D77-BA7B-50E07672FF82}|Suport\\Suport.csproj|d:\\privat\\programacio\\git\\examen\\suport\\controls\\infoestaciov2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CA301166-142C-4D77-BA7B-50E07672FF82}|Suport\\Suport.csproj|solutionrelative:suport\\controls\\infoestaciov2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64790BAC-D2B1-4616-B861-C19F3DD82D09}|Professor\\Professor.csproj|d:\\privat\\programacio\\git\\examen\\professor\\formularis\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{64790BAC-D2B1-4616-B861-C19F3DD82D09}|Professor\\Professor.csproj|solutionrelative:professor\\formularis\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "InfoEstacioV2.cs [Design]",
-              "DocumentMoniker": "D:\\Privat\\Programacio\\Git\\Examen\\Suport\\Controls\\InfoEstacioV2.cs",
-              "RelativeDocumentMoniker": "Suport\\Controls\\InfoEstacioV2.cs",
-              "ToolTip": "D:\\Privat\\Programacio\\Git\\Examen\\Suport\\Controls\\InfoEstacioV2.cs [Design]",
-              "RelativeToolTip": "Suport\\Controls\\InfoEstacioV2.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-26T14:24:49.428Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "InfoEstacioV1.cs [Design]",
-              "DocumentMoniker": "D:\\Privat\\Programacio\\Git\\Examen\\Suport\\Controls\\InfoEstacioV1.cs",
-              "RelativeDocumentMoniker": "Suport\\Controls\\InfoEstacioV1.cs",
-              "ToolTip": "D:\\Privat\\Programacio\\Git\\Examen\\Suport\\Controls\\InfoEstacioV1.cs [Design]",
-              "RelativeToolTip": "Suport\\Controls\\InfoEstacioV1.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-26T14:24:35.077Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "InfoEstacio.cs",
-              "DocumentMoniker": "D:\\Privat\\Programacio\\Git\\Examen\\Suport\\Controls\\InfoEstacio.cs",
-              "RelativeDocumentMoniker": "Suport\\Controls\\InfoEstacio.cs",
-              "ToolTip": "D:\\Privat\\Programacio\\Git\\Examen\\Suport\\Controls\\InfoEstacio.cs",
-              "RelativeToolTip": "Suport\\Controls\\InfoEstacio.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAiwDAAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-26T09:56:03.181Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FrmPrincipal.cs",
-              "DocumentMoniker": "D:\\Privat\\Programacio\\Git\\Examen\\Professor\\Formularis\\FrmPrincipal.cs",
-              "RelativeDocumentMoniker": "Professor\\Formularis\\FrmPrincipal.cs",
-              "ToolTip": "D:\\Privat\\Programacio\\Git\\Examen\\Professor\\Formularis\\FrmPrincipal.cs",
-              "RelativeToolTip": "Professor\\Formularis\\FrmPrincipal.cs",
-              "ViewState": "AgIAACUBAAAAAAAAAAAuwKQBAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-26T09:22:49.94Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "InfoEstacioV1.cs",
-              "DocumentMoniker": "D:\\Privat\\Programacio\\Git\\Examen\\Suport\\Controls\\InfoEstacioV1.cs",
-              "RelativeDocumentMoniker": "Suport\\Controls\\InfoEstacioV1.cs",
-              "ToolTip": "D:\\Privat\\Programacio\\Git\\Examen\\Suport\\Controls\\InfoEstacioV1.cs",
-              "RelativeToolTip": "Suport\\Controls\\InfoEstacioV1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-26T09:09:11.812Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "InfoEstacioV2.cs",
-              "DocumentMoniker": "D:\\Privat\\Programacio\\Git\\Examen\\Suport\\Controls\\InfoEstacioV2.cs",
-              "RelativeDocumentMoniker": "Suport\\Controls\\InfoEstacioV2.cs",
-              "ToolTip": "D:\\Privat\\Programacio\\Git\\Examen\\Suport\\Controls\\InfoEstacioV2.cs",
-              "RelativeToolTip": "Suport\\Controls\\InfoEstacioV2.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-26T09:12:47.453Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

@@ -1,12 +1,12 @@
-﻿using Syncfusion.Windows.Forms;
-using System; 
+﻿using System; 
 using System.Drawing;
 using System.Windows.Forms;
+using Examen.Suport.Controls;
 using Examen.Suport.Funcions;
 
 namespace Examen.Suport.Formularis
 {
-    public sealed partial class ToastForm : MetroForm
+    public sealed partial class ToastForm : FormAdv
     {
         public ToastForm(string missatge, int interval)
         {
@@ -63,6 +63,11 @@ namespace Examen.Suport.Formularis
             var x = Screen.PrimaryScreen.WorkingArea.Width - Width - 10;
             var y = Screen.PrimaryScreen.WorkingArea.Height - Height - 10;
             Location = new Point(x, y);
+        }
+
+        private void BCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

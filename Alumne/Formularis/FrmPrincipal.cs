@@ -1,17 +1,17 @@
 ﻿using Examen.Suport.Classes;
 using Examen.Suport.Funcions;
 using Examen.Suport.Tcp;
-using Syncfusion.Windows.Forms;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using Examen.Alumne.Funcions;
+using Examen.Suport.Controls;
 
 namespace Examen.Alumne.Formularis
 {
-    public partial class FrmPrincipal : MetroForm
+    public partial class FrmPrincipal : FormAdv
     {
         public EstacioAlumne EstacioAlumne { get; private set; }
         public AdreçaPort AdreçaPortProfessor { get; private set; } = new();
@@ -47,6 +47,7 @@ namespace Examen.Alumne.Formularis
             bIniciar.Enabled = !string.IsNullOrEmpty(txtNom.Text) && !string.IsNullOrEmpty(txtCodi.Text);
 
             bIniciar.Text = @"Connectar";
+            bIniciar.Image = Properties.Resources.Validation_32x32;
             bIniciar.BackColor = Color.FromArgb(83, 180, 237);
         }
 
@@ -83,6 +84,7 @@ namespace Examen.Alumne.Formularis
                         AdreçaPortProfessor = adreçaPort;
 
                         bIniciar.Text = @"Iniciar";
+                        bIniciar.Image = Properties.Resources.Start_32x32;
                         bIniciar.BackColor = Color.FromArgb(128, 255, 128);
 
                         txtNom.Enabled = false;
@@ -96,6 +98,7 @@ namespace Examen.Alumne.Formularis
                         @"El codi no és vàlid, o el servidor no està disponible".Mostrar(MessageBoxIcon.Error, MessageBoxButtons.OK, true);
 
                         bIniciar.Text = @"Connectar";
+                        bIniciar.Image = Properties.Resources.Validation_32x32;
                         bIniciar.BackColor = Color.FromArgb(83, 180, 237);
 
                         imatge.Image = imatgesConnecta.Images[0];
@@ -111,6 +114,7 @@ namespace Examen.Alumne.Formularis
                     EstacioAlumne = new EstacioAlumne(txtNom.Text, Program.Id);
 
                     bIniciar.Text = @"Amagar";
+                    bIniciar.Image = Properties.Resources.Base_32x32;
                     bIniciar.BackColor = Color.FromArgb(255, 255, 224);
                     bIniciar.Width -= 75;
                     bTancar.Left -= 75;
@@ -132,6 +136,7 @@ namespace Examen.Alumne.Formularis
                 ex.Mostrar();
 
                 bIniciar.Text = @"Connectar";
+                bIniciar.Image = Properties.Resources.Validation_32x32;
                 bIniciar.BackColor = Color.FromArgb(83, 180, 237);
 
                 imatge.Image = imatgesConnecta.Images[0];

@@ -1,5 +1,6 @@
 ﻿using Examen.Suport.Classes;
 using Examen.Suport.Controls;
+using Examen.Suport.Formularis;
 using Examen.Suport.Funcions;
 using Examen.Suport.Tcp;
 using Syncfusion.Windows.Forms;
@@ -9,6 +10,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using static System.Windows.Forms.AxHost;
 
 namespace Examen.Professor.Formularis
 {
@@ -18,7 +20,8 @@ namespace Examen.Professor.Formularis
 
         private bool _fi;
 
-        private List<ListViewItem> Items { get; set; } = [];
+        private List<ListViewItem> Items1 { get; set; } = [];
+        private List<ListViewItem> Items2 { get; set; } = [];
 
         private static string Fitxer => Path.GetFullPath(Environment.ExpandEnvironmentVariables(Properties.Settings.Default.Aplicacions));
 
@@ -113,7 +116,7 @@ namespace Examen.Professor.Formularis
 
                             infoEstacio = Properties.Settings.Default.VersioInfo == 1
                                 ? new InfoEstacioV1(estacioAlumne, Properties.Settings.Default.IntevarvalTemps * 3)
-                                : new InfoEstacioV2(estacioAlumne, Properties.Settings.Default.IntevarvalTemps * 3);
+                                : new InfoEstacioV2(estacioAlumne, Properties.Settings.Default.IntevarvalTemps * 3, OnHistoric);
                             infoEstacio.Estat = estat;
                             infoEstacio.Data = DateTime.Now;
                             infoEstacio.Imatge = Imatge.Nou;
@@ -236,6 +239,21 @@ namespace Examen.Professor.Formularis
                             throw new ArgumentOutOfRangeException(nameof(tipusMissatge), tipusMissatge, null);
                     }
                 });
+            }
+            catch (Exception ex)
+            {
+                ex.Mostrar();
+            }
+        }
+
+        private void OnHistoric(string estacio)
+        {
+            try
+            {
+                var items = Items2.Where(i => ((EstacioAlumne)i.Tag).Estacio.Equals(estacio));
+
+                using var frmHistoric = new FrmHistoric(items);
+                frmHistoric.ShowDialog();
             }
             catch (Exception ex)
             {
@@ -394,7 +412,8 @@ namespace Examen.Professor.Formularis
 
         private void BNetejarLlista_Click(object sender, EventArgs e)
         {
-            Items.Clear();
+            Items1.Clear();
+
             llistaHistoric.Items.Clear();
             cbHistoric.Items.Clear();
             cbHistoric.Items.Add("Totes les estacions");
@@ -429,7 +448,6 @@ namespace Examen.Professor.Formularis
                     infoEstacio.Imatge = Imatge.Atencio;
                     infoEstacio.Estat = estat;
                     infoEstacio.Color = Colors.Vermell;
-                    infoEstacio.ForeColor = Color.White;
                     infoEstacio.Pitar = false;
                     infoEstacio.Bloquejar = false;
                     infoEstacio.Aturar = false;
@@ -463,12 +481,38 @@ namespace Examen.Professor.Formularis
             llistaHistoric.Items.Clear();
 
             var items = cbHistoric.Text.Contains("Totes")
-                ? Items
-                : Items.Where(i => ((EstacioAlumne)i.Tag).Estacio.Equals(cbHistoric.Text));
+                ? Items1
+                : Items1.Where(i => ((EstacioAlumne)i.Tag).Estacio.Equals(cbHistoric.Text));
             llistaHistoric.Items.AddRange([.. items]);
         }
 
         private void AfegirItem(EstacioAlumne estacioAlumne, int imageIndex, Color foreColor, string estat)
+        {
+            var text = cbHistoric.Text;
+            if (!cbHistoric.Items.Contains(estacioAlumne.Estacio))
+                cbHistoric.Items.Add(estacioAlumne.Estacio);
+            cbHistoric.Visible = cbHistoric.Items.Count > 2;
+            lFiltreHistoric.Visible = cbHistoric.Visible;
+            cbHistoric.Text = text;
+
+            var lastItem = Items1.LastOrDefault(i => ((EstacioAlumne)i.Tag).Estacio.Equals(estacioAlumne.Estacio));
+            if (lastItem != null &&
+                lastItem.SubItems[3].Text.Equals(estat)) 
+                return;
+
+            var item = CreaItem(estacioAlumne, imageIndex, foreColor, estat);
+            Items1.Add(item);
+
+            if (cbHistoric.Text.Contains("Totes") ||
+                cbHistoric.Text.Equals(estacioAlumne.Estacio))
+            {
+                llistaHistoric.Items.Add(item);
+            }
+
+            Items2.Add(CreaItem(estacioAlumne, imageIndex, foreColor, estat));
+        }
+
+        private ListViewItem CreaItem(EstacioAlumne estacioAlumne, int imageIndex, Color foreColor, string estat)
         {
             var item = new ListViewItem("")
             {
@@ -481,24 +525,7 @@ namespace Examen.Professor.Formularis
             item.SubItems.Add(estacioAlumne.Estacio);
             item.SubItems.Add(estat);
 
-            var text = cbHistoric.Text;
-            if (!cbHistoric.Items.Contains(estacioAlumne.Estacio))
-                cbHistoric.Items.Add(estacioAlumne.Estacio);
-            cbHistoric.Visible = cbHistoric.Items.Count > 2;
-            lFiltreHistoric.Visible = cbHistoric.Visible;
-            cbHistoric.Text = text;
-
-            var lastItem = Items.LastOrDefault(i => ((EstacioAlumne)i.Tag).Estacio.Equals(estacioAlumne.Estacio));
-            if (lastItem != null &&
-                lastItem.SubItems[3].Text.Equals(estat)) 
-                return;
-            
-            Items.Add(item);
-            if (cbHistoric.Text.Contains("Totes") ||
-                cbHistoric.Text.Equals(estacioAlumne.Estacio))
-            {
-                llistaHistoric.Items.Add(item);
-            }
+            return item;
         }
 
         private void BSortir_Click(object sender, EventArgs e)

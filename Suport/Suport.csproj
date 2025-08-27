@@ -74,6 +74,9 @@
     <Compile Include="Classes\ContenidorAplicacionsEnUs.cs" />
     <Compile Include="Classes\ContenidorAplicacions.cs" />
     <Compile Include="Classes\EstacioAlumne.cs" />
+    <Compile Include="Controls\FormAdv.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Controls\GroupBoxAdv.cs" />
     <Compile Include="Controls\InfoEstacio.cs">
       <SubType>UserControl</SubType>
@@ -96,6 +99,12 @@
     </Compile>
     <Compile Include="Formularis\FrmAplicacionsEnUs.Designer.cs">
       <DependentUpon>FrmAplicacionsEnUs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularis\FrmHistoric.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularis\FrmHistoric.Designer.cs">
+      <DependentUpon>FrmHistoric.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularis\ToastForm.cs">
       <SubType>Form</SubType>
@@ -125,6 +134,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Examen.ico" />
+    <None Include="Resources\Historic_32x32.png" />
     <None Include="Resources\view-full-list-icone-6722-48.png" />
     <None Include="Resources\Validation_32x32.png" />
     <None Include="Resources\Stop_32x32.png" />
@@ -173,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularis\FrmAplicacionsEnUs.resx">
       <DependentUpon>FrmAplicacionsEnUs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularis\FrmHistoric.resx">
+      <DependentUpon>FrmHistoric.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularis\ToastForm.resx">
       <DependentUpon>ToastForm.cs</DependentUpon>

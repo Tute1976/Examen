@@ -63,6 +63,26 @@ namespace Examen.Alumne.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Base_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Base_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Cancel_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Cancel_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Connectant {
             get {
                 object obj = ResourceManager.GetObject("Connectant", resourceCulture);
@@ -86,6 +106,26 @@ namespace Examen.Alumne.Properties {
         internal static System.Drawing.Bitmap Informacio_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Informacio_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Start_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Start_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Validation_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Validation_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
