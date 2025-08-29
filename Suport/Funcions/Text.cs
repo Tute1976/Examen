@@ -3,6 +3,8 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
@@ -110,7 +112,7 @@ namespace Examen.Suport.Funcions
             return text;
         }
 
-        public static string FromBase64(this string base64)
+        public static string ToStringFromBase64(this string base64)
         {
             try
             {
@@ -124,6 +126,45 @@ namespace Examen.Suport.Funcions
             }
 
             return base64;
+        }
+
+        public static string ToBase64(this Bitmap bitmap, ImageFormat format)
+        {
+            try
+            {
+                using var ms = new MemoryStream();
+                bitmap.Save(ms, format);
+
+                var imageBytes = ms.ToArray();
+
+                return Convert.ToBase64String(imageBytes).CompressToBase64();
+            }
+            catch (Exception ex)
+            {
+                ex.Mostrar();
+            }
+
+            return "";
+        }
+
+        public static Bitmap ToImageFromBase64(this string base64)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(base64))
+                    return Properties.Resources.Aplicacio_32x32;
+
+                var base64Decompresed = base64.DecompressFromBase64(); 
+                var imageBytes = Convert.FromBase64String(base64Decompresed);
+                using var ms = new MemoryStream(imageBytes);
+                return new Bitmap(ms);
+            }
+            catch (Exception ex)
+            {
+                ex.Mostrar();
+            }
+
+            return Properties.Resources.Aplicacio_32x32;
         }
 
         public static string CompressToBase64(this string data)

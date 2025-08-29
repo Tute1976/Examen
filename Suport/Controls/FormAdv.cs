@@ -123,7 +123,7 @@ namespace Examen.Suport.Controls
 
             var maxR = Math.Min(rect.Width, rect.Height) / 2;
             if (radius > maxR) radius = maxR;
-            int d = radius * 2;
+            var d = radius * 2;
 
             path.AddArc(rect.X, rect.Y, d, d, 180, 90);                 // TL
             path.AddArc(rect.Right - d, rect.Y, d, d, 270, 90);         // TR

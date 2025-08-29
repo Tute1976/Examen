@@ -6,151 +6,174 @@
     "Ignorar": false,
     "Aplicacions": [
       {
+        "CalAturar": true,
+        "Ignorar": true,
         "Nom": "Google Chrome",
         "Descripcio": "Navegador web de Google",
         "Executable": "chrome.exe",
-        "CalAturar": true,
-        "Ignorar": true
+        "ExecutableCurt": "chrome.exe",
+        "ImatgeEnBase64": "H4sIAAAAAAAEAB2Ut9KzagyEL4gCTKb4C3LOydCZ+GJyDld//B01+0hqdmZHaiLO9k5El+uR/ZXlh0AM6x9xfy3r8mzypxUNM+APOLngglBkWUN2ePgCnPs37U5f6p4f2OfJssJqchcKjenfCu00T5RCW2SKdmBUTAnza6HNa9CjkYp6n0KegEKziSAwDLZ7hOywYWFioUc8LuwDlQVzmp8RvPKwPoK1WRrt0fhiJZF2EdHjHDKINB/z8i5PvkKbCSkLYiS9wAuMwXrJ652nTirMoeGlDnK6XbzoKXRUS7acMsQkJjKL3vhK2p1z7XoU+tz9i/joX7XLcLjSspzSmddsCR3ktaFwsSWRBOlWrsSoxiKGG2YSFRQJSh+nbHRcdGq4hSgsV0zcYvlq9oJnd4R3bAwW+qx2yLdYILujWRePpLZiIyeEp8owvKPvuBntAqrxdby6Xo0gR39KoQzatHvk1ItMncdU/2dH3v276E3YX9Ppi2vJDqdW7xdj72f3fXzgfhSsJJFZKKALeps+ksJjHMPgvSnMZgVpVK7hHex04DWMSLKj+dDyx3BEUF/w9ZtvpwNr0MUE8VVEd++HRFe1AnR2EOR3FeyKxxv3v1jB1YCOIoG+IpHqP4HsyRxFp7EGm5CY+eg9wgHX0V/gvKQpi/gdR16PdrKMa8EElxO381ICSI+/cIRlwnzgZHI3wRqZthOvhv2yNr9cIc+/BuYhhDKkJXd2U7DBFm+QwC7NbqUnJyV4+4uElX9ndAI3Mb87Pc2rsMR/ZY/dzM9k+M5Azc3+4rTzaPV3/5h4lj7tPO71Z7F9bPlWsCBH2dMR1RnSzmYAMSnFSx74gdDdTS+NkjHIZ+enZc+BZUqozjDeutaUgEJuPzMSigod7ZICtJDRh3IgwD67ryI7yPtODRScybsiriY6CjIEeg69tYirvQj4kaB3pXnIHatL9b4vbS3N6YCI7WyBdBaAQylPBoiCPJIIlsK6t8lGliZ8JqOyf2Y2v9ByHyVeEkO6yFXt2wD6lBfERyh+Z0AJBRm/xbFRn1X7nj7LFI3V4cQW9G2nUk3xxOh5+5XuZ9OmvZXgQsJPhHbjnt0k9ZBMONzQSHl5IHIewBvCqoUQW9Xvg946n2IXisSXEbXeHaPxmf7ymtzC88FnKeuMX2titlY6ZxUOibSJoNguroFiieeeHGepuLXlXOdVIBP8gnxEJlHtnX7Cd5SWmSHUs2G5w53JedXZTg34Oak0QSfzp8UVKSIU7D4kHZU8ItpAQc/xudJfKv3MGerWb26VUK29aEyNrYBiq90GyvHAp0E0voXOlu4w9f/fTPNCQlxara7rf//+A40W1yEMBQAA"
       },
       {
+        "CalAturar": true,
+        "Ignorar": false,
         "Nom": "Mozilla Firefox",
         "Descripcio": "Navegador web de Mozilla",
         "Executable": "firefox.exe",
-        "CalAturar": true,
-        "Ignorar": false
+        "ExecutableCurt": "firefox.exe"
       },
       {
+        "CalAturar": true,
+        "Ignorar": false,
         "Nom": "Microsoft Edge",
         "Descripcio": "Navegador web de Microsoft",
         "Executable": "msedge.exe",
-        "CalAturar": true,
-        "Ignorar": false
+        "ExecutableCurt": "msedge.exe",
+        "ImatgeEnBase64": "H4sIAAAAAAAEAB2Ux66zWgyFH4gBLbTBP4ANhBZ6zSz0Fjps4OlvzrW05M/LsrRGbkLBciGmP6uR/5XpBbUUVD8S/kbeAXzy10sW5eo/EJ654AcSzxtPG6BnLTh/bg89ub9/YEHI8+L6Ek4CGd9/K3LTXEkOLInLO3l7YWQWnCS3fRKAoziddR7c08PWchMechUcelp38Jmmmxu4Pe/cisEra1vty5BGzahD6NH9GjSNK9/JNB7vVn0DOos/wSwuwzvxHtUi7k6cUN80eZqIvPOMSCEYW4oPijrBVX1uoY7w97ahC9ZdN0mHn3d1Tf3M12jKKJ2I0dbEk6/QIyyi6c12QTvC/N3fKbLn7L265SWcpXMsko81aQMM0XbwGqocJ7mr5ZsMlB/Zcd0f2hVbdgJxDIoTM4At2ioXsPDy7uDJfo6kJkqVe+0nQRndM3BvThhnxZp8ey6W6F2YF+U+4vV1IOatKUqjmE8p0s3k7L6QBTPMwHquEz4oXVv3ECpsXiMfJjCiEdVzeo0TVMr7aEPoa/Ep/WAsSb43ZS0iIAT9Ji+380quGKGh0xpVvSqzmwqEgolflf+y6KTJUWijbiO80BCf1GOI+nItzJiVZ1OVcaKSreY82LAtipQ024xejYgJLSBBZDKX9TKU0h2fjEAZ8Bn6r2PcSLmZ+PzwUetV0TKmN0RVzIaj7S70Wf+kqozLsK4dRRMd9IKaNmSSf8EsNbbXWFcE3HG11bWHF0HXb6syQEqtWduiKH+quOrfsVTpTOkuGd70cEZHJWnRz9JG2mskyHDIGGNWnDl7psMwZmL9i+MEFJDtSYn0YsBi9uvxHt6o8bSCHanHtStnLgIiQxBHuj5ImkTVXPEabMB8DVGeQb1u0LANGswSjjzK9u5iIeQDd6F64KwmFygqp1vfnmZknurqwX9Tcc3ghOyM+ea344z5bx4GwbBlNPiQ2kQXZZvotaiCaeg0QIa4030pZ4oJm0jm4oh2Yfh8jLG/bmLSjrlng8ib44bCrpZzw1xWLSuxHG1lEWLvVFpgJRgCWQo5RqbcBCALNFOxP1IEkpymJdQeLNhM9CL6ZrFpLdeRf+q+UFAmkVcPjPK8hCtLvv/WwhUfgl5goks+3or0JavQ9mIXG3B+aNfDpQbdsK2h6pV798ilfcTIFaBX7Cla852LnLfPkE+6GMVuO3rLnb2rxV6BchECZBZw5HteqRyWQCe2XfO6sCQRl8vhNA01bL9jXpn2IOgLBtrOMZbOUdq+MpafhgXGtiETdVheXTTlpfZ5vjxqAgOu9prkHP5XPbWxXlUOARl9Lix/7HDeEfvFkKpVMgMXIW6WW4eyRmwgsP//M0FzA0paOq2qqn///gPulcxsJAUAAA=="
       },
       {
+        "CalAturar": true,
+        "Ignorar": false,
         "Nom": "Opera",
         "Descripcio": "Navegador web d'Opera",
         "Executable": "opera.exe",
-        "CalAturar": true,
-        "Ignorar": false
+        "ExecutableCurt": "opera.exe"
       },
       {
+        "CalAturar": true,
+        "Ignorar": false,
         "Nom": "Brave",
         "Descripcio": "Navegador web de Brave",
         "Executable": "brave.exe",
-        "CalAturar": true,
-        "Ignorar": false
+        "ExecutableCurt": "brave.exe"
       },
       {
+        "CalAturar": true,
+        "Ignorar": false,
         "Nom": "Vivaldi",
         "Descripcio": "Navegador web de Vivaldi",
         "Executable": "vivaldi.exe",
-        "CalAturar": true,
-        "Ignorar": false
+        "ExecutableCurt": "vivaldi.exe"
       },
       {
+        "CalAturar": true,
+        "Ignorar": false,
         "Nom": "Chromium",
         "Descripcio": "Navegador web de codi obert",
         "Executable": "chromium.exe",
-        "CalAturar": true,
-        "Ignorar": false
+        "ExecutableCurt": "chromium.exe"
       },
       {
+        "CalAturar": true,
+        "Ignorar": false,
         "Nom": "Waterfox",
         "Descripcio": "Navegador web de Waterfox",
         "Executable": "waterfox.exe",
-        "CalAturar": true,
-        "Ignorar": false
+        "ExecutableCurt": "waterfox.exe"
       },
       {
+        "CalAturar": true,
+        "Ignorar": false,
         "Nom": "Pale Moon",
         "Descripcio": "Navegador web de Pale Moon",
         "Executable": "palemoon.exe",
-        "CalAturar": true,
-        "Ignorar": false
+        "ExecutableCurt": "palemoon.exe"
       },
       {
+        "CalAturar": true,
+        "Ignorar": false,
         "Nom": "Maxthon",
         "Descripcio": "Navegador web de Maxthon",
         "Executable": "maxthon.exe",
-        "CalAturar": true,
-        "Ignorar": false
+        "ExecutableCurt": "maxthon.exe"
       },
       {
+        "CalAturar": true,
+        "Ignorar": false,
         "Nom": "Avant Browser",
         "Descripcio": "Navegador web d'Avant",
         "Executable": "avant.exe",
-        "CalAturar": true,
-        "Ignorar": false
+        "ExecutableCurt": "avant.exe"
       },
       {
+        "CalAturar": true,
+        "Ignorar": false,
         "Nom": "Slimjet",
         "Descripcio": "Navegador web de Slimjet",
         "Executable": "slimjet.exe",
-        "CalAturar": true,
-        "Ignorar": false
+        "ExecutableCurt": "slimjet.exe"
       },
       {
+        "CalAturar": true,
+        "Ignorar": false,
         "Nom": "Yandex Browser",
         "Descripcio": "Navegador web de Yandex",
         "Executable": "browser.exe",
-        "CalAturar": true,
-        "Ignorar": false
+        "ExecutableCurt": "browser.exe"
       },
       {
+        "CalAturar": true,
+        "Ignorar": false,
         "Nom": "Epic Privacy Browser",
         "Descripcio": "Navegador web d'Epic",
         "Executable": "epic.exe",
-        "CalAturar": true,
-        "Ignorar": false
+        "ExecutableCurt": "epic.exe"
       },
       {
+        "CalAturar": true,
+        "Ignorar": false,
         "Nom": "Comodo Dragon",
         "Descripcio": "Navegador web de Comodo",
         "Executable": "dragon.exe",
-        "CalAturar": true,
-        "Ignorar": false
+        "ExecutableCurt": "dragon.exe"
       },
       {
+        "CalAturar": true,
+        "Ignorar": false,
         "Nom": "SRWare Iron",
         "Descripcio": "Navegador web de SRWare",
         "Executable": "iron.exe",
-        "CalAturar": true,
-        "Ignorar": false
+        "ExecutableCurt": "iron.exe"
       },
       {
+        "CalAturar": true,
+        "Ignorar": false,
         "Nom": "UC Browser",
         "Descripcio": "Navegador web de UC",
         "Executable": "browser.exe",
-        "CalAturar": true,
-        "Ignorar": false
+        "ExecutableCurt": "browser.exe"
       },
       {
+        "CalAturar": true,
+        "Ignorar": false,
         "Nom": "Lunascape",
         "Descripcio": "Navegador web de Lunascape",
         "Executable": "lunascape6.exe",
-        "CalAturar": true,
-        "Ignorar": false
+        "ExecutableCurt": "lunascape6.exe"
       },
       {
+        "CalAturar": true,
+        "Ignorar": false,
         "Nom": "Midori",
         "Descripcio": "Navegador web de Midori",
         "Executable": "midori.exe",
-        "CalAturar": true,
-        "Ignorar": false
+        "ExecutableCurt": "midori.exe"
       },
       {
+        "CalAturar": true,
+        "Ignorar": false,
         "Nom": "K-Meleon",
         "Descripcio": "Navegador web de K-Meleon",
         "Executable": "k-meleon.exe",
-        "CalAturar": true,
-        "Ignorar": false
+        "ExecutableCurt": "k-meleon.exe"
       },
       {
+        "CalAturar": true,
+        "Ignorar": false,
         "Nom": "QuteBrowser",
         "Descripcio": "Navegador web de QuteBrowser",
         "Executable": "qutebrowser.exe",
-        "CalAturar": true,
-        "Ignorar": false
+        "ExecutableCurt": "qutebrowser.exe"
       }
     ]
   },
@@ -161,18 +184,20 @@
     "Ignorar": false,
     "Aplicacions": [
       {
+        "CalAturar": true,
+        "Ignorar": false,
         "Nom": "Adobe Acrobat",
         "Descripcio": "Aplicació per a la visualització i edició de PDFs",
         "Executable": "acrobat.exe",
-        "CalAturar": true,
-        "Ignorar": false
+        "ExecutableCurt": "acrobat.exe"
       },
       {
+        "CalAturar": true,
+        "Ignorar": false,
         "Nom": "Adobe Acrobat Reader",
         "Descripcio": "Aplicació per a la visualització de PDFs",
         "Executable": "acrord32.exe",
-        "CalAturar": true,
-        "Ignorar": false
+        "ExecutableCurt": "acrord32.exe"
       }
     ]
   },
@@ -183,39 +208,46 @@
     "Ignorar": true,
     "Aplicacions": [
       {
+        "CalAturar": false,
+        "Ignorar": false,
         "Nom": "Microsoft Word",
         "Descripcio": "Processador de textos de Microsoft",
         "Executable": "winword.exe",
-        "CalAturar": false,
-        "Ignorar": false
+        "ExecutableCurt": "winword.exe",
+        "ImatgeEnBase64": "H4sIAAAAAAAEAB2Ty6JzShSEH8gAcc3gH2hau7e7MCOkCcIWITz92fvUpL6qNV3VpQCHO2MjMim/8qKkhQn5JfAXlUBV8j9/yPS1/QOAahAnUFEc5Kv0twXBXzvskT6cv4D3XVG0twu+F2oq/k6zboVQTzCkVmZYzZ6DOdi0be66ShrjalHOw17K4mJCVZbANjJDl2WCVxVlW4atbmcRWwGjUZETt7cO2hYTzRDP3vZ4vMz7zBPkh2UIomd8EhuTnh4h/HBaWHPMTuhmpGqhYkWbWuU4Z5fEFj5ZV34pvrm6Rm9yDToXWYjd1WslVqngONRUcla0jNImKHY9s6iXaPxwaf1iQGUZb0FLl2LSqnSCXEXgZ0ItE+ChCcfEtm6TJ35EVa9Xk0evyoy2OjrgDR+At/b4crr3HkcX03Y6J5Bup2p34sLe1nANtZNS1TUKuK3rUHNilIRm+qR7lt6APyLdXGSfJ/sLuA/HvEtbyxJO2wwviega2SFn9fqKx7z1S4o2S1q0Ksf5Lhojxu/+UjD5yw+VNCYw7k3d0u7IVMec4Dgb9QfA0NniyShHpLTfsT5/DCxnkit+SLMxmngQT3FeodosppV4ezfTJOtXublegZ8nNEGsWfECFbl5MJ8Re20NQTDWLCmZr0yR/fSJiA8z1nAHuBm4qOCCJxaRM33f0ltJAWWJZ884WbjeN895Pi43rlyl6pahBxmytx4jFQQ+n+zfQGjdEe2BGLKksecqF2phr4k0s3q2QfODflTr4DmmXxEsQK+cdKYiZOulzWhTx8RTjoF940hoDxfAgrH0SCktSsylYMYsJO6EH4sZB/V8kVGoX6yFR4qV2ntoOcGxQrSUgTlgSKPLm2OP7afwnFXhBV+SFnJ8rwOv2uduLI7yrix9JC1baFBMlOKYmn1Hd3Qbtpk21WUrhddVAWzBG8Oz/QSE/1Hur8/nuCVTftzxYHO7hVfPAJg1jWU5fx9F4gmz7LqTUSA+xNT9Zqz7LNy8oD/q9RUKVeDv+iY+IokVpE7+f5fAChMBLr1FCPn37z9kwVc07AMAAA=="
       },
       {
+        "CalAturar": false,
+        "Ignorar": false,
         "Nom": "Microsoft Excel",
         "Descripcio": "Full de càlcul de Microsoft",
         "Executable": "excel.exe",
-        "CalAturar": false,
-        "Ignorar": false
+        "ExecutableCurt": "excel.exe"
       },
       {
+        "CalAturar": false,
+        "Ignorar": false,
         "Nom": "Microsoft PowerPoint",
         "Descripcio": "Presentacions de Microsoft",
         "Executable": "powerpoint.exe",
-        "CalAturar": false,
-        "Ignorar": false
+        "ExecutableCurt": "powerpoint.exe"
       },
       {
+        "CalAturar": false,
+        "Ignorar": false,
         "Nom": "Microsoft Access",
         "Descripcio": "Base de dades de Microsoft",
         "Executable": "msaccess.exe",
-        "CalAturar": false,
-        "Ignorar": false
+        "ExecutableCurt": "msaccess.exe"
       },
       {
+        "CalAturar": false,
+        "Ignorar": false,
         "Nom": "Microsoft OutLook",
         "Descripcio": "Client de correu electrònic de Microsoft",
         "Executable": "outlook.exe",
-        "CalAturar": false,
-        "Ignorar": false
+        "ExecutableCurt": "outlook.exe",
+        "ImatgeEnBase64": "H4sIAAAAAAAEAB2UtbLsCAxEP8iBaUzBC+wxM1NmZmZ//c5dJX26VarqSI3PGPYFKUI10b/RHa/mvOpHzJ+lrS8d/WlJglT9B4yQM67H0bQqmF/wrhnrL+0vh+/fHxjXRdPspjE3Akzx3+piZJvjPYMD4G6gNJj2ohsjCVY55U3kw5aeS46GgUoB82DY4fQY1KLW1BrxZA1V1VrSPhbTwNfSR8LSiPyC5s1nfeW2BDD9W17fuZfHMrtsuDGA95NdD2ZeO8NlBKkb1JSADU6AMQaET4FR49uYVxn4JZQRKHKhmB9Qz56MObqA8jE/C3Eckpcvs4MoofIeuPrrHMJ7Kkw7mpo4DbeJmJtk3WIe7iQ71MHpGmXal183nsUP3vYmQJ9wgADONUHGCshKWxot8jbG9iGBs0M6aYohvdutMMbWX1Xb3QbJQEua1KQ+KIplKD3Ff2zZp9a2JcSAu49YdJb3vT33+B2E0haFbbVwUwoedWTGZRX0ncVMTWJMY6Fq+7UT7xexsjMavPb5+uEehYFXoQBUn2MhYBpskLBaSvmeKQgOljG+tcn8Fcc0gMuNIMWBR6Rs4c07kl4ux5D0WpSyEpT0EAb1lm6XNcf50yD31OHUlZPnVKQMN+fJkAYIdhdgf+7zldjQIhhGEd9AgrWxpUvvnnTWNHqtFnTIvbAxG4qNgCZYP6LniCzsmwG+rzbqyCvaULaNyrMVATMwTzWf+ha0Dp3A8aPNkyJjy2PF2EGu5nzco9OivYwEMDuLd+S6kBOZysnHy1nrPY43qUs+u0dR9/fpUitld+kaz1023llKxI/Jq45NSiIPDcspKYAcOdKTa6seYoVRQiON6agQL9gNiuW1PCfpyP70OEAW1zBgJ5ABQB3fr7Gnz6ZzaDr1LUYozTj/8nQpcZX6viKZEA+ml5Lzw3jFTscI2gIbTEnqKrxbOYc5B7m4vI1QiO42AhQW7iYT1OTow/rhpEVolIromxE6gM1SOkxDYechJg8gSwC2HlW4U4qO2TedkhlFTucUThnbN4rbFAq1jtS6XYxsMrEd4r6uuicm4V4FzQukXHvcfA7TXjKMnYMZ++PH/Mie4RBKSv4aUepkFsiXdcmXTS64W+602lVaixPL98dXBKiW0719YpaKQBp8lU+daO0asAqZyD1O2FSRWsHePIQaVv9/ENn2MG7t5Kqq/v37D1Cz6yKABAAA"
       }
     ]
   },
@@ -226,18 +258,30 @@
     "Ignorar": false,
     "Aplicacions": [
       {
+        "CalAturar": true,
+        "Ignorar": false,
         "Nom": "Visual Studio Code",
         "Descripcio": "Editor de codi font",
         "Executable": "code.exe",
-        "CalAturar": true,
-        "Ignorar": false
+        "ExecutableCurt": "code.exe",
+        "ImatgeEnBase64": "H4sIAAAAAAAEAB2Ut7KzShCEH4iAFQgBwQ0W72FBIEGG994JPf2vcyeZr3uqOuqaOuBs9wS6XI7wN5bnV6Jf/oj7kxDxMPzbBYOz1R9wcsY9fRFCQ3Z4/FNx6M/tTk/qvj+wzxNCYTW5D4GN0d9pkzRXlHxbxKzW7Bz/JvoVw9IL4E63ikqXEx6vMhLuqy6leSa/ozK0iIdZnJx8gzNQDdvvA1WLRdghL5z8296jqa3MSEStEcH6jBWV40R1Zz59UGFTi8yw43FKpncsI49BsTV8ck6CHw8aFK92FGYbOXi40xd9TAUfkocwcM7DZVtzDF1geDbgKTh1+G7fBuKeGjvN4XddJQZN7dnwgXK4BsSpsxdXy70QPglY6L2UFzsuM+mRsUQwGcgE9mQA6RN1/Cqn6RJVSnrAOPJ9V5WAkFeRNRC8rhAxiZisxAGm3/B3XYDBc2uMjccZca0+Zp0FFWtOrDzWmKh53XNkXuc588SpXMCaQGC0fN6MxrJCLO+axbZBRL6voMmBryf3YpJPRUMPPnj7q9LpxBtui2QsbYKEYocaNYO9XINbvUVmLfmkkAW1lUSdpkjlEHjp+ClRH7p8CprP3dVFJwPgBZYmPbxgFHnpINLna4f5112pj/BIe09YJbBNHPaO0KNeT++w457RQ5mMv+wqEPFhxFRARfzFb+IlLVjdnWog3QJJz5UI0cI6E+WhZqHhyNRCPg1PxlGLWnC27FpHcK7MyiQuvtANnSUtUpADsHx8n0T0r8PZRI7wMt5QI17fpOx2mSp+eTrj5kPbiBJqyi07yqVJ8pKUhJCv7RWOTxv6Xy9Yq+UlMRvGgTWDNrqfROSUoKMWLFQnge7sxPYtJPE3aNAcHxlp3J5l4GLh/iB4zVLDe77UEz6MVzwocdt8ldkjSkvfRuMzmXrbTKMw1Ldoop+pGJQ9ujUb18Hrpe6Ls4NiPodk9+q3kHTf+eIcPUeb9wKi47ZiJOIcy1aDx5cyJyG93Z4rlnpYSGni6k2MOGUd9FLnNCJK8Y1ePc0p8Jz3fWOg1H+9eTTcj/YIwnuwM9C427z+xYQF9wwmyYiE0BR6rPxslUhK7TAtw+hn92LtXn/go8IwtQXNgQ3V9f+n4PmB7eoUH6rqf/8AcgsoHUAEAAA="
       },
       {
+        "CalAturar": true,
+        "Ignorar": false,
         "Nom": "WhatsApp",
         "Descripcio": "Aplicació de missatgeria instantània",
         "Executable": "WhatsApp.exe",
+        "ExecutableCurt": "WhatsApp.exe"
+      },
+      {
         "CalAturar": true,
-        "Ignorar": false
+        "Ignorar": false,
+        "Nom": "ARTICONS.exe",
+        "Descripcio": "",
+        "Executable": "ARTICONS.exe",
+        "ExecutableCurt": "ARTICONS.exe",
+        "ImatgeEnBase64": "H4sIAAAAAAAEAB2Ut9azWgxEH4gCkwwUtyCDCQeToQMOORqTn/73d1WMtkaFmllqAh44x0NXqon7leX6teRXP+L/Ru4tcPFfLxmUrf+AVyDv+RLHGYotoGfNv//c/nDl/v4BOA6OE78mf+LIlPytzuTlSLIPJJbtRszEVD8/bwaJLf7cEfp7W0M8KU/AObt7Qdz2Kboxtbvvc5n0BdH3kf67tgoGsiDcyAq872qqvJUC4i25Vi8DBxkuQkwdm6sfkgOBF42oZaEkjDaZT78spAscL8sSPvf9pw4Vb+ZSX1jWj0RrzChj1x1hHRQaUGToXxEcDRYWhWqUR0CXOu0/g+Ek7DLfRnPV00sMdm6FGUnXKNBU6+PZqpM6jTAISDYmXrhpS/lkdX+mVwNLJl0GU5SWlT49q7tWFfbebkYuvlOU0OKyR6/BQvFbGBqq0hvn7Uxk3X26vetxNLyIluU/cr3kBqTLnQ9zcDej6ReAdXI0jisaKajy4d9JdRXYx5PJuRjR8SIRii02ihLqYQHfyXZI9qCid5kVGGurLdNYk5j1R6/ssa/kiTTbYkl6PRUmKrTz58TEkCaf4qWjiz2w3YPcMvPjtQASBF/HsqNqwcvm8I50T1hrNflitJ0KhoBYqdVFu1U7GcQDfFOeCs31KQOdeNuC4ob5N4wHLcw/hnKC6HlmR2Q8ZM69he/9QEoc2UslV1+LOj4W8jncp22fNItWi50cOdhSiSTwqvWcRRkTQYmec/aO60JvBZnLT74SszpkhnIfjps2xPsMxeocfrmjHskGN+9kAczrHV8ASHSKKe0Yr74yO0H/UJIqmU16TFdSX6JbFuguVpRM1EPHUabwe1lvPN2KOb6LtpGXbrJaZ5PagfA4s1geaCsmSHI9zj1P2+JamZfCtl+n0FcsskdwSoLX5UqY2FcQLjTU7QqRutnUfHGSrpx/M/grsr1u0ufXLTMVDh43UoxLoZC5O5OSarwNe4KVe5zt+bmPsxu57Hewy5IODljxJsm11V6N5gawECG8CWEZXMVuXPMXQmeV3x/z+BxJ3snSo9O57sivwnJa0n+OQ2RvgTnfYuGk0Gp9DGkp40U7Xm0RqPDhiWC5ejL88AyYp7f9TkUvvCpNDEJfH89kzpNE8vtwIJnVVWHUg8+EPkQMNbDwCBkw1hPQ2xhjA9/Dd6/RKxRtX7NE0dOYSuikxo2CESnl1K/u/4fj+gFwdEqINe2/f3uWAm6cBAAA"
       }
     ]
   }

@@ -41,14 +41,23 @@
     <StartupObject>Examen.Professor.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ListViewPrinter, Version=2.7.1.31255, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ObjectListView.2.7.1.5\lib\ListViewPrinter.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Licensing, Version=30.2462.6.0, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Licensing.30.2.6\lib\net462\Syncfusion.Licensing.dll</HintPath>
+    <Reference Include="ObjectListView, Version=2.7.1.31255, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4, processorArchitecture=MSIL">
+      <HintPath>..\packages\ObjectListView.2.7.1.5\lib\ObjectListView.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Shared.Base, Version=30.2462.6.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Shared.Base.30.2.6\lib\net462\Syncfusion.Shared.Base.dll</HintPath>
+    <Reference Include="SparkleLibrary, Version=2.7.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ObjectListView.2.7.1.5\lib\SparkleLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=30.2462.7.0, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.30.2.7\lib\net462\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Shared.Base, Version=30.2462.7.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Shared.Base.30.2.7\lib\net462\Syncfusion.Shared.Base.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -112,6 +121,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Examen.ico" />
+    <None Include="Resources\FolderOpened.png" />
+    <None Include="Resources\FolderClosed.png" />
+    <None Include="Resources\Application.png" />
+    <None Include="Resources\Desar_32x32.png" />
+    <None Include="Resources\Sortir_32x321.png" />
     <None Include="Resources\Stop_32x32.png" />
     <None Include="Resources\Start_32x32.png" />
     <None Include="Resources\Importar_32x32.png" />

@@ -2,78 +2,38 @@
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.Linq;
+using Newtonsoft.Json;
 
 namespace Examen.Suport.Classes
 {
     [Serializable, Category("Aplicació"), DisplayName("Aplicació")]
-    public class Aplicacio
+    public class Aplicacio(string nom, string descripcio, string executable, bool calAturar, bool ignorar) : AplicacioBase(nom, descripcio, executable)
     {
-        [Category("Aplicació"),
-         Browsable(true),
-         ReadOnly(false),
-         DisplayName("Nom"),
-         Description("Nom de l'aplicació")]
-        public string Nom { get; set; } = "";
-
-        [Category("Aplicació"),
-         Browsable(true),
-         ReadOnly(false),
-         DisplayName("Descripció"),
-         Description("Descripció de l'aplicació")]
-        public string Descripcio { get; set; } = "";
-
-        [Category("Aplicació"),
-         Browsable(true),
-         ReadOnly(false),
-         DisplayName("Executable"),
-         Description("Nom del fitxer executable (*.exe)")]
-        public string Executable { get; set; } = "";
-
         [Category("Acció"),
          Browsable(true),
          ReadOnly(false),
          DisplayName("Cal aturar?"),
          Description("Indica si cal aturar l'aplicació en detectar-la")]
-        public bool CalAturar { get; set; }
+        public bool CalAturar { get; set; } = calAturar;
 
         [Category("Acció"),
          Browsable(true),
          ReadOnly(false),
          DisplayName("Ignorar"),
          Description("Ignorar l'aplicació en detectar-la")]
-        public bool Ignorar { get; set; }
+        public bool Ignorar { get; set; }= ignorar;
 
+        [JsonIgnore]
         [Browsable(false)]
-        private string ExecutableCurt => string.Join(".", Executable.Split('.').Reverse().Skip(1).Reverse());
+        public string Categoria { get; set; }
 
-        //[Browsable(false)]
-        //[JsonIgnore]
-        //public bool Notificada { get; set; }
-
-        public Aplicacio()
+        public Aplicacio() : this("", "", "", true, false)
         {
         }
 
-        public Aplicacio(string nom, string executable, bool calAturar, bool ignorar)
+        public Aplicacio(AplicacioEnUs aplicacioEnUs) : this(string.IsNullOrEmpty(aplicacioEnUs.Descripcio) ? aplicacioEnUs.Nom : aplicacioEnUs.Descripcio, aplicacioEnUs.Descripcio, aplicacioEnUs.ExecutableCurt, true, false)
         {
-            Nom = nom;
-            Executable = executable;
-            CalAturar = calAturar;
-            Ignorar = ignorar;
-        }
-
-        public Aplicacio(AplicacioEnUs aplicacioEnUs)
-        {
-            Nom = string.IsNullOrEmpty(aplicacioEnUs.Descripcio) ? aplicacioEnUs.Nom : aplicacioEnUs.Descripcio;
-            Executable = aplicacioEnUs.Nom;
-            CalAturar = true; // Per defecte cal aturar
-            Ignorar = false; // Per defecte no s'ignora
-        }
-
-        public override string ToString()
-        {
-            return $"{Nom} ({Executable})";
+            Icona = aplicacioEnUs.Icona;
         }
 
         public bool EnExecucio()
@@ -83,7 +43,7 @@ namespace Examen.Suport.Classes
                 if (Ignorar)
                     return false;
 
-                var processos = Process.GetProcessesByName(ExecutableCurt);
+                var processos = Process.GetProcessesByName(NomExecutableCurt);
                 return processos.Length > 0;
             }
             catch (Exception ex)
@@ -100,7 +60,7 @@ namespace Examen.Suport.Classes
             {
                 if (CalAturar)
                 {
-                    var processos = Process.GetProcessesByName(ExecutableCurt);
+                    var processos = Process.GetProcessesByName(NomExecutableCurt);
                     var n = processos.Length;
                     while (n > 0)
                     {
@@ -109,7 +69,7 @@ namespace Examen.Suport.Classes
                         if (!Helper.Executar(taskKill, arguments))
                             break;
 
-                        processos = Process.GetProcessesByName(ExecutableCurt);
+                        processos = Process.GetProcessesByName(NomExecutableCurt);
                         n = processos.Length;
                     }
 
@@ -121,11 +81,11 @@ namespace Examen.Suport.Classes
                     return n == 0;
                 }
 
-                //if (!Notificada)
-                //{
-                //    backgroundWorker.ReportProgress(10, $@"L'aplicació '{Nom}', no s'ha d'aturar segons directrius.");
-                //    Notificada = true;
-                //}
+                if (Helper._Notificades.Contains(Nom)) 
+                    return false;
+                
+                backgroundWorker.ReportProgress(10, $@"L'aplicació '{Nom}', no hauria d'estar en ús.");
+                Helper._Notificades.Add(Nom);
 
                 return false;
             }

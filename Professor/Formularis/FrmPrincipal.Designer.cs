@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             Syncfusion.Windows.Forms.CaptionImage captionImage1 = new Syncfusion.Windows.Forms.CaptionImage();
             Syncfusion.Windows.Forms.CaptionLabel captionLabel1 = new Syncfusion.Windows.Forms.CaptionLabel();
@@ -42,11 +41,11 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.imatgesLlista = new System.Windows.Forms.ImageList(this.components);
+            this.imatgesLlista = new System.Windows.Forms.ImageList();
             this.panelComboBox = new System.Windows.Forms.Panel();
             this.lFiltreHistoric = new System.Windows.Forms.Label();
             this.cbHistoric = new System.Windows.Forms.ComboBox();
-            this.timerInici = new System.Windows.Forms.Timer(this.components);
+            this.timerInici = new System.Windows.Forms.Timer();
             this.menu = new System.Windows.Forms.ToolStrip();
             this.cbColumnes = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -58,8 +57,8 @@
             this.bSortir = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.bCopiarCodi = new System.Windows.Forms.ToolStripButton();
-            this.timerCaducades = new System.Windows.Forms.Timer(this.components);
-            this.timerTancar = new System.Windows.Forms.Timer(this.components);
+            this.timerCaducades = new System.Windows.Forms.Timer();
+            this.timerTancar = new System.Windows.Forms.Timer();
             this.panelFons = new System.Windows.Forms.Panel();
             this.panelInfo = new System.Windows.Forms.Panel();
             this.txtVersio = new System.Windows.Forms.Label();
@@ -154,6 +153,7 @@
             this.llistaHistoric.TabIndex = 0;
             this.llistaHistoric.UseCompatibleStateImageBehavior = false;
             this.llistaHistoric.View = System.Windows.Forms.View.Details;
+            this.llistaHistoric.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.LlistaHistoric_ColumnClick);
             this.llistaHistoric.DoubleClick += new System.EventHandler(this.LlistaHistoric_DoubleClick);
             // 
             // columnHeader1
@@ -327,7 +327,7 @@
             // 
             this.bSortir.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.bSortir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bSortir.Image = global::Examen.Professor.Properties.Resources.Sortir_32x32;
+            this.bSortir.Image = global::Examen.Professor.Properties.Resources.Sortir_32x321;
             this.bSortir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bSortir.Name = "bSortir";
             this.bSortir.Size = new System.Drawing.Size(71, 36);

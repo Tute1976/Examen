@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using Examen.Suport.Classes;
-using Examen.Suport.Formularis;
 using Examen.Suport.Funcions;
 
 namespace Examen.Suport.Controls
@@ -9,6 +8,7 @@ namespace Examen.Suport.Controls
     public partial class InfoEstacioV1 : InfoEstacio
     {
         private Colors _color;
+        private readonly Action<string, ContenidorAplicacionsEnUs> _onAplicacionsEnUs;
 
         // Les existents:
         public override bool Pitar { get => bPitar.Checked; set => bPitar.Checked = value; }
@@ -61,9 +61,9 @@ namespace Examen.Suport.Controls
             }
         }
 
-        public InfoEstacioV1() : this(new EstacioAlumne("", Guid.Empty), 30) { }
+        public InfoEstacioV1() : this(new EstacioAlumne("", Guid.Empty), 30, null) { }
 
-        public InfoEstacioV1(EstacioAlumne estacioAlumne, int interval) : base (estacioAlumne, interval)
+        public InfoEstacioV1(EstacioAlumne estacioAlumne, int interval, Action<string, ContenidorAplicacionsEnUs> onAplicacionsEnUs) : base (estacioAlumne, interval)
         {
             InitializeComponent();
 
@@ -75,6 +75,8 @@ namespace Examen.Suport.Controls
             txtInformacio.Text = estacioAlumne.Fabricant;
             Data = DateTime.Now;
             txtEstat.Text = "";
+
+            _onAplicacionsEnUs = onAplicacionsEnUs;
         }
 
         private void BInfo_Click(object sender, EventArgs e)
@@ -123,8 +125,7 @@ namespace Examen.Suport.Controls
             {
                 AplicacionsEnUs = [.. AplicacionsEnUs]
             };
-            var frmAplicacionsEnUs = new FrmAplicacionsEnUs(txtEstacio.Text, contenidorAplicacionsEnUs);
-            frmAplicacionsEnUs.Show();
+            _onAplicacionsEnUs.Invoke(EstacioAlumne.Estacio, contenidorAplicacionsEnUs);
         }
     }
 }

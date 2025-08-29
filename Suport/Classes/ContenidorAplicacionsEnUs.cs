@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace Examen.Suport.Classes
 {
@@ -9,6 +10,6 @@ namespace Examen.Suport.Classes
          ReadOnly(true),
          DisplayName("Aplicacions en ús"),
          Description("Aplicacions executant-se en el client")]
-        public AplicacioEnUs[] AplicacionsEnUs { get; set; } = [];
+        public List<AplicacioEnUs> AplicacionsEnUs { get; set; } = [];
     }
 }

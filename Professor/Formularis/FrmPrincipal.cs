@@ -10,7 +10,6 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using static System.Windows.Forms.AxHost;
 
 namespace Examen.Professor.Formularis
 {
@@ -19,6 +18,8 @@ namespace Examen.Professor.Formularis
         private ContenidorAplicacions ContenidorAplicacions { get; set; } = new ();
 
         private bool _fi;
+        private int _columnaOrdenada = -1;
+        private SortOrder _ordre = SortOrder.None;
 
         private List<ListViewItem> Items1 { get; set; } = [];
         private List<ListViewItem> Items2 { get; set; } = [];
@@ -48,7 +49,7 @@ namespace Examen.Professor.Formularis
                     File.Copy(origen, Fitxer, true);
                 }
 
-                ContenidorAplicacions.CategoriaAplicacions = Suport.Funcions.Text.Llegir(Fitxer);
+                ContenidorAplicacions.CategoriesAplicacions = Suport.Funcions.Text.Llegir(Fitxer);
 
                 DefineixColumnes(int.Parse(cbColumnes.Text));
 
@@ -99,6 +100,9 @@ namespace Examen.Professor.Formularis
                     llistaHistoric.IsDisposed)
                     return;
 
+                if (ContenidorAplicacions.AplicaIcones(aplicacionsEnUs))
+                    ContenidorAplicacions.CategoriesAplicacions.Desar(Fitxer);
+
                 Invocar(llistaHistoric, () =>
                 {
                     string estat;
@@ -115,8 +119,8 @@ namespace Examen.Professor.Formularis
                             AfegirItem(estacioAlumne, 1, Color.Green, estat);
 
                             infoEstacio = Properties.Settings.Default.VersioInfo == 1
-                                ? new InfoEstacioV1(estacioAlumne, Properties.Settings.Default.IntevarvalTemps * 3)
-                                : new InfoEstacioV2(estacioAlumne, Properties.Settings.Default.IntevarvalTemps * 3, OnHistoric);
+                                ? new InfoEstacioV1(estacioAlumne, Properties.Settings.Default.IntevarvalTemps * 3, null)
+                                : new InfoEstacioV2(estacioAlumne, Properties.Settings.Default.IntevarvalTemps * 3, OnHistoric, OnAplicacionsEnUs);
                             infoEstacio.Estat = estat;
                             infoEstacio.Data = DateTime.Now;
                             infoEstacio.Imatge = Imatge.Nou;
@@ -261,13 +265,26 @@ namespace Examen.Professor.Formularis
             }
         }
 
+        private void OnAplicacionsEnUs(string estacio, ContenidorAplicacionsEnUs contenidorAplicacionsEnUs)
+        {
+            try
+            {
+                var frmAplicacionsEnUs = new FrmAplicacionsEnUs(estacio, contenidorAplicacionsEnUs, ContenidorAplicacions, Fitxer);
+                frmAplicacionsEnUs.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                ex.Mostrar();
+            }
+        }
+
         private string GestorEstat(TipusMissatge tipusMissatge, EstacioAlumne estacioAlumne)
         {
             try
             {
                 CercaAccions(estacioAlumne, out var pitar, out var bloquejar, out var aturar);
 
-                var aplicacions = ContenidorAplicacions.Totes;
+                var aplicacions = ContenidorAplicacions.TotesSenseIgnorades;
                 if (bStartStop.Tag is string s &&
                     bool.TryParse(s, out var start) &&
                     !start)
@@ -468,7 +485,7 @@ namespace Examen.Professor.Formularis
                 if (frmAplicacions.ShowDialog() != DialogResult.OK) 
                     return;
                 ContenidorAplicacions = frmAplicacions.ContenidorAplicacions;
-                ContenidorAplicacions.CategoriaAplicacions.Desar(Fitxer);
+                ContenidorAplicacions.CategoriesAplicacions.Desar(Fitxer);
             }
             catch (Exception ex)
             {
@@ -584,6 +601,24 @@ namespace Examen.Professor.Formularis
             CaptionLabels[0].Text = taula.Controls.Count == 0 ? 
                 "Codi" : 
                 $"Codi | {taula.Controls.Count} alumne{(taula.Controls.Count == 1 ? "" : "s")}";
+        }
+
+        private void LlistaHistoric_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            var llista = (ListView)sender;
+
+            if (e.Column == _columnaOrdenada)
+            {
+                _ordre = _ordre == SortOrder.Ascending ? SortOrder.Descending : SortOrder.Ascending;
+            }
+            else
+            {
+                _columnaOrdenada = e.Column;
+                _ordre = SortOrder.Ascending;
+            }
+
+            llista.ListViewItemSorter = new ListViewColumnSorter(_columnaOrdenada, _ordre);
+            llista.Sort();
         }
     }
 }

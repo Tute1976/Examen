@@ -26,12 +26,11 @@ namespace Examen.Suport.Controls
 
     [ToolboxItem(false)]
     [DesignTimeVisible(false)]
-    public class InfoEstacio : UserControl
+    public class InfoEstacio(EstacioAlumne estacioAlumne, int interval) : UserControl
     {
         protected bool IsDesignMode => LicenseManager.UsageMode == LicenseUsageMode.Designtime || DesignMode;
 
-        public EstacioAlumne EstacioAlumne { get; set; }
-        private readonly int _interval;
+        public EstacioAlumne EstacioAlumne { get; set; } = estacioAlumne;
         public List<AplicacioEnUs> AplicacionsEnUs { get; set; }
 
         // Contracte comú
@@ -49,16 +48,10 @@ namespace Examen.Suport.Controls
         public virtual Imatge Imatge { get; set; }
 
         protected TimeSpan Temps => DateTime.Now - (EstacioAlumne.DataInici ?? DateTime.Now);
-        public bool Caducada => (DateTime.Now - (EstacioAlumne.DataDarreraConnexio ?? DateTime.Now)).TotalSeconds > _interval;
+        public bool Caducada => (DateTime.Now - (EstacioAlumne.DataDarreraConnexio ?? DateTime.Now)).TotalSeconds > interval;
 
         public InfoEstacio() : this(new EstacioAlumne("", Guid.Empty), 5)
         {
-        }
-
-        public InfoEstacio(EstacioAlumne estacioAlumne, int interval)
-        {
-            EstacioAlumne = estacioAlumne;
-            _interval = interval;
         }
     }
 }

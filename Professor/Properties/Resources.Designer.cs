@@ -73,6 +73,16 @@ namespace Examen.Professor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Application {
+            get {
+                object obj = ResourceManager.GetObject("Application", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Cancel_16x16 {
             get {
                 object obj = ResourceManager.GetObject("Cancel_16x16", resourceCulture);
@@ -123,6 +133,16 @@ namespace Examen.Professor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Desar_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Desar_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Examen2 {
             get {
                 object obj = ResourceManager.GetObject("Examen2", resourceCulture);
@@ -146,6 +166,26 @@ namespace Examen.Professor.Properties {
         internal static System.Drawing.Bitmap Exportar_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Exportar_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FolderClosed {
+            get {
+                object obj = ResourceManager.GetObject("FolderClosed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FolderOpened {
+            get {
+                object obj = ResourceManager.GetObject("FolderOpened", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -206,6 +246,16 @@ namespace Examen.Professor.Properties {
         internal static System.Drawing.Bitmap Sortir_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Sortir_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sortir_32x321 {
+            get {
+                object obj = ResourceManager.GetObject("Sortir_32x321", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

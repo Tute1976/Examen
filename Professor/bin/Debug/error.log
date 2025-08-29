@@ -192,3 +192,675 @@
 
 27/8/2025 13:57:19 [Question]: Vols finalitzar el programa?
 
+28/8/2025 9:40:50 [Question]: Vols finalitzar el programa?
+
+28/8/2025 9:44:51 [Hand]: S'ha produït un error: Value cannot be null.
+
+28/8/2025 9:44:51 [Hand]: Parameter name: s
+
+28/8/2025 9:44:51 [Hand]: Detalls:    at System.Convert.FromBase64String(String s)
+
+28/8/2025 9:44:51 [Hand]:    at Examen.Suport.Funcions.Text.ToImageFromBase64(String base64) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Text.cs:line 154
+
+28/8/2025 9:45:54 [Hand]: S'ha produït un error: Parameter is not valid.
+
+28/8/2025 9:45:54 [Hand]: Detalls:    at System.Drawing.Bitmap..ctor(Int32 width, Int32 height, PixelFormat format)
+
+28/8/2025 9:45:54 [Hand]:    at System.Drawing.Bitmap..ctor(Int32 width, Int32 height)
+
+28/8/2025 9:45:54 [Hand]:    at Examen.Suport.Funcions.Text.ToImageFromBase64(String base64) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Text.cs:line 155
+
+28/8/2025 9:49:50 [Question]: Vols finalitzar el programa?
+
+28/8/2025 10:08:52 [Question]: Vols finalitzar el programa?
+
+28/8/2025 10:29:22 [Hand]: S'ha produït un error: Unterminated string. Expected delimiter: ". Path '[3].ImatgeEnBase64', line 1, position 6582.
+
+28/8/2025 10:29:22 [Hand]: Detalls:    at Newtonsoft.Json.JsonTextReader.ReadStringIntoBuffer(Char quote)
+
+28/8/2025 10:29:22 [Hand]:    at Newtonsoft.Json.JsonTextReader.ParseString(Char quote, ReadType readType)
+
+28/8/2025 10:29:22 [Hand]:    at Newtonsoft.Json.JsonTextReader.ReadStringValue(ReadType readType)
+
+28/8/2025 10:29:22 [Hand]:    at Newtonsoft.Json.JsonTextReader.ReadAsString()
+
+28/8/2025 10:29:22 [Hand]:    at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+
+28/8/2025 10:29:22 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.ResolvePropertyAndCreatorValues(JsonObjectContract contract, JsonProperty containerProperty, JsonReader reader, Type objectType)
+
+28/8/2025 10:29:22 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObjectUsingCreatorWithParameters(JsonReader reader, JsonObjectContract contract, JsonProperty containerProperty, ObjectConstructor`1 creator, String id)
+
+28/8/2025 10:29:22 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateNewObject(JsonReader reader, JsonObjectContract objectContract, JsonProperty containerMember, JsonProperty containerProperty, String id, Boolean& createdFromNonDefaultCreator)
+
+28/8/2025 10:29:22 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+
+28/8/2025 10:29:22 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+
+28/8/2025 10:29:22 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+
+28/8/2025 10:29:22 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+
+28/8/2025 10:29:22 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+
+28/8/2025 10:29:22 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+
+28/8/2025 10:29:22 [Hand]:    at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+
+28/8/2025 10:29:22 [Hand]:    at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+
+28/8/2025 10:29:22 [Hand]:    at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+
+28/8/2025 10:29:22 [Hand]:    at Examen.Suport.Funcions.Text.Deserialitzar[T](String json) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Text.cs:line 60
+
+28/8/2025 10:29:22 [Hand]:    at Examen.Suport.Tcp.ServidorTcp.AcceptCallback(IAsyncResult ar) in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ServidorTcp.cs:line 55
+
+28/8/2025 10:31:02 [Hand]: S'ha produït un error: Invalid length for a Base-64 char array or string.
+
+28/8/2025 10:31:02 [Hand]: Detalls:    at System.Convert.FromBase64_Decode(Char* startInputPtr, Int32 inputLength, Byte* startDestPtr, Int32 destLength)
+
+28/8/2025 10:31:02 [Hand]:    at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+
+28/8/2025 10:31:02 [Hand]:    at System.Convert.FromBase64String(String s)
+
+28/8/2025 10:31:02 [Hand]:    at Examen.Suport.Funcions.Text.ToStringFromBase64(String base64) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Text.cs:line 119
+
+28/8/2025 10:31:02 [Hand]: S'ha produït un error: Unexpected character encountered while parsing value: W. Path '', line 0, position 0.
+
+28/8/2025 10:31:02 [Hand]: Detalls:    at Newtonsoft.Json.JsonTextReader.ParseValue()
+
+28/8/2025 10:31:02 [Hand]:    at Newtonsoft.Json.JsonTextReader.Read()
+
+28/8/2025 10:31:02 [Hand]:    at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+
+28/8/2025 10:31:02 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+
+28/8/2025 10:31:02 [Hand]:    at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+
+28/8/2025 10:31:02 [Hand]:    at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+
+28/8/2025 10:31:02 [Hand]:    at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+
+28/8/2025 10:31:02 [Hand]:    at Examen.Suport.Funcions.Text.Deserialitzar[T](String json) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Text.cs:line 60
+
+28/8/2025 10:31:02 [Hand]:    at Examen.Suport.Tcp.ServidorTcp.AcceptCallback(IAsyncResult ar) in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ServidorTcp.cs:line 55
+
+28/8/2025 10:41:35 [Hand]: S'ha produït un error: Invalid length for a Base-64 char array or string.
+
+28/8/2025 10:41:35 [Hand]: Detalls:    at System.Convert.FromBase64_Decode(Char* startInputPtr, Int32 inputLength, Byte* startDestPtr, Int32 destLength)
+
+28/8/2025 10:41:35 [Hand]:    at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+
+28/8/2025 10:41:35 [Hand]:    at System.Convert.FromBase64String(String s)
+
+28/8/2025 10:41:35 [Hand]:    at Examen.Suport.Funcions.Text.ToStringFromBase64(String base64) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Text.cs:line 119
+
+28/8/2025 10:41:35 [Hand]: S'ha produït un error: Unexpected character encountered while parsing value: W. Path '', line 0, position 0.
+
+28/8/2025 10:41:35 [Hand]: Detalls:    at Newtonsoft.Json.JsonTextReader.ParseValue()
+
+28/8/2025 10:41:35 [Hand]:    at Newtonsoft.Json.JsonTextReader.Read()
+
+28/8/2025 10:41:35 [Hand]:    at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+
+28/8/2025 10:41:35 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+
+28/8/2025 10:41:35 [Hand]:    at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+
+28/8/2025 10:41:35 [Hand]:    at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+
+28/8/2025 10:41:35 [Hand]:    at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+
+28/8/2025 10:41:35 [Hand]:    at Examen.Suport.Funcions.Text.Deserialitzar[T](String json) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Text.cs:line 60
+
+28/8/2025 10:41:35 [Hand]:    at Examen.Suport.Tcp.ServidorTcp.AcceptCallback(IAsyncResult ar) in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ServidorTcp.cs:line 55
+
+28/8/2025 10:43:37 [Hand]: S'ha produït un error: Unterminated string. Expected delimiter: ". Path '[3].ImatgeEnBase64', line 1, position 6582.
+
+28/8/2025 10:43:37 [Hand]: Detalls:    at Newtonsoft.Json.JsonTextReader.ReadStringIntoBuffer(Char quote)
+
+28/8/2025 10:43:37 [Hand]:    at Newtonsoft.Json.JsonTextReader.ParseString(Char quote, ReadType readType)
+
+28/8/2025 10:43:37 [Hand]:    at Newtonsoft.Json.JsonTextReader.ReadStringValue(ReadType readType)
+
+28/8/2025 10:43:37 [Hand]:    at Newtonsoft.Json.JsonTextReader.ReadAsString()
+
+28/8/2025 10:43:37 [Hand]:    at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+
+28/8/2025 10:43:37 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.ResolvePropertyAndCreatorValues(JsonObjectContract contract, JsonProperty containerProperty, JsonReader reader, Type objectType)
+
+28/8/2025 10:43:37 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObjectUsingCreatorWithParameters(JsonReader reader, JsonObjectContract contract, JsonProperty containerProperty, ObjectConstructor`1 creator, String id)
+
+28/8/2025 10:43:37 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateNewObject(JsonReader reader, JsonObjectContract objectContract, JsonProperty containerMember, JsonProperty containerProperty, String id, Boolean& createdFromNonDefaultCreator)
+
+28/8/2025 10:43:37 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+
+28/8/2025 10:43:37 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+
+28/8/2025 10:43:37 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+
+28/8/2025 10:43:37 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+
+28/8/2025 10:43:37 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+
+28/8/2025 10:43:37 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+
+28/8/2025 10:43:37 [Hand]:    at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+
+28/8/2025 10:43:37 [Hand]:    at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+
+28/8/2025 10:43:37 [Hand]:    at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+
+28/8/2025 10:43:37 [Hand]:    at Examen.Suport.Funcions.Text.Deserialitzar[T](String json) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Text.cs:line 60
+
+28/8/2025 10:43:37 [Hand]:    at Examen.Suport.Tcp.ServidorTcp.AcceptCallback(IAsyncResult ar) in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ServidorTcp.cs:line 55
+
+28/8/2025 10:49:57 [Hand]: S'ha produït un error: Invalid length for a Base-64 char array or string.
+
+28/8/2025 10:49:57 [Hand]: Detalls:    at System.Convert.FromBase64_Decode(Char* startInputPtr, Int32 inputLength, Byte* startDestPtr, Int32 destLength)
+
+28/8/2025 10:49:57 [Hand]:    at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+
+28/8/2025 10:49:57 [Hand]:    at System.Convert.FromBase64String(String s)
+
+28/8/2025 10:49:57 [Hand]:    at Examen.Suport.Funcions.Text.ToStringFromBase64(String base64) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Text.cs:line 119
+
+28/8/2025 10:49:57 [Hand]: S'ha produït un error: Unexpected character encountered while parsing value: W. Path '', line 0, position 0.
+
+28/8/2025 10:49:57 [Hand]: Detalls:    at Newtonsoft.Json.JsonTextReader.ParseValue()
+
+28/8/2025 10:49:57 [Hand]:    at Newtonsoft.Json.JsonTextReader.Read()
+
+28/8/2025 10:49:57 [Hand]:    at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+
+28/8/2025 10:49:57 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+
+28/8/2025 10:49:57 [Hand]:    at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+
+28/8/2025 10:49:57 [Hand]:    at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+
+28/8/2025 10:49:57 [Hand]:    at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+
+28/8/2025 10:49:57 [Hand]:    at Examen.Suport.Funcions.Text.Deserialitzar[T](String json) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Text.cs:line 60
+
+28/8/2025 10:49:57 [Hand]:    at Examen.Suport.Tcp.ServidorTcp.AcceptCallback(IAsyncResult ar) in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ServidorTcp.cs:line 55
+
+28/8/2025 10:52:53 [Hand]: S'ha produït un error: Invalid length for a Base-64 char array or string.
+
+28/8/2025 10:52:53 [Hand]: Detalls:    at System.Convert.FromBase64_Decode(Char* startInputPtr, Int32 inputLength, Byte* startDestPtr, Int32 destLength)
+
+28/8/2025 10:52:53 [Hand]:    at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+
+28/8/2025 10:52:53 [Hand]:    at System.Convert.FromBase64String(String s)
+
+28/8/2025 10:52:53 [Hand]:    at Examen.Suport.Funcions.Text.ToStringFromBase64(String base64) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Text.cs:line 119
+
+28/8/2025 10:52:53 [Hand]: S'ha produït un error: Unexpected character encountered while parsing value: W. Path '', line 0, position 0.
+
+28/8/2025 10:52:53 [Hand]: Detalls:    at Newtonsoft.Json.JsonTextReader.ParseValue()
+
+28/8/2025 10:52:53 [Hand]:    at Newtonsoft.Json.JsonTextReader.Read()
+
+28/8/2025 10:52:53 [Hand]:    at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+
+28/8/2025 10:52:53 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+
+28/8/2025 10:52:53 [Hand]:    at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+
+28/8/2025 10:52:53 [Hand]:    at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+
+28/8/2025 10:52:53 [Hand]:    at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+
+28/8/2025 10:52:53 [Hand]:    at Examen.Suport.Funcions.Text.Deserialitzar[T](String json) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Text.cs:line 60
+
+28/8/2025 10:52:53 [Hand]:    at Examen.Suport.Tcp.ServidorTcp.AcceptCallback(IAsyncResult ar) in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ServidorTcp.cs:line 55
+
+28/8/2025 10:54:11 [Hand]: S'ha produït un error: Invalid length for a Base-64 char array or string.
+
+28/8/2025 10:54:11 [Hand]: Detalls:    at System.Convert.FromBase64_Decode(Char* startInputPtr, Int32 inputLength, Byte* startDestPtr, Int32 destLength)
+
+28/8/2025 10:54:11 [Hand]:    at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+
+28/8/2025 10:54:11 [Hand]:    at System.Convert.FromBase64String(String s)
+
+28/8/2025 10:54:11 [Hand]:    at Examen.Suport.Funcions.Text.ToStringFromBase64(String base64) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Text.cs:line 119
+
+28/8/2025 10:54:11 [Hand]: S'ha produït un error: Unexpected character encountered while parsing value: W. Path '', line 0, position 0.
+
+28/8/2025 10:54:11 [Hand]: Detalls:    at Newtonsoft.Json.JsonTextReader.ParseValue()
+
+28/8/2025 10:54:11 [Hand]:    at Newtonsoft.Json.JsonTextReader.Read()
+
+28/8/2025 10:54:11 [Hand]:    at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+
+28/8/2025 10:54:11 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+
+28/8/2025 10:54:11 [Hand]:    at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+
+28/8/2025 10:54:11 [Hand]:    at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+
+28/8/2025 10:54:11 [Hand]:    at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+
+28/8/2025 10:54:11 [Hand]:    at Examen.Suport.Funcions.Text.Deserialitzar[T](String json) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Text.cs:line 60
+
+28/8/2025 10:54:11 [Hand]:    at Examen.Suport.Tcp.ServidorTcp.AcceptCallback(IAsyncResult ar) in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ServidorTcp.cs:line 55
+
+28/8/2025 10:57:57 [Hand]: S'ha produït un error: Unterminated string. Expected delimiter: ". Path '[3].ImatgeEnBase64', line 1, position 6579.
+
+28/8/2025 10:57:57 [Hand]: Detalls:    at Newtonsoft.Json.JsonTextReader.ReadStringIntoBuffer(Char quote)
+
+28/8/2025 10:57:57 [Hand]:    at Newtonsoft.Json.JsonTextReader.ParseString(Char quote, ReadType readType)
+
+28/8/2025 10:57:57 [Hand]:    at Newtonsoft.Json.JsonTextReader.ReadStringValue(ReadType readType)
+
+28/8/2025 10:57:57 [Hand]:    at Newtonsoft.Json.JsonTextReader.ReadAsString()
+
+28/8/2025 10:57:57 [Hand]:    at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+
+28/8/2025 10:57:57 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.ResolvePropertyAndCreatorValues(JsonObjectContract contract, JsonProperty containerProperty, JsonReader reader, Type objectType)
+
+28/8/2025 10:57:57 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObjectUsingCreatorWithParameters(JsonReader reader, JsonObjectContract contract, JsonProperty containerProperty, ObjectConstructor`1 creator, String id)
+
+28/8/2025 10:57:57 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateNewObject(JsonReader reader, JsonObjectContract objectContract, JsonProperty containerMember, JsonProperty containerProperty, String id, Boolean& createdFromNonDefaultCreator)
+
+28/8/2025 10:57:57 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+
+28/8/2025 10:57:57 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+
+28/8/2025 10:57:57 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+
+28/8/2025 10:57:57 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+
+28/8/2025 10:57:57 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+
+28/8/2025 10:57:57 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+
+28/8/2025 10:57:57 [Hand]:    at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+
+28/8/2025 10:57:57 [Hand]:    at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+
+28/8/2025 10:57:57 [Hand]:    at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+
+28/8/2025 10:57:57 [Hand]:    at Examen.Suport.Funcions.Text.Deserialitzar[T](String json) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Text.cs:line 60
+
+28/8/2025 10:57:57 [Hand]:    at Examen.Suport.Tcp.ServidorTcp.AcceptCallback(IAsyncResult ar) in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ServidorTcp.cs:line 55
+
+28/8/2025 10:59:39 [Hand]: S'ha produït un error: Invalid length for a Base-64 char array or string.
+
+28/8/2025 10:59:39 [Hand]: Detalls:    at System.Convert.FromBase64_Decode(Char* startInputPtr, Int32 inputLength, Byte* startDestPtr, Int32 destLength)
+
+28/8/2025 10:59:39 [Hand]:    at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+
+28/8/2025 10:59:39 [Hand]:    at System.Convert.FromBase64String(String s)
+
+28/8/2025 10:59:39 [Hand]:    at Examen.Suport.Funcions.Text.ToStringFromBase64(String base64) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Text.cs:line 119
+
+28/8/2025 10:59:39 [Hand]: S'ha produït un error: Unexpected character encountered while parsing value: W. Path '', line 0, position 0.
+
+28/8/2025 10:59:39 [Hand]: Detalls:    at Newtonsoft.Json.JsonTextReader.ParseValue()
+
+28/8/2025 10:59:39 [Hand]:    at Newtonsoft.Json.JsonTextReader.Read()
+
+28/8/2025 10:59:39 [Hand]:    at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+
+28/8/2025 10:59:39 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+
+28/8/2025 10:59:39 [Hand]:    at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+
+28/8/2025 10:59:39 [Hand]:    at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+
+28/8/2025 10:59:39 [Hand]:    at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+
+28/8/2025 10:59:39 [Hand]:    at Examen.Suport.Funcions.Text.Deserialitzar[T](String json) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Text.cs:line 60
+
+28/8/2025 10:59:39 [Hand]:    at Examen.Suport.Tcp.ServidorTcp.AcceptCallback(IAsyncResult ar) in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ServidorTcp.cs:line 55
+
+28/8/2025 11:00:47 [Hand]: S'ha produït un error: Unterminated string. Expected delimiter: ". Path '[3].ImatgeEnBase64', line 1, position 6579.
+
+28/8/2025 11:00:47 [Hand]: Detalls:    at Newtonsoft.Json.JsonTextReader.ReadStringIntoBuffer(Char quote)
+
+28/8/2025 11:00:47 [Hand]:    at Newtonsoft.Json.JsonTextReader.ParseString(Char quote, ReadType readType)
+
+28/8/2025 11:00:47 [Hand]:    at Newtonsoft.Json.JsonTextReader.ReadStringValue(ReadType readType)
+
+28/8/2025 11:00:47 [Hand]:    at Newtonsoft.Json.JsonTextReader.ReadAsString()
+
+28/8/2025 11:00:47 [Hand]:    at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+
+28/8/2025 11:00:47 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.ResolvePropertyAndCreatorValues(JsonObjectContract contract, JsonProperty containerProperty, JsonReader reader, Type objectType)
+
+28/8/2025 11:00:47 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObjectUsingCreatorWithParameters(JsonReader reader, JsonObjectContract contract, JsonProperty containerProperty, ObjectConstructor`1 creator, String id)
+
+28/8/2025 11:00:47 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateNewObject(JsonReader reader, JsonObjectContract objectContract, JsonProperty containerMember, JsonProperty containerProperty, String id, Boolean& createdFromNonDefaultCreator)
+
+28/8/2025 11:00:47 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+
+28/8/2025 11:00:47 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+
+28/8/2025 11:00:47 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+
+28/8/2025 11:00:47 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+
+28/8/2025 11:00:47 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+
+28/8/2025 11:00:47 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+
+28/8/2025 11:00:47 [Hand]:    at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+
+28/8/2025 11:00:47 [Hand]:    at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+
+28/8/2025 11:00:47 [Hand]:    at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+
+28/8/2025 11:00:47 [Hand]:    at Examen.Suport.Funcions.Text.Deserialitzar[T](String json) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Text.cs:line 60
+
+28/8/2025 11:00:47 [Hand]:    at Examen.Suport.Tcp.ServidorTcp.AcceptCallback(IAsyncResult ar) in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ServidorTcp.cs:line 55
+
+28/8/2025 11:01:48 [Hand]: S'ha produït un error: Invalid length for a Base-64 char array or string.
+
+28/8/2025 11:01:48 [Hand]: Detalls:    at System.Convert.FromBase64_Decode(Char* startInputPtr, Int32 inputLength, Byte* startDestPtr, Int32 destLength)
+
+28/8/2025 11:01:48 [Hand]:    at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+
+28/8/2025 11:01:48 [Hand]:    at System.Convert.FromBase64String(String s)
+
+28/8/2025 11:01:48 [Hand]:    at Examen.Suport.Funcions.Text.ToStringFromBase64(String base64) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Text.cs:line 119
+
+28/8/2025 11:01:48 [Hand]: S'ha produït un error: Unexpected character encountered while parsing value: W. Path '', line 0, position 0.
+
+28/8/2025 11:01:48 [Hand]: Detalls:    at Newtonsoft.Json.JsonTextReader.ParseValue()
+
+28/8/2025 11:01:48 [Hand]:    at Newtonsoft.Json.JsonTextReader.Read()
+
+28/8/2025 11:01:48 [Hand]:    at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+
+28/8/2025 11:01:48 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+
+28/8/2025 11:01:48 [Hand]:    at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+
+28/8/2025 11:01:48 [Hand]:    at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+
+28/8/2025 11:01:48 [Hand]:    at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+
+28/8/2025 11:01:48 [Hand]:    at Examen.Suport.Funcions.Text.Deserialitzar[T](String json) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Text.cs:line 60
+
+28/8/2025 11:01:48 [Hand]:    at Examen.Suport.Tcp.ServidorTcp.AcceptCallback(IAsyncResult ar) in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ServidorTcp.cs:line 55
+
+28/8/2025 11:03:37 [Hand]: S'ha produït un error: Invalid length for a Base-64 char array or string.
+
+28/8/2025 11:03:37 [Hand]: Detalls:    at System.Convert.FromBase64_Decode(Char* startInputPtr, Int32 inputLength, Byte* startDestPtr, Int32 destLength)
+
+28/8/2025 11:03:37 [Hand]:    at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+
+28/8/2025 11:03:37 [Hand]:    at System.Convert.FromBase64String(String s)
+
+28/8/2025 11:03:37 [Hand]:    at Examen.Suport.Funcions.Text.ToStringFromBase64(String base64) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Text.cs:line 119
+
+28/8/2025 11:03:37 [Hand]: S'ha produït un error: Unexpected character encountered while parsing value: W. Path '', line 0, position 0.
+
+28/8/2025 11:03:37 [Hand]: Detalls:    at Newtonsoft.Json.JsonTextReader.ParseValue()
+
+28/8/2025 11:03:37 [Hand]:    at Newtonsoft.Json.JsonTextReader.Read()
+
+28/8/2025 11:03:37 [Hand]:    at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+
+28/8/2025 11:03:37 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+
+28/8/2025 11:03:37 [Hand]:    at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+
+28/8/2025 11:03:37 [Hand]:    at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+
+28/8/2025 11:03:37 [Hand]:    at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+
+28/8/2025 11:03:37 [Hand]:    at Examen.Suport.Funcions.Text.Deserialitzar[T](String json) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Text.cs:line 60
+
+28/8/2025 11:03:37 [Hand]:    at Examen.Suport.Tcp.ServidorTcp.AcceptCallback(IAsyncResult ar) in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ServidorTcp.cs:line 55
+
+28/8/2025 11:05:49 [Hand]: S'ha produït un error: Invalid length for a Base-64 char array or string.
+
+28/8/2025 11:05:49 [Hand]: Detalls:    at System.Convert.FromBase64_Decode(Char* startInputPtr, Int32 inputLength, Byte* startDestPtr, Int32 destLength)
+
+28/8/2025 11:05:49 [Hand]:    at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+
+28/8/2025 11:05:49 [Hand]:    at System.Convert.FromBase64String(String s)
+
+28/8/2025 11:05:49 [Hand]:    at Examen.Suport.Funcions.Text.ToStringFromBase64(String base64) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Text.cs:line 119
+
+28/8/2025 11:05:49 [Hand]: S'ha produït un error: Unexpected character encountered while parsing value: W. Path '', line 0, position 0.
+
+28/8/2025 11:05:49 [Hand]: Detalls:    at Newtonsoft.Json.JsonTextReader.ParseValue()
+
+28/8/2025 11:05:49 [Hand]:    at Newtonsoft.Json.JsonTextReader.Read()
+
+28/8/2025 11:05:49 [Hand]:    at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+
+28/8/2025 11:05:49 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+
+28/8/2025 11:05:49 [Hand]:    at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+
+28/8/2025 11:05:49 [Hand]:    at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+
+28/8/2025 11:05:49 [Hand]:    at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+
+28/8/2025 11:05:49 [Hand]:    at Examen.Suport.Funcions.Text.Deserialitzar[T](String json) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Text.cs:line 60
+
+28/8/2025 11:05:49 [Hand]:    at Examen.Suport.Tcp.ServidorTcp.AcceptCallback(IAsyncResult ar) in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ServidorTcp.cs:line 55
+
+28/8/2025 11:08:26 [Hand]: S'ha produït un error: Invalid length for a Base-64 char array or string.
+
+28/8/2025 11:08:26 [Hand]: Detalls:    at System.Convert.FromBase64_Decode(Char* startInputPtr, Int32 inputLength, Byte* startDestPtr, Int32 destLength)
+
+28/8/2025 11:08:26 [Hand]:    at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+
+28/8/2025 11:08:26 [Hand]:    at System.Convert.FromBase64String(String s)
+
+28/8/2025 11:08:26 [Hand]:    at Examen.Suport.Funcions.Text.ToStringFromBase64(String base64) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Text.cs:line 119
+
+28/8/2025 11:08:26 [Hand]: S'ha produït un error: Unexpected character encountered while parsing value: W. Path '', line 0, position 0.
+
+28/8/2025 11:08:26 [Hand]: Detalls:    at Newtonsoft.Json.JsonTextReader.ParseValue()
+
+28/8/2025 11:08:26 [Hand]:    at Newtonsoft.Json.JsonTextReader.Read()
+
+28/8/2025 11:08:26 [Hand]:    at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+
+28/8/2025 11:08:26 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+
+28/8/2025 11:08:26 [Hand]:    at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+
+28/8/2025 11:08:26 [Hand]:    at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+
+28/8/2025 11:08:26 [Hand]:    at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+
+28/8/2025 11:08:26 [Hand]:    at Examen.Suport.Funcions.Text.Deserialitzar[T](String json) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Text.cs:line 60
+
+28/8/2025 11:08:26 [Hand]:    at Examen.Suport.Tcp.ServidorTcp.AcceptCallback(IAsyncResult ar) in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ServidorTcp.cs:line 55
+
+28/8/2025 11:09:10 [Hand]: S'ha produït un error: Invalid length for a Base-64 char array or string.
+
+28/8/2025 11:09:10 [Hand]: Detalls:    at System.Convert.FromBase64_Decode(Char* startInputPtr, Int32 inputLength, Byte* startDestPtr, Int32 destLength)
+
+28/8/2025 11:09:10 [Hand]:    at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+
+28/8/2025 11:09:10 [Hand]:    at System.Convert.FromBase64String(String s)
+
+28/8/2025 11:09:10 [Hand]:    at Examen.Suport.Funcions.Text.ToStringFromBase64(String base64) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Text.cs:line 119
+
+28/8/2025 11:09:10 [Hand]: S'ha produït un error: Unexpected character encountered while parsing value: W. Path '', line 0, position 0.
+
+28/8/2025 11:09:10 [Hand]: Detalls:    at Newtonsoft.Json.JsonTextReader.ParseValue()
+
+28/8/2025 11:09:10 [Hand]:    at Newtonsoft.Json.JsonTextReader.Read()
+
+28/8/2025 11:09:10 [Hand]:    at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+
+28/8/2025 11:09:10 [Hand]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+
+28/8/2025 11:09:10 [Hand]:    at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+
+28/8/2025 11:09:10 [Hand]:    at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+
+28/8/2025 11:09:10 [Hand]:    at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+
+28/8/2025 11:09:10 [Hand]:    at Examen.Suport.Funcions.Text.Deserialitzar[T](String json) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Text.cs:line 60
+
+28/8/2025 11:09:10 [Hand]:    at Examen.Suport.Tcp.ServidorTcp.AcceptCallback(IAsyncResult ar) in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ServidorTcp.cs:line 55
+
+28/8/2025 11:12:37 [Question]: Vols finalitzar el programa?
+
+28/8/2025 11:21:59 [Question]: Vols finalitzar el programa?
+
+28/8/2025 11:36:42 [Question]: Vols finalitzar el programa?
+
+28/8/2025 11:44:20 [Question]: Vols finalitzar el programa?
+
+28/8/2025 11:58:06 [Question]: Vols finalitzar el programa?
+
+28/8/2025 12:13:39 [Question]: Vols finalitzar el programa?
+
+29/8/2025 10:17:18 [Hand]: S'ha produït un error: Unable to cast object of type 'System.Windows.Forms.ToolStripMenuItem' to type 'System.Windows.Forms.MenuItem'.
+
+29/8/2025 10:17:18 [Hand]: Detalls:    at Examen.Suport.Formularis.FrmAplicacionsEnUs.MenuAturar_Categoria_Click(Object sender, EventArgs e) in D:\Privat\Programacio\Git\Examen\Suport\Formularis\FrmAplicacionsEnUs.cs:line 179
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.ToolStripItem.RaiseEvent(Object key, EventArgs e)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.ToolStripMenuItem.OnClick(EventArgs e)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.ToolStripItem.HandleClick(EventArgs e)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.ToolStripItem.HandleMouseUp(MouseEventArgs e)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.ToolStripItem.FireEventInteractive(EventArgs e, ToolStripItemEventType met)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.ToolStripItem.FireEvent(EventArgs e, ToolStripItemEventType met)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.ToolStrip.OnMouseUp(MouseEventArgs mea)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.ToolStripDropDown.OnMouseUp(MouseEventArgs mea)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.Control.WndProc(Message& m)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.ToolStrip.WndProc(Message& m)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.ToolStripDropDown.WndProc(Message& m)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG& msg)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.Application.RunDialog(Form form)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.Form.ShowDialog()
+
+29/8/2025 10:17:18 [Hand]:    at Examen.Professor.Formularis.FrmPrincipal.OnAplicacionsEnUs(String estacio, ContenidorAplicacionsEnUs contenidorAplicacionsEnUs) in D:\Privat\Programacio\Git\Examen\Professor\Formularis\FrmPrincipal.cs:line 271
+
+29/8/2025 10:17:18 [Hand]:    at Examen.Suport.Controls.InfoEstacioV2.BAplicacionsEnUs_Click(Object sender, EventArgs e) in D:\Privat\Programacio\Git\Examen\Suport\Controls\InfoEstacioV2.cs:line 136
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.ToolStripItem.RaiseEvent(Object key, EventArgs e)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.ToolStripButton.OnClick(EventArgs e)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.ToolStripItem.HandleClick(EventArgs e)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.ToolStripItem.HandleMouseUp(MouseEventArgs e)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.ToolStripItem.FireEventInteractive(EventArgs e, ToolStripItemEventType met)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.ToolStripItem.FireEvent(EventArgs e, ToolStripItemEventType met)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.ToolStrip.OnMouseUp(MouseEventArgs mea)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.Control.WndProc(Message& m)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.ToolStrip.WndProc(Message& m)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG& msg)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+
+29/8/2025 10:17:18 [Hand]:    at System.Windows.Forms.Application.Run(Form mainForm)
+
+29/8/2025 10:17:18 [Hand]:    at Examen.Professor.Program.Main() in D:\Privat\Programacio\Git\Examen\Professor\Program.cs:line 23
+
+29/8/2025 10:21:58 [Question]: Vols desar els canvis?
+
+29/8/2025 10:23:24 [Question]: Vols desar els canvis?
+
+29/8/2025 10:36:23 [Question]: Vols desar els canvis?
+
+29/8/2025 10:36:46 [Question]: Vols desar els canvis?
+
+29/8/2025 10:38:55 [Question]: Vols desar els canvis?
+
+29/8/2025 10:46:40 [Question]: Vols desar els canvis?
+
+29/8/2025 10:49:47 [Question]: Vols desar els canvis?
+
+29/8/2025 10:50:39 [Question]: Vols desar els canvis?
+
+29/8/2025 11:04:56 [Question]: Vols desar els canvis?
+
+29/8/2025 11:07:10 [Question]: Vols desar els canvis?
+
+29/8/2025 11:07:59 [Question]: Vols desar els canvis?
+
+29/8/2025 11:08:35 [Question]: Vols desar els canvis?
+
+29/8/2025 11:13:24 [Question]: Vols desar els canvis?
+
+29/8/2025 11:13:33 [Question]: Vols desar els canvis?
+
+29/8/2025 11:14:42 [Question]: Vols desar els canvis?
+
+29/8/2025 11:21:06 [Question]: Vols finalitzar el programa?
+
+29/8/2025 11:49:56 [Question]: Vols finalitzar el programa?
+
+29/8/2025 11:58:33 [Question]: Vols finalitzar el programa?
+
+29/8/2025 12:13:42 [Question]: Vols finalitzar el programa?
+
+29/8/2025 12:19:50 [Question]: Vols finalitzar el programa?
+
+29/8/2025 12:23:08 [Question]: Vols finalitzar el programa?
+
+29/8/2025 12:26:55 [Question]: Vols finalitzar el programa?
+
+29/8/2025 12:29:08 [Question]: Vols finalitzar el programa?
+
+29/8/2025 12:43:15 [Question]: Vols finalitzar el programa?
+
+29/8/2025 12:44:52 [Question]: Vols desar els canvis?
+
+29/8/2025 12:45:01 [Question]: Vols desar els canvis?
+
+29/8/2025 12:45:15 [Question]: Vols finalitzar el programa?
+

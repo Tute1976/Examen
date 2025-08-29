@@ -30,7 +30,7 @@ namespace Examen.Suport.Tcp
                 var missatge = Encoding.UTF8.GetBytes(estatText);
                 stream.Write(missatge, 0, missatge.Length);
 
-                var resposta = new byte[8192];
+                var resposta = new byte[Helper.BufferSize];
                 var bytesLlegits = stream.Read(resposta, 0, resposta.Length);
                 var respostaText = Encoding.UTF8.GetString(resposta, 0, bytesLlegits);
                 respostaText = respostaText.DecompressFromBase64();

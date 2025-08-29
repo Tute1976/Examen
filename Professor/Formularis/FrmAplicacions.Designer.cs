@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAplicacions));
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
@@ -39,7 +40,10 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bImportar = new System.Windows.Forms.ToolStripButton();
             this.bExportar = new System.Windows.Forms.ToolStripButton();
+            this.llista = new BrightIdeasSoftware.TreeListView();
+            this.imatges = new System.Windows.Forms.ImageList(this.components);
             this.menu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.llista)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog
@@ -62,17 +66,17 @@
             this.propietats.Location = new System.Drawing.Point(15, 10);
             this.propietats.Margin = new System.Windows.Forms.Padding(0);
             this.propietats.Name = "propietats";
-            this.propietats.Size = new System.Drawing.Size(289, 215);
+            this.propietats.Size = new System.Drawing.Size(1042, 594);
             this.propietats.TabIndex = 0;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(304, 10);
+            this.panel1.Location = new System.Drawing.Point(1057, 10);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 215);
+            this.panel1.Size = new System.Drawing.Size(10, 594);
             this.panel1.TabIndex = 2;
             // 
             // menu
@@ -88,21 +92,22 @@
             this.toolStripSeparator1,
             this.bImportar,
             this.bExportar});
-            this.menu.Location = new System.Drawing.Point(314, 10);
+            this.menu.Location = new System.Drawing.Point(1067, 10);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(0);
-            this.menu.Size = new System.Drawing.Size(36, 215);
+            this.menu.Size = new System.Drawing.Size(36, 594);
             this.menu.TabIndex = 1;
             // 
             // bDesar
             // 
             this.bDesar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bDesar.Image = global::Examen.Professor.Properties.Resources.Validation_32x32;
+            this.bDesar.Enabled = false;
+            this.bDesar.Image = global::Examen.Professor.Properties.Resources.Desar_32x32;
             this.bDesar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bDesar.Name = "bDesar";
             this.bDesar.Size = new System.Drawing.Size(35, 36);
             this.bDesar.Text = "Desar";
-            this.bDesar.Click += new System.EventHandler(this.bDesar_Click);
+            this.bDesar.Click += new System.EventHandler(this.BDesar_Click);
             // 
             // bCancelar
             // 
@@ -113,7 +118,7 @@
             this.bCancelar.Name = "bCancelar";
             this.bCancelar.Size = new System.Drawing.Size(35, 36);
             this.bCancelar.Text = "Cancelar";
-            this.bCancelar.Click += new System.EventHandler(this.bCancelar_Click);
+            this.bCancelar.Click += new System.EventHandler(this.BCancelar_Click);
             // 
             // toolStripSeparator1
             // 
@@ -128,7 +133,7 @@
             this.bImportar.Name = "bImportar";
             this.bImportar.Size = new System.Drawing.Size(35, 36);
             this.bImportar.Text = "Importar";
-            this.bImportar.Click += new System.EventHandler(this.bImportar_Click);
+            this.bImportar.Click += new System.EventHandler(this.BImportar_Click);
             // 
             // bExportar
             // 
@@ -138,13 +143,36 @@
             this.bExportar.Name = "bExportar";
             this.bExportar.Size = new System.Drawing.Size(35, 36);
             this.bExportar.Text = "Exportar";
-            this.bExportar.Click += new System.EventHandler(this.bExportar_Click);
+            this.bExportar.Click += new System.EventHandler(this.BExportar_Click);
+            // 
+            // llista
+            // 
+            this.llista.FullRowSelect = true;
+            this.llista.HideSelection = false;
+            this.llista.Location = new System.Drawing.Point(241, 142);
+            this.llista.MultiSelect = false;
+            this.llista.Name = "llista";
+            this.llista.OwnerDraw = true;
+            this.llista.ShowGroups = false;
+            this.llista.Size = new System.Drawing.Size(511, 223);
+            this.llista.SmallImageList = this.imatges;
+            this.llista.TabIndex = 3;
+            this.llista.UseCompatibleStateImageBehavior = false;
+            this.llista.View = System.Windows.Forms.View.Details;
+            this.llista.VirtualMode = true;
+            // 
+            // imatges
+            // 
+            this.imatges.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.imatges.ImageSize = new System.Drawing.Size(16, 16);
+            this.imatges.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // FrmAplicacions
             // 
             this.BorderThickness = 2;
-            this.ClientSize = new System.Drawing.Size(360, 240);
+            this.ClientSize = new System.Drawing.Size(1113, 619);
             this.ControlBox = false;
+            this.Controls.Add(this.llista);
             this.Controls.Add(this.propietats);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menu);
@@ -160,6 +188,7 @@
             this.Text = "Configuracdor d\'aplicacions";
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.llista)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,5 +205,7 @@
         private System.Windows.Forms.ToolStripButton bExportar;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private BrightIdeasSoftware.TreeListView llista;
+        private System.Windows.Forms.ImageList imatges;
     }
 }

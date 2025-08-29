@@ -42,17 +42,17 @@ namespace Examen.Suport.Tcp
                 var client = _listener.EndAcceptTcpClient(ar);
                 var stream = client.GetStream();
 
-                var buffer = new byte[8192];
+                var buffer = new byte[Helper.BufferSize];
                 var bytesLlegits = stream.Read(buffer, 0, buffer.Length);
                 var textRebut = Encoding.UTF8.GetString(buffer, 0, bytesLlegits);
                 textRebut = textRebut.DecompressFromBase64();
                 var tt = textRebut.Split(':');
                 var estatRebutText = tt.First();
-                var estacioAlumne = tt[1].FromBase64().Deserialitzar<EstacioAlumne>();
+                var estacioAlumne = tt[1].ToStringFromBase64().Deserialitzar<EstacioAlumne>();
                 textRebut = textRebut.Substring(tt[0].Length + tt[1].Length + 2);
 
                 var index = textRebut.LastIndexOf(':');
-                var aplicacionsEnUs = textRebut.Substring(index + 1).FromBase64().Deserialitzar<List<AplicacioEnUs>>();
+                var aplicacionsEnUs = textRebut.Substring(index + 1).ToStringFromBase64().Deserialitzar<List<AplicacioEnUs>>();
 
                 textRebut = textRebut.Substring(0, index);
 

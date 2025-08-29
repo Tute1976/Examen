@@ -1,12 +1,15 @@
-﻿using Examen.Suport.Formularis;
+﻿using Examen.Suport.Classes;
+using Examen.Suport.Formularis;
+using Examen.Suport.Properties;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.Linq;
 using System.Management;
 using System.Runtime.InteropServices;
 using System.Threading;
-using Examen.Suport.Classes;
+using System.Windows.Forms;
 
 // ReSharper disable InconsistentNaming
 
@@ -14,12 +17,23 @@ namespace Examen.Suport.Funcions
 {
     public static class Helper
     {
-        public static string SyncfusionLicense => Properties.Settings.Default.SyncfusionLicense;
+        public static string SyncfusionLicense => Settings.Default.SyncfusionLicense;
+
+        public const int BufferSize = 81920;
+
+        private static readonly Dictionary<string, Bitmap> _Icones = [];
+        private static readonly Dictionary<string, string> _Descripcions = [];
+
+        public static readonly List<string> _Notificades = [];
 
         [DllImport("user32.dll")]
         private static extern bool LockWorkStation();
         [DllImport("kernel32.dll")]
-        static extern uint WTSGetActiveConsoleSessionId();
+        private static extern uint WTSGetActiveConsoleSessionId();
+        [DllImport("shell32.dll", CharSet = CharSet.Auto)]
+        private static extern int ExtractIconEx(string lpszFile, int nIconIndex, IntPtr[] phiconLarge, IntPtr[] phiconSmall, int nIcons);
+        [DllImport("user32.dll", SetLastError = true)]
+        private static extern bool DestroyIcon(IntPtr hIcon);
 
         public static void Pitar()
         {
@@ -72,8 +86,10 @@ namespace Examen.Suport.Funcions
                     Arguments = arguments,
                     CreateNoWindow = true
                 };
-                var process = new Process();
-                process.StartInfo = psi;
+                var process = new Process
+                {
+                    StartInfo = psi
+                };
                 process.Start();
 
                 return process.WaitForExit(5000);
@@ -90,64 +106,155 @@ namespace Examen.Suport.Funcions
         {
             var ret = new List<AplicacioEnUs>();
 
-            //var usuari = Environment.UserName;
-            //var processes = Process.GetProcesses();
-            //foreach (var process in processes)
-            //{
-            //    if (process.)
-            //}
-
-            var sessionId = WTSGetActiveConsoleSessionId();
-
-            var query = $"SELECT Name, ExecutablePath, CommandLine FROM Win32_Process WHERE SessionId = {sessionId} AND Priority = 8";
-
-            using var searcher = new ManagementObjectSearcher(query);
-            foreach (var o in searcher.Get())
+            try
             {
-                var process = (ManagementObject)o;
+                var sessionId = WTSGetActiveConsoleSessionId();
 
-                var name = process["Name"]?.ToString();
-                var path = process["ExecutablePath"]?.ToString();
-                var cmd = process["CommandLine"]?.ToString();
+                var query = $"SELECT Name, ExecutablePath, CommandLine FROM Win32_Process WHERE SessionId = {sessionId} AND Priority = 8";
 
-                if (string.IsNullOrEmpty(cmd))
-                    continue;
-
-                if (string.IsNullOrEmpty(path))
-                    continue;
-
-                if (path.StartsWith(@"C:\Windows", StringComparison.InvariantCultureIgnoreCase))
-                    continue;
-
-                if (path.StartsWith(@"C:\Program Files\WindowsApps", StringComparison.InvariantCultureIgnoreCase))
-                    continue;
-
-                ret.Add(new AplicacioEnUs
+                using var searcher = new ManagementObjectSearcher(query);
+                foreach (var o in searcher.Get())
                 {
-                    Nom = name,
-                    Ruta = path
-                });
+                    var process = (ManagementObject)o;
 
-                ret = ret.GroupBy(a => a.Nom).Select(g => g.First()).ToList();
+                    var name = process["Name"]?.ToString();
+                    var path = process["ExecutablePath"]?.ToString();
+                    var cmd = process["CommandLine"]?.ToString();
+
+                    if (string.IsNullOrEmpty(cmd))
+                        continue;
+
+                    if (string.IsNullOrEmpty(path))
+                        continue;
+
+                    if (path.StartsWith(@"C:\Windows", StringComparison.InvariantCultureIgnoreCase))
+                        continue;
+
+                    if (path.StartsWith(@"C:\Program Files\WindowsApps", StringComparison.InvariantCultureIgnoreCase))
+                        continue;
+
+                    var appEnUs = new AplicacioEnUs(name, "", path);
+
+                    ret.Add(appEnUs);
+                }
+
+                ret = [.. ret.GroupBy(a => a.Executable).Select(g => g.First())];
 
                 foreach (var aplicacioEnUs in ret)
-                    aplicacioEnUs.Descripcio = ObtenirDescripcio(aplicacioEnUs.Ruta);
+                {
+                    aplicacioEnUs.Descripcio = ObtenirDescripcio(aplicacioEnUs.Executable);
+                    aplicacioEnUs.Icona = ObtenirIcona(aplicacioEnUs.Executable);
+                }
+            }
+            catch
+            {
+                // Ignorar
             }
 
             return ret;
         }
 
-        private static string ObtenirDescripcio(string ruta)
+        private static string ObtenirDescripcio(string executable)
         {
             try
             {
-                var info = FileVersionInfo.GetVersionInfo(ruta);
-                return info.FileDescription ?? "";
+                if (_Descripcions.TryGetValue(executable, out var descripcio))
+                    return descripcio;
+
+                var info = FileVersionInfo.GetVersionInfo(executable);
+                descripcio = info.FileDescription ?? "";
+                _Descripcions.Add(executable, descripcio);
+
+                return descripcio;
             }
             catch
             {
-                return "";
+                // Ignorar
             }
+
+            return "";
+        }
+
+        private static string l = "";
+
+        private static Bitmap ObtenirIcona(string executable)
+        {
+            try
+            {
+                if (_Icones.TryGetValue(executable, out var bitmap))
+                    return bitmap;
+
+                if (executable.Equals(Application.ExecutablePath, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    bitmap = Resources.Examen.ToBitmap();
+                }
+                else
+                {
+                    var largeIcon = new IntPtr[1];
+                    var smallIcon = new IntPtr[1];
+
+                    ExtractIconEx(executable, 0, largeIcon, smallIcon, 1);
+
+                    if (largeIcon[0] != IntPtr.Zero)
+                    {
+                        var icon = Icon.FromHandle(largeIcon[0]);
+                        bitmap = icon.ToBitmap();
+                        DestroyIcon(largeIcon[0]);
+                    }
+                    else if (smallIcon[0] != IntPtr.Zero)
+                    {
+                        var icon = Icon.FromHandle(smallIcon[0]);
+                        bitmap = icon.ToBitmap();
+                        DestroyIcon(smallIcon[0]);
+                    }
+                    else
+                        bitmap = Resources.Aplicacio_32x32;
+                }
+                
+                bitmap = bitmap.Redimensionar(16);
+                _Icones.Add(executable, bitmap);
+
+                l = executable;
+
+                return bitmap;
+            }
+            catch
+            {
+                // Ignorar
+            }
+
+            return Resources.Aplicacio_32x32;
+        }
+
+        private static Bitmap Redimensionar(this Bitmap original, int novaAlcada)
+        {
+            var proporcio = (float)novaAlcada / original.Height;
+            var novaAmplada = (int)(original.Width * proporcio);
+
+            var redimensionada = new Bitmap(novaAmplada, novaAlcada);
+            using var g = Graphics.FromImage(redimensionada);
+            g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+            g.DrawImage(original, 0, 0, novaAmplada, novaAlcada);
+
+            return redimensionada;
+        }
+
+        public static Node[] LlegirNodes(this ContenidorAplicacions contenidorAplicacions)
+        {
+            var nodes = new List<Node>();
+
+            foreach (var categoriaAplicacions in contenidorAplicacions.CategoriesAplicacions)
+            {
+                var nodeCategoria = new Node(categoriaAplicacions);
+                foreach (var aplicacio in categoriaAplicacions.Aplicacions)
+                {
+                    var nodeAplicacio = new Node(aplicacio);
+                    nodeCategoria.Nodes.Add(nodeAplicacio);
+                }
+                nodes.Add(nodeCategoria);
+            }
+
+            return [.. nodes];
         }
     }
 }

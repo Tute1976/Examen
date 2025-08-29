@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using Examen.Suport.Classes;
-using Examen.Suport.Formularis;
 using Examen.Suport.Funcions;
 
 namespace Examen.Suport.Controls
@@ -9,6 +8,7 @@ namespace Examen.Suport.Controls
     public partial class InfoEstacioV2 : InfoEstacio
     {
         private readonly Action<string> _onHistoric;
+        private readonly Action<string, ContenidorAplicacionsEnUs> _onAplicacionsEnUs;
 
         private string _estat;
         private readonly string _informacio;
@@ -65,9 +65,9 @@ namespace Examen.Suport.Controls
             }
         }
 
-        public InfoEstacioV2() : this(new EstacioAlumne("", Guid.Empty), 30, null) { }
+        public InfoEstacioV2() : this(new EstacioAlumne("", Guid.Empty), 30, null, null) { }
 
-        public InfoEstacioV2(EstacioAlumne estacioAlumne, int interval, Action<string> onHistoric) : base(estacioAlumne, interval)
+        public InfoEstacioV2(EstacioAlumne estacioAlumne, int interval, Action<string> onHistoric, Action<string, ContenidorAplicacionsEnUs> onAplicacionsEnUs) : base(estacioAlumne, interval)
         {
             InitializeComponent();
 
@@ -81,6 +81,7 @@ namespace Examen.Suport.Controls
             _estat = "";
 
             _onHistoric = onHistoric;
+            _onAplicacionsEnUs = onAplicacionsEnUs;
         }
 
         private void BInfo_Click(object sender, EventArgs e)
@@ -132,8 +133,7 @@ namespace Examen.Suport.Controls
             {
                 AplicacionsEnUs = [.. AplicacionsEnUs]
             };
-            var frmAplicacionsEnUs = new FrmAplicacionsEnUs(txtEstacio.Text, contenidorAplicacionsEnUs);
-            frmAplicacionsEnUs.Show();
+            _onAplicacionsEnUs.Invoke(EstacioAlumne.Estacio, contenidorAplicacionsEnUs);
         }
 
         private void BHistoric_Click(object sender, EventArgs e)
