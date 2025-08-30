@@ -141,5 +141,85 @@ namespace Examen.Professor.Formularis
 
             e.Handled = true;
         }
+
+        private void MenuLlista_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            var item = llista.SelectedItem;
+
+            menuEditar.Enabled = item is { RowObject: Node };
+            menuEsborrar.Enabled = item is { RowObject: Node };
+        }
+
+        private void MenuAfegirCategoria_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MenuAfegirAplicacio_Click(object sender, EventArgs e)
+        {
+            var item = llista.SelectedItem;
+            if (item.RowObject is not Node nodePare) 
+                return;
+
+            if (nodePare.EsAplicacio)
+                nodePare = nodePare.Pare;
+
+            using var frmEdicioAplicacio = new FrmEdicioAplicacio(new Node(nodePare));
+            if (frmEdicioAplicacio.ShowDialog() != DialogResult.OK) 
+                return;
+            
+            nodePare.Nodes.Add(frmEdicioAplicacio.Node);
+            llista.BuildList();
+            llista.Expand(nodePare);
+        }
+
+        private void MenuEditar_Click(object sender, EventArgs e)
+        {
+            var item = llista.SelectedItem;
+            if (item.RowObject is not Node node)
+                return;
+
+            if (node.EsAplicacio)
+            {
+                using var frmEdicioAplicacio = new FrmEdicioAplicacio(node);
+                if (frmEdicioAplicacio.ShowDialog() != DialogResult.OK)
+                    return;
+                item.RowObject = frmEdicioAplicacio.Node;
+                llista.BuildList();
+            }
+            else
+            {
+                
+            }
+
+        }
+
+        private void MenuEsborrar_Click(object sender, EventArgs e)
+        {
+            var item = llista.SelectedItem;
+            if (item.RowObject is not Node node)
+                return;
+
+            if (node.EsAplicacio)
+            {
+                if (@"Vols esborrar l'aplicació seleccionada?".Mostrar(MessageBoxIcon.Question, MessageBoxButtons.YesNo) != DialogResult.Yes)
+                    return;
+
+                var nodePare = node.Pare;
+                nodePare.Nodes.Remove(node);
+                llista.BuildList();
+                llista.Expand(node.Pare);
+            }
+            else
+            {
+                if (@"Vols esborrar la categoria seleccionada?".Mostrar(MessageBoxIcon.Question, MessageBoxButtons.YesNo) != DialogResult.Yes)
+                    return;
+
+                var nodes = ((Node[])llista.Roots).ToList();
+                nodes.Remove(node);
+                llista.Roots = nodes.ToArray();
+                llista.BuildList();
+            }
+        }
     }
 }

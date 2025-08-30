@@ -40,10 +40,17 @@
             this.bImportar = new System.Windows.Forms.ToolStripButton();
             this.bExportar = new System.Windows.Forms.ToolStripButton();
             this.llista = new BrightIdeasSoftware.TreeListView();
+            this.menuLlista = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.menuAfegir = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAfegirCategoria = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAfegirAplicacio = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuEditar = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuEsborrar = new System.Windows.Forms.ToolStripMenuItem();
             this.imatges = new System.Windows.Forms.ImageList(this.components);
             this.lTitol = new System.Windows.Forms.Label();
             this.menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.llista)).BeginInit();
+            this.menuLlista.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog
@@ -138,6 +145,7 @@
             // 
             // llista
             // 
+            this.llista.ContextMenuStrip = this.menuLlista;
             this.llista.Dock = System.Windows.Forms.DockStyle.Fill;
             this.llista.FullRowSelect = true;
             this.llista.HideSelection = false;
@@ -153,6 +161,62 @@
             this.llista.View = System.Windows.Forms.View.Details;
             this.llista.VirtualMode = true;
             this.llista.CellClick += new System.EventHandler<BrightIdeasSoftware.CellClickEventArgs>(this.Llista_CellClick);
+            // 
+            // menuLlista
+            // 
+            this.menuLlista.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuAfegir,
+            this.menuEditar,
+            this.menuEsborrar});
+            this.menuLlista.Name = "contextMenuStrip1";
+            this.menuLlista.Size = new System.Drawing.Size(142, 70);
+            this.menuLlista.Opening += new System.ComponentModel.CancelEventHandler(this.MenuLlista_Opening);
+            // 
+            // menuAfegir
+            // 
+            this.menuAfegir.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuAfegirCategoria,
+            this.menuAfegirAplicacio});
+            this.menuAfegir.Image = global::Examen.Professor.Properties.Resources.Afegir_16x16_v1;
+            this.menuAfegir.Name = "menuAfegir";
+            this.menuAfegir.Size = new System.Drawing.Size(141, 22);
+            this.menuAfegir.Text = "Afegir";
+            // 
+            // menuAfegirCategoria
+            // 
+            this.menuAfegirCategoria.Image = global::Examen.Professor.Properties.Resources.FolderOpened;
+            this.menuAfegirCategoria.Name = "menuAfegirCategoria";
+            this.menuAfegirCategoria.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Insert)));
+            this.menuAfegirCategoria.Size = new System.Drawing.Size(180, 22);
+            this.menuAfegirCategoria.Text = "Categoria";
+            this.menuAfegirCategoria.Click += new System.EventHandler(this.MenuAfegirCategoria_Click);
+            // 
+            // menuAfegirAplicacio
+            // 
+            this.menuAfegirAplicacio.Image = global::Examen.Professor.Properties.Resources.Application;
+            this.menuAfegirAplicacio.Name = "menuAfegirAplicacio";
+            this.menuAfegirAplicacio.ShortcutKeys = System.Windows.Forms.Keys.Insert;
+            this.menuAfegirAplicacio.Size = new System.Drawing.Size(180, 22);
+            this.menuAfegirAplicacio.Text = "Aplicació";
+            this.menuAfegirAplicacio.Click += new System.EventHandler(this.MenuAfegirAplicacio_Click);
+            // 
+            // menuEditar
+            // 
+            this.menuEditar.Image = global::Examen.Professor.Properties.Resources.Editar_16x16_v1;
+            this.menuEditar.Name = "menuEditar";
+            this.menuEditar.ShortcutKeys = System.Windows.Forms.Keys.F2;
+            this.menuEditar.Size = new System.Drawing.Size(141, 22);
+            this.menuEditar.Text = "Editar";
+            this.menuEditar.Click += new System.EventHandler(this.MenuEditar_Click);
+            // 
+            // menuEsborrar
+            // 
+            this.menuEsborrar.Image = global::Examen.Professor.Properties.Resources.Treure_16x16_v1;
+            this.menuEsborrar.Name = "menuEsborrar";
+            this.menuEsborrar.ShortcutKeys = System.Windows.Forms.Keys.Delete;
+            this.menuEsborrar.Size = new System.Drawing.Size(141, 22);
+            this.menuEsborrar.Text = "Esborrar";
+            this.menuEsborrar.Click += new System.EventHandler(this.MenuEsborrar_Click);
             // 
             // imatges
             // 
@@ -194,6 +258,7 @@
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.llista)).EndInit();
+            this.menuLlista.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,5 +277,11 @@
         private BrightIdeasSoftware.TreeListView llista;
         private System.Windows.Forms.ImageList imatges;
         private System.Windows.Forms.Label lTitol;
+        private System.Windows.Forms.ContextMenuStrip menuLlista;
+        private System.Windows.Forms.ToolStripMenuItem menuAfegir;
+        private System.Windows.Forms.ToolStripMenuItem menuEditar;
+        private System.Windows.Forms.ToolStripMenuItem menuEsborrar;
+        private System.Windows.Forms.ToolStripMenuItem menuAfegirCategoria;
+        private System.Windows.Forms.ToolStripMenuItem menuAfegirAplicacio;
     }
 }

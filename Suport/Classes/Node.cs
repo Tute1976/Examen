@@ -1,25 +1,42 @@
 ﻿using Examen.Suport.Funcions;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
 
 namespace Examen.Suport.Classes
 {
     public class Node
     {
-        public StringTag Nom { get; set; }
-        public StringTag Descripcio { get; set; }
-        private BoolTag CalAturar { get; }
-        private BoolTag Ignorar { get; }
-        public StringTag Executable { get; set; }
+        public string Nom { get; set; }
+        public string Descripcio { get; set; }
+        public bool CalAturar { get; set; }
+        public bool Ignorar { get; set; }
+        public string Executable { get; set; }
+        public Bitmap Icona { get; set; }
 
-        public BitmapTag Icona { get; set; }
+        private string TagNom { get; set; }
+        private string TagDescripcio { get; set; }
+        private bool TagCalAturar { get; set; }
+        private bool TagIgnorar { get; set; }
+        private string TagExecutable { get; set; }
+        private Bitmap TagIcona { get; set; }
 
-        public string CalAturar2 => CalAturar.Valor.SiNo();
-        public string Ignorar2 => Ignorar.Valor.SiNo();
+        public string CalAturar2 => CalAturar.SiNo();
+        public string Ignorar2 => Ignorar.SiNo();
 
+
+        public readonly Node Pare = null;
         public readonly List<Node> Nodes = [];
 
         public bool EsAplicacio => Aplicacio != null;
+
+        public bool Modificat =>
+            !Nom.Equals(TagNom) ||
+            !Descripcio.Equals(TagDescripcio) ||
+            !CalAturar.Equals(TagCalAturar) ||
+            !Ignorar.Equals(TagIgnorar) ||
+            !Executable.Equals(TagExecutable) ||
+            !Icona.ToBase64(ImageFormat.Png).Equals(TagIcona.ToBase64(ImageFormat.Png));
 
         private CategoriaAplicacions CategoriaAplicacions { get; }
         private Aplicacio Aplicacio { get; }
@@ -28,27 +45,43 @@ namespace Examen.Suport.Classes
         {
             categoriaAplicacions ??= new CategoriaAplicacions();
 
-            Nom = new StringTag(categoriaAplicacions.Nom);
-            Descripcio = new StringTag(categoriaAplicacions.Descripcio);
-            CalAturar = new BoolTag(categoriaAplicacions.CalAturar);
-            Ignorar = new BoolTag(categoriaAplicacions.Ignorar);
-            Executable = new StringTag();
+            Nom = categoriaAplicacions.Nom;
+            Descripcio = categoriaAplicacions.Descripcio;
+            CalAturar = categoriaAplicacions.CalAturar;
+            Ignorar = categoriaAplicacions.Ignorar;
+            Executable = null;
             Icona = null;
+
+            TagNom = categoriaAplicacions.Nom;
+            TagDescripcio = categoriaAplicacions.Descripcio;
+            TagCalAturar = categoriaAplicacions.CalAturar;
+            TagIgnorar = categoriaAplicacions.Ignorar;
+            TagExecutable = null;
+            TagIcona = null;
 
             CategoriaAplicacions = categoriaAplicacions;
             Aplicacio = null;
         }
 
-        public Node(Aplicacio aplicacio = null)
+        public Node(Node pare, Aplicacio aplicacio = null)
         {
+            Pare = pare;
+
             aplicacio ??= new Aplicacio();
 
-            Nom = new StringTag(aplicacio.Nom);
-            Descripcio = new StringTag(aplicacio.Descripcio);
-            CalAturar = new BoolTag(aplicacio.CalAturar);
-            Ignorar = new BoolTag(aplicacio.Ignorar);
-            Executable = new StringTag(aplicacio.Executable);
-            Icona = new BitmapTag(aplicacio.Icona);
+            Nom = aplicacio.Nom;
+            Descripcio = aplicacio.Descripcio;
+            CalAturar = aplicacio.CalAturar;
+            Ignorar = aplicacio.Ignorar;
+            Executable = aplicacio.Executable;
+            Icona = aplicacio.Icona;
+
+            TagNom = aplicacio.Nom;
+            TagDescripcio = aplicacio.Descripcio;
+            TagCalAturar = aplicacio.CalAturar;
+            TagIgnorar = aplicacio.Ignorar;
+            TagExecutable = aplicacio.Executable;
+            TagIcona = aplicacio.Icona;
 
             CategoriaAplicacions = null;
             Aplicacio = aplicacio;
@@ -61,73 +94,112 @@ namespace Examen.Suport.Classes
 
             if (CategoriaAplicacions != null)
             {
-                CategoriaAplicacions.Nom = Nom.Valor;
-                CategoriaAplicacions.Descripcio = Descripcio.Valor;
-                CategoriaAplicacions.CalAturar = CalAturar.Valor;
-                CategoriaAplicacions.Ignorar = Ignorar.Valor;
+                CategoriaAplicacions.Nom = Nom;
+                CategoriaAplicacions.Descripcio = Descripcio;
+                CategoriaAplicacions.CalAturar = CalAturar;
+                CategoriaAplicacions.Ignorar = Ignorar;
             }
 
             if (Aplicacio != null)
             {
-                Aplicacio.Nom = Nom.Valor;
-                Aplicacio.Descripcio = Descripcio.Valor;
-                Aplicacio.CalAturar = CalAturar.Valor;
-                Aplicacio.Ignorar = Ignorar.Valor;
-                Aplicacio.Executable = Executable.Valor;
-                Aplicacio.Icona = Icona.Valor;
+                Aplicacio.Nom = Nom;
+                Aplicacio.Descripcio = Descripcio;
+                Aplicacio.CalAturar = CalAturar;
+                Aplicacio.Ignorar = Ignorar;
+                Aplicacio.Executable = Executable;
+                Aplicacio.Icona = Icona;
             }
         }
 
         public void Desfer()
         {
-            Nom.Desfer();
-            Descripcio.Desfer();
-            CalAturar.Desfer();
-            Ignorar.Desfer();
-            Executable.Desfer();
-            Icona.Desfer();
+            Nom = TagNom;
+            Descripcio = TagDescripcio;
+            CalAturar = TagCalAturar;
+            Ignorar = TagIgnorar;
+            Executable = TagExecutable;
+            Icona = TagIcona;
 
             foreach (var node in Nodes)
                 node.Desfer();
         }
     }
 
-    public class StringTag(string valor = "")
-    {
-        public string Valor { get; set; } = valor;
-        private string Tag { get; } = valor;
+//    public class StringTag(Action onModificat, string v = "")
+//    {
+//        private string Valor { get; set; } = v;
 
-        public bool Modificat => !Valor.Equals(Tag);
+//        public string String
+//        {
+//            get => Valor;
+//            set
+//            {
+//                Valor = value;
+//                if (Modificat)
+//                    onModificat?.Invoke();
+//            }
+//        }
 
-        public void Desfer()
-        {
-            Valor = Tag;
-        }
-    }
+//        private string Tag { get; } = v;
 
-    public class BoolTag(bool valor)
-    {
-        public bool Valor { get; set; } = valor;
-        private bool Tag { get; } = valor;
+//        private bool Modificat => !String.Equals(Tag);
 
-        public bool Modificat => !Valor.Equals(Tag);
+//        public void Desfer()
+//        {
+//            String = Tag;
+//        }
 
-        public void Desfer()
-        {
-            Valor = Tag;
-        }
-    }
+//        public override string ToString()
+//        {
+//            return String;
+//        }
+//    }
 
-    public class BitmapTag(Bitmap valor)
-    {
-        public Bitmap Valor { get; set; } = valor;
-        private Bitmap Tag { get; } = valor;
+//    public class BoolTag(Action onModificat, bool v)
+//    {
+//        private bool Valor { get; set; } = v;
 
-        public bool Modificat => !Valor.Equals(Tag);
+//        public bool Bool
+//        {
+//            get => Valor;
+//            set
+//            {
+//                Valor = value;
+//                if (Modificat)
+//                    onModificat?.Invoke();
+//            }
+//        }
+//        private bool Tag { get; } = v;
 
-        public void Desfer()
-        {
-            Valor = Tag;
-        }
-    }
+//        private bool Modificat => !Bool.Equals(Tag);
+
+//        public void Desfer()
+//        {
+//            Bool = Tag;
+//        }
+//    }
+
+//    public class BitmapTag(Action onModificat, Bitmap v)
+//    {
+//        private Bitmap Valor { get; set; } = v;
+
+//        public Bitmap Bitmap
+//        {
+//            get => Valor;
+//            set
+//            {
+//                Valor = value;
+//                if (Modificat)
+//                    onModificat?.Invoke();
+//            }
+//        }
+//        private Bitmap Tag { get; } = v;
+
+//        private bool Modificat => !Bitmap.Equals(Tag);
+
+//        public void Desfer()
+//        {
+//            Bitmap = Tag;
+//        }
+//    }
 }

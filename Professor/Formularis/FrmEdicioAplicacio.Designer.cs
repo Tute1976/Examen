@@ -32,23 +32,24 @@
             this.lTitol = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.menu = new System.Windows.Forms.ToolStrip();
-            this.taula = new System.Windows.Forms.TableLayoutPanel();
-            this.lNom = new System.Windows.Forms.Label();
-            this.lDescripcio = new System.Windows.Forms.Label();
-            this.lCalAturar = new System.Windows.Forms.Label();
-            this.lIgnorar = new System.Windows.Forms.Label();
-            this.lExecutable = new System.Windows.Forms.Label();
-            this.lIcona = new System.Windows.Forms.Label();
-            this.txtNom = new System.Windows.Forms.TextBox();
-            this.txtDescripcio = new System.Windows.Forms.TextBox();
-            this.txtExecutable = new System.Windows.Forms.TextBox();
-            this.chkCalAturar = new System.Windows.Forms.CheckBox();
-            this.chkIgnorar = new System.Windows.Forms.CheckBox();
-            this.pbIcona = new System.Windows.Forms.PictureBox();
-            this.bCercar = new System.Windows.Forms.Button();
             this.bDesar = new System.Windows.Forms.ToolStripButton();
             this.bCancelar = new System.Windows.Forms.ToolStripButton();
             this.bDesfer = new System.Windows.Forms.ToolStripButton();
+            this.taula = new System.Windows.Forms.TableLayoutPanel();
+            this.chkIgnorar = new System.Windows.Forms.CheckBox();
+            this.txtExecutable = new System.Windows.Forms.TextBox();
+            this.txtDescripcio = new System.Windows.Forms.TextBox();
+            this.lIcona = new System.Windows.Forms.Label();
+            this.lExecutable = new System.Windows.Forms.Label();
+            this.lIgnorar = new System.Windows.Forms.Label();
+            this.lCalAturar = new System.Windows.Forms.Label();
+            this.lDescripcio = new System.Windows.Forms.Label();
+            this.lNom = new System.Windows.Forms.Label();
+            this.txtNom = new System.Windows.Forms.TextBox();
+            this.chkCalAturar = new System.Windows.Forms.CheckBox();
+            this.pbIcona = new System.Windows.Forms.PictureBox();
+            this.bCercar = new System.Windows.Forms.Button();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.menu.SuspendLayout();
             this.taula.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbIcona)).BeginInit();
@@ -73,7 +74,7 @@
             this.panel1.Location = new System.Drawing.Point(429, 10);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 183);
+            this.panel1.Size = new System.Drawing.Size(10, 153);
             this.panel1.TabIndex = 9;
             // 
             // menu
@@ -90,186 +91,8 @@
             this.menu.Location = new System.Drawing.Point(439, 10);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(0);
-            this.menu.Size = new System.Drawing.Size(36, 183);
+            this.menu.Size = new System.Drawing.Size(36, 153);
             this.menu.TabIndex = 8;
-            // 
-            // taula
-            // 
-            this.taula.ColumnCount = 5;
-            this.taula.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.taula.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.taula.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.taula.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.taula.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.taula.Controls.Add(this.chkIgnorar, 3, 2);
-            this.taula.Controls.Add(this.txtExecutable, 1, 3);
-            this.taula.Controls.Add(this.txtDescripcio, 1, 1);
-            this.taula.Controls.Add(this.lIcona, 0, 4);
-            this.taula.Controls.Add(this.lExecutable, 0, 3);
-            this.taula.Controls.Add(this.lIgnorar, 2, 2);
-            this.taula.Controls.Add(this.lCalAturar, 0, 2);
-            this.taula.Controls.Add(this.lDescripcio, 0, 1);
-            this.taula.Controls.Add(this.lNom, 0, 0);
-            this.taula.Controls.Add(this.txtNom, 1, 0);
-            this.taula.Controls.Add(this.chkCalAturar, 1, 2);
-            this.taula.Controls.Add(this.pbIcona, 1, 4);
-            this.taula.Controls.Add(this.bCercar, 4, 3);
-            this.taula.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.taula.Location = new System.Drawing.Point(15, 42);
-            this.taula.Name = "taula";
-            this.taula.RowCount = 6;
-            this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
-            this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.taula.Size = new System.Drawing.Size(414, 151);
-            this.taula.TabIndex = 11;
-            // 
-            // lNom
-            // 
-            this.lNom.BackColor = System.Drawing.Color.Transparent;
-            this.lNom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lNom.Location = new System.Drawing.Point(3, 0);
-            this.lNom.Name = "lNom";
-            this.lNom.Size = new System.Drawing.Size(94, 24);
-            this.lNom.TabIndex = 0;
-            this.lNom.Text = "Nom";
-            this.lNom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lDescripcio
-            // 
-            this.lDescripcio.BackColor = System.Drawing.Color.Transparent;
-            this.lDescripcio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lDescripcio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lDescripcio.Location = new System.Drawing.Point(3, 24);
-            this.lDescripcio.Name = "lDescripcio";
-            this.lDescripcio.Size = new System.Drawing.Size(94, 24);
-            this.lDescripcio.TabIndex = 2;
-            this.lDescripcio.Text = "Descripció";
-            this.lDescripcio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lCalAturar
-            // 
-            this.lCalAturar.BackColor = System.Drawing.Color.Transparent;
-            this.lCalAturar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lCalAturar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lCalAturar.Location = new System.Drawing.Point(3, 48);
-            this.lCalAturar.Name = "lCalAturar";
-            this.lCalAturar.Size = new System.Drawing.Size(94, 24);
-            this.lCalAturar.TabIndex = 4;
-            this.lCalAturar.Text = "Cal aturar";
-            this.lCalAturar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lIgnorar
-            // 
-            this.lIgnorar.BackColor = System.Drawing.Color.Transparent;
-            this.lIgnorar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lIgnorar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lIgnorar.Location = new System.Drawing.Point(198, 48);
-            this.lIgnorar.Name = "lIgnorar";
-            this.lIgnorar.Size = new System.Drawing.Size(94, 24);
-            this.lIgnorar.TabIndex = 12;
-            this.lIgnorar.Text = "Ignorar";
-            this.lIgnorar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lExecutable
-            // 
-            this.lExecutable.BackColor = System.Drawing.Color.Transparent;
-            this.lExecutable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lExecutable.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lExecutable.Location = new System.Drawing.Point(3, 72);
-            this.lExecutable.Name = "lExecutable";
-            this.lExecutable.Size = new System.Drawing.Size(94, 24);
-            this.lExecutable.TabIndex = 21;
-            this.lExecutable.Text = "Executable";
-            this.lExecutable.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lIcona
-            // 
-            this.lIcona.BackColor = System.Drawing.Color.Transparent;
-            this.lIcona.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lIcona.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lIcona.Location = new System.Drawing.Point(3, 96);
-            this.lIcona.Name = "lIcona";
-            this.lIcona.Size = new System.Drawing.Size(94, 54);
-            this.lIcona.TabIndex = 25;
-            this.lIcona.Text = "Icona";
-            this.lIcona.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtNom
-            // 
-            this.txtNom.BackColor = System.Drawing.Color.White;
-            this.taula.SetColumnSpan(this.txtNom, 4);
-            this.txtNom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtNom.Location = new System.Drawing.Point(103, 3);
-            this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(308, 20);
-            this.txtNom.TabIndex = 26;
-            // 
-            // txtDescripcio
-            // 
-            this.txtDescripcio.BackColor = System.Drawing.Color.White;
-            this.taula.SetColumnSpan(this.txtDescripcio, 4);
-            this.txtDescripcio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDescripcio.Location = new System.Drawing.Point(103, 27);
-            this.txtDescripcio.Name = "txtDescripcio";
-            this.txtDescripcio.Size = new System.Drawing.Size(308, 20);
-            this.txtDescripcio.TabIndex = 29;
-            // 
-            // txtExecutable
-            // 
-            this.txtExecutable.BackColor = System.Drawing.Color.White;
-            this.taula.SetColumnSpan(this.txtExecutable, 3);
-            this.txtExecutable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtExecutable.Location = new System.Drawing.Point(103, 75);
-            this.txtExecutable.Name = "txtExecutable";
-            this.txtExecutable.Size = new System.Drawing.Size(284, 20);
-            this.txtExecutable.TabIndex = 34;
-            // 
-            // chkCalAturar
-            // 
-            this.chkCalAturar.AutoSize = true;
-            this.chkCalAturar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chkCalAturar.Location = new System.Drawing.Point(103, 51);
-            this.chkCalAturar.Name = "chkCalAturar";
-            this.chkCalAturar.Size = new System.Drawing.Size(89, 18);
-            this.chkCalAturar.TabIndex = 35;
-            this.chkCalAturar.UseVisualStyleBackColor = true;
-            // 
-            // chkIgnorar
-            // 
-            this.chkIgnorar.AutoSize = true;
-            this.taula.SetColumnSpan(this.chkIgnorar, 2);
-            this.chkIgnorar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chkIgnorar.Location = new System.Drawing.Point(298, 51);
-            this.chkIgnorar.Name = "chkIgnorar";
-            this.chkIgnorar.Size = new System.Drawing.Size(113, 18);
-            this.chkIgnorar.TabIndex = 36;
-            this.chkIgnorar.UseVisualStyleBackColor = true;
-            // 
-            // pbIcona
-            // 
-            this.pbIcona.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbIcona.Location = new System.Drawing.Point(103, 99);
-            this.pbIcona.MaximumSize = new System.Drawing.Size(48, 48);
-            this.pbIcona.MinimumSize = new System.Drawing.Size(48, 48);
-            this.pbIcona.Name = "pbIcona";
-            this.pbIcona.Size = new System.Drawing.Size(48, 48);
-            this.pbIcona.TabIndex = 37;
-            this.pbIcona.TabStop = false;
-            // 
-            // bCercar
-            // 
-            this.bCercar.Image = global::Examen.Professor.Properties.Resources.Buscar;
-            this.bCercar.Location = new System.Drawing.Point(390, 72);
-            this.bCercar.Margin = new System.Windows.Forms.Padding(0);
-            this.bCercar.Name = "bCercar";
-            this.bCercar.Size = new System.Drawing.Size(24, 23);
-            this.bCercar.TabIndex = 38;
-            this.bCercar.UseVisualStyleBackColor = true;
             // 
             // bDesar
             // 
@@ -280,6 +103,7 @@
             this.bDesar.Name = "bDesar";
             this.bDesar.Size = new System.Drawing.Size(35, 36);
             this.bDesar.Text = "Desar";
+            this.bDesar.Click += new System.EventHandler(this.BDesar_Click);
             // 
             // bCancelar
             // 
@@ -301,12 +125,209 @@
             this.bDesfer.Size = new System.Drawing.Size(35, 36);
             this.bDesfer.Text = "Desfer canvis";
             this.bDesfer.Visible = false;
+            this.bDesfer.Click += new System.EventHandler(this.BDesfer_Click);
+            // 
+            // taula
+            // 
+            this.taula.ColumnCount = 5;
+            this.taula.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.taula.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.taula.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.taula.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.taula.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.taula.Controls.Add(this.chkIgnorar, 3, 4);
+            this.taula.Controls.Add(this.txtExecutable, 1, 2);
+            this.taula.Controls.Add(this.txtDescripcio, 1, 1);
+            this.taula.Controls.Add(this.lIcona, 0, 3);
+            this.taula.Controls.Add(this.lExecutable, 0, 2);
+            this.taula.Controls.Add(this.lIgnorar, 2, 4);
+            this.taula.Controls.Add(this.lCalAturar, 2, 3);
+            this.taula.Controls.Add(this.lDescripcio, 0, 1);
+            this.taula.Controls.Add(this.lNom, 0, 0);
+            this.taula.Controls.Add(this.txtNom, 1, 0);
+            this.taula.Controls.Add(this.chkCalAturar, 3, 3);
+            this.taula.Controls.Add(this.pbIcona, 1, 3);
+            this.taula.Controls.Add(this.bCercar, 4, 2);
+            this.taula.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.taula.Location = new System.Drawing.Point(15, 42);
+            this.taula.Name = "taula";
+            this.taula.RowCount = 6;
+            this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.taula.Size = new System.Drawing.Size(414, 121);
+            this.taula.TabIndex = 11;
+            // 
+            // chkIgnorar
+            // 
+            this.chkIgnorar.AutoSize = true;
+            this.taula.SetColumnSpan(this.chkIgnorar, 2);
+            this.chkIgnorar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chkIgnorar.Location = new System.Drawing.Point(298, 99);
+            this.chkIgnorar.Name = "chkIgnorar";
+            this.chkIgnorar.Size = new System.Drawing.Size(113, 18);
+            this.chkIgnorar.TabIndex = 36;
+            this.chkIgnorar.UseVisualStyleBackColor = true;
+            this.chkIgnorar.CheckedChanged += new System.EventHandler(this.ChkIgnorar_CheckedChanged);
+            // 
+            // txtExecutable
+            // 
+            this.txtExecutable.BackColor = System.Drawing.Color.White;
+            this.taula.SetColumnSpan(this.txtExecutable, 3);
+            this.txtExecutable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtExecutable.Location = new System.Drawing.Point(103, 51);
+            this.txtExecutable.Name = "txtExecutable";
+            this.txtExecutable.Size = new System.Drawing.Size(284, 20);
+            this.txtExecutable.TabIndex = 34;
+            this.txtExecutable.TextChanged += new System.EventHandler(this.TxtExecutable_TextChanged);
+            // 
+            // txtDescripcio
+            // 
+            this.txtDescripcio.BackColor = System.Drawing.Color.White;
+            this.taula.SetColumnSpan(this.txtDescripcio, 4);
+            this.txtDescripcio.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDescripcio.Location = new System.Drawing.Point(103, 27);
+            this.txtDescripcio.Name = "txtDescripcio";
+            this.txtDescripcio.Size = new System.Drawing.Size(308, 20);
+            this.txtDescripcio.TabIndex = 29;
+            this.txtDescripcio.TextChanged += new System.EventHandler(this.TxtDescripcio_TextChanged);
+            // 
+            // lIcona
+            // 
+            this.lIcona.BackColor = System.Drawing.Color.Transparent;
+            this.lIcona.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lIcona.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lIcona.Location = new System.Drawing.Point(3, 72);
+            this.lIcona.Name = "lIcona";
+            this.taula.SetRowSpan(this.lIcona, 2);
+            this.lIcona.Size = new System.Drawing.Size(94, 48);
+            this.lIcona.TabIndex = 25;
+            this.lIcona.Text = "Icona";
+            this.lIcona.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lExecutable
+            // 
+            this.lExecutable.BackColor = System.Drawing.Color.Transparent;
+            this.lExecutable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lExecutable.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lExecutable.Location = new System.Drawing.Point(3, 48);
+            this.lExecutable.Name = "lExecutable";
+            this.lExecutable.Size = new System.Drawing.Size(94, 24);
+            this.lExecutable.TabIndex = 21;
+            this.lExecutable.Text = "Executable";
+            this.lExecutable.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lIgnorar
+            // 
+            this.lIgnorar.BackColor = System.Drawing.Color.Transparent;
+            this.lIgnorar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lIgnorar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lIgnorar.Location = new System.Drawing.Point(198, 96);
+            this.lIgnorar.Name = "lIgnorar";
+            this.lIgnorar.Size = new System.Drawing.Size(94, 24);
+            this.lIgnorar.TabIndex = 12;
+            this.lIgnorar.Text = "Ignorar";
+            this.lIgnorar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lCalAturar
+            // 
+            this.lCalAturar.BackColor = System.Drawing.Color.Transparent;
+            this.lCalAturar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lCalAturar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lCalAturar.Location = new System.Drawing.Point(198, 72);
+            this.lCalAturar.Name = "lCalAturar";
+            this.lCalAturar.Size = new System.Drawing.Size(94, 24);
+            this.lCalAturar.TabIndex = 4;
+            this.lCalAturar.Text = "Cal aturar";
+            this.lCalAturar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lDescripcio
+            // 
+            this.lDescripcio.BackColor = System.Drawing.Color.Transparent;
+            this.lDescripcio.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lDescripcio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lDescripcio.Location = new System.Drawing.Point(3, 24);
+            this.lDescripcio.Name = "lDescripcio";
+            this.lDescripcio.Size = new System.Drawing.Size(94, 24);
+            this.lDescripcio.TabIndex = 2;
+            this.lDescripcio.Text = "Descripció";
+            this.lDescripcio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lNom
+            // 
+            this.lNom.BackColor = System.Drawing.Color.Transparent;
+            this.lNom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lNom.Location = new System.Drawing.Point(3, 0);
+            this.lNom.Name = "lNom";
+            this.lNom.Size = new System.Drawing.Size(94, 24);
+            this.lNom.TabIndex = 0;
+            this.lNom.Text = "Nom";
+            this.lNom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtNom
+            // 
+            this.txtNom.BackColor = System.Drawing.Color.White;
+            this.taula.SetColumnSpan(this.txtNom, 4);
+            this.txtNom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtNom.Location = new System.Drawing.Point(103, 3);
+            this.txtNom.Name = "txtNom";
+            this.txtNom.Size = new System.Drawing.Size(308, 20);
+            this.txtNom.TabIndex = 26;
+            this.txtNom.TextChanged += new System.EventHandler(this.TxtNom_TextChanged);
+            // 
+            // chkCalAturar
+            // 
+            this.chkCalAturar.AutoSize = true;
+            this.taula.SetColumnSpan(this.chkCalAturar, 2);
+            this.chkCalAturar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chkCalAturar.Location = new System.Drawing.Point(298, 75);
+            this.chkCalAturar.Name = "chkCalAturar";
+            this.chkCalAturar.Size = new System.Drawing.Size(113, 18);
+            this.chkCalAturar.TabIndex = 35;
+            this.chkCalAturar.UseVisualStyleBackColor = true;
+            this.chkCalAturar.CheckedChanged += new System.EventHandler(this.ChkCalAturar_CheckedChanged);
+            // 
+            // pbIcona
+            // 
+            this.pbIcona.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbIcona.Location = new System.Drawing.Point(103, 80);
+            this.pbIcona.Margin = new System.Windows.Forms.Padding(3, 8, 8, 8);
+            this.pbIcona.MaximumSize = new System.Drawing.Size(32, 32);
+            this.pbIcona.MinimumSize = new System.Drawing.Size(32, 32);
+            this.pbIcona.Name = "pbIcona";
+            this.taula.SetRowSpan(this.pbIcona, 2);
+            this.pbIcona.Size = new System.Drawing.Size(32, 32);
+            this.pbIcona.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbIcona.TabIndex = 37;
+            this.pbIcona.TabStop = false;
+            // 
+            // bCercar
+            // 
+            this.bCercar.Image = global::Examen.Professor.Properties.Resources.Buscar;
+            this.bCercar.Location = new System.Drawing.Point(390, 48);
+            this.bCercar.Margin = new System.Windows.Forms.Padding(0);
+            this.bCercar.Name = "bCercar";
+            this.bCercar.Size = new System.Drawing.Size(24, 23);
+            this.bCercar.TabIndex = 38;
+            this.bCercar.UseVisualStyleBackColor = true;
+            this.bCercar.Click += new System.EventHandler(this.BCercar_Click);
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.DefaultExt = "*.exe";
+            this.openFileDialog.Filter = "*.exe|Executable";
+            this.openFileDialog.Title = "Executables";
             // 
             // FrmEdicioAplicacio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(485, 208);
+            this.ClientSize = new System.Drawing.Size(485, 178);
             this.Controls.Add(this.taula);
             this.Controls.Add(this.lTitol);
             this.Controls.Add(this.panel1);
@@ -349,5 +370,6 @@
         private System.Windows.Forms.PictureBox pbIcona;
         private System.Windows.Forms.ToolStripButton bDesfer;
         private System.Windows.Forms.Button bCercar;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }

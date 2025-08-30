@@ -154,7 +154,7 @@ namespace Examen.Suport.Funcions
             return ret;
         }
 
-        private static string ObtenirDescripcio(string executable)
+        public static string ObtenirDescripcio(string executable)
         {
             try
             {
@@ -175,9 +175,7 @@ namespace Examen.Suport.Funcions
             return "";
         }
 
-        private static string l = "";
-
-        private static Bitmap ObtenirIcona(string executable)
+        public static Bitmap ObtenirIcona(string executable)
         {
             try
             {
@@ -214,8 +212,6 @@ namespace Examen.Suport.Funcions
                 bitmap = bitmap.Redimensionar(16);
                 _Icones.Add(executable, bitmap);
 
-                l = executable;
-
                 return bitmap;
             }
             catch
@@ -248,7 +244,7 @@ namespace Examen.Suport.Funcions
                 var nodeCategoria = new Node(categoriaAplicacions);
                 foreach (var aplicacio in categoriaAplicacions.Aplicacions)
                 {
-                    var nodeAplicacio = new Node(aplicacio);
+                    var nodeAplicacio = new Node(nodeCategoria, aplicacio);
                     nodeCategoria.Nodes.Add(nodeAplicacio);
                 }
                 nodes.Add(nodeCategoria);

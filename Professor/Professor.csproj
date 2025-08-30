@@ -130,6 +130,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Examen.ico" />
+    <None Include="Resources\Editar_16x16_v1.png" />
+    <None Include="Resources\Afegir_16x16_v1.png" />
+    <None Include="Resources\Treure_16x16_v1.png" />
+    <None Include="Resources\Nou.png" />
     <None Include="Resources\Buscar.png" />
     <None Include="Resources\Desfer_32x32.png" />
     <None Include="Resources\FolderOpened.png" />

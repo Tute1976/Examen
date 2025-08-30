@@ -23,3 +23,4 @@ D:\Privat\Programacio\Git\Examen\Professor\bin\Debug\ListViewPrinter.dll
 D:\Privat\Programacio\Git\Examen\Professor\bin\Debug\ObjectListView.dll
 D:\Privat\Programacio\Git\Examen\Professor\bin\Debug\SparkleLibrary.dll
 D:\Privat\Programacio\Git\Examen\Professor\obj\Debug\Professor.exe.config
+D:\Privat\Programacio\Git\Examen\Professor\obj\Debug\Examen.Professor.Formularis.FrmEdicioAplicacio.resources

@@ -63,6 +63,16 @@ namespace Examen.Professor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Afegir_16x16_v1 {
+            get {
+                object obj = ResourceManager.GetObject("Afegir_16x16_v1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Aplicacions_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Aplicacions_32x32", resourceCulture);
@@ -163,6 +173,16 @@ namespace Examen.Professor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Editar_16x16_v1 {
+            get {
+                object obj = ResourceManager.GetObject("Editar_16x16_v1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Examen2 {
             get {
                 object obj = ResourceManager.GetObject("Examen2", resourceCulture);
@@ -253,6 +273,16 @@ namespace Examen.Professor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Nou {
+            get {
+                object obj = ResourceManager.GetObject("Nou", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PropertyGrid {
             get {
                 object obj = ResourceManager.GetObject("PropertyGrid", resourceCulture);
@@ -296,6 +326,16 @@ namespace Examen.Professor.Properties {
         internal static System.Drawing.Bitmap Stop_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Stop_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Treure_16x16_v1 {
+            get {
+                object obj = ResourceManager.GetObject("Treure_16x16_v1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
