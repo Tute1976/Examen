@@ -12,26 +12,19 @@ namespace Examen.Professor.Formularis
 {
     public partial class FrmAplicacions : FormAdv
     {
-        public ContenidorAplicacions ContenidorAplicacions
-        {
-            get => (ContenidorAplicacions)propietats.SelectedObject;
-            private set
-            {
-                propietats.SelectedObject = value;
-                propietats.Refresh();
-            }
-        }
-
-        private Node[] _nodesArrel;
+        public ContenidorAplicacions ContenidorAplicacions { get; set; }
+        private OLVColumn _colNom;
 
         public FrmAplicacions(ContenidorAplicacions contenidorAplicacions)
         {
             InitializeComponent();
 
             ContenidorAplicacions = contenidorAplicacions;
-            _nodesArrel = contenidorAplicacions.LlegirNodes();
 
             OmpleLlista(contenidorAplicacions);
+            llista.Roots = contenidorAplicacions.LlegirNodes();
+
+            lTitol.Text = @"Gestió de les aplicacions a controlar";
 
             SetStyle(ControlStyles.AllPaintingInWmPaint |
                           ControlStyles.OptimizedDoubleBuffer |
@@ -42,14 +35,18 @@ namespace Examen.Professor.Formularis
         {
             try
             {
-                var colNom = new OLVColumn("Nom", "Nom") { Width = 150 };
+                llista.AllColumns.Clear();
+                llista.Columns.Clear();
+                llista.ClearObjects();
+
+                _colNom = new OLVColumn("Nom", "Nom") { Width = 150 };
                 var colDescripcio = new OLVColumn("Descripció", "Descripcio") { Width = 300};
                 var colCalAturar = new OLVColumn("Cal aturar", "CalAturar2") { Width = 100 };
                 var colIgnorar = new OLVColumn("Ignorar", "Ignorar2") { Width = 100 };
                 var colExecutable = new OLVColumn("Executable", "Executable") { Width = 300 };
 
-                llista.AllColumns.AddRange([colNom, colDescripcio, colCalAturar, colIgnorar, colExecutable]);
-                llista.Columns.AddRange([colNom, colDescripcio, colCalAturar, colIgnorar, colExecutable]);
+                llista.AllColumns.AddRange([_colNom, colDescripcio, colCalAturar, colIgnorar, colExecutable]);
+                llista.Columns.AddRange([_colNom, colDescripcio, colCalAturar, colIgnorar, colExecutable]);
 
                 llista.Dock = DockStyle.Fill;
                 llista.ShowGroups = false;
@@ -65,15 +62,12 @@ namespace Examen.Professor.Formularis
                     imgs.Images.Add(icona.Key, icona.Value);
                 llista.SmallImageList = imgs;
 
-                colNom.ImageGetter = rowObj => {
+                _colNom.ImageGetter = rowObj => {
                     var n = (Node)rowObj;
                     if (n.EsAplicacio) 
                         return n.Nom;
                     return llista.IsExpanded(n) ? "folder-open" : "folder";
                 };
-
-                _nodesArrel = contenidorAplicacions.LlegirNodes();
-                llista.Roots = _nodesArrel;
             }
             catch (Exception ex)
             {
@@ -126,6 +120,26 @@ namespace Examen.Professor.Formularis
                     File.Delete(saveFileDialog.FileName);
                 ContenidorAplicacions.CategoriesAplicacions.Desar(saveFileDialog.FileName);
             }
+        }
+
+        private void Llista_CellClick(object sender, CellClickEventArgs e)
+        {
+            if (e.ClickCount != 2) 
+                return;        // només doble clic
+            if (e.Model is not Node node) 
+                return;
+            if (node.Nodes.Count == 0) 
+                return;        // només si té fills
+
+            // (opcional) només a la columna del nom:
+            if (e.Column != _colNom) return;
+
+            if (llista.IsExpanded(node)) 
+                llista.Collapse(node);
+            else 
+                llista.Expand(node);
+
+            e.Handled = true;
         }
     }
 }

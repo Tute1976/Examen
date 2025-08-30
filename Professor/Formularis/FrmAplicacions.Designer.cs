@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAplicacions));
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.propietats = new System.Windows.Forms.PropertyGrid();
             this.panel1 = new System.Windows.Forms.Panel();
             this.menu = new System.Windows.Forms.ToolStrip();
             this.bDesar = new System.Windows.Forms.ToolStripButton();
@@ -42,6 +41,7 @@
             this.bExportar = new System.Windows.Forms.ToolStripButton();
             this.llista = new BrightIdeasSoftware.TreeListView();
             this.imatges = new System.Windows.Forms.ImageList(this.components);
+            this.lTitol = new System.Windows.Forms.Label();
             this.menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.llista)).BeginInit();
             this.SuspendLayout();
@@ -60,23 +60,14 @@
             this.saveFileDialog.Filter = "jSon|*.json|Tots els fitxers|*.*";
             this.saveFileDialog.Title = "Exportació";
             // 
-            // propietats
-            // 
-            this.propietats.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.propietats.Location = new System.Drawing.Point(15, 10);
-            this.propietats.Margin = new System.Windows.Forms.Padding(0);
-            this.propietats.Name = "propietats";
-            this.propietats.Size = new System.Drawing.Size(1042, 594);
-            this.propietats.TabIndex = 0;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(1057, 10);
+            this.panel1.Location = new System.Drawing.Point(744, 10);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 594);
+            this.panel1.Size = new System.Drawing.Size(10, 575);
             this.panel1.TabIndex = 2;
             // 
             // menu
@@ -92,10 +83,10 @@
             this.toolStripSeparator1,
             this.bImportar,
             this.bExportar});
-            this.menu.Location = new System.Drawing.Point(1067, 10);
+            this.menu.Location = new System.Drawing.Point(754, 10);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(0);
-            this.menu.Size = new System.Drawing.Size(36, 594);
+            this.menu.Size = new System.Drawing.Size(36, 575);
             this.menu.TabIndex = 1;
             // 
             // bDesar
@@ -147,19 +138,21 @@
             // 
             // llista
             // 
+            this.llista.Dock = System.Windows.Forms.DockStyle.Fill;
             this.llista.FullRowSelect = true;
             this.llista.HideSelection = false;
-            this.llista.Location = new System.Drawing.Point(241, 142);
+            this.llista.Location = new System.Drawing.Point(15, 42);
             this.llista.MultiSelect = false;
             this.llista.Name = "llista";
             this.llista.OwnerDraw = true;
             this.llista.ShowGroups = false;
-            this.llista.Size = new System.Drawing.Size(511, 223);
+            this.llista.Size = new System.Drawing.Size(729, 543);
             this.llista.SmallImageList = this.imatges;
             this.llista.TabIndex = 3;
             this.llista.UseCompatibleStateImageBehavior = false;
             this.llista.View = System.Windows.Forms.View.Details;
             this.llista.VirtualMode = true;
+            this.llista.CellClick += new System.EventHandler<BrightIdeasSoftware.CellClickEventArgs>(this.Llista_CellClick);
             // 
             // imatges
             // 
@@ -167,13 +160,25 @@
             this.imatges.ImageSize = new System.Drawing.Size(16, 16);
             this.imatges.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // lTitol
+            // 
+            this.lTitol.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lTitol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lTitol.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.lTitol.Location = new System.Drawing.Point(15, 10);
+            this.lTitol.Margin = new System.Windows.Forms.Padding(0);
+            this.lTitol.Name = "lTitol";
+            this.lTitol.Size = new System.Drawing.Size(729, 32);
+            this.lTitol.TabIndex = 7;
+            this.lTitol.Text = "label1";
+            // 
             // FrmAplicacions
             // 
             this.BorderThickness = 2;
-            this.ClientSize = new System.Drawing.Size(1113, 619);
+            this.ClientSize = new System.Drawing.Size(800, 600);
             this.ControlBox = false;
             this.Controls.Add(this.llista);
-            this.Controls.Add(this.propietats);
+            this.Controls.Add(this.lTitol);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menu);
             this.CornerRadius = 10;
@@ -199,7 +204,6 @@
         private System.Windows.Forms.ToolStripButton bDesar;
         private System.Windows.Forms.ToolStripButton bCancelar;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PropertyGrid propietats;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton bImportar;
         private System.Windows.Forms.ToolStripButton bExportar;
@@ -207,5 +211,6 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private BrightIdeasSoftware.TreeListView llista;
         private System.Windows.Forms.ImageList imatges;
+        private System.Windows.Forms.Label lTitol;
     }
 }

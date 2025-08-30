@@ -15,6 +15,8 @@ namespace Examen.Suport.Formularis
 
             llistaHistoric.Items.Clear();
             llistaHistoric.Items.AddRange(items.ToArray());
+
+            lTitol.Text = @"Històric d'accions realitzades";
         }
 
         private void BCancelar_Click(object sender, EventArgs e)

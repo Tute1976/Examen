@@ -6,8 +6,8 @@ namespace Examen.Suport.Classes
 {
     public class EstacioAlumne
     {
-        public DateTime? DataInici { get; set; } = null;
-        public DateTime? DataDarreraConnexio { get; set; } = null;
+        public DateTime? DataInici { get; set; }
+        public DateTime? DataDarreraConnexio { get; set; }
 
         public AdreçaPort AdreçaPort { get; set; }
 
@@ -19,11 +19,11 @@ namespace Examen.Suport.Classes
 
         public Guid Id { get; }
 
-        public EstacioAlumne(string nom, Guid id)
+        public EstacioAlumne(string nom = "", Guid? id = null)
         {
             try
             {
-                Id = id;
+                Id = id ?? Guid.Empty;
      
                 Nom = nom;
 

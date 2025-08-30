@@ -37,6 +37,7 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lTitol = new System.Windows.Forms.Label();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,10 +87,10 @@
             this.llistaHistoric.Dock = System.Windows.Forms.DockStyle.Fill;
             this.llistaHistoric.FullRowSelect = true;
             this.llistaHistoric.HideSelection = false;
-            this.llistaHistoric.Location = new System.Drawing.Point(15, 10);
+            this.llistaHistoric.Location = new System.Drawing.Point(15, 42);
             this.llistaHistoric.Margin = new System.Windows.Forms.Padding(0);
             this.llistaHistoric.Name = "llistaHistoric";
-            this.llistaHistoric.Size = new System.Drawing.Size(529, 375);
+            this.llistaHistoric.Size = new System.Drawing.Size(529, 343);
             this.llistaHistoric.TabIndex = 4;
             this.llistaHistoric.UseCompatibleStateImageBehavior = false;
             this.llistaHistoric.View = System.Windows.Forms.View.Details;
@@ -115,11 +116,24 @@
             this.columnHeader4.Text = "Informació";
             this.columnHeader4.Width = 300;
             // 
+            // lTitol
+            // 
+            this.lTitol.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lTitol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lTitol.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.lTitol.Location = new System.Drawing.Point(15, 10);
+            this.lTitol.Margin = new System.Windows.Forms.Padding(0);
+            this.lTitol.Name = "lTitol";
+            this.lTitol.Size = new System.Drawing.Size(529, 32);
+            this.lTitol.TabIndex = 7;
+            this.lTitol.Text = "label1";
+            // 
             // FrmHistoric
             // 
             this.BorderThickness = 2;
             this.ClientSize = new System.Drawing.Size(600, 400);
             this.Controls.Add(this.llistaHistoric);
+            this.Controls.Add(this.lTitol);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menu);
             this.CornerRadius = 10;
@@ -147,5 +161,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.Label lTitol;
     }
 }

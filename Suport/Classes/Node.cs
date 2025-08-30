@@ -6,43 +6,128 @@ namespace Examen.Suport.Classes
 {
     public class Node
     {
-        public string Nom { get; set; }
-        public string Descripcio { get; set; }
-        private bool CalAturar { get; set; }
-        private bool Ignorar { get; set; }
-        public string Executable { get; set; }
+        public StringTag Nom { get; set; }
+        public StringTag Descripcio { get; set; }
+        private BoolTag CalAturar { get; }
+        private BoolTag Ignorar { get; }
+        public StringTag Executable { get; set; }
 
-        public Bitmap Icona { get; set; }
+        public BitmapTag Icona { get; set; }
 
-        public string CalAturar2 => CalAturar.SiNo();
-        public string Ignorar2 => Ignorar.SiNo();
+        public string CalAturar2 => CalAturar.Valor.SiNo();
+        public string Ignorar2 => Ignorar.Valor.SiNo();
 
         public readonly List<Node> Nodes = [];
 
-        public bool EsAplicacio { get; set; }
+        public bool EsAplicacio => Aplicacio != null;
 
-        public Node(CategoriaAplicacions categoriaAplicacions)
+        private CategoriaAplicacions CategoriaAplicacions { get; }
+        private Aplicacio Aplicacio { get; }
+
+        public Node(CategoriaAplicacions categoriaAplicacions = null)
         {
-            Nom = categoriaAplicacions.Nom;
-            Descripcio = categoriaAplicacions.Descripcio;
-            CalAturar = categoriaAplicacions.CalAturar;
-            Ignorar = categoriaAplicacions.Ignorar;
-            Executable = "";
+            categoriaAplicacions ??= new CategoriaAplicacions();
+
+            Nom = new StringTag(categoriaAplicacions.Nom);
+            Descripcio = new StringTag(categoriaAplicacions.Descripcio);
+            CalAturar = new BoolTag(categoriaAplicacions.CalAturar);
+            Ignorar = new BoolTag(categoriaAplicacions.Ignorar);
+            Executable = new StringTag();
             Icona = null;
 
-            EsAplicacio = false;
+            CategoriaAplicacions = categoriaAplicacions;
+            Aplicacio = null;
         }
 
-        public Node(Aplicacio aplicacio)
+        public Node(Aplicacio aplicacio = null)
         {
-            Nom = aplicacio.Nom;
-            Descripcio = aplicacio.Descripcio;
-            CalAturar = aplicacio.CalAturar;
-            Ignorar = aplicacio.Ignorar;
-            Executable = aplicacio.Executable;
-            Icona = aplicacio.Icona;
+            aplicacio ??= new Aplicacio();
 
-            EsAplicacio = true;
+            Nom = new StringTag(aplicacio.Nom);
+            Descripcio = new StringTag(aplicacio.Descripcio);
+            CalAturar = new BoolTag(aplicacio.CalAturar);
+            Ignorar = new BoolTag(aplicacio.Ignorar);
+            Executable = new StringTag(aplicacio.Executable);
+            Icona = new BitmapTag(aplicacio.Icona);
+
+            CategoriaAplicacions = null;
+            Aplicacio = aplicacio;
+        }
+
+        public void Desar()
+        {
+            foreach (var node in Nodes)
+                node.Desar();
+
+            if (CategoriaAplicacions != null)
+            {
+                CategoriaAplicacions.Nom = Nom.Valor;
+                CategoriaAplicacions.Descripcio = Descripcio.Valor;
+                CategoriaAplicacions.CalAturar = CalAturar.Valor;
+                CategoriaAplicacions.Ignorar = Ignorar.Valor;
+            }
+
+            if (Aplicacio != null)
+            {
+                Aplicacio.Nom = Nom.Valor;
+                Aplicacio.Descripcio = Descripcio.Valor;
+                Aplicacio.CalAturar = CalAturar.Valor;
+                Aplicacio.Ignorar = Ignorar.Valor;
+                Aplicacio.Executable = Executable.Valor;
+                Aplicacio.Icona = Icona.Valor;
+            }
+        }
+
+        public void Desfer()
+        {
+            Nom.Desfer();
+            Descripcio.Desfer();
+            CalAturar.Desfer();
+            Ignorar.Desfer();
+            Executable.Desfer();
+            Icona.Desfer();
+
+            foreach (var node in Nodes)
+                node.Desfer();
+        }
+    }
+
+    public class StringTag(string valor = "")
+    {
+        public string Valor { get; set; } = valor;
+        private string Tag { get; } = valor;
+
+        public bool Modificat => !Valor.Equals(Tag);
+
+        public void Desfer()
+        {
+            Valor = Tag;
+        }
+    }
+
+    public class BoolTag(bool valor)
+    {
+        public bool Valor { get; set; } = valor;
+        private bool Tag { get; } = valor;
+
+        public bool Modificat => !Valor.Equals(Tag);
+
+        public void Desfer()
+        {
+            Valor = Tag;
+        }
+    }
+
+    public class BitmapTag(Bitmap valor)
+    {
+        public Bitmap Valor { get; set; } = valor;
+        private Bitmap Tag { get; } = valor;
+
+        public bool Modificat => !Valor.Equals(Tag);
+
+        public void Desfer()
+        {
+            Valor = Tag;
         }
     }
 }

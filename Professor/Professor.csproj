@@ -78,6 +78,12 @@
     <Compile Include="Formularis\FrmAplicacions.Designer.cs">
       <DependentUpon>FrmAplicacions.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularis\FrmEdicioAplicacio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularis\FrmEdicioAplicacio.Designer.cs">
+      <DependentUpon>FrmEdicioAplicacio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularis\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularis\FrmAplicacions.resx">
       <DependentUpon>FrmAplicacions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularis\FrmEdicioAplicacio.resx">
+      <DependentUpon>FrmEdicioAplicacio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularis\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
@@ -121,6 +130,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Examen.ico" />
+    <None Include="Resources\Buscar.png" />
+    <None Include="Resources\Desfer_32x32.png" />
     <None Include="Resources\FolderOpened.png" />
     <None Include="Resources\FolderClosed.png" />
     <None Include="Resources\Application.png" />
