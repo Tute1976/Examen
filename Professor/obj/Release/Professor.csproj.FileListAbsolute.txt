@@ -19,3 +19,8 @@ D:\Privat\Programacio\Git\Examen\Professor\obj\Release\Professor.csproj.CoreComp
 D:\Privat\Programacio\Git\Examen\Professor\obj\Release\Professor.csproj.Up2Date
 D:\Privat\Programacio\Git\Examen\Professor\obj\Release\Professor.exe
 D:\Privat\Programacio\Git\Examen\Professor\obj\Release\Professor.pdb
+D:\Privat\Programacio\Git\Examen\Professor\bin\Release\ListViewPrinter.dll
+D:\Privat\Programacio\Git\Examen\Professor\bin\Release\ObjectListView.dll
+D:\Privat\Programacio\Git\Examen\Professor\bin\Release\SparkleLibrary.dll
+D:\Privat\Programacio\Git\Examen\Professor\obj\Release\Examen.Professor.Formularis.FrmEdicioCategoria.resources
+D:\Privat\Programacio\Git\Examen\Professor\obj\Release\Examen.Professor.Formularis.FrmEdicioAplicacio.resources

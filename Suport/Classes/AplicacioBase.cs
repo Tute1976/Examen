@@ -31,11 +31,13 @@ namespace Examen.Suport.Classes
          Description("Nom del fitxer executable (*.exe)")]
         public string Executable { get; set; } = executable;
 
+        [JsonIgnore]
         [Browsable(false)] 
         public string ExecutableCurt => Executable.Split('\\').Last();
 
+        [JsonIgnore]
         [Browsable(false)] 
-        protected string NomExecutableCurt => string.Join(".", Executable.Split('.').Reverse().Skip(1).Reverse());
+        protected string NomExecutableCurt => string.Join(".", ExecutableCurt.Split('.').Reverse().Skip(1).Reverse());
 
         [Browsable(false)]
         public string ImatgeEnBase64 { get; set; }

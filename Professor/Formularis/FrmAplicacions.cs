@@ -3,7 +3,7 @@ using Examen.Suport.Classes;
 using Examen.Suport.Controls;
 using Examen.Suport.Funcions;
 using System;
-using System.Drawing;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -14,15 +14,18 @@ namespace Examen.Professor.Formularis
     {
         public ContenidorAplicacions ContenidorAplicacions { get; set; }
         private OLVColumn _colNom;
+        private readonly Node[] _nodes;
 
         public FrmAplicacions(ContenidorAplicacions contenidorAplicacions)
         {
-            InitializeComponent();
-
             ContenidorAplicacions = contenidorAplicacions;
+            
+            InitializeComponent();
+            InicialitzaLlista();
 
-            OmpleLlista(contenidorAplicacions);
-            llista.Roots = contenidorAplicacions.LlegirNodes();
+            _nodes = contenidorAplicacions.LlegirNodes();
+            llista.Roots = _nodes;
+            OmpleIcones();
 
             lTitol.Text = @"Gestió de les aplicacions a controlar";
 
@@ -31,7 +34,7 @@ namespace Examen.Professor.Formularis
                           ControlStyles.UserPaint, true);
         }
 
-        private void OmpleLlista(ContenidorAplicacions contenidorAplicacions)
+        private void InicialitzaLlista()
         {
             try
             {
@@ -55,18 +58,16 @@ namespace Examen.Professor.Formularis
                 llista.CanExpandGetter = x => ((Node)x).Nodes.Count > 0;
                 llista.ChildrenGetter = x => ((Node)x).Nodes;
 
-                var imgs = new ImageList { ImageSize = new Size(16, 16), ColorDepth = ColorDepth.Depth32Bit };
-                imgs.Images.Add("folder", Properties.Resources.FolderClosed);    // posa-hi la teva icona
-                imgs.Images.Add("folder-open", Properties.Resources.FolderOpened); // opcional
-                foreach (var icona in contenidorAplicacions.Icones)
-                    imgs.Images.Add(icona.Key, icona.Value);
-                llista.SmallImageList = imgs;
-
                 _colNom.ImageGetter = rowObj => {
                     var n = (Node)rowObj;
-                    if (n.EsAplicacio) 
-                        return n.Nom;
-                    return llista.IsExpanded(n) ? "folder-open" : "folder";
+
+                    return n.EsAplicacio ?
+                        imatges.Images.ContainsKey(n.Nom) ? 
+                            n.Nom : 
+                            "application" :
+                        llista.IsExpanded(n) ? 
+                            "folder-open" : 
+                            "folder";
                 };
             }
             catch (Exception ex)
@@ -75,16 +76,49 @@ namespace Examen.Professor.Formularis
             }
         }
 
+        private void OmpleIcones()
+        {
+            imatges.Images.Clear();
+            imatges.Images.Add("folder", Properties.Resources.FolderClosed);    // posa-hi la teva icona
+            imatges.Images.Add("folder-open", Properties.Resources.FolderOpened); // opcional
+            imatges.Images.Add("application", Properties.Resources.Application);    // posa-hi la teva icona
+            foreach (var nodeCategoria in _nodes)
+                foreach (var node in nodeCategoria.Nodes)
+                    imatges.Images.Add(node.Nom, node.Icona);
+        }
+
         private void BDesar_Click(object sender, EventArgs e)
         {
+            ContenidorAplicacions.CategoriesAplicacions = OmpleCategories(_nodes);
             DialogResult = DialogResult.OK;
-            Close();
+        }
+
+        private List<CategoriaAplicacions> OmpleCategories(Node[] nodes)
+        {
+            var ret = new List<CategoriaAplicacions>();
+
+            foreach (var nodeCategoria in nodes)
+            {
+                nodeCategoria.Desar();
+
+                var categoriaAplicacions = nodeCategoria.CategoriaAplicacions;
+                categoriaAplicacions.Aplicacions.Clear();
+
+                foreach (var node in nodeCategoria.Nodes)
+                {
+                    if (!categoriaAplicacions.Aplicacions.Any(a => a.Nom.Equals(node.Nom)))
+                        categoriaAplicacions.Aplicacions.Add(node.Aplicacio);
+                }
+
+                ret.Add(categoriaAplicacions);
+            }
+
+            return ret;
         }
 
         private void BCancelar_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
-            Close();
         }
 
         private void BImportar_Click(object sender, EventArgs e)
@@ -128,31 +162,44 @@ namespace Examen.Professor.Formularis
                 return;        // només doble clic
             if (e.Model is not Node node) 
                 return;
-            if (node.Nodes.Count == 0) 
-                return;        // només si té fills
 
-            // (opcional) només a la columna del nom:
-            if (e.Column != _colNom) return;
+            if (!node.EsAplicacio)
+            {
+                if (e.Column != _colNom) 
+                    return;
 
-            if (llista.IsExpanded(node)) 
-                llista.Collapse(node);
-            else 
-                llista.Expand(node);
+                if (llista.IsExpanded(node))
+                    llista.Collapse(node);
+                else
+                    llista.Expand(node);
 
-            e.Handled = true;
+                e.Handled = true;
+            }
+            else
+            {
+                MenuEditar_Click(sender, null);
+            }
         }
 
         private void MenuLlista_Opening(object sender, System.ComponentModel.CancelEventArgs e)
         {
             var item = llista.SelectedItem;
 
+            menuAfegirAplicacio.Enabled = item is { RowObject: Node { EsAplicacio: false } };
             menuEditar.Enabled = item is { RowObject: Node };
             menuEsborrar.Enabled = item is { RowObject: Node };
         }
 
         private void MenuAfegirCategoria_Click(object sender, EventArgs e)
         {
+            using var frmEdicioCategoria = new FrmEdicioCategoria(new Node());
+            if (frmEdicioCategoria.ShowDialog() != DialogResult.OK)
+                return;
 
+            llista.AddObject(frmEdicioCategoria.Node);
+            llista.BuildList();
+
+            CalDesar();
         }
 
         private void MenuAfegirAplicacio_Click(object sender, EventArgs e)
@@ -169,8 +216,14 @@ namespace Examen.Professor.Formularis
                 return;
             
             nodePare.Nodes.Add(frmEdicioAplicacio.Node);
-            llista.BuildList();
+
+            OmpleIcones();
+            llista.RefreshObject(nodePare);
+            llista.Collapse(nodePare);
             llista.Expand(nodePare);
+            llista.SelectedObject = nodePare;
+
+            CalDesar();
         }
 
         private void MenuEditar_Click(object sender, EventArgs e)
@@ -184,14 +237,22 @@ namespace Examen.Professor.Formularis
                 using var frmEdicioAplicacio = new FrmEdicioAplicacio(node);
                 if (frmEdicioAplicacio.ShowDialog() != DialogResult.OK)
                     return;
-                item.RowObject = frmEdicioAplicacio.Node;
+                node = frmEdicioAplicacio.Node;
+                item.RowObject = node;
+
+                OmpleIcones();
                 llista.BuildList();
             }
             else
             {
-                
+                using var frmEdicioCategoria = new FrmEdicioCategoria(node);
+                if (frmEdicioCategoria.ShowDialog() != DialogResult.OK)
+                    return;
+                item.RowObject = frmEdicioCategoria.Node;
+                llista.BuildList();
             }
 
+            CalDesar();
         }
 
         private void MenuEsborrar_Click(object sender, EventArgs e)
@@ -207,19 +268,32 @@ namespace Examen.Professor.Formularis
 
                 var nodePare = node.Pare;
                 nodePare.Nodes.Remove(node);
-                llista.BuildList();
-                llista.Expand(node.Pare);
+
+                llista.RefreshObject(nodePare);
+                llista.Collapse(nodePare);
+                llista.Expand(nodePare);
+                llista.SelectedObject = nodePare;
+
+                CalDesar();
             }
             else
             {
                 if (@"Vols esborrar la categoria seleccionada?".Mostrar(MessageBoxIcon.Question, MessageBoxButtons.YesNo) != DialogResult.Yes)
                     return;
 
-                var nodes = ((Node[])llista.Roots).ToList();
-                nodes.Remove(node);
-                llista.Roots = nodes.ToArray();
+                llista.RemoveObject(node);
                 llista.BuildList();
+
+                CalDesar();
             }
+        }
+
+        private void CalDesar()
+        {
+            bDesar.Enabled = true;
+            toolStripSeparator1.Visible = false;
+            bImportar.Visible = false;
+            bExportar.Visible = false;
         }
     }
 }

@@ -1,48 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Privat\\Programacio\\Git\\Examen\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{64790BAC-D2B1-4616-B861-C19F3DD82D09}|Professor\\Professor.csproj|D:\\Privat\\Programacio\\Git\\Examen\\professor\\formularis\\frmaplicacions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{64790BAC-D2B1-4616-B861-C19F3DD82D09}|Professor\\Professor.csproj|solutionrelative:professor\\formularis\\frmaplicacions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64790BAC-D2B1-4616-B861-C19F3DD82D09}|Professor\\Professor.csproj|d:\\privat\\programacio\\git\\examen\\professor\\formularis\\frmedicioaplicacio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{64790BAC-D2B1-4616-B861-C19F3DD82D09}|Professor\\Professor.csproj|solutionrelative:professor\\formularis\\frmedicioaplicacio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64790BAC-D2B1-4616-B861-C19F3DD82D09}|Professor\\Professor.csproj|D:\\Privat\\Programacio\\Git\\Examen\\professor\\formularis\\frmedicioaplicacio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{64790BAC-D2B1-4616-B861-C19F3DD82D09}|Professor\\Professor.csproj|solutionrelative:professor\\formularis\\frmedicioaplicacio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64790BAC-D2B1-4616-B861-C19F3DD82D09}|Professor\\Professor.csproj|d:\\privat\\programacio\\git\\examen\\professor\\formularis\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{64790BAC-D2B1-4616-B861-C19F3DD82D09}|Professor\\Professor.csproj|solutionrelative:professor\\formularis\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CA301166-142C-4D77-BA7B-50E07672FF82}|Suport\\Suport.csproj|D:\\Privat\\Programacio\\Git\\Examen\\suport\\classes\\node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CA301166-142C-4D77-BA7B-50E07672FF82}|Suport\\Suport.csproj|solutionrelative:suport\\classes\\node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CA301166-142C-4D77-BA7B-50E07672FF82}|Suport\\Suport.csproj|d:\\privat\\programacio\\git\\examen\\suport\\funcions\\helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CA301166-142C-4D77-BA7B-50E07672FF82}|Suport\\Suport.csproj|solutionrelative:suport\\funcions\\helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64790BAC-D2B1-4616-B861-C19F3DD82D09}|Professor\\Professor.csproj|D:\\Privat\\Programacio\\Git\\Examen\\professor\\formularis\\frmaplicacions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{64790BAC-D2B1-4616-B861-C19F3DD82D09}|Professor\\Professor.csproj|solutionrelative:professor\\formularis\\frmaplicacions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CA301166-142C-4D77-BA7B-50E07672FF82}|Suport\\Suport.csproj|d:\\privat\\programacio\\git\\examen\\suport\\classes\\aplicaciobase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CA301166-142C-4D77-BA7B-50E07672FF82}|Suport\\Suport.csproj|solutionrelative:suport\\classes\\aplicaciobase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CA301166-142C-4D77-BA7B-50E07672FF82}|Suport\\Suport.csproj|d:\\privat\\programacio\\git\\examen\\suport\\classes\\aplicacio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CA301166-142C-4D77-BA7B-50E07672FF82}|Suport\\Suport.csproj|solutionrelative:suport\\classes\\aplicacio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CA301166-142C-4D77-BA7B-50E07672FF82}|Suport\\Suport.csproj|D:\\Privat\\Programacio\\Git\\Examen\\suport\\classes\\estacioalumne.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CA301166-142C-4D77-BA7B-50E07672FF82}|Suport\\Suport.csproj|solutionrelative:suport\\classes\\estacioalumne.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -50,138 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FrmPrincipal.cs",
-              "DocumentMoniker": "D:\\Privat\\Programacio\\Git\\Examen\\Professor\\Formularis\\FrmPrincipal.cs",
-              "RelativeDocumentMoniker": "Professor\\Formularis\\FrmPrincipal.cs",
-              "ToolTip": "D:\\Privat\\Programacio\\Git\\Examen\\Professor\\Formularis\\FrmPrincipal.cs",
-              "RelativeToolTip": "Professor\\Formularis\\FrmPrincipal.cs",
-              "ViewState": "AgIAABUBAAAAAAAAAAD4v98BAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-30T15:09:06.393Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AplicacioBase.cs",
-              "DocumentMoniker": "D:\\Privat\\Programacio\\Git\\Examen\\Suport\\Classes\\AplicacioBase.cs",
-              "RelativeDocumentMoniker": "Suport\\Classes\\AplicacioBase.cs",
-              "ToolTip": "D:\\Privat\\Programacio\\Git\\Examen\\Suport\\Classes\\AplicacioBase.cs",
-              "RelativeToolTip": "Suport\\Classes\\AplicacioBase.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAByAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-30T14:19:22.265Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Aplicacio.cs",
-              "DocumentMoniker": "D:\\Privat\\Programacio\\Git\\Examen\\Suport\\Classes\\Aplicacio.cs",
-              "RelativeDocumentMoniker": "Suport\\Classes\\Aplicacio.cs",
-              "ToolTip": "D:\\Privat\\Programacio\\Git\\Examen\\Suport\\Classes\\Aplicacio.cs",
-              "RelativeToolTip": "Suport\\Classes\\Aplicacio.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAB0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-30T14:19:13.196Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Helper.cs",
-              "DocumentMoniker": "D:\\Privat\\Programacio\\Git\\Examen\\Suport\\Funcions\\Helper.cs",
-              "RelativeDocumentMoniker": "Suport\\Funcions\\Helper.cs",
-              "ToolTip": "D:\\Privat\\Programacio\\Git\\Examen\\Suport\\Funcions\\Helper.cs",
-              "RelativeToolTip": "Suport\\Funcions\\Helper.cs",
-              "ViewState": "AgIAAI0AAAAAAAAAAAAtwP0AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-30T14:05:56.534Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "EstacioAlumne.cs",
-              "DocumentMoniker": "D:\\Privat\\Programacio\\Git\\Examen\\Suport\\Classes\\EstacioAlumne.cs",
-              "RelativeDocumentMoniker": "Suport\\Classes\\EstacioAlumne.cs",
-              "ToolTip": "D:\\Privat\\Programacio\\Git\\Examen\\Suport\\Classes\\EstacioAlumne.cs",
-              "RelativeToolTip": "Suport\\Classes\\EstacioAlumne.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-30T08:44:13.202Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Node.cs",
-              "DocumentMoniker": "D:\\Privat\\Programacio\\Git\\Examen\\Suport\\Classes\\Node.cs",
-              "RelativeDocumentMoniker": "Suport\\Classes\\Node.cs",
-              "ToolTip": "D:\\Privat\\Programacio\\Git\\Examen\\Suport\\Classes\\Node.cs",
-              "RelativeToolTip": "Suport\\Classes\\Node.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAswCEAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-29T14:34:03.066Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FrmEdicioAplicacio.cs",
-              "DocumentMoniker": "D:\\Privat\\Programacio\\Git\\Examen\\Professor\\Formularis\\FrmEdicioAplicacio.cs",
-              "RelativeDocumentMoniker": "Professor\\Formularis\\FrmEdicioAplicacio.cs",
-              "ToolTip": "D:\\Privat\\Programacio\\Git\\Examen\\Professor\\Formularis\\FrmEdicioAplicacio.cs",
-              "RelativeToolTip": "Professor\\Formularis\\FrmEdicioAplicacio.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAcwBMAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-29T14:31:35.015Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FrmEdicioAplicacio.cs [Design]",
-              "DocumentMoniker": "D:\\Privat\\Programacio\\Git\\Examen\\Professor\\Formularis\\FrmEdicioAplicacio.cs",
-              "RelativeDocumentMoniker": "Professor\\Formularis\\FrmEdicioAplicacio.cs",
-              "ToolTip": "D:\\Privat\\Programacio\\Git\\Examen\\Professor\\Formularis\\FrmEdicioAplicacio.cs [Design]",
-              "RelativeToolTip": "Professor\\Formularis\\FrmEdicioAplicacio.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-29T14:31:24.282Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FrmAplicacions.cs",
-              "DocumentMoniker": "D:\\Privat\\Programacio\\Git\\Examen\\Professor\\Formularis\\FrmAplicacions.cs",
-              "RelativeDocumentMoniker": "Professor\\Formularis\\FrmAplicacions.cs",
-              "ToolTip": "D:\\Privat\\Programacio\\Git\\Examen\\Professor\\Formularis\\FrmAplicacions.cs",
-              "RelativeToolTip": "Professor\\Formularis\\FrmAplicacions.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAA9wKMAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-29T09:35:58.981Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "FrmAplicacions.cs [Design]",
-              "DocumentMoniker": "D:\\Privat\\Programacio\\Git\\Examen\\Professor\\Formularis\\FrmAplicacions.cs",
-              "RelativeDocumentMoniker": "Professor\\Formularis\\FrmAplicacions.cs",
-              "ToolTip": "D:\\Privat\\Programacio\\Git\\Examen\\Professor\\Formularis\\FrmAplicacions.cs [Design]",
-              "RelativeToolTip": "Professor\\Formularis\\FrmAplicacions.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-29T09:21:25.455Z",
-              "EditorCaption": " [Design]"
             }
           ]
         }

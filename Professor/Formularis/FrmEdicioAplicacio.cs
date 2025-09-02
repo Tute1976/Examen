@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Examen.Suport.Classes;
+using Examen.Suport.Controls;
+using Examen.Suport.Funcions;
+using System;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using Examen.Suport.Classes;
-using Examen.Suport.Controls;
-using Examen.Suport.Funcions;
 
 namespace Examen.Professor.Formularis
 {
@@ -19,6 +19,7 @@ namespace Examen.Professor.Formularis
             Node = node;
             OmpleCamps();
         }
+
         private void OnModificat(bool modificat)
         {
             bDesar.Enabled = modificat;
@@ -41,7 +42,7 @@ namespace Examen.Professor.Formularis
             OmpleCamps();
 
             bDesar.Enabled = false;
-            bDesar.Visible = false;
+            bDesfer.Visible = false;
         }
 
         private void BCercar_Click(object sender, EventArgs e)
@@ -57,12 +58,15 @@ namespace Examen.Professor.Formularis
             if (dialog.ShowDialog() != DialogResult.OK)
                 return;
 
-            txtExecutable.Text = dialog.SafeFileName ?? "";
-            txtNom.Text = string.Join(".", txtExecutable.Text.Split('.').Reverse().Skip(1).Reverse());
-
+            txtExecutable.Text = dialog.FileName ?? "";
             txtDescripcio.Text = Helper.ObtenirDescripcio(dialog.FileName);
-            pbIcona.Image = Helper.ObtenirIcona(dialog.FileName);
+            txtNom.Text = string.IsNullOrEmpty(txtDescripcio.Text)
+                ? string.Join(".", (dialog.SafeFileName ?? "").Split('.').Reverse().Skip(1).Reverse())
+                : txtDescripcio.Text;
+
+            pbIcona.Image = Helper.ObtenirIcona(dialog.FileName, false) ?? Helper.Aplicacio_32x32;
             Node.Icona = (Bitmap)pbIcona.Image;
+
             OnModificat(Node.Modificat);
         }
 
@@ -103,6 +107,32 @@ namespace Examen.Professor.Formularis
         private void ChkIgnorar_CheckedChanged(object sender, EventArgs e)
         {
             Node.Ignorar = chkIgnorar.Checked;
+            OnModificat(Node.Modificat);
+        }
+
+        private void PbIcona_DoubleClick(object sender, EventArgs e)
+        {
+            using var dialog = new OpenFileDialog();
+            dialog.Title = @"Selecciona la imatge";
+            dialog.Filter =
+                @"Executables (*.exe)|*.exe|" +
+                @"Imatges (*.png;*.jpg;*.jpeg)|*.png;*.jpg;*.jpeg|" +
+                @"Tots els fitxers (*.*)|*.*";
+            dialog.FilterIndex = 2; // opcional: que surti seleccionat "Imatges"
+            dialog.CheckFileExists = true;
+            dialog.CheckPathExists = true;
+            dialog.Multiselect = false;
+
+            if (dialog.ShowDialog() != DialogResult.OK)
+                return;
+
+            var icona = 
+                Helper.ObtenirIcona(dialog.FileName, false) ?? 
+                Helper.ObtenirIconaImatge(dialog.FileName, false);
+
+            pbIcona.Image = icona ?? Helper.Aplicacio_32x32;
+            Node.Icona = (Bitmap)pbIcona.Image;
+
             OnModificat(Node.Modificat);
         }
     }

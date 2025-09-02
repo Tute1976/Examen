@@ -49,7 +49,6 @@
             this.chkCalAturar = new System.Windows.Forms.CheckBox();
             this.pbIcona = new System.Windows.Forms.PictureBox();
             this.bCercar = new System.Windows.Forms.Button();
-            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.menu.SuspendLayout();
             this.taula.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbIcona)).BeginInit();
@@ -65,7 +64,7 @@
             this.lTitol.Name = "lTitol";
             this.lTitol.Size = new System.Drawing.Size(414, 32);
             this.lTitol.TabIndex = 10;
-            this.lTitol.Text = "Edició aplicació";
+            this.lTitol.Text = "Aplicació";
             // 
             // panel1
             // 
@@ -305,6 +304,7 @@
             this.pbIcona.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbIcona.TabIndex = 37;
             this.pbIcona.TabStop = false;
+            this.pbIcona.DoubleClick += new System.EventHandler(this.PbIcona_DoubleClick);
             // 
             // bCercar
             // 
@@ -316,12 +316,6 @@
             this.bCercar.TabIndex = 38;
             this.bCercar.UseVisualStyleBackColor = true;
             this.bCercar.Click += new System.EventHandler(this.BCercar_Click);
-            // 
-            // openFileDialog
-            // 
-            this.openFileDialog.DefaultExt = "*.exe";
-            this.openFileDialog.Filter = "*.exe|Executable";
-            this.openFileDialog.Title = "Executables";
             // 
             // FrmEdicioAplicacio
             // 
@@ -370,6 +364,5 @@
         private System.Windows.Forms.PictureBox pbIcona;
         private System.Windows.Forms.ToolStripButton bDesfer;
         private System.Windows.Forms.Button bCercar;
-        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }

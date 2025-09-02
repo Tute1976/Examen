@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Management;
 using System.Runtime.InteropServices;
@@ -18,6 +19,7 @@ namespace Examen.Suport.Funcions
     public static class Helper
     {
         public static string SyncfusionLicense => Settings.Default.SyncfusionLicense;
+        public static Bitmap Aplicacio_32x32 => Resources.Aplicacio_32x32;
 
         public const int BufferSize = 81920;
 
@@ -143,7 +145,7 @@ namespace Examen.Suport.Funcions
                 foreach (var aplicacioEnUs in ret)
                 {
                     aplicacioEnUs.Descripcio = ObtenirDescripcio(aplicacioEnUs.Executable);
-                    aplicacioEnUs.Icona = ObtenirIcona(aplicacioEnUs.Executable);
+                    aplicacioEnUs.Icona = ObtenirIcona(aplicacioEnUs.Executable, true) ?? Aplicacio_32x32;
                 }
             }
             catch
@@ -175,11 +177,12 @@ namespace Examen.Suport.Funcions
             return "";
         }
 
-        public static Bitmap ObtenirIcona(string executable)
+        public static Bitmap ObtenirIcona(string executable, bool usaCache)
         {
             try
             {
-                if (_Icones.TryGetValue(executable, out var bitmap))
+                if (usaCache &&
+                    _Icones.TryGetValue(executable, out var bitmap))
                     return bitmap;
 
                 if (executable.Equals(Application.ExecutablePath, StringComparison.InvariantCultureIgnoreCase))
@@ -206,11 +209,11 @@ namespace Examen.Suport.Funcions
                         DestroyIcon(smallIcon[0]);
                     }
                     else
-                        bitmap = Resources.Aplicacio_32x32;
+                        return null;
                 }
                 
                 bitmap = bitmap.Redimensionar(16);
-                _Icones.Add(executable, bitmap);
+                _Icones[executable] = bitmap;
 
                 return bitmap;
             }
@@ -219,7 +222,65 @@ namespace Examen.Suport.Funcions
                 // Ignorar
             }
 
-            return Resources.Aplicacio_32x32;
+            return null;
+        }
+
+        public static Bitmap ObtenirIconaImatge(string fitxerImatge, bool usaCache)
+        {
+            try
+            {
+                if (usaCache &&
+                    _Icones.TryGetValue(fitxerImatge, out var bmpCached))
+                    return bmpCached;
+
+                if (!File.Exists(fitxerImatge))
+                    return null;
+
+                using var fs = new FileStream(fitxerImatge, FileMode.Open, FileAccess.Read,
+                                              FileShare.ReadWrite | FileShare.Delete);
+
+                using var img = Image.FromStream(fs, useEmbeddedColorManagement: true, validateImageData: false);
+
+                using var tmp = new Bitmap(img);
+
+                CorregirOrientacioExif(tmp);
+
+                var bitmap = tmp.Redimensionar(16);   
+                _Icones[fitxerImatge] = bitmap;
+                return bitmap;
+            }
+            catch
+            {
+                // Ignorar
+            }
+
+            return null;
+        }
+
+        private static void CorregirOrientacioExif(Image img)
+        {
+            const int ExifOrientationId = 0x0112;
+            if (Array.IndexOf(img.PropertyIdList, ExifOrientationId) < 0) 
+                return;
+
+            try
+            {
+                var prop = img.GetPropertyItem(ExifOrientationId);
+                if (prop.Value is { Length: > 0 })
+                {
+                    int o = prop.Value[0];
+                    switch (o)
+                    {
+                        case 3: img.RotateFlip(RotateFlipType.Rotate180FlipNone); break;
+                        case 6: img.RotateFlip(RotateFlipType.Rotate90FlipNone); break;
+                        case 8: img.RotateFlip(RotateFlipType.Rotate270FlipNone); break;
+                    }
+                }
+
+                // Evita que torni a girar si es torna a processar
+                try { img.RemovePropertyItem(ExifOrientationId); } catch { /* ignore */ }
+            }
+            catch { /* ignore */ }
         }
 
         private static Bitmap Redimensionar(this Bitmap original, int novaAlcada)
@@ -247,9 +308,11 @@ namespace Examen.Suport.Funcions
                     var nodeAplicacio = new Node(nodeCategoria, aplicacio);
                     nodeCategoria.Nodes.Add(nodeAplicacio);
                 }
+                nodeCategoria.Nodes = nodeCategoria.Nodes.OrderBy(n => n.Nom).ToList();
                 nodes.Add(nodeCategoria);
             }
 
+            nodes = nodes.OrderBy(n => n.Nom).ToList();
             return [.. nodes];
         }
     }

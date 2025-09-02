@@ -1,4 +1,5 @@
-﻿using Examen.Suport.Classes;
+﻿#nullable enable
+using Examen.Suport.Classes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System;
@@ -104,9 +105,9 @@ namespace Examen.Suport.Funcions
                 var base64 = Convert.ToBase64String(bytes);
                 return base64;
             }
-            catch (Exception ex)
+            catch
             {
-                ex.Mostrar();
+                // ignored
             }
 
             return text;
@@ -120,18 +121,21 @@ namespace Examen.Suport.Funcions
                 var text = Encoding.UTF8.GetString(bytes);
                 return text;
             }
-            catch (Exception ex)
+            catch
             {
-                ex.Mostrar();
+                // ignored
             }
 
             return base64;
         }
 
-        public static string ToBase64(this Bitmap bitmap, ImageFormat format)
+        public static string ToBase64(this Bitmap? bitmap, ImageFormat format)
         {
             try
             {
+                if (bitmap == null)
+                    return "";
+
                 using var ms = new MemoryStream();
                 bitmap.Save(ms, format);
 
@@ -139,9 +143,9 @@ namespace Examen.Suport.Funcions
 
                 return Convert.ToBase64String(imageBytes).CompressToBase64();
             }
-            catch (Exception ex)
+            catch
             {
-                ex.Mostrar();
+                // ignored
             }
 
             return "";
@@ -159,9 +163,9 @@ namespace Examen.Suport.Funcions
                 using var ms = new MemoryStream(imageBytes);
                 return new Bitmap(ms);
             }
-            catch (Exception ex)
+            catch
             {
-                ex.Mostrar();
+                // ignored
             }
 
             return Properties.Resources.Aplicacio_32x32;
