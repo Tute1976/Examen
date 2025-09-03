@@ -3,6 +3,7 @@ using Examen.Suport.Formularis;
 using Examen.Suport.Properties;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -26,20 +27,24 @@ namespace Examen.Suport.Funcions
         private static readonly Dictionary<string, Bitmap> _Icones = [];
         private static readonly Dictionary<string, string> _Descripcions = [];
 
-        public static readonly List<string> _Notificades = [];
+        public static List<AplicacioEnUs> AplicacionsEnUs { get; set; } = [];
 
         [DllImport("user32.dll")]
         private static extern bool LockWorkStation();
+
         [DllImport("kernel32.dll")]
         private static extern uint WTSGetActiveConsoleSessionId();
+
         [DllImport("shell32.dll", CharSet = CharSet.Auto)]
-        private static extern int ExtractIconEx(string lpszFile, int nIconIndex, IntPtr[] phiconLarge, IntPtr[] phiconSmall, int nIcons);
+        private static extern int ExtractIconEx(string lpszFile, int nIconIndex, IntPtr[] phiconLarge,
+            IntPtr[] phiconSmall, int nIcons);
+
         [DllImport("user32.dll", SetLastError = true)]
         private static extern bool DestroyIcon(IntPtr hIcon);
 
         public static void Pitar()
         {
-            ShowToast("Reproduint so ...", 5);
+            ShowToast("Reproduint so ...", 5, ToastType.Info);
 
             for (var i = 0; i < 5; i++)
                 Beep();
@@ -47,13 +52,13 @@ namespace Examen.Suport.Funcions
 
         public static void Bloquejar()
         {
-            ShowToast("Bloquejant ...", 5);
+            ShowToast("Bloquejant ...", 5, ToastType.Alert);
             LockWorkStation();
         }
 
         public static void Aturar()
         {
-            ShowToast("Aturant ...", 5);
+            ShowToast("Aturant ...", 5, ToastType.Alert);
 
             Beep();
 
@@ -62,9 +67,9 @@ namespace Examen.Suport.Funcions
             Executar(shutdown, arguments);
         }
 
-        public static void ShowToast(string missatge, int interval)
+        public static void ShowToast(this string missatge, int interval, ToastType toastType)
         {
-            new ToastForm(missatge, interval).Show();
+            new ToastForm(missatge, interval, toastType).Show();
         }
 
         public static void Beep()
@@ -104,15 +109,22 @@ namespace Examen.Suport.Funcions
             return false;
         }
 
+        private static bool _llistarAplicacionsEnUs;
+
         public static List<AplicacioEnUs> LlistarAplicacionsEnUs()
         {
             var ret = new List<AplicacioEnUs>();
 
             try
             {
+                if (_llistarAplicacionsEnUs)
+                    return null;
+                _llistarAplicacionsEnUs = true;
+
                 var sessionId = WTSGetActiveConsoleSessionId();
 
-                var query = $"SELECT Name, ExecutablePath, CommandLine FROM Win32_Process WHERE SessionId = {sessionId} AND Priority = 8";
+                var query =
+                    $"SELECT Name, ExecutablePath, CommandLine FROM Win32_Process WHERE SessionId = {sessionId} AND Priority = 8";
 
                 using var searcher = new ManagementObjectSearcher(query);
                 foreach (var o in searcher.Get())
@@ -147,10 +159,16 @@ namespace Examen.Suport.Funcions
                     aplicacioEnUs.Descripcio = ObtenirDescripcio(aplicacioEnUs.Executable);
                     aplicacioEnUs.Icona = ObtenirIcona(aplicacioEnUs.Executable, true) ?? Aplicacio_32x32;
                 }
+
+                AplicacionsEnUs = ret;
             }
             catch
             {
                 // Ignorar
+            }
+            finally
+            {
+                _llistarAplicacionsEnUs = false;
             }
 
             return ret;
@@ -211,7 +229,7 @@ namespace Examen.Suport.Funcions
                     else
                         return null;
                 }
-                
+
                 bitmap = bitmap.Redimensionar(16);
                 _Icones[executable] = bitmap;
 
@@ -237,7 +255,7 @@ namespace Examen.Suport.Funcions
                     return null;
 
                 using var fs = new FileStream(fitxerImatge, FileMode.Open, FileAccess.Read,
-                                              FileShare.ReadWrite | FileShare.Delete);
+                    FileShare.ReadWrite | FileShare.Delete);
 
                 using var img = Image.FromStream(fs, useEmbeddedColorManagement: true, validateImageData: false);
 
@@ -245,7 +263,7 @@ namespace Examen.Suport.Funcions
 
                 CorregirOrientacioExif(tmp);
 
-                var bitmap = tmp.Redimensionar(16);   
+                var bitmap = tmp.Redimensionar(16);
                 _Icones[fitxerImatge] = bitmap;
                 return bitmap;
             }
@@ -260,7 +278,7 @@ namespace Examen.Suport.Funcions
         private static void CorregirOrientacioExif(Image img)
         {
             const int ExifOrientationId = 0x0112;
-            if (Array.IndexOf(img.PropertyIdList, ExifOrientationId) < 0) 
+            if (Array.IndexOf(img.PropertyIdList, ExifOrientationId) < 0)
                 return;
 
             try
@@ -278,9 +296,19 @@ namespace Examen.Suport.Funcions
                 }
 
                 // Evita que torni a girar si es torna a processar
-                try { img.RemovePropertyItem(ExifOrientationId); } catch { /* ignore */ }
+                try
+                {
+                    img.RemovePropertyItem(ExifOrientationId);
+                }
+                catch
+                {
+                    /* ignore */
+                }
             }
-            catch { /* ignore */ }
+            catch
+            {
+                /* ignore */
+            }
         }
 
         private static Bitmap Redimensionar(this Bitmap original, int novaAlcada)
@@ -308,12 +336,86 @@ namespace Examen.Suport.Funcions
                     var nodeAplicacio = new Node(nodeCategoria, aplicacio);
                     nodeCategoria.Nodes.Add(nodeAplicacio);
                 }
+
                 nodeCategoria.Nodes = nodeCategoria.Nodes.OrderBy(n => n.Nom).ToList();
                 nodes.Add(nodeCategoria);
             }
 
             nodes = nodes.OrderBy(n => n.Nom).ToList();
             return [.. nodes];
+        }
+
+        public static void ReportCustomProgress(this BackgroundWorker backgroundWorker, int interval, ToastType toastType, string missatge)
+        {
+            var dictionary = new Dictionary<ToastType, string>
+            {
+                {
+                    toastType, missatge
+                }
+            };
+            backgroundWorker.ReportProgress(interval, dictionary);
+            missatge.Mostrar(MostrarIcon.Information);
+        }
+
+        private static readonly List<string> _aplicacionsNoAturades = [];
+        private static readonly List<string> _aplicacionsNoHaurienDEstar = [];
+
+        public static bool Aturar(this Aplicacio aplicacio, BackgroundWorker backgroundWorker)
+        {
+            try
+            {
+                if (aplicacio.CalAturar)
+                {
+                    var processos = Process.GetProcessesByName(aplicacio.NomExecutableCurt);
+                    var n = processos.Length;
+                    while (n > 0)
+                    {
+                        var taskKill = Environment.ExpandEnvironmentVariables(@"%WINDIR%\system32\taskkill.exe");
+                        var arguments = $"/F /IM \"{aplicacio.Executable}\" /T";
+                        if (!Executar(taskKill, arguments))
+                            break;
+
+                        processos = Process.GetProcessesByName(aplicacio.NomExecutableCurt);
+                        var nn = processos.Length;
+                        if (nn == n)
+                            break;
+                        n = nn;
+                    }
+
+                    if (n > 0)
+                    {
+                        if (!_aplicacionsNoAturades.Contains(aplicacio.Nom))
+                        {
+                            backgroundWorker.ReportCustomProgress(10, ToastType.Error, $"L'aplicació '{aplicacio.Nom}', no s'ha pogut aturar");
+                            _aplicacionsNoAturades.Add(aplicacio.Nom);
+                        }
+                    }
+                    else
+                    {
+                        backgroundWorker.ReportCustomProgress(10, ToastType.Alert, $"L'aplicación '{aplicacio.Nom}', ha estat aturada correctament.");
+                        if (_aplicacionsNoAturades.Contains(aplicacio.Nom))
+                            _aplicacionsNoAturades.Remove(aplicacio.Nom);
+                        if (_aplicacionsNoHaurienDEstar.Contains(aplicacio.Nom))
+                            _aplicacionsNoHaurienDEstar.Remove(aplicacio.Nom);
+                    }
+
+                    return n == 0;
+                }
+
+                if (!_aplicacionsNoHaurienDEstar.Contains(aplicacio.Nom))
+                {
+                    backgroundWorker.ReportCustomProgress(10, ToastType.Info, $@"L'aplicació '{aplicacio.Nom}', no hauria d'estar en ús.");
+                    _aplicacionsNoHaurienDEstar.Add(aplicacio.Nom);
+                }
+
+                return false;
+            }
+            catch (Exception ex)
+            {
+                ex.Mostrar();
+            }
+
+            return false;
         }
     }
 }

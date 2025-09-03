@@ -28,7 +28,7 @@ namespace Examen.Alumne
                                          $@"  -n, -nom: Nom de l'alumne    {nl}" +
                                          $@"  -c, -codi: Codi de l'examen    {nl}" +
                                          $@"  -?: Mostra aquesta ajuda    ";
-                    missatge.Mostrar(MessageBoxIcon.Information);
+                    missatge.Mostrar(MostrarIcon.Information);
                 }
                 else
                 {

@@ -272,7 +272,7 @@ namespace Examen.Suport.Formularis
 
         private void MenuDesar_Click(object sender, EventArgs e)
         {
-            if (!menuDesar.Enabled || @"Vols desar els canvis?".Mostrar(MessageBoxIcon.Question, MessageBoxButtons.YesNo) != DialogResult.Yes) 
+            if (!menuDesar.Enabled || @"Vols desar els canvis?".Mostrar(MostrarIcon.Question, MessageBoxButtons.YesNo) != DialogResult.Yes) 
                 return;
             
             _contenidorAplicacions.CategoriesAplicacions.Desar(_fitxer);

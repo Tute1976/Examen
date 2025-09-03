@@ -1,8 +1,10 @@
-﻿using Examen.Suport.Funcions;
+﻿using Examen.Suport.Formularis;
+using Examen.Suport.Funcions;
+using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
-using Newtonsoft.Json;
 
 namespace Examen.Suport.Classes
 {
@@ -45,49 +47,6 @@ namespace Examen.Suport.Classes
 
                 var processos = Process.GetProcessesByName(NomExecutableCurt);
                 return processos.Length > 0;
-            }
-            catch (Exception ex)
-            {
-                ex.Mostrar();
-            }
-
-            return false;
-        }
-
-        public bool Aturar(BackgroundWorker backgroundWorker)
-        {
-            try
-            {
-                if (CalAturar)
-                {
-                    var processos = Process.GetProcessesByName(NomExecutableCurt);
-                    var n = processos.Length;
-                    while (n > 0)
-                    {
-                        var taskKill = Environment.ExpandEnvironmentVariables(@"%WINDIR%\system32\taskkill.exe");
-                        var arguments = $"/F /IM \"{Executable}\" /T";
-                        if (!Helper.Executar(taskKill, arguments))
-                            break;
-
-                        processos = Process.GetProcessesByName(NomExecutableCurt);
-                        n = processos.Length;
-                    }
-
-                    var msg = n > 0
-                        ? $"L'aplicació '{Nom}', no s'ha pogut aturar correctament."
-                        : $"L'aplicación '{Nom}', ha estat aturada correctament.";
-                    backgroundWorker.ReportProgress(10, msg);
-
-                    return n == 0;
-                }
-
-                if (Helper._Notificades.Contains(Nom)) 
-                    return false;
-                
-                backgroundWorker.ReportProgress(10, $@"L'aplicació '{Nom}', no hauria d'estar en ús.");
-                Helper._Notificades.Add(Nom);
-
-                return false;
             }
             catch (Exception ex)
             {

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using Examen.Alumne.Formularis;
+using Examen.Suport.Formularis;
 
 namespace Examen.Alumne.Funcions
 {
@@ -63,33 +64,26 @@ namespace Examen.Alumne.Funcions
         {
             try
             {
-                try
+                @"Executant worker".Mostrar(MostrarIcon.Asterisk);
+
+                var deteccio = false;
+                foreach (var aplicacio in _aplicacions.Where(aplicacio => aplicacio.EnExecucio()))
                 {
-                    var deteccio = false;
-                    foreach (var aplicacio in _aplicacions.Where(aplicacio => aplicacio.EnExecucio()))
-                    {
-                        var aturada = aplicacio.Aturar(_backgroundWorker);
-                        ClientTcp.EnviarEstat(_adreçaPortProfessor, _estacioAlumne, [],
-                            TipusMissatge.Deteccio,
-                            Pitar, Bloquejar, Aturar, FiServidor, $"{aplicacio.Nom}:{aturada.SiNo()}");
+                    @$"Aplicació {aplicacio.Nom} en execució detectada, enviant ...".Mostrar(MostrarIcon.Warning);
+                    var aturada = aplicacio.Aturar(_backgroundWorker);
+                    ClientTcp.EnviarEstat(_adreçaPortProfessor, _estacioAlumne, [],
+                        TipusMissatge.Deteccio,
+                        Pitar, Bloquejar, Aturar, FiServidor, $"{aplicacio.Nom}:{aturada.SiNo()}");
 
-                        deteccio = true;
-                    }
-
-                    var aplicacionsEnUs = Helper.LlistarAplicacionsEnUs();
-                    var json = ClientTcp.EnviarEstat(_adreçaPortProfessor, _estacioAlumne, aplicacionsEnUs,
-                        deteccio ? 
-                            TipusMissatge.TempsAmbDeteccio : 
-                            TipusMissatge.Temps,
-                        Pitar, Bloquejar, Aturar, FiServidor);
-
-                    var aplicacions = json.Deserialitzar<List<Aplicacio>>();
-                    _aplicacions = aplicacions;
+                    deteccio = true;
                 }
-                catch
-                {
-                    // ignore
-                }
+
+                var tipus = deteccio ? TipusMissatge.TempsAmbDeteccio : TipusMissatge.Temps;
+                @$"Enviant missatge de tipus {tipus} ...".Mostrar(MostrarIcon.Information);
+                var json = ClientTcp.EnviarEstat(_adreçaPortProfessor, _estacioAlumne, Helper.AplicacionsEnUs, tipus, Pitar, Bloquejar, Aturar, FiServidor);
+
+                var aplicacions = json.Deserialitzar<List<Aplicacio>>();
+                _aplicacions = aplicacions;
             }
             catch (Exception ex)
             {
@@ -127,9 +121,9 @@ namespace Examen.Alumne.Funcions
                         _completat.Invoke(aplicacions);
                         break;
 
-                    case 0 when e.UserState is string missatge1:
-                        Helper.ShowToast(missatge1, 5);
-                        break;
+                    //case 0 when e.UserState is string missatge1:
+                    //    missatge1.ShowToast(5, ToastType.Info);
+                    //    break;
 
                     case 1:
                         Helper.Pitar();
@@ -148,8 +142,11 @@ namespace Examen.Alumne.Funcions
                         break;
 
                     default:
-                        if (e.UserState is string missatge2)
-                            Helper.ShowToast(missatge2, e.ProgressPercentage);
+                        if (e.UserState is Dictionary<ToastType, string> missatge2)
+                        {
+                            var missatge3 = missatge2.First();
+                            missatge3.Value.ShowToast(e.ProgressPercentage, missatge3.Key);
+                        }
                         break;
                 }
             }

@@ -37,7 +37,7 @@ namespace Examen.Suport.Classes
 
         [JsonIgnore]
         [Browsable(false)] 
-        protected string NomExecutableCurt => string.Join(".", ExecutableCurt.Split('.').Reverse().Skip(1).Reverse());
+        protected internal string NomExecutableCurt => string.Join(".", ExecutableCurt.Split('.').Reverse().Skip(1).Reverse());
 
         [Browsable(false)]
         public string ImatgeEnBase64 { get; set; }

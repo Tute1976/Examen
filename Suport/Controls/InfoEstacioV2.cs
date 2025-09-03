@@ -90,7 +90,7 @@ namespace Examen.Suport.Controls
             var txt = $"Estat:{nl}    {_estat}   " + nl + nl +
                       $"Informació: {_informacio}   " + nl +
                       $"Identificador de la sessió: {EstacioAlumne.Id}   ";
-            txt.Mostrar(MessageBoxIcon.Information);
+            txt.Mostrar(MostrarIcon.Information);
         }
 
         private void BTancar_Click(object sender, EventArgs e)
@@ -110,7 +110,7 @@ namespace Examen.Suport.Controls
             else
             {
                 bBloquejar.Checked =
-                    $"Vols bloquejar l'estació {txtEstacio.Text} ?".Mostrar(MessageBoxIcon.Question,
+                    $"Vols bloquejar l'estació {txtEstacio.Text} ?".Mostrar(MostrarIcon.Question,
                         MessageBoxButtons.YesNo) == DialogResult.Yes;
             }
         }
@@ -122,7 +122,7 @@ namespace Examen.Suport.Controls
             else
             {
                 bAturar.Checked =
-                    $"Vols aturar l'estació {txtEstacio.Text} ?".Mostrar(MessageBoxIcon.Question,
+                    $"Vols aturar l'estació {txtEstacio.Text} ?".Mostrar(MostrarIcon.Question,
                         MessageBoxButtons.YesNo) == DialogResult.Yes;
             }
         }

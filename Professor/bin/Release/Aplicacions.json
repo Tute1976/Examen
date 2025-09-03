@@ -30,6 +30,14 @@
     "Ignorar": false,
     "Aplicacions": [
       {
+        "CalAturar": true,
+        "Ignorar": true,
+        "Nom": "AnyDesk",
+        "Descripcio": "AnyDesk",
+        "Executable": "C:\\Program Files (x86)\\AnyDesk\\AnyDesk.exe",
+        "ImatgeEnBase64": "H4sIAAAAAAAEAB2Tt7KzShCEH4gAJ4yCG7CwWAnvRIZAeC9ggaf/dW4n8/VMddUkXYfAchFhKOUo/GR6QQWD8kfgzwqOKLz+ZsHj9+oPgJIDP4CC8FBsET8q4PxtO+TJ3fUDCyFBkL5PcFDYmPyd6rvuQjmwIBa23boEJHSqwtzruTKpLcna6YQD3NKbQMowiL51DWrwCxQ3365nEGG9dLiOs4aigxnjA3dcp3CVI4QgZJP9NXwJTMTWUkLURQ1LbF36FBr47vr+RzsYQ7HQZCJOfdxoZb2eGq1ajTg/6IsyP53ed9clApHYUstZn3KknZPnpmYUoSYqXHy1Vs0mxFOxWqI1GTF/p7QJfR9qs0YtCfm0UPl5NS1MNFWdxUGqLYkSbPKSZKITxTvoHnBvuUvUFmrSLJBHAtTcx+bM9xz1JIZSatV0guU2clEUvtzjvqVwQPZNWH39eNWgcpaSkTnpPUMqnSf2zGBc4U6pjTDX3g5/8YbAZnmq2jSmVFK/6iloeGBYGmPj3uEYB8QmhOebfLPm0PAWzLm98xOzUjCk9HEQlt8zIWnLVNVNdwb9qYsuM6JlIHVc4nR6OTVznvC7DWaNJphJrKt8feHE9xQ+vwDXhBsO7iJH8nv1SFxwPEmqzGWg/v6KWZGrzeSI9QMvRtazbp2/IxZ92EK7nT1Uz02em9qrmNgehLy/taeHztRSo3BVHh5R8wAvkBBPd8Xp6PC+G87iITN7B+vw9L/+86hBOyzw8qnx22Y0Q71Zr3Wibln3rHYb+40WT5odjJfPecB84AlsAKZE5kYiCj4vqeczR8U/ycMdu4GUfIGKr0+awj3o+Gw0B+JqUXArx+YJVO7m7ZTOsKaTrQXWnERs07JpLJa8EXOP3pI08EIW942CpIhY0P/l8YLQcg1GfGnaf/8AiiN0JmgDAAA="
+      },
+      {
         "CalAturar": false,
         "Ignorar": true,
         "Nom": "ARTICONS.exe",
@@ -52,14 +60,6 @@
         "Descripcio": "Aplicació de missatgeria instantània",
         "Executable": "WhatsApp.exe",
         "ImatgeEnBase64": "H4sIAAAAAAAEAB2Ty7KySgyFH8gBLYrA4AxooBFQkUuDMEOQ5n5nA/30v55M1pekUquSqhQ+tJwVmBrppG88XJyrmHwJ/lLJlqXwp5nAiPkPoJZCD6uSdNOeMrPl0P5V69VFNf2Cta6SpEx3uLGHLvq1WmQ4KsKWKh5xNXdIVe02LAvIIEU12KXta9QV5eBm0mDK21DLNn9KLbpQjV9mlCBbMNQcrIv4pGyw77B8OZVB/YmvYuBKekGSfLtA+akTvSPp8/b2t9QpwSnus+NlGfyL3zOCtJTsAQXGrmG0X+2HnavFQzNuBmi1o8UAtpQo4wXXlfbCn9nIa6eRuvZg6G+5zL92uI6D6wUz4egtVW4wpMmGUeUTdc/yxfRuKn8AIArOf+Kr+TiLUUcNZ4MkT8GNpQHDNR/xfJHvmMaXeNIt+VVNRh9KWUDOiwmf1GjBR4zJoZxqriZb4TUtcNd5P0Sa7vb3eIk+4RWlXgiMPu+ye2pcF2ioZfBOWaZ7jBsDoMzkoczUlXKidUl7178t4GPcYSsc4lTCr3Ec9CN3ki6TzXYTUQGaFy7GK0aSI86qr2e530JDmAOf6zEdNuVj3pjkPWcDdnY3IalhH8H7rhQx1yTO8jjZB4B9kus8m14Sm6XakHlTRkeb05JErDyYz1X9ju7xMxrZUnmlHB2YhPw1aq6VIxqXuC+dcpzTFYaHQQCt9x2OLUcxP6MpP1m/jc3nXpXeto/nY4P9hlpw+BvXZi3KOsX58DHOnmX21wmlnII758Lxfffy9mqKZ5soUXJC4SnJpcu+Kesxja54tDJVqA4xHkdXGoCdJFFzzXjvLJ+irxHvzOeH4LXfVVvSKYyuXN5OdjtjVhSDQvqefCiP9YbUpPrMG28rV9szkFA864PkXncEro1y3waY2eWjj/SUJFJEqkJYhc4ucBZz8f2dkYVoQYAGwY2KuxAUlp3R11RHmOYG6cxTEofbwvHaCM1peGQv8SnAz8Pp2+r/p3SxbzkmJ4e6/t8/V5dmx8ADAAA="
-      },
-      {
-        "CalAturar": true,
-        "Ignorar": false,
-        "Nom": "AnyDesk",
-        "Descripcio": "AnyDesk",
-        "Executable": "C:\\Program Files (x86)\\AnyDesk\\AnyDesk.exe",
-        "ImatgeEnBase64": "H4sIAAAAAAAEAB2Tt7KrQBBEP4hAIOE2XJzwCCsgwy5GXLz9+ie9SWb6VHdVJ1MHnOXsuPZEPfyO6fqV6KPvxf0ktHkY/XbJ3kD1n4Sm6+AKnGYyo+0fcP5sn/i6+aPZNzay/R9UM7GKsx1CYTa+khFglm/j8xdQNtd3uECoXp9YTRPCdEQlvFJy7L186kJVyyr10LsVmo4jSZPSowh9AyEmXuSIgm1ArO+LemC3r3rkb7joy7gzBw4Mii69q4z5QtsUQdacwUAT13wmgbsxuI8/aqNwq2bWvMw6Tsw8puzizePq97EGLGjCwY2HjN2Rvehd0+oeF9TG6LfvJvjMCvGHl4w3uQKAc9UMpioU9t/7vlyOiB+8VpvjPfeEWZE7heKeLnfQaNjJBgEkgGw/ctVGmx27h05Z7F5rYHQFFAaI40WXabUtzNSlnJ/L5PK5tTJLclSbohPUYG57HvdElIoE43Lc3MPzT3xuocGBx9uj13J94Mm7YV+tx8w+jQ+EgG1mn9ZWxHUtGS8V36KYJs9pvROJRJg6krIOvLEmJm9CJRcM5d+9yNlmbvgQUqQbXZ5fjXMwta+eHm+3RWJoFHDLHTtzmq2FZCxv3p7UJrASu+/D9P0CuoHkqfYtkki3vbRXUOqke/ftzDPzXnZs59tLwtBKNu8sOLPyQVtts6o+w1qzvP6dljFUHDtVSU+2fRFc1C7Hq2q0s9E1FfFJnRpflA2WDxZKdOm0ak6U6dlq+CyET0KPL5ERLyNCsUofBg5GXZVNLO+wdhClIWHSh9JG153VcES3r43LxuHW7j6yPjB5OwVtSh+5g9Qmi9zt0bl4osbAxnfzwz66rtIJtZQ1IQYGZUiWoikXdDBMnEBdFI0v6+GtZxfpAofnjleVLtowP/edukFZovpjhsSisf9/R/xIXuuudsfz/wCeHYaveAMAAA=="
       }
     ]
   },

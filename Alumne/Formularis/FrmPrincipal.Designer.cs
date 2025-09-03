@@ -36,19 +36,20 @@
             this.txtNom = new System.Windows.Forms.TextBox();
             this.lNom = new System.Windows.Forms.Label();
             this.panelFons = new System.Windows.Forms.Panel();
+            this.bInfo = new System.Windows.Forms.Button();
+            this.bTancar = new System.Windows.Forms.Button();
+            this.bIniciar = new System.Windows.Forms.Button();
+            this.imatge = new System.Windows.Forms.PictureBox();
             this.timerTemps = new System.Windows.Forms.Timer(this.components);
             this.timerImatge = new System.Windows.Forms.Timer(this.components);
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.txtId = new System.Windows.Forms.Label();
             this.panelInfo = new System.Windows.Forms.Panel();
             this.txtVersio = new System.Windows.Forms.Label();
-            this.bInfo = new System.Windows.Forms.Button();
-            this.bTancar = new System.Windows.Forms.Button();
-            this.bIniciar = new System.Windows.Forms.Button();
-            this.imatge = new System.Windows.Forms.PictureBox();
+            this.timerAplicacionsEnUs = new System.Windows.Forms.Timer(this.components);
             this.panelFons.SuspendLayout();
-            this.panelInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imatge)).BeginInit();
+            this.panelInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // imatgesConnecta
@@ -131,6 +132,67 @@
             this.panelFons.Size = new System.Drawing.Size(490, 437);
             this.panelFons.TabIndex = 7;
             // 
+            // bInfo
+            // 
+            this.bInfo.BackColor = System.Drawing.Color.LightCyan;
+            this.bInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bInfo.Image = global::Examen.Alumne.Properties.Resources.Informacio_32x32;
+            this.bInfo.Location = new System.Drawing.Point(425, 375);
+            this.bInfo.Name = "bInfo";
+            this.bInfo.Size = new System.Drawing.Size(50, 50);
+            this.bInfo.TabIndex = 4;
+            this.bInfo.UseVisualStyleBackColor = false;
+            this.bInfo.Visible = false;
+            this.bInfo.Click += new System.EventHandler(this.BInfo_Click);
+            // 
+            // bTancar
+            // 
+            this.bTancar.BackColor = System.Drawing.Color.MistyRose;
+            this.bTancar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bTancar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bTancar.Image = global::Examen.Alumne.Properties.Resources.Cancel_32x32;
+            this.bTancar.Location = new System.Drawing.Point(300, 375);
+            this.bTancar.Name = "bTancar";
+            this.bTancar.Size = new System.Drawing.Size(175, 50);
+            this.bTancar.TabIndex = 3;
+            this.bTancar.Text = "Tancar";
+            this.bTancar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bTancar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bTancar.UseVisualStyleBackColor = false;
+            this.bTancar.Click += new System.EventHandler(this.BTancar_Click);
+            // 
+            // bIniciar
+            // 
+            this.bIniciar.BackColor = System.Drawing.Color.LightYellow;
+            this.bIniciar.Enabled = false;
+            this.bIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bIniciar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bIniciar.Image = global::Examen.Alumne.Properties.Resources.Validation_32x32;
+            this.bIniciar.Location = new System.Drawing.Point(20, 375);
+            this.bIniciar.Margin = new System.Windows.Forms.Padding(0);
+            this.bIniciar.Name = "bIniciar";
+            this.bIniciar.Size = new System.Drawing.Size(250, 50);
+            this.bIniciar.TabIndex = 2;
+            this.bIniciar.Text = "Connectar";
+            this.bIniciar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bIniciar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bIniciar.UseVisualStyleBackColor = false;
+            this.bIniciar.Click += new System.EventHandler(this.BIniciar_Click);
+            // 
+            // imatge
+            // 
+            this.imatge.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.imatge.Image = global::Examen.Alumne.Properties.Resources.Connectant;
+            this.imatge.Location = new System.Drawing.Point(100, 25);
+            this.imatge.Margin = new System.Windows.Forms.Padding(0);
+            this.imatge.Name = "imatge";
+            this.imatge.Size = new System.Drawing.Size(300, 150);
+            this.imatge.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imatge.TabIndex = 0;
+            this.imatge.TabStop = false;
+            this.imatge.Tag = "0";
+            // 
             // timerTemps
             // 
             this.timerTemps.Interval = 5000;
@@ -182,66 +244,10 @@
             this.txtVersio.Text = "versio";
             this.txtVersio.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
-            // bInfo
+            // timerAplicacionsEnUs
             // 
-            this.bInfo.BackColor = System.Drawing.Color.LightCyan;
-            this.bInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bInfo.Image = global::Examen.Alumne.Properties.Resources.Informacio_32x32;
-            this.bInfo.Location = new System.Drawing.Point(425, 375);
-            this.bInfo.Name = "bInfo";
-            this.bInfo.Size = new System.Drawing.Size(50, 50);
-            this.bInfo.TabIndex = 4;
-            this.bInfo.UseVisualStyleBackColor = false;
-            this.bInfo.Visible = false;
-            this.bInfo.Click += new System.EventHandler(this.BInfo_Click);
-            // 
-            // bTancar
-            // 
-            this.bTancar.BackColor = System.Drawing.Color.MistyRose;
-            this.bTancar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bTancar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bTancar.Image = global::Examen.Alumne.Properties.Resources.Cancel_32x32;
-            this.bTancar.Location = new System.Drawing.Point(325, 375);
-            this.bTancar.Name = "bTancar";
-            this.bTancar.Size = new System.Drawing.Size(150, 50);
-            this.bTancar.TabIndex = 3;
-            this.bTancar.Text = "Tancar";
-            this.bTancar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bTancar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.bTancar.UseVisualStyleBackColor = false;
-            this.bTancar.Click += new System.EventHandler(this.BTancar_Click);
-            // 
-            // bIniciar
-            // 
-            this.bIniciar.BackColor = System.Drawing.Color.LightYellow;
-            this.bIniciar.Enabled = false;
-            this.bIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bIniciar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bIniciar.Image = global::Examen.Alumne.Properties.Resources.Validation_32x32;
-            this.bIniciar.Location = new System.Drawing.Point(20, 375);
-            this.bIniciar.Margin = new System.Windows.Forms.Padding(0);
-            this.bIniciar.Name = "bIniciar";
-            this.bIniciar.Size = new System.Drawing.Size(250, 50);
-            this.bIniciar.TabIndex = 2;
-            this.bIniciar.Text = "Connectar";
-            this.bIniciar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bIniciar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.bIniciar.UseVisualStyleBackColor = false;
-            this.bIniciar.Click += new System.EventHandler(this.BIniciar_Click);
-            // 
-            // imatge
-            // 
-            this.imatge.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.imatge.Image = global::Examen.Alumne.Properties.Resources.Connectant;
-            this.imatge.Location = new System.Drawing.Point(100, 25);
-            this.imatge.Margin = new System.Windows.Forms.Padding(0);
-            this.imatge.Name = "imatge";
-            this.imatge.Size = new System.Drawing.Size(300, 150);
-            this.imatge.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imatge.TabIndex = 0;
-            this.imatge.TabStop = false;
-            this.imatge.Tag = "0";
+            this.timerAplicacionsEnUs.Interval = 60000;
+            this.timerAplicacionsEnUs.Tick += new System.EventHandler(this.TimerAplicacionsEnUs_Tick);
             // 
             // FrmPrincipal
             // 
@@ -262,8 +268,8 @@
             this.Shown += new System.EventHandler(this.FrmPrincipal_Shown);
             this.panelFons.ResumeLayout(false);
             this.panelFons.PerformLayout();
-            this.panelInfo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imatge)).EndInit();
+            this.panelInfo.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -286,6 +292,7 @@
         private System.Windows.Forms.Label txtId;
         private System.Windows.Forms.Panel panelInfo;
         private System.Windows.Forms.Label txtVersio;
+        private System.Windows.Forms.Timer timerAplicacionsEnUs;
     }
 }
 

@@ -32,5 +32,23 @@ namespace Examen.Suport.Properties {
                 return ((string)(this["SyncfusionLicense"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        public int TimeOut {
+            get {
+                return ((int)(this["TimeOut"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool Traces {
+            get {
+                return ((bool)(this["Traces"]));
+            }
+        }
     }
 }

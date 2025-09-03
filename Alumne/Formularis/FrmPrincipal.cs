@@ -20,6 +20,8 @@ namespace Examen.Alumne.Formularis
         private readonly string _nom;
         private readonly string _codi;
 
+        private DateTime _marcaDeTemps = DateTime.Now;
+
         public FrmPrincipal(string nom, string codi)
         {
             _nom = nom;
@@ -95,7 +97,7 @@ namespace Examen.Alumne.Formularis
                     }
                     else
                     {
-                        @"El codi no és vàlid, o el servidor no està disponible".Mostrar(MessageBoxIcon.Error, MessageBoxButtons.OK, true);
+                        @"El codi no és vàlid, o el servidor no està disponible".Mostrar(MostrarIcon.Error, MessageBoxButtons.OK, true);
 
                         bIniciar.Text = @"Connectar";
                         bIniciar.Image = Properties.Resources.Validation_32x32;
@@ -120,8 +122,7 @@ namespace Examen.Alumne.Formularis
                     bTancar.Left -= 75;
                     bInfo.Show();
 
-                    var aplicacionsEnUs = Helper.LlistarAplicacionsEnUs();
-                    var json = ClientTcp.EnviarEstat(AdreçaPortProfessor, EstacioAlumne, aplicacionsEnUs, TipusMissatge.Inici, Helper.Pitar, Helper.Bloquejar, Helper.Aturar, FiServidor);
+                    var json = ClientTcp.EnviarEstat(AdreçaPortProfessor, EstacioAlumne, Helper.AplicacionsEnUs, TipusMissatge.Inici, Helper.Pitar, Helper.Bloquejar, Helper.Aturar, FiServidor);
                     Aplicacions = json.Deserialitzar<List<Aplicacio>>();
 
                     timerTemps.Interval = Properties.Settings.Default.IntevarvalTemps * 1000;
@@ -129,6 +130,8 @@ namespace Examen.Alumne.Formularis
                     timerImatge.Start();
 
                     notifyIcon.Visible = true;
+
+                    TimerAplicacionsEnUs_Tick(null, null);
                 }
             }
             catch (Exception ex)
@@ -177,14 +180,14 @@ namespace Examen.Alumne.Formularis
 
         private void BInfo_Click(object sender, EventArgs e)
         {
-            var aplicacions = Aplicacions.Where(a => !a.Ignorar).Select(a => a.ToString()).ToList();
+            var aplicacions = Aplicacions.Where(a => !a.Ignorar).Where(a => !string.IsNullOrEmpty(a.Nom)).Select(a => a.ToString()).ToList();
             if (aplicacions.Count == 0)
                 aplicacions.Add(@"No hi ha aplicacions bloquejades");
 
             var nl = Environment.NewLine;
             var txt = $"Aplicacions bloquedades:{nl}{nl}{string.Join($"{nl}", aplicacions.Select(a => $"    {a}    "))}";
 
-            txt.Mostrar(MessageBoxIcon.Information);
+            txt.Mostrar(MostrarIcon.Information);
         }
 
         public void FiServidor()
@@ -219,6 +222,25 @@ namespace Examen.Alumne.Formularis
                 if (bIniciar.Text.Equals(@"Amagar"))
                     BIniciar_Click(bIniciar, EventArgs.Empty);
             }
+        }
+
+        private void TimerAplicacionsEnUs_Tick(object sender, EventArgs e)
+        {
+            timerAplicacionsEnUs.Stop();
+            timerAplicacionsEnUs.Enabled = false;
+
+            var marcaDeTemps = DateTime.Now;
+            _ = new WorkerAplicacionsEnUs(() =>
+            {
+                var marcaDeTempsFinal = DateTime.Now;
+                var temps = marcaDeTempsFinal - marcaDeTemps;
+                var tempsTotal = marcaDeTempsFinal - _marcaDeTemps;
+                $@"Lectura d'aplicacions finalitzada: {Helper.AplicacionsEnUs.Count} (Durada: {temps.ToNaturalString()} | Darrera: {tempsTotal.ToNaturalString()})".Mostrar(MostrarIcon.Information);
+                _marcaDeTemps = DateTime.Now;
+
+                timerAplicacionsEnUs.Enabled = true;
+                timerAplicacionsEnUs.Start();
+            });
         }
     }
 }

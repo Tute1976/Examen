@@ -1,4 +1,4 @@
-﻿using System; 
+﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
 using Examen.Suport.Controls;
@@ -6,9 +6,15 @@ using Examen.Suport.Funcions;
 
 namespace Examen.Suport.Formularis
 {
+    public enum ToastType
+    {
+        Info,
+        Alert,
+        Error
+    }
     public sealed partial class ToastForm : FormAdv
     {
-        public ToastForm(string missatge, int interval)
+        public ToastForm(string missatge, int interval, ToastType toastType)
         {
             // Ocultar
             Visible = false;
@@ -28,6 +34,13 @@ namespace Examen.Suport.Formularis
             progressBar.Value = 1;
             progressBar.Step = 1;
             progressBar.Hide();
+
+            BackColor = toastType switch
+            {
+                ToastType.Alert => Color.LightYellow,
+                ToastType.Error => Color.LightCoral,
+                _ => Color.LightBlue
+            };
         }
 
         private void timerInici_Tick(object sender, EventArgs e)
@@ -68,6 +81,17 @@ namespace Examen.Suport.Formularis
         private void BCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void ToastForm_Shown(object sender, EventArgs e)
+        {
+            Opacity = 1;
+        }
+
+        private void BCopiar_Click(object sender, EventArgs e)
+        {
+            Clipboard.Clear();
+            Clipboard.SetText(lMissatge.Text);
         }
     }
 }

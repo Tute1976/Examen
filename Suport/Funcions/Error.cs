@@ -4,11 +4,25 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
 namespace Examen.Suport.Funcions
 {
+    public enum MostrarIcon
+    {
+        None,
+        Error,
+        Hand,
+        Stop,
+        Question,
+        Exclamation,
+        Warning,
+        Asterisk,
+        Information
+    }
+
     public static class Error
     {
         static Error()
@@ -26,26 +40,30 @@ namespace Examen.Suport.Funcions
             MessageBoxAdv.MessageBoxStyle = MessageBoxAdv.Style.Metro;
         }
 
-        public static DialogResult Mostrar(this string missatge, MessageBoxIcon icona, MessageBoxButtons botons = MessageBoxButtons.OK, bool mostrarMissatge = false)
+        public static DialogResult Mostrar(this string missatge, MostrarIcon icona, MessageBoxButtons botons = MessageBoxButtons.OK, bool mostrarMissatge = false)
         {
             try
             {
-                mostrarMissatge = mostrarMissatge | (icona != MessageBoxIcon.Error);
+                mostrarMissatge |= icona == MostrarIcon.Question || botons != MessageBoxButtons.OK;
                 var nl = Environment.NewLine;
+
+                var nomAplicacio = Process.GetCurrentProcess().MainModule?.ModuleName ?? ".";
+                nomAplicacio = string.Join(".", nomAplicacio.Split('.').Reverse().Skip(1).Reverse());
 
                 Trace.AutoFlush = true;
                 var mm = missatge.Replace(nl, "^").Replace("^^", "^").Split('^');
                 var tt = new List<string>();
                 foreach (var m in mm)
                 {
-                    Trace.WriteLine($@"Examen {DateTime.Now:G} [{icona}]: {m}");
-                    tt.Add($@"{DateTime.Now:G} [{icona}]: {m}{nl}");
+                    Trace.WriteLine($@"Examen.{nomAplicacio} {DateTime.Now:G} [{icona.ToString()}]: {m}");
+                    tt.Add($@"{DateTime.Now:G} [{icona.ToString()}]: {m}{nl}");
                 }
-                EscriuFitxer(tt.ToArray());
+                if (Properties.Settings.Default.Traces)
+                    EscriuFitxer(tt.ToArray());
 
                 return !mostrarMissatge ? 
                     DialogResult.None : 
-                    MessageBoxAdv.Show(missatge, Application.ProductName, botons, icona);
+                    MessageBoxAdv.Show(missatge, Application.ProductName, botons, icona.Icona());
             }
             catch
             {
@@ -53,6 +71,20 @@ namespace Examen.Suport.Funcions
             }
 
             return DialogResult.None;
+        }
+
+        public static void Mostrar(this Exception ex, bool mostrarMissatge = false)
+        {
+            try
+            {
+                var nl = Environment.NewLine;
+                var missatge = $"S'ha produït un error: {ex.Message}{nl}{nl}Detalls: {ex.StackTrace}";
+                missatge.Mostrar(MostrarIcon.Error, MessageBoxButtons.OK, mostrarMissatge);
+            }
+            catch
+            {
+                // ignore any error in the logging process
+            }
         }
 
         private static void EscriuFitxer(string[] missatge)
@@ -68,18 +100,9 @@ namespace Examen.Suport.Funcions
             }
         }
 
-        public static void Mostrar(this Exception ex, bool mostrarMissatge = false)
+        private static MessageBoxIcon Icona(this MostrarIcon mostrarIcon)
         {
-            try
-            {
-                var nl = Environment.NewLine;
-                var missatge = $"S'ha produït un error: {ex.Message}{nl}{nl}Detalls: {ex.StackTrace}";
-                missatge.Mostrar(MessageBoxIcon.Error, MessageBoxButtons.OK, mostrarMissatge);
-            }
-            catch
-            {
-                // ignore any error in the logging process
-            }
+            return (MessageBoxIcon)Enum.Parse(typeof(MessageBoxIcon), mostrarIcon.ToString());
         }
     }
 }

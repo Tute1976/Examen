@@ -84,7 +84,7 @@ namespace Examen.Professor.Formularis
                     ServidorTcp.Iniciar(adreçaPort, GestorEstat, Callback);
                 }
                 else
-                    @"No s'ha pogut generar el Codi".Mostrar(MessageBoxIcon.Error, MessageBoxButtons.OK, true);
+                    @"No s'ha pogut generar el Codi".Mostrar(MostrarIcon.Error, MessageBoxButtons.OK, true);
             }
             catch (Exception ex)
             {
@@ -115,6 +115,7 @@ namespace Examen.Professor.Formularis
                             estacioAlumne.DataDarreraConnexio = DateTime.Now;
 
                             estat = @"Connexió";
+                            $@"Estació {estacioAlumne.Estacio} connectada.".Mostrar(MostrarIcon.Information);
 
                             AfegirItem(estacioAlumne, 1, Color.Green, estat);
 
@@ -134,6 +135,7 @@ namespace Examen.Professor.Formularis
 
                         case TipusMissatge.Fi:
                             estat = @"Estació desconectada manualment";
+                            $@"Estació {estacioAlumne.Estacio} desconectada manualment.".Mostrar(MostrarIcon.Information);
 
                             AfegirItem(estacioAlumne, 2, Color.Blue, estat);
 
@@ -162,6 +164,7 @@ namespace Examen.Professor.Formularis
                         case TipusMissatge.Deteccio:
                             var tt = text.Split(':');
                             estat = $"Aplicació '{tt.First()}' (Aturada: {tt.Last()})";
+                            $@"{estat} en l'estació {estacioAlumne.Estacio}.".Mostrar(MostrarIcon.Warning);
 
                             AfegirItem(estacioAlumne, 3, Color.Red, estat);
 
@@ -196,12 +199,15 @@ namespace Examen.Professor.Formularis
                                 .FirstOrDefault(x => x.Tag.Equals(estacioAlumne.Id));
                             if (infoEstacio != null)
                             {
+                                if (infoEstacio.Color != Colors.Defecte && infoEstacio.Color != Colors.Correcte)
+                                    $@"{estat} en l'estació {estacioAlumne.Estacio}.".Mostrar(MostrarIcon.Information);
+
                                 infoEstacio.Imatge = 0;
                                 infoEstacio.Data = DateTime.Now;
                                 infoEstacio.Estat = estat;
-                                infoEstacio.Color = infoEstacio.Color == Colors.Defecte ?
-                                    Colors.Blau : 
-                                    Colors.Blanc;
+                                infoEstacio.Color = infoEstacio.Color != Colors.Defecte && infoEstacio.Color != Colors.Correcte ?
+                                    Colors.Correcte : 
+                                    Colors.Defecte;
                                 infoEstacio.Pitar = false;
                                 infoEstacio.Bloquejar = false;
                                 infoEstacio.Aturar = false;
@@ -213,6 +219,7 @@ namespace Examen.Professor.Formularis
 
                         case TipusMissatge.FiServidor:
                             estat = @"Desconnexió servidor";
+                            estat.Mostrar(MostrarIcon.Information);
 
                             AfegirItem(estacioAlumne, 2, Color.Blue, estat);
 
@@ -368,7 +375,7 @@ namespace Examen.Professor.Formularis
             var nl = Environment.NewLine;
             var txts = string.Join($"{nl}", linies);
             txt = $"{txts}{nl}{nl}{nl}Vols copiar el text al portapapers?";
-            if (txt.Mostrar(MessageBoxIcon.Question, MessageBoxButtons.YesNo) != DialogResult.Yes)
+            if (txt.Mostrar(MostrarIcon.Question, MessageBoxButtons.YesNo) != DialogResult.Yes)
                 return;
 
             Clipboard.SetText(txts);
@@ -460,6 +467,9 @@ namespace Examen.Professor.Formularis
                 {
                     const string estat = @"Estació desconectada";
 
+                    if (!infoEstacio.Estat.Equals(estat))
+                        $@"Estació {infoEstacio.EstacioAlumne.Estacio} desconectada.".Mostrar(MostrarIcon.Warning);
+
                     AfegirItem(infoEstacio.EstacioAlumne, 3, Color.Coral, estat);
 
                     infoEstacio.Imatge = Imatge.Atencio;
@@ -547,13 +557,13 @@ namespace Examen.Professor.Formularis
 
         private void BSortir_Click(object sender, EventArgs e)
         {
-            if ("Vols finalitzar el programa?".Mostrar(MessageBoxIcon.Question, MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if ("Vols finalitzar el programa?".Mostrar(MostrarIcon.Question, MessageBoxButtons.YesNo, true) == DialogResult.Yes)
             {
                 _fi = true;
                 Enabled = false;
                 timerTancar.Start();
 
-                Helper.ShowToast("Desconnectant alumnes i tancant ...", 15);
+                "Desconnectant alumnes i tancant ...".ShowToast(15, ToastType.Info);
             }
         }
 
@@ -578,6 +588,8 @@ namespace Examen.Professor.Formularis
 
         private void BStartStop_Click(object sender, EventArgs e)
         {
+            bStartStop.Text.Mostrar(MostrarIcon.Information);
+
             if (bStartStop.Tag is string s &&
                 bool.TryParse(s, out var start) &&
                 start)

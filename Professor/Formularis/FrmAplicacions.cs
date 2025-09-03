@@ -129,7 +129,7 @@ namespace Examen.Professor.Formularis
                 {
                     var aplicacions = Examen.Suport.Funcions.Text.Llegir(openFileDialog.FileName);
 
-                    var ret = @"Vols importar la llista d'aplicacions (Sí) o subtituïr-la (No)?".Mostrar(MessageBoxIcon.Question,
+                    var ret = @"Vols importar la llista d'aplicacions (Sí) o subtituïr-la (No)?".Mostrar(MostrarIcon.Question,
                         MessageBoxButtons.YesNoCancel);
                     switch (ret)
                     {
@@ -263,7 +263,7 @@ namespace Examen.Professor.Formularis
 
             if (node.EsAplicacio)
             {
-                if (@"Vols esborrar l'aplicació seleccionada?".Mostrar(MessageBoxIcon.Question, MessageBoxButtons.YesNo) != DialogResult.Yes)
+                if (@"Vols esborrar l'aplicació seleccionada?".Mostrar(MostrarIcon.Question, MessageBoxButtons.YesNo) != DialogResult.Yes)
                     return;
 
                 var nodePare = node.Pare;
@@ -278,7 +278,7 @@ namespace Examen.Professor.Formularis
             }
             else
             {
-                if (@"Vols esborrar la categoria seleccionada?".Mostrar(MessageBoxIcon.Question, MessageBoxButtons.YesNo) != DialogResult.Yes)
+                if (@"Vols esborrar la categoria seleccionada?".Mostrar(MostrarIcon.Question, MessageBoxButtons.YesNo) != DialogResult.Yes)
                     return;
 
                 llista.RemoveObject(node);

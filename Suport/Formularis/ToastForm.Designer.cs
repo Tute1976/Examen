@@ -46,6 +46,7 @@ namespace Examen.Suport.Formularis
             this.panel1 = new System.Windows.Forms.Panel();
             this.menu = new System.Windows.Forms.ToolStrip();
             this.bCancelar = new System.Windows.Forms.ToolStripButton();
+            this.bCopiar = new System.Windows.Forms.ToolStripButton();
             this.lTitol = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.progressBar)).BeginInit();
             this.menu.SuspendLayout();
@@ -57,7 +58,7 @@ namespace Examen.Suport.Formularis
             this.lMissatge.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lMissatge.Location = new System.Drawing.Point(15, 42);
             this.lMissatge.Name = "lMissatge";
-            this.lMissatge.Size = new System.Drawing.Size(432, 120);
+            this.lMissatge.Size = new System.Drawing.Size(432, 170);
             this.lMissatge.TabIndex = 0;
             this.lMissatge.Text = ".";
             this.lMissatge.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -82,7 +83,7 @@ namespace Examen.Suport.Formularis
             this.progressBar.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.progressBar.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.progressBar.ForegroundImage = null;
-            this.progressBar.Location = new System.Drawing.Point(15, 162);
+            this.progressBar.Location = new System.Drawing.Point(15, 212);
             this.progressBar.MultipleColors = new System.Drawing.Color[] {
         System.Drawing.Color.Empty};
             this.progressBar.Name = "progressBar";
@@ -102,7 +103,7 @@ namespace Examen.Suport.Formularis
             this.panel1.Location = new System.Drawing.Point(447, 10);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 175);
+            this.panel1.Size = new System.Drawing.Size(10, 225);
             this.panel1.TabIndex = 4;
             // 
             // menu
@@ -113,11 +114,12 @@ namespace Examen.Suport.Formularis
             this.menu.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.menu.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bCancelar});
+            this.bCancelar,
+            this.bCopiar});
             this.menu.Location = new System.Drawing.Point(457, 10);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(0);
-            this.menu.Size = new System.Drawing.Size(28, 175);
+            this.menu.Size = new System.Drawing.Size(28, 225);
             this.menu.TabIndex = 3;
             // 
             // bCancelar
@@ -130,6 +132,16 @@ namespace Examen.Suport.Formularis
             this.bCancelar.Size = new System.Drawing.Size(27, 28);
             this.bCancelar.Text = "Cancelar";
             this.bCancelar.Click += new System.EventHandler(this.BCancelar_Click);
+            // 
+            // bCopiar
+            // 
+            this.bCopiar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bCopiar.Image = global::Examen.Suport.Properties.Resources.Copiar_32x32;
+            this.bCopiar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bCopiar.Name = "bCopiar";
+            this.bCopiar.Size = new System.Drawing.Size(27, 28);
+            this.bCopiar.Text = "Copiar missatge";
+            this.bCopiar.Click += new System.EventHandler(this.BCopiar_Click);
             // 
             // lTitol
             // 
@@ -148,7 +160,7 @@ namespace Examen.Suport.Formularis
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightYellow;
-            this.ClientSize = new System.Drawing.Size(500, 200);
+            this.ClientSize = new System.Drawing.Size(500, 250);
             this.Controls.Add(this.lMissatge);
             this.Controls.Add(this.lTitol);
             this.Controls.Add(this.progressBar);
@@ -156,16 +168,19 @@ namespace Examen.Suport.Formularis
             this.Controls.Add(this.menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Location = new System.Drawing.Point(-10000, -10000);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(500, 200);
+            this.MaximumSize = new System.Drawing.Size(500, 250);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(500, 200);
+            this.MinimumSize = new System.Drawing.Size(500, 250);
             this.Name = "ToastForm";
+            this.Opacity = 0D;
             this.Padding = new System.Windows.Forms.Padding(15, 10, 15, 15);
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Missatge";
             this.TopMost = true;
+            this.Shown += new System.EventHandler(this.ToastForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.progressBar)).EndInit();
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
@@ -184,5 +199,6 @@ namespace Examen.Suport.Formularis
         private System.Windows.Forms.ToolStrip menu;
         private System.Windows.Forms.ToolStripButton bCancelar;
         private System.Windows.Forms.Label lTitol;
+        private System.Windows.Forms.ToolStripButton bCopiar;
     }
 }

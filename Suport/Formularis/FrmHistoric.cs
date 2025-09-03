@@ -40,7 +40,7 @@ namespace Examen.Suport.Formularis
             var nl = Environment.NewLine;
             var txts = string.Join($"{nl}", linies);
             txt = $"{txts}{nl}{nl}{nl}Vols copiar el text al portapapers?";
-            if (txt.Mostrar(MessageBoxIcon.Question, MessageBoxButtons.YesNo) != DialogResult.Yes)
+            if (txt.Mostrar(MostrarIcon.Question, MessageBoxButtons.YesNo) != DialogResult.Yes)
                 return;
 
             Clipboard.SetText(txts);
