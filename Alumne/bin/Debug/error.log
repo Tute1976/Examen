@@ -1,0 +1,220 @@
+﻿18/9/2025 14:33:26 [Error]: S'ha produït un error: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión 10.0.0.10:8883
+
+18/9/2025 14:33:26 [Error]: Detalls:    at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+
+18/9/2025 14:33:26 [Error]:    at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+
+18/9/2025 14:33:26 [Error]:    at System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+
+18/9/2025 14:33:26 [Error]:    at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+
+18/9/2025 14:33:26 [Error]: --- End of stack trace from previous location where exception was thrown ---
+
+18/9/2025 14:33:26 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+
+18/9/2025 14:33:26 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+
+18/9/2025 14:33:26 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+
+18/9/2025 14:33:26 [Error]:    at Examen.Suport.Tcp.ClientTcp.<EnviarEstatAsync>d__3.MoveNext() in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ClientTcp.cs:line 115
+
+18/9/2025 14:33:26 [Error]: --- End of stack trace from previous location where exception was thrown ---
+
+18/9/2025 14:33:26 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+
+18/9/2025 14:33:26 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+
+18/9/2025 14:33:26 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+
+18/9/2025 14:33:26 [Error]:    at Examen.Suport.Tcp.ClientTcp.<>c__DisplayClass1_0.<<EnviarEstat>b__0>d.MoveNext() in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ClientTcp.cs:line 25
+
+18/9/2025 14:33:26 [Error]: --- End of stack trace from previous location where exception was thrown ---
+
+18/9/2025 14:33:26 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+
+18/9/2025 14:33:26 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+
+18/9/2025 14:33:26 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+
+18/9/2025 14:33:26 [Error]:    at Examen.Suport.Tcp.ClientTcp.EnviarEstat(AdreçaPort adreçaPort, EstacioAlumne estacioAlumne, List`1 aplicacionsEnUs, TipusMissatge estat, Action pitar, Action bloquejar, Action aturar, Action fiServidor, String text, Boolean sync) in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ClientTcp.cs:line 23
+
+18/9/2025 14:33:26 [Error]: El codi no és vàlid, o el servidor no està disponible
+
+18/9/2025 14:35:42 [Error]: S'ha produït un error: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión 10.0.0.10:8883
+
+18/9/2025 14:35:42 [Error]: Detalls:    at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+
+18/9/2025 14:35:42 [Error]:    at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+
+18/9/2025 14:35:42 [Error]:    at System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+
+18/9/2025 14:35:42 [Error]:    at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+
+18/9/2025 14:35:42 [Error]: --- End of stack trace from previous location where exception was thrown ---
+
+18/9/2025 14:35:42 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+
+18/9/2025 14:35:42 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+
+18/9/2025 14:35:42 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+
+18/9/2025 14:35:42 [Error]:    at Examen.Suport.Tcp.ClientTcp.<EnviarEstatAsync>d__3.MoveNext() in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ClientTcp.cs:line 115
+
+18/9/2025 14:35:42 [Error]: --- End of stack trace from previous location where exception was thrown ---
+
+18/9/2025 14:35:42 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+
+18/9/2025 14:35:42 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+
+18/9/2025 14:35:42 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+
+18/9/2025 14:35:42 [Error]:    at Examen.Suport.Tcp.ClientTcp.<>c__DisplayClass1_0.<<EnviarEstat>b__0>d.MoveNext() in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ClientTcp.cs:line 25
+
+18/9/2025 14:35:42 [Error]: --- End of stack trace from previous location where exception was thrown ---
+
+18/9/2025 14:35:42 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+
+18/9/2025 14:35:42 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+
+18/9/2025 14:35:42 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+
+18/9/2025 14:35:42 [Error]:    at Examen.Suport.Tcp.ClientTcp.EnviarEstat(AdreçaPort adreçaPort, EstacioAlumne estacioAlumne, List`1 aplicacionsEnUs, TipusMissatge estat, Action pitar, Action bloquejar, Action aturar, Action fiServidor, String text, Boolean sync) in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ClientTcp.cs:line 23
+
+18/9/2025 14:35:42 [Error]: El codi no és vàlid, o el servidor no està disponible
+
+18/9/2025 14:36:01 [Error]: S'ha produït un error: Temps d'espera de connexió superat.
+
+18/9/2025 14:36:01 [Error]: Detalls:    at Examen.Suport.Tcp.ClientTcp.<EnviarEstatAsync>d__3.MoveNext() in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ClientTcp.cs:line 113
+
+18/9/2025 14:36:01 [Error]: --- End of stack trace from previous location where exception was thrown ---
+
+18/9/2025 14:36:01 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+
+18/9/2025 14:36:01 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+
+18/9/2025 14:36:01 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+
+18/9/2025 14:36:01 [Error]:    at Examen.Suport.Tcp.ClientTcp.<>c__DisplayClass1_0.<<EnviarEstat>b__0>d.MoveNext() in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ClientTcp.cs:line 25
+
+18/9/2025 14:36:01 [Error]: --- End of stack trace from previous location where exception was thrown ---
+
+18/9/2025 14:36:01 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+
+18/9/2025 14:36:01 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+
+18/9/2025 14:36:01 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+
+18/9/2025 14:36:01 [Error]:    at Examen.Suport.Tcp.ClientTcp.EnviarEstat(AdreçaPort adreçaPort, EstacioAlumne estacioAlumne, List`1 aplicacionsEnUs, TipusMissatge estat, Action pitar, Action bloquejar, Action aturar, Action fiServidor, String text, Boolean sync) in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ClientTcp.cs:line 23
+
+18/9/2025 14:36:01 [Error]: El codi no és vàlid, o el servidor no està disponible
+
+18/9/2025 15:05:14 [Error]: S'ha produït un error: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión 10.0.0.10:8883
+
+18/9/2025 15:05:14 [Error]: Detalls:    at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+
+18/9/2025 15:05:14 [Error]:    at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+
+18/9/2025 15:05:14 [Error]:    at System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+
+18/9/2025 15:05:14 [Error]:    at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+
+18/9/2025 15:05:14 [Error]: --- End of stack trace from previous location where exception was thrown ---
+
+18/9/2025 15:05:14 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+
+18/9/2025 15:05:14 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+
+18/9/2025 15:05:14 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+
+18/9/2025 15:05:14 [Error]:    at Examen.Suport.Tcp.ClientTcp.<EnviarEstatAsync>d__3.MoveNext() in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ClientTcp.cs:line 115
+
+18/9/2025 15:05:14 [Error]: --- End of stack trace from previous location where exception was thrown ---
+
+18/9/2025 15:05:14 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+
+18/9/2025 15:05:14 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+
+18/9/2025 15:05:14 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+
+18/9/2025 15:05:14 [Error]:    at Examen.Suport.Tcp.ClientTcp.<>c__DisplayClass1_0.<<EnviarEstat>b__0>d.MoveNext() in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ClientTcp.cs:line 25
+
+18/9/2025 15:05:14 [Error]: --- End of stack trace from previous location where exception was thrown ---
+
+18/9/2025 15:05:14 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+
+18/9/2025 15:05:14 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+
+18/9/2025 15:05:14 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+
+18/9/2025 15:05:14 [Error]:    at Examen.Suport.Tcp.ClientTcp.EnviarEstat(AdreçaPort adreçaPort, EstacioAlumne estacioAlumne, List`1 aplicacionsEnUs, TipusMissatge estat, Action pitar, Action bloquejar, Action aturar, Action fiServidor, String text, Boolean sync) in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ClientTcp.cs:line 23
+
+18/9/2025 15:05:14 [Error]: El codi no és vàlid, o el servidor no està disponible
+
+18/9/2025 15:05:52 [Error]: S'ha produït un error: Temps d'espera de connexió superat.
+
+18/9/2025 15:05:52 [Error]: Detalls:    at Examen.Suport.Tcp.ClientTcp.<EnviarEstatAsync>d__3.MoveNext() in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ClientTcp.cs:line 113
+
+18/9/2025 15:05:52 [Error]: --- End of stack trace from previous location where exception was thrown ---
+
+18/9/2025 15:05:52 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+
+18/9/2025 15:05:52 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+
+18/9/2025 15:05:52 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+
+18/9/2025 15:05:52 [Error]:    at Examen.Suport.Tcp.ClientTcp.<>c__DisplayClass1_0.<<EnviarEstat>b__0>d.MoveNext() in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ClientTcp.cs:line 25
+
+18/9/2025 15:05:52 [Error]: --- End of stack trace from previous location where exception was thrown ---
+
+18/9/2025 15:05:52 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+
+18/9/2025 15:05:52 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+
+18/9/2025 15:05:52 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+
+18/9/2025 15:05:52 [Error]:    at Examen.Suport.Tcp.ClientTcp.EnviarEstat(AdreçaPort adreçaPort, EstacioAlumne estacioAlumne, List`1 aplicacionsEnUs, TipusMissatge estat, Action pitar, Action bloquejar, Action aturar, Action fiServidor, String text, Boolean sync) in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ClientTcp.cs:line 23
+
+18/9/2025 15:05:52 [Error]: El codi no és vàlid, o el servidor no està disponible
+
+18/9/2025 15:08:36 [Error]: S'ha produït un error: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión 10.0.0.10:8883
+
+18/9/2025 15:08:36 [Error]: Detalls:    at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+
+18/9/2025 15:08:36 [Error]:    at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+
+18/9/2025 15:08:36 [Error]:    at System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+
+18/9/2025 15:08:36 [Error]:    at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+
+18/9/2025 15:08:36 [Error]: --- End of stack trace from previous location where exception was thrown ---
+
+18/9/2025 15:08:36 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+
+18/9/2025 15:08:36 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+
+18/9/2025 15:08:36 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+
+18/9/2025 15:08:36 [Error]:    at Examen.Suport.Tcp.ClientTcp.<EnviarEstatAsync>d__3.MoveNext() in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ClientTcp.cs:line 115
+
+18/9/2025 15:08:36 [Error]: --- End of stack trace from previous location where exception was thrown ---
+
+18/9/2025 15:08:36 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+
+18/9/2025 15:08:36 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+
+18/9/2025 15:08:36 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+
+18/9/2025 15:08:36 [Error]:    at Examen.Suport.Tcp.ClientTcp.<>c__DisplayClass1_0.<<EnviarEstat>b__0>d.MoveNext() in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ClientTcp.cs:line 25
+
+18/9/2025 15:08:36 [Error]: --- End of stack trace from previous location where exception was thrown ---
+
+18/9/2025 15:08:36 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+
+18/9/2025 15:08:36 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+
+18/9/2025 15:08:36 [Error]:    at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+
+18/9/2025 15:08:36 [Error]:    at Examen.Suport.Tcp.ClientTcp.EnviarEstat(AdreçaPort adreçaPort, EstacioAlumne estacioAlumne, List`1 aplicacionsEnUs, TipusMissatge estat, Action pitar, Action bloquejar, Action aturar, Action fiServidor, String text, Boolean sync) in D:\Privat\Programacio\Git\Examen\Suport\Tcp\ClientTcp.cs:line 23
+
+18/9/2025 15:08:38 [Error]: El codi no és vàlid, o el servidor no està disponible
+

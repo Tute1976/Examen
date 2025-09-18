@@ -11431,6 +11431,23 @@
             </summary>
             <param name="image">The Object to remove from the IList.</param>
         </member>
+        <member name="F:Syncfusion.Windows.Forms.Tools.ImageCollectionEditorForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Windows.Forms.Tools.ImageCollectionEditorForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Syncfusion.Windows.Forms.Tools.ImageCollectionEditorForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
         <member name="T:Syncfusion.Windows.Forms.Tools.ImageListAdv">
             <summary>
             ImageList with support for images of different sizes and transparency.
@@ -18549,7 +18566,7 @@
             properties.
             </remarks>
         </member>
-        <member name="M:Syncfusion.Windows.Forms.Tools.NumberTextBoxBase.ApplyFormattingAndSetText(System.String)">
+        <member name="M:Syncfusion.Windows.Forms.Tools.NumberTextBoxBase.ApplyFormattingAndSetText(System.String,System.String)">
             <summary>
             Takes the incoming text, formats it based on the
             rules and settings prevailing currently and sets
@@ -73389,7 +73406,7 @@
             The license message that is used to show error and it enables the exit option.
             </summary>
         </member>
-        <member name="M:Syncfusion.Windows.Shared.LicenseHelper.ValidateLicense(System.Boolean)">
+        <member name="M:Syncfusion.Windows.Shared.LicenseHelper.ValidateLicense(System.Boolean,Syncfusion.Licensing.Platform,System.String)">
             <summary>
             Validates the license for WinUI XAML controls in .NET50 project
             </summary>
