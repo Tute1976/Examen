@@ -1,30 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Privat\\Programacio\\Git\\Examen\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|Intermediari||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|Suport||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|Alumne||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{21BA3972-B2E5-4ADD-8805-8598AAD20B61}|Intermediari\\Intermediari.csproj|d:\\privat\\programacio\\git\\examen\\intermediari\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{21BA3972-B2E5-4ADD-8805-8598AAD20B61}|Intermediari\\Intermediari.csproj|solutionrelative:intermediari\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{929EA363-1BEB-487C-B4C9-F840779AC1E3}|Alumne\\Alumne.csproj|d:\\privat\\programacio\\git\\examen\\alumne\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|5e9a8ac2-4f34-4521-858f-4c248ba31532"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{21BA3972-B2E5-4ADD-8805-8598AAD20B61}|Intermediari\\Intermediari.csproj|d:\\privat\\programacio\\git\\examen\\intermediari\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|5e9a8ac2-4f34-4521-858f-4c248ba31532"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CA301166-142C-4D77-BA7B-50E07672FF82}|Suport\\Suport.csproj|d:\\privat\\programacio\\git\\examen\\suport\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|5e9a8ac2-4f34-4521-858f-4c248ba31532"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -32,60 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Suport",
-              "DocumentMoniker": "D:\\Privat\\Programacio\\Git\\Examen\\Suport\\Suport.csproj",
-              "RelativeDocumentMoniker": "Suport\\Suport.csproj",
-              "ToolTip": "D:\\Privat\\Programacio\\Git\\Examen\\Suport\\Suport.csproj",
-              "RelativeToolTip": "Suport\\Suport.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-11-25T11:20:34.043Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Intermediari",
-              "DocumentMoniker": "D:\\Privat\\Programacio\\Git\\Examen\\Intermediari\\Intermediari.csproj",
-              "RelativeDocumentMoniker": "Intermediari\\Intermediari.csproj",
-              "ToolTip": "D:\\Privat\\Programacio\\Git\\Examen\\Intermediari\\Intermediari.csproj",
-              "RelativeToolTip": "Intermediari\\Intermediari.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-11-25T11:19:59.095Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Alumne",
-              "DocumentMoniker": "D:\\Privat\\Programacio\\Git\\Examen\\Alumne\\Alumne.csproj",
-              "RelativeDocumentMoniker": "Alumne\\Alumne.csproj",
-              "ToolTip": "D:\\Privat\\Programacio\\Git\\Examen\\Alumne\\Alumne.csproj",
-              "RelativeToolTip": "Alumne\\Alumne.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-11-25T11:19:49.695Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "D:\\Privat\\Programacio\\Git\\Examen\\Intermediari\\Class1.cs",
-              "RelativeDocumentMoniker": "Intermediari\\Class1.cs",
-              "ToolTip": "D:\\Privat\\Programacio\\Git\\Examen\\Intermediari\\Class1.cs",
-              "RelativeToolTip": "Intermediari\\Class1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T11:19:46.13Z",
-              "EditorCaption": ""
             }
           ]
         }
