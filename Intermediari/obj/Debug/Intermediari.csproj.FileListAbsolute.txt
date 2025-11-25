@@ -1,0 +1,6 @@
+D:\Privat\Programacio\Git\Examen\Intermediari\bin\Debug\Intermediari.dll
+D:\Privat\Programacio\Git\Examen\Intermediari\bin\Debug\Intermediari.pdb
+D:\Privat\Programacio\Git\Examen\Intermediari\obj\Debug\Intermediari.csproj.AssemblyReference.cache
+D:\Privat\Programacio\Git\Examen\Intermediari\obj\Debug\Intermediari.csproj.CoreCompileInputs.cache
+D:\Privat\Programacio\Git\Examen\Intermediari\obj\Debug\Intermediari.dll
+D:\Privat\Programacio\Git\Examen\Intermediari\obj\Debug\Intermediari.pdb

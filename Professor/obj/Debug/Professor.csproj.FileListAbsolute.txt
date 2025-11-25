@@ -24,4 +24,3 @@ D:\Privat\Programacio\Git\Examen\Professor\obj\Debug\Professor.csproj.CoreCompil
 D:\Privat\Programacio\Git\Examen\Professor\obj\Debug\Professor.csproj.Up2Date
 D:\Privat\Programacio\Git\Examen\Professor\obj\Debug\Professor.exe
 D:\Privat\Programacio\Git\Examen\Professor\obj\Debug\Professor.pdb
-D:\Privat\Programacio\Git\Examen\Professor\obj\Debug\Professor.exe.config

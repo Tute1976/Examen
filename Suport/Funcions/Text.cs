@@ -27,7 +27,7 @@ namespace Examen.Suport.Funcions
                 TypeNameHandling = TypeNameHandling.Objects,
                 NullValueHandling = NullValueHandling.Ignore,
                 Formatting = formatting,
-                Converters = new List<JsonConverter>()
+                Converters = []
             };
 
             var converter = new StringEnumConverter();
@@ -39,12 +39,12 @@ namespace Examen.Suport.Funcions
                 return json;
 
             var lines = json.Replace(Environment.NewLine, "^").Split('^');
-            lines = lines.Where(l => !l.Contains("$type")).ToArray();
+            lines = [.. lines.Where(l => !l.Contains("$type"))];
             json = string.Join(Environment.NewLine, lines);
             return json;
         }
 
-        public static T Deserialitzar<T>(this string json)
+        public static T? Deserialitzar<T>(this string json)
         {
             if (string.IsNullOrEmpty(json))
                 return default;
@@ -52,7 +52,7 @@ namespace Examen.Suport.Funcions
             var settings = new JsonSerializerSettings
             {
                 TypeNameHandling = TypeNameHandling.Objects,
-                Converters = new List<JsonConverter>()
+                Converters = []
             };
             var converter = new StringEnumConverter();
             settings.Converters.Add(converter);
@@ -63,7 +63,7 @@ namespace Examen.Suport.Funcions
             return ret;
         }
 
-        public static T Clonar<T>(this T obj)
+        public static T? Clonar<T>(this T obj)
         {
             return obj.Serialitzar().Deserialitzar<T>();
         }
@@ -80,7 +80,7 @@ namespace Examen.Suport.Funcions
             File.WriteAllText(fitxer, json, Encoding.UTF8);
         }
 
-        public static List<CategoriaAplicacions> Llegir(string fitxer)
+        public static List<CategoriaAplicacions>? Llegir(string fitxer)
         {
             var json = File.ReadAllText(fitxer, Encoding.UTF8);
             return json.Deserialitzar<List<CategoriaAplicacions>>();
