@@ -10,7 +10,7 @@ namespace Examen.Suport.Funcions
 {
     public static class Ip
     {
-        public static int Port { get; set; }
+        //public static int Port { get; set; }
         
         public static bool ObtenirIp(out AdreçaPort adreçaPortMascara)
         {
@@ -103,7 +103,7 @@ namespace Examen.Suport.Funcions
             throw new Exception("No s'ha trobat cap port lliure.");
         }
 
-        private static string GenerarCodiDesdeAdreça(AdreçaPort adreçaPortMascara)
+        public static string CodificaAdreça(AdreçaPort adreçaPortMascara)
         {
             var bytesAdreça = adreçaPortMascara.Adreça.GetAddressBytes();
             var bytesMascara = adreçaPortMascara.Mascara.InvertirMascara().GetAddressBytes();
@@ -121,8 +121,7 @@ namespace Examen.Suport.Funcions
             }
 
             var numero = Convert.ToInt64(resultat);
-            var codi = $"{numero:X}:{adreçaPortMascara.Port:X}";
-            return codi;
+            return numero.ToString("X");
         }
 
         private static IPAddress ObtenirAdreçaDesdeCodi(this string codi, IPAddress xarxa, out int port)
@@ -202,29 +201,7 @@ namespace Examen.Suport.Funcions
 
             return new IPAddress(bytesInvertits);
         }
-
-        public static bool ObtenirCodi(out string codi, out AdreçaPort adreçaPort)
-        {
-            codi = "";
-            adreçaPort = new AdreçaPort();
-
-            try
-            {
-                if (!ObtenirIp(out var adreçaPortMascara))
-                    throw new Exception("No s'ha pogut obtenir la IP de l'estació.");
-                adreçaPort = adreçaPortMascara;
-                adreçaPort.Port = Port;
-                adreçaPort.Port = ObtenirPort(adreçaPort);
-                codi = GenerarCodiDesdeAdreça(adreçaPort);
-
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
+        
         public static bool ObtenirAdreça(this string codi, out AdreçaPort adreçaPort)
         {
             adreçaPort = new AdreçaPort();

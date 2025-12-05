@@ -1,0 +1,23 @@
+{
+  "ShowEmptyProjects": false,
+  "SelectedGroups": [
+    "D:\\Privat\\Programacio\\Git\\Examen\\Suport\\Properties\\Resources.resx"
+  ],
+  "ExpandedProjects": [
+    "D:\\Privat\\Programacio\\Git\\Examen\\Suport\\Suport.csproj"
+  ],
+  "EnableSpellChecker": true,
+  "ColumnOrder": [
+    "name",
+    "type",
+    "neutral-value",
+    "neutral-comment",
+    "file-path",
+    "file-name"
+  ],
+  "VisibleColumnKeys": [
+    "name",
+    "neutral-comment",
+    "neutral-value"
+  ]
+}

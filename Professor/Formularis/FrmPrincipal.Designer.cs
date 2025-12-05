@@ -78,7 +78,7 @@
             // split
             // 
             this.split.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.split.Location = new System.Drawing.Point(5, 5);
+            this.split.Location = new System.Drawing.Point(8, 8);
             this.split.Margin = new System.Windows.Forms.Padding(0);
             this.split.Name = "split";
             this.split.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -91,9 +91,9 @@
             // 
             this.split.Panel2.Controls.Add(this.panelHistoric);
             this.split.Panel2MinSize = 200;
-            this.split.Size = new System.Drawing.Size(882, 450);
-            this.split.SplitterDistance = 240;
-            this.split.SplitterWidth = 10;
+            this.split.Size = new System.Drawing.Size(1316, 697);
+            this.split.SplitterDistance = 370;
+            this.split.SplitterWidth = 15;
             this.split.TabIndex = 0;
             // 
             // panelTaula
@@ -103,8 +103,9 @@
             this.panelTaula.Controls.Add(this.taula);
             this.panelTaula.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelTaula.Location = new System.Drawing.Point(0, 0);
+            this.panelTaula.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelTaula.Name = "panelTaula";
-            this.panelTaula.Size = new System.Drawing.Size(882, 240);
+            this.panelTaula.Size = new System.Drawing.Size(1316, 370);
             this.panelTaula.TabIndex = 1;
             // 
             // taula
@@ -116,11 +117,12 @@
             this.taula.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.taula.Dock = System.Windows.Forms.DockStyle.Top;
             this.taula.Location = new System.Drawing.Point(0, 0);
+            this.taula.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.taula.Name = "taula";
             this.taula.RowCount = 2;
             this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.taula.Size = new System.Drawing.Size(880, 0);
+            this.taula.Size = new System.Drawing.Size(1314, 0);
             this.taula.TabIndex = 0;
             this.taula.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.Taula_Controls);
             this.taula.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.Taula_Controls);
@@ -133,7 +135,7 @@
             this.panelHistoric.Location = new System.Drawing.Point(0, 0);
             this.panelHistoric.Margin = new System.Windows.Forms.Padding(0);
             this.panelHistoric.Name = "panelHistoric";
-            this.panelHistoric.Size = new System.Drawing.Size(882, 200);
+            this.panelHistoric.Size = new System.Drawing.Size(1316, 312);
             this.panelHistoric.TabIndex = 1;
             // 
             // llistaHistoric
@@ -146,10 +148,10 @@
             this.llistaHistoric.Dock = System.Windows.Forms.DockStyle.Fill;
             this.llistaHistoric.FullRowSelect = true;
             this.llistaHistoric.HideSelection = false;
-            this.llistaHistoric.Location = new System.Drawing.Point(0, 31);
+            this.llistaHistoric.Location = new System.Drawing.Point(0, 48);
             this.llistaHistoric.Margin = new System.Windows.Forms.Padding(0);
             this.llistaHistoric.Name = "llistaHistoric";
-            this.llistaHistoric.Size = new System.Drawing.Size(882, 169);
+            this.llistaHistoric.Size = new System.Drawing.Size(1316, 264);
             this.llistaHistoric.SmallImageList = this.imatgesLlista;
             this.llistaHistoric.TabIndex = 0;
             this.llistaHistoric.UseCompatibleStateImageBehavior = false;
@@ -192,17 +194,19 @@
             this.panelComboBox.Controls.Add(this.cbHistoric);
             this.panelComboBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelComboBox.Location = new System.Drawing.Point(0, 0);
+            this.panelComboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelComboBox.Name = "panelComboBox";
-            this.panelComboBox.Size = new System.Drawing.Size(882, 31);
+            this.panelComboBox.Size = new System.Drawing.Size(1316, 48);
             this.panelComboBox.TabIndex = 2;
             // 
             // lFiltreHistoric
             // 
             this.lFiltreHistoric.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lFiltreHistoric.Location = new System.Drawing.Point(559, 0);
+            this.lFiltreHistoric.Location = new System.Drawing.Point(834, 0);
+            this.lFiltreHistoric.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lFiltreHistoric.Name = "lFiltreHistoric";
-            this.lFiltreHistoric.Padding = new System.Windows.Forms.Padding(0, 0, 10, 10);
-            this.lFiltreHistoric.Size = new System.Drawing.Size(123, 31);
+            this.lFiltreHistoric.Padding = new System.Windows.Forms.Padding(0, 0, 15, 15);
+            this.lFiltreHistoric.Size = new System.Drawing.Size(184, 48);
             this.lFiltreHistoric.TabIndex = 1;
             this.lFiltreHistoric.Text = "Filtre per estacions";
             this.lFiltreHistoric.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -214,10 +218,10 @@
             this.cbHistoric.FormattingEnabled = true;
             this.cbHistoric.Items.AddRange(new object[] {
             "Totes les estacions"});
-            this.cbHistoric.Location = new System.Drawing.Point(682, 0);
+            this.cbHistoric.Location = new System.Drawing.Point(1018, 0);
             this.cbHistoric.Margin = new System.Windows.Forms.Padding(0);
             this.cbHistoric.Name = "cbHistoric";
-            this.cbHistoric.Size = new System.Drawing.Size(200, 21);
+            this.cbHistoric.Size = new System.Drawing.Size(298, 28);
             this.cbHistoric.Sorted = true;
             this.cbHistoric.TabIndex = 0;
             this.cbHistoric.Text = "Totes les estacions";
@@ -247,10 +251,10 @@
             this.bSortir,
             this.toolStripSeparator3,
             this.bCopiarCodi});
-            this.menu.Location = new System.Drawing.Point(887, 5);
+            this.menu.Location = new System.Drawing.Point(1324, 8);
             this.menu.Name = "menu";
-            this.menu.Padding = new System.Windows.Forms.Padding(5, 5, 0, 5);
-            this.menu.Size = new System.Drawing.Size(82, 450);
+            this.menu.Padding = new System.Windows.Forms.Padding(8, 8, 0, 8);
+            this.menu.Size = new System.Drawing.Size(87, 697);
             this.menu.TabIndex = 0;
             // 
             // cbColumnes
@@ -263,7 +267,7 @@
             "5"});
             this.cbColumnes.MaxDropDownItems = 3;
             this.cbColumnes.Name = "cbColumnes";
-            this.cbColumnes.Size = new System.Drawing.Size(69, 23);
+            this.cbColumnes.Size = new System.Drawing.Size(66, 33);
             this.cbColumnes.Sorted = true;
             this.cbColumnes.Text = "3";
             this.cbColumnes.ToolTipText = "Número de columnes";
@@ -272,7 +276,7 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(71, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(70, 6);
             // 
             // bStartStop
             // 
@@ -280,7 +284,7 @@
             this.bStartStop.Image = global::Examen.Professor.Properties.Resources.Start_32x32;
             this.bStartStop.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bStartStop.Name = "bStartStop";
-            this.bStartStop.Size = new System.Drawing.Size(71, 36);
+            this.bStartStop.Size = new System.Drawing.Size(70, 36);
             this.bStartStop.Tag = "False";
             this.bStartStop.Text = "Iniciar sessió";
             this.bStartStop.Click += new System.EventHandler(this.BStartStop_Click);
@@ -291,14 +295,14 @@
             this.bAplicacions.Image = global::Examen.Professor.Properties.Resources.Aplicacions_32x32;
             this.bAplicacions.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bAplicacions.Name = "bAplicacions";
-            this.bAplicacions.Size = new System.Drawing.Size(71, 36);
+            this.bAplicacions.Size = new System.Drawing.Size(70, 36);
             this.bAplicacions.Text = "Aplicacions";
             this.bAplicacions.Click += new System.EventHandler(this.BAplicacions_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(71, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(70, 6);
             // 
             // bMostrarLlista
             // 
@@ -309,7 +313,7 @@
             this.bMostrarLlista.Image = global::Examen.Professor.Properties.Resources.Llista_32x32;
             this.bMostrarLlista.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bMostrarLlista.Name = "bMostrarLlista";
-            this.bMostrarLlista.Size = new System.Drawing.Size(71, 36);
+            this.bMostrarLlista.Size = new System.Drawing.Size(70, 36);
             this.bMostrarLlista.ToolTipText = "Mostrar llista";
             this.bMostrarLlista.CheckedChanged += new System.EventHandler(this.BMostrarLlista_CheckedChanged);
             // 
@@ -319,7 +323,7 @@
             this.bNetejarLlista.Image = global::Examen.Professor.Properties.Resources.Neteja_32x32;
             this.bNetejarLlista.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bNetejarLlista.Name = "bNetejarLlista";
-            this.bNetejarLlista.Size = new System.Drawing.Size(71, 36);
+            this.bNetejarLlista.Size = new System.Drawing.Size(70, 36);
             this.bNetejarLlista.Text = "Netejar llista";
             this.bNetejarLlista.ToolTipText = "Netejar llista";
             this.bNetejarLlista.Click += new System.EventHandler(this.BNetejarLlista_Click);
@@ -331,7 +335,7 @@
             this.bSortir.Image = global::Examen.Professor.Properties.Resources.Sortir_32x321;
             this.bSortir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bSortir.Name = "bSortir";
-            this.bSortir.Size = new System.Drawing.Size(71, 36);
+            this.bSortir.Size = new System.Drawing.Size(70, 36);
             this.bSortir.Text = "Tancar l\'aplicació";
             this.bSortir.Click += new System.EventHandler(this.BSortir_Click);
             // 
@@ -339,7 +343,7 @@
             // 
             this.toolStripSeparator3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(71, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(70, 6);
             // 
             // bCopiarCodi
             // 
@@ -348,7 +352,7 @@
             this.bCopiarCodi.Image = global::Examen.Professor.Properties.Resources.Copiar_32x32;
             this.bCopiarCodi.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bCopiarCodi.Name = "bCopiarCodi";
-            this.bCopiarCodi.Size = new System.Drawing.Size(71, 36);
+            this.bCopiarCodi.Size = new System.Drawing.Size(70, 36);
             this.bCopiarCodi.Text = "Copiar codi";
             this.bCopiarCodi.ToolTipText = "Copiar codi";
             this.bCopiarCodi.Click += new System.EventHandler(this.BCopiarCodi_Click);
@@ -367,11 +371,11 @@
             this.panelFons.Controls.Add(this.split);
             this.panelFons.Controls.Add(this.menu);
             this.panelFons.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFons.Location = new System.Drawing.Point(5, 5);
+            this.panelFons.Location = new System.Drawing.Point(8, 8);
             this.panelFons.Margin = new System.Windows.Forms.Padding(0);
             this.panelFons.Name = "panelFons";
-            this.panelFons.Padding = new System.Windows.Forms.Padding(5);
-            this.panelFons.Size = new System.Drawing.Size(974, 460);
+            this.panelFons.Padding = new System.Windows.Forms.Padding(8);
+            this.panelFons.Size = new System.Drawing.Size(1419, 713);
             this.panelFons.TabIndex = 1;
             // 
             // panelInfo
@@ -379,25 +383,26 @@
             this.panelInfo.BackColor = System.Drawing.Color.Transparent;
             this.panelInfo.Controls.Add(this.txtVersio);
             this.panelInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelInfo.Location = new System.Drawing.Point(5, 465);
+            this.panelInfo.Location = new System.Drawing.Point(8, 721);
             this.panelInfo.Margin = new System.Windows.Forms.Padding(0);
             this.panelInfo.Name = "panelInfo";
-            this.panelInfo.Size = new System.Drawing.Size(974, 16);
+            this.panelInfo.Size = new System.Drawing.Size(1419, 25);
             this.panelInfo.TabIndex = 10;
             // 
             // txtVersio
             // 
             this.txtVersio.Dock = System.Windows.Forms.DockStyle.Right;
-            this.txtVersio.Location = new System.Drawing.Point(724, 0);
+            this.txtVersio.Location = new System.Drawing.Point(1044, 0);
+            this.txtVersio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtVersio.Name = "txtVersio";
-            this.txtVersio.Size = new System.Drawing.Size(250, 16);
+            this.txtVersio.Size = new System.Drawing.Size(375, 25);
             this.txtVersio.TabIndex = 9;
             this.txtVersio.Text = "versio";
             this.txtVersio.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // FrmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderColor = System.Drawing.Color.Gray;
             this.CaptionBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(180)))), ((int)(((byte)(237)))));
@@ -422,15 +427,16 @@
             captionLabel2.Text = "XXXXX";
             this.CaptionLabels.Add(captionLabel1);
             this.CaptionLabels.Add(captionLabel2);
-            this.ClientSize = new System.Drawing.Size(984, 486);
+            this.ClientSize = new System.Drawing.Size(1435, 754);
             this.Controls.Add(this.panelFons);
             this.Controls.Add(this.panelInfo);
             this.DropShadow = true;
             this.EnableTouchMode = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(180)))), ((int)(((byte)(237)))));
             this.Name = "FrmPrincipal";
-            this.Padding = new System.Windows.Forms.Padding(5);
+            this.Padding = new System.Windows.Forms.Padding(8);
             this.ShowIcon = false;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Principal_FormClosing);
             this.Load += new System.EventHandler(this.Principal_Load);

@@ -1,12 +1,13 @@
 ﻿using Examen.Suport.Classes;
 using Examen.Suport.Funcions;
-using Examen.Suport.Tcp;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 using Examen.Alumne.Funcions;
+using Examen.Intermediari.Redis;
 using Examen.Suport.Controls;
 
 namespace Examen.Alumne.Formularis
@@ -14,22 +15,25 @@ namespace Examen.Alumne.Formularis
     public partial class FrmPrincipal : FormAdv
     {
         public EstacioAlumne EstacioAlumne { get; private set; }
-        public AdreçaPort AdreçaPortProfessor { get; private set; } = new();
         public List<Aplicacio> Aplicacions { get; private set; } = [];
 
-        private readonly string _nom;
-        private readonly string _codi;
+        public string Nom { get; private set; }
+        public string Codi { get; private set; }
 
         private DateTime _marcaDeTemps = DateTime.Now;
 
         public FrmPrincipal(string nom, string codi)
         {
-            _nom = nom;
-            _codi = codi;
+            Nom = nom;
+            Codi = codi;
 
             InitializeComponent();
 
+            txtNom.Text = Nom;
+            txtCodi.Text = Codi;
+
             txtId.Text = $@"Id: {Program.Id}";
+            txtVersio.Text = $@"Examen.Alumne v.{Application.ProductVersion}";
         }
 
         private void Principal_Load(object sender, EventArgs e)
@@ -37,11 +41,6 @@ namespace Examen.Alumne.Formularis
 
             imatge.Image = imatgesConnecta.Images[0];
             imatge.Tag = 0;
-
-            txtNom.Text = _nom;
-            txtCodi.Text = _codi;
-
-            txtVersio.Text = $@"Examen.Alumne v.{Application.ProductVersion}";
         }
 
         private void Text_TextChanged(object sender, EventArgs e)
@@ -62,7 +61,8 @@ namespace Examen.Alumne.Formularis
 
                 Hide();
 
-                ClientTcp.EnviarEstat(AdreçaPortProfessor, EstacioAlumne, [], TipusMissatge.Fi, Helper.Pitar, Helper.Bloquejar, Helper.Aturar, FiServidor);
+                TipusNotificacio.Fi.Notificar(Codi, new Notificacio(EstacioAlumne, Helper.AplicacionsEnUs), Nom);
+                //ClientTcp.EnviarEstat(AdreçaPortProfessor, EstacioAlumne, [], TipusMissatge.Fi, Helper.Pitar, Helper.Bloquejar, Helper.Aturar, FiServidor);
             }
             catch (Exception ex)
             {
@@ -80,10 +80,10 @@ namespace Examen.Alumne.Formularis
             {
                 if (bIniciar.Text == @"Connectar")
                 {
-                    if (txtCodi.Text.ObtenirAdreça(out var adreçaPort) &&
-                        adreçaPort.Provar(EstacioAlumne, FiServidor))
+                    if (Connexio.ExisteixClau(txtCodi.Text))
                     {
-                        AdreçaPortProfessor = adreçaPort;
+                        Nom = txtNom.Text;
+                        Codi = txtCodi.Text;
 
                         bIniciar.Text = @"Iniciar";
                         bIniciar.Image = Properties.Resources.Start_32x32;
@@ -97,7 +97,7 @@ namespace Examen.Alumne.Formularis
                     }
                     else
                     {
-                        @"El codi no és vàlid, o el servidor no està disponible".Mostrar(MostrarIcon.Error, MessageBoxButtons.OK, true);
+                        @"El codi no és vàlid".Mostrar(MostrarIcon.Error, MessageBoxButtons.OK, true);
 
                         bIniciar.Text = @"Connectar";
                         bIniciar.Image = Properties.Resources.Validation_32x32;
@@ -113,8 +113,6 @@ namespace Examen.Alumne.Formularis
                 }
                 else
                 {
-                    EstacioAlumne = new EstacioAlumne(txtNom.Text, Program.Id);
-
                     bIniciar.Text = @"Amagar";
                     bIniciar.Image = Properties.Resources.Base_32x32;
                     bIniciar.BackColor = Color.FromArgb(255, 255, 224);
@@ -122,10 +120,18 @@ namespace Examen.Alumne.Formularis
                     bTancar.Left -= 75;
                     bInfo.Show();
 
-                    var json = ClientTcp.EnviarEstat(AdreçaPortProfessor, EstacioAlumne, Helper.AplicacionsEnUs, TipusMissatge.Inici, Helper.Pitar, Helper.Bloquejar, Helper.Aturar, FiServidor);
-                    Aplicacions = json.Deserialitzar<List<Aplicacio>>();
+                    EstacioAlumne = new EstacioAlumne(Nom);
 
-                    timerTemps.Interval = Properties.Settings.Default.IntevarvalTemps * 1000;
+                    Intermediari.Redis.Alumne.SubscriuresLlistaAplicacions(Codi, EnRebreAplicacions);
+                    Intermediari.Redis.Alumne.SubscriuresPitar(Codi, EstacioAlumne, EnRebrePitar);
+                    Intermediari.Redis.Alumne.SubscriuresBloquejar(Codi, EstacioAlumne, EnRebreBloquejar);
+                    Intermediari.Redis.Alumne.SubscriuresAturar(Codi, EstacioAlumne, EnRebreAturar);
+                    Intermediari.Redis.Alumne.SubscriuresCapturar(Codi, EstacioAlumne, EnRebreCapturar);
+                    Intermediari.Redis.Alumne.SubscriuresFiServidor(Codi, EstacioAlumne, EnRebreFiServidor);
+
+                    TipusNotificacio.Inici.Notificar(Codi, new Notificacio(EstacioAlumne, Helper.AplicacionsEnUs));
+
+                    timerTemps.Interval = Properties.Settings.Default.IntervalTemps * 1000;
                     timerTemps.Start();
                     timerImatge.Start();
 
@@ -147,8 +153,39 @@ namespace Examen.Alumne.Formularis
             }
         }
 
+        private void EnRebreAplicacions(List<Aplicacio> aplicacions)
+        {
+            Aplicacions = aplicacions;
+        }
+
+        private void EnRebrePitar(string canal)
+        {
+            Helper.Pitar();
+        }
+
+        private void EnRebreBloquejar(string canal)
+        {
+            Helper.Bloquejar();
+        }
+
+        private void EnRebreAturar(string canal)
+        {
+            Helper.Aturar();
+        }
+
+        private void EnRebreCapturar(string canal)
+        {
+        }
+
+        private void EnRebreFiServidor(string canal)
+        {
+            FiServidor();
+        }
+
         private void TimerTemps_Tick(object sender, EventArgs e)
         {
+            Connexio.CrearClau($@"{Codi}:{Environment.MachineName}", Nom, TimeSpan.FromMilliseconds(timerTemps.Interval));
+
             _ = new Worker(this, Completat);
         }
 
@@ -196,7 +233,9 @@ namespace Examen.Alumne.Formularis
             {
                 Hide();
 
-                ClientTcp.EnviarEstat(AdreçaPortProfessor, EstacioAlumne, [], TipusMissatge.FiServidor, Helper.Pitar, Helper.Bloquejar, Helper.Aturar, FiServidor);
+                TipusNotificacio.FiServidor.Notificar(Codi, new Notificacio(EstacioAlumne, Helper.AplicacionsEnUs));
+
+                //ClientTcp.EnviarEstat(AdreçaPortProfessor, EstacioAlumne, [], TipusMissatge.FiServidor, Helper.Pitar, Helper.Bloquejar, Helper.Aturar, FiServidor);
             }
             catch (Exception ex)
             {
@@ -210,9 +249,11 @@ namespace Examen.Alumne.Formularis
 
         private void FrmPrincipal_Shown(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(_nom) &&
-                !string.IsNullOrEmpty(_codi))
+            if (!string.IsNullOrEmpty(Nom) &&
+                !string.IsNullOrEmpty(Codi))
             {
+                Thread.Sleep(2000);
+
                 if (bIniciar.Text.Equals(@"Connectar"))
                     BIniciar_Click(bIniciar, EventArgs.Empty);
 

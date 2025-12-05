@@ -2,7 +2,6 @@
 using Examen.Suport.Controls;
 using Examen.Suport.Formularis;
 using Examen.Suport.Funcions;
-using Examen.Suport.Tcp;
 using Syncfusion.Windows.Forms;
 using System;
 using System.Collections.Generic;
@@ -10,6 +9,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using Examen.Professor.Controls;
 
 namespace Examen.Professor.Formularis
 {
@@ -53,7 +53,7 @@ namespace Examen.Professor.Formularis
 
                 DefineixColumnes(int.Parse(cbColumnes.Text));
 
-                timerCaducades.Interval = Properties.Settings.Default.IntevarvalTemps * 1000;
+                timerCaducades.Interval = Properties.Settings.Default.IntervalTemps * 1000;
                 timerCaducades.Start();
 
                 txtVersio.Text = $@"Examen.Professor v.{Application.ProductVersion}";
@@ -66,7 +66,9 @@ namespace Examen.Professor.Formularis
 
         private void Principal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            ServidorTcp.Aturar();
+            Intermediari.Redis.Professor.EsborrarClauSessio(CaptionLabels[1].Text);
+
+            Intermediari.Redis.Connexio.Desconnectar();
         }
 
         private void TimerInici_Tick(object sender, EventArgs e)
@@ -77,11 +79,21 @@ namespace Examen.Professor.Formularis
                 timer?.Stop();
                 timer?.Dispose();
 
-                if (Ip.ObtenirCodi(out var codi, out var adreçaPort))
+                if (Helper.ObtenirCodi(out var codi))
                 {
                     CaptionLabels[1].Text = codi;
 
-                    ServidorTcp.Iniciar(adreçaPort, GestorEstat, Callback);
+                    Intermediari.Redis.Professor.CreaClauSessio(codi, TimeSpan.FromHours(Properties.Settings.Default.Duracio));
+
+                    Intermediari.Redis.Professor.SubscriuresInici(codi, EnRebreInici);
+                    Intermediari.Redis.Professor.SubscriuresFi(codi, EnRebreFi);
+                    Intermediari.Redis.Professor.SubscriuresFiServidor(codi, EnRebreFiServidor);
+
+                    Intermediari.Redis.Professor.SubscriuresKeepAlive(codi, EnRebreKeepAlive);
+                    Intermediari.Redis.Professor.SubscriuresDeteccio(codi, EnRebreDeteccio);
+
+                    Intermediari.Redis.Professor.SubscriuresKeepAliveAmdDeteccio(codi, EnRebreKeepAliveAmdDeteccio);
+                    Intermediari.Redis.Professor.SubscriuresLlistaAplicacionsEnUs(codi, EnRebreAplicacionsEnUs);
                 }
                 else
                     @"No s'ha pogut generar el Codi".Mostrar(MostrarIcon.Error, MessageBoxButtons.OK, true);
@@ -92,163 +104,33 @@ namespace Examen.Professor.Formularis
             }
         }
 
-        private void Callback(TipusMissatge tipusMissatge, EstacioAlumne estacioAlumne, string text, List<AplicacioEnUs> aplicacionsEnUs)
+        private void EnRebreInici(string usuari, string estacio, string nom, Notificacio notificacio)
         {
             try
             {
-                if (llistaHistoric ==  null ||
-                    llistaHistoric.IsDisposed)
-                    return;
-
-                if (ContenidorAplicacions.AplicaIcones(aplicacionsEnUs))
-                    ContenidorAplicacions.CategoriesAplicacions.Desar(Fitxer);
-
                 Invocar(llistaHistoric, () =>
                 {
-                    string estat;
-                    InfoEstacio infoEstacio;
+                    notificacio.EstacioAlumne.DataInici = DateTime.Now;
+                    notificacio.EstacioAlumne.DataDarreraConnexio = DateTime.Now;
 
-                    switch (tipusMissatge)
-                    {
-                        case TipusMissatge.Inici:
-                            estacioAlumne.DataInici = DateTime.Now;
-                            estacioAlumne.DataDarreraConnexio = DateTime.Now;
+                    var estat = @"Connexió";
+                    $@"Estació {notificacio.EstacioAlumne.Estacio} connectada.".Mostrar(MostrarIcon.Information);
 
-                            estat = @"Connexió";
-                            $@"Estació {estacioAlumne.Estacio} connectada.".Mostrar(MostrarIcon.Information);
+                    AfegirItem(notificacio.EstacioAlumne, 1, Color.Green, estat);
 
-                            AfegirItem(estacioAlumne, 1, Color.Green, estat);
+                    InfoEstacio infoEstacio = Properties.Settings.Default.VersioInfo == 1
+                        ? new InfoEstacioV1(notificacio.EstacioAlumne, Properties.Settings.Default.IntervalTemps * 3, null)
+                        : new InfoEstacioV3(CaptionLabels[1].Text, notificacio.EstacioAlumne, Properties.Settings.Default.IntervalTemps * 3, OnHistoric, OnAplicacionsEnUs);
+                    infoEstacio.Estat = estat;
+                    infoEstacio.Data = DateTime.Now;
+                    infoEstacio.Imatge = Imatge.Nou;
+                    infoEstacio.Tag = notificacio.EstacioAlumne.Id;
+                    infoEstacio.Color = Colors.Correcte;
+                    infoEstacio.Dock = DockStyle.Fill;
+                    if (notificacio.AplicacioEnUs.Count > 0)
+                        infoEstacio.AplicacionsEnUs = notificacio.AplicacioEnUs;
 
-                            infoEstacio = Properties.Settings.Default.VersioInfo == 1
-                                ? new InfoEstacioV1(estacioAlumne, Properties.Settings.Default.IntevarvalTemps * 3, null)
-                                : new InfoEstacioV2(estacioAlumne, Properties.Settings.Default.IntevarvalTemps * 3, OnHistoric, OnAplicacionsEnUs);
-                            infoEstacio.Estat = estat;
-                            infoEstacio.Data = DateTime.Now;
-                            infoEstacio.Imatge = Imatge.Nou;
-                            infoEstacio.Tag = estacioAlumne.Id;
-                            infoEstacio.Color = Colors.Correcte;
-                            infoEstacio.Dock = DockStyle.Fill;
-                            infoEstacio.AplicacionsEnUs = aplicacionsEnUs;
-                            taula.Controls.Add(infoEstacio);
-
-                            break;
-
-                        case TipusMissatge.Fi:
-                            estat = @"Estació desconectada manualment";
-                            $@"Estació {estacioAlumne.Estacio} desconectada manualment.".Mostrar(MostrarIcon.Information);
-
-                            AfegirItem(estacioAlumne, 2, Color.Blue, estat);
-
-                            infoEstacio = taula.Controls
-                                .OfType<InfoEstacio>()
-                                .FirstOrDefault(x => x.Tag.Equals(estacioAlumne.Id));
-                            if (infoEstacio != null)
-                            {
-                                infoEstacio.Imatge = Imatge.Vell;
-                                infoEstacio.Estat = estat;
-                                infoEstacio.Color = Colors.VermellFosc;
-                                infoEstacio.Pitar = false;
-                                infoEstacio.Bloquejar = false;
-                                infoEstacio.Aturar = false;
-                                infoEstacio.MostrarBotons = false;
-                                if (aplicacionsEnUs.Count > 0)
-                                    infoEstacio.AplicacionsEnUs = aplicacionsEnUs;
-
-                                taula.Controls.SetChildIndex(infoEstacio, 0);
-
-                                //taula.Controls.Remove(infoEstacio);
-                                //DefineixColumnes(int.Parse(cbColumnes.Text));
-                            }
-                            break;
-
-                        case TipusMissatge.Deteccio:
-                            var tt = text.Split(':');
-                            estat = $"Aplicació '{tt.First()}' (Aturada: {tt.Last()})";
-                            $@"{estat} en l'estació {estacioAlumne.Estacio}.".Mostrar(MostrarIcon.Warning);
-
-                            AfegirItem(estacioAlumne, 3, Color.Red, estat);
-
-                            infoEstacio = taula.Controls
-                                .OfType<InfoEstacio>()
-                                .FirstOrDefault(x => x.Tag.Equals(estacioAlumne.Id));
-                            if (infoEstacio != null)
-                            {
-                                infoEstacio.Imatge = Imatge.Atencio;
-                                infoEstacio.Data = DateTime.Now;
-                                infoEstacio.Estat = estat;
-                                infoEstacio.Color = Colors.Vermell;
-                                infoEstacio.Pitar = false;
-                                infoEstacio.Bloquejar = false;
-                                infoEstacio.Aturar = false;
-                                infoEstacio.MostrarBotons = true;
-                                if (aplicacionsEnUs.Count > 0) 
-                                    infoEstacio.AplicacionsEnUs = aplicacionsEnUs;
-
-                                taula.Controls.SetChildIndex(infoEstacio, 0);
-                            }
-
-                            break;
-
-                        case TipusMissatge.Temps:
-                            estat = @"Actualització periódica, tot bé";
-
-                            AfegirItem(estacioAlumne, 0, Color.Green, estat);
-
-                            infoEstacio = taula.Controls
-                                .OfType<InfoEstacio>()
-                                .FirstOrDefault(x => x.Tag.Equals(estacioAlumne.Id));
-                            if (infoEstacio != null)
-                            {
-                                if (infoEstacio.Color != Colors.Defecte && infoEstacio.Color != Colors.Correcte)
-                                    $@"{estat} en l'estació {estacioAlumne.Estacio}.".Mostrar(MostrarIcon.Information);
-
-                                infoEstacio.Imatge = 0;
-                                infoEstacio.Data = DateTime.Now;
-                                infoEstacio.Estat = estat;
-                                infoEstacio.Color = infoEstacio.Color != Colors.Defecte && infoEstacio.Color != Colors.Correcte ?
-                                    Colors.Correcte : 
-                                    Colors.Defecte;
-                                infoEstacio.Pitar = false;
-                                infoEstacio.Bloquejar = false;
-                                infoEstacio.Aturar = false;
-                                infoEstacio.MostrarBotons = true;
-                                if (aplicacionsEnUs.Count > 0)
-                                    infoEstacio.AplicacionsEnUs = aplicacionsEnUs;
-                            }
-                            break;
-
-                        case TipusMissatge.FiServidor:
-                            estat = @"Desconnexió servidor";
-                            estat.Mostrar(MostrarIcon.Information);
-
-                            AfegirItem(estacioAlumne, 2, Color.Blue, estat);
-
-                            infoEstacio = taula.Controls
-                                .OfType<InfoEstacio>()
-                                .FirstOrDefault(x => x.Tag.Equals(estacioAlumne.Id));
-                            if (infoEstacio != null)
-                            {
-                                taula.Controls.Remove(infoEstacio);
-                                DefineixColumnes(int.Parse(cbColumnes.Text));
-                            }
-                            break;
-
-                        case TipusMissatge.TempsAmbDeteccio:
-                        case TipusMissatge.Prova:
-                            infoEstacio = taula.Controls
-                                .OfType<InfoEstacio>()
-                                .FirstOrDefault(x => x.Tag.Equals(estacioAlumne.Id));
-                            if (infoEstacio != null)
-                            {
-                                infoEstacio.Data = DateTime.Now;
-                                if (aplicacionsEnUs.Count > 0)
-                                    infoEstacio.AplicacionsEnUs = aplicacionsEnUs;
-                            }
-                            break;
-
-                        default:
-                            throw new ArgumentOutOfRangeException(nameof(tipusMissatge), tipusMissatge, null);
-                    }
+                    taula.Controls.Add(infoEstacio);
                 });
             }
             catch (Exception ex)
@@ -256,6 +138,345 @@ namespace Examen.Professor.Formularis
                 ex.Mostrar();
             }
         }
+
+        private void EnRebreFi(string usuari, string estacio, Notificacio notificacio)
+        {
+            try
+            {
+                Invocar(llistaHistoric, () =>
+                {
+                    var estat = @"Estació desconectada manualment";
+                    $@"Estació {notificacio.EstacioAlumne.Estacio} desconectada manualment.".Mostrar(MostrarIcon.Information);
+
+                    AfegirItem(notificacio.EstacioAlumne, 2, Color.Blue, estat);
+
+                    var infoEstacio = taula.Controls
+                        .OfType<InfoEstacio>()
+                        .FirstOrDefault(x => x.Tag.Equals(notificacio.EstacioAlumne.Id));
+                    if (infoEstacio == null) 
+                        return;
+                    
+                    infoEstacio.Imatge = Imatge.Vell;
+                    infoEstacio.Estat = estat;
+                    infoEstacio.Color = Colors.VermellFosc;
+                    infoEstacio.Pitar = false;
+                    infoEstacio.Bloquejar = false;
+                    infoEstacio.Aturar = false;
+                    infoEstacio.MostrarBotons = false;
+                    if (notificacio.AplicacioEnUs.Count > 0)
+                        infoEstacio.AplicacionsEnUs = notificacio.AplicacioEnUs;
+
+                    taula.Controls.SetChildIndex(infoEstacio, 0);
+                });
+            }
+            catch (Exception ex)
+            {
+                ex.Mostrar();
+            }
+        }
+
+        private void EnRebreFiServidor(string usuari, string estacio, Notificacio notificacio)
+        {
+            try
+            {
+                Invocar(llistaHistoric, () =>
+                {
+                    var estat = @"Desconnexió servidor";
+                    estat.Mostrar(MostrarIcon.Information);
+
+                    AfegirItem(notificacio.EstacioAlumne, 2, Color.Blue, estat);
+
+                    var infoEstacio = taula.Controls
+                        .OfType<InfoEstacio>()
+                        .FirstOrDefault(x => x.Tag.Equals(notificacio.EstacioAlumne.Id));
+                    if (infoEstacio == null) 
+                        return;
+                    
+                    taula.Controls.Remove(infoEstacio);
+                    DefineixColumnes(int.Parse(cbColumnes.Text));
+                });
+            }
+            catch (Exception ex)
+            {
+                ex.Mostrar();
+            }
+        }
+
+        private void EnRebreDeteccio(string usuari, string estacio, Deteccio deteccio)
+        {
+            try
+            {
+                Invocar(llistaHistoric, () =>
+                {
+                    var estat = $"Aplicació '{deteccio.Aplicacio.Nom}' (Aturada: {deteccio.Aturada.SiNo()})";
+                    $@"{estat} en l'estació {estacio}.".Mostrar(MostrarIcon.Warning);
+
+                    AfegirItem(deteccio.EstacioAlumne, 3, Color.Red, estat);
+
+                    var infoEstacio = taula.Controls
+                        .OfType<InfoEstacio>()
+                        .FirstOrDefault(x => x.Tag.Equals(deteccio.EstacioAlumne.Id));
+                    if (infoEstacio == null) 
+                        return;
+                    
+                    infoEstacio.Imatge = Imatge.Atencio;
+                    infoEstacio.Data = DateTime.Now;
+                    infoEstacio.Estat = estat;
+                    infoEstacio.Color = Colors.Vermell;
+                    infoEstacio.Pitar = false;
+                    infoEstacio.Bloquejar = false;
+                    infoEstacio.Aturar = false;
+                    infoEstacio.MostrarBotons = true;
+
+                    taula.Controls.SetChildIndex(infoEstacio, 0);
+                });
+            }
+            catch (Exception ex)
+            {
+                ex.Mostrar();
+            }
+        }
+
+        private void EnRebreKeepAlive(string usuari, string estacio, Notificacio notificacio)
+        {
+            try
+            {
+                Invocar(llistaHistoric, () =>
+                {
+                    var estat = @"Actualització periódica, tot bé";
+
+                    AfegirItem(notificacio.EstacioAlumne, 0, Color.Green, estat);
+
+                    var infoEstacio = taula.Controls
+                        .OfType<InfoEstacio>()
+                        .FirstOrDefault(x => x.Tag.Equals(notificacio.EstacioAlumne.Id));
+                    if (infoEstacio != null)
+                    {
+                        if (infoEstacio.Color != Colors.Defecte && infoEstacio.Color != Colors.Correcte)
+                            $@"{estat} en l'estació {notificacio.EstacioAlumne.Estacio}.".Mostrar(MostrarIcon.Information);
+
+                        infoEstacio.Imatge = 0;
+                        infoEstacio.Data = DateTime.Now;
+                        infoEstacio.Estat = estat;
+                        infoEstacio.Color = infoEstacio.Color != Colors.Defecte && infoEstacio.Color != Colors.Correcte ?
+                            Colors.Correcte :
+                            Colors.Defecte;
+                        infoEstacio.Pitar = false;
+                        infoEstacio.Bloquejar = false;
+                        infoEstacio.Aturar = false;
+                        infoEstacio.MostrarBotons = true;
+                        if (notificacio.AplicacioEnUs.Count > 0)
+                            infoEstacio.AplicacionsEnUs = notificacio.AplicacioEnUs;
+                    }
+
+                });
+            }
+            catch (Exception ex)
+            {
+                ex.Mostrar();
+            }
+        }
+
+        private void EnRebreKeepAliveAmdDeteccio(string usuari, string estacio, Deteccio deteccio)
+        {
+            try
+            {
+                Invocar(llistaHistoric, () =>
+                {
+                    var infoEstacio = taula.Controls
+                        .OfType<InfoEstacio>()
+                        .FirstOrDefault(x => x.Tag.Equals(deteccio.EstacioAlumne.Id));
+                    infoEstacio?.Data = DateTime.Now;
+                });
+
+            }
+            catch (Exception ex)
+            {
+                ex.Mostrar();
+            }
+        }
+
+        private void EnRebreAplicacionsEnUs(string usuari, string estacio, string nom, Notificacio notificacio)
+        {
+            try
+            {
+                var infoEstacio = taula.Controls
+                    .OfType<InfoEstacio>()
+                    .FirstOrDefault(x => x.Tag.Equals(notificacio.EstacioAlumne.Id));
+
+                if (notificacio.AplicacioEnUs.Count > 0)
+                    infoEstacio?.AplicacionsEnUs = notificacio.AplicacioEnUs;
+            }
+            catch (Exception ex)
+            {
+                ex.Mostrar();
+            }
+        }
+
+        //private void Callback(TipusMissatge tipusMissatge, EstacioAlumne estacioAlumne, string text, List<AplicacioEnUs> aplicacionsEnUs)
+        //{
+        //    try
+        //    {
+        //        if (llistaHistoric ==  null ||
+        //            llistaHistoric.IsDisposed)
+        //            return;
+
+        //        if (ContenidorAplicacions.AplicaIcones(aplicacionsEnUs))
+        //            ContenidorAplicacions.CategoriesAplicacions.Desar(Fitxer);
+
+        //        Invocar(llistaHistoric, () =>
+        //        {
+        //            string estat;
+        //            InfoEstacio infoEstacio;
+
+        //            switch (tipusMissatge)
+        //            {
+        //                case TipusMissatge.Inici:
+        //                    //estacioAlumne.DataInici = DateTime.Now;
+        //                    //estacioAlumne.DataDarreraConnexio = DateTime.Now;
+
+        //                    //estat = @"Connexió";
+        //                    //$@"Estació {estacioAlumne.Estacio} connectada.".Mostrar(MostrarIcon.Information);
+
+        //                    //AfegirItem(estacioAlumne, 1, Color.Green, estat);
+
+        //                    //infoEstacio = Properties.Settings.Default.VersioInfo == 1
+        //                    //    ? new InfoEstacioV1(estacioAlumne, Properties.Settings.Default.IntevarvalTemps * 3, null)
+        //                    //    : new InfoEstacioV2(estacioAlumne, Properties.Settings.Default.IntevarvalTemps * 3, OnHistoric, OnAplicacionsEnUs);
+        //                    //infoEstacio.Estat = estat;
+        //                    //infoEstacio.Data = DateTime.Now;
+        //                    //infoEstacio.Imatge = Imatge.Nou;
+        //                    //infoEstacio.Tag = estacioAlumne.Id;
+        //                    //infoEstacio.Color = Colors.Correcte;
+        //                    //infoEstacio.Dock = DockStyle.Fill;
+        //                    //infoEstacio.AplicacionsEnUs = aplicacionsEnUs;
+        //                    //taula.Controls.Add(infoEstacio);
+
+        //                    break;
+
+        //                case TipusMissatge.Fi:
+        //                    //estat = @"Estació desconectada manualment";
+        //                    //$@"Estació {estacioAlumne.Estacio} desconectada manualment.".Mostrar(MostrarIcon.Information);
+
+        //                    //AfegirItem(estacioAlumne, 2, Color.Blue, estat);
+
+        //                    //infoEstacio = taula.Controls
+        //                    //    .OfType<InfoEstacio>()
+        //                    //    .FirstOrDefault(x => x.Tag.Equals(estacioAlumne.Id));
+        //                    //if (infoEstacio != null)
+        //                    //{
+        //                    //    infoEstacio.Imatge = Imatge.Vell;
+        //                    //    infoEstacio.Estat = estat;
+        //                    //    infoEstacio.Color = Colors.VermellFosc;
+        //                    //    infoEstacio.Pitar = false;
+        //                    //    infoEstacio.Bloquejar = false;
+        //                    //    infoEstacio.Aturar = false;
+        //                    //    infoEstacio.MostrarBotons = false;
+        //                    //    if (aplicacionsEnUs.Count > 0)
+        //                    //        infoEstacio.AplicacionsEnUs = aplicacionsEnUs;
+
+        //                    //    taula.Controls.SetChildIndex(infoEstacio, 0);
+
+        //                    //    //taula.Controls.Remove(infoEstacio);
+        //                    //    //DefineixColumnes(int.Parse(cbColumnes.Text));
+        //                    //}
+        //                    break;
+
+        //                case TipusMissatge.Deteccio:
+        //                    //var tt = text.Split(':');
+        //                    //estat = $"Aplicació '{tt.First()}' (Aturada: {tt.Last()})";
+        //                    //$@"{estat} en l'estació {estacioAlumne.Estacio}.".Mostrar(MostrarIcon.Warning);
+
+        //                    //AfegirItem(estacioAlumne, 3, Color.Red, estat);
+
+        //                    //infoEstacio = taula.Controls
+        //                    //    .OfType<InfoEstacio>()
+        //                    //    .FirstOrDefault(x => x.Tag.Equals(estacioAlumne.Id));
+        //                    //if (infoEstacio != null)
+        //                    //{
+        //                    //    infoEstacio.Imatge = Imatge.Atencio;
+        //                    //    infoEstacio.Data = DateTime.Now;
+        //                    //    infoEstacio.Estat = estat;
+        //                    //    infoEstacio.Color = Colors.Vermell;
+        //                    //    infoEstacio.Pitar = false;
+        //                    //    infoEstacio.Bloquejar = false;
+        //                    //    infoEstacio.Aturar = false;
+        //                    //    infoEstacio.MostrarBotons = true;
+        //                    //    if (aplicacionsEnUs.Count > 0) 
+        //                    //        infoEstacio.AplicacionsEnUs = aplicacionsEnUs;
+
+        //                    //    taula.Controls.SetChildIndex(infoEstacio, 0);
+        //                    //}
+
+        //                    break;
+
+        //                case TipusMissatge.Temps:
+        //                    //estat = @"Actualització periódica, tot bé";
+
+        //                    //AfegirItem(estacioAlumne, 0, Color.Green, estat);
+
+        //                    //infoEstacio = taula.Controls
+        //                    //    .OfType<InfoEstacio>()
+        //                    //    .FirstOrDefault(x => x.Tag.Equals(estacioAlumne.Id));
+        //                    //if (infoEstacio != null)
+        //                    //{
+        //                    //    if (infoEstacio.Color != Colors.Defecte && infoEstacio.Color != Colors.Correcte)
+        //                    //        $@"{estat} en l'estació {estacioAlumne.Estacio}.".Mostrar(MostrarIcon.Information);
+
+        //                    //    infoEstacio.Imatge = 0;
+        //                    //    infoEstacio.Data = DateTime.Now;
+        //                    //    infoEstacio.Estat = estat;
+        //                    //    infoEstacio.Color = infoEstacio.Color != Colors.Defecte && infoEstacio.Color != Colors.Correcte ?
+        //                    //        Colors.Correcte : 
+        //                    //        Colors.Defecte;
+        //                    //    infoEstacio.Pitar = false;
+        //                    //    infoEstacio.Bloquejar = false;
+        //                    //    infoEstacio.Aturar = false;
+        //                    //    infoEstacio.MostrarBotons = true;
+        //                    //    if (aplicacionsEnUs.Count > 0)
+        //                    //        infoEstacio.AplicacionsEnUs = aplicacionsEnUs;
+        //                    //}
+        //                    break;
+
+        //                case TipusMissatge.FiServidor:
+        //                    //estat = @"Desconnexió servidor";
+        //                    //estat.Mostrar(MostrarIcon.Information);
+
+        //                    //AfegirItem(estacioAlumne, 2, Color.Blue, estat);
+
+        //                    //infoEstacio = taula.Controls
+        //                    //    .OfType<InfoEstacio>()
+        //                    //    .FirstOrDefault(x => x.Tag.Equals(estacioAlumne.Id));
+        //                    //if (infoEstacio != null)
+        //                    //{
+        //                    //    taula.Controls.Remove(infoEstacio);
+        //                    //    DefineixColumnes(int.Parse(cbColumnes.Text));
+        //                    //}
+        //                    break;
+
+        //                case TipusMissatge.TempsAmbDeteccio:
+        //                case TipusMissatge.Prova:
+        //                    //infoEstacio = taula.Controls
+        //                    //    .OfType<InfoEstacio>()
+        //                    //    .FirstOrDefault(x => x.Tag.Equals(estacioAlumne.Id));
+        //                    //if (infoEstacio != null)
+        //                    //{
+        //                    //    infoEstacio.Data = DateTime.Now;
+        //                    //    if (aplicacionsEnUs.Count > 0)
+        //                    //        infoEstacio.AplicacionsEnUs = aplicacionsEnUs;
+        //                    //}
+        //                    break;
+
+        //                default:
+        //                    throw new ArgumentOutOfRangeException(nameof(tipusMissatge), tipusMissatge, null);
+        //            }
+        //        });
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        ex.Mostrar();
+        //    }
+        //}
 
         private void OnHistoric(string estacio)
         {
@@ -285,41 +506,41 @@ namespace Examen.Professor.Formularis
             }
         }
 
-        private string GestorEstat(TipusMissatge tipusMissatge, EstacioAlumne estacioAlumne)
-        {
-            try
-            {
-                CercaAccions(estacioAlumne, out var pitar, out var bloquejar, out var aturar);
+        //private string GestorEstat(TipusMissatge tipusMissatge, EstacioAlumne estacioAlumne)
+        //{
+        //    try
+        //    {
+        //        CercaAccions(estacioAlumne, out var pitar, out var bloquejar, out var aturar);
 
-                var aplicacions = ContenidorAplicacions.TotesSenseIgnorades;
-                if (bStartStop.Tag is string s &&
-                    bool.TryParse(s, out var start) &&
-                    !start)
-                    aplicacions = [new Aplicacio()];
+        //        var aplicacions = ContenidorAplicacions.TotesSenseIgnorades;
+        //        if (bStartStop.Tag is string s &&
+        //            bool.TryParse(s, out var start) &&
+        //            !start)
+        //            aplicacions = [new Aplicacio()];
 
-                var ret = tipusMissatge switch
-                {
-                    TipusMissatge.Inici or
-                        TipusMissatge.Temps or
-                        TipusMissatge.TempsAmbDeteccio =>
-                        $@"{aplicacions.Serialitzar()}^{pitar}^{bloquejar}^{aturar}^{_fi}",
-                    TipusMissatge.Prova or
-                        TipusMissatge.Deteccio or
-                        TipusMissatge.Fi or
-                        TipusMissatge.FiServidor =>
-                        $@"Ok^{pitar}^{bloquejar}^{aturar}^{_fi}",
-                    _ => throw new ArgumentOutOfRangeException(nameof(tipusMissatge), tipusMissatge, null)
-                };
+        //        var ret = tipusMissatge switch
+        //        {
+        //            TipusMissatge.Inici or
+        //                TipusMissatge.Temps or
+        //                TipusMissatge.TempsAmbDeteccio =>
+        //                $@"{aplicacions.Serialitzar()}^{pitar}^{bloquejar}^{aturar}^{_fi}",
+        //            TipusMissatge.Prova or
+        //                TipusMissatge.Deteccio or
+        //                TipusMissatge.Fi or
+        //                TipusMissatge.FiServidor =>
+        //                $@"Ok^{pitar}^{bloquejar}^{aturar}^{_fi}",
+        //            _ => throw new ArgumentOutOfRangeException(nameof(tipusMissatge), tipusMissatge, null)
+        //        };
 
-                return ret;
-            }
-            catch (Exception ex)
-            {
-                ex.Mostrar();
-            }
+        //        return ret;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        ex.Mostrar();
+        //    }
 
-            return $@":{bool.FalseString}:{bool.FalseString}:{bool.FalseString}";
-        }
+        //    return $@":{bool.FalseString}:{bool.FalseString}:{bool.FalseString}";
+        //}
 
         private void CercaAccions(EstacioAlumne estacioAlumne, out bool pitar, out bool bloquejar, out bool aturar)
         {

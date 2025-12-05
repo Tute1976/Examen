@@ -81,7 +81,7 @@
             this.lCodi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lCodi.Location = new System.Drawing.Point(100, 275);
             this.lCodi.Name = "lCodi";
-            this.lCodi.Size = new System.Drawing.Size(41, 20);
+            this.lCodi.Size = new System.Drawing.Size(64, 29);
             this.lCodi.TabIndex = 1;
             this.lCodi.Text = "Codi";
             // 
@@ -90,7 +90,7 @@
             this.txtCodi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodi.Location = new System.Drawing.Point(100, 300);
             this.txtCodi.Name = "txtCodi";
-            this.txtCodi.Size = new System.Drawing.Size(300, 31);
+            this.txtCodi.Size = new System.Drawing.Size(300, 43);
             this.txtCodi.TabIndex = 1;
             this.txtCodi.TextChanged += new System.EventHandler(this.Text_TextChanged);
             // 
@@ -100,7 +100,7 @@
             this.txtNom.Location = new System.Drawing.Point(20, 225);
             this.txtNom.Margin = new System.Windows.Forms.Padding(0);
             this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(455, 31);
+            this.txtNom.Size = new System.Drawing.Size(455, 43);
             this.txtNom.TabIndex = 0;
             this.txtNom.TextChanged += new System.EventHandler(this.Text_TextChanged);
             // 
@@ -110,7 +110,7 @@
             this.lNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lNom.Location = new System.Drawing.Point(25, 200);
             this.lNom.Name = "lNom";
-            this.lNom.Size = new System.Drawing.Size(42, 20);
+            this.lNom.Size = new System.Drawing.Size(65, 29);
             this.lNom.TabIndex = 3;
             this.lNom.Text = "Nom";
             // 

@@ -25,37 +25,46 @@ namespace Examen.Intermediari.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("guest")]
-        public string UserName {
+        [global::System.Configuration.DefaultSettingValueAttribute("cua_presencia")]
+        public string CuaPresencia {
             get {
-                return ((string)(this["UserName"]));
+                return ((string)(this["CuaPresencia"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Z3Vlc3Q=")]
-        public string Password {
+        [global::System.Configuration.DefaultSettingValueAttribute("canal_prohibicions")]
+        public string CanalProhibicions {
             get {
-                return ((string)(this["Password"]));
+                return ((string)(this["CanalProhibicions"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("localhost")]
-        public string HostName {
+        [global::System.Configuration.DefaultSettingValueAttribute("37.223.168.229")]
+        public string Servidor {
             get {
-                return ((string)(this["HostName"]));
+                return ((string)(this["Servidor"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("/")]
-        public string VirtualHost {
+        [global::System.Configuration.DefaultSettingValueAttribute("6379")]
+        public int Port {
             get {
-                return ((string)(this["VirtualHost"]));
+                return ((int)(this["Port"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("dHV0ZTg4ODM=")]
+        public string Contrasenya {
+            get {
+                return ((string)(this["Contrasenya"]));
             }
         }
     }

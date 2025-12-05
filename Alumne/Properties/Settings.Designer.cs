@@ -25,10 +25,10 @@ namespace Examen.Alumne.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("5")]
-        public int IntevarvalTemps {
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public int IntervalTemps {
             get {
-                return ((int)(this["IntevarvalTemps"]));
+                return ((int)(this["IntervalTemps"]));
             }
         }
     }

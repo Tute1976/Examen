@@ -16,7 +16,7 @@ namespace Examen.Professor
             try
             {
                 Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(Helper.SyncfusionLicense);
-                Ip.Port = Properties.Settings.Default.PortTcp;
+                Helper.Canal = Properties.Settings.Default.Canal;
 
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);

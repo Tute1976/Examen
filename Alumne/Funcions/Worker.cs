@@ -1,11 +1,11 @@
 ﻿using Examen.Suport.Classes;
 using Examen.Suport.Funcions;
-using Examen.Suport.Tcp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using Examen.Alumne.Formularis;
+using Examen.Intermediari.Redis;
 using Examen.Suport.Formularis;
 
 namespace Examen.Alumne.Funcions
@@ -15,8 +15,6 @@ namespace Examen.Alumne.Funcions
         private BackgroundWorker _backgroundWorker;
 
         private List<Aplicacio> _aplicacions;
-        private readonly AdreçaPort _adreçaPortProfessor;
-        private readonly EstacioAlumne _estacioAlumne;
         private readonly Action<List<Aplicacio>> _completat;
         private readonly FrmPrincipal _frmPrincipal;
 
@@ -29,8 +27,6 @@ namespace Examen.Alumne.Funcions
                 InitializeWorker();
 
                 _aplicacions = frmPrincipal.Aplicacions;
-                _adreçaPortProfessor = frmPrincipal.AdreçaPortProfessor;
-                _estacioAlumne = frmPrincipal.EstacioAlumne;
                 _completat = completat;
 
                 _backgroundWorker.RunWorkerAsync();
@@ -71,19 +67,29 @@ namespace Examen.Alumne.Funcions
                 {
                     @$"Aplicació {aplicacio.Nom} en execució detectada, enviant ...".Mostrar(MostrarIcon.Warning);
                     var aturada = aplicacio.Aturar(_backgroundWorker);
-                    ClientTcp.EnviarEstat(_adreçaPortProfessor, _estacioAlumne, [],
-                        TipusMissatge.Deteccio,
-                        Pitar, Bloquejar, Aturar, FiServidor, $"{aplicacio.Nom}:{aturada.SiNo()}");
+
+                    TipusNotificacio.Deteccio.Detectar(_frmPrincipal.Codi, new Deteccio(_frmPrincipal.EstacioAlumne, aplicacio, aturada));
+
+                    //ClientTcp.EnviarEstat(_adreçaPortProfessor, _estacioAlumne, [],
+                    //    TipusMissatge.Deteccio,
+                    //    Pitar, Bloquejar, Aturar, FiServidor, $"{aplicacio.Nom}:{aturada.SiNo()}");
 
                     deteccio = true;
                 }
 
-                var tipus = deteccio ? TipusMissatge.TempsAmbDeteccio : TipusMissatge.Temps;
-                @$"Enviant missatge de tipus {tipus} ...".Mostrar(MostrarIcon.Information);
-                var json = ClientTcp.EnviarEstat(_adreçaPortProfessor, _estacioAlumne, Helper.AplicacionsEnUs, tipus, Pitar, Bloquejar, Aturar, FiServidor);
+                //var tipus = deteccio ? TipusMissatge.TempsAmbDeteccio : TipusMissatge.Temps;
+                var tipus = deteccio ? TipusNotificacio.KeepAliveAmdDeteccio : TipusNotificacio.KeepAlive;
 
-                var aplicacions = json.Deserialitzar<List<Aplicacio>>();
-                _aplicacions = aplicacions;
+                @$"Enviant missatge de tipus {tipus} ...".Mostrar(MostrarIcon.Information);
+                tipus.Notificar(_frmPrincipal.Codi, new Notificacio(_frmPrincipal.EstacioAlumne, Helper.AplicacionsEnUs));
+
+                //                var json = ClientTcp.EnviarEstat(_adreçaPortProfessor, _estacioAlumne, Helper.AplicacionsEnUs, tipus, Pitar, Bloquejar, Aturar, FiServidor);
+                Intermediari.Redis.Alumne.SubscriuresLlistaAplicacions(_frmPrincipal.Codi, aplicacions => {
+                    _aplicacions = aplicacions;
+                });
+
+                //var aplicacions = json.Deserialitzar<List<Aplicacio>>();
+                //_aplicacions = aplicacions;
             }
             catch (Exception ex)
             {

@@ -28,6 +28,7 @@ namespace Examen.Suport.Funcions
         private static readonly Dictionary<string, string> _Descripcions = [];
 
         public static List<AplicacioEnUs> AplicacionsEnUs { get; set; } = [];
+        public static string Canal { get; set; }
 
         [DllImport("user32.dll")]
         private static extern bool LockWorkStation();
@@ -409,6 +410,27 @@ namespace Examen.Suport.Funcions
                 }
 
                 return false;
+            }
+            catch (Exception ex)
+            {
+                ex.Mostrar();
+            }
+
+            return false;
+        }
+
+        public static bool ObtenirCodi(out string codi)
+        {
+            codi = "";
+
+            try
+            {
+                if (!Ip.ObtenirIp(out var adreçaPort))
+                    throw new Exception("No s'ha pogut obtenir la IP de l'estació.");
+                codi = Ip.CodificaAdreça(adreçaPort);
+                codi = $@"{codi}-{Canal}";
+
+                return true;
             }
             catch (Exception ex)
             {

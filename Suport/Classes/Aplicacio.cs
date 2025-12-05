@@ -1,8 +1,6 @@
-﻿using Examen.Suport.Formularis;
-using Examen.Suport.Funcions;
+﻿using Examen.Suport.Funcions;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 

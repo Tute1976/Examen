@@ -19,10 +19,10 @@ namespace Examen.Suport.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Examen.Suport.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Examen.Suport.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace Examen.Suport.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Altaveu_32x32 {
+        public static System.Drawing.Bitmap Altaveu_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Altaveu_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -73,7 +73,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Aplicacio_32x32 {
+        public static System.Drawing.Bitmap Aplicacio_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Aplicacio_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -83,7 +83,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Aplicacions_32x32 {
+        public static System.Drawing.Bitmap Aplicacions_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Aplicacions_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -93,7 +93,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Aturar_16x16 {
+        public static System.Drawing.Bitmap Aturar_16x16 {
             get {
                 object obj = ResourceManager.GetObject("Aturar_16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -103,7 +103,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Aturar_32x32 {
+        public static System.Drawing.Bitmap Aturar_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Aturar_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -113,7 +113,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Base_16x16 {
+        public static System.Drawing.Bitmap Base_16x16 {
             get {
                 object obj = ResourceManager.GetObject("Base_16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -123,7 +123,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Bloquejar_32x32 {
+        public static System.Drawing.Bitmap Bloquejar_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Bloquejar_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -133,7 +133,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Cancel_16x16 {
+        public static System.Drawing.Bitmap Cancel_16x16 {
             get {
                 object obj = ResourceManager.GetObject("Cancel_16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -143,7 +143,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Cancel_32x32 {
+        public static System.Drawing.Bitmap Cancel_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Cancel_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -153,7 +153,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Cancel_32x321 {
+        public static System.Drawing.Bitmap Cancel_32x321 {
             get {
                 object obj = ResourceManager.GetObject("Cancel_32x321", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -163,7 +163,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Close {
+        public static System.Drawing.Bitmap Close {
             get {
                 object obj = ResourceManager.GetObject("Close", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -173,7 +173,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Copiar {
+        public static System.Drawing.Bitmap Copiar {
             get {
                 object obj = ResourceManager.GetObject("Copiar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -183,7 +183,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Copiar_32x32 {
+        public static System.Drawing.Bitmap Copiar_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Copiar_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -193,7 +193,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Desar {
+        public static System.Drawing.Bitmap Desar {
             get {
                 object obj = ResourceManager.GetObject("Desar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -203,7 +203,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Desar_32x32 {
+        public static System.Drawing.Bitmap Desar_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Desar_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -213,7 +213,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon Examen {
+        public static System.Drawing.Icon Examen {
             get {
                 object obj = ResourceManager.GetObject("Examen", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -223,7 +223,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Examen2 {
+        public static System.Drawing.Bitmap Examen2 {
             get {
                 object obj = ResourceManager.GetObject("Examen2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -233,7 +233,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Examen21 {
+        public static System.Drawing.Bitmap Examen21 {
             get {
                 object obj = ResourceManager.GetObject("Examen21", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -243,7 +243,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Exportar_32x32 {
+        public static System.Drawing.Bitmap Exportar_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Exportar_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -253,7 +253,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Historic_32x32 {
+        public static System.Drawing.Bitmap Historic_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Historic_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -263,7 +263,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Importar_32x32 {
+        public static System.Drawing.Bitmap Importar_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Importar_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -273,7 +273,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Informacio_32x32 {
+        public static System.Drawing.Bitmap Informacio_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Informacio_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -283,7 +283,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Llista_32x32 {
+        public static System.Drawing.Bitmap Llista_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Llista_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -293,7 +293,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Lock {
+        public static System.Drawing.Bitmap Lock {
             get {
                 object obj = ResourceManager.GetObject("Lock", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -303,7 +303,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Message_Information {
+        public static System.Drawing.Bitmap Message_Information {
             get {
                 object obj = ResourceManager.GetObject("Message-Information", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -313,7 +313,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Neteja_16x16 {
+        public static System.Drawing.Bitmap Neteja_16x16 {
             get {
                 object obj = ResourceManager.GetObject("Neteja_16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -323,7 +323,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Neteja_32x32 {
+        public static System.Drawing.Bitmap Neteja_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Neteja_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -333,7 +333,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Netejar {
+        public static System.Drawing.Bitmap Netejar {
             get {
                 object obj = ResourceManager.GetObject("Netejar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -343,7 +343,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Noise {
+        public static System.Drawing.Bitmap Noise {
             get {
                 object obj = ResourceManager.GetObject("Noise", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -353,7 +353,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PropertyGrid {
+        public static System.Drawing.Bitmap PropertyGrid {
             get {
                 object obj = ResourceManager.GetObject("PropertyGrid", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -363,7 +363,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Shut_down_ {
+        public static System.Drawing.Bitmap Shut_down_ {
             get {
                 object obj = ResourceManager.GetObject("Shut down ", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -373,7 +373,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Sortir_32x32 {
+        public static System.Drawing.Bitmap Sortir_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Sortir_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -383,7 +383,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Start_32x32 {
+        public static System.Drawing.Bitmap Start_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Start_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -393,7 +393,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Stop_32x32 {
+        public static System.Drawing.Bitmap Stop_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Stop_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -403,7 +403,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Validation_16x16 {
+        public static System.Drawing.Bitmap Validation_16x16 {
             get {
                 object obj = ResourceManager.GetObject("Validation_16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -413,7 +413,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Validation_32x32 {
+        public static System.Drawing.Bitmap Validation_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Validation_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -423,7 +423,7 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap view_full_list_icone_6722_48 {
+        public static System.Drawing.Bitmap view_full_list_icone_6722_48 {
             get {
                 object obj = ResourceManager.GetObject("view-full-list-icone-6722-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));

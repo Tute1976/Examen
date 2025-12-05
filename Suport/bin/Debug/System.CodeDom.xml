@@ -289,10 +289,10 @@
       <summary>Copies the collection objects to a one-dimensional <see cref="T:System.Array" /> instance beginning at the specified index.</summary>
       <param name="array">The one-dimensional <see cref="T:System.Array" /> that is the destination of the values copied from the collection.</param>
       <param name="index">The index of the array at which to begin inserting.</param>
-      <exception cref="T:System.ArgumentException">The destination array is multidimensional.  
-  
- -or-  
-  
+      <exception cref="T:System.ArgumentException">The destination array is multidimensional.
+
+ -or-
+
  The number of elements in the <see cref="T:System.CodeDom.CodeAttributeArgumentCollection" /> is greater than the available space between the index of the target array specified by the <paramref name="index" /> parameter and the end of the target array.</exception>
       <exception cref="T:System.ArgumentNullException">The <paramref name="array" /> parameter is <see langword="null" />.</exception>
       <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="index" /> parameter is less than the target array's minimum index.</exception>
@@ -398,10 +398,10 @@
       <summary>Copies the collection objects to a one-dimensional <see cref="T:System.Array" /> instance beginning at the specified index.</summary>
       <param name="array">The one-dimensional <see cref="T:System.Array" /> that is the destination of the values copied from the collection.</param>
       <param name="index">The index of the array at which to begin inserting.</param>
-      <exception cref="T:System.ArgumentException">The destination array is multidimensional.  
-  
- -or-  
-  
+      <exception cref="T:System.ArgumentException">The destination array is multidimensional.
+
+ -or-
+
  The number of elements in the <see cref="T:System.CodeDom.CodeAttributeDeclarationCollection" /> is greater than the available space between the index of the target array specified by the <paramref name="index" /> parameter and the end of the target array.</exception>
       <exception cref="T:System.ArgumentNullException">The <paramref name="array" /> parameter is <see langword="null" />.</exception>
       <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="index" /> parameter is less than the target array's minimum index.</exception>
@@ -617,10 +617,10 @@
       <summary>Copies the collection objects to a one-dimensional <see cref="T:System.Array" /> instance beginning at the specified index.</summary>
       <param name="array">The one-dimensional <see cref="T:System.Array" /> that is the destination of the values copied from the collection.</param>
       <param name="index">The index of the array at which to begin inserting.</param>
-      <exception cref="T:System.ArgumentException">The destination array is multidimensional.  
-  
- -or-  
-  
+      <exception cref="T:System.ArgumentException">The destination array is multidimensional.
+
+ -or-
+
  The number of elements in the <see cref="T:System.CodeDom.CodeCatchClauseCollection" /> is greater than the available space between the index of the target array specified by the <paramref name="index" /> parameter and the end of the target array.</exception>
       <exception cref="T:System.ArgumentNullException">The <paramref name="array" /> parameter is <see langword="null" />.</exception>
       <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="index" /> parameter is less than the target array's minimum index.</exception>
@@ -763,10 +763,10 @@
       <summary>Copies the collection objects to the specified one-dimensional <see cref="T:System.Array" /> beginning at the specified index.</summary>
       <param name="array">The one-dimensional <see cref="T:System.Array" /> that is the destination of the values copied from the collection.</param>
       <param name="index">The index of the array at which to begin inserting.</param>
-      <exception cref="T:System.ArgumentException">The destination array is multidimensional.  
-  
- -or-  
-  
+      <exception cref="T:System.ArgumentException">The destination array is multidimensional.
+
+ -or-
+
  The number of elements in the <see cref="T:System.CodeDom.CodeCommentStatementCollection" /> is greater than the available space between the index of the target array specified by the <paramref name="index" /> parameter and the end of the target array.</exception>
       <exception cref="T:System.ArgumentNullException">The <paramref name="array" /> parameter is <see langword="null" />.</exception>
       <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="index" /> parameter is less than the target array's minimum index.</exception>
@@ -1105,10 +1105,10 @@
       <summary>Copies the collection objects to a one-dimensional <see cref="T:System.Array" /> instance beginning at the specified index.</summary>
       <param name="array">The one-dimensional <see cref="T:System.Array" /> that is the destination of the values copied from the collection.</param>
       <param name="index">The index of the array at which to begin inserting.</param>
-      <exception cref="T:System.ArgumentException">The destination array is multidimensional.  
-  
- -or-  
-  
+      <exception cref="T:System.ArgumentException">The destination array is multidimensional.
+
+ -or-
+
  The number of elements in the <see cref="T:System.CodeDom.CodeExpressionCollection" /> is greater than the available space between the index of the target array specified by the <paramref name="index" /> parameter and the end of the target array.</exception>
       <exception cref="T:System.ArgumentNullException">The <paramref name="array" /> parameter is <see langword="null" />.</exception>
       <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="index" /> parameter is less than the target array's minimum index.</exception>
@@ -1177,11 +1177,11 @@
       <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeGotoStatement" /> class using the specified label name.</summary>
       <param name="label">The name of the label at which to continue program execution.</param>
       <exception cref="T:System.ArgumentNullException">
-        <paramref name="Label" /> is <see langword="null" />.</exception>
+        <paramref name="label" /> is <see langword="null" />.</exception>
     </member>
     <member name="P:System.CodeDom.CodeGotoStatement.Label">
       <summary>Gets or sets the name of the label at which to continue program execution.</summary>
-      <exception cref="T:System.ArgumentNullException">The label cannot be set because <paramref name="value" /> is <see langword="null" /> or an empty string.</exception>
+      <exception cref="T:System.ArgumentNullException">The label cannot be set because the value is <see langword="null" /> or an empty string.</exception>
       <returns>A string that indicates the name of the label at which to continue program execution.</returns>
     </member>
     <member name="T:System.CodeDom.CodeIndexerExpression">
@@ -1551,10 +1551,10 @@
       <summary>Copies the collection objects to a one-dimensional <see cref="T:System.Array" /> instance, starting at the specified index.</summary>
       <param name="array">The one-dimensional <see cref="T:System.Array" /> that is the destination of the values copied from the collection.</param>
       <param name="index">The index of the array at which to begin inserting.</param>
-      <exception cref="T:System.ArgumentException">The destination array is multidimensional.  
-  
- -or-  
-  
+      <exception cref="T:System.ArgumentException">The destination array is multidimensional.
+
+ -or-
+
  The number of elements in the <see cref="T:System.CodeDom.CodeNamespaceCollection" /> is greater than the available space between the index of the target array specified by the <paramref name="index" /> parameter and the end of the target array.</exception>
       <exception cref="T:System.ArgumentNullException">The <paramref name="array" /> parameter is <see langword="null" />.</exception>
       <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="index" /> parameter is less than the target array's minimum index.</exception>
@@ -1785,7 +1785,7 @@
     <member name="M:System.CodeDom.CodeParameterDeclarationExpressionCollection.#ctor(System.CodeDom.CodeParameterDeclarationExpression[])">
       <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeParameterDeclarationExpressionCollection" /> class containing the specified array of <see cref="T:System.CodeDom.CodeParameterDeclarationExpression" /> objects.</summary>
       <param name="value">An array of <see cref="T:System.CodeDom.CodeParameterDeclarationExpression" /> objects with which to initialize the collection.</param>
-      <exception cref="T:System.ArgumentNullException">one or more objects in the array are <see langword="null" />.</exception>
+      <exception cref="T:System.ArgumentNullException">One or more objects in the array are <see langword="null" />.</exception>
     </member>
     <member name="M:System.CodeDom.CodeParameterDeclarationExpressionCollection.#ctor(System.CodeDom.CodeParameterDeclarationExpressionCollection)">
       <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeParameterDeclarationExpressionCollection" /> class containing the elements of the specified source collection.</summary>
@@ -1820,10 +1820,10 @@
       <summary>Copies the collection objects to a one-dimensional <see cref="T:System.Array" /> instance beginning at the specified index.</summary>
       <param name="array">The one-dimensional <see cref="T:System.Array" /> that is the destination of the values copied from the collection.</param>
       <param name="index">The index of the array at which to begin inserting.</param>
-      <exception cref="T:System.ArgumentException">The destination array is multidimensional.  
-  
- -or-  
-  
+      <exception cref="T:System.ArgumentException">The destination array is multidimensional.
+
+ -or-
+
  The number of elements in the <see cref="T:System.CodeDom.CodeParameterDeclarationExpressionCollection" /> is greater than the available space between the index of the target array specified by the <paramref name="index" /> parameter and the end of the target array.</exception>
       <exception cref="T:System.ArgumentNullException">The <paramref name="array" /> parameter is <see langword="null" />.</exception>
       <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="index" /> parameter is less than the target array's minimum index.</exception>
@@ -2072,10 +2072,10 @@
       <summary>Copies the elements of the <see cref="T:System.CodeDom.CodeStatementCollection" /> object to a one-dimensional <see cref="T:System.Array" /> instance, starting at the specified index.</summary>
       <param name="array">The one-dimensional <see cref="T:System.Array" /> that is the destination of the values copied from the collection.</param>
       <param name="index">The index of the array at which to begin inserting.</param>
-      <exception cref="T:System.ArgumentException">The destination array is multidimensional.  
-  
- -or-  
-  
+      <exception cref="T:System.ArgumentException">The destination array is multidimensional.
+
+ -or-
+
  The number of elements in the <see cref="T:System.CodeDom.CodeStatementCollection" /> is greater than the available space between the index of the target array specified by the <paramref name="index" /> parameter and the end of the target array.</exception>
       <exception cref="T:System.ArgumentNullException">The <paramref name="array" /> parameter is <see langword="null" />.</exception>
       <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="index" /> parameter is less than the target array's minimum index.</exception>
@@ -2254,10 +2254,10 @@
       <summary>Copies the elements in the <see cref="T:System.CodeDom.CodeTypeDeclarationCollection" /> object to a one-dimensional <see cref="T:System.Array" /> instance, starting at the specified index.</summary>
       <param name="array">The one-dimensional <see cref="T:System.Array" /> that is the destination of the values copied from the collection.</param>
       <param name="index">The index of the array at which to begin inserting.</param>
-      <exception cref="T:System.ArgumentException">The destination array is multidimensional.  
-  
- -or-  
-  
+      <exception cref="T:System.ArgumentException">The destination array is multidimensional.
+
+ -or-
+
  The number of elements in the <see cref="T:System.CodeDom.CodeTypeDeclarationCollection" /> is greater than the available space between the index of the target array specified by the <paramref name="index" /> parameter and the end of the target array.</exception>
       <exception cref="T:System.ArgumentNullException">The <paramref name="array" /> parameter is <see langword="null" />.</exception>
       <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="index" /> parameter is less than the target array's minimum index.</exception>
@@ -2376,10 +2376,10 @@
       <summary>Copies the collection objects to a one-dimensional <see cref="T:System.Array" /> instance, beginning at the specified index.</summary>
       <param name="array">The one-dimensional <see cref="T:System.Array" /> that is the destination of the values copied from the collection.</param>
       <param name="index">The index of the array at which to begin inserting.</param>
-      <exception cref="T:System.ArgumentException">The destination array is multidimensional.  
-  
- -or-  
-  
+      <exception cref="T:System.ArgumentException">The destination array is multidimensional.
+
+ -or-
+
  The number of elements in the <see cref="T:System.CodeDom.CodeTypeMemberCollection" /> is greater than the available space between the index of the target array specified by the <paramref name="index" /> parameter and the end of the target array.</exception>
       <exception cref="T:System.ArgumentNullException">The <paramref name="array" /> parameter is <see langword="null" />.</exception>
       <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="index" /> parameter is less than the target array's minimum index.</exception>
@@ -2646,10 +2646,10 @@
       <summary>Copies the items in the collection to the specified one-dimensional <see cref="T:System.Array" /> at the specified index.</summary>
       <param name="array">The one-dimensional <see cref="T:System.Array" /> that is the destination of the values copied from the collection.</param>
       <param name="index">The index of the array at which to begin inserting.</param>
-      <exception cref="T:System.ArgumentException">The <paramref name="array" /> parameter is multidimensional.  
-  
- -or-  
-  
+      <exception cref="T:System.ArgumentException">The <paramref name="array" /> parameter is multidimensional.
+
+ -or-
+
  The number of elements in the <see cref="T:System.CodeDom.CodeTypeReferenceCollection" /> is greater than the available space between the index of the target array specified by the <paramref name="index" /> parameter and the end of the target array.</exception>
       <exception cref="T:System.ArgumentNullException">The <paramref name="array" /> parameter is <see langword="null" />.</exception>
       <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="index" /> parameter is less than the target array's minimum index.</exception>
@@ -3353,26 +3353,26 @@
       <summary>Generates code for the specified primitive expression.</summary>
       <param name="e">The expression to generate code for.</param>
       <exception cref="T:System.ArgumentException">
-        <paramref name="e" /> uses an invalid data type. Only the following data types are valid:  
-  
-- string  
-  
-- char  
-  
-- byte  
-  
-- Int16  
-  
-- Int32  
-  
-- Int64  
+        <paramref name="e" /> uses an invalid data type. Only the following data types are valid:
+
+- string
+
+- char
+
+- byte
+
+- Int16
+
+- Int32
+
+- Int64
 
 - Half
-  
-- Single  
-  
-- Double  
-  
+
+- Single
+
+- Double
+
 - Decimal</exception>
     </member>
     <member name="M:System.CodeDom.Compiler.CodeGenerator.GenerateProperty(System.CodeDom.CodeMemberProperty,System.CodeDom.CodeTypeDeclaration)">
@@ -3771,8 +3771,8 @@
       <returns>The text of the error message.</returns>
     </member>
     <member name="P:System.CodeDom.Compiler.CompilerError.FileName">
-      <summary>Gets or sets the file name of the source file that contains the code which caused the error.</summary>
-      <returns>The file name of the source file that contains the code which caused the error.</returns>
+      <summary>Gets or sets the file name of the source file that contains the code that caused the error.</summary>
+      <returns>The file name of the source file that contains the code that caused the error.</returns>
     </member>
     <member name="P:System.CodeDom.Compiler.CompilerError.IsWarning">
       <summary>Gets or sets a value that indicates whether the error is a warning.</summary>
@@ -3828,13 +3828,13 @@
       <summary>Copies the collection values to a one-dimensional <see cref="T:System.Array" /> instance at the specified index.</summary>
       <param name="array">The one-dimensional <see cref="T:System.Array" /> that is the destination of the values copied from <see cref="T:System.CodeDom.Compiler.CompilerErrorCollection" />.</param>
       <param name="index">The index in the array at which to start copying.</param>
-      <exception cref="T:System.ArgumentException">The array indicated by the <paramref name="array" /> parameter is multidimensional.  
-  
- -or-  
-  
- The number of elements in the <see cref="T:System.CodeDom.Compiler.CompilerErrorCollection" /> is greater than the available space between the index value of the <paramref name="arrayIndex" /> parameter in the array indicated by the <paramref name="array" /> parameter and the end of the array indicated by the <paramref name="array" /> parameter.</exception>
+      <exception cref="T:System.ArgumentException">The array indicated by the <paramref name="array" /> parameter is multidimensional.
+
+ -or-
+
+ The number of elements in the <see cref="T:System.CodeDom.Compiler.CompilerErrorCollection" /> is greater than the available space between <paramref name="index" /> and the end of the array indicated by <paramref name="array" />.</exception>
       <exception cref="T:System.ArgumentNullException">The <paramref name="array" /> parameter is <see langword="null" />.</exception>
-      <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="index" /> parameter is less than the lowbound of the array indicated by the <paramref name="array" /> parameter.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="index" /> parameter is less than the lower bound of the array indicated by the <paramref name="array" /> parameter.</exception>
     </member>
     <member name="M:System.CodeDom.Compiler.CompilerErrorCollection.IndexOf(System.CodeDom.Compiler.CompilerError)">
       <summary>Gets the index of the specified <see cref="T:System.CodeDom.Compiler.CompilerError" /> object in the collection, if it exists in the collection.</summary>
@@ -3907,10 +3907,10 @@
     <member name="P:System.CodeDom.Compiler.CompilerInfo.CodeDomProviderType">
       <summary>Gets the type of the configured <see cref="T:System.CodeDom.Compiler.CodeDomProvider" /> implementation.</summary>
       <exception cref="T:System.Configuration.ConfigurationException">The language provider is not configured on this computer.</exception>
-      <exception cref="T:System.Configuration.ConfigurationErrorsException">Cannot locate the type because it is a <see langword="null" /> or empty string.  
-  
- -or-  
-  
+      <exception cref="T:System.Configuration.ConfigurationErrorsException">Cannot locate the type because it is a <see langword="null" /> or empty string.
+
+ -or-
+
  Cannot locate the type because the name for the <see cref="T:System.CodeDom.Compiler.CodeDomProvider" /> cannot be found in the configuration file.</exception>
       <returns>A read-only <see cref="T:System.Type" /> instance that represents the configured language provider type.</returns>
     </member>

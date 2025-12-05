@@ -2,17 +2,20 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Examen.Professor.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="PortTcp" Type="System.Int32" Scope="Application">
-      <Value Profile="(Default)">8883</Value>
-    </Setting>
-    <Setting Name="IntevarvalTemps" Type="System.Int32" Scope="Application">
-      <Value Profile="(Default)">5</Value>
+    <Setting Name="IntervalTemps" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">10</Value>
     </Setting>
     <Setting Name="Aplicacions" Type="System.String" Scope="Application">
       <Value Profile="(Default)">.\Aplicacions.json</Value>
     </Setting>
     <Setting Name="VersioInfo" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="Canal" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Test</Value>
+    </Setting>
+    <Setting Name="Duracio" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1</Value>
     </Setting>
   </Settings>
 </SettingsFile>

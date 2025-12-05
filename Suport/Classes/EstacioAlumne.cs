@@ -9,8 +9,6 @@ namespace Examen.Suport.Classes
         public DateTime? DataInici { get; set; }
         public DateTime? DataDarreraConnexio { get; set; }
 
-        public AdreçaPort AdreçaPort { get; set; }
-
         public string Nom { get; set; }
         public string Usuari { get; set; }
         public string Estacio { get; set; }
@@ -27,25 +25,16 @@ namespace Examen.Suport.Classes
      
                 Nom = nom;
 
-                AdreçaPort = new AdreçaPort();
                 Usuari = Environment.UserName;
                 Estacio = Environment.MachineName;
 
                 var query = new SelectQuery("SELECT Manufacturer, Model FROM Win32_ComputerSystem");
-                using (var searcher = new ManagementObjectSearcher(query))
+                using var searcher = new ManagementObjectSearcher(query);
+                foreach (var process in searcher.Get())
                 {
-                    foreach (var process in searcher.Get())
-                    {
-                        Fabricant = process["Manufacturer"].ToString();
-                        Model = process["Model"].ToString();
-                    }
+                    Fabricant = process["Manufacturer"].ToString();
+                    Model = process["Model"].ToString();
                 }
-
-                if (!Funcions.Ip.ObtenirIp(out var adreçaPortMascara))
-                    return;
-                AdreçaPort = adreçaPortMascara;
-                AdreçaPort.Port = Funcions.Ip.Port;
-                AdreçaPort.Port = Funcions.Ip.ObtenirPort(AdreçaPort);
             }
             catch
             {
@@ -57,7 +46,7 @@ namespace Examen.Suport.Classes
 
         public override string ToString()
         {
-            return $"{Usuari} ({Estacio}) - {Fabricant} {Model} ({AdreçaPort})";
+            return $"{Usuari} ({Estacio}) - {Fabricant} {Model}";
         }
 
         public string Serialitzar()

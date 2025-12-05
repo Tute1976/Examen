@@ -1,6 +1,4 @@
-﻿using System;
-using Examen.Suport.Funcions;
-using Examen.Suport.Tcp;
+﻿using Examen.Suport.Funcions;
 using System.Net;
 
 namespace Examen.Suport.Classes
@@ -42,16 +40,16 @@ namespace Examen.Suport.Classes
             return new IPEndPoint(Adreça, Port);
         }
 
-        public bool Provar(EstacioAlumne estacioAlumne, Action fi)
-        {
-            try
-            {
-                return !string.IsNullOrEmpty(ClientTcp.EnviarEstat(this, estacioAlumne, [], TipusMissatge.Prova, Helper.Pitar, Helper.Bloquejar, Helper.Aturar, fi));
-            }
-            catch
-            {
-                return false;
-            }
-        }
+        //public bool Provar(EstacioAlumne estacioAlumne, Action fi)
+        //{
+        //    try
+        //    {
+        //        return !string.IsNullOrEmpty(ClientTcp.EnviarEstat(this, estacioAlumne, [], TipusMissatge.Prova, Helper.Pitar, Helper.Bloquejar, Helper.Aturar, fi));
+        //    }
+        //    catch
+        //    {
+        //        return false;
+        //    }
+        //}
     }
 }

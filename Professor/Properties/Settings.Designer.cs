@@ -25,19 +25,10 @@ namespace Examen.Professor.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("8883")]
-        public int PortTcp {
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public int IntervalTemps {
             get {
-                return ((int)(this["PortTcp"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("5")]
-        public int IntevarvalTemps {
-            get {
-                return ((int)(this["IntevarvalTemps"]));
+                return ((int)(this["IntervalTemps"]));
             }
         }
         
@@ -56,6 +47,24 @@ namespace Examen.Professor.Properties {
         public int VersioInfo {
             get {
                 return ((int)(this["VersioInfo"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Test")]
+        public string Canal {
+            get {
+                return ((string)(this["Canal"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int Duracio {
+            get {
+                return ((int)(this["Duracio"]));
             }
         }
     }
