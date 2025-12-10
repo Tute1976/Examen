@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "D:\\Privat\\Programacio\\Git\\Examen\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{929EA363-1BEB-487C-B4C9-F840779AC1E3}|Alumne\\Alumne.csproj|D:\\Privat\\Programacio\\Git\\Examen\\alumne\\formularis\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{929EA363-1BEB-487C-B4C9-F840779AC1E3}|Alumne\\Alumne.csproj|d:\\privat\\programacio\\git\\examen\\alumne\\formularis\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{929EA363-1BEB-487C-B4C9-F840779AC1E3}|Alumne\\Alumne.csproj|solutionrelative:alumne\\formularis\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -19,19 +19,19 @@
       "RelativeMoniker": "D:0:0:{21BA3972-B2E5-4ADD-8805-8598AAD20B61}|Intermediari\\Intermediari.csproj|solutionrelative:intermediari\\redis\\professor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{21BA3972-B2E5-4ADD-8805-8598AAD20B61}|Intermediari\\Intermediari.csproj|d:\\privat\\programacio\\git\\examen\\intermediari\\redis\\connexio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{21BA3972-B2E5-4ADD-8805-8598AAD20B61}|Intermediari\\Intermediari.csproj|D:\\Privat\\Programacio\\Git\\Examen\\intermediari\\redis\\connexio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{21BA3972-B2E5-4ADD-8805-8598AAD20B61}|Intermediari\\Intermediari.csproj|solutionrelative:intermediari\\redis\\connexio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{64790BAC-D2B1-4616-B861-C19F3DD82D09}|Professor\\Professor.csproj|d:\\privat\\programacio\\git\\examen\\professor\\controls\\infoestaciov3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{64790BAC-D2B1-4616-B861-C19F3DD82D09}|Professor\\Professor.csproj|D:\\Privat\\Programacio\\Git\\Examen\\professor\\controls\\infoestaciov3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{64790BAC-D2B1-4616-B861-C19F3DD82D09}|Professor\\Professor.csproj|solutionrelative:professor\\controls\\infoestaciov3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{64790BAC-D2B1-4616-B861-C19F3DD82D09}|Professor\\Professor.csproj|d:\\privat\\programacio\\git\\examen\\professor\\controls\\infoestaciov3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{64790BAC-D2B1-4616-B861-C19F3DD82D09}|Professor\\Professor.csproj|D:\\Privat\\Programacio\\Git\\Examen\\professor\\controls\\infoestaciov3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{64790BAC-D2B1-4616-B861-C19F3DD82D09}|Professor\\Professor.csproj|solutionrelative:professor\\controls\\infoestaciov3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{929EA363-1BEB-487C-B4C9-F840779AC1E3}|Alumne\\Alumne.csproj|d:\\privat\\programacio\\git\\examen\\alumne\\formularis\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{929EA363-1BEB-487C-B4C9-F840779AC1E3}|Alumne\\Alumne.csproj|D:\\Privat\\Programacio\\Git\\Examen\\alumne\\formularis\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{929EA363-1BEB-487C-B4C9-F840779AC1E3}|Alumne\\Alumne.csproj|solutionrelative:alumne\\formularis\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -42,8 +42,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 4,
@@ -54,8 +58,7 @@
               "RelativeToolTip": "Intermediari\\Redis\\Connexio.cs",
               "ViewState": "AgIAACUBAAAAAAAAAAAEwEEBAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T09:04:39.472Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-05T09:04:39.472Z"
             },
             {
               "$type": "Document",
@@ -67,8 +70,7 @@
               "RelativeToolTip": "Professor\\Controls\\InfoEstacioV3.cs",
               "ViewState": "AgIAAGsAAAAAAAAAAIA2wHgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T09:01:34.518Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-05T09:01:34.518Z"
             },
             {
               "$type": "Document",
@@ -79,8 +81,7 @@
               "ToolTip": "D:\\Privat\\Programacio\\Git\\Examen\\Professor\\Controls\\InfoEstacioV3.cs [Design]",
               "RelativeToolTip": "Professor\\Controls\\InfoEstacioV3.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T09:01:31.819Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-12-05T09:01:31.819Z"
             },
             {
               "$type": "Document",
@@ -92,8 +93,7 @@
               "RelativeToolTip": "Professor\\Formularis\\FrmPrincipal.cs",
               "ViewState": "AgIAAAMBAAAAAAAAAAAnwEUBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T08:14:58.536Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-04T08:14:58.536Z"
             },
             {
               "$type": "Document",
@@ -103,7 +103,7 @@
               "RelativeDocumentMoniker": "Alumne\\Formularis\\FrmPrincipal.cs",
               "ToolTip": "D:\\Privat\\Programacio\\Git\\Examen\\Alumne\\Formularis\\FrmPrincipal.cs",
               "RelativeToolTip": "Alumne\\Formularis\\FrmPrincipal.cs",
-              "ViewState": "AgIAAJgAAAAAAAAAAAASwKsAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAHkAAAAAAAAAAAAwwKwAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-04T08:14:58.552Z",
               "EditorCaption": ""
@@ -118,8 +118,7 @@
               "RelativeToolTip": "Intermediari\\Redis\\Professor.cs",
               "ViewState": "AgIAAHsAAAAAAAAAAIA8wMgAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T09:04:33.789Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-04T09:04:33.789Z"
             },
             {
               "$type": "Document",
@@ -131,8 +130,7 @@
               "RelativeToolTip": "Intermediari\\Redis\\Alumne.cs",
               "ViewState": "AgIAADMAAAAAAAAAAAA1wFIAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T17:46:54.702Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-04T17:46:54.702Z"
             },
             {
               "$type": "Document",
@@ -143,8 +141,7 @@
               "ToolTip": "D:\\Privat\\Programacio\\Git\\Examen\\Alumne\\Formularis\\FrmPrincipal.cs [Design]",
               "RelativeToolTip": "Alumne\\Formularis\\FrmPrincipal.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T08:36:50.764Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-12-05T08:36:50.764Z"
             }
           ]
         }
