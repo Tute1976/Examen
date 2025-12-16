@@ -51,6 +51,7 @@ namespace Examen.Professor.Controls
             this.bBloquejar = new System.Windows.Forms.ToolStripButton();
             this.bAturar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bCapturar = new System.Windows.Forms.ToolStripButton();
             this.bAplicacionsEnUs = new System.Windows.Forms.ToolStripButton();
             this.bHistoric = new System.Windows.Forms.ToolStripButton();
             this.bTancar = new System.Windows.Forms.ToolStripButton();
@@ -247,6 +248,7 @@ namespace Examen.Professor.Controls
             this.bBloquejar,
             this.bAturar,
             this.toolStripSeparator1,
+            this.bCapturar,
             this.bAplicacionsEnUs,
             this.bHistoric,
             this.bTancar,
@@ -293,6 +295,16 @@ namespace Examen.Professor.Controls
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 33);
+            // 
+            // bCapturar
+            // 
+            this.bCapturar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bCapturar.Image = global::Examen.Professor.Properties.Resources.Capturar_32x32;
+            this.bCapturar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bCapturar.Name = "bCapturar";
+            this.bCapturar.Size = new System.Drawing.Size(34, 28);
+            this.bCapturar.Text = "Capturar pantalla estació";
+            this.bCapturar.Click += new System.EventHandler(this.bCapturar_Click);
             // 
             // bAplicacionsEnUs
             // 
@@ -392,5 +404,6 @@ namespace Examen.Professor.Controls
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripButton bHistoric;
         private ToolStripSeparator toolStripSeparator2;
+        private ToolStripButton bCapturar;
     }
 }

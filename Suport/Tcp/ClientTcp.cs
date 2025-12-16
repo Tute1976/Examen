@@ -1,15 +1,3 @@
-using Examen.Suport.Classes;
-using Examen.Suport.Formularis;
-using Examen.Suport.Funcions;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
 namespace Examen.Suport.Tcp
 {
     //public static class ClientTcp_

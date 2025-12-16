@@ -153,6 +153,16 @@ namespace Examen.Professor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Capturar_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Capturar_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Copiar {
             get {
                 object obj = ResourceManager.GetObject("Copiar", resourceCulture);
@@ -336,6 +346,16 @@ namespace Examen.Professor.Properties {
         internal static System.Drawing.Bitmap PropertyGrid {
             get {
                 object obj = ResourceManager.GetObject("PropertyGrid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Renombrar_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Renombrar_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

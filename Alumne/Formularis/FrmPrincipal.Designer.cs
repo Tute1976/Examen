@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
-            this.imatgesConnecta = new System.Windows.Forms.ImageList(this.components);
+            this.imatgesConnecta = new System.Windows.Forms.ImageList();
             this.lCodi = new System.Windows.Forms.Label();
             this.txtCodi = new System.Windows.Forms.TextBox();
             this.txtNom = new System.Windows.Forms.TextBox();
@@ -40,13 +39,13 @@
             this.bTancar = new System.Windows.Forms.Button();
             this.bIniciar = new System.Windows.Forms.Button();
             this.imatge = new System.Windows.Forms.PictureBox();
-            this.timerTemps = new System.Windows.Forms.Timer(this.components);
-            this.timerImatge = new System.Windows.Forms.Timer(this.components);
-            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.timerTemps = new System.Windows.Forms.Timer();
+            this.timerImatge = new System.Windows.Forms.Timer();
+            this.notifyIcon = new System.Windows.Forms.NotifyIcon();
             this.txtId = new System.Windows.Forms.Label();
             this.panelInfo = new System.Windows.Forms.Panel();
             this.txtVersio = new System.Windows.Forms.Label();
-            this.timerAplicacionsEnUs = new System.Windows.Forms.Timer(this.components);
+            this.timerAplicacionsEnUs = new System.Windows.Forms.Timer();
             this.panelFons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imatge)).BeginInit();
             this.panelInfo.SuspendLayout();

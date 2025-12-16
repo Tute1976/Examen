@@ -1,13 +1,3 @@
-using Examen.Suport.Classes;
-using Examen.Suport.Funcions;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Net;
-using System.Net.Sockets;
-using System.Text;
-
 namespace Examen.Suport.Tcp
 {
     //public static class ServidorTcp_

@@ -7,34 +7,18 @@ namespace Examen.Intermediari.Redis
 {
     public static class Professor
     {
-        private static long Enviar(string idSessio, TipusNotificacio tipusNotificacio)
+        public static void EnviarAplicacions(string idSessio, EstacioAlumne estacioAlumne, List<Aplicacio> aplicacions)
         {
             try
             {
-                return Connexio.EnviarNotificacio(idSessio, tipusNotificacio, DateTime.Now);
+                Connexio.EnviarNotificacio(idSessio, TipusNotificacio.Aplicacions, aplicacions, estacioAlumne.Estacio, estacioAlumne.Nom);
             }
             catch (Exception ex)
             {
                 ex.Mostrar();
             }
-
-            return -1;
         }
 
-        public static long EnviarAplicacions(string idSessio, List<Aplicacio> aplicacions)
-        {
-            try
-            {
-                return Connexio.EnviarNotificacio(idSessio, TipusNotificacio.Aplicacions, aplicacions);
-            }
-            catch (Exception ex)
-            {
-                ex.Mostrar();
-            }
-
-            return -1;
-        }
-        
         public static void SubscriuresLlistaAplicacionsEnUs(string idSessio, Action<string, string, string, Notificacio> enRebre)
         {
             try
@@ -142,19 +126,19 @@ namespace Examen.Intermediari.Redis
             }
         }
 
-        public static void SubscriuresKeepAliveAmdDeteccio(string idSessio, Action<string, string, Deteccio> enRebre)
+        public static void SubscriuresKeepAliveAmdDeteccio(string idSessio, Action<string, string, Notificacio> enRebre)
         {
             try
             {
                 Connexio.Connectar();
                 var codificacio = new Codificacio(idSessio, nameof(TipusNotificacio.KeepAliveAmdDeteccio), "*");
-                Connexio.SubscriurePatro<Deteccio>(codificacio, (canal, deteccio) =>
+                Connexio.SubscriurePatro<Notificacio>(codificacio, (canal, notificacio) =>
                 {
                     var cc = canal.Split(':');
                     var usuari = cc[cc.Length - 2];
                     var estacio = cc[cc.Length - 1];
 
-                    enRebre.Invoke(usuari, estacio, deteccio);
+                    enRebre.Invoke(usuari, estacio, notificacio);
                 });
             }
             catch (Exception ex)
@@ -163,19 +147,40 @@ namespace Examen.Intermediari.Redis
             }
         }
 
-        public static void SubscriuresDeteccio(string idSessio, Action<string, string, Deteccio> enRebre)
+        public static void SubscriuresDeteccio(string idSessio, Action<string, string, Notificacio> enRebre)
         {
             try
             {
                 Connexio.Connectar();
                 var codificacio = new Codificacio(idSessio, nameof(TipusNotificacio.Deteccio), "*");
-                Connexio.SubscriurePatro<Deteccio>(codificacio, (canal, deteccio) =>
+                Connexio.SubscriurePatro<Notificacio>(codificacio, (canal, notificacio) =>
                 {
                     var cc = canal.Split(':');
                     var usuari = cc[cc.Length - 2];
                     var estacio = cc[cc.Length - 1];
 
-                    enRebre.Invoke(usuari, estacio, deteccio);
+                    enRebre.Invoke(usuari, estacio, notificacio);
+                });
+            }
+            catch (Exception ex)
+            {
+                ex.Mostrar();
+            }
+        }
+
+        public static void SubscriuresCaptura(string idSessio, Action<string, string, Notificacio> enRebre)
+        {
+            try
+            {
+                Connexio.Connectar();
+                var codificacio = new Codificacio(idSessio, nameof(TipusNotificacio.Captura), "*");
+                Connexio.SubscriurePatro<Notificacio>(codificacio, (canal, notificacio) =>
+                {
+                    var cc = canal.Split(':');
+                    var usuari = cc[cc.Length - 2];
+                    var estacio = cc[cc.Length - 1];
+
+                    enRebre.Invoke(usuari, estacio, notificacio);
                 });
             }
             catch (Exception ex)
@@ -194,18 +199,31 @@ namespace Examen.Intermediari.Redis
             Connexio.EsborrarClau(codi);
         }
 
-        public static long EnviarAccio(this TipusNotificacio tipusNotificacio, string idSessio, EstacioAlumne estacioAlumne)
+        extension(TipusNotificacio tipusNotificacio)
         {
-            try
+            public void EnviarNotificacio(string idSessio, EstacioAlumne estacioAlumne)
             {
-                return Connexio.EnviarNotificacio(idSessio, tipusNotificacio, true, estacioAlumne.Estacio, estacioAlumne.Nom);
-            }
-            catch (Exception ex)
-            {
-                ex.Mostrar();
+                try
+                {
+                    Connexio.EnviarNotificacio(idSessio, tipusNotificacio, true, estacioAlumne.Estacio, estacioAlumne.Nom);
+                }
+                catch (Exception ex)
+                {
+                    ex.Mostrar();
+                }
             }
 
-            return -1;
+            public void EnviarNotificacio(string idSessio)
+            {
+                try
+                {
+                    Connexio.EnviarNotificacio(idSessio, tipusNotificacio, true, "*");
+                }
+                catch (Exception ex)
+                {
+                    ex.Mostrar();
+                }
+            }
         }
     }
 }

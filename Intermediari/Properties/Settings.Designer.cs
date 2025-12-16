@@ -43,7 +43,7 @@ namespace Examen.Intermediari.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("37.223.168.229")]
+        [global::System.Configuration.DefaultSettingValueAttribute("miniredis.ddns.net")]
         public string Servidor {
             get {
                 return ((string)(this["Servidor"]));
@@ -65,6 +65,15 @@ namespace Examen.Intermediari.Properties {
         public string Contrasenya {
             get {
                 return ((string)(this["Contrasenya"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool Traces {
+            get {
+                return ((bool)(this["Traces"]));
             }
         }
     }

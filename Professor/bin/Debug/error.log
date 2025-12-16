@@ -306,3 +306,609 @@
 
 5/12/2025 10:27:47 [Question]: Vols finalitzar el programa?
 
+11/12/2025 16:07:53 [Information]: Estació LG connectada.
+
+11/12/2025 16:08:14 [Question]: Vols finalitzar el programa?
+
+11/12/2025 16:08:38 [Information]: Estació LG desconectada manualment.
+
+11/12/2025 17:48:42 [Information]: Estació LG connectada.
+
+11/12/2025 17:48:47 [Question]: Vols finalitzar el programa?
+
+11/12/2025 18:20:13 [Information]: Estació LG connectada.
+
+11/12/2025 18:20:16 [Question]: Vols finalitzar el programa?
+
+11/12/2025 18:32:28 [Information]: Estació LG connectada.
+
+11/12/2025 18:32:35 [Question]: Vols finalitzar el programa?
+
+11/12/2025 19:05:30 [Information]: Estació LG connectada.
+
+11/12/2025 19:05:45 [Question]: Vols finalitzar el programa?
+
+11/12/2025 19:06:32 [Warning]: Estació LG desconectada.
+
+11/12/2025 19:17:31 [Information]: Estació LG connectada.
+
+11/12/2025 19:17:42 [Question]: Vols finalitzar el programa?
+
+11/12/2025 19:18:11 [Error]: S'ha produït un error: Error converting value True to type 'Examen.Suport.Classes.Notificacio'. Path '', line 1, position 4.
+
+11/12/2025 19:18:11 [Error]: Detalls:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureType(JsonReader reader, Object value, CultureInfo culture, JsonContract contract, Type targetType)
+
+11/12/2025 19:18:11 [Error]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+
+11/12/2025 19:18:11 [Error]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+
+11/12/2025 19:18:11 [Error]:    at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+
+11/12/2025 19:18:11 [Error]:    at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+
+11/12/2025 19:18:11 [Error]:    at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+
+11/12/2025 19:18:11 [Error]:    at Examen.Suport.Funcions.Text.Deserialitzar[T](String json) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Text.cs:line 61
+
+11/12/2025 19:18:11 [Error]:    at Examen.Intermediari.Redis.Connexio.<>c__DisplayClass18_0`1.<SubscriurePatro>b__0(RedisChannel canal, RedisValue redisValue) in D:\Privat\Programacio\Git\Examen\Intermediari\Redis\Connexio.cs:line 264
+
+11/12/2025 19:18:14 [Warning]: Estació LG desconectada.
+
+11/12/2025 19:54:31 [Information]: Estació LG connectada.
+
+11/12/2025 19:54:39 [Question]: Vols finalitzar el programa?
+
+11/12/2025 19:55:09 [Error]: S'ha produït un error: Error converting value True to type 'Examen.Suport.Classes.Notificacio'. Path '', line 1, position 4.
+
+11/12/2025 19:55:09 [Error]: Detalls:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureType(JsonReader reader, Object value, CultureInfo culture, JsonContract contract, Type targetType)
+
+11/12/2025 19:55:09 [Error]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+
+11/12/2025 19:55:09 [Error]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+
+11/12/2025 19:55:09 [Error]:    at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+
+11/12/2025 19:55:09 [Error]:    at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+
+11/12/2025 19:55:09 [Error]:    at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+
+11/12/2025 19:55:09 [Error]:    at Examen.Suport.Funcions.Text.Deserialitzar[T](String json) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Text.cs:line 61
+
+11/12/2025 19:55:09 [Error]:    at Examen.Intermediari.Redis.Connexio.<>c__DisplayClass18_0`1.<SubscriurePatro>b__0(RedisChannel canal, RedisValue redisValue) in D:\Privat\Programacio\Git\Examen\Intermediari\Redis\Connexio.cs:line 264
+
+11/12/2025 19:56:12 [Warning]: Estació LG desconectada.
+
+11/12/2025 19:56:24 [Information]: Estació LG connectada.
+
+11/12/2025 19:56:25 [Question]: Vols finalitzar el programa?
+
+11/12/2025 19:56:49 [Error]: S'ha produït un error: Error converting value True to type 'Examen.Suport.Classes.Notificacio'. Path '', line 1, position 4.
+
+11/12/2025 19:56:49 [Error]: Detalls:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureType(JsonReader reader, Object value, CultureInfo culture, JsonContract contract, Type targetType)
+
+11/12/2025 19:56:49 [Error]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+
+11/12/2025 19:56:49 [Error]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+
+11/12/2025 19:56:49 [Error]:    at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+
+11/12/2025 19:56:52 [Error]:    at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+
+11/12/2025 19:56:52 [Error]:    at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+
+11/12/2025 19:56:52 [Error]:    at Examen.Suport.Funcions.Text.Deserialitzar[T](String json) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Text.cs:line 61
+
+11/12/2025 19:56:52 [Error]:    at Examen.Intermediari.Redis.Connexio.<>c__DisplayClass18_0`1.<SubscriurePatro>b__0(RedisChannel canal, RedisValue redisValue) in D:\Privat\Programacio\Git\Examen\Intermediari\Redis\Connexio.cs:line 264
+
+11/12/2025 19:56:57 [Warning]: Estació LG desconectada.
+
+11/12/2025 19:59:17 [Information]: Estació LG connectada.
+
+11/12/2025 19:59:23 [Question]: Vols finalitzar el programa?
+
+11/12/2025 19:59:33 [Error]: S'ha produït un error: Error converting value True to type 'Examen.Suport.Classes.Notificacio'. Path '', line 1, position 4.
+
+11/12/2025 19:59:33 [Error]: Detalls:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureType(JsonReader reader, Object value, CultureInfo culture, JsonContract contract, Type targetType)
+
+11/12/2025 19:59:33 [Error]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+
+11/12/2025 19:59:33 [Error]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+
+11/12/2025 19:59:33 [Error]:    at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+
+11/12/2025 19:59:33 [Error]:    at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+
+11/12/2025 19:59:33 [Error]:    at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+
+11/12/2025 19:59:33 [Error]:    at Examen.Suport.Funcions.Text.Deserialitzar[T](String json) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Text.cs:line 61
+
+11/12/2025 19:59:33 [Error]:    at Examen.Intermediari.Redis.Connexio.<>c__DisplayClass18_0`1.<SubscriurePatro>b__0(RedisChannel canal, RedisValue redisValue) in D:\Privat\Programacio\Git\Examen\Intermediari\Redis\Connexio.cs:line 264
+
+11/12/2025 19:59:53 [Information]: Desconnexió servidor
+
+11/12/2025 20:39:18 [Information]: Estació LG connectada.
+
+11/12/2025 20:39:28 [Question]: Vols finalitzar el programa?
+
+11/12/2025 20:40:44 [Error]: S'ha produït un error: Error converting value True to type 'Examen.Suport.Classes.Notificacio'. Path '', line 1, position 4.
+
+11/12/2025 20:40:44 [Error]: Detalls:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureType(JsonReader reader, Object value, CultureInfo culture, JsonContract contract, Type targetType)
+
+11/12/2025 20:40:44 [Error]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+
+11/12/2025 20:40:44 [Error]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+
+11/12/2025 20:40:44 [Error]:    at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+
+11/12/2025 20:40:44 [Error]:    at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+
+11/12/2025 20:40:46 [Error]:    at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+
+11/12/2025 20:40:46 [Error]:    at Examen.Suport.Funcions.Text.Deserialitzar[T](String json) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Text.cs:line 61
+
+11/12/2025 20:40:46 [Error]:    at Examen.Intermediari.Redis.Connexio.<>c__DisplayClass18_0`1.<SubscriurePatro>b__0(RedisChannel canal, RedisValue redisValue) in D:\Privat\Programacio\Git\Examen\Intermediari\Redis\Connexio.cs:line 264
+
+11/12/2025 20:40:52 [Information]: Desconnexió servidor
+
+11/12/2025 20:46:43 [Information]: Estació LG connectada.
+
+11/12/2025 20:47:10 [Question]: Vols finalitzar el programa?
+
+11/12/2025 20:48:12 [Information]: Estat:
+
+11/12/2025 20:48:12 [Information]:     Actualització periódica, tot bé   
+
+11/12/2025 20:48:12 [Information]: Informació: LG Electronics   
+
+11/12/2025 20:48:12 [Information]: Identificador de la sessió: 00000000-0000-0000-0000-000000000000   
+
+11/12/2025 20:48:13 [Information]: Estat:
+
+11/12/2025 20:48:13 [Information]:     Actualització periódica, tot bé   
+
+11/12/2025 20:48:13 [Information]: Informació: LG Electronics   
+
+11/12/2025 20:48:13 [Information]: Identificador de la sessió: 00000000-0000-0000-0000-000000000000   
+
+11/12/2025 20:49:50 [Information]: Iniciar sessió
+
+11/12/2025 20:50:08 [Information]: Finalitzar sessió
+
+11/12/2025 20:50:18 [Question]: Vols bloquejar l'estació LG ?
+
+11/12/2025 20:50:32 [Question]: Vols finalitzar el programa?
+
+15/12/2025 10:32:01 [Error]: S'ha produït un error: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: It was not possible to connect to the redis server(s) 37.223.168.229:6379/Interactive. ConnectTimeout, command=SETEX, timeout: 5000, inst: 0, qu: 0, qs: 0, aw: False, bw: SpinningDown, rs: NotStarted, ws: Idle, in: 0, last-in: 0, cur-in: 0, sync-ops: 1, async-ops: 0, serverEndpoint: 37.223.168.229:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: LG(SE.Redis-v2.10.1.65101), IOCP: (Busy=0,Free=1000,Min=22,Max=1000), WORKER: (Busy=0,Free=2047,Min=22,Max=2047), v: 2.10.1.65101 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+
+15/12/2025 10:32:01 [Error]: Detalls:    at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server, T defaultValue) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2106
+
+15/12/2025 10:32:01 [Error]:    at StackExchange.Redis.RedisBase.ExecuteSync[T](Message message, ResultProcessor`1 processor, ServerEndPoint server, T defaultValue) in /_/src/StackExchange.Redis/RedisBase.cs:line 62
+
+15/12/2025 10:32:01 [Error]:    at StackExchange.Redis.RedisDatabase.StringSet(RedisKey key, RedisValue value, Nullable`1 expiry, Boolean keepTtl, When when, CommandFlags flags) in /_/src/StackExchange.Redis/RedisDatabase.cs:line 3749
+
+15/12/2025 10:32:01 [Error]:    at StackExchange.Redis.RedisDatabase.StringSet(RedisKey key, RedisValue value, Nullable`1 expiry, When when) in /_/src/StackExchange.Redis/RedisDatabase.cs:line 3742
+
+15/12/2025 10:32:01 [Error]:    at Examen.Intermediari.Redis.Connexio.CrearClau(String clau, Object objecte, TimeSpan duracio) in D:\Privat\Programacio\Git\Examen\Intermediari\Redis\Connexio.cs:line 164
+
+15/12/2025 10:32:12 [Error]: S'ha produït un error: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: It was not possible to connect to the redis server(s) 37.223.168.229:6379/Subscription. ConnectTimeout, command=PSUBSCRIBE, timeout: 5000, inst: 0, qu: 1, qs: 0, aw: False, bw: Inactive, rs: NotStarted, ws: Initializing, in: 0, last-in: 0, cur-in: 0, sync-ops: 2, async-ops: 0, serverEndpoint: 37.223.168.229:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: LG(SE.Redis-v2.10.1.65101), IOCP: (Busy=0,Free=1000,Min=22,Max=1000), WORKER: (Busy=7,Free=2040,Min=22,Max=2047), v: 2.10.1.65101 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+
+15/12/2025 10:32:12 [Error]: Detalls:    at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server, T defaultValue) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2106
+
+15/12/2025 10:32:12 [Error]:    at StackExchange.Redis.RedisBase.ExecuteSync[T](Message message, ResultProcessor`1 processor, ServerEndPoint server, T defaultValue) in /_/src/StackExchange.Redis/RedisBase.cs:line 62
+
+15/12/2025 10:32:12 [Error]:    at StackExchange.Redis.RedisSubscriber.EnsureSubscribedToServer(Subscription sub, RedisChannel channel, CommandFlags flags, Boolean internalCall) in /_/src/StackExchange.Redis/RedisSubscriber.cs:line 431
+
+15/12/2025 10:32:12 [Error]:    at StackExchange.Redis.RedisSubscriber.StackExchange.Redis.ISubscriber.Subscribe(RedisChannel channel, Action`2 handler, CommandFlags flags) in /_/src/StackExchange.Redis/RedisSubscriber.cs:line 410
+
+15/12/2025 10:32:12 [Error]:    at Examen.Intermediari.Redis.Connexio.SubscriurePatro[T](Codificacio codificacio, Action`2 accioAlRebre) in D:\Privat\Programacio\Git\Examen\Intermediari\Redis\Connexio.cs:line 295
+
+15/12/2025 10:32:12 [Error]:    at Examen.Intermediari.Redis.Professor.SubscriuresInici(String idSessio, Action`4 enRebre) in D:\Privat\Programacio\Git\Examen\Intermediari\Redis\Professor.cs:line 66
+
+15/12/2025 10:33:37 [Information]: Estació LG connectada.
+
+15/12/2025 10:35:34 [Information]: Estació LG connectada.
+
+15/12/2025 10:41:22 [Information]: Estació LG connectada.
+
+15/12/2025 11:02:49 [Information]: Estació LG connectada.
+
+15/12/2025 11:16:09 [Information]: Estació LG connectada.
+
+15/12/2025 11:18:57 [Information]: Estació LG connectada.
+
+15/12/2025 11:22:06 [Warning]: Estació LG desconectada.
+
+15/12/2025 11:22:06 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 11:22:23 [Information]: Iniciar sessió
+
+15/12/2025 11:22:25 [Information]: Finalitzar sessió
+
+15/12/2025 11:22:26 [Information]: Iniciar sessió
+
+15/12/2025 11:22:27 [Information]: Finalitzar sessió
+
+15/12/2025 11:33:52 [Information]: Estació LG connectada.
+
+15/12/2025 11:33:54 [Information]: Iniciar sessió
+
+15/12/2025 11:34:01 [Information]: Finalitzar sessió
+
+15/12/2025 11:34:04 [Information]: Iniciar sessió
+
+15/12/2025 11:34:06 [Information]: Finalitzar sessió
+
+15/12/2025 11:49:20 [Information]: Estació LG connectada.
+
+15/12/2025 11:49:45 [Information]: Iniciar sessió
+
+15/12/2025 11:49:57 [Warning]: Estació LG desconectada.
+
+15/12/2025 11:50:09 [Information]: Finalitzar sessió
+
+15/12/2025 11:58:46 [Information]: Estació LG connectada.
+
+15/12/2025 11:58:58 [Information]: Iniciar sessió
+
+15/12/2025 11:59:05 [Information]: Finalitzar sessió
+
+15/12/2025 11:59:25 [Information]: Iniciar sessió
+
+15/12/2025 11:59:29 [Information]: Finalitzar sessió
+
+15/12/2025 12:14:30 [Information]: Estació LG connectada.
+
+15/12/2025 12:14:52 [Information]: Iniciar sessió
+
+15/12/2025 12:15:28 [Information]: Finalitzar sessió
+
+15/12/2025 12:16:15 [Information]: Iniciar sessió
+
+15/12/2025 12:25:13 [Information]: Estació LG connectada.
+
+15/12/2025 12:31:23 [Information]: Estació LG connectada.
+
+15/12/2025 12:31:53 [Information]: Iniciar sessió
+
+15/12/2025 12:32:01 [Warning]: Aplicació 'WhatsApp' (Aturada: No) en l'estació LG.
+
+15/12/2025 12:32:02 [Warning]: Aplicació 'Microsoft Edge' (Aturada: Sí) en l'estació LG.
+
+15/12/2025 12:32:52 [Error]: S'ha produït un error: Type specified in JSON 'Examen.Suport.Classes.Notificacio, Suport, Version=1.3.9480.19222, Culture=neutral, PublicKeyToken=null' is not compatible with 'Examen.Suport.Classes.Deteccio, Suport, Version=1.3.9480.19222, Culture=neutral, PublicKeyToken=null'. Path '$type', line 1, position 52.
+
+15/12/2025 12:32:52 [Error]: Detalls:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.ResolveTypeName(JsonReader reader, Type& objectType, JsonContract& contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, String qualifiedTypeName)
+
+15/12/2025 12:32:52 [Error]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.ReadMetadataProperties(JsonReader reader, Type& objectType, JsonContract& contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue, Object& newValue, String& id)
+
+15/12/2025 12:32:52 [Error]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+
+15/12/2025 12:32:52 [Error]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+
+15/12/2025 12:32:52 [Error]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+
+15/12/2025 12:32:52 [Error]:    at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+
+15/12/2025 12:32:52 [Error]:    at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+
+15/12/2025 12:32:52 [Error]:    at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+
+15/12/2025 12:32:52 [Error]:    at Examen.Suport.Funcions.Text.Deserialitzar[T](String json) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Text.cs:line 61
+
+15/12/2025 12:32:52 [Error]:    at Examen.Intermediari.Redis.Connexio.SubscripcioPatro[T](RedisChannel canal, RedisValue redisValue, Action`2 accioAlRebre) in D:\Privat\Programacio\Git\Examen\Intermediari\Redis\Connexio.cs:line 375
+
+15/12/2025 12:35:37 [Information]: Estació LG connectada.
+
+15/12/2025 12:35:52 [Information]: Iniciar sessió
+
+15/12/2025 12:36:58 [Information]: Estació LG connectada.
+
+15/12/2025 12:37:08 [Information]: Iniciar sessió
+
+15/12/2025 12:37:45 [Information]: Estació LG connectada.
+
+15/12/2025 12:38:06 [Information]: Iniciar sessió
+
+15/12/2025 12:39:08 [Warning]: Estació LG desconectada.
+
+15/12/2025 12:40:10 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 12:41:11 [Information]: Estació LG connectada.
+
+15/12/2025 12:41:15 [Information]: Iniciar sessió
+
+15/12/2025 12:42:20 [Warning]: Estació LG desconectada.
+
+15/12/2025 12:42:20 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 12:42:38 [Information]: Estació LG connectada.
+
+15/12/2025 12:42:47 [Information]: Iniciar sessió
+
+15/12/2025 12:43:40 [Warning]: Aplicació 'Visual Studio Code' (Aturada: No) en l'estació LG.
+
+15/12/2025 12:43:53 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 12:44:29 [Warning]: Aplicació 'WhatsApp' (Aturada: Sí) en l'estació LG.
+
+15/12/2025 12:44:29 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 12:46:41 [Warning]: Estació LG desconectada.
+
+15/12/2025 12:46:41 [Error]: S'ha produït un error: Type specified in JSON 'Examen.Suport.Classes.Notificacio, Suport, Version=1.3.9480.19222, Culture=neutral, PublicKeyToken=null' is not compatible with 'Examen.Suport.Classes.Deteccio, Suport, Version=1.3.9480.19222, Culture=neutral, PublicKeyToken=null'. Path '$type', line 1, position 52.
+
+15/12/2025 12:46:41 [Error]: Detalls:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.ResolveTypeName(JsonReader reader, Type& objectType, JsonContract& contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, String qualifiedTypeName)
+
+15/12/2025 12:46:41 [Error]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.ReadMetadataProperties(JsonReader reader, Type& objectType, JsonContract& contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue, Object& newValue, String& id)
+
+15/12/2025 12:46:41 [Error]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+
+15/12/2025 12:46:41 [Error]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+
+15/12/2025 12:46:41 [Error]:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+
+15/12/2025 12:46:41 [Error]:    at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+
+15/12/2025 12:46:41 [Error]:    at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+
+15/12/2025 12:46:41 [Error]:    at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+
+15/12/2025 12:46:41 [Error]:    at Examen.Suport.Funcions.Text.Deserialitzar[T](String json) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Text.cs:line 61
+
+15/12/2025 12:46:41 [Error]:    at Examen.Intermediari.Redis.Connexio.SubscripcioPatro[T](RedisChannel canal, RedisValue redisValue, Action`2 accioAlRebre) in D:\Privat\Programacio\Git\Examen\Intermediari\Redis\Connexio.cs:line 382
+
+15/12/2025 12:51:36 [Information]: Estació LG connectada.
+
+15/12/2025 12:51:47 [Information]: Iniciar sessió
+
+15/12/2025 12:51:56 [Warning]: Aplicació 'Visual Studio Code' (Aturada: No) en l'estació LG.
+
+15/12/2025 12:53:21 [Warning]: Estació LG desconectada.
+
+15/12/2025 12:59:11 [Information]: Estació LG connectada.
+
+15/12/2025 12:59:24 [Information]: Iniciar sessió
+
+15/12/2025 12:59:24 [Warning]: Aplicació 'Visual Studio Code' (Aturada: No) en l'estació LG.
+
+15/12/2025 12:59:24 [Warning]: Aplicació 'WhatsApp' (Aturada: No) en l'estació LG.
+
+15/12/2025 12:59:31 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 12:59:34 [Warning]: Aplicació 'Visual Studio Code' (Aturada: No) en l'estació LG.
+
+15/12/2025 12:59:41 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 12:59:44 [Warning]: Aplicació 'Visual Studio Code' (Aturada: No) en l'estació LG.
+
+15/12/2025 12:59:51 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 12:59:55 [Warning]: Aplicació 'Visual Studio Code' (Aturada: No) en l'estació LG.
+
+15/12/2025 13:00:01 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 13:00:05 [Warning]: Aplicació 'Visual Studio Code' (Aturada: No) en l'estació LG.
+
+15/12/2025 13:00:11 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 13:00:15 [Warning]: Aplicació 'Visual Studio Code' (Aturada: No) en l'estació LG.
+
+15/12/2025 13:00:21 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 13:00:25 [Warning]: Aplicació 'Visual Studio Code' (Aturada: No) en l'estació LG.
+
+15/12/2025 13:00:31 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 13:00:35 [Information]: Finalitzar sessió
+
+15/12/2025 13:00:36 [Information]: Iniciar sessió
+
+15/12/2025 13:00:36 [Warning]: Aplicació 'Visual Studio Code' (Aturada: No) en l'estació LG.
+
+15/12/2025 13:00:41 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 13:00:47 [Warning]: Aplicació 'Visual Studio Code' (Aturada: No) en l'estació LG.
+
+15/12/2025 13:00:51 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 15:59:48 [Information]: Estació LG connectada.
+
+15/12/2025 15:59:58 [Information]: Iniciar sessió
+
+15/12/2025 16:00:13 [Warning]: Aplicació 'Visual Studio Code' (Aturada: No) en l'estació LG.
+
+15/12/2025 16:00:14 [Warning]: Aplicació 'WhatsApp' (Aturada: No) en l'estació LG.
+
+15/12/2025 16:00:18 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 16:00:24 [Warning]: Aplicació 'Visual Studio Code' (Aturada: No) en l'estació LG.
+
+15/12/2025 16:00:28 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 16:00:35 [Warning]: Aplicació 'Visual Studio Code' (Aturada: No) en l'estació LG.
+
+15/12/2025 16:00:38 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 16:00:45 [Warning]: Aplicació 'Visual Studio Code' (Aturada: No) en l'estació LG.
+
+15/12/2025 16:00:48 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 16:00:56 [Warning]: Aplicació 'Visual Studio Code' (Aturada: No) en l'estació LG.
+
+15/12/2025 16:00:58 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 16:01:06 [Warning]: Aplicació 'Visual Studio Code' (Aturada: No) en l'estació LG.
+
+15/12/2025 16:01:08 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 16:01:17 [Warning]: Aplicació 'Visual Studio Code' (Aturada: No) en l'estació LG.
+
+15/12/2025 16:01:18 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 16:01:27 [Warning]: Aplicació 'Visual Studio Code' (Aturada: No) en l'estació LG.
+
+15/12/2025 16:01:28 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 16:01:35 [Information]: Finalitzar sessió
+
+15/12/2025 16:01:43 [Information]: Iniciar sessió
+
+15/12/2025 16:01:43 [Warning]: Aplicació 'Visual Studio Code' (Aturada: No) en l'estació LG.
+
+15/12/2025 16:01:48 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 16:01:54 [Warning]: Aplicació 'Visual Studio Code' (Aturada: No) en l'estació LG.
+
+15/12/2025 16:01:58 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 16:02:03 [Information]: Finalitzar sessió
+
+15/12/2025 16:02:07 [Information]: Iniciar sessió
+
+15/12/2025 16:02:44 [Warning]: Aplicació 'Visual Studio Code' (Aturada: No) en l'estació LG.
+
+15/12/2025 16:02:53 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 16:03:03 [Warning]: Aplicació 'Visual Studio Code' (Aturada: No) en l'estació LG.
+
+15/12/2025 16:03:08 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 16:03:13 [Warning]: Aplicació 'Visual Studio Code' (Aturada: No) en l'estació LG.
+
+15/12/2025 16:03:18 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 16:03:29 [Warning]: Aplicació 'Visual Studio Code' (Aturada: No) en l'estació LG.
+
+15/12/2025 16:03:38 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 16:05:13 [Warning]: Aplicació 'WhatsApp' (Aturada: No) en l'estació LG.
+
+15/12/2025 16:05:18 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 16:05:56 [Warning]: Aplicació 'Visual Studio Code' (Aturada: No) en l'estació LG.
+
+15/12/2025 16:05:58 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 16:06:08 [Information]: Finalitzar sessió
+
+15/12/2025 16:08:25 [Information]: Iniciar sessió
+
+15/12/2025 16:09:17 [Warning]: Estació LG desconectada.
+
+15/12/2025 16:09:26 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 16:09:45 [Warning]: Aplicació 'Visual Studio Code' (Aturada: Sí) en l'estació LG.
+
+15/12/2025 16:09:45 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 16:11:13 [Warning]: Aplicació 'WhatsApp' (Aturada: No) en l'estació LG.
+
+15/12/2025 16:11:13 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 16:12:01 [Warning]: Estació LG desconectada.
+
+15/12/2025 16:12:06 [Warning]: Aplicació 'WhatsApp' (Aturada: No) en l'estació LG.
+
+15/12/2025 16:12:06 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 16:13:23 [Warning]: Estació LG desconectada.
+
+15/12/2025 16:13:52 [Warning]: Aplicació 'WhatsApp' (Aturada: Sí) en l'estació LG.
+
+15/12/2025 16:13:52 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 16:13:57 [Information]: Finalitzar sessió
+
+15/12/2025 16:14:25 [Information]: Iniciar sessió
+
+15/12/2025 16:14:29 [Information]: Finalitzar sessió
+
+15/12/2025 16:14:36 [Information]: Estació LG connectada.
+
+15/12/2025 16:14:46 [Information]: Iniciar sessió
+
+15/12/2025 16:51:22 [Information]: Estació LG connectada.
+
+15/12/2025 16:53:11 [Information]: Estació LG connectada.
+
+15/12/2025 16:55:45 [Information]: Estació LG connectada.
+
+15/12/2025 16:56:14 [Error]: S'ha produït un error: The specified executable is not a valid application for this OS platform.
+
+15/12/2025 16:56:14 [Error]: Detalls:    at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+
+15/12/2025 16:56:14 [Error]:    at System.Diagnostics.Process.Start()
+
+15/12/2025 16:56:14 [Error]:    at Examen.Suport.Funcions.Helper.Executar(String programa, String arguments) in D:\Privat\Programacio\Git\Examen\Suport\Funcions\Helper.cs:line 117
+
+15/12/2025 17:00:45 [Information]: Estació LG connectada.
+
+15/12/2025 17:03:26 [Information]: Estació LG connectada.
+
+15/12/2025 17:46:31 [Information]: Estació LG connectada.
+
+15/12/2025 17:47:44 [Information]: Iniciar sessió
+
+15/12/2025 17:47:51 [Warning]: Aplicació 'WhatsApp' (Aturada: Sí) en l'estació LG.
+
+15/12/2025 17:47:51 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 17:48:13 [Warning]: Aplicació 'WhatsApp' (Aturada: Sí) en l'estació LG.
+
+15/12/2025 17:48:21 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+15/12/2025 17:48:29 [Information]: Estació LG desconectada manualment.
+
+15/12/2025 17:48:34 [Question]: Vols finalitzar el programa?
+
+15/12/2025 17:59:40 [Information]: Estació LG connectada.
+
+15/12/2025 17:59:43 [Question]: Vols finalitzar el programa?
+
+15/12/2025 18:00:51 [Information]: Estació LG connectada.
+
+15/12/2025 18:00:54 [Question]: Vols finalitzar el programa?
+
+15/12/2025 18:02:30 [Information]: Estació LG connectada.
+
+15/12/2025 18:02:34 [Question]: Vols finalitzar el programa?
+
+15/12/2025 18:05:21 [Information]: Estació LG connectada.
+
+15/12/2025 18:05:28 [Question]: Vols finalitzar el programa?
+
+15/12/2025 18:05:40 [Information]: Desconnexió servidor
+
+15/12/2025 18:06:05 [Information]: Estació LG connectada.
+
+15/12/2025 18:06:12 [Information]: Iniciar sessió
+
+15/12/2025 18:06:14 [Question]: Vols finalitzar el programa?
+
+15/12/2025 18:06:17 [Information]: Desconnexió servidor
+
+16/12/2025 8:17:52 [Error]: S'ha produït un error: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: It was not possible to connect to the redis server(s) miniredis.ddns.net:6379/Interactive. ConnectTimeout, command=SETEX, timeout: 5000, inst: 0, qu: 1, qs: 0, aw: False, bw: Activating, rs: NotStarted, ws: Initializing, in: 0, last-in: 0, cur-in: 0, sync-ops: 1, async-ops: 0, serverEndpoint: miniredis.ddns.net:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: LG(SE.Redis-v2.10.1.65101), IOCP: (Busy=0,Free=1000,Min=22,Max=1000), WORKER: (Busy=2,Free=2045,Min=22,Max=2047), v: 2.10.1.65101 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+
+16/12/2025 8:17:52 [Error]: Detalls:    at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server, T defaultValue) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2106
+
+16/12/2025 8:17:52 [Error]:    at StackExchange.Redis.RedisBase.ExecuteSync[T](Message message, ResultProcessor`1 processor, ServerEndPoint server, T defaultValue) in /_/src/StackExchange.Redis/RedisBase.cs:line 62
+
+16/12/2025 8:17:52 [Error]:    at StackExchange.Redis.RedisDatabase.StringSet(RedisKey key, RedisValue value, Nullable`1 expiry, Boolean keepTtl, When when, CommandFlags flags) in /_/src/StackExchange.Redis/RedisDatabase.cs:line 3749
+
+16/12/2025 8:17:52 [Error]:    at StackExchange.Redis.RedisDatabase.StringSet(RedisKey key, RedisValue value, Nullable`1 expiry, When when) in /_/src/StackExchange.Redis/RedisDatabase.cs:line 3742
+
+16/12/2025 8:17:52 [Error]:    at Examen.Intermediari.Redis.Connexio.CrearClau(String clau, Object objecte, TimeSpan duracio) in D:\Privat\Programacio\Git\Examen\Intermediari\Redis\Connexio.cs:line 188
+
+16/12/2025 8:18:00 [Error]: S'ha produït un error: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: It was not possible to connect to the redis server(s) miniredis.ddns.net:6379/Subscription. ConnectTimeout, command=PSUBSCRIBE, timeout: 5000, inst: 0, qu: 1, qs: 0, aw: False, bw: SpinningDown, rs: NotStarted, ws: Idle, in: 0, last-in: 0, cur-in: 0, sync-ops: 2, async-ops: 0, serverEndpoint: miniredis.ddns.net:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: LG(SE.Redis-v2.10.1.65101), IOCP: (Busy=0,Free=1000,Min=22,Max=1000), WORKER: (Busy=0,Free=2047,Min=22,Max=2047), v: 2.10.1.65101 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+
+16/12/2025 8:18:00 [Error]: Detalls:    at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server, T defaultValue) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2106
+
+16/12/2025 8:18:00 [Error]:    at StackExchange.Redis.RedisBase.ExecuteSync[T](Message message, ResultProcessor`1 processor, ServerEndPoint server, T defaultValue) in /_/src/StackExchange.Redis/RedisBase.cs:line 62
+
+16/12/2025 8:18:00 [Error]:    at StackExchange.Redis.RedisSubscriber.EnsureSubscribedToServer(Subscription sub, RedisChannel channel, CommandFlags flags, Boolean internalCall) in /_/src/StackExchange.Redis/RedisSubscriber.cs:line 431
+
+16/12/2025 8:18:00 [Error]:    at StackExchange.Redis.RedisSubscriber.StackExchange.Redis.ISubscriber.Subscribe(RedisChannel channel, Action`2 handler, CommandFlags flags) in /_/src/StackExchange.Redis/RedisSubscriber.cs:line 410
+
+16/12/2025 8:18:00 [Error]:    at Examen.Intermediari.Redis.Connexio.SubscriurePatro[T](Codificacio codificacio, Action`2 accioAlRebre) in D:\Privat\Programacio\Git\Examen\Intermediari\Redis\Connexio.cs:line 325
+
+16/12/2025 8:18:00 [Error]:    at Examen.Intermediari.Redis.Professor.SubscriuresInici(String idSessio, Action`4 enRebre) in D:\Privat\Programacio\Git\Examen\Intermediari\Redis\Professor.cs:line 50
+

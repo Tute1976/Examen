@@ -75,7 +75,6 @@
     <Compile Include="Classes\CategoriaAplicacions.cs" />
     <Compile Include="Classes\ContenidorAplicacionsEnUs.cs" />
     <Compile Include="Classes\ContenidorAplicacions.cs" />
-    <Compile Include="Classes\Deteccio.cs" />
     <Compile Include="Classes\EstacioAlumne.cs" />
     <Compile Include="Classes\Node.cs" />
     <Compile Include="Classes\Notificacio.cs" />

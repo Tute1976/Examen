@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Management;
@@ -27,6 +28,7 @@ namespace Examen.Suport.Funcions
         private static readonly Dictionary<string, Bitmap> _Icones = [];
         private static readonly Dictionary<string, string> _Descripcions = [];
 
+        
         public static List<AplicacioEnUs> AplicacionsEnUs { get; set; } = [];
         public static string Canal { get; set; }
 
@@ -37,11 +39,23 @@ namespace Examen.Suport.Funcions
         private static extern uint WTSGetActiveConsoleSessionId();
 
         [DllImport("shell32.dll", CharSet = CharSet.Auto)]
-        private static extern int ExtractIconEx(string lpszFile, int nIconIndex, IntPtr[] phiconLarge,
-            IntPtr[] phiconSmall, int nIcons);
+        private static extern int ExtractIconEx(string lpszFile, int nIconIndex, IntPtr[] phiconLarge, IntPtr[] phiconSmall, int nIcons);
 
         [DllImport("user32.dll", SetLastError = true)]
         private static extern bool DestroyIcon(IntPtr hIcon);
+
+        public static string DirectoriCaptures { get; set; }
+
+        static Helper()
+        {
+            DirectoriCaptures = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule?.FileName);
+            if (DirectoriCaptures == null)
+                return;
+
+            DirectoriCaptures = Path.Combine(DirectoriCaptures, "Captures");
+            if (!Directory.Exists(DirectoriCaptures))
+                Directory.CreateDirectory(DirectoriCaptures);
+        }
 
         public static void Pitar()
         {
@@ -84,16 +98,22 @@ namespace Examen.Suport.Funcions
             Thread.Sleep(50);
         }
 
-        public static bool Executar(string programa, string arguments)
+        public static bool Executar(string programa, string arguments = "")
         {
             try
             {
                 var psi = new ProcessStartInfo(programa)
                 {
-                    UseShellExecute = false,
-                    Arguments = arguments,
                     CreateNoWindow = true
                 };
+                if (!string.IsNullOrEmpty(arguments))
+                {
+                    psi.Arguments = arguments;
+                    psi.UseShellExecute = false;
+                }
+                else
+                    psi.UseShellExecute = true;
+
                 var process = new Process
                 {
                     StartInfo = psi
@@ -385,7 +405,7 @@ namespace Examen.Suport.Funcions
 
                     if (n > 0)
                     {
-                        if (!_aplicacionsNoAturades.Contains(aplicacio.Nom))
+                        if (!_aplicacionsNoAturades.Contains(aplicacio.Nom, StringComparer.OrdinalIgnoreCase))
                         {
                             backgroundWorker.ReportCustomProgress(10, ToastType.Error, $"L'aplicació '{aplicacio.Nom}', no s'ha pogut aturar");
                             _aplicacionsNoAturades.Add(aplicacio.Nom);
@@ -394,16 +414,16 @@ namespace Examen.Suport.Funcions
                     else
                     {
                         backgroundWorker.ReportCustomProgress(10, ToastType.Alert, $"L'aplicación '{aplicacio.Nom}', ha estat aturada correctament.");
-                        if (_aplicacionsNoAturades.Contains(aplicacio.Nom))
+                        if (_aplicacionsNoAturades.Contains(aplicacio.Nom, StringComparer.OrdinalIgnoreCase))
                             _aplicacionsNoAturades.Remove(aplicacio.Nom);
-                        if (_aplicacionsNoHaurienDEstar.Contains(aplicacio.Nom))
+                        if (_aplicacionsNoHaurienDEstar.Contains(aplicacio.Nom, StringComparer.OrdinalIgnoreCase))
                             _aplicacionsNoHaurienDEstar.Remove(aplicacio.Nom);
                     }
 
                     return n == 0;
                 }
 
-                if (!_aplicacionsNoHaurienDEstar.Contains(aplicacio.Nom))
+                if (!_aplicacionsNoHaurienDEstar.Contains(aplicacio.Nom, StringComparer.OrdinalIgnoreCase))
                 {
                     backgroundWorker.ReportCustomProgress(10, ToastType.Info, $@"L'aplicació '{aplicacio.Nom}', no hauria d'estar en ús.");
                     _aplicacionsNoHaurienDEstar.Add(aplicacio.Nom);
@@ -438,6 +458,47 @@ namespace Examen.Suport.Funcions
             }
 
             return false;
+        }
+
+        public static Bitmap Captura()
+        {
+            Bitmap bitmap = null;
+
+            try
+            {
+                var totalBounds = SystemInformation.VirtualScreen;
+                bitmap = new Bitmap(totalBounds.Width, totalBounds.Height, PixelFormat.Format32bppArgb);
+                using var g = Graphics.FromImage(bitmap);
+
+                g.CopyFromScreen(
+                    totalBounds.X,
+                    totalBounds.Y,
+                    0,
+                    0,
+                    totalBounds.Size,
+                    CopyPixelOperation.SourceCopy);
+
+                var fitxer = Path.Combine(DirectoriCaptures, $"Captura_{DateTime.Now:yyyyMMdd_HHmmss}.png");
+                bitmap.Save(fitxer, ImageFormat.Png);
+
+                return bitmap;
+            }
+            catch (Exception ex)
+            {
+                ex.Mostrar();
+                return bitmap;
+            }
+        }
+    }
+
+    public static class Dpi
+    {
+        [DllImport("user32.dll")]
+        private static extern bool SetProcessDPIAware();
+
+        public static void ActivaDpiAware()
+        {
+            SetProcessDPIAware();
         }
     }
 }

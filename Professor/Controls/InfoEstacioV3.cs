@@ -12,7 +12,7 @@ namespace Examen.Professor.Controls
         private readonly Action<string> _onHistoric;
         private readonly Action<string, ContenidorAplicacionsEnUs> _onAplicacionsEnUs;
 
-        private string _codi;
+        private readonly string _codi;
         private string _estat;
         private readonly string _informacio;
         private Colors _color;
@@ -24,6 +24,7 @@ namespace Examen.Professor.Controls
                 bPitar.Visible = value; 
                 bBloquejar.Visible = value; 
                 bAturar.Visible = value; 
+                bCapturar.Visible = value;
                 bAplicacionsEnUs.Visible = value;
                 toolStripSeparator1.Visible = value;
 
@@ -63,10 +64,6 @@ namespace Examen.Professor.Controls
             }
         }
 
-        public InfoEstacioV3(string codi) : this(codi, new EstacioAlumne("", Guid.Empty), 30, null, null)
-        {
-        }
-
         public InfoEstacioV3(string codi, EstacioAlumne estacioAlumne, int interval, Action<string> onHistoric, Action<string, ContenidorAplicacionsEnUs> onAplicacionsEnUs) : base(estacioAlumne, interval)
         {
             InitializeComponent();
@@ -102,21 +99,21 @@ namespace Examen.Professor.Controls
 
         private void BPitar_Click(object sender, EventArgs e)
         {
-            TipusNotificacio.Pitar.EnviarAccio(_codi, EstacioAlumne);
+            TipusNotificacio.Pitar.EnviarNotificacio(_codi, EstacioAlumne);
         }
 
         private void BBloquejar_Click(object sender, EventArgs e)
         {
             if ($"Vols bloquejar l'estació {txtEstacio.Text} ?".Mostrar(MostrarIcon.Question,
                     MessageBoxButtons.YesNo) == DialogResult.Yes)
-                TipusNotificacio.Bloquejar.EnviarAccio(_codi, EstacioAlumne);
+                TipusNotificacio.Bloquejar.EnviarNotificacio(_codi, EstacioAlumne);
         }
 
         private void BAturar_Click(object sender, EventArgs e)
         {
             if ($"Vols aturar l'estació {txtEstacio.Text} ?".Mostrar(MostrarIcon.Question,
                     MessageBoxButtons.YesNo) == DialogResult.Yes)
-                TipusNotificacio.Bloquejar.EnviarAccio(_codi, EstacioAlumne);
+                TipusNotificacio.Bloquejar.EnviarNotificacio(_codi, EstacioAlumne);
         }
 
         private void BAplicacionsEnUs_Click(object sender, EventArgs e)
@@ -131,6 +128,11 @@ namespace Examen.Professor.Controls
         private void BHistoric_Click(object sender, EventArgs e)
         {
             _onHistoric.Invoke(EstacioAlumne.Estacio);
+        }
+
+        private void bCapturar_Click(object sender, EventArgs e)
+        {
+            TipusNotificacio.Capturar.EnviarNotificacio(_codi, EstacioAlumne);
         }
     }
 }

@@ -8938,3 +8938,1155 @@
 
 5/12/2025 10:28:08 [Information]: Enviant missatge de tipus KeepAlive ...
 
+11/12/2025 16:07:42 [Error]: El codi no és vàlid
+
+11/12/2025 16:07:53 [Information]: Lectura d'aplicacions finalitzada: 31 (Durada: 0s | Darrera: 15s)
+
+11/12/2025 16:08:02 [Asterisk]: Executant worker
+
+11/12/2025 16:08:02 [Information]: Enviant missatge de tipus KeepAlive ...
+
+11/12/2025 16:08:12 [Asterisk]: Executant worker
+
+11/12/2025 16:08:12 [Information]: Enviant missatge de tipus KeepAlive ...
+
+11/12/2025 16:08:22 [Asterisk]: Executant worker
+
+11/12/2025 16:08:22 [Information]: Enviant missatge de tipus KeepAlive ...
+
+11/12/2025 17:48:35 [Error]: El codi no és vàlid
+
+11/12/2025 17:48:43 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 0s | Darrera: 11s)
+
+11/12/2025 17:48:52 [Asterisk]: Executant worker
+
+11/12/2025 17:48:52 [Information]: Enviant missatge de tipus KeepAlive ...
+
+11/12/2025 18:20:06 [Error]: El codi no és vàlid
+
+11/12/2025 18:20:13 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 0s | Darrera: 10s)
+
+11/12/2025 18:20:23 [Asterisk]: Executant worker
+
+11/12/2025 18:20:23 [Information]: Enviant missatge de tipus KeepAlive ...
+
+11/12/2025 18:20:33 [Asterisk]: Executant worker
+
+11/12/2025 18:20:33 [Information]: Enviant missatge de tipus KeepAlive ...
+
+11/12/2025 18:32:16 [Error]: El codi no és vàlid
+
+11/12/2025 18:32:28 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 14s)
+
+11/12/2025 19:05:14 [Error]: El codi no és vàlid
+
+11/12/2025 19:05:30 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 0s | Darrera: 19s)
+
+11/12/2025 19:05:40 [Asterisk]: Executant worker
+
+11/12/2025 19:05:40 [Information]: Enviant missatge de tipus KeepAlive ...
+
+11/12/2025 19:06:32 [Asterisk]: Executant worker
+
+11/12/2025 19:06:32 [Error]: S'ha produït un error: Cross-thread operation not valid: Control 'FrmPrincipal' accessed from a thread other than the thread it was created on.
+
+11/12/2025 19:06:32 [Error]: Detalls:    at System.Windows.Forms.Control.get_Handle()
+
+11/12/2025 19:06:32 [Error]:    at System.Windows.Forms.Control.SetVisibleCore(Boolean value)
+
+11/12/2025 19:06:32 [Error]:    at System.Windows.Forms.Form.SetVisibleCore(Boolean value)
+
+11/12/2025 19:06:32 [Error]:    at System.Windows.Forms.Control.Hide()
+
+11/12/2025 19:06:32 [Error]:    at Examen.Alumne.Formularis.FrmPrincipal.EnRebreFiServidor(String canal) in D:\Privat\Programacio\Git\Examen\Alumne\Formularis\FrmPrincipal.cs:line 185
+
+11/12/2025 19:17:23 [Error]: El codi no és vàlid
+
+11/12/2025 19:17:31 [Information]: Lectura d'aplicacions finalitzada: 32 (Durada: 0s | Darrera: 11s)
+
+11/12/2025 19:17:41 [Asterisk]: Executant worker
+
+11/12/2025 19:17:41 [Information]: Enviant missatge de tipus KeepAlive ...
+
+11/12/2025 19:18:14 [Asterisk]: Executant worker
+
+11/12/2025 19:18:14 [Error]: S'ha produït un error: Cross-thread operation not valid: Control 'FrmPrincipal' accessed from a thread other than the thread it was created on.
+
+11/12/2025 19:18:14 [Error]: Detalls:    at System.Windows.Forms.Control.get_Handle()
+
+11/12/2025 19:18:14 [Error]:    at System.Windows.Forms.Control.SetVisibleCore(Boolean value)
+
+11/12/2025 19:18:14 [Error]:    at System.Windows.Forms.Form.SetVisibleCore(Boolean value)
+
+11/12/2025 19:18:14 [Error]:    at System.Windows.Forms.Control.Hide()
+
+11/12/2025 19:18:14 [Error]:    at Examen.Alumne.Formularis.FrmPrincipal.EnRebreFiServidor(String canal) in D:\Privat\Programacio\Git\Examen\Alumne\Formularis\FrmPrincipal.cs:line 185
+
+11/12/2025 19:54:23 [Error]: El codi no és vàlid
+
+11/12/2025 19:54:31 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 0s | Darrera: 11s)
+
+11/12/2025 19:55:13 [Error]: S'ha produït un error: Cross-thread operation not valid: Control 'FrmPrincipal' accessed from a thread other than the thread it was created on.
+
+11/12/2025 19:55:13 [Error]: Detalls:    at System.Windows.Forms.Control.get_Handle()
+
+11/12/2025 19:55:13 [Error]:    at System.Windows.Forms.Control.SetVisibleCore(Boolean value)
+
+11/12/2025 19:55:13 [Error]:    at System.Windows.Forms.Form.SetVisibleCore(Boolean value)
+
+11/12/2025 19:55:13 [Error]:    at System.Windows.Forms.Control.Hide()
+
+11/12/2025 19:55:13 [Error]:    at Examen.Alumne.Formularis.FrmPrincipal.EnRebreFiServidor(String canal) in D:\Privat\Programacio\Git\Examen\Alumne\Formularis\FrmPrincipal.cs:line 185
+
+11/12/2025 19:56:12 [Asterisk]: Executant worker
+
+11/12/2025 19:56:12 [Information]: Enviant missatge de tipus KeepAlive ...
+
+11/12/2025 19:56:19 [Error]: El codi no és vàlid
+
+11/12/2025 19:56:24 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 0s | Darrera: 8s)
+
+11/12/2025 19:56:54 [Error]: S'ha produït un error: Cross-thread operation not valid: Control 'FrmPrincipal' accessed from a thread other than the thread it was created on.
+
+11/12/2025 19:56:54 [Error]: Detalls:    at System.Windows.Forms.Control.get_Handle()
+
+11/12/2025 19:56:54 [Error]:    at System.Windows.Forms.Control.SetVisibleCore(Boolean value)
+
+11/12/2025 19:56:54 [Error]:    at System.Windows.Forms.Form.SetVisibleCore(Boolean value)
+
+11/12/2025 19:56:54 [Error]:    at System.Windows.Forms.Control.Hide()
+
+11/12/2025 19:56:54 [Error]:    at Examen.Alumne.Formularis.FrmPrincipal.EnRebreFiServidor(String canal) in D:\Privat\Programacio\Git\Examen\Alumne\Formularis\FrmPrincipal.cs:line 185
+
+11/12/2025 19:56:59 [Asterisk]: Executant worker
+
+11/12/2025 19:58:00 [Information]: Enviant missatge de tipus KeepAlive ...
+
+11/12/2025 19:58:04 [Information]: Enviant missatge de tipus KeepAlive ...
+
+11/12/2025 19:59:09 [Error]: El codi no és vàlid
+
+11/12/2025 19:59:17 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 0s | Darrera: 12s)
+
+11/12/2025 20:39:13 [Error]: El codi no és vàlid
+
+11/12/2025 20:39:19 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 0s | Darrera: 9s)
+
+11/12/2025 20:39:28 [Asterisk]: Executant worker
+
+11/12/2025 20:39:28 [Information]: Enviant missatge de tipus KeepAlive ...
+
+11/12/2025 20:41:52 [Error]: El codi no és vàlid
+
+11/12/2025 20:46:18 [Asterisk]: Executant worker
+
+11/12/2025 20:46:19 [Information]: Enviant missatge de tipus KeepAlive ...
+
+11/12/2025 20:46:19 [Asterisk]: Executant worker
+
+11/12/2025 20:46:29 [Error]: El codi no és vàlid
+
+11/12/2025 20:46:43 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 3s | Darrera: 17s)
+
+11/12/2025 20:46:50 [Asterisk]: Executant worker
+
+11/12/2025 20:46:50 [Information]: Enviant missatge de tipus KeepAlive ...
+
+11/12/2025 20:47:00 [Asterisk]: Executant worker
+
+11/12/2025 20:47:00 [Information]: Enviant missatge de tipus KeepAlive ...
+
+11/12/2025 20:47:10 [Asterisk]: Executant worker
+
+11/12/2025 20:47:10 [Information]: Enviant missatge de tipus KeepAlive ...
+
+11/12/2025 20:47:20 [Asterisk]: Executant worker
+
+11/12/2025 20:47:20 [Information]: Enviant missatge de tipus KeepAlive ...
+
+11/12/2025 20:47:30 [Asterisk]: Executant worker
+
+11/12/2025 20:47:30 [Information]: Enviant missatge de tipus KeepAlive ...
+
+11/12/2025 20:47:40 [Asterisk]: Executant worker
+
+11/12/2025 20:47:40 [Information]: Enviant missatge de tipus KeepAlive ...
+
+11/12/2025 20:47:44 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 0s | Darrera: 1m)
+
+11/12/2025 20:47:50 [Asterisk]: Executant worker
+
+11/12/2025 20:47:50 [Information]: Enviant missatge de tipus KeepAlive ...
+
+11/12/2025 20:48:00 [Asterisk]: Executant worker
+
+11/12/2025 20:48:00 [Information]: Enviant missatge de tipus KeepAlive ...
+
+11/12/2025 20:48:10 [Asterisk]: Executant worker
+
+11/12/2025 20:48:10 [Information]: Enviant missatge de tipus KeepAlive ...
+
+11/12/2025 20:48:20 [Asterisk]: Executant worker
+
+11/12/2025 20:48:20 [Information]: Enviant missatge de tipus KeepAlive ...
+
+11/12/2025 20:48:30 [Asterisk]: Executant worker
+
+11/12/2025 20:48:30 [Information]: Enviant missatge de tipus KeepAlive ...
+
+11/12/2025 20:48:40 [Asterisk]: Executant worker
+
+11/12/2025 20:48:40 [Information]: Enviant missatge de tipus KeepAlive ...
+
+11/12/2025 20:48:44 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 0s | Darrera: 1m)
+
+11/12/2025 20:48:50 [Asterisk]: Executant worker
+
+11/12/2025 20:48:50 [Information]: Enviant missatge de tipus KeepAlive ...
+
+11/12/2025 20:49:00 [Asterisk]: Executant worker
+
+11/12/2025 20:49:00 [Information]: Enviant missatge de tipus KeepAlive ...
+
+11/12/2025 20:49:10 [Asterisk]: Executant worker
+
+11/12/2025 20:49:10 [Information]: Enviant missatge de tipus KeepAlive ...
+
+11/12/2025 20:49:20 [Asterisk]: Executant worker
+
+11/12/2025 20:49:20 [Information]: Enviant missatge de tipus KeepAlive ...
+
+11/12/2025 20:49:30 [Asterisk]: Executant worker
+
+11/12/2025 20:49:30 [Information]: Enviant missatge de tipus KeepAlive ...
+
+11/12/2025 20:49:40 [Asterisk]: Executant worker
+
+11/12/2025 20:49:40 [Information]: Enviant missatge de tipus KeepAlive ...
+
+11/12/2025 20:49:45 [Information]: Lectura d'aplicacions finalitzada: 32 (Durada: 0s | Darrera: 1m)
+
+11/12/2025 20:49:50 [Asterisk]: Executant worker
+
+11/12/2025 20:49:50 [Information]: Enviant missatge de tipus KeepAlive ...
+
+11/12/2025 20:50:00 [Asterisk]: Executant worker
+
+11/12/2025 20:50:00 [Information]: Enviant missatge de tipus KeepAlive ...
+
+11/12/2025 20:50:10 [Asterisk]: Executant worker
+
+11/12/2025 20:50:10 [Information]: Enviant missatge de tipus KeepAlive ...
+
+11/12/2025 20:50:20 [Asterisk]: Executant worker
+
+11/12/2025 20:50:20 [Information]: Enviant missatge de tipus KeepAlive ...
+
+11/12/2025 20:50:30 [Asterisk]: Executant worker
+
+11/12/2025 20:50:30 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:32:11 [Error]: S'ha produït un error: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 37.223.168.229:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 5s ago, last-write: 5s ago, keep-alive: 180s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 5s ago, v: 2.10.1.65101, command=EXISTS, timeout: 5000, inst: 0, qu: 1, qs: 0, aw: False, bw: Activating, rs: NotStarted, ws: Idle, in: 0, last-in: 0, cur-in: 0, sync-ops: 1, async-ops: 0, serverEndpoint: 37.223.168.229:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: LG(SE.Redis-v2.10.1.65101), IOCP: (Busy=1,Free=999,Min=22,Max=1000), WORKER: (Busy=6,Free=2041,Min=22,Max=2047), v: 2.10.1.65101 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+
+15/12/2025 10:32:11 [Error]: Detalls:    at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server, T defaultValue) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2106
+
+15/12/2025 10:32:11 [Error]:    at StackExchange.Redis.RedisBase.ExecuteSync[T](Message message, ResultProcessor`1 processor, ServerEndPoint server, T defaultValue) in /_/src/StackExchange.Redis/RedisBase.cs:line 62
+
+15/12/2025 10:32:11 [Error]:    at StackExchange.Redis.RedisDatabase.KeyExists(RedisKey key, CommandFlags flags) in /_/src/StackExchange.Redis/RedisDatabase.cs:line 1200
+
+15/12/2025 10:32:11 [Error]:    at Examen.Intermediari.Redis.Connexio.ExisteixClau(String clau) in D:\Privat\Programacio\Git\Examen\Intermediari\Redis\Connexio.cs:line 200
+
+15/12/2025 10:32:11 [Error]: El codi no és vàlid
+
+15/12/2025 10:33:37 [Information]: Lectura d'aplicacions finalitzada: 32 (Durada: 0s | Darrera: 11s)
+
+15/12/2025 10:33:47 [Asterisk]: Executant worker
+
+15/12/2025 10:33:47 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:33:57 [Asterisk]: Executant worker
+
+15/12/2025 10:33:57 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:34:07 [Asterisk]: Executant worker
+
+15/12/2025 10:34:07 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:34:17 [Asterisk]: Executant worker
+
+15/12/2025 10:34:17 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:34:27 [Asterisk]: Executant worker
+
+15/12/2025 10:34:27 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:34:37 [Asterisk]: Executant worker
+
+15/12/2025 10:34:37 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:34:37 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 10:35:34 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 3s)
+
+15/12/2025 10:35:44 [Asterisk]: Executant worker
+
+15/12/2025 10:35:44 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:35:54 [Asterisk]: Executant worker
+
+15/12/2025 10:35:54 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:36:04 [Asterisk]: Executant worker
+
+15/12/2025 10:36:04 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:36:14 [Asterisk]: Executant worker
+
+15/12/2025 10:36:14 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:36:24 [Asterisk]: Executant worker
+
+15/12/2025 10:36:24 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:36:34 [Asterisk]: Executant worker
+
+15/12/2025 10:36:34 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:36:34 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 10:36:44 [Asterisk]: Executant worker
+
+15/12/2025 10:36:44 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:36:54 [Asterisk]: Executant worker
+
+15/12/2025 10:36:54 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:37:04 [Asterisk]: Executant worker
+
+15/12/2025 10:37:04 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:37:14 [Asterisk]: Executant worker
+
+15/12/2025 10:37:14 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:37:24 [Asterisk]: Executant worker
+
+15/12/2025 10:37:24 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:37:34 [Asterisk]: Executant worker
+
+15/12/2025 10:37:34 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:37:34 [Information]: Lectura d'aplicacions finalitzada: 35 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 10:37:44 [Asterisk]: Executant worker
+
+15/12/2025 10:37:44 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:37:54 [Asterisk]: Executant worker
+
+15/12/2025 10:37:54 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:38:04 [Asterisk]: Executant worker
+
+15/12/2025 10:38:04 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:38:14 [Asterisk]: Executant worker
+
+15/12/2025 10:38:14 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:38:24 [Asterisk]: Executant worker
+
+15/12/2025 10:38:24 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:38:34 [Asterisk]: Executant worker
+
+15/12/2025 10:38:34 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:38:35 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 10:38:44 [Asterisk]: Executant worker
+
+15/12/2025 10:38:44 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:38:54 [Asterisk]: Executant worker
+
+15/12/2025 10:38:54 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:39:04 [Asterisk]: Executant worker
+
+15/12/2025 10:39:04 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:39:14 [Asterisk]: Executant worker
+
+15/12/2025 10:39:14 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:39:24 [Asterisk]: Executant worker
+
+15/12/2025 10:39:24 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:39:34 [Asterisk]: Executant worker
+
+15/12/2025 10:39:34 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:39:35 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 10:39:44 [Asterisk]: Executant worker
+
+15/12/2025 10:39:44 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:39:54 [Asterisk]: Executant worker
+
+15/12/2025 10:39:54 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:40:04 [Asterisk]: Executant worker
+
+15/12/2025 10:40:04 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:40:14 [Asterisk]: Executant worker
+
+15/12/2025 10:40:14 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:41:22 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 3s)
+
+15/12/2025 10:41:32 [Asterisk]: Executant worker
+
+15/12/2025 10:41:32 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:41:42 [Asterisk]: Executant worker
+
+15/12/2025 10:41:42 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:41:52 [Asterisk]: Executant worker
+
+15/12/2025 10:41:52 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:42:02 [Asterisk]: Executant worker
+
+15/12/2025 10:42:02 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:42:12 [Asterisk]: Executant worker
+
+15/12/2025 10:42:12 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:42:22 [Asterisk]: Executant worker
+
+15/12/2025 10:42:22 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:42:22 [Information]: Lectura d'aplicacions finalitzada: 35 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 10:42:32 [Asterisk]: Executant worker
+
+15/12/2025 10:42:32 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:42:42 [Asterisk]: Executant worker
+
+15/12/2025 10:42:42 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:42:52 [Asterisk]: Executant worker
+
+15/12/2025 10:42:52 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:43:02 [Asterisk]: Executant worker
+
+15/12/2025 10:43:02 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:43:12 [Asterisk]: Executant worker
+
+15/12/2025 10:43:12 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:43:22 [Asterisk]: Executant worker
+
+15/12/2025 10:43:22 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:43:22 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 10:43:32 [Asterisk]: Executant worker
+
+15/12/2025 10:43:32 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:43:42 [Asterisk]: Executant worker
+
+15/12/2025 10:43:42 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:43:52 [Asterisk]: Executant worker
+
+15/12/2025 10:43:52 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:44:02 [Asterisk]: Executant worker
+
+15/12/2025 10:44:02 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:44:12 [Asterisk]: Executant worker
+
+15/12/2025 10:44:12 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:44:22 [Asterisk]: Executant worker
+
+15/12/2025 10:44:22 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:44:22 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 10:44:32 [Asterisk]: Executant worker
+
+15/12/2025 10:44:32 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:44:42 [Asterisk]: Executant worker
+
+15/12/2025 10:44:42 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:44:52 [Asterisk]: Executant worker
+
+15/12/2025 10:44:52 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:45:02 [Asterisk]: Executant worker
+
+15/12/2025 10:45:02 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:45:12 [Asterisk]: Executant worker
+
+15/12/2025 10:45:12 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:45:22 [Asterisk]: Executant worker
+
+15/12/2025 10:45:22 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:45:23 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 10:45:32 [Asterisk]: Executant worker
+
+15/12/2025 10:45:32 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:45:42 [Asterisk]: Executant worker
+
+15/12/2025 10:45:42 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:45:52 [Asterisk]: Executant worker
+
+15/12/2025 10:45:52 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:46:02 [Asterisk]: Executant worker
+
+15/12/2025 10:46:02 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:46:12 [Asterisk]: Executant worker
+
+15/12/2025 10:46:12 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:46:22 [Asterisk]: Executant worker
+
+15/12/2025 10:46:22 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:46:23 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 10:46:32 [Asterisk]: Executant worker
+
+15/12/2025 10:46:32 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:46:42 [Asterisk]: Executant worker
+
+15/12/2025 10:46:42 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:46:52 [Asterisk]: Executant worker
+
+15/12/2025 10:46:52 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 10:47:02 [Asterisk]: Executant worker
+
+15/12/2025 10:47:02 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:02:49 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 3s)
+
+15/12/2025 11:02:59 [Asterisk]: Executant worker
+
+15/12/2025 11:02:59 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:03:09 [Asterisk]: Executant worker
+
+15/12/2025 11:03:09 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:03:19 [Asterisk]: Executant worker
+
+15/12/2025 11:03:19 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:03:29 [Asterisk]: Executant worker
+
+15/12/2025 11:03:29 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:03:39 [Asterisk]: Executant worker
+
+15/12/2025 11:03:39 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:03:49 [Asterisk]: Executant worker
+
+15/12/2025 11:03:49 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:03:49 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 11:16:09 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 3s)
+
+15/12/2025 11:16:19 [Asterisk]: Executant worker
+
+15/12/2025 11:16:19 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:16:29 [Asterisk]: Executant worker
+
+15/12/2025 11:16:29 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:16:39 [Asterisk]: Executant worker
+
+15/12/2025 11:16:39 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:16:49 [Asterisk]: Executant worker
+
+15/12/2025 11:16:49 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:16:59 [Asterisk]: Executant worker
+
+15/12/2025 11:16:59 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:17:09 [Asterisk]: Executant worker
+
+15/12/2025 11:17:09 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:17:09 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 11:17:19 [Asterisk]: Executant worker
+
+15/12/2025 11:17:19 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:17:29 [Asterisk]: Executant worker
+
+15/12/2025 11:17:29 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:17:39 [Asterisk]: Executant worker
+
+15/12/2025 11:17:39 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:17:49 [Asterisk]: Executant worker
+
+15/12/2025 11:17:49 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:17:59 [Asterisk]: Executant worker
+
+15/12/2025 11:17:59 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:18:09 [Asterisk]: Executant worker
+
+15/12/2025 11:18:09 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:18:09 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 11:18:19 [Asterisk]: Executant worker
+
+15/12/2025 11:18:19 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:18:29 [Asterisk]: Executant worker
+
+15/12/2025 11:18:29 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:18:39 [Asterisk]: Executant worker
+
+15/12/2025 11:18:39 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:18:57 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 3s)
+
+15/12/2025 11:19:07 [Asterisk]: Executant worker
+
+15/12/2025 11:19:07 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:19:17 [Asterisk]: Executant worker
+
+15/12/2025 11:19:17 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:19:27 [Asterisk]: Executant worker
+
+15/12/2025 11:19:27 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:19:37 [Asterisk]: Executant worker
+
+15/12/2025 11:19:37 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:19:47 [Asterisk]: Executant worker
+
+15/12/2025 11:19:47 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:19:57 [Asterisk]: Executant worker
+
+15/12/2025 11:19:57 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:19:57 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 11:20:07 [Asterisk]: Executant worker
+
+15/12/2025 11:20:07 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:20:17 [Asterisk]: Executant worker
+
+15/12/2025 11:20:17 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:20:27 [Asterisk]: Executant worker
+
+15/12/2025 11:20:27 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:20:37 [Asterisk]: Executant worker
+
+15/12/2025 11:20:37 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:20:47 [Asterisk]: Executant worker
+
+15/12/2025 11:20:47 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:20:57 [Asterisk]: Executant worker
+
+15/12/2025 11:20:57 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:22:07 [Asterisk]: Executant worker
+
+15/12/2025 11:22:07 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:22:07 [Asterisk]: Executant worker
+
+15/12/2025 11:22:07 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:22:07 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 2m 9s)
+
+15/12/2025 11:22:17 [Asterisk]: Executant worker
+
+15/12/2025 11:22:17 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:22:27 [Asterisk]: Executant worker
+
+15/12/2025 11:22:27 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:33:52 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 3s)
+
+15/12/2025 11:34:02 [Asterisk]: Executant worker
+
+15/12/2025 11:34:02 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 11:49:20 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 3s)
+
+15/12/2025 11:50:20 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 11:58:46 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 3s)
+
+15/12/2025 11:59:46 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 12:14:31 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 3s)
+
+15/12/2025 12:14:59 [Asterisk]: Executant worker
+
+15/12/2025 12:14:59 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 12:15:09 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 12:15:19 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 12:15:34 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 12:15:34 [Information]: Lectura d'aplicacions finalitzada: 37 (Durada: 0s | Darrera: 1m 3s)
+
+15/12/2025 12:16:15 [Asterisk]: Executant worker
+
+15/12/2025 12:25:13 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 3s)
+
+15/12/2025 12:31:23 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 3s)
+
+15/12/2025 12:31:54 [Asterisk]: Executant worker
+
+15/12/2025 12:32:01 [Warning]: Aplicació WhatsApp en execució detectada, enviant ...
+
+15/12/2025 12:32:01 [Information]: L'aplicació 'WhatsApp', no s'ha pogut aturar
+
+15/12/2025 12:32:01 [Warning]: Aplicació Microsoft Edge en execució detectada, enviant ...
+
+15/12/2025 12:32:02 [Information]: L'aplicación 'Microsoft Edge', ha estat aturada correctament.
+
+15/12/2025 12:32:02 [Information]: Enviant missatge de tipus KeepAliveAmdDeteccio ...
+
+15/12/2025 12:32:52 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 5s | Darrera: 1m 29s)
+
+15/12/2025 12:33:18 [Error]: S'ha produït un error: Timeout performing SETEX (5000ms), inst: 0, qu: 0, qs: 0, aw: False, bw: Inactive, rs: ReadAsync, ws: Idle, in: 0, in-pipe: 0, out-pipe: 0, last-in: 2, cur-in: 0, sync-ops: 22, async-ops: 0, serverEndpoint: miniredis.ddns.net:6379, conn-sec: 103,03, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: LG(SE.Redis-v2.10.1.65101), IOCP: (Busy=0,Free=1000,Min=22,Max=1000), WORKER: (Busy=1,Free=2046,Min=22,Max=2047), v: 2.10.1.65101 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+
+15/12/2025 12:33:18 [Error]: Detalls:    at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server, T defaultValue) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2106
+
+15/12/2025 12:33:18 [Error]:    at StackExchange.Redis.RedisBase.ExecuteSync[T](Message message, ResultProcessor`1 processor, ServerEndPoint server, T defaultValue) in /_/src/StackExchange.Redis/RedisBase.cs:line 62
+
+15/12/2025 12:33:18 [Error]:    at StackExchange.Redis.RedisDatabase.StringSet(RedisKey key, RedisValue value, Nullable`1 expiry, Boolean keepTtl, When when, CommandFlags flags) in /_/src/StackExchange.Redis/RedisDatabase.cs:line 3749
+
+15/12/2025 12:33:18 [Error]:    at StackExchange.Redis.RedisDatabase.StringSet(RedisKey key, RedisValue value, Nullable`1 expiry, When when) in /_/src/StackExchange.Redis/RedisDatabase.cs:line 3742
+
+15/12/2025 12:33:18 [Error]:    at Examen.Intermediari.Redis.Connexio.CrearClau(String clau, Object objecte, TimeSpan duracio) in D:\Privat\Programacio\Git\Examen\Intermediari\Redis\Connexio.cs:line 179
+
+15/12/2025 12:33:18 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 12:35:37 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 0s | Darrera: 3s)
+
+15/12/2025 12:35:52 [Asterisk]: Executant worker
+
+15/12/2025 12:35:52 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 12:36:03 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 12:36:13 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 12:36:23 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 12:36:33 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 12:36:37 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 12:36:43 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 12:36:58 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 0s | Darrera: 3s)
+
+15/12/2025 12:37:08 [Asterisk]: Executant worker
+
+15/12/2025 12:37:08 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 12:37:19 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 12:37:45 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 0s | Darrera: 3s)
+
+15/12/2025 12:38:24 [Asterisk]: Executant worker
+
+15/12/2025 12:38:29 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 12:41:12 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 0s | Darrera: 3s)
+
+15/12/2025 12:41:22 [Asterisk]: Executant worker
+
+15/12/2025 12:41:22 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 12:42:38 [Information]: Lectura d'aplicacions finalitzada: 43 (Durada: 0s | Darrera: 3s)
+
+15/12/2025 12:42:47 [Asterisk]: Executant worker
+
+15/12/2025 12:42:47 [Information]: Enviant missatge de tipus KeepAlive ...
+
+15/12/2025 12:43:19 [Warning]: Aplicació Visual Studio Code en execució detectada, enviant ...
+
+15/12/2025 12:43:21 [Information]: L'aplicació 'Visual Studio Code', no hauria d'estar en ús.
+
+15/12/2025 12:43:40 [Warning]: Aplicació WhatsApp en execució detectada, enviant ...
+
+15/12/2025 12:44:07 [Information]: Lectura d'aplicacions finalitzada: 44 (Durada: 10s | Darrera: 1m 28s)
+
+15/12/2025 12:44:21 [Information]: L'aplicación 'WhatsApp', ha estat aturada correctament.
+
+15/12/2025 12:44:29 [Information]: Enviant missatge de tipus KeepAliveAmdDeteccio ...
+
+15/12/2025 12:46:28 [Warning]: Aplicació Visual Studio Code en execució detectada, enviant ...
+
+15/12/2025 12:51:36 [Information]: Lectura d'aplicacions finalitzada: 44 (Durada: 0s | Darrera: 3s)
+
+15/12/2025 12:51:47 [Asterisk]: Executant worker
+
+15/12/2025 12:51:47 [Warning]: Aplicació Visual Studio Code en execució detectada, enviant ...
+
+15/12/2025 12:51:56 [Information]: L'aplicació 'Visual Studio Code', no hauria d'estar en ús.
+
+15/12/2025 12:51:56 [Information]: Enviant missatge de tipus KeepAliveAmdDeteccio ...
+
+15/12/2025 12:52:10 [Warning]: Aplicació Visual Studio Code en execució detectada, enviant ...
+
+15/12/2025 12:53:21 [Information]: Lectura d'aplicacions finalitzada: 44 (Durada: 1s | Darrera: 1m 45s)
+
+15/12/2025 12:59:11 [Information]: Lectura d'aplicacions finalitzada: 44 (Durada: 0s | Darrera: 3s)
+
+15/12/2025 12:59:24 [Asterisk]: Executant worker
+
+15/12/2025 12:59:24 [Warning]: Aplicació Visual Studio Code en execució detectada, enviant ...
+
+15/12/2025 12:59:24 [Information]: L'aplicació 'Visual Studio Code', no hauria d'estar en ús.
+
+15/12/2025 12:59:24 [Warning]: Aplicació WhatsApp en execució detectada, enviant ...
+
+15/12/2025 12:59:24 [Information]: L'aplicació 'WhatsApp', no s'ha pogut aturar
+
+15/12/2025 12:59:34 [Warning]: Aplicació Visual Studio Code en execució detectada, enviant ...
+
+15/12/2025 12:59:44 [Warning]: Aplicació Visual Studio Code en execució detectada, enviant ...
+
+15/12/2025 12:59:55 [Warning]: Aplicació Visual Studio Code en execució detectada, enviant ...
+
+15/12/2025 13:00:05 [Warning]: Aplicació Visual Studio Code en execució detectada, enviant ...
+
+15/12/2025 13:00:11 [Information]: Lectura d'aplicacions finalitzada: 45 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 13:00:15 [Warning]: Aplicació Visual Studio Code en execució detectada, enviant ...
+
+15/12/2025 13:00:25 [Warning]: Aplicació Visual Studio Code en execució detectada, enviant ...
+
+15/12/2025 13:00:36 [Asterisk]: Executant worker
+
+15/12/2025 13:00:36 [Warning]: Aplicació Visual Studio Code en execució detectada, enviant ...
+
+15/12/2025 13:00:47 [Warning]: Aplicació Visual Studio Code en execució detectada, enviant ...
+
+15/12/2025 15:58:10 [Error]: El codi no és vàlid
+
+15/12/2025 15:59:39 [Error]: El codi no és vàlid
+
+15/12/2025 15:59:48 [Information]: Lectura d'aplicacions finalitzada: 43 (Durada: 0s | Darrera: 14s)
+
+15/12/2025 15:59:58 [Asterisk]: Executant worker
+
+15/12/2025 16:00:08 [Warning]: Aplicació Visual Studio Code en execució detectada, enviant ...
+
+15/12/2025 16:00:08 [Information]: L'aplicació 'Visual Studio Code', no hauria d'estar en ús.
+
+15/12/2025 16:00:08 [Warning]: Aplicació WhatsApp en execució detectada, enviant ...
+
+15/12/2025 16:00:14 [Information]: L'aplicació 'WhatsApp', no s'ha pogut aturar
+
+15/12/2025 16:00:24 [Warning]: Aplicació Visual Studio Code en execució detectada, enviant ...
+
+15/12/2025 16:00:35 [Warning]: Aplicació Visual Studio Code en execució detectada, enviant ...
+
+15/12/2025 16:00:45 [Warning]: Aplicació Visual Studio Code en execució detectada, enviant ...
+
+15/12/2025 16:00:49 [Information]: Lectura d'aplicacions finalitzada: 44 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 16:00:56 [Warning]: Aplicació Visual Studio Code en execució detectada, enviant ...
+
+15/12/2025 16:01:06 [Warning]: Aplicació Visual Studio Code en execució detectada, enviant ...
+
+15/12/2025 16:01:17 [Warning]: Aplicació Visual Studio Code en execució detectada, enviant ...
+
+15/12/2025 16:01:27 [Warning]: Aplicació Visual Studio Code en execució detectada, enviant ...
+
+15/12/2025 16:01:43 [Asterisk]: Executant worker
+
+15/12/2025 16:01:43 [Warning]: Aplicació Visual Studio Code en execució detectada, enviant ...
+
+15/12/2025 16:01:50 [Information]: Lectura d'aplicacions finalitzada: 43 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 16:01:53 [Warning]: Aplicació Visual Studio Code en execució detectada, enviant ...
+
+15/12/2025 16:02:09 [Asterisk]: Executant worker
+
+15/12/2025 16:02:27 [Warning]: Aplicació Visual Studio Code en execució detectada, enviant ...
+
+15/12/2025 16:02:52 [Error]: S'ha produït un error: Timeout performing SETEX (5000ms), inst: 1, qu: 0, qs: 1, aw: False, bw: Inactive, rs: ReadAsync, ws: Idle, in: 0, in-pipe: 0, out-pipe: 0, last-in: 351, cur-in: 0, sync-ops: 52, async-ops: 0, serverEndpoint: miniredis.ddns.net:6379, conn-sec: 185,35, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: LG(SE.Redis-v2.10.1.65101), IOCP: (Busy=0,Free=1000,Min=22,Max=1000), WORKER: (Busy=1,Free=2046,Min=22,Max=2047), v: 2.10.1.65101 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+
+15/12/2025 16:02:52 [Error]: Detalls:    at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server, T defaultValue) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2106
+
+15/12/2025 16:02:52 [Error]:    at StackExchange.Redis.RedisBase.ExecuteSync[T](Message message, ResultProcessor`1 processor, ServerEndPoint server, T defaultValue) in /_/src/StackExchange.Redis/RedisBase.cs:line 62
+
+15/12/2025 16:02:52 [Error]:    at StackExchange.Redis.RedisDatabase.StringSet(RedisKey key, RedisValue value, Nullable`1 expiry, Boolean keepTtl, When when, CommandFlags flags) in /_/src/StackExchange.Redis/RedisDatabase.cs:line 3749
+
+15/12/2025 16:02:52 [Error]:    at StackExchange.Redis.RedisDatabase.StringSet(RedisKey key, RedisValue value, Nullable`1 expiry, When when) in /_/src/StackExchange.Redis/RedisDatabase.cs:line 3742
+
+15/12/2025 16:02:52 [Error]:    at Examen.Intermediari.Redis.Connexio.CrearClau(String clau, Object objecte, TimeSpan duracio) in D:\Privat\Programacio\Git\Examen\Intermediari\Redis\Connexio.cs:line 186
+
+15/12/2025 16:02:54 [Information]: Lectura d'aplicacions finalitzada: 44 (Durada: 0s | Darrera: 1m 3s)
+
+15/12/2025 16:03:03 [Warning]: Aplicació Visual Studio Code en execució detectada, enviant ...
+
+15/12/2025 16:03:13 [Warning]: Aplicació Visual Studio Code en execució detectada, enviant ...
+
+15/12/2025 16:03:24 [Warning]: Aplicació Visual Studio Code en execució detectada, enviant ...
+
+15/12/2025 16:03:29 [Information]: L'aplicació 'Visual Studio Code', no s'ha pogut aturar
+
+15/12/2025 16:03:54 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 16:04:55 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 16:05:13 [Warning]: Aplicació WhatsApp en execució detectada, enviant ...
+
+15/12/2025 16:05:55 [Warning]: Aplicació Visual Studio Code en execució detectada, enviant ...
+
+15/12/2025 16:05:55 [Information]: Lectura d'aplicacions finalitzada: 36 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 16:06:56 [Information]: Lectura d'aplicacions finalitzada: 44 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 16:07:56 [Information]: Lectura d'aplicacions finalitzada: 43 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 16:08:28 [Asterisk]: Executant worker
+
+15/12/2025 16:08:28 [Warning]: Aplicació Visual Studio Code en execució detectada, enviant ...
+
+15/12/2025 16:09:23 [Information]: L'aplicación 'Visual Studio Code', ha estat aturada correctament.
+
+15/12/2025 16:09:45 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 0s | Darrera: 1m 48s)
+
+15/12/2025 16:10:16 [Warning]: Aplicació WhatsApp en execució detectada, enviant ...
+
+15/12/2025 16:11:13 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 0s | Darrera: 1m 28s)
+
+15/12/2025 16:11:23 [Warning]: Aplicació WhatsApp en execució detectada, enviant ...
+
+15/12/2025 16:12:14 [Information]: Lectura d'aplicacions finalitzada: 32 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 16:12:16 [Warning]: Aplicació WhatsApp en execució detectada, enviant ...
+
+15/12/2025 16:12:39 [Information]: L'aplicación 'WhatsApp', ha estat aturada correctament.
+
+15/12/2025 16:13:42 [Error]: S'ha produït un error: Timeout performing SETEX (5000ms), inst: 0, qu: 0, qs: 0, aw: False, bw: Inactive, rs: ReadAsync, ws: Idle, in: 0, in-pipe: 0, out-pipe: 0, last-in: 351, cur-in: 0, sync-ops: 160, async-ops: 0, serverEndpoint: miniredis.ddns.net:6379, conn-sec: 825,21, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: LG(SE.Redis-v2.10.1.65101), IOCP: (Busy=0,Free=1000,Min=22,Max=1000), WORKER: (Busy=2,Free=2045,Min=22,Max=2047), v: 2.10.1.65101 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+
+15/12/2025 16:13:42 [Error]: Detalls:    at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server, T defaultValue) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2106
+
+15/12/2025 16:13:42 [Error]:    at StackExchange.Redis.RedisBase.ExecuteSync[T](Message message, ResultProcessor`1 processor, ServerEndPoint server, T defaultValue) in /_/src/StackExchange.Redis/RedisBase.cs:line 62
+
+15/12/2025 16:13:42 [Error]:    at StackExchange.Redis.RedisDatabase.StringSet(RedisKey key, RedisValue value, Nullable`1 expiry, Boolean keepTtl, When when, CommandFlags flags) in /_/src/StackExchange.Redis/RedisDatabase.cs:line 3749
+
+15/12/2025 16:13:45 [Error]:    at StackExchange.Redis.RedisDatabase.StringSet(RedisKey key, RedisValue value, Nullable`1 expiry, When when) in /_/src/StackExchange.Redis/RedisDatabase.cs:line 3742
+
+15/12/2025 16:13:45 [Error]:    at Examen.Intermediari.Redis.Connexio.CrearClau(String clau, Object objecte, TimeSpan duracio) in D:\Privat\Programacio\Git\Examen\Intermediari\Redis\Connexio.cs:line 186
+
+15/12/2025 16:13:52 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 1s | Darrera: 1m 38s)
+
+15/12/2025 16:14:26 [Error]: El codi no és vàlid
+
+15/12/2025 16:14:37 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 0s | Darrera: 14s)
+
+15/12/2025 16:14:46 [Asterisk]: Executant worker
+
+15/12/2025 16:51:12 [Error]: El codi no és vàlid
+
+15/12/2025 16:51:22 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 14s)
+
+15/12/2025 16:53:02 [Error]: El codi no és vàlid
+
+15/12/2025 16:53:12 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 17s)
+
+15/12/2025 16:55:30 [Error]: El codi no és vàlid
+
+15/12/2025 16:55:45 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 18s)
+
+15/12/2025 17:00:36 [Error]: El codi no és vàlid
+
+15/12/2025 17:00:46 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 13s)
+
+15/12/2025 17:03:18 [Error]: El codi no és vàlid
+
+15/12/2025 17:03:27 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 12s)
+
+15/12/2025 17:04:27 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 17:05:28 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 17:06:28 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 17:07:29 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 17:08:29 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 17:09:30 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 17:10:30 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 17:11:31 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 17:12:31 [Information]: Lectura d'aplicacions finalitzada: 34 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 17:13:32 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 17:14:32 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 17:15:33 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 17:16:33 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 17:17:34 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 17:18:34 [Information]: Lectura d'aplicacions finalitzada: 32 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 17:19:35 [Information]: Lectura d'aplicacions finalitzada: 32 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 17:20:35 [Information]: Lectura d'aplicacions finalitzada: 32 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 17:21:36 [Information]: Lectura d'aplicacions finalitzada: 32 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 17:22:36 [Information]: Lectura d'aplicacions finalitzada: 32 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 17:23:37 [Information]: Lectura d'aplicacions finalitzada: 32 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 17:24:37 [Information]: Lectura d'aplicacions finalitzada: 32 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 17:25:38 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 17:26:39 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 17:27:39 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 17:28:40 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 17:29:40 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 17:30:41 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 17:31:41 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 17:32:42 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 17:33:42 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 17:34:43 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 17:35:43 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 17:36:44 [Information]: Lectura d'aplicacions finalitzada: 33 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 17:46:18 [Error]: El codi no és vàlid
+
+15/12/2025 17:46:32 [Information]: Lectura d'aplicacions finalitzada: 35 (Durada: 0s | Darrera: 17s)
+
+15/12/2025 17:47:32 [Information]: Lectura d'aplicacions finalitzada: 35 (Durada: 0s | Darrera: 1m)
+
+15/12/2025 17:47:44 [Asterisk]: Executant worker
+
+15/12/2025 17:47:44 [Warning]: Aplicació WhatsApp en execució detectada, enviant ...
+
+15/12/2025 17:47:45 [Information]: L'aplicació 'WhatsApp', no s'ha pogut aturar
+
+15/12/2025 17:47:45 [Information]: L'aplicación 'WhatsApp', ha estat aturada correctament.
+
+15/12/2025 17:48:12 [Warning]: Aplicació WhatsApp en execució detectada, enviant ...
+
+15/12/2025 17:48:12 [Information]: L'aplicació 'WhatsApp', no s'ha pogut aturar
+
+15/12/2025 17:48:13 [Information]: L'aplicación 'WhatsApp', ha estat aturada correctament.
+
+15/12/2025 17:59:32 [Error]: El codi no és vàlid
+
+15/12/2025 17:59:41 [Information]: Lectura d'aplicacions finalitzada: 35 (Durada: 0s | Darrera: 13s)
+
+15/12/2025 18:00:41 [Error]: El codi no és vàlid
+
+15/12/2025 18:00:52 [Information]: Lectura d'aplicacions finalitzada: 35 (Durada: 0s | Darrera: 15s)
+
+15/12/2025 18:02:21 [Error]: El codi no és vàlid
+
+15/12/2025 18:02:30 [Information]: Lectura d'aplicacions finalitzada: 35 (Durada: 0s | Darrera: 12s)
+
+15/12/2025 18:03:33 [Information]: Lectura d'aplicacions finalitzada: 35 (Durada: 2s | Darrera: 1m 3s)
+
+15/12/2025 18:05:11 [Error]: El codi no és vàlid
+
+15/12/2025 18:05:21 [Information]: Lectura d'aplicacions finalitzada: 35 (Durada: 0s | Darrera: 13s)
+
+15/12/2025 18:05:53 [Error]: El codi no és vàlid
+
+15/12/2025 18:06:05 [Information]: Lectura d'aplicacions finalitzada: 36 (Durada: 0s | Darrera: 15s)
+
+15/12/2025 18:06:12 [Asterisk]: Executant worker
+
+15/12/2025 18:07:09 [Error]: El codi no és vàlid
+
+16/12/2025 8:17:52 [Error]: S'ha produït un error: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: It was not possible to connect to the redis server(s) miniredis.ddns.net:6379/Interactive. ConnectTimeout, command=EXISTS, timeout: 5000, inst: 0, qu: 1, qs: 0, aw: False, bw: SpinningDown, rs: NotStarted, ws: Initializing, in: 0, last-in: 0, cur-in: 0, sync-ops: 1, async-ops: 0, serverEndpoint: miniredis.ddns.net:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: LG(SE.Redis-v2.10.1.65101), IOCP: (Busy=0,Free=1000,Min=22,Max=1000), WORKER: (Busy=0,Free=2047,Min=22,Max=2047), v: 2.10.1.65101 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+
+16/12/2025 8:17:52 [Error]: Detalls:    at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server, T defaultValue) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2106
+
+16/12/2025 8:17:52 [Error]:    at StackExchange.Redis.RedisBase.ExecuteSync[T](Message message, ResultProcessor`1 processor, ServerEndPoint server, T defaultValue) in /_/src/StackExchange.Redis/RedisBase.cs:line 62
+
+16/12/2025 8:17:52 [Error]:    at StackExchange.Redis.RedisDatabase.KeyExists(RedisKey key, CommandFlags flags) in /_/src/StackExchange.Redis/RedisDatabase.cs:line 1200
+
+16/12/2025 8:17:52 [Error]:    at Examen.Intermediari.Redis.Connexio.ExisteixClau(String clau) in D:\Privat\Programacio\Git\Examen\Intermediari\Redis\Connexio.cs:line 224
+
+16/12/2025 8:17:52 [Error]: El codi no és vàlid
+

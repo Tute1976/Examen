@@ -7,68 +7,12 @@ namespace Examen.Intermediari.Redis
 {
     public static class Alumne
     {
-        private static long Enviar(string idSessio, TipusNotificacio tipusNotificacio, string nom)
-        {
-            try
-            {
-                return Connexio.EnviarNotificacio(idSessio, tipusNotificacio, DateTime.Now, nom, Environment.UserName, Environment.MachineName);
-            }
-            catch (Exception ex)
-            {
-                ex.Mostrar();
-            }
-
-            return -1;
-        }
-
-        public static long EnviarKeepAlive(string idSessio, Notificacio notificacio)
-        {
-            try
-            {
-                return Connexio.EnviarNotificacio(idSessio, TipusNotificacio.KeepAlive, notificacio, Environment.UserName, Environment.MachineName);
-            }
-            catch (Exception ex)
-            {
-                ex.Mostrar();
-            }
-
-            return -1;
-        }
-
-        public static long EnviarAplicacionsEnUs(string idSessio, Notificacio notificacio)
-        {
-            try
-            {
-                return Connexio.EnviarNotificacio(idSessio, TipusNotificacio.AplicacionsEnUs, notificacio, Environment.UserName, Environment.MachineName);
-            }
-            catch (Exception ex)
-            {
-                ex.Mostrar();
-            }
-
-            return -1;
-        }
-
-        public static long EnviarDeteccio(string idSessio, Deteccio deteccio)
-        {
-            try
-            {
-                return Connexio.EnviarNotificacio(idSessio, TipusNotificacio.Deteccio, deteccio, Environment.UserName, Environment.MachineName);
-            }
-            catch (Exception ex)
-            {
-                ex.Mostrar();
-            }
-
-            return -1;
-        }
-
-        public static void SubscriuresLlistaAplicacions(string idSessio, Action<List<Aplicacio>> enRebre)
+        public static void SubscriuresLlistaAplicacions(string idSessio, EstacioAlumne estacioAlumne, Action<List<Aplicacio>> enRebre)
         {
             try
             {
                 Connexio.Connectar();
-                var codificacio = new Codificacio(idSessio, nameof(TipusNotificacio.Aplicacions));
+                var codificacio = new Codificacio(idSessio, nameof(TipusNotificacio.Aplicacions), estacioAlumne.Estacio, estacioAlumne.Nom);
                 Connexio.SubscriurePatro<List<Aplicacio>>(codificacio, (_, contenidorAplicacions) =>
                 {
                     enRebre.Invoke(contenidorAplicacions);
@@ -136,13 +80,41 @@ namespace Examen.Intermediari.Redis
             }
         }
 
-        public static void SubscriuresFiServidor(string idSessio, EstacioAlumne estacioAlumne, Action<string> enRebreFiServidor)
+        public static void SubscriuresTancament(string idSessio, EstacioAlumne estacioAlumne, Action<string> enRebreTancament)
         {
             try
             {
                 Connexio.Connectar();
-                var codificacio = new Codificacio(idSessio, nameof(TipusNotificacio.FiServidor), estacioAlumne.Estacio, estacioAlumne.Nom);
-                Connexio.SubscriurePatro(codificacio, enRebreFiServidor);
+                var codificacio = new Codificacio(idSessio, nameof(TipusNotificacio.Tancament), estacioAlumne.Estacio, estacioAlumne.Nom);
+                Connexio.SubscriurePatro(codificacio, enRebreTancament);
+            }
+            catch (Exception ex)
+            {
+                ex.Mostrar();
+            }
+        }
+
+        public static void SubscriuresIniciSessio(string idSessio, Action<string> enRebre)
+        {
+            try
+            {
+                Connexio.Connectar();
+                var codificacio = new Codificacio(idSessio, nameof(TipusNotificacio.IniciSessió), "*");
+                Connexio.SubscriurePatro(codificacio, enRebre);
+            }
+            catch (Exception ex)
+            {
+                ex.Mostrar();
+            }
+        }
+
+        public static void SubscriuresFiSessio(string idSessio, Action<string> enRebre)
+        {
+            try
+            {
+                Connexio.Connectar();
+                var codificacio = new Codificacio(idSessio, nameof(TipusNotificacio.FiSessió), "*");
+                Connexio.SubscriurePatro(codificacio, enRebre);
             }
             catch (Exception ex)
             {
@@ -152,36 +124,19 @@ namespace Examen.Intermediari.Redis
 
         extension(TipusNotificacio tipusNotificacio)
         {
-            public long Notificar(string idSessio, Notificacio notificacio, string nom = null)
+            public void Notificar(string idSessio, Notificacio notificacio, string nom = null)
             {
                 try
                 {
-                    return string.IsNullOrEmpty(nom) ?
-                        Connexio.EnviarNotificacio(idSessio, tipusNotificacio, notificacio, Environment.UserName, Environment.MachineName) :
+                    if (string.IsNullOrEmpty(nom))
+                        Connexio.EnviarNotificacio(idSessio, tipusNotificacio, notificacio, Environment.UserName, Environment.MachineName);
+                    else
                         Connexio.EnviarNotificacio(idSessio, tipusNotificacio, notificacio, Environment.UserName, Environment.MachineName, nom);
                 }
                 catch (Exception ex)
                 {
                     ex.Mostrar();
                 }
-
-                return -1;
-            }
-
-            public long Detectar(string idSessio, Deteccio deteccio, string nom = null)
-            {
-                try
-                {
-                    return string.IsNullOrEmpty(nom) ?
-                        Connexio.EnviarNotificacio(idSessio, tipusNotificacio, deteccio, Environment.UserName, Environment.MachineName) :
-                        Connexio.EnviarNotificacio(idSessio, tipusNotificacio, deteccio, Environment.UserName, Environment.MachineName, nom);
-                }
-                catch (Exception ex)
-                {
-                    ex.Mostrar();
-                }
-
-                return -1;
             }
         }
     }

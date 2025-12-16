@@ -1,4 +1,7 @@
-﻿using Examen.Suport.Classes;
+﻿using Examen.Alumne.Funcions;
+using Examen.Intermediari.Redis;
+using Examen.Suport.Classes;
+using Examen.Suport.Controls;
 using Examen.Suport.Funcions;
 using System;
 using System.Collections.Generic;
@@ -6,24 +9,23 @@ using System.Drawing;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
-using Examen.Alumne.Funcions;
-using Examen.Intermediari.Redis;
-using Examen.Suport.Controls;
 
 namespace Examen.Alumne.Formularis
 {
     public partial class FrmPrincipal : FormAdv
     {
-        public EstacioAlumne EstacioAlumne { get; private set; }
-        public List<Aplicacio> Aplicacions { get; private set; } = [];
-
         public string Nom { get; private set; }
         public string Codi { get; private set; }
 
+        public EstacioAlumne EstacioAlumne { get; private set; }
+        public List<Aplicacio> Aplicacions { get; private set; } = [];
+        private Worker Worker { get; set; }
         private DateTime _marcaDeTemps = DateTime.Now;
 
         public FrmPrincipal(string nom, string codi)
         {
+            Dpi.ActivaDpiAware();
+
             Nom = nom;
             Codi = codi;
 
@@ -61,7 +63,7 @@ namespace Examen.Alumne.Formularis
 
                 Hide();
 
-                TipusNotificacio.Fi.Notificar(Codi, new Notificacio(EstacioAlumne, Helper.AplicacionsEnUs), Nom);
+                TipusNotificacio.Fi.Notificar(Codi, new Notificacio(EstacioAlumne, Helper.AplicacionsEnUs), nom: Nom);
                 //ClientTcp.EnviarEstat(AdreçaPortProfessor, EstacioAlumne, [], TipusMissatge.Fi, Helper.Pitar, Helper.Bloquejar, Helper.Aturar, FiServidor);
             }
             catch (Exception ex)
@@ -122,12 +124,15 @@ namespace Examen.Alumne.Formularis
 
                     EstacioAlumne = new EstacioAlumne(Nom);
 
-                    Intermediari.Redis.Alumne.SubscriuresLlistaAplicacions(Codi, EnRebreAplicacions);
                     Intermediari.Redis.Alumne.SubscriuresPitar(Codi, EstacioAlumne, EnRebrePitar);
                     Intermediari.Redis.Alumne.SubscriuresBloquejar(Codi, EstacioAlumne, EnRebreBloquejar);
                     Intermediari.Redis.Alumne.SubscriuresAturar(Codi, EstacioAlumne, EnRebreAturar);
                     Intermediari.Redis.Alumne.SubscriuresCapturar(Codi, EstacioAlumne, EnRebreCapturar);
-                    Intermediari.Redis.Alumne.SubscriuresFiServidor(Codi, EstacioAlumne, EnRebreFiServidor);
+                    Intermediari.Redis.Alumne.SubscriuresTancament(Codi, EstacioAlumne, EnRebreTancament);
+
+                    Intermediari.Redis.Alumne.SubscriuresLlistaAplicacions(Codi, EstacioAlumne, EnRebreAplicacions);
+                    Intermediari.Redis.Alumne.SubscriuresIniciSessio(Codi, EnRebreIniciSessio);
+                    Intermediari.Redis.Alumne.SubscriuresFiSessio(Codi, EnRebreFiSessio);
 
                     TipusNotificacio.Inici.Notificar(Codi, new Notificacio(EstacioAlumne, Helper.AplicacionsEnUs));
 
@@ -155,43 +160,102 @@ namespace Examen.Alumne.Formularis
 
         private void EnRebreAplicacions(List<Aplicacio> aplicacions)
         {
+            Connexio.TipusTraça.AlRebreAplicacions.Traça($@"Aplicacions rebudes: {aplicacions.Count}");
             Aplicacions = aplicacions;
         }
 
         private void EnRebrePitar(string canal)
         {
+            Connexio.TipusTraça.AlRebrePitar.Traça(@"Rebuda ordre de pitar");
             Helper.Pitar();
         }
 
         private void EnRebreBloquejar(string canal)
         {
+            Connexio.TipusTraça.AlRebreBloquejar.Traça(@"Rebuda ordre de bloquejar");
             Helper.Bloquejar();
         }
 
         private void EnRebreAturar(string canal)
         {
+            Connexio.TipusTraça.AlRebreAturar.Traça(@"Rebuda ordre d'aturar");
             Helper.Aturar();
         }
 
         private void EnRebreCapturar(string canal)
         {
+            Connexio.TipusTraça.AlRebreCapturar.Traça(@"Rebuda ordre de capturar pantalla");
+            var bitmap = Helper.Captura();
+            TipusNotificacio.Captura.Notificar(Codi, new Notificacio(EstacioAlumne, bitmap));
         }
 
-        private void EnRebreFiServidor(string canal)
+        private void EnRebreTancament(string canal)
         {
-            FiServidor();
+            try
+            {
+                Connexio.TipusTraça.AlRebreTancament.Traça(@"Rebuda ordre de tancament del servidor");
+                Invocar(this, () =>
+                {
+                    Hide();
+                    TipusNotificacio.FiServidor.Notificar(Codi, new Notificacio(EstacioAlumne, []));
+                });
+            }
+            catch (Exception ex)
+            {
+                ex.Mostrar();
+            }
+            finally
+            {
+                Application.Exit();
+            }
+        }
+
+        private void EnRebreIniciSessio(string canal)
+        {
+            try
+            {
+                Connexio.TipusTraça.AlRebreIniciSessió.Traça(@"Rebuda ordre d'inici de sessió");
+
+                StripeColor = Color.GreenYellow;
+
+                Worker = new Worker(this);
+                Worker.Inici();
+            }
+            catch (Exception ex)
+            {
+                ex.Mostrar();
+            }
+        }
+
+        private void EnRebreFiSessio(string canal)
+        {
+            try
+            {
+                Connexio.TipusTraça.AlRebreFiSessió.Traça(@"Rebuda ordre de fi de sessió");
+
+                StripeColor = Color.DeepSkyBlue;
+
+                Worker.Fi();
+                Worker.Dispose();
+            }
+            catch (Exception ex)
+            {
+                ex.Mostrar();
+            }
+        }
+
+        private static void Invocar(Control control, Action accio)
+        {
+            if (control.InvokeRequired)
+                control.Invoke(accio);
+            else
+                accio();
         }
 
         private void TimerTemps_Tick(object sender, EventArgs e)
         {
             Connexio.CrearClau($@"{Codi}:{Environment.MachineName}", Nom, TimeSpan.FromMilliseconds(timerTemps.Interval));
-
-            _ = new Worker(this, Completat);
-        }
-
-        private void Completat(List<Aplicacio> aplicacions)
-        {
-            Aplicacions = aplicacions;
+            TipusNotificacio.KeepAlive.Notificar(Codi, new Notificacio(EstacioAlumne, Helper.AplicacionsEnUs));
         }
 
         private void TimerImatge_Tick(object sender, EventArgs e)
@@ -225,26 +289,6 @@ namespace Examen.Alumne.Formularis
             var txt = $"Aplicacions bloquedades:{nl}{nl}{string.Join($"{nl}", aplicacions.Select(a => $"    {a}    "))}";
 
             txt.Mostrar(MostrarIcon.Information);
-        }
-
-        public void FiServidor()
-        {
-            try
-            {
-                Hide();
-
-                TipusNotificacio.FiServidor.Notificar(Codi, new Notificacio(EstacioAlumne, Helper.AplicacionsEnUs));
-
-                //ClientTcp.EnviarEstat(AdreçaPortProfessor, EstacioAlumne, [], TipusMissatge.FiServidor, Helper.Pitar, Helper.Bloquejar, Helper.Aturar, FiServidor);
-            }
-            catch (Exception ex)
-            {
-                ex.Mostrar();
-            }
-            finally
-            {
-                Application.Exit();
-            }
         }
 
         private void FrmPrincipal_Shown(object sender, EventArgs e)

@@ -46,21 +46,30 @@ namespace Examen.Suport.Funcions
 
         public static T? Deserialitzar<T>(this string json)
         {
-            if (string.IsNullOrEmpty(json))
-                return default;
-
-            var settings = new JsonSerializerSettings
+            try
             {
-                TypeNameHandling = TypeNameHandling.Objects,
-                Converters = []
-            };
-            var converter = new StringEnumConverter();
-            settings.Converters.Add(converter);
-            settings.Converters.Add(new IpAddressConverter());
+                if (string.IsNullOrEmpty(json))
+                    return default;
 
-            var ret = JsonConvert.DeserializeObject<T>(json, settings);
+                var settings = new JsonSerializerSettings
+                {
+                    TypeNameHandling = TypeNameHandling.Objects,
+                    Converters = []
+                };
+                var converter = new StringEnumConverter();
+                settings.Converters.Add(converter);
+                settings.Converters.Add(new IpAddressConverter());
 
-            return ret;
+                var ret = JsonConvert.DeserializeObject<T>(json, settings);
+
+                return ret;
+            }
+            catch (Exception ex)
+            {
+                // ignore
+            }
+
+            return default;
         }
 
         public static T? Clonar<T>(this T obj)
