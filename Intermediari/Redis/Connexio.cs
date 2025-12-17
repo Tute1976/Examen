@@ -96,12 +96,17 @@ namespace Examen.Intermediari.Redis
             }
         }
 
-        public static void Connectar(Codificacio codificacio = null)
+        public static bool Connectar()
+        {
+            return Connectar(null);
+        }
+
+        public static bool Connectar(Codificacio codificacio)
         {
             try
             {
-                if (Redis != null)
-                    return;
+                if (Redis is { IsConnected: true })
+                    return true;
 
                 if (codificacio != null && Codificacio != null)
                     Codificacio = codificacio;
@@ -116,20 +121,37 @@ namespace Examen.Intermediari.Redis
                     {
                         { servidor, port }
                     },
+
+                    // --- Timeouts (ms) ---
+                    ConnectTimeout = 5000,   // Connexió TCP/handshake
+                    SyncTimeout = 5000,   // Operacions síncrones
+                    AsyncTimeout = 5000,   // Operacions asíncrones
+
+                    // --- Retrys / DNS (clau per no “eternitzar-se”) ---
+                    ConnectRetry = 0,        // Evita reintents (si vols 1 intent extra: posa 1)
+                    ResolveDns = true,      // Evita esperes de DNS (si 'servidor' és nom, millor posar IP o deixar true)
+
+                    AbortOnConnectFail = false, // Retorna multiplexer i podràs detectar IsConnected
                     KeepAlive = 180,
+
                     Password = contrasenya,
-                    AllowAdmin = true,
-                    AbortOnConnectFail = false
+                    AllowAdmin = true
                 };
 
+                // Connexió síncrona (respecta ConnectTimeout, però DNS/reintents poden allargar si no ajustes lo dalt)
                 Redis = ConnectionMultiplexer.Connect(configurationOptions);
-                Db = Redis.GetDatabase();
 
+                if (!Redis.IsConnected)
+                    return false;
+
+                Db = Redis.GetDatabase();
                 TipusTraça.Connexió.Traça($"Connexió a {servidor}:{port}");
+                return true;
             }
             catch (Exception ex)
             {
                 ex.Mostrar();
+                return false;
             }
         }
 

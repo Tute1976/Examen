@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Examen.Intermediari.Redis;
+using Examen.Professor.Formularis;
 using Examen.Suport.Classes;
 using Examen.Suport.Controls;
 using Examen.Suport.Funcions;
@@ -85,11 +86,8 @@ namespace Examen.Professor.Controls
 
         private void BInfo_Click(object sender, EventArgs e)
         {
-            var nl = Environment.NewLine;
-            var txt = $"Estat:{nl}    {_estat}   " + nl + nl +
-                      $"Informació: {_informacio}   " + nl +
-                      $"Identificador de la sessió: {EstacioAlumne.Id}   ";
-            txt.Mostrar(MostrarIcon.Information);
+            using var frmInformacio = new FrmInformacio(EstacioAlumne);
+            frmInformacio.ShowDialog();
         }
 
         private void BTancar_Click(object sender, EventArgs e)

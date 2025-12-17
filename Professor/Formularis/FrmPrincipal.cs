@@ -36,8 +36,8 @@ namespace Examen.Professor.Formularis
 
         private void Principal_Resize(object sender, EventArgs e)
         {
-            CaptionLabels[0].Location = new Point(Width - 430, 64);
-            CaptionLabels[1].Location = new Point(Width - 430, 8);
+            CaptionLabels[0].Location = new Point(Width - 530, 64);
+            CaptionLabels[1].Location = new Point(Width - 530, 8);
         }
 
         private void Principal_Load(object sender, EventArgs e)
@@ -84,18 +84,7 @@ namespace Examen.Professor.Formularis
                 {
                     CaptionLabels[1].Text = codi;
 
-                    Intermediari.Redis.Professor.CreaClauSessio(codi, TimeSpan.FromHours(Properties.Settings.Default.Duracio));
-
-                    Intermediari.Redis.Professor.SubscriuresInici(codi, EnRebreInici);
-                    Intermediari.Redis.Professor.SubscriuresFi(codi, EnRebreFi);
-                    Intermediari.Redis.Professor.SubscriuresFiServidor(codi, EnRebreFiServidor);
-
-                    Intermediari.Redis.Professor.SubscriuresKeepAlive(codi, EnRebreKeepAlive);
-                    Intermediari.Redis.Professor.SubscriuresDeteccio(codi, EnRebreDeteccio);
-                    Intermediari.Redis.Professor.SubscriuresCaptura(codi, EnRebreCaptura);
-
-                    Intermediari.Redis.Professor.SubscriuresKeepAliveAmdDeteccio(codi, EnRebreKeepAliveAmdDeteccio);
-                    Intermediari.Redis.Professor.SubscriuresLlistaAplicacionsEnUs(codi, EnRebreAplicacionsEnUs);
+                    Subscripcio(codi);
                 }
                 else
                     @"No s'ha pogut generar el Codi".Mostrar(MostrarIcon.Error, MessageBoxButtons.OK, true);
@@ -104,6 +93,30 @@ namespace Examen.Professor.Formularis
             {
                 ex.Mostrar();
             }
+        }
+
+        private string _codiAntic;
+        private void Subscripcio(string codi)
+        {
+            if (!string.IsNullOrEmpty(_codiAntic))
+            {
+                Intermediari.Redis.Professor.EsborrarClauSessio(_codiAntic);
+            }
+
+            Intermediari.Redis.Professor.CreaClauSessio(codi, TimeSpan.FromHours(Properties.Settings.Default.Duracio));
+
+            Intermediari.Redis.Professor.SubscriuresInici(codi, EnRebreInici);
+            Intermediari.Redis.Professor.SubscriuresFi(codi, EnRebreFi);
+            Intermediari.Redis.Professor.SubscriuresFiServidor(codi, EnRebreFiServidor);
+
+            Intermediari.Redis.Professor.SubscriuresKeepAlive(codi, EnRebreKeepAlive);
+            Intermediari.Redis.Professor.SubscriuresDeteccio(codi, EnRebreDeteccio);
+            Intermediari.Redis.Professor.SubscriuresCaptura(codi, EnRebreCaptura);
+
+            Intermediari.Redis.Professor.SubscriuresKeepAliveAmdDeteccio(codi, EnRebreKeepAliveAmdDeteccio);
+            Intermediari.Redis.Professor.SubscriuresLlistaAplicacionsEnUs(codi, EnRebreAplicacionsEnUs);
+
+            _codiAntic = codi;
         }
 
         private void EnRebreInici(string usuari, string estacio, string nom, Notificacio notificacio)
@@ -632,6 +645,8 @@ namespace Examen.Professor.Formularis
                 bStartStop.ToolTipText = bStartStop.Text;
                 bStartStop.Tag = false.ToString();
 
+                bCanviarCodi.Visible = true;
+
                 TipusNotificacio.FiSessió.EnviarNotificacio(CaptionLabels[1].Text);
             }
             else
@@ -640,6 +655,8 @@ namespace Examen.Professor.Formularis
                 bStartStop.Text = @"Finalitzar sessió";
                 bStartStop.ToolTipText = bStartStop.Text;
                 bStartStop.Tag = true.ToString();
+
+                bCanviarCodi.Visible = false;
 
                 TipusNotificacio.IniciSessió.EnviarNotificacio(CaptionLabels[1].Text);
             }
@@ -677,7 +694,9 @@ namespace Examen.Professor.Formularis
                 using var frmEdicioCodi = new FrmEdicioCodi(CaptionLabels[1].Text);
                 if (frmEdicioCodi.ShowDialog() != DialogResult.OK)
                     return;
+
                 CaptionLabels[1].Text = frmEdicioCodi.NouCodi;
+                Subscripcio(CaptionLabels[1].Text);
             }
             catch (Exception ex)
             {

@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Examen.Alumne.Formularis;
+using Examen.Suport.Funcions;
+using System;
 using System.Linq;
 using System.Windows.Forms;
-using Examen.Alumne.Formularis;
-using Examen.Suport.Funcions;
 
 namespace Examen.Alumne
 {
@@ -34,7 +34,10 @@ namespace Examen.Alumne
                 {
                     Application.EnableVisualStyles();
                     Application.SetCompatibleTextRenderingDefault(false);
-                    Application.Run(new FrmPrincipal(nom, codi));
+
+                    using var frmConn = new FrmConnexio(Intermediari.Redis.Connexio.Connectar);
+                    if (frmConn.ShowDialog() == DialogResult.OK)
+                        Application.Run(new FrmPrincipal(nom, codi));
                 }
             }
             catch (Exception ex)

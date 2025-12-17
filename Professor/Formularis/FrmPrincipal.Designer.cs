@@ -50,20 +50,20 @@
             this.menu = new System.Windows.Forms.ToolStrip();
             this.cbColumnes = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bStartStop = new System.Windows.Forms.ToolStripButton();
+            this.bAplicacions = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.bMostrarLlista = new System.Windows.Forms.ToolStripButton();
+            this.bNetejarLlista = new System.Windows.Forms.ToolStripButton();
+            this.bSortir = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.bCopiarCodi = new System.Windows.Forms.ToolStripButton();
+            this.bCanviarCodi = new System.Windows.Forms.ToolStripButton();
             this.timerCaducades = new System.Windows.Forms.Timer(this.components);
             this.timerTancar = new System.Windows.Forms.Timer(this.components);
             this.panelFons = new System.Windows.Forms.Panel();
             this.panelInfo = new System.Windows.Forms.Panel();
             this.txtVersio = new System.Windows.Forms.Label();
-            this.bStartStop = new System.Windows.Forms.ToolStripButton();
-            this.bAplicacions = new System.Windows.Forms.ToolStripButton();
-            this.bMostrarLlista = new System.Windows.Forms.ToolStripButton();
-            this.bNetejarLlista = new System.Windows.Forms.ToolStripButton();
-            this.bSortir = new System.Windows.Forms.ToolStripButton();
-            this.bCopiarCodi = new System.Windows.Forms.ToolStripButton();
-            this.bCanviarCodi = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.split)).BeginInit();
             this.split.Panel1.SuspendLayout();
             this.split.Panel2.SuspendLayout();
@@ -92,8 +92,8 @@
             // 
             this.split.Panel2.Controls.Add(this.panelHistoric);
             this.split.Panel2MinSize = 200;
-            this.split.Size = new System.Drawing.Size(1238, 658);
-            this.split.SplitterDistance = 346;
+            this.split.Size = new System.Drawing.Size(1226, 652);
+            this.split.SplitterDistance = 342;
             this.split.SplitterWidth = 15;
             this.split.TabIndex = 0;
             // 
@@ -106,7 +106,7 @@
             this.panelTaula.Location = new System.Drawing.Point(0, 0);
             this.panelTaula.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelTaula.Name = "panelTaula";
-            this.panelTaula.Size = new System.Drawing.Size(1238, 346);
+            this.panelTaula.Size = new System.Drawing.Size(1226, 342);
             this.panelTaula.TabIndex = 1;
             // 
             // taula
@@ -123,7 +123,7 @@
             this.taula.RowCount = 2;
             this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.taula.Size = new System.Drawing.Size(1236, 0);
+            this.taula.Size = new System.Drawing.Size(1224, 0);
             this.taula.TabIndex = 0;
             this.taula.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.Taula_Controls);
             this.taula.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.Taula_Controls);
@@ -136,7 +136,7 @@
             this.panelHistoric.Location = new System.Drawing.Point(0, 0);
             this.panelHistoric.Margin = new System.Windows.Forms.Padding(0);
             this.panelHistoric.Name = "panelHistoric";
-            this.panelHistoric.Size = new System.Drawing.Size(1238, 297);
+            this.panelHistoric.Size = new System.Drawing.Size(1226, 295);
             this.panelHistoric.TabIndex = 1;
             // 
             // llistaHistoric
@@ -152,7 +152,7 @@
             this.llistaHistoric.Location = new System.Drawing.Point(0, 48);
             this.llistaHistoric.Margin = new System.Windows.Forms.Padding(0);
             this.llistaHistoric.Name = "llistaHistoric";
-            this.llistaHistoric.Size = new System.Drawing.Size(1238, 249);
+            this.llistaHistoric.Size = new System.Drawing.Size(1226, 247);
             this.llistaHistoric.SmallImageList = this.imatgesLlista;
             this.llistaHistoric.TabIndex = 0;
             this.llistaHistoric.UseCompatibleStateImageBehavior = false;
@@ -197,13 +197,13 @@
             this.panelComboBox.Location = new System.Drawing.Point(0, 0);
             this.panelComboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelComboBox.Name = "panelComboBox";
-            this.panelComboBox.Size = new System.Drawing.Size(1238, 48);
+            this.panelComboBox.Size = new System.Drawing.Size(1226, 48);
             this.panelComboBox.TabIndex = 2;
             // 
             // lFiltreHistoric
             // 
             this.lFiltreHistoric.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lFiltreHistoric.Location = new System.Drawing.Point(756, 0);
+            this.lFiltreHistoric.Location = new System.Drawing.Point(744, 0);
             this.lFiltreHistoric.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lFiltreHistoric.Name = "lFiltreHistoric";
             this.lFiltreHistoric.Padding = new System.Windows.Forms.Padding(0, 0, 15, 15);
@@ -219,7 +219,7 @@
             this.cbHistoric.FormattingEnabled = true;
             this.cbHistoric.Items.AddRange(new object[] {
             "Totes les estacions"});
-            this.cbHistoric.Location = new System.Drawing.Point(940, 0);
+            this.cbHistoric.Location = new System.Drawing.Point(928, 0);
             this.cbHistoric.Margin = new System.Windows.Forms.Padding(0);
             this.cbHistoric.Name = "cbHistoric";
             this.cbHistoric.Size = new System.Drawing.Size(298, 28);
@@ -253,10 +253,10 @@
             this.toolStripSeparator3,
             this.bCopiarCodi,
             this.bCanviarCodi});
-            this.menu.Location = new System.Drawing.Point(1246, 8);
+            this.menu.Location = new System.Drawing.Point(1234, 8);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(8, 8, 0, 8);
-            this.menu.Size = new System.Drawing.Size(87, 658);
+            this.menu.Size = new System.Drawing.Size(87, 652);
             this.menu.TabIndex = 0;
             // 
             // cbColumnes
@@ -280,60 +280,6 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(70, 6);
             // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(70, 6);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(70, 6);
-            // 
-            // timerCaducades
-            // 
-            this.timerCaducades.Tick += new System.EventHandler(this.TimerCaducades_Tick);
-            // 
-            // timerTancar
-            // 
-            this.timerTancar.Interval = 1000;
-            this.timerTancar.Tick += new System.EventHandler(this.TimerTancar_Tick);
-            // 
-            // panelFons
-            // 
-            this.panelFons.Controls.Add(this.split);
-            this.panelFons.Controls.Add(this.menu);
-            this.panelFons.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFons.Location = new System.Drawing.Point(8, 8);
-            this.panelFons.Margin = new System.Windows.Forms.Padding(0);
-            this.panelFons.Name = "panelFons";
-            this.panelFons.Padding = new System.Windows.Forms.Padding(8);
-            this.panelFons.Size = new System.Drawing.Size(1341, 674);
-            this.panelFons.TabIndex = 1;
-            // 
-            // panelInfo
-            // 
-            this.panelInfo.BackColor = System.Drawing.Color.Transparent;
-            this.panelInfo.Controls.Add(this.txtVersio);
-            this.panelInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelInfo.Location = new System.Drawing.Point(8, 682);
-            this.panelInfo.Margin = new System.Windows.Forms.Padding(0);
-            this.panelInfo.Name = "panelInfo";
-            this.panelInfo.Size = new System.Drawing.Size(1341, 25);
-            this.panelInfo.TabIndex = 10;
-            // 
-            // txtVersio
-            // 
-            this.txtVersio.Dock = System.Windows.Forms.DockStyle.Right;
-            this.txtVersio.Location = new System.Drawing.Point(966, 0);
-            this.txtVersio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.txtVersio.Name = "txtVersio";
-            this.txtVersio.Size = new System.Drawing.Size(375, 25);
-            this.txtVersio.TabIndex = 9;
-            this.txtVersio.Text = "versio";
-            this.txtVersio.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            // 
             // bStartStop
             // 
             this.bStartStop.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -354,6 +300,11 @@
             this.bAplicacions.Size = new System.Drawing.Size(70, 36);
             this.bAplicacions.Text = "Aplicacions";
             this.bAplicacions.Click += new System.EventHandler(this.BAplicacions_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(70, 6);
             // 
             // bMostrarLlista
             // 
@@ -390,6 +341,12 @@
             this.bSortir.Text = "Tancar l\'aplicació";
             this.bSortir.Click += new System.EventHandler(this.BSortir_Click);
             // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(70, 6);
+            // 
             // bCopiarCodi
             // 
             this.bCopiarCodi.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -413,6 +370,49 @@
             this.bCanviarCodi.Text = "Canviar codi";
             this.bCanviarCodi.Click += new System.EventHandler(this.BCanviarCodi_Click);
             // 
+            // timerCaducades
+            // 
+            this.timerCaducades.Tick += new System.EventHandler(this.TimerCaducades_Tick);
+            // 
+            // timerTancar
+            // 
+            this.timerTancar.Interval = 1000;
+            this.timerTancar.Tick += new System.EventHandler(this.TimerTancar_Tick);
+            // 
+            // panelFons
+            // 
+            this.panelFons.Controls.Add(this.split);
+            this.panelFons.Controls.Add(this.menu);
+            this.panelFons.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelFons.Location = new System.Drawing.Point(8, 8);
+            this.panelFons.Margin = new System.Windows.Forms.Padding(0);
+            this.panelFons.Name = "panelFons";
+            this.panelFons.Padding = new System.Windows.Forms.Padding(8);
+            this.panelFons.Size = new System.Drawing.Size(1329, 668);
+            this.panelFons.TabIndex = 1;
+            // 
+            // panelInfo
+            // 
+            this.panelInfo.BackColor = System.Drawing.Color.Transparent;
+            this.panelInfo.Controls.Add(this.txtVersio);
+            this.panelInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelInfo.Location = new System.Drawing.Point(8, 676);
+            this.panelInfo.Margin = new System.Windows.Forms.Padding(0);
+            this.panelInfo.Name = "panelInfo";
+            this.panelInfo.Size = new System.Drawing.Size(1329, 25);
+            this.panelInfo.TabIndex = 10;
+            // 
+            // txtVersio
+            // 
+            this.txtVersio.Dock = System.Windows.Forms.DockStyle.Right;
+            this.txtVersio.Location = new System.Drawing.Point(954, 0);
+            this.txtVersio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.txtVersio.Name = "txtVersio";
+            this.txtVersio.Size = new System.Drawing.Size(375, 25);
+            this.txtVersio.TabIndex = 9;
+            this.txtVersio.Text = "versio";
+            this.txtVersio.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -429,18 +429,18 @@
             captionImage1.Size = new System.Drawing.Size(64, 64);
             this.CaptionImages.Add(captionImage1);
             captionLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            captionLabel1.Location = new System.Drawing.Point(650, 64);
+            captionLabel1.Location = new System.Drawing.Point(400, 64);
             captionLabel1.Name = "txtCodi";
             captionLabel1.Size = new System.Drawing.Size(500, 24);
             captionLabel1.Text = "Codi";
             captionLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            captionLabel2.Location = new System.Drawing.Point(650, 8);
+            captionLabel2.Location = new System.Drawing.Point(400, 8);
             captionLabel2.Name = "Codi";
             captionLabel2.Size = new System.Drawing.Size(500, 64);
             captionLabel2.Text = "XXXXX";
             this.CaptionLabels.Add(captionLabel1);
             this.CaptionLabels.Add(captionLabel2);
-            this.ClientSize = new System.Drawing.Size(1357, 715);
+            this.ClientSize = new System.Drawing.Size(1345, 709);
             this.Controls.Add(this.panelFons);
             this.Controls.Add(this.panelInfo);
             this.DropShadow = true;

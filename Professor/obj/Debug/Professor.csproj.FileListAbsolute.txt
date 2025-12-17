@@ -57,3 +57,5 @@ D:\Privat\Programacio\Git\Examen\Professor\bin\Debug\Microsoft.Extensions.Depend
 D:\Privat\Programacio\Git\Examen\Professor\bin\Debug\System.Diagnostics.DiagnosticSource.xml
 D:\Privat\Programacio\Git\Examen\Professor\obj\Debug\Examen.Professor.Controls.InfoEstacioV3.resources
 D:\Privat\Programacio\Git\Examen\Professor\obj\Debug\Examen.Professor.Formularis.FrmEdicioCodi.resources
+D:\Privat\Programacio\Git\Examen\Professor\obj\Debug\Examen.Professor.Formularis.FrmConnexio.resources
+D:\Privat\Programacio\Git\Examen\Professor\obj\Debug\Examen.Professor.Formularis.FrmInformacio.resources

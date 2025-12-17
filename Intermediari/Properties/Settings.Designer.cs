@@ -43,7 +43,7 @@ namespace Examen.Intermediari.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("miniredis.ddns.net")]
+        [global::System.Configuration.DefaultSettingValueAttribute("lg")]
         public string Servidor {
             get {
                 return ((string)(this["Servidor"]));

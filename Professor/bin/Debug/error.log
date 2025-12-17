@@ -912,3 +912,147 @@
 
 16/12/2025 8:18:00 [Error]:    at Examen.Intermediari.Redis.Professor.SubscriuresInici(String idSessio, Action`4 enRebre) in D:\Privat\Programacio\Git\Examen\Intermediari\Redis\Professor.cs:line 50
 
+16/12/2025 10:07:44 [Error]: S'ha produït un error: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: It was not possible to connect to the redis server(s) miniredis.ddns.net:6379/Interactive. ConnectTimeout, command=SETEX, timeout: 5000, inst: 0, qu: 1, qs: 0, aw: False, bw: SpinningDown, rs: NotStarted, ws: Initializing, in: 0, last-in: 0, cur-in: 0, sync-ops: 1, async-ops: 0, serverEndpoint: miniredis.ddns.net:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: LG(SE.Redis-v2.10.1.65101), IOCP: (Busy=0,Free=1000,Min=22,Max=1000), WORKER: (Busy=0,Free=2047,Min=22,Max=2047), v: 2.10.1.65101 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+
+16/12/2025 10:07:44 [Error]: Detalls:    at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server, T defaultValue) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2106
+
+16/12/2025 10:07:44 [Error]:    at StackExchange.Redis.RedisBase.ExecuteSync[T](Message message, ResultProcessor`1 processor, ServerEndPoint server, T defaultValue) in /_/src/StackExchange.Redis/RedisBase.cs:line 62
+
+16/12/2025 10:07:44 [Error]:    at StackExchange.Redis.RedisDatabase.StringSet(RedisKey key, RedisValue value, Nullable`1 expiry, Boolean keepTtl, When when, CommandFlags flags) in /_/src/StackExchange.Redis/RedisDatabase.cs:line 3749
+
+16/12/2025 10:07:44 [Error]:    at StackExchange.Redis.RedisDatabase.StringSet(RedisKey key, RedisValue value, Nullable`1 expiry, When when) in /_/src/StackExchange.Redis/RedisDatabase.cs:line 3742
+
+16/12/2025 10:07:44 [Error]:    at Examen.Intermediari.Redis.Connexio.CrearClau(String clau, Object objecte, TimeSpan duracio) in D:\Privat\Programacio\Git\Examen\Intermediari\Redis\Connexio.cs:line 192
+
+16/12/2025 10:12:34 [Exclamation]: No s'ha pogut connectar amb el servidor. L'aplicació es tancarà.
+
+16/12/2025 10:12:58 [Exclamation]: No s'ha pogut connectar amb el servidor. L'aplicació es tancarà.
+
+16/12/2025 10:41:45 [Error]: S'ha produït un error: Object reference not set to an instance of an object.
+
+16/12/2025 10:41:45 [Error]: Detalls:    at Examen.Intermediari.Redis.Connexio.CrearClau(String clau, Object objecte, TimeSpan duracio) in D:\Privat\Programacio\Git\Examen\Intermediari\Redis\Connexio.cs:line 210
+
+16/12/2025 10:44:12 [Error]: S'ha produït un error: Starting a second message loop on a single thread is not a valid operation. Use Form.ShowDialog instead.
+
+16/12/2025 10:44:12 [Error]: Detalls:    at System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+
+16/12/2025 10:44:12 [Error]:    at System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+
+16/12/2025 10:44:12 [Error]:    at System.Windows.Forms.Application.Run(Form mainForm)
+
+16/12/2025 10:44:12 [Error]:    at Examen.Professor.Formularis.FrmConnexio.Timer_Tick(Object sender, EventArgs e) in D:\Privat\Programacio\Git\Examen\Professor\Formularis\FrmConnexio.cs:line 24
+
+16/12/2025 10:44:12 [Error]:    at System.Windows.Forms.Timer.OnTick(EventArgs e)
+
+16/12/2025 10:44:12 [Error]:    at System.Windows.Forms.Timer.TimerNativeWindow.WndProc(Message& m)
+
+16/12/2025 10:44:12 [Error]:    at System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+16/12/2025 10:44:12 [Error]:    at System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG& msg)
+
+16/12/2025 10:44:12 [Error]:    at System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+
+16/12/2025 10:44:12 [Error]:    at System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+
+16/12/2025 10:44:12 [Error]:    at System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+
+16/12/2025 10:44:12 [Error]:    at System.Windows.Forms.Application.Run(Form mainForm)
+
+16/12/2025 10:44:12 [Error]:    at Examen.Professor.Program.Main() in D:\Privat\Programacio\Git\Examen\Professor\Program.cs:line 24
+
+16/12/2025 11:35:21 [Information]: No s'ha pogut connectar amb el servidor. L'aplicació es tancarà.
+
+16/12/2025 15:04:28 [Question]: Vols finalitzar el programa?
+
+16/12/2025 15:05:09 [Question]: Vols finalitzar el programa?
+
+16/12/2025 15:10:49 [Question]: Vols finalitzar el programa?
+
+16/12/2025 15:11:50 [Question]: Vols finalitzar el programa?
+
+16/12/2025 19:19:27 [Information]: Estació LG connectada.
+
+16/12/2025 19:20:17 [Information]: Iniciar sessió
+
+16/12/2025 19:20:20 [Warning]: Aplicació 'Microsoft Edge' (Aturada: Sí) en l'estació LG.
+
+16/12/2025 19:20:27 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+16/12/2025 19:21:25 [Information]: Finalitzar sessió
+
+16/12/2025 19:21:27 [Information]: Iniciar sessió
+
+16/12/2025 19:21:40 [Information]: Finalitzar sessió
+
+16/12/2025 19:21:42 [Question]: Vols finalitzar el programa?
+
+16/12/2025 19:21:44 [Information]: Desconnexió servidor
+
+16/12/2025 19:23:58 [Information]: Estació LG connectada.
+
+16/12/2025 19:37:40 [Question]: Vols finalitzar el programa?
+
+16/12/2025 19:50:11 [Question]: Vols finalitzar el programa?
+
+16/12/2025 20:06:16 [Information]: Estació LG connectada.
+
+16/12/2025 20:06:25 [Information]: Estació LG desconectada manualment.
+
+16/12/2025 20:06:35 [Question]: Vols finalitzar el programa?
+
+16/12/2025 20:14:25 [Information]: Estació LG connectada.
+
+16/12/2025 20:15:07 [Information]: Iniciar sessió
+
+16/12/2025 20:15:09 [Warning]: Aplicació 'Microsoft Edge' (Aturada: Sí) en l'estació LG.
+
+16/12/2025 20:15:15 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+16/12/2025 20:15:32 [Warning]: Aplicació 'Microsoft Edge' (Aturada: Sí) en l'estació LG.
+
+16/12/2025 20:15:35 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+16/12/2025 20:17:21 [Warning]: Estació LG desconectada.
+
+16/12/2025 20:17:21 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+16/12/2025 20:17:26 [Information]: Finalitzar sessió
+
+16/12/2025 20:17:52 [Information]: Iniciar sessió
+
+16/12/2025 20:19:51 [Information]: Estació LG connectada.
+
+16/12/2025 20:19:56 [Information]: Iniciar sessió
+
+16/12/2025 20:23:51 [Warning]: Estació LG desconectada.
+
+16/12/2025 20:23:51 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+16/12/2025 20:26:17 [Question]: Vols desar els canvis?
+
+16/12/2025 20:26:33 [Warning]: Aplicació 'Discord' (Aturada: Sí) en l'estació LG.
+
+16/12/2025 20:26:41 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+16/12/2025 20:48:37 [Information]: Estació LG connectada.
+
+16/12/2025 20:49:07 [Warning]: Estació LG desconectada.
+
+16/12/2025 20:49:45 [Question]: Vols finalitzar el programa?
+
+16/12/2025 20:51:30 [Information]: Estació LG connectada.
+
+16/12/2025 20:52:47 [Question]: Vols desar els canvis?
+
+16/12/2025 20:54:12 [Information]: Iniciar sessió
+
+16/12/2025 20:54:14 [Warning]: Aplicació 'WhatsApp.Root' (Aturada: Sí) en l'estació LG.
+
+16/12/2025 20:54:18 [Information]: Finalitzar sessió
+
+16/12/2025 20:54:20 [Question]: Vols finalitzar el programa?
+
+16/12/2025 20:54:20 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+16/12/2025 20:54:26 [Information]: Desconnexió servidor
+

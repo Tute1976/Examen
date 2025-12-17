@@ -78,6 +78,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formularis\FrmConnexio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularis\FrmConnexio.Designer.cs">
+      <DependentUpon>FrmConnexio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularis\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,9 @@
     <Compile Include="Funcions\Worker.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularis\FrmConnexio.resx">
+      <DependentUpon>FrmConnexio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularis\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>

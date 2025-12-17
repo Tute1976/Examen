@@ -9,7 +9,7 @@ namespace Examen.Professor.Formularis
         private string Codi { get; set; }
         public string NouCodi { get; set; }
 
-    public FrmEdicioCodi(string codi)
+        public FrmEdicioCodi(string codi)
         {
             InitializeComponent();
 
@@ -18,15 +18,11 @@ namespace Examen.Professor.Formularis
 
             OmpleCamps();
         }
-        private void OnModificat(bool modificat)
-        {
-            bDesar.Enabled = modificat;
-            bDesfer.Visible = modificat;
-        }
 
         private void OmpleCamps()
         {
             txtCodi.Text = Codi;
+            txtCodi.Tag = Codi;
         }
 
         private void BDesfer_Click(object sender, EventArgs e)
@@ -35,8 +31,9 @@ namespace Examen.Professor.Formularis
 
             bDesar.Enabled = false;
             bDesfer.Visible = false;
+            NouCodi = Codi;
         }
-        
+
         private void BDesar_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
@@ -49,6 +46,8 @@ namespace Examen.Professor.Formularis
 
         private void TxtNom_TextChanged(object sender, EventArgs e)
         {
+            bDesar.Enabled = !txtCodi.Text.Equals(txtCodi.Tag);
+            bDesfer.Visible = bDesar.Enabled;
             NouCodi = txtCodi.Text;
         }
     }

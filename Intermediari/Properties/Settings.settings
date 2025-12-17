@@ -9,7 +9,7 @@
       <Value Profile="(Default)">canal_prohibicions</Value>
     </Setting>
     <Setting Name="Servidor" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">miniredis.ddns.net</Value>
+      <Value Profile="(Default)">lg</Value>
     </Setting>
     <Setting Name="Port" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">6379</Value>

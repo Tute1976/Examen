@@ -20,7 +20,10 @@ namespace Examen.Professor
 
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new FrmPrincipal());
+
+                using var frmConn = new FrmConnexio(Intermediari.Redis.Connexio.Connectar);
+                if (frmConn.ShowDialog() == DialogResult.OK)
+                    Application.Run(new FrmPrincipal());
             }
             catch (Exception ex)
             {

@@ -145,7 +145,7 @@ namespace Examen.Suport.Funcions
                 var sessionId = WTSGetActiveConsoleSessionId();
 
                 var query =
-                    $"SELECT Name, ExecutablePath, CommandLine FROM Win32_Process WHERE SessionId = {sessionId} AND Priority = 8";
+                    $"SELECT Name, ExecutablePath, CommandLine FROM Win32_Process WHERE SessionId = {sessionId} AND Priority <= 8";
 
                 using var searcher = new ManagementObjectSearcher(query);
                 foreach (var o in searcher.Get())
@@ -165,8 +165,8 @@ namespace Examen.Suport.Funcions
                     if (path.StartsWith(@"C:\Windows", StringComparison.InvariantCultureIgnoreCase))
                         continue;
 
-                    if (path.StartsWith(@"C:\Program Files\WindowsApps", StringComparison.InvariantCultureIgnoreCase))
-                        continue;
+                    //if (path.StartsWith(@"C:\Program Files\WindowsApps", StringComparison.InvariantCultureIgnoreCase))
+                    //    continue;
 
                     var appEnUs = new AplicacioEnUs(name, "", path);
 
