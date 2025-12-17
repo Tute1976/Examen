@@ -11,12 +11,13 @@ namespace Examen.Professor.Controls
     public partial class InfoEstacioV3 : InfoEstacio
     {
         private readonly Action<string> _onHistoric;
-        private readonly Action<string, ContenidorAplicacionsEnUs> _onAplicacionsEnUs;
+        private readonly Action<string, ContenidorAplicacionsEnUs, EstacioAlumne> _onAplicacionsEnUs;
 
         private readonly string _codi;
         private string _estat;
-        private readonly string _informacio;
+        //private readonly string _informacio;
         private Colors _color;
+        private EstacioAlumne _estacioAlumne;
 
         public override bool MostrarBotons
         {
@@ -65,18 +66,19 @@ namespace Examen.Professor.Controls
             }
         }
 
-        public InfoEstacioV3(string codi, EstacioAlumne estacioAlumne, int interval, Action<string> onHistoric, Action<string, ContenidorAplicacionsEnUs> onAplicacionsEnUs) : base(estacioAlumne, interval)
+        public InfoEstacioV3(string codi, EstacioAlumne estacioAlumne, int interval, Action<string> onHistoric, Action<string, ContenidorAplicacionsEnUs, EstacioAlumne> onAplicacionsEnUs) : base(estacioAlumne, interval)
         {
             InitializeComponent();
 
             _codi = codi;
+            _estacioAlumne = estacioAlumne;
 
             imatge.Image = imatges.Images[0];
 
             txtNom.Text = estacioAlumne.Nom;
             txtEstacio.Text = estacioAlumne.Estacio;
             txtUsuari.Text = estacioAlumne.Usuari;
-            _informacio = estacioAlumne.Fabricant;
+            //_informacio = estacioAlumne.Fabricant;
             Data = DateTime.Now;
             _estat = "";
 
@@ -120,7 +122,7 @@ namespace Examen.Professor.Controls
             {
                 AplicacionsEnUs = [.. AplicacionsEnUs]
             };
-            _onAplicacionsEnUs.Invoke(EstacioAlumne.Estacio, contenidorAplicacionsEnUs);
+            _onAplicacionsEnUs.Invoke(EstacioAlumne.Estacio, contenidorAplicacionsEnUs, _estacioAlumne);
         }
 
         private void BHistoric_Click(object sender, EventArgs e)

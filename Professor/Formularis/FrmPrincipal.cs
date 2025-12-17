@@ -149,6 +149,9 @@ namespace Examen.Professor.Formularis
 
                     taula.Controls.Add(infoEstacio);
                 });
+
+                var aplicacions = ContenidorAplicacions.TotesSenseIgnorades;
+                Intermediari.Redis.Professor.EnviarAplicacions(CaptionLabels[1].Text, notificacio.EstacioAlumne, aplicacions);
             }
             catch (Exception ex)
             {
@@ -312,7 +315,8 @@ namespace Examen.Professor.Formularis
                     }
                 });
 
-                Intermediari.Redis.Professor.EnviarAplicacions(CaptionLabels[1].Text, notificacio.EstacioAlumne, ContenidorAplicacions.TotesSenseIgnorades);
+                var aplicacions = ContenidorAplicacions.TotesSenseIgnorades;
+                Intermediari.Redis.Professor.EnviarAplicacions(CaptionLabels[1].Text, notificacio.EstacioAlumne, aplicacions);
             }
             catch (Exception ex)
             {
@@ -375,11 +379,11 @@ namespace Examen.Professor.Formularis
             }
         }
 
-        private void OnAplicacionsEnUs(string estacio, ContenidorAplicacionsEnUs contenidorAplicacionsEnUs)
+        private void OnAplicacionsEnUs(string estacio, ContenidorAplicacionsEnUs contenidorAplicacionsEnUs, EstacioAlumne estacioAlumne)
         {
             try
             {
-                var frmAplicacionsEnUs = new FrmAplicacionsEnUs(estacio, contenidorAplicacionsEnUs, ContenidorAplicacions, Fitxer);
+                var frmAplicacionsEnUs = new FrmAplicacionsEnUs(estacio, contenidorAplicacionsEnUs, ContenidorAplicacions, Fitxer, estacioAlumne, OnRefrescar);
                 frmAplicacionsEnUs.ShowDialog();
             }
             catch (Exception ex)
@@ -387,7 +391,12 @@ namespace Examen.Professor.Formularis
                 ex.Mostrar();
             }
         }
-        
+
+        private void OnRefrescar(EstacioAlumne estacioAlumne)
+        {
+            TipusNotificacio.Refrescar.EnviarNotificacio(CaptionLabels[1].Text, estacioAlumne);
+        }
+
         private static void Invocar(Control control, Action accio)
         {
             if (control.InvokeRequired)

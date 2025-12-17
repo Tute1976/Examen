@@ -58,7 +58,7 @@
             this.lTitol.Name = "lTitol";
             this.lTitol.Size = new System.Drawing.Size(640, 49);
             this.lTitol.TabIndex = 10;
-            this.lTitol.Text = "Aplicació";
+            this.lTitol.Text = "Informació de l\'estació";
             // 
             // panel1
             // 

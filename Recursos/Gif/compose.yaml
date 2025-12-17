@@ -1,0 +1,80 @@
+services:
+  redis:
+    image: redis:latest
+    container_name: redis
+    restart: unless-stopped
+    command: redis-server --requirepass "tute8883" --appendonly yes
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./data:/data
+    networks:
+      - network
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "tute8883", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+
+  webdis:
+    image: nicolas/webdis:latest
+    container_name: webdis
+    restart: unless-stopped
+    volumes:
+      - ./webdis.json:/etc/webdis.prod.json
+    networks:
+      - network
+    depends_on:
+      redis:
+        condition: service_healthy
+
+  redisinsight:
+    image: redis/redisinsight:latest
+    container_name: redisinsight
+    restart: unless-stopped
+    user: "1000"
+    environment:
+      # Subruta on viurà l'app darrere del proxy
+      - RI_PROXY_PATH=/redisinsight/
+      # Opcional però recomanable per evitar problemes de CSRF a l'EULA
+      - RITRUSTEDORIGINS=http://miniredis.ddns.net:9090/
+    volumes:
+      - ./insight_data:/data
+    networks:
+      - network
+    depends_on:
+      redis:
+        condition: service_healthy
+
+  dufs:
+    image: sigoden/dufs
+    container_name: dufs
+    restart: unless-stopped
+    command: /data
+    volumes:
+      - ./public_files:/data
+    networks:
+      - network
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    restart: unless-stopped
+    ports:
+      - "9090:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx/.htpasswd:/etc/nginx/.htpasswd:ro
+      - ./public_files:/var/www/files:ro
+      - ./nginx/branding:/usr/share/nginx/html/branding:ro
+    networks:
+      - network
+    depends_on:
+      - redisinsight
+      - webdis
+      - dufs
+
+networks:
+  network:
+    driver: bridge

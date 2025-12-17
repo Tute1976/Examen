@@ -25,7 +25,8 @@ namespace Examen.Intermediari.Redis
         Capturar,
         IniciSessió,
         FiSessió,
-        Captura
+        Captura,
+        Refrescar
     }
 
     public static class Connexio

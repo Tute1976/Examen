@@ -129,6 +129,7 @@ namespace Examen.Alumne.Formularis
                     Intermediari.Redis.Alumne.SubscriuresAturar(Codi, EstacioAlumne, EnRebreAturar);
                     Intermediari.Redis.Alumne.SubscriuresCapturar(Codi, EstacioAlumne, EnRebreCapturar);
                     Intermediari.Redis.Alumne.SubscriuresTancament(Codi, EstacioAlumne, EnRebreTancament);
+                    Intermediari.Redis.Alumne.SubscriuresRefrescar(Codi, EstacioAlumne, EnRebreRefrescar);
 
                     Intermediari.Redis.Alumne.SubscriuresLlistaAplicacions(Codi, EstacioAlumne, EnRebreAplicacions);
                     Intermediari.Redis.Alumne.SubscriuresIniciSessio(Codi, EnRebreIniciSessio);
@@ -244,6 +245,12 @@ namespace Examen.Alumne.Formularis
             }
         }
 
+        private void EnRebreRefrescar(string canal)
+        {
+            Connexio.TipusTraça.AlRebrePitar.Traça(@"Rebuda ordre de refrescar aplicacions en ús");
+            TimerAplicacionsEnUs_Tick(null, null);
+        }
+
         private static void Invocar(Control control, Action accio)
         {
             if (control.InvokeRequired)
@@ -325,6 +332,8 @@ namespace Examen.Alumne.Formularis
 
                 timerAplicacionsEnUs.Enabled = true;
                 timerAplicacionsEnUs.Start();
+
+                TipusNotificacio.KeepAlive.Notificar(Codi, new Notificacio(EstacioAlumne, Helper.AplicacionsEnUs));
             });
         }
     }

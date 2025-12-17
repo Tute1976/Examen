@@ -10236,3 +10236,281 @@
 
 16/12/2025 20:54:14 [Information]: L'aplicación 'WhatsApp.Root', ha estat aturada correctament.
 
+17/12/2025 9:00:17 [Information]: Lectura d'aplicacions finalitzada: 41 (Durada: 0s | Darrera: 2s)
+
+17/12/2025 9:01:18 [Information]: Lectura d'aplicacions finalitzada: 40 (Durada: 0s | Darrera: 1m)
+
+17/12/2025 9:02:18 [Information]: Lectura d'aplicacions finalitzada: 43 (Durada: 0s | Darrera: 1m)
+
+17/12/2025 9:08:37 [Information]: Lectura d'aplicacions finalitzada: 45 (Durada: 0s | Darrera: 2s)
+
+17/12/2025 9:09:37 [Information]: Lectura d'aplicacions finalitzada: 44 (Durada: 0s | Darrera: 1m)
+
+17/12/2025 9:58:36 [Information]: Lectura d'aplicacions finalitzada: 43 (Durada: 0s | Darrera: 2s)
+
+17/12/2025 10:01:17 [Information]: Lectura d'aplicacions finalitzada: 43 (Durada: 0s | Darrera: 2s)
+
+17/12/2025 10:02:30 [Information]: Lectura d'aplicacions finalitzada: 44 (Durada: 0s | Darrera: 2s)
+
+17/12/2025 10:02:56 [Information]: Lectura d'aplicacions finalitzada: 45 (Durada: 0s | Darrera: 26s)
+
+17/12/2025 10:03:10 [Asterisk]: Executant worker
+
+17/12/2025 10:03:10 [Warning]: Aplicació Discord en execució detectada, enviant ...
+
+17/12/2025 10:03:10 [Information]: L'aplicación 'Discord', ha estat aturada correctament.
+
+17/12/2025 10:03:10 [Warning]: Aplicació WhatsApp.Root en execució detectada, enviant ...
+
+17/12/2025 10:03:11 [Information]: L'aplicació 'WhatsApp.Root', no s'ha pogut aturar
+
+17/12/2025 10:03:11 [Information]: L'aplicación 'WhatsApp.Root', ha estat aturada correctament.
+
+17/12/2025 10:03:11 [Warning]: Aplicació Windows Terminal Host en execució detectada, enviant ...
+
+17/12/2025 10:03:11 [Information]: L'aplicació 'Windows Terminal Host', no s'ha pogut aturar
+
+17/12/2025 10:03:12 [Information]: L'aplicación 'Windows Terminal Host', ha estat aturada correctament.
+
+17/12/2025 10:03:12 [Warning]: Aplicació Microsoft Edge en execució detectada, enviant ...
+
+17/12/2025 10:03:12 [Information]: L'aplicación 'Microsoft Edge', ha estat aturada correctament.
+
+17/12/2025 10:03:12 [Warning]: Aplicació Mozilla Firefox en execució detectada, enviant ...
+
+17/12/2025 10:03:13 [Information]: L'aplicació 'Mozilla Firefox', no s'ha pogut aturar
+
+17/12/2025 10:03:13 [Warning]: Aplicació Tor Browser en execució detectada, enviant ...
+
+17/12/2025 10:03:13 [Information]: L'aplicació 'Tor Browser', no s'ha pogut aturar
+
+17/12/2025 10:03:24 [Warning]: Aplicació Mozilla Firefox en execució detectada, enviant ...
+
+17/12/2025 10:03:24 [Warning]: Aplicació Tor Browser en execució detectada, enviant ...
+
+17/12/2025 10:03:35 [Warning]: Aplicació Mozilla Firefox en execució detectada, enviant ...
+
+17/12/2025 10:03:35 [Warning]: Aplicació Tor Browser en execució detectada, enviant ...
+
+17/12/2025 10:03:46 [Warning]: Aplicació Mozilla Firefox en execució detectada, enviant ...
+
+17/12/2025 10:03:46 [Warning]: Aplicació Tor Browser en execució detectada, enviant ...
+
+17/12/2025 10:03:57 [Warning]: Aplicació Mozilla Firefox en execució detectada, enviant ...
+
+17/12/2025 10:03:58 [Warning]: Aplicació Tor Browser en execució detectada, enviant ...
+
+17/12/2025 10:04:08 [Warning]: Aplicació Mozilla Firefox en execució detectada, enviant ...
+
+17/12/2025 10:04:09 [Warning]: Aplicació Tor Browser en execució detectada, enviant ...
+
+17/12/2025 10:04:19 [Warning]: Aplicació Mozilla Firefox en execució detectada, enviant ...
+
+17/12/2025 10:04:20 [Warning]: Aplicació Tor Browser en execució detectada, enviant ...
+
+17/12/2025 10:04:36 [Warning]: Aplicació Mozilla Firefox en execució detectada, enviant ...
+
+17/12/2025 10:04:37 [Warning]: Aplicació Tor Browser en execució detectada, enviant ...
+
+17/12/2025 10:04:47 [Warning]: Aplicació Windows Terminal Host en execució detectada, enviant ...
+
+17/12/2025 10:04:47 [Information]: L'aplicació 'Windows Terminal Host', no s'ha pogut aturar
+
+17/12/2025 10:04:48 [Information]: L'aplicación 'Windows Terminal Host', ha estat aturada correctament.
+
+17/12/2025 10:04:48 [Warning]: Aplicació Mozilla Firefox en execució detectada, enviant ...
+
+17/12/2025 10:04:48 [Warning]: Aplicació Tor Browser en execució detectada, enviant ...
+
+17/12/2025 10:05:13 [Asterisk]: Executant worker
+
+17/12/2025 10:05:13 [Warning]: Aplicació Windows Terminal Host en execució detectada, enviant ...
+
+17/12/2025 10:05:13 [Information]: L'aplicació 'Windows Terminal Host', no s'ha pogut aturar
+
+17/12/2025 10:05:14 [Information]: L'aplicación 'Windows Terminal Host', ha estat aturada correctament.
+
+17/12/2025 10:05:14 [Warning]: Aplicació Mozilla Firefox en execució detectada, enviant ...
+
+17/12/2025 10:05:14 [Warning]: Aplicació Tor Browser en execució detectada, enviant ...
+
+17/12/2025 10:05:25 [Warning]: Aplicació Mozilla Firefox en execució detectada, enviant ...
+
+17/12/2025 10:05:25 [Warning]: Aplicació Tor Browser en execució detectada, enviant ...
+
+17/12/2025 10:05:36 [Warning]: Aplicació Mozilla Firefox en execució detectada, enviant ...
+
+17/12/2025 10:05:37 [Warning]: Aplicació Tor Browser en execució detectada, enviant ...
+
+17/12/2025 10:05:47 [Warning]: Aplicació Mozilla Firefox en execució detectada, enviant ...
+
+17/12/2025 10:05:48 [Warning]: Aplicació Tor Browser en execució detectada, enviant ...
+
+17/12/2025 10:06:58 [Information]: Lectura d'aplicacions finalitzada: 41 (Durada: 1m 9s | Darrera: 4m 2s)
+
+17/12/2025 10:06:58 [Warning]: Aplicació Mozilla Firefox en execució detectada, enviant ...
+
+17/12/2025 10:06:59 [Warning]: Aplicació Tor Browser en execució detectada, enviant ...
+
+17/12/2025 10:07:09 [Warning]: Aplicació Mozilla Firefox en execució detectada, enviant ...
+
+17/12/2025 10:07:10 [Warning]: Aplicació Tor Browser en execució detectada, enviant ...
+
+17/12/2025 10:07:21 [Warning]: Aplicació Mozilla Firefox en execució detectada, enviant ...
+
+17/12/2025 10:07:21 [Warning]: Aplicació Tor Browser en execució detectada, enviant ...
+
+17/12/2025 10:07:32 [Warning]: Aplicació Mozilla Firefox en execució detectada, enviant ...
+
+17/12/2025 10:07:32 [Warning]: Aplicació Tor Browser en execució detectada, enviant ...
+
+17/12/2025 10:07:43 [Warning]: Aplicació Mozilla Firefox en execució detectada, enviant ...
+
+17/12/2025 10:07:44 [Warning]: Aplicació Tor Browser en execució detectada, enviant ...
+
+17/12/2025 10:07:54 [Warning]: Aplicació Mozilla Firefox en execució detectada, enviant ...
+
+17/12/2025 10:09:30 [Error]: S'ha produït un error: Timeout performing SETEX (5000ms), inst: 0, qu: 0, qs: 0, aw: False, bw: Inactive, rs: ReadAsync, ws: Idle, in: 0, in-pipe: 0, out-pipe: 0, last-in: 2, cur-in: 0, sync-ops: 117, async-ops: 0, serverEndpoint: 37.223.18.106:6379, conn-sec: 400,82, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: LG(SE.Redis-v2.10.1.65101), IOCP: (Busy=0,Free=1000,Min=22,Max=1000), WORKER: (Busy=1,Free=2046,Min=22,Max=2047), v: 2.10.1.65101 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+
+17/12/2025 10:09:30 [Error]: Detalls:    at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server, T defaultValue) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2106
+
+17/12/2025 10:09:30 [Error]:    at StackExchange.Redis.RedisBase.ExecuteSync[T](Message message, ResultProcessor`1 processor, ServerEndPoint server, T defaultValue) in /_/src/StackExchange.Redis/RedisBase.cs:line 62
+
+17/12/2025 10:09:30 [Error]:    at StackExchange.Redis.RedisDatabase.StringSet(RedisKey key, RedisValue value, Nullable`1 expiry, Boolean keepTtl, When when, CommandFlags flags) in /_/src/StackExchange.Redis/RedisDatabase.cs:line 3749
+
+17/12/2025 10:09:30 [Error]:    at StackExchange.Redis.RedisDatabase.StringSet(RedisKey key, RedisValue value, Nullable`1 expiry, When when) in /_/src/StackExchange.Redis/RedisDatabase.cs:line 3742
+
+17/12/2025 10:09:30 [Error]:    at Examen.Intermediari.Redis.Connexio.CrearClau(String clau, Object objecte, TimeSpan duracio) in D:\Privat\Programacio\Git\Examen\Intermediari\Redis\Connexio.cs:line 211
+
+17/12/2025 10:09:30 [Warning]: Aplicació Tor Browser en execució detectada, enviant ...
+
+17/12/2025 10:10:29 [Warning]: Aplicació Windows Terminal Host en execució detectada, enviant ...
+
+17/12/2025 10:10:41 [Information]: L'aplicació 'Windows Terminal Host', no s'ha pogut aturar
+
+17/12/2025 10:10:47 [Warning]: Aplicació Mozilla Firefox en execució detectada, enviant ...
+
+17/12/2025 10:17:44 [Information]: Lectura d'aplicacions finalitzada: 45 (Durada: 0s | Darrera: 2s)
+
+17/12/2025 10:17:55 [Asterisk]: Executant worker
+
+17/12/2025 10:17:56 [Warning]: Aplicació WhatsApp.Root en execució detectada, enviant ...
+
+17/12/2025 10:18:21 [Information]: L'aplicació 'WhatsApp.Root', no s'ha pogut aturar
+
+17/12/2025 10:18:21 [Information]: L'aplicación 'WhatsApp.Root', ha estat aturada correctament.
+
+17/12/2025 10:18:21 [Warning]: Aplicació Windows Terminal Host en execució detectada, enviant ...
+
+17/12/2025 10:18:22 [Information]: L'aplicació 'Windows Terminal Host', no s'ha pogut aturar
+
+17/12/2025 10:18:22 [Information]: L'aplicación 'Windows Terminal Host', ha estat aturada correctament.
+
+17/12/2025 10:18:22 [Warning]: Aplicació Mozilla Firefox en execució detectada, enviant ...
+
+17/12/2025 10:18:22 [Information]: L'aplicación 'Mozilla Firefox', ha estat aturada correctament.
+
+17/12/2025 10:18:45 [Information]: Lectura d'aplicacions finalitzada: 40 (Durada: 0s | Darrera: 1m)
+
+17/12/2025 10:19:45 [Information]: Lectura d'aplicacions finalitzada: 42 (Durada: 0s | Darrera: 1m)
+
+17/12/2025 10:20:45 [Information]: Lectura d'aplicacions finalitzada: 41 (Durada: 0s | Darrera: 1m)
+
+17/12/2025 10:21:45 [Information]: Lectura d'aplicacions finalitzada: 41 (Durada: 0s | Darrera: 1m)
+
+17/12/2025 10:22:45 [Information]: Lectura d'aplicacions finalitzada: 40 (Durada: 0s | Darrera: 1m)
+
+17/12/2025 10:23:45 [Information]: Lectura d'aplicacions finalitzada: 40 (Durada: 0s | Darrera: 1m)
+
+17/12/2025 10:24:46 [Information]: Lectura d'aplicacions finalitzada: 39 (Durada: 0s | Darrera: 1m)
+
+17/12/2025 10:25:46 [Information]: Lectura d'aplicacions finalitzada: 39 (Durada: 0s | Darrera: 1m)
+
+17/12/2025 10:26:46 [Information]: Lectura d'aplicacions finalitzada: 39 (Durada: 0s | Darrera: 1m)
+
+17/12/2025 10:27:46 [Information]: Lectura d'aplicacions finalitzada: 38 (Durada: 0s | Darrera: 1m)
+
+17/12/2025 10:28:46 [Information]: Lectura d'aplicacions finalitzada: 38 (Durada: 0s | Darrera: 1m)
+
+17/12/2025 10:29:46 [Information]: Lectura d'aplicacions finalitzada: 38 (Durada: 0s | Darrera: 1m)
+
+17/12/2025 10:30:45 [Warning]: Aplicació Mozilla Firefox en execució detectada, enviant ...
+
+17/12/2025 10:30:45 [Information]: L'aplicación 'Mozilla Firefox', ha estat aturada correctament.
+
+17/12/2025 10:30:47 [Information]: Lectura d'aplicacions finalitzada: 38 (Durada: 0s | Darrera: 1m)
+
+17/12/2025 10:30:56 [Warning]: Aplicació WhatsApp.Root en execució detectada, enviant ...
+
+17/12/2025 10:30:56 [Information]: L'aplicació 'WhatsApp.Root', no s'ha pogut aturar
+
+17/12/2025 10:30:56 [Information]: L'aplicación 'WhatsApp.Root', ha estat aturada correctament.
+
+17/12/2025 10:30:56 [Warning]: Aplicació Mozilla Firefox en execució detectada, enviant ...
+
+17/12/2025 10:30:57 [Information]: L'aplicación 'Mozilla Firefox', ha estat aturada correctament.
+
+17/12/2025 10:31:47 [Information]: Lectura d'aplicacions finalitzada: 38 (Durada: 0s | Darrera: 1m)
+
+17/12/2025 10:32:47 [Information]: Lectura d'aplicacions finalitzada: 37 (Durada: 0s | Darrera: 1m)
+
+17/12/2025 10:34:02 [Information]: Lectura d'aplicacions finalitzada: 37 (Durada: 0s | Darrera: 1m 14s)
+
+17/12/2025 10:35:02 [Information]: Lectura d'aplicacions finalitzada: 37 (Durada: 0s | Darrera: 1m)
+
+17/12/2025 10:36:02 [Information]: Lectura d'aplicacions finalitzada: 37 (Durada: 0s | Darrera: 1m)
+
+17/12/2025 10:37:02 [Information]: Lectura d'aplicacions finalitzada: 37 (Durada: 0s | Darrera: 1m)
+
+17/12/2025 10:44:25 [Information]: Lectura d'aplicacions finalitzada: 39 (Durada: 0s | Darrera: 2s)
+
+17/12/2025 10:45:27 [Information]: Lectura d'aplicacions finalitzada: 39 (Durada: 0s | Darrera: 1m 2s)
+
+17/12/2025 10:46:50 [Information]: Lectura d'aplicacions finalitzada: 40 (Durada: 16s | Darrera: 1m 22s)
+
+17/12/2025 10:50:15 [Information]: Lectura d'aplicacions finalitzada: 39 (Durada: 9s | Darrera: 12s)
+
+17/12/2025 10:51:02 [Asterisk]: Executant worker
+
+17/12/2025 10:51:12 [Warning]: Aplicació EXCEL en execució detectada, enviant ...
+
+17/12/2025 10:51:13 [Information]: L'aplicació 'EXCEL', no s'ha pogut aturar
+
+17/12/2025 10:51:13 [Information]: L'aplicación 'EXCEL', ha estat aturada correctament.
+
+17/12/2025 10:51:13 [Warning]: Aplicació Microsoft Outlook en execució detectada, enviant ...
+
+17/12/2025 10:51:13 [Information]: L'aplicació 'Microsoft Outlook', no hauria d'estar en ús.
+
+17/12/2025 10:51:17 [Warning]: Aplicació Microsoft Word en execució detectada, enviant ...
+
+17/12/2025 10:51:17 [Information]: Lectura d'aplicacions finalitzada: 39 (Durada: 0s | Darrera: 1m 1s)
+
+17/12/2025 10:51:17 [Information]: L'aplicació 'Microsoft Word', no s'ha pogut aturar
+
+17/12/2025 10:51:17 [Information]: L'aplicación 'Microsoft Word', ha estat aturada correctament.
+
+17/12/2025 10:51:27 [Warning]: Aplicació Microsoft Outlook en execució detectada, enviant ...
+
+17/12/2025 10:59:51 [Information]: Lectura d'aplicacions finalitzada: 39 (Durada: 5s | Darrera: 7s)
+
+17/12/2025 11:02:02 [Information]: Lectura d'aplicacions finalitzada: 39 (Durada: 0s | Darrera: 2s)
+
+17/12/2025 11:03:03 [Information]: Lectura d'aplicacions finalitzada: 39 (Durada: 0s | Darrera: 2s)
+
+17/12/2025 11:04:11 [Information]: Lectura d'aplicacions finalitzada: 39 (Durada: 0s | Darrera: 2s)
+
+17/12/2025 11:05:11 [Information]: Lectura d'aplicacions finalitzada: 39 (Durada: 0s | Darrera: 1m)
+
+17/12/2025 11:08:04 [Information]: Lectura d'aplicacions finalitzada: 39 (Durada: 0s | Darrera: 2s)
+
+17/12/2025 11:09:22 [Information]: Lectura d'aplicacions finalitzada: 40 (Durada: 7s | Darrera: 1m 7s)
+
+17/12/2025 11:11:03 [Information]: Lectura d'aplicacions finalitzada: 39 (Durada: 4s | Darrera: 1m 39s)
+
+17/12/2025 11:11:31 [Information]: Lectura d'aplicacions finalitzada: 39 (Durada: 0s | Darrera: 2s)
+
+17/12/2025 11:12:31 [Information]: Lectura d'aplicacions finalitzada: 39 (Durada: 0s | Darrera: 1m)
+
+17/12/2025 11:13:04 [Asterisk]: Executant worker
+

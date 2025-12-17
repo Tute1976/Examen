@@ -94,6 +94,20 @@ namespace Examen.Intermediari.Redis
             }
         }
 
+        public static void SubscriuresRefrescar(string idSessio, EstacioAlumne estacioAlumne, Action<string> enRebreRefrescar)
+        {
+            try
+            {
+                Connexio.Connectar();
+                var codificacio = new Codificacio(idSessio, nameof(TipusNotificacio.Refrescar), estacioAlumne.Estacio, estacioAlumne.Nom);
+                Connexio.SubscriurePatro(codificacio, enRebreRefrescar);
+            }
+            catch (Exception ex)
+            {
+                ex.Mostrar();
+            }
+        }
+
         public static void SubscriuresIniciSessio(string idSessio, Action<string> enRebre)
         {
             try

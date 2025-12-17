@@ -92,8 +92,8 @@
             // 
             this.split.Panel2.Controls.Add(this.panelHistoric);
             this.split.Panel2MinSize = 200;
-            this.split.Size = new System.Drawing.Size(1226, 652);
-            this.split.SplitterDistance = 342;
+            this.split.Size = new System.Drawing.Size(1214, 646);
+            this.split.SplitterDistance = 338;
             this.split.SplitterWidth = 15;
             this.split.TabIndex = 0;
             // 
@@ -106,7 +106,7 @@
             this.panelTaula.Location = new System.Drawing.Point(0, 0);
             this.panelTaula.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelTaula.Name = "panelTaula";
-            this.panelTaula.Size = new System.Drawing.Size(1226, 342);
+            this.panelTaula.Size = new System.Drawing.Size(1214, 338);
             this.panelTaula.TabIndex = 1;
             // 
             // taula
@@ -123,7 +123,7 @@
             this.taula.RowCount = 2;
             this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.taula.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.taula.Size = new System.Drawing.Size(1224, 0);
+            this.taula.Size = new System.Drawing.Size(1212, 0);
             this.taula.TabIndex = 0;
             this.taula.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.Taula_Controls);
             this.taula.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.Taula_Controls);
@@ -136,7 +136,7 @@
             this.panelHistoric.Location = new System.Drawing.Point(0, 0);
             this.panelHistoric.Margin = new System.Windows.Forms.Padding(0);
             this.panelHistoric.Name = "panelHistoric";
-            this.panelHistoric.Size = new System.Drawing.Size(1226, 295);
+            this.panelHistoric.Size = new System.Drawing.Size(1214, 293);
             this.panelHistoric.TabIndex = 1;
             // 
             // llistaHistoric
@@ -152,7 +152,7 @@
             this.llistaHistoric.Location = new System.Drawing.Point(0, 48);
             this.llistaHistoric.Margin = new System.Windows.Forms.Padding(0);
             this.llistaHistoric.Name = "llistaHistoric";
-            this.llistaHistoric.Size = new System.Drawing.Size(1226, 247);
+            this.llistaHistoric.Size = new System.Drawing.Size(1214, 245);
             this.llistaHistoric.SmallImageList = this.imatgesLlista;
             this.llistaHistoric.TabIndex = 0;
             this.llistaHistoric.UseCompatibleStateImageBehavior = false;
@@ -197,13 +197,13 @@
             this.panelComboBox.Location = new System.Drawing.Point(0, 0);
             this.panelComboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelComboBox.Name = "panelComboBox";
-            this.panelComboBox.Size = new System.Drawing.Size(1226, 48);
+            this.panelComboBox.Size = new System.Drawing.Size(1214, 48);
             this.panelComboBox.TabIndex = 2;
             // 
             // lFiltreHistoric
             // 
             this.lFiltreHistoric.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lFiltreHistoric.Location = new System.Drawing.Point(744, 0);
+            this.lFiltreHistoric.Location = new System.Drawing.Point(732, 0);
             this.lFiltreHistoric.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lFiltreHistoric.Name = "lFiltreHistoric";
             this.lFiltreHistoric.Padding = new System.Windows.Forms.Padding(0, 0, 15, 15);
@@ -219,7 +219,7 @@
             this.cbHistoric.FormattingEnabled = true;
             this.cbHistoric.Items.AddRange(new object[] {
             "Totes les estacions"});
-            this.cbHistoric.Location = new System.Drawing.Point(928, 0);
+            this.cbHistoric.Location = new System.Drawing.Point(916, 0);
             this.cbHistoric.Margin = new System.Windows.Forms.Padding(0);
             this.cbHistoric.Name = "cbHistoric";
             this.cbHistoric.Size = new System.Drawing.Size(298, 28);
@@ -253,10 +253,10 @@
             this.toolStripSeparator3,
             this.bCopiarCodi,
             this.bCanviarCodi});
-            this.menu.Location = new System.Drawing.Point(1234, 8);
+            this.menu.Location = new System.Drawing.Point(1222, 8);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(8, 8, 0, 8);
-            this.menu.Size = new System.Drawing.Size(87, 652);
+            this.menu.Size = new System.Drawing.Size(87, 646);
             this.menu.TabIndex = 0;
             // 
             // cbColumnes
@@ -388,7 +388,7 @@
             this.panelFons.Margin = new System.Windows.Forms.Padding(0);
             this.panelFons.Name = "panelFons";
             this.panelFons.Padding = new System.Windows.Forms.Padding(8);
-            this.panelFons.Size = new System.Drawing.Size(1329, 668);
+            this.panelFons.Size = new System.Drawing.Size(1317, 662);
             this.panelFons.TabIndex = 1;
             // 
             // panelInfo
@@ -396,16 +396,16 @@
             this.panelInfo.BackColor = System.Drawing.Color.Transparent;
             this.panelInfo.Controls.Add(this.txtVersio);
             this.panelInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelInfo.Location = new System.Drawing.Point(8, 676);
+            this.panelInfo.Location = new System.Drawing.Point(8, 670);
             this.panelInfo.Margin = new System.Windows.Forms.Padding(0);
             this.panelInfo.Name = "panelInfo";
-            this.panelInfo.Size = new System.Drawing.Size(1329, 25);
+            this.panelInfo.Size = new System.Drawing.Size(1317, 25);
             this.panelInfo.TabIndex = 10;
             // 
             // txtVersio
             // 
             this.txtVersio.Dock = System.Windows.Forms.DockStyle.Right;
-            this.txtVersio.Location = new System.Drawing.Point(954, 0);
+            this.txtVersio.Location = new System.Drawing.Point(942, 0);
             this.txtVersio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtVersio.Name = "txtVersio";
             this.txtVersio.Size = new System.Drawing.Size(375, 25);
@@ -440,7 +440,7 @@
             captionLabel2.Text = "XXXXX";
             this.CaptionLabels.Add(captionLabel1);
             this.CaptionLabels.Add(captionLabel2);
-            this.ClientSize = new System.Drawing.Size(1345, 709);
+            this.ClientSize = new System.Drawing.Size(1333, 703);
             this.Controls.Add(this.panelFons);
             this.Controls.Add(this.panelInfo);
             this.DropShadow = true;

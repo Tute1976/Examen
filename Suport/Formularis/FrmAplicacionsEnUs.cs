@@ -14,15 +14,19 @@ namespace Examen.Suport.Formularis
         private readonly ContenidorAplicacions _contenidorAplicacions;
         private readonly ContenidorAplicacionsEnUs _contenidorAplicacionsEnUs;
         private readonly string _fitxer;
+        private readonly EstacioAlumne _estacioAlumne;
+        private readonly Action<EstacioAlumne> _onRefrescar;
 
         private int _columnaOrdenada = -1;
         private SortOrder _ordre = SortOrder.None;
 
-        public FrmAplicacionsEnUs(string estacio, ContenidorAplicacionsEnUs contenidorAplicacionsEnUs, ContenidorAplicacions contenidorAplicacions, string fitxer)
+        public FrmAplicacionsEnUs(string estacio, ContenidorAplicacionsEnUs contenidorAplicacionsEnUs, ContenidorAplicacions contenidorAplicacions, string fitxer, EstacioAlumne estacioAlumne, Action<EstacioAlumne> onRefrescar)
         {
             _contenidorAplicacions = contenidorAplicacions;
             _contenidorAplicacionsEnUs = contenidorAplicacionsEnUs;
             _fitxer = fitxer;
+            _estacioAlumne = estacioAlumne;
+            _onRefrescar = onRefrescar;
 
             InitializeComponent();
 
@@ -62,7 +66,7 @@ namespace Examen.Suport.Formularis
                 {
                     item.BackColor = aplicacio.CalAturar ?
                         System.Drawing.Color.LightCoral :
-                        System.Drawing.Color.LightBlue;
+                        System.Drawing.Color.White;
                 }
             }
         }
@@ -278,10 +282,10 @@ namespace Examen.Suport.Formularis
             _contenidorAplicacions.CategoriesAplicacions.Desar(_fitxer);
             menuDesar.Enabled = false;
         }
-
-        private void menuDesar_Click(object sender, EventArgs e)
+        
+        private void BRefrescar_Click(object sender, EventArgs e)
         {
-
+            _onRefrescar?.Invoke(_estacioAlumne);
         }
     }
 }

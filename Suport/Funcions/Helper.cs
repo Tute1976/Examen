@@ -28,7 +28,6 @@ namespace Examen.Suport.Funcions
         private static readonly Dictionary<string, Bitmap> _Icones = [];
         private static readonly Dictionary<string, string> _Descripcions = [];
 
-        
         public static List<AplicacioEnUs> AplicacionsEnUs { get; set; } = [];
         public static string Canal { get; set; }
 
@@ -144,8 +143,7 @@ namespace Examen.Suport.Funcions
 
                 var sessionId = WTSGetActiveConsoleSessionId();
 
-                var query =
-                    $"SELECT Name, ExecutablePath, CommandLine FROM Win32_Process WHERE SessionId = {sessionId} AND Priority <= 8";
+                var query = $"SELECT Name, ExecutablePath, CommandLine FROM Win32_Process WHERE SessionId = {sessionId} AND Priority <= 8";
 
                 using var searcher = new ManagementObjectSearcher(query);
                 foreach (var o in searcher.Get())
@@ -381,7 +379,7 @@ namespace Examen.Suport.Funcions
         private static readonly List<string> _aplicacionsNoAturades = [];
         private static readonly List<string> _aplicacionsNoHaurienDEstar = [];
 
-        public static bool Aturar(this Aplicacio aplicacio, BackgroundWorker backgroundWorker)
+        public static bool Aturar(this Aplicacio aplicacio, BackgroundWorker backgroundWorker, bool nomCurt)
         {
             try
             {
@@ -392,7 +390,8 @@ namespace Examen.Suport.Funcions
                     while (n > 0)
                     {
                         var taskKill = Environment.ExpandEnvironmentVariables(@"%WINDIR%\system32\taskkill.exe");
-                        var arguments = $"/F /IM \"{aplicacio.Executable}\" /T";
+                        var executable = nomCurt ? aplicacio.ExecutableCurt : aplicacio.Executable;
+                        var arguments = $"/F /IM \"{executable}\" /T";
                         if (!Executar(taskKill, arguments))
                             break;
 

@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAplicacionsEnUs));
             this.menu = new System.Windows.Forms.ToolStrip();
             this.menuDesar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bExportar = new System.Windows.Forms.ToolStripButton();
             this.bCancelar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bRefrescar = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.llistaAplicacions = new System.Windows.Forms.ListView();
@@ -42,13 +43,13 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.menuLlista = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.menuLlista = new System.Windows.Forms.ContextMenuStrip();
             this.menuAturar = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPermetre = new System.Windows.Forms.ToolStripMenuItem();
             this.menuIgnorar = new System.Windows.Forms.ToolStripMenuItem();
             this.separacioEsborrar = new System.Windows.Forms.ToolStripSeparator();
             this.menuEsborrar = new System.Windows.Forms.ToolStripMenuItem();
-            this.imatges = new System.Windows.Forms.ImageList(this.components);
+            this.imatges = new System.Windows.Forms.ImageList();
             this.lTitol = new System.Windows.Forms.Label();
             this.menu.SuspendLayout();
             this.menuLlista.SuspendLayout();
@@ -65,11 +66,13 @@
             this.menuDesar,
             this.toolStripSeparator1,
             this.bExportar,
-            this.bCancelar});
-            this.menu.Location = new System.Drawing.Point(754, 10);
+            this.bCancelar,
+            this.toolStripSeparator2,
+            this.bRefrescar});
+            this.menu.Location = new System.Drawing.Point(744, 10);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(0);
-            this.menu.Size = new System.Drawing.Size(36, 375);
+            this.menu.Size = new System.Drawing.Size(46, 375);
             this.menu.TabIndex = 1;
             // 
             // menuDesar
@@ -79,14 +82,14 @@
             this.menuDesar.Image = global::Examen.Suport.Properties.Resources.Desar_32x32;
             this.menuDesar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.menuDesar.Name = "menuDesar";
-            this.menuDesar.Size = new System.Drawing.Size(35, 36);
+            this.menuDesar.Size = new System.Drawing.Size(45, 36);
             this.menuDesar.Text = "Desar";
             this.menuDesar.Click += new System.EventHandler(this.MenuDesar_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(35, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(45, 6);
             // 
             // bExportar
             // 
@@ -94,7 +97,7 @@
             this.bExportar.Image = global::Examen.Suport.Properties.Resources.Exportar_32x32;
             this.bExportar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bExportar.Name = "bExportar";
-            this.bExportar.Size = new System.Drawing.Size(35, 36);
+            this.bExportar.Size = new System.Drawing.Size(45, 36);
             this.bExportar.Text = "Exportar";
             this.bExportar.Click += new System.EventHandler(this.BExportar_Click);
             // 
@@ -105,15 +108,30 @@
             this.bCancelar.Image = global::Examen.Suport.Properties.Resources.Cancel_32x32;
             this.bCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bCancelar.Name = "bCancelar";
-            this.bCancelar.Size = new System.Drawing.Size(35, 36);
+            this.bCancelar.Size = new System.Drawing.Size(45, 36);
             this.bCancelar.Text = "Cancelar";
             this.bCancelar.Click += new System.EventHandler(this.BCancelar_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(45, 6);
+            // 
+            // bRefrescar
+            // 
+            this.bRefrescar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bRefrescar.Image = global::Examen.Suport.Properties.Resources.Refrescar_32x321;
+            this.bRefrescar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bRefrescar.Name = "bRefrescar";
+            this.bRefrescar.Size = new System.Drawing.Size(45, 36);
+            this.bRefrescar.Text = "Tornar a generar la llista d\'aplicacions";
+            this.bRefrescar.Click += new System.EventHandler(this.BRefrescar_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(744, 10);
+            this.panel1.Location = new System.Drawing.Point(734, 10);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(10, 375);
@@ -141,7 +159,7 @@
             this.llistaAplicacions.Margin = new System.Windows.Forms.Padding(0);
             this.llistaAplicacions.MultiSelect = false;
             this.llistaAplicacions.Name = "llistaAplicacions";
-            this.llistaAplicacions.Size = new System.Drawing.Size(729, 343);
+            this.llistaAplicacions.Size = new System.Drawing.Size(719, 343);
             this.llistaAplicacions.SmallImageList = this.imatges;
             this.llistaAplicacions.TabIndex = 5;
             this.llistaAplicacions.UseCompatibleStateImageBehavior = false;
@@ -170,6 +188,7 @@
             // 
             // menuLlista
             // 
+            this.menuLlista.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuLlista.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuAturar,
             this.menuPermetre,
@@ -177,14 +196,14 @@
             this.separacioEsborrar,
             this.menuEsborrar});
             this.menuLlista.Name = "menuLlista";
-            this.menuLlista.Size = new System.Drawing.Size(159, 98);
+            this.menuLlista.Size = new System.Drawing.Size(220, 138);
             this.menuLlista.Opening += new System.ComponentModel.CancelEventHandler(this.MenuLlista_Opening);
             // 
             // menuAturar
             // 
             this.menuAturar.Image = global::Examen.Suport.Properties.Resources.Aturar_16x16;
             this.menuAturar.Name = "menuAturar";
-            this.menuAturar.Size = new System.Drawing.Size(158, 22);
+            this.menuAturar.Size = new System.Drawing.Size(219, 32);
             this.menuAturar.Text = "Aturar";
             this.menuAturar.ToolTipText = "Bloquejar aplicació";
             this.menuAturar.Click += new System.EventHandler(this.MenuAturar_Click);
@@ -193,7 +212,7 @@
             // 
             this.menuPermetre.Image = global::Examen.Suport.Properties.Resources.Validation_16x16;
             this.menuPermetre.Name = "menuPermetre";
-            this.menuPermetre.Size = new System.Drawing.Size(158, 22);
+            this.menuPermetre.Size = new System.Drawing.Size(219, 32);
             this.menuPermetre.Text = "Permetre";
             this.menuPermetre.ToolTipText = "Permetre aplicació";
             this.menuPermetre.Click += new System.EventHandler(this.MenuPermetre_Click);
@@ -202,7 +221,7 @@
             // 
             this.menuIgnorar.Image = global::Examen.Suport.Properties.Resources.Base_16x16;
             this.menuIgnorar.Name = "menuIgnorar";
-            this.menuIgnorar.Size = new System.Drawing.Size(158, 22);
+            this.menuIgnorar.Size = new System.Drawing.Size(219, 32);
             this.menuIgnorar.Text = "Ignorar";
             this.menuIgnorar.ToolTipText = "Ignorar aplicació";
             this.menuIgnorar.Click += new System.EventHandler(this.MenuIgnorar_Click);
@@ -210,13 +229,13 @@
             // separacioEsborrar
             // 
             this.separacioEsborrar.Name = "separacioEsborrar";
-            this.separacioEsborrar.Size = new System.Drawing.Size(155, 6);
+            this.separacioEsborrar.Size = new System.Drawing.Size(216, 6);
             // 
             // menuEsborrar
             // 
             this.menuEsborrar.Image = global::Examen.Suport.Properties.Resources.Neteja_16x16;
             this.menuEsborrar.Name = "menuEsborrar";
-            this.menuEsborrar.Size = new System.Drawing.Size(158, 22);
+            this.menuEsborrar.Size = new System.Drawing.Size(219, 32);
             this.menuEsborrar.Text = "Esborrar control";
             this.menuEsborrar.ToolTipText = "Esborrar aplicació de la llista de control";
             this.menuEsborrar.Click += new System.EventHandler(this.MenuEsborrar_Click);
@@ -235,7 +254,7 @@
             this.lTitol.Location = new System.Drawing.Point(15, 10);
             this.lTitol.Margin = new System.Windows.Forms.Padding(0);
             this.lTitol.Name = "lTitol";
-            this.lTitol.Size = new System.Drawing.Size(729, 32);
+            this.lTitol.Size = new System.Drawing.Size(719, 32);
             this.lTitol.TabIndex = 6;
             this.lTitol.Text = "label1";
             // 
@@ -284,5 +303,7 @@
         private System.Windows.Forms.Label lTitol;
         private System.Windows.Forms.ToolStripButton menuDesar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton bRefrescar;
     }
 }

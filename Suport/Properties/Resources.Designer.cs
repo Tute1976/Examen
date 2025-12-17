@@ -363,6 +363,26 @@ namespace Examen.Suport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Refrescar_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Refrescar_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Refrescar_32x321 {
+            get {
+                object obj = ResourceManager.GetObject("Refrescar_32x321", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Shut_down_ {
             get {
                 object obj = ResourceManager.GetObject("Shut down ", resourceCulture);

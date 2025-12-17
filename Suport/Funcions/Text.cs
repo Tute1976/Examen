@@ -64,7 +64,7 @@ namespace Examen.Suport.Funcions
 
                 return ret;
             }
-            catch (Exception ex)
+            catch
             {
                 // ignore
             }

@@ -4,6 +4,7 @@ using Examen.Suport.Controls;
 using Examen.Suport.Funcions;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -69,6 +70,25 @@ namespace Examen.Professor.Formularis
                             "folder-open" : 
                             "folder";
                 };
+
+                llista.RowFormatter = row =>
+                {
+                    if (row?.RowObject is not Node node)
+                        return;
+
+                    if (node.Ignorar)
+                        row.BackColor = Color.LightGreen;
+                    else
+                    {
+                        row.BackColor = node.CalAturar ?
+                            Color.LightCoral :
+                            Color.White;
+                    }
+
+                    row.Font = llista.Font;
+                    if (!node.EsAplicacio)
+                        row.Font = new Font(llista.Font, FontStyle.Bold);
+                };
             }
             catch (Exception ex)
             {
@@ -79,9 +99,9 @@ namespace Examen.Professor.Formularis
         private void OmpleIcones()
         {
             imatges.Images.Clear();
-            imatges.Images.Add("folder", Properties.Resources.FolderClosed);    // posa-hi la teva icona
-            imatges.Images.Add("folder-open", Properties.Resources.FolderOpened); // opcional
-            imatges.Images.Add("application", Properties.Resources.Application);    // posa-hi la teva icona
+            imatges.Images.Add("folder", Properties.Resources.FolderClosed);
+            imatges.Images.Add("folder-open", Properties.Resources.FolderOpened);
+            imatges.Images.Add("application", Properties.Resources.Application);
             foreach (var nodeCategoria in _nodes)
                 foreach (var node in nodeCategoria.Nodes)
                     imatges.Images.Add(node.Nom, node.Icona);
@@ -127,7 +147,7 @@ namespace Examen.Professor.Formularis
             {
                 if (File.Exists(openFileDialog.FileName))
                 {
-                    var aplicacions = Examen.Suport.Funcions.Text.Llegir(openFileDialog.FileName);
+                    var aplicacions = Examen.Suport.Funcions.Text.Llegir(openFileDialog.FileName) ?? [];
 
                     var ret = @"Vols importar la llista d'aplicacions (Sí) o subtituïr-la (No)?".Mostrar(MostrarIcon.Question,
                         MessageBoxButtons.YesNoCancel);

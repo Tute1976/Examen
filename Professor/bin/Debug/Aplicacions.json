@@ -48,6 +48,14 @@
       {
         "CalAturar": true,
         "Ignorar": false,
+        "Nom": "Discord",
+        "Descripcio": "Discord",
+        "Executable": "Discord.exe",
+        "ImatgeEnBase64": "H4sIAAAAAAAEAB2TN6KjQBBED6QAEAgTMtjBM3gyBMILI0CY06/+dlKvuoJOqpsQ2GjHdaUa+d9YXlBLQfUj8Gd5V+CTPy1ZjKv/ACgF8AOJ5w3FEbCjBu7ftt89ub9+EGk/LzcB8ELYsX/R1GtIkgNb4oqOXT+yJLlHV0I/xxq/ZIGLVHA/KFaJdM/yHX/jhpSM+8U3NGRJMxwlGOTL70wpaBC+4xs/USzEq2qEKD+ALFKwUhukLJOSMsOwlTLkNnZt3JzAL8Ln5vFzi3opSEM79jh7JptH5OHMKE/c0A+cs1KOsdVhtOoz+UGkPxRWKhqiIm6pVJAB40Hi2EH9eUVfK1uV+Tku11acn6F5QG4VPiWWh9mmfPOaqPyqtahVI17rkm8LgVSpR0MF8OjaiVZF1/QoxHVt7UERwrkXvT1S7HhJjsCGiSVPzBDZuy8I4Ky8KlofHqBBytRaGC74QlvooWK2AQP6xfkSrfuAMXPRup+SrR55YvKVdxoS7h1uSMSINJucz08tfRTzKil3gzoQ6HhYAS556q/Jd76ToZp2u6yL07xnQ8+MXj8u5W0CeuQ6kGpJv97IniYae7oWVBQgsCyrGK1hoqjgU7lnc75vcYIdL0g0+kWwPh1525uFtD4JX8Hq5CIWSp4v8HbJv7AecCZe/BdWMJHcmsc8RCDfterph5d55i1DCUWw8ziz6pATWYYoGiUAl0PuHpWXzlPbSeYwJiaWNtJt3ZNy2bALLvQMJd58HrTaKY0Ng4y8ZY0OgyRthOZ+lev0fvDOvVf0jxx74XeTF6K5s7u2K5edMU6NtbiWq7iNbuG2CChDmCmFddIa4mnmSnp3xYf5ZosRK3i6E4ivZXmqnrlDyr/qrvJRk7y9lV9gWXAoeQiGK1+Ynbr3Yln5Z5e/WmQ4gg2f3yWZ38nJLG0q15pNmb86z9tnGrbFCNBDZnyarrPCf7s5O7Sj0/NN6CVjmIVYHY652Mf5mdAmxmD63JD6Vv86QSaulFU4qJGqGQDNUkiu9kcZNiYv77Fc3lyJanfl/ydLvex33ua+BeEf5friH/QDAAA="
+      },
+      {
+        "CalAturar": true,
+        "Ignorar": false,
         "Nom": "Visual Studio Code",
         "Descripcio": "Editor de codi font",
         "Executable": "code.exe",
@@ -64,18 +72,18 @@
       {
         "CalAturar": true,
         "Ignorar": false,
-        "Nom": "Discord",
-        "Descripcio": "Discord",
-        "Executable": "Discord.exe",
-        "ImatgeEnBase64": "H4sIAAAAAAAEAB2TN6KjQBBED6QAEAgTMtjBM3gyBMILI0CY06/+dlKvuoJOqpsQ2GjHdaUa+d9YXlBLQfUj8Gd5V+CTPy1ZjKv/ACgF8AOJ5w3FEbCjBu7ftt89ub9+EGk/LzcB8ELYsX/R1GtIkgNb4oqOXT+yJLlHV0I/xxq/ZIGLVHA/KFaJdM/yHX/jhpSM+8U3NGRJMxwlGOTL70wpaBC+4xs/USzEq2qEKD+ALFKwUhukLJOSMsOwlTLkNnZt3JzAL8Ln5vFzi3opSEM79jh7JptH5OHMKE/c0A+cs1KOsdVhtOoz+UGkPxRWKhqiIm6pVJAB40Hi2EH9eUVfK1uV+Tku11acn6F5QG4VPiWWh9mmfPOaqPyqtahVI17rkm8LgVSpR0MF8OjaiVZF1/QoxHVt7UERwrkXvT1S7HhJjsCGiSVPzBDZuy8I4Ky8KlofHqBBytRaGC74QlvooWK2AQP6xfkSrfuAMXPRup+SrR55YvKVdxoS7h1uSMSINJucz08tfRTzKil3gzoQ6HhYAS556q/Jd76ToZp2u6yL07xnQ8+MXj8u5W0CeuQ6kGpJv97IniYae7oWVBQgsCyrGK1hoqjgU7lnc75vcYIdL0g0+kWwPh1525uFtD4JX8Hq5CIWSp4v8HbJv7AecCZe/BdWMJHcmsc8RCDfterph5d55i1DCUWw8ziz6pATWYYoGiUAl0PuHpWXzlPbSeYwJiaWNtJt3ZNy2bALLvQMJd58HrTaKY0Ng4y8ZY0OgyRthOZ+lev0fvDOvVf0jxx74XeTF6K5s7u2K5edMU6NtbiWq7iNbuG2CChDmCmFddIa4mnmSnp3xYf5ZosRK3i6E4ivZXmqnrlDyr/qrvJRk7y9lV9gWXAoeQiGK1+Ynbr3Yln5Z5e/WmQ4gg2f3yWZ38nJLG0q15pNmb86z9tnGrbFCNBDZnyarrPCf7s5O7Sj0/NN6CVjmIVYHY652Mf5mdAmxmD63JD6Vv86QSaulFU4qJGqGQDNUkiu9kcZNiYv77Fc3lyJanfl/ydLvex33ua+BeEf5friH/QDAAA="
-      },
-      {
-        "CalAturar": true,
-        "Ignorar": false,
         "Nom": "WhatsApp.Root",
         "Descripcio": "WhatsApp.Root",
         "Executable": "WhatsApp.Root.exe",
         "ImatgeEnBase64": "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"
+      },
+      {
+        "CalAturar": true,
+        "Ignorar": false,
+        "Nom": "Windows Terminal Host",
+        "Descripcio": "Windows Terminal Host",
+        "Executable": "WindowsTerminal.exe",
+        "ImatgeEnBase64": "H4sIAAAAAAAEAB1Tx9ayShB8IBaAklzcxRAdiQMOiDuUnHEkyNP/fLc3XdXh1Ok+3VUou/7KmEYxgMOcAJcaLg4k/1GAFBD/+VyiL+UfkI1UvmMNAMvwFHorZfQXbddAb/cDRLeD6xWWgxA20l+q1G++pmNXo3W8fz+w1eI+peoEDPkABdeWkvME/GoMAIWmNcCuW2saeUVMxyjDhBLRC/UZ0rZ5K2BgwgFWyJnQ5UencvHt0+c0X95WuS8Luew1s0Omp3N86hlqExY/WT4CZVOPdd5mdxOuSODmfqzS6zcdm4dSRP6Pemj7m3EKsWIeCk8vH4qORTrnzoDjjvr4pcexWrxRUcsGZI0dLjqcxVnsZTqXqCGcZjR9oylRk1d2LTlkthhNYcAlvn0bHOIQIsIn68JN8OCWWNCfHHsS5k8lj131kvKaet+r9BghJU65vF91isMsTLGPjN6/0odqf1WaWAXTwnKHEPfgc8g3dtFd19XI9zUzHyyfrbO3Icdmtr6tq95Ws65gjKXmKFv+zRhVTQRaXgppLCEzV4W80lBF9IKYt9x6uT5xGntqY0h+LKXzF2uce9+wIw6pQ/bstLXzVI7i5vNXzdhTtzctwz9IWs8fWIIeq95NoKNfFQSPXC5searDZNwApgqigVKSuHvF3pQkOHbg84DJhtP9h+5sVrLGsOkd4TsrnEhYk3f9/ZKvMxIn/ZBUWhpJBbGq8joO/ZMf5D71Ol2W+Sk3TBkEJ3dhJc/6Fb1A11TePy/iaIgVNxsgbCY4eIxZajYpj5twxrOG4R4KS85Z7nh0JnplVNaNdDt2XDbBT7T8LMsmTkvOJ4WNFhqINB15wiV/P4WWt17vc8L8/xQBDl3f5JUYwv/+AaFI7MVAAwAA"
       }
     ]
   },
@@ -83,10 +91,10 @@
     "Nom": "Microsoft Office",
     "Descripcio": "Aplicacions d'ofimàtica",
     "CalAturar": false,
-    "Ignorar": true,
+    "Ignorar": false,
     "Aplicacions": [
       {
-        "CalAturar": false,
+        "CalAturar": true,
         "Ignorar": false,
         "Nom": "EXCEL",
         "Descripcio": "Microsoft Excel",
@@ -103,10 +111,10 @@
       },
       {
         "CalAturar": false,
-        "Ignorar": false,
-        "Nom": "Microsoft OutLook",
-        "Descripcio": "Client de correu electrònic de Microsoft",
-        "Executable": "outlook.exe",
+        "Ignorar": true,
+        "Nom": "Microsoft Outlook",
+        "Descripcio": "Microsoft Outlook",
+        "Executable": "C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE",
         "ImatgeEnBase64": "H4sIAAAAAAAEAB2UtbLsCAxEP8iBaUzBC+wxM1NmZmZ//c5dJX26VarqSI3PGPYFKUI10b/RHa/mvOpHzJ+lrS8d/WlJglT9B4yQM67H0bQqmF/wrhnrL+0vh+/fHxjXRdPspjE3Akzx3+piZJvjPYMD4G6gNJj2ohsjCVY55U3kw5aeS46GgUoB82DY4fQY1KLW1BrxZA1V1VrSPhbTwNfSR8LSiPyC5s1nfeW2BDD9W17fuZfHMrtsuDGA95NdD2ZeO8NlBKkb1JSADU6AMQaET4FR49uYVxn4JZQRKHKhmB9Qz56MObqA8jE/C3Eckpcvs4MoofIeuPrrHMJ7Kkw7mpo4DbeJmJtk3WIe7iQ71MHpGmXal183nsUP3vYmQJ9wgADONUHGCshKWxot8jbG9iGBs0M6aYohvdutMMbWX1Xb3QbJQEua1KQ+KIplKD3Ff2zZp9a2JcSAu49YdJb3vT33+B2E0haFbbVwUwoedWTGZRX0ncVMTWJMY6Fq+7UT7xexsjMavPb5+uEehYFXoQBUn2MhYBpskLBaSvmeKQgOljG+tcn8Fcc0gMuNIMWBR6Rs4c07kl4ux5D0WpSyEpT0EAb1lm6XNcf50yD31OHUlZPnVKQMN+fJkAYIdhdgf+7zldjQIhhGEd9AgrWxpUvvnnTWNHqtFnTIvbAxG4qNgCZYP6LniCzsmwG+rzbqyCvaULaNyrMVATMwTzWf+ha0Dp3A8aPNkyJjy2PF2EGu5nzco9OivYwEMDuLd+S6kBOZysnHy1nrPY43qUs+u0dR9/fpUitld+kaz1023llKxI/Jq45NSiIPDcspKYAcOdKTa6seYoVRQiON6agQL9gNiuW1PCfpyP70OEAW1zBgJ5ABQB3fr7Gnz6ZzaDr1LUYozTj/8nQpcZX6viKZEA+ml5Lzw3jFTscI2gIbTEnqKrxbOYc5B7m4vI1QiO42AhQW7iYT1OTow/rhpEVolIromxE6gM1SOkxDYechJg8gSwC2HlW4U4qO2TedkhlFTucUThnbN4rbFAq1jtS6XYxsMrEd4r6uuicm4V4FzQukXHvcfA7TXjKMnYMZ++PH/Mie4RBKSv4aUepkFsiXdcmXTS64W+602lVaixPL98dXBKiW0719YpaKQBp8lU+daO0asAqZyD1O2FSRWsHePIQaVv9/ENn2MG7t5Kqq/v37D1Cz6yKABAAA"
       },
       {
@@ -118,12 +126,12 @@
         "ImatgeEnBase64": "H4sIAAAAAAAEAB2TuaKqShBFP4gARBAMbgDN2MxzS2bLLCKDCPTXP8+rpNbeldZqU9kLN8bS67f0GzdKGjWpfyT/RSkA0u1vVyJ9bf5A1gs5TlRJsnUf0HsjB39tv0VaT37gbZskKYsj7yz1zv9OkwxDVUs8lTo9+4/5ZNXHPjwqzcpC3NPx++0TxuaKWD5jfWEL10DeG9Vx3toxzt9GC8FmT2Fw0iJ1DPJCQ88wMsJQyQdMJHYhMRo+ZpY2E+RW2EVHScEqtw4+Y3zaaHgOnSjapVAvGj98zWlZfF5ulrl3H6yD/11HNDmYranlcFOzGlOP5JNOkom3FZcEnb9/SRCn1VZSum8ptiRtjLRROPBROqegcHG2+/FoXxMErSNPOa0gUpo793bDaVqzvAcNlmT1vu2MzhlUuSgRsGbMqhYaNKs9IYc/srkzhLuXh8KVh/ruAL7bLslFvlStonHZ020tYMxzUSchtY7vyeLu8OGMZpSDNXrs6SVVL9pNo5XHzLk36MBb2hEtlEbBTHZ5nbgtC83GYdJ+zkn9tL2vMCjtUl5Pt6vQbt6X01+CS612IrJA0Ln8BR4CqE8bmWqkCekBrFFcyByjTa/nvYoWB5+TEptmp2v5sRgsDdbmy0IkQmS5dYSXGCvT0uqiY9IuJ0eUP6NAYCUES7BTSgBSEXEIIKXyst6CN0cczjK/bEkwn86OpVLK+ZP5MmlDpX7K5v1gkYRGx0W9xH+5+BJWCcBqqAbvXdhBtHmKqOEhEHEZNB4IPp6V6N/ubEWONfS3eVJ3qSr8SYv8gWg8MD8vzXndTpAxoBvB9raqYYuWr5xFi9TcMnWjWEX+nM2mUsZVFp0+nwrvKJpj5evxwwYHPj8gwDHJsrp74c6Ok/CcNpa4FzpokNnQyrSSy9XxQyzo4UthZudjMrNH2o+rj9ycfOX7c5vobgo0g/nyGdiQOSlDWVxHhrT7+fchx7NxI0fESjnDObr20nIgECqJSMDMcxko+4uQ8UukXRfeMY0WUIOsjpy4DSFs2qgm1TFQUmXabtWu4bM7/nf152PCq/MT1nX9799/WEH/2QAEAAA="
       },
       {
-        "CalAturar": false,
+        "CalAturar": true,
         "Ignorar": false,
         "Nom": "Microsoft Word",
-        "Descripcio": "Processador de textos de Microsoft",
-        "Executable": "winword.exe",
-        "ImatgeEnBase64": "H4sIAAAAAAAEAB2Ty6JzShSEH8gAcc3gH2hau7e7MCOkCcIWITz92fvUpL6qNV3VpQCHO2MjMim/8qKkhQn5JfAXlUBV8j9/yPS1/QOAahAnUFEc5Kv0twXBXzvskT6cv4D3XVG0twu+F2oq/k6zboVQTzCkVmZYzZ6DOdi0be66ShrjalHOw17K4mJCVZbANjJDl2WCVxVlW4atbmcRWwGjUZETt7cO2hYTzRDP3vZ4vMz7zBPkh2UIomd8EhuTnh4h/HBaWHPMTuhmpGqhYkWbWuU4Z5fEFj5ZV34pvrm6Rm9yDToXWYjd1WslVqngONRUcla0jNImKHY9s6iXaPxwaf1iQGUZb0FLl2LSqnSCXEXgZ0ItE+ChCcfEtm6TJ35EVa9Xk0evyoy2OjrgDR+At/b4crr3HkcX03Y6J5Bup2p34sLe1nANtZNS1TUKuK3rUHNilIRm+qR7lt6APyLdXGSfJ/sLuA/HvEtbyxJO2wwviega2SFn9fqKx7z1S4o2S1q0Ksf5Lhojxu/+UjD5yw+VNCYw7k3d0u7IVMec4Dgb9QfA0NniyShHpLTfsT5/DCxnkit+SLMxmngQT3FeodosppV4ezfTJOtXublegZ8nNEGsWfECFbl5MJ8Re20NQTDWLCmZr0yR/fSJiA8z1nAHuBm4qOCCJxaRM33f0ltJAWWJZ884WbjeN895Pi43rlyl6pahBxmytx4jFQQ+n+zfQGjdEe2BGLKksecqF2phr4k0s3q2QfODflTr4DmmXxEsQK+cdKYiZOulzWhTx8RTjoF940hoDxfAgrH0SCktSsylYMYsJO6EH4sZB/V8kVGoX6yFR4qV2ntoOcGxQrSUgTlgSKPLm2OP7afwnFXhBV+SFnJ8rwOv2uduLI7yrix9JC1baFBMlOKYmn1Hd3Qbtpk21WUrhddVAWzBG8Oz/QSE/1Hur8/nuCVTftzxYHO7hVfPAJg1jWU5fx9F4gmz7LqTUSA+xNT9Zqz7LNy8oD/q9RUKVeDv+iY+IokVpE7+f5fAChMBLr1FCPn37z9kwVc07AMAAA=="
+        "Descripcio": "Microsoft Word",
+        "Executable": "C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE",
+        "ImatgeEnBase64": "H4sIAAAAAAAEAB2Ut7az3BZDH4iCjKH4C3LawAYMGDpyzjbp6e93rhpNabVrqA0FxzsxU61n/p9sP2jkoP5Hwl/kXZGP/7xiUa75A0EthHcg8zxQoYhejeD+tcPpK8PzD5zz5Hlpt4SLQObk74SFhicrgSNzxUNylqK5+XXIL54JOrFmvcSMfo9xd5kw1XlCn9hnminTsDrh/laM6K922BoBMHpVS5ugauPNucPVHo6XQJj2WRRUN3WXsKL2XIy6JPIfU8v5apYLjpS51p9+ZEIz6PT9YH2//Xxs9izipgM2xEWtYJkQJ0CgVpxe+EoXGEXsgRXD02Zb2ShFXuVTZl2KAI+U6IbkYrA2tPtJiG2rv2VKORDscCo6nnAP/IiPLu+YK+MN125b9FkwqePlQDOlvT5qC9sSgVYL5jkJeasUC9DEVSNYOCunoH2U7oGGFIjxQgQgkSqwu2KEiy/1Vklou5ngtFjt4lwovPzW/fLWrDbicCggIc4o1lbhQT8hliVSKJ1ucE569O5CCa9Y/gTOVh6uchUdB23YJYTDT8uuQWPZqy6K0oHlLBbNDuy6Z3Su4DFHrfvjxBn6qWMSeJ0/tdHXqLt05ZMuko65VWFaM5sIObQWgBCIHyDCgFKFO0o5NJSKkgnTNHZ6hz+BgChwCu9l5R7Ay7rcRHI1rKmhfs45qqjXZVLPvsd1GdjbFyvDjCO0wYXTDZ8m7ck+jyf4Kh2aM679BosZVPE4Fd/dABdVs0sLv258qOyXXSX06j/J3I8ndyjBLTEXy5UoszHYo8HrVwOqgVS6rui1qr5ENN4c0Wheo8gcmfc+RRq311vb9cT5PVjil38bz4aoaA0ESAOEHpnMyd2Y+6LT2wnScE+qmvNz/YYrKKmfKtrk5014CGR2NBdULqM7jWzq1oFaqwEhiB9rOJyJhzdGJZ9PMyVPg/CcYyiK1r+vnwdNTCvH4hpoXp1yY011Y830oo30UlTgx15p08k5WFRE/9oUD8mIN2eczOIoDD8CSxBTYu/fhTcIvvGYNk+PxIj+iN/ZOK+FkvSFupglX9Nz1NFl4gu/dKHiC4kVTUB5vYQMyMps4uHZJfgOObPIDTwbZehgavz+HvqHQzzJApvcE6AebZgOKae+cbIPruQ1TMHlCPeY9GP7kxf9dbr2HLNNOYkWEuuRTnqqJ9Li7wSqxcZeEstyCIr935dva53QWDRmWSZvJodf96o+b1CQnUWVPcKiRgH34+6EAZRgO2592RMtH9HTwKKO5DUuXun/75BgeAEtb71R1/V///0PZEnU4twEAAA="
       }
     ]
   },

@@ -73,9 +73,11 @@ namespace Examen.Alumne.Funcions
                     {
 
                         @$"Aplicació {aplicacio.Nom} en execució detectada, enviant ...".Mostrar(MostrarIcon.Warning);
-                        var aturada = aplicacio.Aturar(_backgroundWorker);
+                        var aturada = aplicacio.Aturar(_backgroundWorker, true);
                         if (!aturada)
-                            aturada = aplicacio.Aturar(_backgroundWorker);
+                            aturada = aplicacio.Aturar(_backgroundWorker, true);
+                        if (!aturada)
+                            aturada = aplicacio.Aturar(_backgroundWorker, false);
 
                         TipusNotificacio.Deteccio.Notificar(_frmPrincipal.Codi, new Notificacio(_frmPrincipal.EstacioAlumne, aplicacio, aturada));
                     }
