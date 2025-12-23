@@ -1,4 +1,5 @@
 ﻿using BrightIdeasSoftware;
+using Examen.Intermediari.Redis;
 using Examen.Suport.Classes;
 using Examen.Suport.Controls;
 using Examen.Suport.Funcions;
@@ -147,7 +148,7 @@ namespace Examen.Professor.Formularis
             {
                 if (File.Exists(openFileDialog.FileName))
                 {
-                    var aplicacions = Examen.Suport.Funcions.Text.Llegir(openFileDialog.FileName) ?? [];
+                    var aplicacions = Examen.Suport.Funcions.Text.Llegir(openFileDialog.FileName, out _) ?? [];
 
                     var ret = @"Vols importar la llista d'aplicacions (Sí) o subtituïr-la (No)?".Mostrar(MostrarIcon.Question,
                         MessageBoxButtons.YesNoCancel);
@@ -172,7 +173,8 @@ namespace Examen.Professor.Formularis
             {
                 if (!File.Exists(saveFileDialog.FileName))
                     File.Delete(saveFileDialog.FileName);
-                ContenidorAplicacions.CategoriesAplicacions.Desar(saveFileDialog.FileName);
+                ContenidorAplicacions.CategoriesAplicacions.Desar(saveFileDialog.FileName, out var json);
+                Connexio.CrearClau("CategoriesAplicacions", json, TimeSpan.MaxValue, Connexio.TipusRedis.Persistent);
             }
         }
 

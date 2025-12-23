@@ -63,7 +63,7 @@ namespace Examen.Alumne.Formularis
 
                 Hide();
 
-                TipusNotificacio.Fi.Notificar(Codi, new Notificacio(EstacioAlumne, Helper.AplicacionsEnUs), nom: Nom);
+                TipusNotificacio.Fi.Notificar(Codi, new Notificacio(EstacioAlumne, Helper.AplicacionsEnUs), Connexio.TipusRedis.Volatil, nom: Nom);
                 //ClientTcp.EnviarEstat(AdreçaPortProfessor, EstacioAlumne, [], TipusMissatge.Fi, Helper.Pitar, Helper.Bloquejar, Helper.Aturar, FiServidor);
             }
             catch (Exception ex)
@@ -82,7 +82,7 @@ namespace Examen.Alumne.Formularis
             {
                 if (bIniciar.Text == @"Connectar")
                 {
-                    if (Connexio.ExisteixClau(txtCodi.Text))
+                    if (Connexio.ExisteixClau(txtCodi.Text, Connexio.TipusRedis.Volatil))
                     {
                         Nom = txtNom.Text;
                         Codi = txtCodi.Text;
@@ -124,18 +124,18 @@ namespace Examen.Alumne.Formularis
 
                     EstacioAlumne = new EstacioAlumne(Nom);
 
-                    Intermediari.Redis.Alumne.SubscriuresPitar(Codi, EstacioAlumne, EnRebrePitar);
-                    Intermediari.Redis.Alumne.SubscriuresBloquejar(Codi, EstacioAlumne, EnRebreBloquejar);
-                    Intermediari.Redis.Alumne.SubscriuresAturar(Codi, EstacioAlumne, EnRebreAturar);
-                    Intermediari.Redis.Alumne.SubscriuresCapturar(Codi, EstacioAlumne, EnRebreCapturar);
-                    Intermediari.Redis.Alumne.SubscriuresTancament(Codi, EstacioAlumne, EnRebreTancament);
-                    Intermediari.Redis.Alumne.SubscriuresRefrescar(Codi, EstacioAlumne, EnRebreRefrescar);
+                    Intermediari.Redis.Alumne.SubscriuresPitar(Codi, EstacioAlumne, EnRebrePitar, Connexio.TipusRedis.Volatil);
+                    Intermediari.Redis.Alumne.SubscriuresBloquejar(Codi, EstacioAlumne, EnRebreBloquejar, Connexio.TipusRedis.Volatil);
+                    Intermediari.Redis.Alumne.SubscriuresAturar(Codi, EstacioAlumne, EnRebreAturar, Connexio.TipusRedis.Volatil);
+                    Intermediari.Redis.Alumne.SubscriuresCapturar(Codi, EstacioAlumne, EnRebreCapturar, Connexio.TipusRedis.Volatil);
+                    Intermediari.Redis.Alumne.SubscriuresTancament(Codi, EstacioAlumne, EnRebreTancament, Connexio.TipusRedis.Volatil);
+                    Intermediari.Redis.Alumne.SubscriuresRefrescar(Codi, EstacioAlumne, EnRebreRefrescar, Connexio.TipusRedis.Volatil);
 
-                    Intermediari.Redis.Alumne.SubscriuresLlistaAplicacions(Codi, EstacioAlumne, EnRebreAplicacions);
-                    Intermediari.Redis.Alumne.SubscriuresIniciSessio(Codi, EnRebreIniciSessio);
-                    Intermediari.Redis.Alumne.SubscriuresFiSessio(Codi, EnRebreFiSessio);
+                    Intermediari.Redis.Alumne.SubscriuresLlistaAplicacions(Codi, EstacioAlumne, EnRebreAplicacions, Connexio.TipusRedis.Volatil);
+                    Intermediari.Redis.Alumne.SubscriuresIniciSessio(Codi, EnRebreIniciSessio, Connexio.TipusRedis.Volatil);
+                    Intermediari.Redis.Alumne.SubscriuresFiSessio(Codi, EnRebreFiSessio, Connexio.TipusRedis.Volatil);
 
-                    TipusNotificacio.Inici.Notificar(Codi, new Notificacio(EstacioAlumne, Helper.AplicacionsEnUs));
+                    TipusNotificacio.Inici.Notificar(Codi, new Notificacio(EstacioAlumne, Helper.AplicacionsEnUs), Connexio.TipusRedis.Volatil);
 
                     timerTemps.Interval = Properties.Settings.Default.IntervalTemps * 1000;
                     timerTemps.Start();
@@ -187,7 +187,7 @@ namespace Examen.Alumne.Formularis
         {
             Connexio.TipusTraça.AlRebreCapturar.Traça(@"Rebuda ordre de capturar pantalla");
             var bitmap = Helper.Captura();
-            TipusNotificacio.Captura.Notificar(Codi, new Notificacio(EstacioAlumne, bitmap));
+            TipusNotificacio.Captura.Notificar(Codi, new Notificacio(EstacioAlumne, bitmap), Connexio.TipusRedis.Volatil);
         }
 
         private void EnRebreTancament(string canal)
@@ -195,10 +195,10 @@ namespace Examen.Alumne.Formularis
             try
             {
                 Connexio.TipusTraça.AlRebreTancament.Traça(@"Rebuda ordre de tancament del servidor");
-                Invocar(this, () =>
+                Helper.Invocar(this, () =>
                 {
                     Hide();
-                    TipusNotificacio.FiServidor.Notificar(Codi, new Notificacio(EstacioAlumne, []));
+                    TipusNotificacio.FiServidor.Notificar(Codi, new Notificacio(EstacioAlumne, []), Connexio.TipusRedis.Volatil);
                 });
             }
             catch (Exception ex)
@@ -250,19 +250,11 @@ namespace Examen.Alumne.Formularis
             Connexio.TipusTraça.AlRebrePitar.Traça(@"Rebuda ordre de refrescar aplicacions en ús");
             TimerAplicacionsEnUs_Tick(null, null);
         }
-
-        private static void Invocar(Control control, Action accio)
-        {
-            if (control.InvokeRequired)
-                control.Invoke(accio);
-            else
-                accio();
-        }
-
+        
         private void TimerTemps_Tick(object sender, EventArgs e)
         {
-            Connexio.CrearClau($@"{Codi}:{Environment.MachineName}", Nom, TimeSpan.FromMilliseconds(timerTemps.Interval));
-            TipusNotificacio.KeepAlive.Notificar(Codi, new Notificacio(EstacioAlumne, Helper.AplicacionsEnUs));
+            Connexio.CrearClau($@"{Codi}:{Environment.MachineName}", Nom, TimeSpan.FromMilliseconds(timerTemps.Interval), Connexio.TipusRedis.Volatil);
+            TipusNotificacio.KeepAlive.Notificar(Codi, new Notificacio(EstacioAlumne, Helper.AplicacionsEnUs), Connexio.TipusRedis.Volatil);
         }
 
         private void TimerImatge_Tick(object sender, EventArgs e)
@@ -333,7 +325,7 @@ namespace Examen.Alumne.Formularis
                 timerAplicacionsEnUs.Enabled = true;
                 timerAplicacionsEnUs.Start();
 
-                TipusNotificacio.KeepAlive.Notificar(Codi, new Notificacio(EstacioAlumne, Helper.AplicacionsEnUs));
+                TipusNotificacio.KeepAlive.Notificar(Codi, new Notificacio(EstacioAlumne, Helper.AplicacionsEnUs), Connexio.TipusRedis.Volatil);
             });
         }
     }

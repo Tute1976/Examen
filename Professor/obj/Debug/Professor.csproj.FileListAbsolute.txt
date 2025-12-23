@@ -59,3 +59,5 @@ D:\Privat\Programacio\Git\Examen\Professor\obj\Debug\Examen.Professor.Controls.I
 D:\Privat\Programacio\Git\Examen\Professor\obj\Debug\Examen.Professor.Formularis.FrmEdicioCodi.resources
 D:\Privat\Programacio\Git\Examen\Professor\obj\Debug\Examen.Professor.Formularis.FrmConnexio.resources
 D:\Privat\Programacio\Git\Examen\Professor\obj\Debug\Examen.Professor.Formularis.FrmInformacio.resources
+D:\Privat\Programacio\Git\Examen\Professor\bin\Debug\Certificat\CA-Tute-Int.cer
+D:\Privat\Programacio\Git\Examen\Professor\obj\Debug\Examen.Professor.Formularis.FrmAplicacionsEnUs.resources

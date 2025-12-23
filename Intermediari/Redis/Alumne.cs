@@ -7,7 +7,7 @@ namespace Examen.Intermediari.Redis
 {
     public static class Alumne
     {
-        public static void SubscriuresLlistaAplicacions(string idSessio, EstacioAlumne estacioAlumne, Action<List<Aplicacio>> enRebre)
+        public static void SubscriuresLlistaAplicacions(string idSessio, EstacioAlumne estacioAlumne, Action<List<Aplicacio>> enRebre, Connexio.TipusRedis tipusRedis)
         {
             try
             {
@@ -16,7 +16,7 @@ namespace Examen.Intermediari.Redis
                 Connexio.SubscriurePatro<List<Aplicacio>>(codificacio, (_, contenidorAplicacions) =>
                 {
                     enRebre.Invoke(contenidorAplicacions);
-                });
+                }, tipusRedis);
             }
             catch (Exception ex)
             {
@@ -24,13 +24,13 @@ namespace Examen.Intermediari.Redis
             }
         }
 
-        public static void SubscriuresPitar(string idSessio, EstacioAlumne estacioAlumne, Action<string> enRebrePitar)
+        public static void SubscriuresPitar(string idSessio, EstacioAlumne estacioAlumne, Action<string> enRebrePitar, Connexio.TipusRedis tipusRedis)
         {
             try
             {
                 Connexio.Connectar();
                 var codificacio = new Codificacio(idSessio, nameof(TipusNotificacio.Pitar), estacioAlumne.Estacio, estacioAlumne.Nom);
-                Connexio.SubscriurePatro(codificacio, enRebrePitar);
+                Connexio.SubscriurePatro(codificacio, enRebrePitar, tipusRedis);
             }
             catch (Exception ex)
             {
@@ -38,13 +38,13 @@ namespace Examen.Intermediari.Redis
             }
         }
 
-        public static void SubscriuresBloquejar(string idSessio, EstacioAlumne estacioAlumne, Action<string> enRebreBloquejar)
+        public static void SubscriuresBloquejar(string idSessio, EstacioAlumne estacioAlumne, Action<string> enRebreBloquejar, Connexio.TipusRedis tipusRedis)
         {
             try
             {
                 Connexio.Connectar();
                 var codificacio = new Codificacio(idSessio, nameof(TipusNotificacio.Bloquejar), estacioAlumne.Estacio, estacioAlumne.Nom);
-                Connexio.SubscriurePatro(codificacio, enRebreBloquejar);
+                Connexio.SubscriurePatro(codificacio, enRebreBloquejar, tipusRedis);
             }
             catch (Exception ex)
             {
@@ -52,13 +52,13 @@ namespace Examen.Intermediari.Redis
             }
         }
 
-        public static void SubscriuresAturar(string idSessio, EstacioAlumne estacioAlumne, Action<string> enRebreAturar)
+        public static void SubscriuresAturar(string idSessio, EstacioAlumne estacioAlumne, Action<string> enRebreAturar, Connexio.TipusRedis tipusRedis)
         {
             try
             {
                 Connexio.Connectar();
                 var codificacio = new Codificacio(idSessio, nameof(TipusNotificacio.Aturar), estacioAlumne.Estacio, estacioAlumne.Nom);
-                Connexio.SubscriurePatro(codificacio, enRebreAturar);
+                Connexio.SubscriurePatro(codificacio, enRebreAturar, tipusRedis);
             }
             catch (Exception ex)
             {
@@ -66,13 +66,13 @@ namespace Examen.Intermediari.Redis
             }
         }
 
-        public static void SubscriuresCapturar(string idSessio, EstacioAlumne estacioAlumne, Action<string> enRebreCapturar)
+        public static void SubscriuresCapturar(string idSessio, EstacioAlumne estacioAlumne, Action<string> enRebreCapturar, Connexio.TipusRedis tipusRedis)
         {
             try
             {
                 Connexio.Connectar();
                 var codificacio = new Codificacio(idSessio, nameof(TipusNotificacio.Capturar), estacioAlumne.Estacio, estacioAlumne.Nom);
-                Connexio.SubscriurePatro(codificacio, enRebreCapturar);
+                Connexio.SubscriurePatro(codificacio, enRebreCapturar, tipusRedis);
             }
             catch (Exception ex)
             {
@@ -80,13 +80,13 @@ namespace Examen.Intermediari.Redis
             }
         }
 
-        public static void SubscriuresTancament(string idSessio, EstacioAlumne estacioAlumne, Action<string> enRebreTancament)
+        public static void SubscriuresTancament(string idSessio, EstacioAlumne estacioAlumne, Action<string> enRebreTancament, Connexio.TipusRedis tipusRedis)
         {
             try
             {
                 Connexio.Connectar();
                 var codificacio = new Codificacio(idSessio, nameof(TipusNotificacio.Tancament), estacioAlumne.Estacio, estacioAlumne.Nom);
-                Connexio.SubscriurePatro(codificacio, enRebreTancament);
+                Connexio.SubscriurePatro(codificacio, enRebreTancament, tipusRedis);
             }
             catch (Exception ex)
             {
@@ -94,13 +94,13 @@ namespace Examen.Intermediari.Redis
             }
         }
 
-        public static void SubscriuresRefrescar(string idSessio, EstacioAlumne estacioAlumne, Action<string> enRebreRefrescar)
+        public static void SubscriuresRefrescar(string idSessio, EstacioAlumne estacioAlumne, Action<string> enRebreRefrescar, Connexio.TipusRedis tipusRedis)
         {
             try
             {
                 Connexio.Connectar();
                 var codificacio = new Codificacio(idSessio, nameof(TipusNotificacio.Refrescar), estacioAlumne.Estacio, estacioAlumne.Nom);
-                Connexio.SubscriurePatro(codificacio, enRebreRefrescar);
+                Connexio.SubscriurePatro(codificacio, enRebreRefrescar, tipusRedis);
             }
             catch (Exception ex)
             {
@@ -108,13 +108,13 @@ namespace Examen.Intermediari.Redis
             }
         }
 
-        public static void SubscriuresIniciSessio(string idSessio, Action<string> enRebre)
+        public static void SubscriuresIniciSessio(string idSessio, Action<string> enRebre, Connexio.TipusRedis tipusRedis)
         {
             try
             {
                 Connexio.Connectar();
                 var codificacio = new Codificacio(idSessio, nameof(TipusNotificacio.IniciSessió), "*");
-                Connexio.SubscriurePatro(codificacio, enRebre);
+                Connexio.SubscriurePatro(codificacio, enRebre, tipusRedis);
             }
             catch (Exception ex)
             {
@@ -122,13 +122,13 @@ namespace Examen.Intermediari.Redis
             }
         }
 
-        public static void SubscriuresFiSessio(string idSessio, Action<string> enRebre)
+        public static void SubscriuresFiSessio(string idSessio, Action<string> enRebre, Connexio.TipusRedis tipusRedis)
         {
             try
             {
                 Connexio.Connectar();
                 var codificacio = new Codificacio(idSessio, nameof(TipusNotificacio.FiSessió), "*");
-                Connexio.SubscriurePatro(codificacio, enRebre);
+                Connexio.SubscriurePatro(codificacio, enRebre, tipusRedis);
             }
             catch (Exception ex)
             {
@@ -138,14 +138,14 @@ namespace Examen.Intermediari.Redis
 
         extension(TipusNotificacio tipusNotificacio)
         {
-            public void Notificar(string idSessio, Notificacio notificacio, string nom = null)
+            public void Notificar(string idSessio, Notificacio notificacio, Connexio.TipusRedis tipusRedis, string nom = null)
             {
                 try
                 {
                     if (string.IsNullOrEmpty(nom))
-                        Connexio.EnviarNotificacio(idSessio, tipusNotificacio, notificacio, Environment.UserName, Environment.MachineName);
+                        Connexio.EnviarNotificacio(idSessio, tipusNotificacio, notificacio, tipusRedis, Environment.UserName, Environment.MachineName);
                     else
-                        Connexio.EnviarNotificacio(idSessio, tipusNotificacio, notificacio, Environment.UserName, Environment.MachineName, nom);
+                        Connexio.EnviarNotificacio(idSessio, tipusNotificacio, notificacio, tipusRedis, Environment.UserName, Environment.MachineName, nom);
                 }
                 catch (Exception ex)
                 {

@@ -2,7 +2,6 @@
 using System.Drawing;
 using System.Windows.Forms;
 using Examen.Suport.Controls;
-using Examen.Suport.Funcions;
 
 namespace Examen.Suport.Formularis
 {
@@ -12,6 +11,7 @@ namespace Examen.Suport.Formularis
         Alert,
         Error
     }
+
     public sealed partial class ToastForm : FormAdv
     {
         public ToastForm(string missatge, int interval, ToastType toastType)
@@ -35,6 +35,11 @@ namespace Examen.Suport.Formularis
             progressBar.Step = 1;
             progressBar.Hide();
 
+            // Temporitzador
+            timerFi.Interval = Convert.ToInt32(interval * 1000 * 1.5);
+            timerFi.Enabled = true;
+            timerFi.Start();
+
             BackColor = toastType switch
             {
                 ToastType.Alert => Color.LightYellow,
@@ -43,12 +48,10 @@ namespace Examen.Suport.Formularis
             };
         }
 
-        private void timerInici_Tick(object sender, EventArgs e)
+        private void TimerInici_Tick(object sender, EventArgs e)
         {
             timerInici.Stop();
             timerInici.Dispose();
-
-            Helper.Beep();
 
             progressBar.Show();
             timerBarra.Interval = 1000;
@@ -58,7 +61,7 @@ namespace Examen.Suport.Formularis
             Visible = true;
         }
 
-        private void timerBarra_Tick(object sender, EventArgs e)
+        private void TimerBarra_Tick(object sender, EventArgs e)
         {
             progressBar.Increment();
             if (progressBar.Value < progressBar.Maximum) 
@@ -92,6 +95,20 @@ namespace Examen.Suport.Formularis
         {
             Clipboard.Clear();
             Clipboard.SetText(lMissatge.Text);
+        }
+
+        private void TimerFi_Tick(object sender, EventArgs e)
+        {
+            timerInici.Stop();
+            timerInici.Dispose();
+
+            timerFi.Stop();
+            timerFi.Dispose();
+
+            timerBarra.Stop();
+            timerBarra.Dispose();
+
+            Close();
         }
     }
 }

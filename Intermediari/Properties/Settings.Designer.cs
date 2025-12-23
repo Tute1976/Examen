@@ -43,19 +43,10 @@ namespace Examen.Intermediari.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("miniredis.ddns.net")]
+        [global::System.Configuration.DefaultSettingValueAttribute("tuteapps.ddns.net")]
         public string Servidor {
             get {
                 return ((string)(this["Servidor"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("6379")]
-        public int Port {
-            get {
-                return ((int)(this["Port"]));
             }
         }
         
@@ -70,10 +61,28 @@ namespace Examen.Intermediari.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool Traces {
             get {
                 return ((bool)(this["Traces"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("6380")]
+        public int PortPersistent {
+            get {
+                return ((int)(this["PortPersistent"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("6379")]
+        public int PortVolatil {
+            get {
+                return ((int)(this["PortVolatil"]));
             }
         }
     }

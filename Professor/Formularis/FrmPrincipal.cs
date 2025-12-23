@@ -50,7 +50,14 @@ namespace Examen.Professor.Formularis
                     File.Copy(origen, Fitxer, true);
                 }
 
-                ContenidorAplicacions.CategoriesAplicacions = Suport.Funcions.Text.Llegir(Fitxer);
+                var json = Connexio.LlegirClau("CategoriesAplicacions", Connexio.TipusRedis.Persistent);
+                if (!string.IsNullOrEmpty(json))
+                    ContenidorAplicacions.CategoriesAplicacions = json.Deserialitzar<List<CategoriaAplicacions>>() ?? [] ;
+                else
+                {
+                    ContenidorAplicacions.CategoriesAplicacions = Suport.Funcions.Text.Llegir(Fitxer, out json);
+                    Connexio.CrearClau("CategoriesAplicacions", json, TimeSpan.MaxValue, Connexio.TipusRedis.Persistent);
+                }
 
                 DefineixColumnes(int.Parse(cbColumnes.Text));
 
@@ -67,7 +74,7 @@ namespace Examen.Professor.Formularis
 
         private void Principal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Intermediari.Redis.Professor.EsborrarClauSessio(CaptionLabels[1].Text);
+            Intermediari.Redis.Professor.EsborrarClauSessio(CaptionLabels[1].Text, Connexio.TipusRedis.Volatil);
 
             Connexio.Desconnectar();
         }
@@ -100,21 +107,21 @@ namespace Examen.Professor.Formularis
         {
             if (!string.IsNullOrEmpty(_codiAntic))
             {
-                Intermediari.Redis.Professor.EsborrarClauSessio(_codiAntic);
+                Intermediari.Redis.Professor.EsborrarClauSessio(_codiAntic, Connexio.TipusRedis.Volatil);
             }
 
-            Intermediari.Redis.Professor.CreaClauSessio(codi, TimeSpan.FromHours(Properties.Settings.Default.Duracio));
+            Intermediari.Redis.Professor.CreaClauSessio(codi, TimeSpan.FromHours(Properties.Settings.Default.Duracio), Connexio.TipusRedis.Volatil);
 
-            Intermediari.Redis.Professor.SubscriuresInici(codi, EnRebreInici);
-            Intermediari.Redis.Professor.SubscriuresFi(codi, EnRebreFi);
-            Intermediari.Redis.Professor.SubscriuresFiServidor(codi, EnRebreFiServidor);
+            Intermediari.Redis.Professor.SubscriuresInici(codi, EnRebreInici, Connexio.TipusRedis.Volatil);
+            Intermediari.Redis.Professor.SubscriuresFi(codi, EnRebreFi, Connexio.TipusRedis.Volatil);
+            Intermediari.Redis.Professor.SubscriuresFiServidor(codi, EnRebreFiServidor, Connexio.TipusRedis.Volatil);
 
-            Intermediari.Redis.Professor.SubscriuresKeepAlive(codi, EnRebreKeepAlive);
-            Intermediari.Redis.Professor.SubscriuresDeteccio(codi, EnRebreDeteccio);
-            Intermediari.Redis.Professor.SubscriuresCaptura(codi, EnRebreCaptura);
+            Intermediari.Redis.Professor.SubscriuresKeepAlive(codi, EnRebreKeepAlive, Connexio.TipusRedis.Volatil);
+            Intermediari.Redis.Professor.SubscriuresDeteccio(codi, EnRebreDeteccio, Connexio.TipusRedis.Volatil);
+            Intermediari.Redis.Professor.SubscriuresCaptura(codi, EnRebreCaptura, Connexio.TipusRedis.Volatil);
 
-            Intermediari.Redis.Professor.SubscriuresKeepAliveAmdDeteccio(codi, EnRebreKeepAliveAmdDeteccio);
-            Intermediari.Redis.Professor.SubscriuresLlistaAplicacionsEnUs(codi, EnRebreAplicacionsEnUs);
+            Intermediari.Redis.Professor.SubscriuresKeepAliveAmdDeteccio(codi, EnRebreKeepAliveAmdDeteccio, Connexio.TipusRedis.Volatil);
+            Intermediari.Redis.Professor.SubscriuresLlistaAplicacionsEnUs(codi, EnRebreAplicacionsEnUs, Connexio.TipusRedis.Volatil);
 
             _codiAntic = codi;
         }
@@ -125,7 +132,7 @@ namespace Examen.Professor.Formularis
             {
                 Connexio.TipusTraça.AlRebreInici.Traça(@"Rebut inici de l'estació");
 
-                Invocar(llistaHistoric, () =>
+                Helper.Invocar(llistaHistoric, () =>
                 {
                     notificacio.EstacioAlumne.DataInici = DateTime.Now;
                     notificacio.EstacioAlumne.DataDarreraConnexio = DateTime.Now;
@@ -151,7 +158,7 @@ namespace Examen.Professor.Formularis
                 });
 
                 var aplicacions = ContenidorAplicacions.TotesSenseIgnorades;
-                Intermediari.Redis.Professor.EnviarAplicacions(CaptionLabels[1].Text, notificacio.EstacioAlumne, aplicacions);
+                Intermediari.Redis.Professor.EnviarAplicacions(CaptionLabels[1].Text, notificacio.EstacioAlumne, aplicacions, Connexio.TipusRedis.Volatil);
             }
             catch (Exception ex)
             {
@@ -165,7 +172,7 @@ namespace Examen.Professor.Formularis
             {
                 Connexio.TipusTraça.AlRebreFi.Traça(@"Rebut fi de l'estació");
 
-                Invocar(llistaHistoric, () =>
+                Helper.Invocar(llistaHistoric, () =>
                 {
                     var estat = @"Estació desconectada manualment";
                     $@"Estació {notificacio.EstacioAlumne.Estacio} desconectada manualment.".Mostrar(MostrarIcon.Information);
@@ -203,7 +210,7 @@ namespace Examen.Professor.Formularis
             {
                 Connexio.TipusTraça.AlRebreFiServidor.Traça(@"Rebuda informació de fi del servidor");
 
-                Invocar(llistaHistoric, () =>
+                Helper.Invocar(llistaHistoric, () =>
                 {
                     var estat = @"Desconnexió servidor";
                     estat.Mostrar(MostrarIcon.Information);
@@ -232,7 +239,7 @@ namespace Examen.Professor.Formularis
             {
                 Connexio.TipusTraça.AlRebreDetecció.Traça($@"Rebut deteccció de l'aplicació: {notificacio.Aplicacio.Nom}");
 
-                Invocar(llistaHistoric, () =>
+                Helper.Invocar(llistaHistoric, () =>
                 {
                     var estat = $"Aplicació '{notificacio.Aplicacio.Nom}' (Aturada: {notificacio.Aturada.SiNo()})";
                     $@"{estat} en l'estació {estacio}.".Mostrar(MostrarIcon.Warning);
@@ -286,7 +293,7 @@ namespace Examen.Professor.Formularis
             {
                 Connexio.TipusTraça.AlRebreKeepAlive.Traça($@"Rebut KeepAlive de l'estació: {notificacio.EstacioAlumne.Nom}");
 
-                Invocar(llistaHistoric, () =>
+                Helper.Invocar(llistaHistoric, () =>
                 {
                     var estat = @"Actualització periódica, tot bé";
 
@@ -316,7 +323,7 @@ namespace Examen.Professor.Formularis
                 });
 
                 var aplicacions = ContenidorAplicacions.TotesSenseIgnorades;
-                Intermediari.Redis.Professor.EnviarAplicacions(CaptionLabels[1].Text, notificacio.EstacioAlumne, aplicacions);
+                Intermediari.Redis.Professor.EnviarAplicacions(CaptionLabels[1].Text, notificacio.EstacioAlumne, aplicacions, Connexio.TipusRedis.Volatil);
             }
             catch (Exception ex)
             {
@@ -330,7 +337,7 @@ namespace Examen.Professor.Formularis
             {
                 Connexio.TipusTraça.AlRebreKeepAlive.Traça($@"Rebut KeepAlive amb detecció de l'aplicació: {notificacio.Aplicacio.Nom}");
 
-                Invocar(llistaHistoric, () =>
+                Helper.Invocar(llistaHistoric, () =>
                 {
                     var infoEstacio = taula.Controls
                         .OfType<InfoEstacio>()
@@ -394,15 +401,7 @@ namespace Examen.Professor.Formularis
 
         private void OnRefrescar(EstacioAlumne estacioAlumne)
         {
-            TipusNotificacio.Refrescar.EnviarNotificacio(CaptionLabels[1].Text, estacioAlumne);
-        }
-
-        private static void Invocar(Control control, Action accio)
-        {
-            if (control.InvokeRequired)
-                control.Invoke(accio);
-            else
-                accio();
+            TipusNotificacio.Refrescar.EnviarNotificacio(CaptionLabels[1].Text, estacioAlumne, Connexio.TipusRedis.Volatil);
         }
 
         private void LlistaHistoric_DoubleClick(object sender, EventArgs e)
@@ -541,7 +540,8 @@ namespace Examen.Professor.Formularis
                 if (frmAplicacions.ShowDialog() != DialogResult.OK) 
                     return;
                 ContenidorAplicacions = frmAplicacions.ContenidorAplicacions;
-                ContenidorAplicacions.CategoriesAplicacions.Desar(Fitxer);
+                ContenidorAplicacions.CategoriesAplicacions.Desar(Fitxer, out var json);
+                Connexio.CrearClau("CategoriesAplicacions", json, TimeSpan.MaxValue, Connexio.TipusRedis.Persistent);
             }
             catch (Exception ex)
             {
@@ -612,7 +612,7 @@ namespace Examen.Professor.Formularis
                 .OfType<InfoEstacio>().ToArray();
             foreach (var infoEstacio in infoEstacions)
             {
-                TipusNotificacio.Tancament.EnviarNotificacio(CaptionLabels[1].Text, infoEstacio.EstacioAlumne);
+                TipusNotificacio.Tancament.EnviarNotificacio(CaptionLabels[1].Text, infoEstacio.EstacioAlumne, Connexio.TipusRedis.Volatil);
             }
 
             timerTancar.Start();
@@ -656,7 +656,7 @@ namespace Examen.Professor.Formularis
 
                 bCanviarCodi.Visible = true;
 
-                TipusNotificacio.FiSessió.EnviarNotificacio(CaptionLabels[1].Text);
+                TipusNotificacio.FiSessió.EnviarNotificacio(CaptionLabels[1].Text, Connexio.TipusRedis.Volatil);
             }
             else
             {
@@ -667,7 +667,7 @@ namespace Examen.Professor.Formularis
 
                 bCanviarCodi.Visible = false;
 
-                TipusNotificacio.IniciSessió.EnviarNotificacio(CaptionLabels[1].Text);
+                TipusNotificacio.IniciSessió.EnviarNotificacio(CaptionLabels[1].Text, Connexio.TipusRedis.Volatil);
             }
         }
 

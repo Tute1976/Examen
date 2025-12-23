@@ -26,29 +26,40 @@ namespace Examen.Professor.Formularis
             await FluxConnexioAsync();
         }
 
-        private async Task FluxConnexioAsync()
+        private Task FluxConnexioAsync()
         {
             try
             {
-                using var frm = new ToastForm(lMissatge.Text, 5, ToastType.Info);
-
-                var ok = await Task.Run(() => _connexio());
-
-                if (ok)
+                var toastForm = new ToastForm(lMissatge.Text, 5, ToastType.Info);
+                Helper.Invocar(toastForm, async void () =>
                 {
-                    DialogResult = DialogResult.OK;
-                    frm.Hide();
-                }
-                else
-                {
-                    "No s'ha pogut connectar amb el servidor. L'aplicació es tancarà."
-                        .ShowToast(5, ToastType.Error);
-                    await Task.Delay(5000);
+                    try
+                    {
+                        toastForm.Show();
 
-                    DialogResult = DialogResult.Cancel;
-                }
+                        var ok = await Task.Run(() => _connexio());
 
-                Close();
+                        if (ok)
+                        {
+                            DialogResult = DialogResult.OK;
+                            toastForm.Close();
+                        }
+                        else
+                        {
+                            "No s'ha pogut connectar amb el servidor. L'aplicació es tancarà."
+                                .ShowToast(5, ToastType.Error);
+                            await Task.Delay(5000);
+
+                            DialogResult = DialogResult.Cancel;
+                        }
+
+                        Close();
+                    }
+                    catch (Exception)
+                    {
+                        // ignore
+                    }
+                });
             }
             catch (InvalidOperationException)
             {
@@ -58,6 +69,8 @@ namespace Examen.Professor.Formularis
             {
                 // ignore
             }
+
+            return Task.CompletedTask;
         }
     }
 }

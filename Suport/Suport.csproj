@@ -98,12 +98,6 @@
       <DependentUpon>InfoEstacioV1.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\PanelAdv.cs" />
-    <Compile Include="Formularis\FrmAplicacionsEnUs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularis\FrmAplicacionsEnUs.Designer.cs">
-      <DependentUpon>FrmAplicacionsEnUs.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularis\FrmHistoric.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,9 +190,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\InfoEstacioV1.resx">
       <DependentUpon>InfoEstacioV1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularis\FrmAplicacionsEnUs.resx">
-      <DependentUpon>FrmAplicacionsEnUs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularis\FrmHistoric.resx">
       <DependentUpon>FrmHistoric.cs</DependentUpon>

@@ -44,3 +44,4 @@ D:\Privat\Programacio\Git\Examen\Intermediari\obj\Debug\Intermediari.dll
 D:\Privat\Programacio\Git\Examen\Intermediari\obj\Debug\Intermediari.pdb
 D:\Privat\Programacio\Git\Examen\Intermediari\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 D:\Privat\Programacio\Git\Examen\Intermediari\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\Privat\Programacio\Git\Examen\Intermediari\bin\Debug\Certificat\CA-Tute-Int.cer

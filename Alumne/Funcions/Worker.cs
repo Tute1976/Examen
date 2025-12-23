@@ -79,7 +79,7 @@ namespace Examen.Alumne.Funcions
                         if (!aturada)
                             aturada = aplicacio.Aturar(_backgroundWorker, false);
 
-                        TipusNotificacio.Deteccio.Notificar(_frmPrincipal.Codi, new Notificacio(_frmPrincipal.EstacioAlumne, aplicacio, aturada));
+                        TipusNotificacio.Deteccio.Notificar(_frmPrincipal.Codi, new Notificacio(_frmPrincipal.EstacioAlumne, aplicacio, aturada), Connexio.TipusRedis.Volatil);
                     }
 
                     Thread.Sleep(Properties.Settings.Default.IntervalTemps * 1000);

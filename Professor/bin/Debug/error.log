@@ -1292,3 +1292,77 @@
 
 17/12/2025 11:13:14 [Information]: Desconnexió servidor
 
+23/12/2025 8:36:37 [Information]: Estació LG connectada.
+
+23/12/2025 8:55:12 [Question]: Vols finalitzar el programa?
+
+23/12/2025 8:55:14 [Information]: Desconnexió servidor
+
+23/12/2025 9:11:54 [Error]: S'ha produït un error: ERR invalid expire time in 'setex' command
+
+23/12/2025 9:11:54 [Error]: Detalls:    at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server, T defaultValue) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2110
+
+23/12/2025 9:11:54 [Error]:    at StackExchange.Redis.RedisBase.ExecuteSync[T](Message message, ResultProcessor`1 processor, ServerEndPoint server, T defaultValue) in /_/src/StackExchange.Redis/RedisBase.cs:line 62
+
+23/12/2025 9:11:54 [Error]:    at StackExchange.Redis.RedisDatabase.StringSet(RedisKey key, RedisValue value, Nullable`1 expiry, Boolean keepTtl, When when, CommandFlags flags) in /_/src/StackExchange.Redis/RedisDatabase.cs:line 3749
+
+23/12/2025 9:11:54 [Error]:    at StackExchange.Redis.RedisDatabase.StringSet(RedisKey key, RedisValue value, Nullable`1 expiry, When when) in /_/src/StackExchange.Redis/RedisDatabase.cs:line 3742
+
+23/12/2025 9:11:54 [Error]:    at Examen.Intermediari.Redis.Connexio.CrearClau(String clau, Object objecte, TimeSpan duracio, TipusRedis tipusRedis) in D:\Privat\Programacio\Git\Examen\Intermediari\Redis\Connexio.cs:line 275
+
+23/12/2025 9:13:23 [Information]: Estació LG connectada.
+
+23/12/2025 9:14:03 [Question]: Vols finalitzar el programa?
+
+23/12/2025 9:14:05 [Information]: Desconnexió servidor
+
+23/12/2025 9:15:19 [Information]: Estació LG connectada.
+
+23/12/2025 9:15:55 [Question]: Vols finalitzar el programa?
+
+23/12/2025 9:15:57 [Information]: Desconnexió servidor
+
+23/12/2025 9:18:28 [Information]: Estació LG connectada.
+
+23/12/2025 9:24:33 [Information]: Estació LG connectada.
+
+23/12/2025 9:35:44 [Information]: Estació LG connectada.
+
+23/12/2025 9:42:27 [Information]: Estació LG connectada.
+
+23/12/2025 10:31:13 [Information]: Estació LG connectada.
+
+23/12/2025 10:50:30 [Information]: Estació LG connectada.
+
+23/12/2025 11:05:49 [Information]: Estació LG connectada.
+
+23/12/2025 11:07:24 [Information]: Iniciar sessió
+
+23/12/2025 11:07:24 [Warning]: Aplicació 'Discord' (Aturada: Sí) en l'estació LG.
+
+23/12/2025 11:07:25 [Warning]: Aplicació 'WhatsApp.Root' (Aturada: Sí) en l'estació LG.
+
+23/12/2025 11:07:26 [Warning]: Aplicació 'Microsoft Edge' (Aturada: Sí) en l'estació LG.
+
+23/12/2025 11:07:29 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+23/12/2025 11:07:47 [Warning]: Aplicació 'Discord' (Aturada: Sí) en l'estació LG.
+
+23/12/2025 11:07:49 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+23/12/2025 11:09:30 [Information]: Estació LG connectada.
+
+23/12/2025 11:09:55 [Information]: Estació LG desconectada manualment.
+
+23/12/2025 11:09:59 [Information]: Actualització periódica, tot bé en l'estació LG.
+
+23/12/2025 11:10:07 [Warning]: Estació LG desconectada.
+
+23/12/2025 11:10:16 [Question]: Vols finalitzar el programa?
+
+23/12/2025 11:10:32 [Information]: Desconnexió servidor
+
+23/12/2025 11:10:55 [Information]: Estació LG connectada.
+
+23/12/2025 11:10:57 [Information]: Iniciar sessió
+

@@ -10514,3 +10514,105 @@
 
 17/12/2025 11:13:04 [Asterisk]: Executant worker
 
+23/12/2025 8:36:38 [Information]: Lectura d'aplicacions finalitzada: 40 (Durada: 0s | Darrera: 4s)
+
+23/12/2025 8:37:38 [Information]: Lectura d'aplicacions finalitzada: 40 (Durada: 0s | Darrera: 1m)
+
+23/12/2025 8:38:39 [Information]: Lectura d'aplicacions finalitzada: 40 (Durada: 0s | Darrera: 1m)
+
+23/12/2025 8:39:40 [Information]: Lectura d'aplicacions finalitzada: 40 (Durada: 0s | Darrera: 1m)
+
+23/12/2025 8:40:40 [Information]: Lectura d'aplicacions finalitzada: 40 (Durada: 0s | Darrera: 1m)
+
+23/12/2025 8:41:41 [Information]: Lectura d'aplicacions finalitzada: 41 (Durada: 0s | Darrera: 1m)
+
+23/12/2025 8:42:42 [Information]: Lectura d'aplicacions finalitzada: 40 (Durada: 0s | Darrera: 1m)
+
+23/12/2025 8:43:42 [Information]: Lectura d'aplicacions finalitzada: 40 (Durada: 0s | Darrera: 1m)
+
+23/12/2025 8:44:43 [Information]: Lectura d'aplicacions finalitzada: 40 (Durada: 0s | Darrera: 1m)
+
+23/12/2025 8:45:43 [Information]: Lectura d'aplicacions finalitzada: 40 (Durada: 0s | Darrera: 1m)
+
+23/12/2025 8:46:44 [Information]: Lectura d'aplicacions finalitzada: 39 (Durada: 0s | Darrera: 1m)
+
+23/12/2025 8:47:45 [Information]: Lectura d'aplicacions finalitzada: 39 (Durada: 0s | Darrera: 1m)
+
+23/12/2025 8:48:45 [Information]: Lectura d'aplicacions finalitzada: 39 (Durada: 0s | Darrera: 1m)
+
+23/12/2025 8:49:46 [Information]: Lectura d'aplicacions finalitzada: 39 (Durada: 0s | Darrera: 1m)
+
+23/12/2025 8:50:46 [Information]: Lectura d'aplicacions finalitzada: 39 (Durada: 0s | Darrera: 1m)
+
+23/12/2025 8:51:47 [Information]: Lectura d'aplicacions finalitzada: 38 (Durada: 0s | Darrera: 1m)
+
+23/12/2025 8:52:48 [Information]: Lectura d'aplicacions finalitzada: 38 (Durada: 0s | Darrera: 1m)
+
+23/12/2025 8:53:48 [Information]: Lectura d'aplicacions finalitzada: 38 (Durada: 0s | Darrera: 1m)
+
+23/12/2025 8:54:49 [Information]: Lectura d'aplicacions finalitzada: 39 (Durada: 0s | Darrera: 1m)
+
+23/12/2025 9:11:54 [Error]: El codi no és vàlid
+
+23/12/2025 9:13:23 [Information]: Lectura d'aplicacions finalitzada: 40 (Durada: 0s | Darrera: 3s)
+
+23/12/2025 9:15:19 [Information]: Lectura d'aplicacions finalitzada: 41 (Durada: 0s | Darrera: 3s)
+
+23/12/2025 9:18:29 [Information]: Lectura d'aplicacions finalitzada: 40 (Durada: 0s | Darrera: 3s)
+
+23/12/2025 9:24:34 [Information]: Lectura d'aplicacions finalitzada: 40 (Durada: 0s | Darrera: 3s)
+
+23/12/2025 9:25:35 [Information]: Lectura d'aplicacions finalitzada: 40 (Durada: 0s | Darrera: 1m)
+
+23/12/2025 9:26:37 [Information]: Lectura d'aplicacions finalitzada: 40 (Durada: 0s | Darrera: 1m 2s)
+
+23/12/2025 9:35:44 [Information]: Lectura d'aplicacions finalitzada: 40 (Durada: 0s | Darrera: 3s)
+
+23/12/2025 9:36:45 [Information]: Lectura d'aplicacions finalitzada: 40 (Durada: 0s | Darrera: 1m)
+
+23/12/2025 9:42:27 [Information]: Lectura d'aplicacions finalitzada: 40 (Durada: 0s | Darrera: 3s)
+
+23/12/2025 10:31:14 [Information]: Lectura d'aplicacions finalitzada: 40 (Durada: 0s | Darrera: 3s)
+
+23/12/2025 10:50:30 [Information]: Lectura d'aplicacions finalitzada: 40 (Durada: 0s | Darrera: 2s)
+
+23/12/2025 10:51:30 [Information]: Lectura d'aplicacions finalitzada: 40 (Durada: 0s | Darrera: 1m)
+
+23/12/2025 11:05:49 [Information]: Lectura d'aplicacions finalitzada: 38 (Durada: 0s | Darrera: 2s)
+
+23/12/2025 11:06:50 [Information]: Lectura d'aplicacions finalitzada: 38 (Durada: 0s | Darrera: 1m)
+
+23/12/2025 11:07:24 [Asterisk]: Executant worker
+
+23/12/2025 11:07:24 [Warning]: Aplicació Discord en execució detectada, enviant ...
+
+23/12/2025 11:07:24 [Information]: L'aplicación 'Discord', ha estat aturada correctament.
+
+23/12/2025 11:07:24 [Warning]: Aplicació WhatsApp.Root en execució detectada, enviant ...
+
+23/12/2025 11:07:24 [Information]: L'aplicació 'WhatsApp.Root', no s'ha pogut aturar
+
+23/12/2025 11:07:25 [Information]: L'aplicación 'WhatsApp.Root', ha estat aturada correctament.
+
+23/12/2025 11:07:25 [Warning]: Aplicació Microsoft Edge en execució detectada, enviant ...
+
+23/12/2025 11:07:26 [Information]: L'aplicación 'Microsoft Edge', ha estat aturada correctament.
+
+23/12/2025 11:07:46 [Warning]: Aplicació Discord en execució detectada, enviant ...
+
+23/12/2025 11:07:47 [Information]: L'aplicación 'Discord', ha estat aturada correctament.
+
+23/12/2025 11:07:50 [Information]: Lectura d'aplicacions finalitzada: 36 (Durada: 0s | Darrera: 1m)
+
+23/12/2025 11:08:50 [Information]: Lectura d'aplicacions finalitzada: 36 (Durada: 0s | Darrera: 1m)
+
+23/12/2025 11:09:16 [Error]: El codi no és vàlid
+
+23/12/2025 11:09:30 [Information]: Lectura d'aplicacions finalitzada: 36 (Durada: 0s | Darrera: 26s)
+
+23/12/2025 11:09:50 [Information]: Lectura d'aplicacions finalitzada: 36 (Durada: 0s | Darrera: 1m)
+
+23/12/2025 11:10:55 [Information]: Lectura d'aplicacions finalitzada: 36 (Durada: 0s | Darrera: 2s)
+
+23/12/2025 11:10:57 [Asterisk]: Executant worker
+

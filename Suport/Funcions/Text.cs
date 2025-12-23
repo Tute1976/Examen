@@ -77,9 +77,9 @@ namespace Examen.Suport.Funcions
             return obj.Serialitzar().Deserialitzar<T>();
         }
 
-        public static void Desar(this List<CategoriaAplicacions> aplicacions, string fitxer)
+        public static void Desar(this List<CategoriaAplicacions> aplicacions, string fitxer, out string json)
         {
-            var json = aplicacions.Serialitzar(Formatting.Indented, true);
+            json = aplicacions.Serialitzar(Formatting.Indented, true);
             File.WriteAllText(fitxer, json, Encoding.UTF8);
         }
 
@@ -89,9 +89,9 @@ namespace Examen.Suport.Funcions
             File.WriteAllText(fitxer, json, Encoding.UTF8);
         }
 
-        public static List<CategoriaAplicacions>? Llegir(string fitxer)
+        public static List<CategoriaAplicacions>? Llegir(string fitxer, out string json)
         {
-            var json = File.ReadAllText(fitxer, Encoding.UTF8);
+            json = File.ReadAllText(fitxer, Encoding.UTF8);
             return json.Deserialitzar<List<CategoriaAplicacions>>();
         }
 

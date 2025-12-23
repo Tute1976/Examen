@@ -48,6 +48,7 @@ namespace Examen.Suport.Formularis
             this.bCancelar = new System.Windows.Forms.ToolStripButton();
             this.bCopiar = new System.Windows.Forms.ToolStripButton();
             this.lTitol = new System.Windows.Forms.Label();
+            this.timerFi = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.progressBar)).BeginInit();
             this.menu.SuspendLayout();
             this.SuspendLayout();
@@ -56,9 +57,10 @@ namespace Examen.Suport.Formularis
             // 
             this.lMissatge.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lMissatge.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lMissatge.Location = new System.Drawing.Point(15, 42);
+            this.lMissatge.Location = new System.Drawing.Point(22, 64);
+            this.lMissatge.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lMissatge.Name = "lMissatge";
-            this.lMissatge.Size = new System.Drawing.Size(432, 170);
+            this.lMissatge.Size = new System.Drawing.Size(657, 263);
             this.lMissatge.TabIndex = 0;
             this.lMissatge.Text = ".";
             this.lMissatge.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -66,12 +68,12 @@ namespace Examen.Suport.Formularis
             // timerInici
             // 
             this.timerInici.Enabled = true;
-            this.timerInici.Tick += new System.EventHandler(this.timerInici_Tick);
+            this.timerInici.Tick += new System.EventHandler(this.TimerInici_Tick);
             // 
             // timerBarra
             // 
             this.timerBarra.Interval = 1000;
-            this.timerBarra.Tick += new System.EventHandler(this.timerBarra_Tick);
+            this.timerBarra.Tick += new System.EventHandler(this.TimerBarra_Tick);
             // 
             // progressBar
             // 
@@ -83,12 +85,13 @@ namespace Examen.Suport.Formularis
             this.progressBar.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.progressBar.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.progressBar.ForegroundImage = null;
-            this.progressBar.Location = new System.Drawing.Point(15, 212);
+            this.progressBar.Location = new System.Drawing.Point(22, 327);
+            this.progressBar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.progressBar.MultipleColors = new System.Drawing.Color[] {
         System.Drawing.Color.Empty};
             this.progressBar.Name = "progressBar";
             this.progressBar.SegmentWidth = 10;
-            this.progressBar.Size = new System.Drawing.Size(432, 23);
+            this.progressBar.Size = new System.Drawing.Size(657, 35);
             this.progressBar.Step = 1;
             this.progressBar.TabIndex = 2;
             this.progressBar.TextStyle = Syncfusion.Windows.Forms.Tools.ProgressBarTextStyles.Custom;
@@ -100,10 +103,10 @@ namespace Examen.Suport.Formularis
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(447, 10);
+            this.panel1.Location = new System.Drawing.Point(679, 15);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 225);
+            this.panel1.Size = new System.Drawing.Size(15, 347);
             this.panel1.TabIndex = 4;
             // 
             // menu
@@ -116,10 +119,10 @@ namespace Examen.Suport.Formularis
             this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bCancelar,
             this.bCopiar});
-            this.menu.Location = new System.Drawing.Point(457, 10);
+            this.menu.Location = new System.Drawing.Point(694, 15);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(0);
-            this.menu.Size = new System.Drawing.Size(28, 225);
+            this.menu.Size = new System.Drawing.Size(34, 347);
             this.menu.TabIndex = 3;
             // 
             // bCancelar
@@ -129,7 +132,7 @@ namespace Examen.Suport.Formularis
             this.bCancelar.Image = global::Examen.Suport.Properties.Resources.Cancel_32x32;
             this.bCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bCancelar.Name = "bCancelar";
-            this.bCancelar.Size = new System.Drawing.Size(27, 28);
+            this.bCancelar.Size = new System.Drawing.Size(33, 28);
             this.bCancelar.Text = "Cancelar";
             this.bCancelar.Click += new System.EventHandler(this.BCancelar_Click);
             // 
@@ -139,7 +142,7 @@ namespace Examen.Suport.Formularis
             this.bCopiar.Image = global::Examen.Suport.Properties.Resources.Copiar_32x32;
             this.bCopiar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bCopiar.Name = "bCopiar";
-            this.bCopiar.Size = new System.Drawing.Size(27, 28);
+            this.bCopiar.Size = new System.Drawing.Size(33, 28);
             this.bCopiar.Text = "Copiar missatge";
             this.bCopiar.Click += new System.EventHandler(this.BCopiar_Click);
             // 
@@ -148,19 +151,23 @@ namespace Examen.Suport.Formularis
             this.lTitol.Dock = System.Windows.Forms.DockStyle.Top;
             this.lTitol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lTitol.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.lTitol.Location = new System.Drawing.Point(15, 10);
+            this.lTitol.Location = new System.Drawing.Point(22, 15);
             this.lTitol.Margin = new System.Windows.Forms.Padding(0);
             this.lTitol.Name = "lTitol";
-            this.lTitol.Size = new System.Drawing.Size(432, 32);
+            this.lTitol.Size = new System.Drawing.Size(657, 49);
             this.lTitol.TabIndex = 7;
             this.lTitol.Text = "Informació del programa d\'Examens";
             // 
+            // timerFi
+            // 
+            this.timerFi.Tick += new System.EventHandler(this.TimerFi_Tick);
+            // 
             // ToastForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightYellow;
-            this.ClientSize = new System.Drawing.Size(500, 250);
+            this.ClientSize = new System.Drawing.Size(750, 385);
             this.Controls.Add(this.lMissatge);
             this.Controls.Add(this.lTitol);
             this.Controls.Add(this.progressBar);
@@ -169,13 +176,14 @@ namespace Examen.Suport.Formularis
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(-10000, -10000);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(500, 250);
+            this.MaximumSize = new System.Drawing.Size(750, 385);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(500, 250);
+            this.MinimumSize = new System.Drawing.Size(750, 385);
             this.Name = "ToastForm";
             this.Opacity = 0D;
-            this.Padding = new System.Windows.Forms.Padding(15, 10, 15, 15);
+            this.Padding = new System.Windows.Forms.Padding(22, 15, 22, 23);
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Missatge";
@@ -200,5 +208,6 @@ namespace Examen.Suport.Formularis
         private System.Windows.Forms.ToolStripButton bCancelar;
         private System.Windows.Forms.Label lTitol;
         private System.Windows.Forms.ToolStripButton bCopiar;
+        private System.Windows.Forms.Timer timerFi;
     }
 }

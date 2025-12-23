@@ -99,21 +99,21 @@ namespace Examen.Professor.Controls
 
         private void BPitar_Click(object sender, EventArgs e)
         {
-            TipusNotificacio.Pitar.EnviarNotificacio(_codi, EstacioAlumne);
+            TipusNotificacio.Pitar.EnviarNotificacio(_codi, EstacioAlumne, Connexio.TipusRedis.Volatil);
         }
 
         private void BBloquejar_Click(object sender, EventArgs e)
         {
             if ($"Vols bloquejar l'estació {txtEstacio.Text} ?".Mostrar(MostrarIcon.Question,
                     MessageBoxButtons.YesNo) == DialogResult.Yes)
-                TipusNotificacio.Bloquejar.EnviarNotificacio(_codi, EstacioAlumne);
+                TipusNotificacio.Bloquejar.EnviarNotificacio(_codi, EstacioAlumne, Connexio.TipusRedis.Volatil);
         }
 
         private void BAturar_Click(object sender, EventArgs e)
         {
             if ($"Vols aturar l'estació {txtEstacio.Text} ?".Mostrar(MostrarIcon.Question,
                     MessageBoxButtons.YesNo) == DialogResult.Yes)
-                TipusNotificacio.Bloquejar.EnviarNotificacio(_codi, EstacioAlumne);
+                TipusNotificacio.Bloquejar.EnviarNotificacio(_codi, EstacioAlumne, Connexio.TipusRedis.Volatil);
         }
 
         private void BAplicacionsEnUs_Click(object sender, EventArgs e)
@@ -132,7 +132,7 @@ namespace Examen.Professor.Controls
 
         private void bCapturar_Click(object sender, EventArgs e)
         {
-            TipusNotificacio.Capturar.EnviarNotificacio(_codi, EstacioAlumne);
+            TipusNotificacio.Capturar.EnviarNotificacio(_codi, EstacioAlumne, Connexio.TipusRedis.Volatil);
         }
     }
 }

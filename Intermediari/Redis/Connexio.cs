@@ -4,6 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
+using System.Net.Security;
+using System.Security.Authentication;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace Examen.Intermediari.Redis
@@ -31,9 +35,15 @@ namespace Examen.Intermediari.Redis
 
     public static class Connexio
     {
-        private static ConnectionMultiplexer Redis { get; set; }
-        private static IDatabase Db { get; set; }
+        private static ConnectionMultiplexer RedisPersistent { get; set; }
+        private static ConnectionMultiplexer RedisVolatil { get; set; }
+        private static IDatabase DbPersistent { get; set; }
+        private static IDatabase DbVolatil { get; set; }
+
         private static string FitxerTraces { get; set; }
+        private static string FitxerCertificat { get; set; }
+        public static X509Certificate2 Certificat { get; set; }
+
         private static  Codificacio Codificacio { get; set; }
 
         public enum TipusTraça
@@ -65,20 +75,35 @@ namespace Examen.Intermediari.Redis
             AlRebreTancament
         }
 
+        public enum TipusRedis
+        {
+            Persistent = 6380,
+            Volatil = 6379
+        }
+
         static Connexio()
         {
             if (!Properties.Settings.Default.Traces)
                 return;
 
-            var directoriTraces = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule?.FileName);
-            if (directoriTraces == null)
+            var directoriExecutable= Path.GetDirectoryName(Process.GetCurrentProcess().MainModule?.FileName);
+            if (directoriExecutable == null)
                 return;
 
-            directoriTraces = Path.Combine(directoriTraces, "Traces");
+            var directoriTraces = Path.Combine(directoriExecutable, "Traces");
             if (!Directory.Exists(directoriTraces))
                 Directory.CreateDirectory(directoriTraces);
-
             FitxerTraces = Path.Combine(directoriTraces, "RedisTraces.log");
+
+            var directoriCertificat= Path.Combine(directoriExecutable, "Certificat");
+            if (!Directory.Exists(directoriCertificat))
+                Directory.CreateDirectory(directoriCertificat);
+            var fitxers = Directory.GetFiles(directoriCertificat);
+            if (fitxers.Length > 0)
+            {
+                FitxerCertificat = fitxers.First();
+                Certificat = new X509Certificate2(FitxerCertificat);
+            }
         }
 
         public static void Traça(this TipusTraça tipus, string missatge)
@@ -99,21 +124,35 @@ namespace Examen.Intermediari.Redis
 
         public static bool Connectar()
         {
-            return Connectar(null);
+            return Connectar(null, TipusRedis.Volatil);
         }
 
-        public static bool Connectar(Codificacio codificacio)
+        public static bool Connectar(TipusRedis tipusRedis)
+        {
+            return Connectar(null, tipusRedis);
+        }
+
+        public static bool Connectar(Codificacio codificacio, TipusRedis tipusRedis)
         {
             try
             {
-                if (Redis is { IsConnected: true })
-                    return true;
+                switch (tipusRedis)
+                {
+                    case TipusRedis.Persistent:
+                        if (RedisPersistent is { IsConnected: true })
+                            return true;
+                        break;
+                    case TipusRedis.Volatil:
+                        if (RedisVolatil is { IsConnected: true })
+                            return true;
+                        break;
+                }
 
                 if (codificacio != null && Codificacio != null)
                     Codificacio = codificacio;
 
                 var servidor = Properties.Settings.Default.Servidor;
-                var port = Properties.Settings.Default.Port;
+                var port = (int)tipusRedis;
                 var contrasenya = Properties.Settings.Default.Contrasenya.ToStringFromBase64();
 
                 var configurationOptions = new ConfigurationOptions
@@ -123,29 +162,41 @@ namespace Examen.Intermediari.Redis
                         { servidor, port }
                     },
 
-                    // --- Timeouts (ms) ---
-                    ConnectTimeout = 5000,   // Connexió TCP/handshake
-                    SyncTimeout = 5000,   // Operacions síncrones
-                    AsyncTimeout = 5000,   // Operacions asíncrones
+                    ConnectTimeout = 5000,
+                    SyncTimeout = 5000,
+                    AsyncTimeout = 5000,
 
-                    // --- Retrys / DNS (clau per no “eternitzar-se”) ---
-                    ConnectRetry = 0,        // Evita reintents (si vols 1 intent extra: posa 1)
-                    ResolveDns = true,      // Evita esperes de DNS (si 'servidor' és nom, millor posar IP o deixar true)
+                    ConnectRetry = 0,
+                    ResolveDns = true,
 
-                    AbortOnConnectFail = false, // Retorna multiplexer i podràs detectar IsConnected
+                    AbortOnConnectFail = false,
                     KeepAlive = 180,
 
                     Password = contrasenya,
-                    AllowAdmin = true
+                    AllowAdmin = true,
+
+                    Ssl = true,
+                    SslProtocols = SslProtocols.Tls12,
+                    SslHost = servidor,
+                    CheckCertificateRevocation = false
                 };
+                configurationOptions.CertificateValidation += CertificateValidation;
 
-                // Connexió síncrona (respecta ConnectTimeout, però DNS/reintents poden allargar si no ajustes lo dalt)
-                Redis = ConnectionMultiplexer.Connect(configurationOptions);
+                if (tipusRedis == TipusRedis.Persistent)
+                {
+                    RedisPersistent = ConnectionMultiplexer.Connect(configurationOptions);
+                    if (!RedisPersistent.IsConnected)
+                        return false;
+                    DbPersistent = RedisPersistent.GetDatabase();
+                }
+                else
+                {
+                    RedisVolatil = ConnectionMultiplexer.Connect(configurationOptions);
+                    if (!RedisVolatil.IsConnected)
+                        return false;
+                    DbVolatil = RedisVolatil.GetDatabase();
+                }
 
-                if (!Redis.IsConnected)
-                    return false;
-
-                Db = Redis.GetDatabase();
                 TipusTraça.Connexió.Traça($"Connexió a {servidor}:{port}");
                 return true;
             }
@@ -156,35 +207,47 @@ namespace Examen.Intermediari.Redis
             }
         }
 
+        private static bool CertificateValidation(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
+        {
+            if (sslPolicyErrors == SslPolicyErrors.None)
+                return true;
+
+            $"Error al validar el certificat: {sslPolicyErrors}".Mostrar(MostrarIcon.Error);
+
+            return false;
+        }
+
         public static void Desconnectar()
         {
             try
             {
-                if (Redis == null)
-                    return;
+                RedisPersistent?.Close();
+                RedisPersistent?.Dispose();
+                RedisPersistent = null;
 
-                Redis.Close();
-                Redis.Dispose();
-                Redis = null;
-
-                TipusTraça.Desconnexió.Traça("Desconnexió");
+                RedisVolatil?.Close();
+                RedisVolatil?.Dispose();
+                RedisVolatil = null;
             }
             catch
             {
                 // ignore
             }
+
+            TipusTraça.Desconnexió.Traça("Desconnexió");
         }
 
-        public static bool EnviaMissatge(Codificacio codificacio, object objecte)
+        public static bool EnviaMissatge(Codificacio codificacio, object objecte, TipusRedis tipusRedis)
         {
             try
             {
-                Connectar(codificacio);
+                Connectar(codificacio, tipusRedis);
 
                 if (objecte is not string missatge)
                     missatge = objecte.Serialitzar();
 
-                Db.ListLeftPush(codificacio.ToString(), missatge);
+                var db = tipusRedis == TipusRedis.Persistent ? DbPersistent : DbVolatil;
+                db.ListLeftPush(codificacio.ToString(), missatge);
 
                 TipusTraça.EnviaMissatge.Traça(missatge);
             }
@@ -197,18 +260,19 @@ namespace Examen.Intermediari.Redis
             return true;
         }
 
-        public static bool CrearClau(string clau, object objecte, TimeSpan duracio)
+        public static bool CrearClau(string clau, object objecte, TimeSpan duracio, TipusRedis tipusRedis)
         {
             try
             {
-                Connectar();
+                Connectar(tipusRedis);
 
                 if (objecte is not string missatge)
                     missatge = objecte.Serialitzar();
 
                 TipusTraça.CrearClau.Traça(clau);
 
-                return Db.StringSet(clau, missatge, duracio, When.Always);
+                var db = tipusRedis == TipusRedis.Persistent ? DbPersistent : DbVolatil;
+                return db.StringSet(clau, missatge, duracio, When.Always);
             }
             catch (Exception ex)
             {
@@ -218,15 +282,16 @@ namespace Examen.Intermediari.Redis
             return false;
         }
 
-        public static bool EsborrarClau(string clau)
+        public static bool EsborrarClau(string clau, TipusRedis tipusRedis)
         {
             try
             {
-                Connectar();
+                Connectar(tipusRedis);
 
                 TipusTraça.EsborrarClau.Traça(clau);
 
-                return Db.KeyDelete(clau);
+                var db = tipusRedis == TipusRedis.Persistent ? DbPersistent : DbVolatil;
+                return db.KeyDelete(clau);
             }
             catch (Exception ex)
             {
@@ -236,15 +301,16 @@ namespace Examen.Intermediari.Redis
             return false;
         }
 
-        public static bool ExisteixClau(string clau)
+        public static bool ExisteixClau(string clau, TipusRedis tipusRedis)
         {
             try
             {
-                Connectar();
+                Connectar(tipusRedis);
 
                 TipusTraça.ExisteixClau.Traça(clau);
 
-                return Db.KeyExists(clau);
+                var db = tipusRedis == TipusRedis.Persistent ? DbPersistent : DbVolatil;
+                return db.KeyExists(clau);
             }
             catch (Exception ex)
             {
@@ -254,15 +320,16 @@ namespace Examen.Intermediari.Redis
             return false;
         }
 
-        public static string LlegirClau(string clau)
+        public static string LlegirClau(string clau, TipusRedis tipusRedis)
         {
             try
             {
-                Connectar();
+                Connectar(tipusRedis);
 
                 TipusTraça.LlegirClau.Traça(clau);
 
-                return Db.StringGet(clau.Replace(":", "_"));
+                var db = tipusRedis == TipusRedis.Persistent ? DbPersistent : DbVolatil;
+                return db.StringGet(clau.Replace(":", "_"));
             }
             catch (Exception ex)
             {
@@ -272,13 +339,14 @@ namespace Examen.Intermediari.Redis
             return null;
         }
 
-        public static T LlegirClau<T>(string clau)
+        public static T LlegirClau<T>(string clau, TipusRedis tipusRedis)
         {
             try
             {
-                Connectar();
+                Connectar(tipusRedis);
 
-                var json = Db.StringGet(clau);
+                var db = tipusRedis == TipusRedis.Persistent ? DbPersistent : DbVolatil;
+                var json = db.StringGet(clau);
                 if (json.HasValue)
                 {
                     var ret = json.ToString().Deserialitzar<T>();
@@ -296,13 +364,14 @@ namespace Examen.Intermediari.Redis
             return default;
         }
 
-        public static T RebreMissatge<T>(Codificacio codificacio)
+        public static T RebreMissatge<T>(Codificacio codificacio, TipusRedis tipusRedis)
         {
             try
             {
-                Connectar(codificacio);
+                Connectar(codificacio, tipusRedis);
 
-                var valor = Db.ListRightPop(codificacio.ToString());
+                var db = tipusRedis == TipusRedis.Persistent ? DbPersistent : DbVolatil;
+                var valor = db.ListRightPop(codificacio.ToString());
 
                 if (valor.HasValue)
                 {
@@ -328,33 +397,36 @@ namespace Examen.Intermediari.Redis
             return default;
         }
 
-        public static void Subscriure<T>(Codificacio codificacio, Action<string, T> accioAlRebre)
+        public static void Subscriure<T>(Codificacio codificacio, Action<string, T> accioAlRebre, TipusRedis tipusRedis)
         {
-            Connectar(codificacio);
+            Connectar(codificacio, tipusRedis);
 
-            var sub = Redis.GetSubscriber();
+            var redis = tipusRedis == TipusRedis.Persistent ? RedisPersistent : RedisVolatil;
+            var sub = redis.GetSubscriber();
             var redisChannel = RedisChannel.Literal(codificacio.ToString());
             sub.Subscribe(redisChannel, (rc, rv) => Subscripcio(rc, rv, accioAlRebre));
 
             TipusTraça.Subscriure.Traça($"{codificacio}");
         }
 
-        public static void SubscriurePatro<T>(Codificacio codificacio, Action<string, T> accioAlRebre)
+        public static void SubscriurePatro<T>(Codificacio codificacio, Action<string, T> accioAlRebre, TipusRedis tipusRedis)
         {
-            Connectar(codificacio);
+            Connectar(codificacio, tipusRedis);
 
-            var sub = Redis.GetSubscriber();
+            var redis = tipusRedis == TipusRedis.Persistent ? RedisPersistent : RedisVolatil;
+            var sub = redis.GetSubscriber();
             var redisChannel = RedisChannel.Pattern(codificacio.ToString());
             sub.Subscribe(redisChannel, (rc, rv) => SubscripcioPatro(rc, rv, accioAlRebre));
 
             TipusTraça.SubscriurePatro.Traça($"{codificacio}");
         }
 
-        public static void SubscriurePatro(Codificacio codificacio, Action<string> accioAlRebre)
+        public static void SubscriurePatro(Codificacio codificacio, Action<string> accioAlRebre, TipusRedis tipusRedis)
         {
-            Connectar(codificacio);
+            Connectar(codificacio, tipusRedis);
 
-            var sub = Redis.GetSubscriber();
+            var redis = tipusRedis == TipusRedis.Persistent ? RedisPersistent : RedisVolatil;
+            var sub = redis.GetSubscriber();
             var redisChannel = RedisChannel.Pattern(codificacio.ToString());
             sub.Subscribe(redisChannel, (rc, rv) => SubscripcioPatro(rc, rv, accioAlRebre));
 
@@ -430,11 +502,12 @@ namespace Examen.Intermediari.Redis
             }
         }
 
-        private static long Publicar<T>(Codificacio codificacio, T missatge)
+        private static long Publicar<T>(Codificacio codificacio, T missatge, TipusRedis tipusRedis)
         {
-            Connectar(codificacio);
+            Connectar(codificacio, tipusRedis);
 
-            var sub = Redis.GetSubscriber();
+            var redis = tipusRedis == TipusRedis.Persistent ? RedisPersistent : RedisVolatil;
+            var sub = redis.GetSubscriber();
 
             var contingut = typeof(T) == typeof(string) ? missatge.ToString() : missatge.Serialitzar();
 
@@ -446,7 +519,7 @@ namespace Examen.Intermediari.Redis
             return ret;
         }
 
-        public static long EnviarNotificacio<T>(string idSessio, TipusNotificacio tipusNotificacio, T objecte, params string[] altresParametres)
+        public static long EnviarNotificacio<T>(string idSessio, TipusNotificacio tipusNotificacio, T objecte, TipusRedis tipusRedis, params string[] altresParametres)
         {
             try
             {
@@ -458,9 +531,9 @@ namespace Examen.Intermediari.Redis
                     llistaParametres.AddRange(altresParametres);
 
                 var codificacio = new Codificacio(idSessio, [.. llistaParametres]);
-                Connectar(codificacio);
+                Connectar(codificacio, tipusRedis);
 
-                var ret = Publicar(codificacio, objecte);
+                var ret = Publicar(codificacio, objecte, tipusRedis);
 
                 TipusTraça.EnviarNotificacio.Traça($"{codificacio} --> {ret}");
 

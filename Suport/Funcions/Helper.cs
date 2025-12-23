@@ -23,8 +23,6 @@ namespace Examen.Suport.Funcions
         public static string SyncfusionLicense => Settings.Default.SyncfusionLicense;
         public static Bitmap Aplicacio_32x32 => Resources.Aplicacio_32x32;
 
-        public const int BufferSize = 81920;
-
         private static readonly Dictionary<string, Bitmap> _Icones = [];
         private static readonly Dictionary<string, string> _Descripcions = [];
 
@@ -43,7 +41,7 @@ namespace Examen.Suport.Funcions
         [DllImport("user32.dll", SetLastError = true)]
         private static extern bool DestroyIcon(IntPtr hIcon);
 
-        public static string DirectoriCaptures { get; set; }
+        public static string DirectoriCaptures { get; }
 
         static Helper()
         {
@@ -58,7 +56,7 @@ namespace Examen.Suport.Funcions
 
         public static void Pitar()
         {
-            ShowToast("Reproduint so ...", 5, ToastType.Info);
+            "Reproduint so ...".ShowToast(5, ToastType.Info);
 
             for (var i = 0; i < 5; i++)
                 Beep();
@@ -66,13 +64,13 @@ namespace Examen.Suport.Funcions
 
         public static void Bloquejar()
         {
-            ShowToast("Bloquejant ...", 5, ToastType.Alert);
+            "Bloquejant ...".ShowToast(5, ToastType.Alert);
             LockWorkStation();
         }
 
         public static void Aturar()
         {
-            ShowToast("Aturant ...", 5, ToastType.Alert);
+            "Aturant ...".ShowToast(5, ToastType.Alert);
 
             Beep();
 
@@ -83,18 +81,22 @@ namespace Examen.Suport.Funcions
 
         public static void ShowToast(this string missatge, int interval, ToastType toastType)
         {
-            new ToastForm(missatge, interval, toastType).Show();
+            var toastForm = new ToastForm(missatge, interval, toastType);
+            Invocar(toastForm, () =>
+            {
+                toastForm.Show();
+                Thread.Sleep(interval * 1000);
+                toastForm.Close();
+            });
         }
 
-        public static void Beep()
+        private static void Beep()
         {
-            new Thread(Beep_).Start();
-        }
-
-        private static void Beep_()
-        {
-            Console.Beep(1000, 500);
-            Thread.Sleep(50);
+            new Thread(() =>
+            {
+                Console.Beep(1000, 500);
+                Thread.Sleep(50);
+            }).Start();
         }
 
         public static bool Executar(string programa, string arguments = "")
@@ -356,15 +358,15 @@ namespace Examen.Suport.Funcions
                     nodeCategoria.Nodes.Add(nodeAplicacio);
                 }
 
-                nodeCategoria.Nodes = nodeCategoria.Nodes.OrderBy(n => n.Nom).ToList();
+                nodeCategoria.Nodes = [.. nodeCategoria.Nodes.OrderBy(n => n.Nom)];
                 nodes.Add(nodeCategoria);
             }
 
-            nodes = nodes.OrderBy(n => n.Nom).ToList();
+            nodes = [.. nodes.OrderBy(n => n.Nom)];
             return [.. nodes];
         }
 
-        public static void ReportCustomProgress(this BackgroundWorker backgroundWorker, int interval, ToastType toastType, string missatge)
+        private static void ReportCustomProgress(this BackgroundWorker backgroundWorker, int interval, ToastType toastType, string missatge)
         {
             var dictionary = new Dictionary<ToastType, string>
             {
@@ -487,6 +489,14 @@ namespace Examen.Suport.Funcions
                 ex.Mostrar();
                 return bitmap;
             }
+        }
+
+        public static void Invocar(Control control, Action accio)
+        {
+            if (control.InvokeRequired)
+                control.Invoke(accio);
+            else
+                accio();
         }
     }
 

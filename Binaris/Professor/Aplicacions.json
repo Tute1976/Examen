@@ -215,7 +215,7 @@
       },
       {
         "CalAturar": true,
-        "Ignorar": false,
+        "Ignorar": true,
         "Nom": "Microsoft Edge",
         "Descripcio": "Navegador web de Microsoft",
         "Executable": "msedge.exe",

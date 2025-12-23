@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Tuté")]
 [assembly: AssemblyProduct("Examen")]
-[assembly: AssemblyCopyright("Copyright © Tuté 2025")]
+[assembly: AssemblyCopyright("Copyright © Tuté 2025-26")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -28,5 +28,5 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("2.0.*")]
-[assembly: AssemblyFileVersion("2.0")]
+[assembly: AssemblyVersion("2.1.*")]
+[assembly: AssemblyFileVersion("2.1")]
