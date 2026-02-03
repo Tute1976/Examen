@@ -61656,6 +61656,11 @@
             Indicates whether ToolTips are being shown for tabs that have ToolTips set on them.
             </summary>
         </member>
+        <member name="M:Syncfusion.Windows.Forms.ButtonBar.IsInDesignMode(System.Windows.Forms.Control)">
+            <summary>
+            Determines whether the specified control or any of its parent controls is running in design mode.
+            </summary>
+        </member>
         <member name="M:Syncfusion.Windows.Forms.ButtonBar.OnHandleDestroyed(System.EventArgs)">
             <override/>
         </member>
@@ -76703,7 +76708,7 @@
             The license message that is used to show error and it enables the exit option.
             </summary>
         </member>
-        <member name="M:Syncfusion.Windows.Shared.LicenseHelper.ValidateLicense(System.Boolean,Syncfusion.Licensing.Platform,System.String)">
+        <member name="M:Syncfusion.Windows.Shared.LicenseHelper.ValidateLicense(System.Boolean,Syncfusion.Licensing.Platform,System.String,System.String)">
             <summary>
             Validates the license for WinUI XAML controls in .NET50 project
             </summary>
