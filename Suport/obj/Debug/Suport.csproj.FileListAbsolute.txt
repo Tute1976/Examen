@@ -20,4 +20,3 @@ D:\Privat\Programacio\Git\Examen\Suport\obj\Debug\Suport.csproj.CoreCompileInput
 D:\Privat\Programacio\Git\Examen\Suport\obj\Debug\Suport.csproj.Up2Date
 D:\Privat\Programacio\Git\Examen\Suport\obj\Debug\Suport.dll
 D:\Privat\Programacio\Git\Examen\Suport\obj\Debug\Suport.pdb
-D:\Privat\Programacio\Git\Examen\Suport\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
